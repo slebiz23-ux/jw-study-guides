@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JW Meeting Study Guide | Week of June 1–7, 2026</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f0f4f8; color: #1a202c; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, #1a365d 0%, #2d5a8e 100%); color: white; padding: 20px 16px; text-align: center; }
+        .header h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; }
+        .header .subtitle { font-size: 0.9rem; opacity: 0.85; }
+        .week-badge { display: inline-block; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); border-radius: 20px; padding: 4px 14px; font-size: 0.85rem; margin-top: 8px; }
+        .tab-nav { display: flex; background: white; border-bottom: 2px solid #e2e8f0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.08); }
+        .tab-btn { flex: 1; padding: 14px 8px; border: none; background: none; cursor: pointer; font-size: 0.85rem; font-weight: 600; color: #718096; border-bottom: 3px solid transparent; transition: all 0.2s; }
+        .tab-btn.active { color: #2d5a8e; border-bottom-color: #2d5a8e; background: #f7faff; }
+        .tab-btn:hover:not(.active) { background: #f7f8fa; }
+        .tab-content { display: none; padding: 16px; max-width: 820px; margin: 0 auto; }
+        .tab-content.active { display: block; }
+        .section-card { background: white; border-radius: 12px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); overflow: hidden; }
+        .section-header { display: flex; align-items: center; padding: 14px 16px; cursor: pointer; user-select: none; gap: 10px; transition: background 0.2s; }
+        .section-header:hover { background: #f7f8fa; }
+        .section-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+        .section-title-area { flex: 1; }
+        .section-title { font-weight: 700; font-size: 0.95rem; }
+        .section-meta { font-size: 0.78rem; color: #718096; margin-top: 2px; }
+        .section-chevron { color: #a0aec0; transition: transform 0.3s; font-size: 1rem; }
+        .section-header.open .section-chevron { transform: rotate(180deg); }
+        .section-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .section-body.open { max-height: 8000px; }
+        .section-body-inner { padding: 0 16px 16px; border-top: 1px solid #f0f0f0; }
+        /* Themes */
+        .theme-treasures .section-icon { background: #dbeafe; color: #1d4ed8; }
+        .theme-treasures .section-title { color: #1d4ed8; }
+        .theme-apply .section-icon { background: #dcfce7; color: #15803d; }
+        .theme-apply .section-title { color: #15803d; }
+        .theme-living .section-icon { background: #f3e8ff; color: #7e22ce; }
+        .theme-living .section-title { color: #7e22ce; }
+        .theme-cbs .section-icon { background: #fff7ed; color: #c2410c; }
+        .theme-cbs .section-title { color: #c2410c; }
+        .theme-watchtower .section-icon { background: #fef2f2; color: #b91c1c; }
+        .theme-watchtower .section-title { color: #b91c1c; }
+        .theme-happy .section-icon { background: #fef9c3; color: #854d0e; }
+        .theme-happy .section-title { color: #854d0e; }
+        /* Q&A */
+        .qa-item { background: #f8fafc; border-radius: 8px; margin: 10px 0; overflow: hidden; border: 1px solid #e2e8f0; }
+        .qa-question { padding: 12px 14px; font-weight: 600; font-size: 0.88rem; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+        .qa-question:hover { background: #f0f4f8; }
+        .qa-question-text { flex: 1; }
+        .qa-toggle { color: #2d5a8e; font-size: 0.78rem; flex-shrink: 0; margin-top: 2px; white-space: nowrap; font-weight: 700; }
+        .qa-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .qa-answer.open { max-height: 3000px; }
+        .qa-answer-inner { padding: 0 14px 14px; border-top: 1px dashed #e2e8f0; }
+        .answer-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #718096; margin-bottom: 6px; margin-top: 10px; }
+        .answer-text { font-size: 0.88rem; color: #2d3748; line-height: 1.7; }
+        /* Comment prep boxes */
+        .comment-prep { background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 0 6px 6px 0; padding: 9px 12px; margin-top: 10px; font-size: 0.83rem; color: #78350f; line-height: 1.65; }
+        .comment-prep strong { color: #92400e; }
+        .image-analysis { background: #f0fdf4; border-left: 3px solid #22c55e; border-radius: 0 6px 6px 0; padding: 9px 12px; margin-top: 10px; font-size: 0.83rem; color: #14532d; line-height: 1.6; }
+        .image-analysis strong { color: #166534; }
+        .video-note { background: #fef3c7; border-left: 3px solid #d97706; border-radius: 0 6px 6px 0; padding: 8px 12px; margin: 10px 0; font-size: 0.83rem; color: #92400e; }
+        .remember-box { background: #fff0f0; border: 1px solid #fecaca; border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 0.85rem; color: #7f1d1d; }
+        .remember-box strong { color: #991b1b; }
+        .scripture-ref { display: inline-block; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 4px; padding: 1px 6px; font-size: 0.8rem; color: #1d4ed8; text-decoration: none; margin: 2px; transition: background 0.15s; }
+        .scripture-ref:hover { background: #dbeafe; }
+        .song-banner { background: linear-gradient(90deg, #1a365d, #2d5a8e); color: white; border-radius: 8px; padding: 10px 14px; margin: 10px 0; display: flex; align-items: center; gap: 10px; font-size: 0.88rem; }
+        .song-banner a { color: #90cdf4; text-decoration: none; }
+        .song-banner a:hover { color: white; }
+        .summary-box { background: linear-gradient(135deg, #f0f7ff, #e8f4fd); border: 1px solid #bfdbfe; border-radius: 10px; padding: 14px; margin-bottom: 14px; }
+        .summary-box h4 { font-size: 0.88rem; color: #1e40af; margin-bottom: 6px; }
+        .summary-box p { font-size: 0.85rem; color: #2d4a6e; line-height: 1.65; }
+        .focus-banner { background: #1a365d; color: white; border-radius: 8px; padding: 12px 16px; margin-bottom: 14px; font-size: 0.9rem; }
+        .focus-banner .focus-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.7; margin-bottom: 4px; }
+        .theme-verse { font-style: italic; font-size: 1rem; color: #2d5a8e; border-left: 4px solid #2d5a8e; padding: 8px 14px; margin: 12px 0; background: #f0f4ff; border-radius: 0 8px 8px 0; }
+        .para-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #b91c1c; margin-bottom: 4px; margin-top: 14px; }
+        .ministry-demo { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 12px 14px; margin: 8px 0; }
+        .ministry-demo h4 { color: #15803d; font-size: 0.88rem; margin-bottom: 6px; }
+        .ministry-demo p { font-size: 0.85rem; color: #14532d; line-height: 1.65; }
+        .point-item { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid #f0f0f0; }
+        .point-item:last-of-type { border-bottom: none; }
+        .point-bullet { width: 26px; height: 26px; border-radius: 50%; background: #e0e7ff; color: #4338ca; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+        .source-link { display: inline-flex; align-items: center; gap: 4px; background: #2d5a8e; color: white; text-decoration: none; border-radius: 6px; padding: 5px 12px; font-size: 0.8rem; font-weight: 600; margin-top: 8px; transition: background 0.15s; }
+        .source-link:hover { background: #1a365d; }
+        .expand-all-btn { width: 100%; padding: 10px; background: #f0f4f8; border: 1px solid #e2e8f0; border-radius: 8px; cursor: pointer; font-size: 0.85rem; color: #4a5568; margin-bottom: 12px; transition: background 0.15s; }
+        .expand-all-btn:hover { background: #e2e8f0; }
+        .section-divider { text-align: center; padding: 14px 0 4px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+        .page-footer { text-align: center; padding: 24px 16px; color: #a0aec0; font-size: 0.78rem; }
+        @media print { .tab-nav, .expand-all-btn { display: none; } .tab-content { display: block !important; page-break-before: always; } .section-body { max-height: none !important; } .qa-answer { max-height: none !important; } }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🕊️ JW Meeting Study Guide</h1>
+    <div class="subtitle">Our Christian Life &amp; Ministry + Watchtower Study</div>
+    <div class="week-badge">📅 Week of June 1–7, 2026 · Jeremiah 1–3</div>
+</div>
+
+<div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('clam', this)">⛏️ CLAM Meeting</button>
+    <button class="tab-btn" onclick="showTab('wt', this)">📖 Watchtower Study</button>
+</div>
+
+<!-- ======================================================  CLAM TAB  -->
+<div class="tab-content active" id="tab-clam">
+
+<button class="expand-all-btn" onclick="expandAll('tab-clam')">▼ Expand All Sections</button>
+
+<div class="song-banner">🎵 Opening: <a href="https://www.jw.org/en/library/songs/jw-songbook/song-84/" target="_blank">Song 84</a> and Prayer · Opening Comments (1 min.)</div>
+
+<div class="section-divider" style="color:#1d4ed8;">⛏️ Treasures from God's Word</div>
+
+<!-- TALK 1 -->
+<div class="section-card">
+    <div class="section-header theme-treasures" onclick="toggleSection(this)">
+        <div class="section-icon">🗣️</div>
+        <div class="section-title-area">
+            <div class="section-title">1. "Do Not Be Afraid . . . for 'I Am With You'"</div>
+            <div class="section-meta">Talk · 10 min · <a href="https://www.jw.org/en/library/bible/study-bible/books/jeremiah/1/#v24001006" class="scripture-ref" target="_blank">Jer 1:6</a> <a href="https://www.jw.org/en/library/bible/study-bible/books/jeremiah/1/#v24001008" class="scripture-ref" target="_blank">Jer 1:8, 9</a></div>
+        </div>
+        <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body"><div class="section-body-inner">
+        <div class="summary-box"><h4>🎯 Theme</h4><p>Jeremiah felt unqualified and afraid when Jehovah called him to preach. But Jehovah qualifies and strengthens those he calls. The same is true for us today.</p></div>
+
+        <div class="point-item">
+            <div class="point-bullet">1</div>
+            <div>
+                <strong style="font-size:0.88rem;">Like Jeremiah — feeling afraid or unqualified</strong> (<a href="https://www.jw.org/en/library/bible/study-bible/books/jeremiah/1/#v24001006" class="scripture-ref" target="_blank">Jer 1:6</a>)
+                <div style="font-size:0.85rem;color:#4a5568;margin-top:4px;line-height:1.65;">Jeremiah said he didn't know how to speak and was just a boy. Many of Jehovah's servants today — including experienced publishers — can feel similarly unqualified when approaching someone new or facing a difficult question.</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "I can relate to Jeremiah feeling unqualified. There have been times in the ministry when I felt nervous or unsure of what to say. But what helped me was remembering Jehovah's promise: 'I am with you.' Just knowing Jehovah is backing us takes the pressure off us to be perfect."</div>
+            </div>
+        </div>
+
+        <div class="point-item">
+            <div class="point-bullet">2</div>
+            <div>
+                <strong style="font-size:0.88rem;">Jehovah qualifies and strengthens us</strong> (<a href="https://www.jw.org/en/library/bible/study-bible/books/jeremiah/1/#v24001008" class="scripture-ref" target="_blank">Jer 1:8, 9</a>; w10 1/15 p.9 ¶7-8)
+                <div style="font-size:0.85rem;color:#4a5568;margin-top:4px;line-height:1.65;">Jehovah literally touched Jeremiah's mouth and said "I have put my words in your mouth." He equips us today through personal Bible study, meetings, prayer, and the tools provided through the organization.</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "This point about Jehovah putting his words in Jeremiah's mouth really struck me. In a practical sense, Jehovah puts words in our mouths too — through the meeting workbook demonstrations, the study materials, and the scriptures we have prepared. The more I prepare in advance, the more I notice Jehovah helping me in the actual moment."</div>
+                <div class="comment-prep"><strong>📌 Personal experience angle:</strong> "One thing that has helped me feel more prepared for the ministry is [specific practice — e.g., 'rehearsing a scripture the night before', 'using jw.org videos to start conversations', 'writing down a thought I want to share']. It reminds me that Jehovah is helping me even in the preparation stage."</div>
+            </div>
+        </div>
+        <a href="https://www.jw.org/en/library/jw-meeting-workbook/may-june-2026-mwb/Life-and-Ministry-Meeting-Schedule-for-June-1-7-2026/" class="source-link" target="_blank">🔗 View Schedule on JW.org</a>
+    </div></div>
+</div>
+
+<!-- SPIRITUAL GEMS -->
+<div class="section-card">
+    <div class="section-header theme-treasures" onclick="toggleSection(this)">
+        <div class="section-icon">💎</div>
+        <div class="section-title-area">
+            <div class="section-title">2. Spiritual Gems</div>
+            <div class="section-meta">Discussion · 10 min · <a href="https://www.jw.org/en/library/bible/study-bible/books/jeremiah/2/#v24002028" class="scripture-ref" target="_blank">Jer 2:28</a></div>
+        </div>
+        <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body"><div class="section-body-inner">
+
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q: What can we learn from Jehovah's challenge to the unfaithful Judeans? (<a href="https://www.jw.org/en/library/bible/study-bible/books/jeremiah/2/#v24002028" class="scripture-ref" target="_blank">Jer 2:28</a>; jr p.43 ¶3)</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Suggested Answer</div>
+                <div class="answer-text">Jehovah sarcastically challenged Israel to let their many idols "rise up and save" them in their time of crisis. They had "as many gods as cities" — yet none of those gods could actually help them. This powerfully demonstrates the futility of false worship. Only Jehovah is the true God who provides real, reliable help. For us today, it also warns against anything that functions as a modern "idol" — something we trust in or depend on more than Jehovah, such as financial security, human relationships, or our own abilities.</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "I was struck by Jehovah's challenge at Jeremiah 2:28. He essentially said — 'Go ahead and ask your idols for help, and see what happens.' It reminded me that the things people in this world look to for security — money, governments, their own efforts — can't actually deliver when it really matters. Only Jehovah can, and that makes me grateful to be on his side."</div>
+                <div class="comment-prep"><strong>📌 Ministry connection:</strong> "This scripture could be a powerful conversation opener with someone who says their religion doesn't matter much as long as they live a good life. Jehovah himself says it matters very much who we worship — there is a real difference between the one True God who can save and idols that cannot."</div>
+            </div></div>
+        </div>
+
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q: What spiritual gems from this week's Bible reading (Jer 1–3) would you like to share?</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Gems You Could Comment On</div>
+                <div class="answer-text">
+                    <strong><a href="https://www.jw.org/en/library/bible/study-bible/books/jeremiah/1/#v24001005" class="scripture-ref" target="_blank">Jer 1:5</a></strong> — "Before I formed you in the womb I knew you." A gem you could share: "I find it deeply comforting that Jehovah knew Jeremiah — and knows each of us — before we were even born. It shows how personally and intimately Jehovah is interested in us as individuals, not just as part of a group."<br><br>
+                    <strong><a href="https://www.jw.org/en/library/bible/study-bible/books/jeremiah/2/#v24002013" class="scripture-ref" target="_blank">Jer 2:13</a></strong> — "They have forsaken me, the source of living water." A gem you could share: "The image of Jehovah as a 'source of living water' is so vivid. Broken cisterns can't hold water — they're unreliable. That describes anything we might substitute for Jehovah. But his love and support never leak away."<br><br>
+                    <strong><a href="https://www.jw.org/en/library/bible/study-bible/books/jeremiah/3/#v24003022" class="scripture-ref" target="_blank">Jer 3:22</a></strong> — "Come back, you renegade sons. I will heal your unfaithfulness." A gem you could share: "Even after Israel's persistent unfaithfulness, Jehovah still called them back and promised healing. That tells me a lot about Jehovah's character — he doesn't give up on people easily. It's a point I keep in mind when I'm in the ministry and meet people who feel too far gone to turn to God."
+                </div>
+            </div></div>
+        </div>
+    </div></div>
+</div>
+
+<!-- BIBLE READING -->
+<div class="section-card">
+    <div class="section-header theme-treasures" onclick="toggleSection(this)">
+        <div class="section-icon">📖</div>
+        <div class="section-title-area">
+            <div class="section-title">3. Bible Reading</div>
+            <div class="section-meta">Student assignment · 4 min · <a href="https://www.jw.org/en/library/bible/study-bible/books/jeremiah/3/#v24003014" class="scripture-ref" target="_blank">Jer 3:14–25</a> · th study 12</div>
+        </div>
+        <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body"><div class="section-body-inner">
+        <div class="summary-box"><h4>📌 What's in Jeremiah 3:14–25</h4><p>Jehovah pleads with Israel to return, promising "one from a city and two from a family" will be brought back to Zion. He contrasts the blessings of faithfulness with the shame of idolatry. The passage ends with a moving confession of repentance: "We come to you, for you are Jehovah our God."</p></div>
+        <div class="point-item">
+            <div class="point-bullet">✓</div>
+            <div>
+                <strong style="font-size:0.88rem;">Teaching quality: th study 12 — Appropriate Volume</strong>
+                <div style="font-size:0.85rem;color:#4a5568;margin-top:4px;line-height:1.65;">Vary tone to match the emotional range: Jehovah's tender appeal to return (vs.14–18), the sharp contrast of shame (vs.19–21), and the heartfelt repentant confession (vs.22–25).</div>
+                <div class="comment-prep"><strong>💬 Comment you could share after the reading:</strong> "I was moved by the confession at verse 22 — 'Here we are, we come to you, for you are Jehovah our God.' Even after all of Israel's unfaithfulness, Jehovah's response was to welcome them back. That tells me so much about his character — and it's a point I love to share in the ministry with people who feel distant from God."</div>
+            </div>
+        </div>
+        <a href="https://www.jw.org/en/library/bible/study-bible/books/jeremiah/3/#v24003014" class="source-link" target="_blank">📖 Read Jer 3:14–25</a>
+    </div></div>
+</div>
+
+<div class="section-divider" style="color:#15803d;">🌱 Apply Yourself to the Field Ministry</div>
+
+<!-- DEMO 4 -->
+<div class="section-card">
+    <div class="section-header theme-apply" onclick="toggleSection(this)">
+        <div class="section-icon">🚪</div>
+        <div class="section-title-area">
+            <div class="section-title">4. Starting a Conversation</div>
+            <div class="section-meta">Demonstration · 3 min · House to House · lmd lesson 2 pt.5</div>
+        </div>
+        <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body"><div class="section-body-inner">
+        <div class="ministry-demo"><h4>🎯 What the demo shows</h4><p>After starting with a timely topic, the publisher transitions to sharing something from the Bible that seems more relevant to the householder — demonstrating the skill of listening and adapting.</p></div>
+        <div class="comment-prep"><strong>💬 Comment you could share:</strong> "This demonstration highlighted something important for me — that we don't have to stick rigidly to a prepared presentation. Listening to what the person says and pivoting to a scripture that addresses their real concern can make the conversation feel much more natural and personal. I've found that when I focus on the person's actual need rather than my script, conversations go much better."</div>
+        <div class="comment-prep"><strong>📌 Personal application you could mention:</strong> "One thing that's helped me in starting conversations is thinking in advance about which current topic — like [anxiety, family challenges, world news] — I might use to open, and then having a go-to scripture ready that I can naturally connect to it. The demo showed how that can happen smoothly."</div>
+    </div></div>
+</div>
+
+<!-- DEMO 5 -->
+<div class="section-card">
+    <div class="section-header theme-apply" onclick="toggleSection(this)">
+        <div class="section-icon">🔄</div>
+        <div class="section-title-area">
+            <div class="section-title">5. Following Up</div>
+            <div class="section-meta">Demonstration · 4 min · House to House · lmd lesson 8 pt.3</div>
+        </div>
+        <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body"><div class="section-body-inner">
+        <div class="ministry-demo"><h4>🎯 What the demo shows</h4><p>Returning to a householder and offering a free Bible study — presenting it naturally as a continuation of the prior conversation rather than a formal pitch.</p></div>
+        <div class="comment-prep"><strong>💬 Comment you could share:</strong> "I appreciated seeing how the Bible study was offered in a low-pressure way — it didn't feel like a sales pitch. It felt like a genuine continuation of a conversation that mattered. I want to work on making my follow-up calls feel just as natural, by mentioning something specific from the previous visit to show I actually remembered what they shared."</div>
+        <div class="comment-prep"><strong>📌 Confidence angle:</strong> "What struck me is that offering a Bible study is really offering something of real value — a free course that can answer life's most important questions. When I remember how much the Bible study program has helped me personally, it makes it easier to offer it with genuine enthusiasm rather than hesitation."</div>
+    </div></div>
+</div>
+
+<!-- DEMO 6 -->
+<div class="section-card">
+    <div class="section-header theme-apply" onclick="toggleSection(this)">
+        <div class="section-icon">📚</div>
+        <div class="section-title-area">
+            <div class="section-title">6. Making Disciples</div>
+            <div class="section-meta">Demonstration · 5 min · Bible student not making progress · lmd lesson 12 pt.5</div>
+        </div>
+        <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body"><div class="section-body-inner">
+        <div class="ministry-demo"><h4>🎯 What the demo shows</h4><p>A discussion with a Bible student who is not making progress — identifying the root cause with kindness and encouraging them without adding pressure.</p></div>
+        <div class="comment-prep"><strong>💬 Comment you could share:</strong> "I thought the publisher in the demonstration did something really skillful — instead of pointing out what the student wasn't doing, they asked open questions to find out what was going on beneath the surface. It reminded me that a struggling student often just needs to feel that we care about them as a person, not just as a 'project.' That shifts the whole dynamic of the conversation."</div>
+        <div class="comment-prep"><strong>📌 Empathy angle:</strong> "This demonstration helped me appreciate that everyone progresses at a different pace, and our role is to support — not pressure. Even Jehovah doesn't force people. When we approach students with patience and genuine love, we reflect his way of dealing with people."</div>
+    </div></div>
+</div>
+
+<div class="section-divider" style="color:#7e22ce;">✝️ Living as Christians</div>
+
+<div class="song-banner">🎵 <a href="https://www.jw.org/en/library/songs/jw-songbook/song-76/" target="_blank">Song 76</a></div>
+
+<!-- BE BOLD LIKE JEREMIAH -->
+<div class="section-card">
+    <div class="section-header theme-living" onclick="toggleSection(this)">
+        <div class="section-icon">💪</div>
+        <div class="section-title-area">
+            <div class="section-title">7. Be Bold Like Jeremiah</div>
+            <div class="section-meta">Discussion · 6 min · Video: Learn From Jehovah's Friends—Jeremiah</div>
+        </div>
+        <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body"><div class="section-body-inner">
+        <div class="video-note">▶️ <strong>Play video:</strong> "Learn From Jehovah's Friends—Jeremiah"</div>
+
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q: How did Jeremiah become Jehovah's friend? (<a href="https://www.jw.org/en/library/bible/study-bible/books/jeremiah/1/#v24001006" class="scripture-ref" target="_blank">Jer 1:6-8</a>)</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Suggested Answer</div>
+                <div class="answer-text">Despite initial fear and feelings of inadequacy, Jeremiah chose to trust Jehovah's assurance — "I am with you to rescue you" — and obeyed faithfully for decades, even when it was costly. Friendship with Jehovah deepens through trusting obedience, especially when it requires something from us. Jeremiah's closeness with Jehovah grew precisely through the difficult experiences of serving him.</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "The video showed that Jeremiah's friendship with Jehovah wasn't formed in easy circumstances — it was tested and deepened through hardship. I can relate to that. There have been times when I've had to stand firm on something because of my faith, and looking back, those were often the moments when I grew closest to Jehovah. It built my trust in him in a way that comfortable times don't."</div>
+            </div></div>
+        </div>
+
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q: Whom do you want to talk to about Jehovah?</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Personal Reflection</div>
+                <div class="answer-text">Jeremiah had a specific people Jehovah sent him to. We can be intentional too — thinking of a specific neighbor, workmate, classmate, or family member who doesn't yet know Jehovah. Naming someone concrete makes the ministry more purposeful and personal.</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "After watching the video, I thought about [a specific type of person in your territory or life — e.g., 'a neighbor I've spoken to a few times', 'a workmate who asks questions about my beliefs']. The video reminded me not to wait for the 'perfect' moment but to take a small, intentional step — even just a friendly visit or a brief comment about something I've read."</div>
+            </div></div>
+        </div>
+
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q: What can you say to help the person become Jehovah's friend?</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Suggested Answer</div>
+                <div class="answer-text">Share something personal about what Jehovah means to you — a specific experience of his help, comfort, or guidance. Authentic personal testimony is non-threatening and draws people in far more effectively than abstract doctrine. You might also share a scripture that has meant something to you personally, or use a jw.org video that addresses a concern they've expressed. The goal: help them see Jehovah as a real, caring Person who genuinely wants to be their Friend.</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "What I've found personally effective is simply sharing what Jehovah has done for me — a specific example of answered prayer or a time a scripture gave me comfort. When I speak from my own experience rather than trying to 'prove' something, the person I'm talking to can feel that it's real and not just a pitch. That authenticity seems to open hearts."</div>
+            </div></div>
+        </div>
+    </div></div>
+</div>
+
+<!-- MAKE A DEFENSE -->
+<div class="section-card">
+    <div class="section-header theme-living" onclick="toggleSection(this)">
+        <div class="section-icon">🛡️</div>
+        <div class="section-title-area">
+            <div class="section-title">8. "Make a Defense . . . With a Mild Temper and Deep Respect"</div>
+            <div class="section-meta">Discussion · 9 min · <a href="https://www.jw.org/en/library/bible/study-bible/books/1-peter/3/#v60003015" class="scripture-ref" target="_blank">1 Pet 3:15</a></div>
+        </div>
+        <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body"><div class="section-body-inner">
+        <div class="summary-box"><h4>🎯 Theme</h4><p>We must be bold in declaring the good news and defending Jehovah's moral standards — but we balance boldness with mild temper and deep respect for the person.</p></div>
+
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q: What other qualities are important when explaining our beliefs? (<a href="https://www.jw.org/en/library/bible/study-bible/books/1-peter/3/#v60003015" class="scripture-ref" target="_blank">1 Pet 3:15</a>)</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Suggested Answer</div>
+                <div class="answer-text">Along with boldness, Peter says: <em>mild temper</em> (gentleness, not anger or defensiveness) and <em>deep respect</em> (treating the person with dignity even when they disagree). Additional qualities: humility (not having all the answers), empathy (genuinely trying to understand their perspective), patience (not expecting a change of view immediately), and love (caring about the person above the outcome of the conversation).</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "Reading 1 Peter 3:15, I noticed that Peter didn't just say be bold — he said be bold <em>with</em> mild temper and deep respect. To me that means those qualities need to be present at the same time, not in sequence. It's not: 'be bold first, then be respectful if they push back.' It's all together. I want to work on keeping that balance — being firm on the truth without becoming tense or confrontational."</div>
+            </div></div>
+        </div>
+
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q: Why are these qualities important?</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Suggested Answer</div>
+                <div class="answer-text">Because our goal is not to win arguments but to reach hearts — and hearts are reached through love, not force. If we respond with anger or condescension, we push people away from Jehovah. Our conduct also directly reflects on Jehovah himself — a harsh response gives people a distorted picture of what serving him looks like. The right qualities can even move opposers to eventually respect and admire us.</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "I think these qualities matter because we're representing Jehovah in every conversation. When I've stayed calm and respectful even when someone was being dismissive, I've sometimes noticed their tone shift mid-conversation. It's like the mild temper we show disarms the tension. And even if they don't change their mind right then, at least they walk away with a positive impression of Jehovah's Witnesses."</div>
+            </div></div>
+        </div>
+
+        <div class="video-note">▶️ <strong>Play video:</strong> DRAMATIZATION "The Result of True Righteousness Will Be Peace"</div>
+
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q: What did you learn from the video to help explain your beliefs about homosexuality tactfully?</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Suggested Answer</div>
+                <div class="answer-text">Key principles: (1) Separate the person from the position — respect and love the individual regardless of lifestyle. (2) Explain the source of our standard — it comes from love for Jehovah and trust in his wisdom, not personal judgment of others. (3) Own the position without apology or aggression. (4) Focus on what the Bible teaches rather than your personal opinion — this shifts the conversation from "me vs. you" to "what God's Word actually says."</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "The video showed that it's possible to hold a clear position without being harsh or dismissive. What I took from it is the importance of letting the person know I genuinely respect them as a person — that my view comes from Scripture and love for Jehovah, not from any negative feeling toward them. A simple approach I've found helpful: 'I hold this view because of what the Bible teaches, and I'd love to share what it says if you're open to it.' That keeps it non-threatening and focused on Jehovah's standard, not my opinion."</div>
+            </div></div>
+        </div>
+
+        <div class="remember-box"><strong>⚠️ REMEMBER:</strong> When defending Jehovah's moral standards, avoid getting drawn into political controversies — our loyalty is to Jehovah's Kingdom, not any human political position. (<a href="https://www.jw.org/en/library/bible/study-bible/books/john/18/#v43018036" class="scripture-ref" target="_blank">John 18:36</a>)</div>
+    </div></div>
+</div>
+
+<!-- CBS -->
+<div class="section-card">
+    <div class="section-header theme-cbs" onclick="toggleSection(this)">
+        <div class="section-icon">📕</div>
+        <div class="section-title-area">
+            <div class="section-title">9. Congregation Bible Study</div>
+            <div class="section-meta">30 min · Current study book (lfb) · Lessons 90–91</div>
+        </div>
+        <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body"><div class="section-body-inner">
+        <div class="summary-box"><h4>📌 Preparation — Lessons 90 & 91</h4><p>Read both lessons before the meeting. Identify at least one point per lesson that you could share as a brief, personal comment when the conductor invites comments.</p></div>
+        <div class="comment-prep"><strong>💬 How to prepare a meaningful comment:</strong> Look for how each lesson's theme connects to: (1) something you've personally experienced in your relationship with Jehovah, (2) your ministry — a conversation at the door, a Bible student, or a practical tip for the preaching work, or (3) a specific challenge you or others face in daily life as one of Jehovah's Witnesses. The strongest comments apply the material to real life rather than just restating the paragraph. Aim for 30–45 seconds — one clear point, ideally with a scripture or a brief personal reflection.</div>
+        <a href="https://www.jw.org/en/library/books/" class="source-link" target="_blank">📚 JW.org Library — Books</a>
+    </div></div>
+</div>
+
+<div class="song-banner">🎵 Concluding Comments (3 min.) · <a href="https://www.jw.org/en/library/songs/jw-songbook/song-18/" target="_blank">Song 18</a> and Prayer</div>
+<div style="text-align:center;margin:14px 0;">
+    <a href="https://www.jw.org/en/library/jw-meeting-workbook/may-june-2026-mwb/Life-and-Ministry-Meeting-Schedule-for-June-1-7-2026/" class="source-link" target="_blank">🔗 Full CLAM Schedule on JW.org</a>
+</div>
+</div><!-- /tab-clam -->
+
+<!-- ======================================================  WATCHTOWER TAB  -->
+<div class="tab-content" id="tab-wt">
+
+<button class="expand-all-btn" onclick="expandAll('tab-wt')">▼ Expand All Sections</button>
+
+<div class="song-banner">🎵 Opening: <a href="https://www.jw.org/en/library/songs/jw-songbook/song-111/" target="_blank">Song 111 — Our Reasons for Joy</a></div>
+
+<div class="focus-banner">
+    <div class="focus-label">🎯 Focus of Study</div>
+    Why we can be happy when we are hated for serving Jehovah.
+</div>
+
+<div class="theme-verse">"Happy are you whenever men hate you." — <a href="https://www.jw.org/en/library/bible/study-bible/books/luke/6/#v42006022" class="scripture-ref" target="_blank">Luke 6:22</a></div>
+
+<!-- WHY WE ARE HATED -->
+<div class="section-card">
+    <div class="section-header theme-watchtower" onclick="toggleSection(this)">
+        <div class="section-icon">❓</div>
+        <div class="section-title-area">
+            <div class="section-title">Why We Are Hated — ¶1–10</div>
+            <div class="section-meta">Introduction + first main section</div>
+        </div>
+        <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body"><div class="section-body-inner">
+
+        <div class="para-label">¶ 1</div>
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q1: What surprising statement did Jesus make about being hated?</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Suggested Answer</div>
+                <div class="answer-text">In his Sermon on the Mount, Jesus said: "Happy are you whenever men hate you." (<a href="https://www.jw.org/en/library/bible/study-bible/books/luke/6/#v42006022" class="scripture-ref" target="_blank">Luke 6:22</a>) This was surprising because no one naturally enjoys being disliked or excluded. Yet Jesus made this statement because his followers would face hatred — and there would be genuine reasons to be happy even in the midst of it.</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "I found this verse striking right from the opening. Jesus didn't say 'tolerate' being hated or 'endure' it — he said be <em>happy</em>. That's a completely different attitude. It made me want to understand why he would say that, and the article gives very real, satisfying reasons. What Jesus said isn't blind optimism — it's based on solid truth."</div>
+            </div></div>
+        </div>
+
+        <div class="para-label">¶ 2–3</div>
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q2-3 (a): What is one reason why true Christians are persecuted? (b): How might this affect our view of opposers? (<a href="https://www.jw.org/en/library/bible/study-bible/books/john/16/#v43016002" class="scripture-ref" target="_blank">John 16:2, 3</a>)</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Suggested Answers</div>
+                <div class="answer-text"><strong>(a)</strong> We are hated because we worship Jehovah. Satan — "the god of this system of things" (<a href="https://www.jw.org/en/library/bible/study-bible/books/2-corinthians/4/#v47004003" class="scripture-ref" target="_blank">2 Cor. 4:3, 4</a>) — blinds people to the truth about Jehovah and moves them to oppose those who love and serve him. (<a href="https://www.jw.org/en/library/bible/study-bible/books/john/8/#v43008042" class="scripture-ref" target="_blank">John 8:42-44</a>)<br><br><strong>(b)</strong> Knowing Satan is ultimately behind the opposition helps us avoid hating our opposers in return. Like the imprisoned brother Pavel, who recognized most prison staff had no personal animosity — they were doing what they believed they should do, under Satan's broader influence. Seeing opposers as deceived rather than malicious helps us respond with compassion rather than bitterness.</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "The point about Satan being the real enemy — not the person opposing us — genuinely changed how I think about opposition. When a family member or workmate says something unkind about my faith, it's easy to feel personally hurt. But remembering that Satan is behind it shifts my emotion from resentment toward compassion for the person. They're being misled. That actually makes it easier for me to still care about them."</div>
+                <div class="comment-prep"><strong>📌 Ministry connection:</strong> "This is also something I keep in mind when Bible students face opposition from family members. When I can help them see that their family member isn't the real enemy, it reduces the personal hurt and helps them respond with love instead of defensiveness."</div>
+            </div></div>
+        </div>
+
+        <div class="para-label">¶ 4</div>
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q4: What can we learn from the examples of Jesus and of the disciple Stephen? (See also picture.)</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Suggested Answer</div>
+                <div class="answer-text">Both Jesus and Stephen prayed for forgiveness for those who were executing them. Jesus prayed "Father, forgive them" while being nailed to the torture stake (<a href="https://www.jw.org/en/library/bible/study-bible/books/luke/23/#v42023034" class="scripture-ref" target="_blank">Luke 23:34</a>); Stephen asked God to forgive his executioners (<a href="https://www.jw.org/en/library/bible/study-bible/books/acts/7/#v44007058" class="scripture-ref" target="_blank">Acts 7:58-60</a>). The lesson: we do not hate our opposers — we may even be moved to pray for them. And Jehovah answered those prayers. Many involved in Jesus' execution later repented and got baptized (<a href="https://www.jw.org/en/library/bible/study-bible/books/acts/2/#v44002036" class="scripture-ref" target="_blank">Acts 2:36-41</a>), and Saul — who approved Stephen's death — became the apostle Paul.</div>
+                <div class="image-analysis"><strong>🖼️ Picture (¶4):</strong> Shows Jesus and Stephen each praying for those persecuting them. Application: This image reinforces that choosing prayer over bitterness is not weakness — it is the highest form of spiritual courage, practiced by both our Lord and an early disciple. When I look at this picture, I'm reminded that no opposer is beyond Jehovah's reach, and that praying for them is one of the most powerful things I can do.</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "The examples of Jesus and Stephen in paragraph 4 are challenging in the most positive way. Both of them — under the worst possible circumstances — thought of forgiveness, not retaliation. What strikes me is that their prayers were answered: some of those very people later became disciples. It gives me real hope that praying for those who oppose me isn't wishful thinking — Jehovah can use those prayers to reach people I can't reach myself."</div>
+            </div></div>
+        </div>
+
+        <div class="para-label">¶ 5</div>
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q5: What do you learn from César's experience?</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Suggested Answer</div>
+                <div class="answer-text">César's experience shows the power of consistent, respectful conduct combined with persistent prayer for an opposer. His mother prioritized the Kingdom while never neglecting her husband, and taught her children to respect him even in his opposition. Over years, the family's loving behavior gradually softened a violent father. After a heartfelt prayer, César offered to study the Bible with his father — who said yes, and was eventually baptized. Lesson: not all opposers change quickly, but sustained Christlike conduct can make a real difference over time.</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "César's story in paragraph 5 encouraged me because it shows that consistent conduct over a long period can reach even a hardened opposer. His mother never gave up showing love while maintaining her integrity. What stood out to me was that it was a heartfelt prayer that opened the door to the Bible study conversation. It reminds me that prayer is not just preparation — it can be the turning point itself."</div>
+                <div class="comment-prep"><strong>📌 Ministry application:</strong> "This experience is one I might share with a Bible student whose family member is strongly opposed. It shows that their patient, loving example — not arguments — is often what makes the lasting difference."</div>
+            </div></div>
+        </div>
+
+        <div class="para-label">¶ 6</div>
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q6: According to Mark 13:13, what is another reason why we are hated?</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Suggested Answer</div>
+                <div class="answer-text">We are hated "on account of [Jesus'] name" (<a href="https://www.jw.org/en/library/bible/study-bible/books/mark/13/#v41013013" class="scripture-ref" target="_blank">Mark 13:13</a>) — his reputation and his authority as King of God's Kingdom. People who trust in earthly leaders resent our proclamation that Jesus has been ruling as King since 1914 and will soon replace all rival governments. Our message directly challenges where people place their ultimate loyalty.</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "Paragraph 6 helped me see that being hated 'on account of Jesus' name' is actually tied to the Kingdom hope — our message that Jesus is already ruling. People who are heavily invested in this world's systems find that message threatening, because it implies those systems are temporary. I see this as a privilege, not just a burden — it means our preaching is actually landing with impact."</div>
+            </div></div>
+        </div>
+
+        <div class="para-label">¶ 7–8</div>
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q7-8: Why do some of Jehovah's people become targets of ridicule? (<a href="https://www.jw.org/en/library/bible/study-bible/books/john/15/#v43015018" class="scripture-ref" target="_blank">John 15:18-20</a>) (See also pictures.)</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Suggested Answer</div>
+                <div class="answer-text">We are targets of ridicule because we "are no part of the world" (<a href="https://www.jw.org/en/library/bible/study-bible/books/john/15/#v43015018" class="scripture-ref" target="_blank">John 15:18-20</a>) — we reject ungodly attitudes, conduct, and speech. (<a href="https://www.jw.org/en/library/bible/study-bible/books/1-peter/4/#v60004003" class="scripture-ref" target="_blank">1 Pet. 4:3, 4</a>) Like Ignacio, who faced years of mockery for his high moral standards, our consistent stand can make us conspicuous. Yet his story shows the ultimate outcome — the teacher who mocked him for years attended meetings and was eventually baptized, moved by the consistency of Ignacio's conduct.</div>
+                <div class="image-analysis"><strong>🖼️ Picture (¶8):</strong> Shows Ignacio witnessing to his teacher with the caption "Regardless of our age, we can courageously and successfully defend our faith." Application: This picture speaks especially to those who face pressure at school or work. It shows that age doesn't limit our ability to make an impact — and that the person in front of us (even an authority figure) may be more open than they appear. The "witness" we give through our daily conduct is as powerful as the words we say.</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "The experience of Ignacio in paragraphs 7 and 8 is one I find really encouraging. He endured years of mockery and never compromised. What moved me is that the teacher — the very one who ridiculed him — is the one who approached Ignacio at the end and asked how he stayed consistent. Our faithfulness makes people curious. Even when they're mocking on the outside, they may be observing and wondering on the inside."</div>
+            </div></div>
+        </div>
+
+        <div class="para-label">¶ 9–10</div>
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q9-10 (a): For what other reason do Christians stand out as different from Satan's world? (b): What can we learn from the apostle Paul's example?</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Suggested Answers</div>
+                <div class="answer-text"><strong>(a)</strong> We are politically neutral — we do not run for office or vote, because our allegiance is to Jehovah and his Kingdom under Christ. (<a href="https://www.jw.org/en/library/bible/study-bible/books/john/18/#v43018036" class="scripture-ref" target="_blank">John 18:36</a>; <a href="https://www.jw.org/en/library/bible/study-bible/books/romans/13/#v45013001" class="scripture-ref" target="_blank">Rom. 13:1</a>) This makes us stand out in a heavily politicized world and sometimes brings opposition and imprisonment.<br><br><strong>(b)</strong> Paul preached to everyone while under arrest — guards, governors, court officials. He viewed imprisonment not as punishment but as an assignment from Jehovah to find sheeplike individuals in places he would never otherwise reach. (<a href="https://www.jw.org/en/library/bible/study-bible/books/colossians/4/#v51004003" class="scripture-ref" target="_blank">Col. 4:3</a>)</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "What Paul's example in paragraph 10 shows me is that no circumstance — not even imprisonment — stops the good news from spreading if we have the right heart. He didn't see his chains as a limitation but as a platform. I want to have that attitude about whatever circumstances I face — instead of thinking 'this isn't the right time or place to witness,' looking for the opportunity within the situation."</div>
+            </div></div>
+        </div>
+    </div></div>
+</div>
+
+<!-- WHY WE CAN BE HAPPY -->
+<div class="section-card">
+    <div class="section-header theme-happy" onclick="toggleSection(this)">
+        <div class="section-icon">😊</div>
+        <div class="section-title-area">
+            <div class="section-title">Why We Can Be Happy When Hated — ¶11–17</div>
+            <div class="section-meta">Main application section — three key reasons</div>
+        </div>
+        <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body"><div class="section-body-inner">
+
+        <div class="para-label">¶ 11</div>
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q11: How can experiencing persecution strengthen our faith? Give an example.</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Suggested Answer</div>
+                <div class="answer-text">Persecution confirms that Bible prophecy is being fulfilled, which is a source of happiness rather than shock. Jehovah foretold from Genesis 3:15 onward that those following him would be hated. (<a href="https://www.jw.org/en/library/bible/study-bible/books/genesis/3/#v01003015" class="scripture-ref" target="_blank">Gen. 3:15</a>; <a href="https://www.jw.org/en/library/bible/study-bible/books/matthew/10/#v40010022" class="scripture-ref" target="_blank">Matt. 10:22</a>; <a href="https://www.jw.org/en/library/bible/study-bible/books/2-timothy/3/#v55003012" class="scripture-ref" target="_blank">2 Tim. 3:12</a>) When opposition arises, it assures us we are serving the true God. The sister whose husband burned her Bible grew stronger in faith — persecution "convinced me that this was the true religion."</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "Paragraph 11 gave me a new way of thinking about opposition. Instead of asking 'Why is this happening to me?', I can ask 'Why wouldn't this happen to me — didn't Jehovah say it would?' When I see my trials in the light of fulfilled prophecy, they stop feeling random and start feeling like confirmation that I'm on the right path. That actually produces real happiness, not just resignation."</div>
+            </div></div>
+        </div>
+
+        <div class="para-label">¶ 12</div>
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q12: What helped one brother to cope with persecution?</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Suggested Answer</div>
+                <div class="answer-text">Two interconnected practices gave him peace: (1) <strong>Constant, structured prayer</strong> — starting each morning in prayer, praying when difficulties arose, and praying specifically when injustices made him angry. (2) <strong>Meditation on examples of integrity</strong> — both biblical figures and modern-day brothers and sisters. Together, these produced the peace Jesus promised. (<a href="https://www.jw.org/en/library/bible/study-bible/books/john/14/#v43014027" class="scripture-ref" target="_blank">John 14:27</a>; <a href="https://www.jw.org/en/library/bible/study-bible/books/john/16/#v43016033" class="scripture-ref" target="_blank">16:33</a>)</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "The brother in paragraph 12 described locking himself in the bathroom to pray when he was angry — and I found that so relatable and so practical. He didn't suppress his emotions; he brought them honestly to Jehovah. That's something I've been trying to do more — instead of waiting until I feel 'spiritual enough' to pray, coming to Jehovah exactly as I am, including when I'm frustrated or hurt. That kind of honest prayer has helped me maintain peace in ways I didn't expect."</div>
+                <div class="comment-prep"><strong>🙏 Getting to know Jehovah:</strong> "What this paragraph shows me about Jehovah is that he wants us to bring our full, honest selves to him in prayer — anger, sadness, confusion included. He doesn't require us to be composed before approaching him. That's the kind of Father he is, and learning that has deepened my personal relationship with him."</div>
+            </div></div>
+        </div>
+
+        <div class="para-label">¶ 13</div>
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q13: What can help us to conquer hatred?</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Suggested Answer</div>
+                <div class="answer-text">Love — deep love for both Jehovah and for our brothers and sisters — can help us conquer hatred. Jesus loved his Father and his friends completely, right to his last breath. (<a href="https://www.jw.org/en/library/bible/study-bible/books/john/13/#v43013001" class="scripture-ref" target="_blank">John 13:1</a>; <a href="https://www.jw.org/en/library/bible/study-bible/books/john/15/#v43015013" class="scripture-ref" target="_blank">15:13</a>) When love fills our hearts, there is less room for bitterness to take hold. Love is not passive — it is an active force that displaces hatred.</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "The idea in paragraph 13 that love is 'stronger than hatred' is not just poetic — it's practical. I've noticed that when I'm regularly building my relationship with Jehovah and spending time with my spiritual family, opposition from the outside genuinely bothers me less. The love on the inside is louder than the hatred on the outside. I think that's what Jesus was modeling when he said to love our enemies — it's not about pretending the opposition doesn't hurt, but about having something stronger filling our hearts."</div>
+            </div></div>
+        </div>
+
+        <div class="para-label">¶ 14</div>
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q14: What helped Paul to stand firm in the face of death?</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Suggested Answer</div>
+                <div class="answer-text">Paul wrote: "God did not give us a spirit of cowardice, but one of power and of love." (<a href="https://www.jw.org/en/library/bible/study-bible/books/2-timothy/1/#v55001007" class="scripture-ref" target="_blank">2 Tim. 1:7</a>) His deep personal love for Jehovah empowered him to face death without abandoning true worship. This was not bravado — it was faith-powered courage rooted in his intimate relationship with Jehovah. (<a href="https://www.jw.org/en/library/bible/study-bible/books/acts/20/#v44020022" class="scripture-ref" target="_blank">Acts 20:22-24</a>)</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "What I took from paragraph 14 is that Paul's courage came from his relationship with Jehovah, not from a natural fearless personality. He had fear — that's why he needed to remind himself that Jehovah gave him 'a spirit of power and of love, not of cowardice.' The antidote to cowardice, according to Paul, was love — love for Jehovah specifically. That gives me something to work on: the more I deepen my relationship with Jehovah, the more courage I'll have when I need it."</div>
+            </div></div>
+        </div>
+
+        <div class="para-label">¶ 15</div>
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q15: How have our brothers and sisters in our time shown unselfish love for one another? (See also picture.)</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Suggested Answer</div>
+                <div class="answer-text">Many today willingly accept personal risk for their brothers and sisters — like Aquila and Priscilla risking their lives for Paul (<a href="https://www.jw.org/en/library/bible/study-bible/books/romans/16/#v45016003" class="scripture-ref" target="_blank">Rom. 16:3, 4</a>). In Russia, brothers and sisters go to courthouses to encourage those arrested. One sister was so overwhelmed seeing dozens of her spiritual family there supporting her that she couldn't speak for a while. This unselfish love is what makes our congregation a genuine spiritual family — not just a social group.</div>
+                <div class="image-analysis"><strong>🖼️ Picture (¶15):</strong> Shows brothers and sisters supporting a fellow worshipper being led into confinement, captioned: "Even where our work is banned or restricted, our brothers and sisters have shown unselfish love for fellow Christians." Application: Even in our local congregation — where we may not face imprisonment — we can show this same quality to those going through trials of any kind. The principle is the same: show up, be present, let them know they are not alone. This picture reminds me to look for opportunities to do exactly that for someone in my congregation right now.</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "The picture and the experience in paragraph 15 moved me. The sister who was arrested couldn't even speak when she saw her brothers and sisters at the courthouse — she didn't need words from them; their presence was enough. It made me think about who in my congregation might be going through something difficult right now, and whether I'm making my support felt in a tangible way, not just in thoughts or prayers."</div>
+            </div></div>
+        </div>
+
+        <div class="para-label">¶ 16</div>
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q16: Why did the apostle Peter say that those mistreated for serving God have reason to be happy? (<a href="https://www.jw.org/en/library/bible/study-bible/books/1-peter/4/#v60004014" class="scripture-ref" target="_blank">1 Peter 4:14</a>)</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Suggested Answer</div>
+                <div class="answer-text">Peter said that mistreatment for serving God is proof that "the spirit of glory — yes, the spirit of God — is resting upon you" — meaning Jehovah's approval rests on those who endure. Peter lived this himself — after being arrested and flogged, he and the apostles rejoiced because they had been "counted worthy to be dishonored in behalf of Jesus' name," and immediately kept preaching. (<a href="https://www.jw.org/en/library/bible/study-bible/books/acts/5/#v44005040" class="scripture-ref" target="_blank">Acts 5:40-42</a>)</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "First Peter 4:14 gives a perspective I want to hold onto: mistreatment for Jehovah's name isn't just something to endure — it's actually evidence that Jehovah's spirit is actively resting on me. Peter and the apostles walked out of a flogging and rejoiced. I'm not being flogged, but whatever opposition I face, I can apply the same logic: this is proof Jehovah sees me and his spirit is with me. That makes facing opposition feel completely different."</div>
+                <div class="comment-prep"><strong>🙏 Getting to know Jehovah:</strong> "What I love about this point is what it tells us about Jehovah — he doesn't overlook what we go through in his name. He notices every uncomfortable conversation, every moment we had to stand firm, every sacrifice. Knowing that he sees and approves makes me want to keep going — and actually makes me feel closer to him through the difficulty."</div>
+            </div></div>
+        </div>
+
+        <div class="para-label">¶ 17</div>
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Q17: What did Jesus tell his disciples on the night before his death?</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Suggested Answer</div>
+                <div class="answer-text">Jesus told his disciples: "Whoever loves me will be loved by my Father, and I will love him." (<a href="https://www.jw.org/en/library/bible/study-bible/books/john/14/#v43014021" class="scripture-ref" target="_blank">John 14:21</a>) This is our ultimate hope — a future time when we will be loved, not hated, for serving Jehovah. (<a href="https://www.jw.org/en/library/bible/study-bible/books/2-thessalonians/1/#v53001006" class="scripture-ref" target="_blank">2 Thess. 1:6-8</a>) Until then, we find genuine comfort and strength in the reasons we've explored to be happy even when we're hated.</div>
+                <div class="comment-prep"><strong>💬 Comment you could share:</strong> "Paragraph 17 closes with a future hope that genuinely excites me — a time when we will be loved, not hated, for serving Jehovah. Right now, doing the right thing often makes us stand out in a negative way. But the direction of history, according to the Bible, is toward a world where Jehovah's ways are honored. I keep that picture in mind when the present opposition feels heavy. It's not wishful thinking — it's where this is all heading."</div>
+            </div></div>
+        </div>
+    </div></div>
+</div>
+
+<!-- HOW WOULD YOU ANSWER -->
+<div class="section-card">
+    <div class="section-header theme-watchtower" onclick="toggleSection(this)">
+        <div class="section-icon">✅</div>
+        <div class="section-title-area">
+            <div class="section-title">How Would You Answer?</div>
+            <div class="section-meta">Three review questions — covering the key points of the article</div>
+        </div>
+        <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body"><div class="section-body-inner">
+
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Why are Jesus' followers hated?</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Summary Answer (4 reasons)</div>
+                <div class="answer-text">1. <strong>We worship Jehovah</strong> — Satan blinds people to the truth and moves them to oppose true worshippers.<br>2. <strong>We honor Jesus as King</strong> — those who trust earthly rulers resent our Kingdom proclamation.<br>3. <strong>We reject Satan's world</strong> — our moral standards and conduct make us targets of ridicule.<br>4. <strong>We are politically neutral</strong> — our allegiance to God's Kingdom above human governments brings opposition and sometimes imprisonment.</div>
+                <div class="comment-prep"><strong>💬 Brief comment to share:</strong> "The article shows there are four distinct reasons we are hated — all of which trace back to the fact that we are genuinely different from the world around us. Rather than seeing that as a burden, I want to see it as a mark of our identity as Jehovah's people. If we weren't different, we wouldn't be hated — and we wouldn't be his."</div>
+            </div></div>
+        </div>
+
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">How is our love stronger than hatred?</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Summary Answer</div>
+                <div class="answer-text">Our love for Jehovah — deep and personal — gives us divine-powered courage to face even death faithfully, as Paul showed. Our love for our brothers and sisters provides practical strength through tangible, unselfish support when we face opposition. And our love for opposers moves us to pray for them and treat them with respect, sometimes softening their hearts over time. Love is an active force that displaces hatred and bitterness from within us.</div>
+                <div class="comment-prep"><strong>💬 Brief comment to share:</strong> "I appreciate the three-dimensional view of love in this article — love for Jehovah gives courage, love for our brothers gives strength, and love for opposers keeps us from becoming bitter. Each one does something specific to help us overcome hatred. Together they make hatred genuinely powerless against us."</div>
+            </div></div>
+        </div>
+
+        <div class="qa-item">
+            <div class="qa-question" onclick="toggleAnswer(this)">
+                <span class="qa-question-text">Why can we be happy when hated?</span>
+                <span class="qa-toggle">▸ Show answer</span>
+            </div>
+            <div class="qa-answer"><div class="qa-answer-inner">
+                <div class="answer-label">📝 Summary Answer (3 reasons)</div>
+                <div class="answer-text">1. <strong>Prophecy fulfilled</strong> — persecution confirms we are serving the true God, just as Jehovah foretold. We are not shocked — we are assured.<br>2. <strong>God's approval</strong> — endurance under mistreatment is tangible proof that Jehovah's spirit rests on us. He sees and values every trial we face in his name.<br>3. <strong>Future hope</strong> — Jesus promised that those who love him will be loved by his Father. We look forward with certainty to a world where we will be loved, not hated, for serving Jehovah.</div>
+                <div class="comment-prep"><strong>💬 Brief comment to share:</strong> "What I love about the three reasons in the second half of the article is that they are all verifiable. Fulfilled prophecy — we can check the Bible. Jehovah's approval — we can see it in our lives. The future hope — we can read it clearly in Scripture. This isn't blind optimism; it's happiness based on solid, reliable truth."</div>
+            </div></div>
+        </div>
+    </div></div>
+</div>
+
+<div class="song-banner">🎵 Closing: <a href="https://www.jw.org/en/library/songs/jw-songbook/song-149/" target="_blank">Song 149 — A Victory Song</a></div>
+<div style="text-align:center;margin:14px 0;">
+    <a href="https://www.jw.org/en/library/magazines/watchtower-study-march-2026/Why-You-Can-Be-Happy-When-You-Are-Hated/" class="source-link" target="_blank">🔗 Read Full Article on JW.org</a>
+</div>
+</div><!-- /tab-wt -->
+
+<div class="page-footer">
+    Generated for the week of June 1–7, 2026 · Sources: JW.org<br>
+    <em>For personal study and meeting preparation only</em>
+</div>
+
+<script>
+function showTab(tab, btnEl) {
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    btnEl.classList.add('active');
+}
+function toggleSection(header) {
+    header.classList.toggle('open');
+    header.nextElementSibling.classList.toggle('open');
+}
+function toggleAnswer(questionEl) {
+    const answer = questionEl.nextElementSibling;
+    const toggle = questionEl.querySelector('.qa-toggle');
+    answer.classList.toggle('open');
+    toggle.textContent = answer.classList.contains('open') ? '▾ Hide answer' : '▸ Show answer';
+}
+function expandAll(tabId) {
+    const tab = document.getElementById(tabId);
+    tab.querySelectorAll('.section-header').forEach(h => { h.classList.add('open'); h.nextElementSibling.classList.add('open'); });
+    tab.querySelectorAll('.qa-answer').forEach(a => a.classList.add('open'));
+    tab.querySelectorAll('.qa-toggle').forEach(t => { t.textContent = '▾ Hide answer'; });
+}
+</script>
+</body>
+</html>
