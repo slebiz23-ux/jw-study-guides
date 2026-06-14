@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLAM Study Guide — June 15–21, 2026</title>
+<style>
+  :root {
+    --blue: #1d4ed8; --blue-light: #eff6ff; --blue-mid: #bfdbfe;
+    --green: #15803d; --green-light: #f0fdf4; --green-mid: #bbf7d0;
+    --purple: #7e22ce; --purple-light: #faf5ff; --purple-mid: #e9d5ff;
+    --orange: #c2410c; --orange-light: #fff7ed; --orange-mid: #fed7aa;
+    --amber: #f59e0b; --amber-light: #fffbeb; --gray-bg: #f0f4f8;
+    --indigo: #6366f1; --sidebar-width: 340px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--gray-bg); color: #1e293b; line-height: 1.65; font-size: 15px; }
+  .container { max-width: 820px; margin: 0 auto; padding: 16px; }
+
+  /* Header */
+  .header { background: linear-gradient(135deg, #1e3a5f 0%, #1d4ed8 100%); color: white; padding: 28px 24px 22px; border-radius: 14px; margin-bottom: 20px; text-align: center; }
+  .week-badge { display: inline-block; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); color: white; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 14px; border-radius: 20px; margin-bottom: 10px; }
+  .header h1 { font-size: 1.7rem; font-weight: 800; margin-bottom: 4px; }
+  .header .subtitle { font-size: 0.95rem; opacity: 0.85; }
+  .header .bible-ref { font-size: 0.88rem; opacity: 0.7; margin-top: 6px; }
+
+  /* Controls */
+  .controls { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+  .btn { border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 600; transition: all .15s; }
+  .btn-primary { background: var(--blue); color: white; }
+  .btn-primary:hover { background: #1e40af; }
+  .btn-outline { background: white; color: #475569; border: 1px solid #cbd5e1; }
+  .btn-outline:hover { background: #f1f5f9; }
+
+  /* Song banners */
+  .song-banner { background: linear-gradient(90deg, #1e3a5f, #1d4ed8); color: white; padding: 14px 20px; border-radius: 10px; margin: 14px 0; display: flex; align-items: center; gap: 10px; }
+  .song-banner .icon { font-size: 1.4rem; }
+  .song-banner a { color: #93c5fd; text-decoration: none; }
+  .song-banner a:hover { color: white; text-decoration: underline; }
+
+  /* Section headers */
+  .section-header { display: flex; align-items: center; gap: 10px; padding: 14px 20px; border-radius: 10px; cursor: pointer; user-select: none; font-weight: 700; font-size: 1.05rem; margin-top: 24px; margin-bottom: 4px; transition: opacity .15s; }
+  .section-header:hover { opacity: 0.92; }
+  .section-header .arrow { font-size: 0.8rem; margin-left: auto; transition: transform .2s; }
+  .section-header.open .arrow { transform: rotate(90deg); }
+  .section-treasures { background: var(--blue); color: white; }
+  .section-apply { background: var(--green); color: white; }
+  .section-living { background: var(--purple); color: white; }
+  .section-cbs { background: var(--orange); color: white; }
+
+  /* Cards */
+  .card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  .card-title { font-weight: 700; font-size: 1rem; margin-bottom: 12px; color: #0f172a; display: flex; align-items: center; gap: 8px; }
+  .badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+  .badge-blue { background: var(--blue-light); color: var(--blue); }
+  .badge-green { background: var(--green-light); color: var(--green); }
+  .badge-purple { background: var(--purple-light); color: var(--purple); }
+  .badge-orange { background: var(--orange-light); color: var(--orange); }
+
+  /* Comment prep */
+  .comment-prep { background: var(--amber-light); border-left: 4px solid var(--amber); padding: 14px 16px; border-radius: 0 8px 8px 0; margin: 12px 0; }
+  .comment-prep .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #92400e; margin-bottom: 6px; }
+  .comment-prep p { color: #78350f; font-size: 0.9rem; margin-top: 4px; }
+
+  /* Image */
+  .img-card { background: var(--green-light); border-left: 4px solid var(--green); padding: 14px 16px; border-radius: 0 8px 8px 0; margin: 12px 0; }
+  .img-card img { max-width: 100%; border-radius: 8px; margin: 8px 0; }
+  .img-card .caption { font-size: 0.82rem; color: #374151; font-style: italic; margin-bottom: 8px; }
+  .img-card .analysis { font-size: 0.9rem; color: #166534; }
+
+  /* Video notes */
+  .video-card { background: #fff7ed; border-left: 4px solid #d97706; padding: 14px 16px; border-radius: 0 8px 8px 0; margin: 12px 0; }
+  .video-card .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #92400e; margin-bottom: 6px; }
+
+  /* Dialogue */
+  .dialogue { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; margin: 12px 0; }
+  .dialogue-title { font-weight: 700; color: #374151; margin-bottom: 10px; font-size: 0.9rem; }
+  .dialogue-line { margin-bottom: 10px; }
+  .dialogue-role { font-weight: 700; color: #0f172a; }
+  .dialogue-pub { color: var(--blue); }
+  .dialogue-hh { color: #059669; }
+  .coaching { font-style: italic; color: var(--indigo); font-size: 0.85rem; margin-left: 14px; }
+
+  /* Scripture chips */
+  .scripture-chip { display: inline-block; background: var(--blue-light); color: var(--blue); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 14px; cursor: pointer; margin: 2px 3px; border: none; transition: all .15s; text-decoration: none; }
+  .scripture-chip:hover { background: var(--blue); color: white; }
+
+  /* Points list */
+  .points-list { list-style: none; padding: 0; }
+  .points-list li { padding: 8px 0; padding-left: 18px; position: relative; border-bottom: 1px solid #f1f5f9; font-size: 0.92rem; }
+  .points-list li:last-child { border-bottom: none; }
+  .points-list li::before { content: "▸"; position: absolute; left: 0; color: #94a3b8; }
+
+  /* Q&A */
+  .qa-block { border: 1px solid #e2e8f0; border-radius: 8px; margin: 8px 0; overflow: hidden; }
+  .qa-question { background: #f8fafc; padding: 12px 16px; font-weight: 600; font-size: 0.92rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+  .qa-question:hover { background: #f1f5f9; }
+  .qa-answer { padding: 14px 16px; font-size: 0.92rem; background: white; border-top: 1px solid #e2e8f0; display: none; }
+  .qa-answer.open { display: block; }
+
+  /* Sidebar */
+  #sidebar { position: fixed; top: 0; right: -360px; width: var(--sidebar-width); height: 100%; background: white; box-shadow: -4px 0 20px rgba(0,0,0,.15); z-index: 1000; transition: right .3s ease; overflow-y: auto; }
+  #sidebar.open { right: 0; }
+  .sidebar-header { background: var(--blue); color: white; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1; }
+  .sidebar-header h3 { font-size: 0.95rem; font-weight: 700; }
+  .sidebar-close { background: none; border: none; color: white; font-size: 1.4rem; cursor: pointer; padding: 0 4px; line-height: 1; }
+  .sidebar-body { padding: 16px; }
+  .sidebar-ref { font-size: 0.82rem; color: #64748b; margin-bottom: 8px; }
+  .sidebar-text { font-size: 0.9rem; line-height: 1.7; color: #1e293b; }
+  .sidebar-text blockquote { background: #f8fafc; padding: 12px; border-left: 3px solid var(--blue); border-radius: 0 8px 8px 0; font-style: italic; margin: 10px 0; }
+  .sidebar-link { display: inline-block; margin-top: 12px; color: var(--blue); font-size: 0.85rem; font-weight: 600; text-decoration: none; }
+  .sidebar-link:hover { text-decoration: underline; }
+  #sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 999; }
+  #sidebar-overlay.open { display: block; }
+
+  /* Section content collapse */
+  .section-content { display: none; }
+  .section-content.open { display: block; }
+
+  /* Misc */
+  .warn-box { background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; padding: 12px 14px; margin: 10px 0; font-size: 0.9rem; color: #991b1b; }
+  .info-box { background: #eff6ff; border: 1px solid var(--blue-mid); border-radius: 8px; padding: 12px 14px; margin: 10px 0; font-size: 0.9rem; color: #1e40af; }
+  .divider { height: 1px; background: #e2e8f0; margin: 14px 0; }
+  .footer { text-align: center; color: #94a3b8; font-size: 0.8rem; padding: 24px 0 32px; }
+  p { margin: 8px 0; }
+  h4 { font-size: 0.95rem; font-weight: 700; color: #1e293b; margin: 14px 0 8px; }
+  h5 { font-size: 0.88rem; font-weight: 700; color: #475569; margin: 10px 0 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+  @media (max-width: 600px) { #sidebar { width: 100%; right: -100%; } .header h1 { font-size: 1.3rem; } }
+</style>
+</head>
+<body>
+
+<!-- Sidebar overlay -->
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<!-- Sidebar -->
+<div id="sidebar">
+  <div class="sidebar-header">
+    <h3 id="sidebar-title">Scripture Reference</h3>
+    <button class="sidebar-close" onclick="closeSidebar()">×</button>
+  </div>
+  <div class="sidebar-body" id="sidebar-body">
+    <p class="sidebar-ref" id="sidebar-ref"></p>
+    <div class="sidebar-text" id="sidebar-text"></div>
+    <a class="sidebar-link" id="sidebar-link" href="#" target="_blank">Open full article →</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="week-badge">June 15–21, 2026</div>
+    <h1>Our Christian Life and Ministry</h1>
+    <div class="subtitle">Congregation Bible Study Guide — Prepared for Comment</div>
+    <div class="bible-ref">📖 Weekly Bible Reading: Jeremiah 7–8</div>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <button class="btn btn-primary" onclick="expandAll()">▼ Expand All</button>
+    <button class="btn btn-outline" onclick="collapseAll()">▲ Collapse All</button>
+  </div>
+
+  <!-- Opening Song -->
+  <div class="song-banner">
+    <span class="icon">🎵</span>
+    <span><strong>Song 152</strong> — <a href="https://www.jw.org/en/library/music-songs/sing-out-joyfully/152-a-place-that-will-bring-you-praise/" target="_blank">"A Place That Will Bring You Praise"</a> &amp; Opening Prayer</span>
+  </div>
+
+  <!-- ===================== TREASURES ===================== -->
+  <div class="section-header section-treasures" onclick="toggleSection('treasures')">
+    <span>⛏️ TREASURES FROM GOD'S WORD</span>
+    <span class="arrow" id="arrow-treasures">▶</span>
+  </div>
+  <div class="section-content" id="section-treasures">
+
+    <!-- TALK -->
+    <div class="card">
+      <div class="card-title">
+        <span>1.</span>
+        <span>They Treated Jehovah's Temple With Contempt</span>
+        <span class="badge badge-blue">10 min · Talk</span>
+      </div>
+
+      <p>Jeremiah boldly delivered Jehovah's message at the temple gate — a message that attacked the false security many Judeans felt. They believed the mere presence of the temple guaranteed divine protection, regardless of their conduct. Jehovah made clear that faithful <em>obedience</em> — not religious buildings — determines his blessing.</p>
+
+      <div class="divider"></div>
+
+      <h4>Key Scripture Points</h4>
+
+      <h5>Point 1 — False Trust in the Temple <button class="scripture-chip" onclick="showSidebar('Jer 7:4, 8–10','Jeremiah 7:4, 8–10','Do not put your trust in deceptive words and say, \'This is the temple of Jehovah, the temple of Jehovah, the temple of Jehovah!\' ...You are putting your trust in deceptive words... Can you steal, murder, commit adultery, swear falsely, make sacrifices to Baʹal, and follow after gods you had not known, and then come and stand before me in this house that bears my name and say, \'We will be saved,\' despite your doing all these detestable things?','https://www.jw.org/en/library/bible/study-bible/books/jeremiah/7/')">Jer 7:4, 8–10</button> <em>(jr 21 ¶12)</em></h5>
+      <p>The Judeans repeated "The temple of Jehovah!" like a protective chant. They believed ritual attendance would save them regardless of theft, murder, adultery, and idolatry. Jeremiah exposed this as spiritual self-deception — Jehovah is not fooled by outward religion that masks moral corruption.</p>
+
+      <h5>Point 2 — Their Conduct Dishonored Jehovah's Name <button class="scripture-chip" onclick="showSidebar('Jer 7:11','Jeremiah 7:11','Has this house that bears my name become a cave of robbers in your eyes? Here I have seen it for myself, declares Jehovah.','https://www.jw.org/en/library/bible/study-bible/books/jeremiah/7/')">Jer 7:11</button></h5>
+      <p>Jehovah asked: "Has this house that bears my name become a cave of robbers?" Their actions — coming to the temple after committing sins — turned worship into a mockery. Jesus later quoted these exact words when cleansing the temple in 33 C.E. (Mark 11:17), showing the same principle applies today to those who separate worship from personal conduct.</p>
+
+      <h5>Point 3 — Shiloh: A Warning Example <button class="scripture-chip" onclick="showSidebar('Jer 7:12–14','Jeremiah 7:12–14','However, go now to my place in Shiʹloh, where I first caused my name to reside, and see what I did to it because of the badness of my people Israel. ...So I will do to the house that bears my name, in which you are trusting, and to this place that I gave to you and your forefathers, just as I did to Shiʹloh.','https://www.jw.org/en/library/bible/study-bible/books/jeremiah/7/')">Jer 7:12–14</button> <em>(it "Shiloh" No. 2 ¶4)</em></h5>
+      <p>Shiloh once housed the ark of the covenant but was destroyed by the Philistines because of Israel's unfaithfulness. Jehovah used this historical precedent to warn Jerusalem: no physical structure is exempt from his judgment when his people disobey. The temple in Jerusalem would likewise be destroyed — as it was in 607 B.C.E.</p>
+
+      <div class="divider"></div>
+
+      <!-- Image -->
+      <div class="img-card">
+        <img src="https://assetsnffrgf-a.akamaihd.net/assets/m/202026167/univ/wpub/202026167_univ_cnt_1_xs.jpg" alt="A brother yelling at work vs. kindly greeting at Kingdom Hall">
+        <div class="caption">A brother behaves differently at work than at the Kingdom Hall — illustrating hypocrisy in worship.</div>
+        <div class="analysis">This powerful image captures the very thing Jeremiah warned against: compartmentalizing worship. If we treat people kindly only within congregation walls but act harshly elsewhere, we're repeating what the Judeans did — using the "temple" as a cover. Jehovah sees our conduct everywhere, not just on meeting nights.</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="info-box"><strong>Ask yourself:</strong> 'Does my conduct reflect well on Jehovah <em>at all times</em>?' — at work, online, in traffic, with family?</div>
+
+      <!-- Comment Prep -->
+      <div class="comment-prep">
+        <div class="label">💬 Comment you could share</div>
+        <p>"I was struck by how Jeremiah's audience trusted in a building rather than their relationship with Jehovah. That really made me think about whether I ever rely on routine meeting attendance while overlooking my daily conduct."</p>
+      </div>
+      <div class="comment-prep">
+        <div class="label">📌 Personal application</div>
+        <p>"In the ministry, I want to make sure my words and actions align. If I speak about Jehovah's high standards but act inconsistently, it undermines my message."</p>
+      </div>
+      <div class="comment-prep">
+        <div class="label">🙏 Getting to know Jehovah</div>
+        <p>"This passage reveals that Jehovah is deeply concerned with integrity — he wants worship backed by real moral conduct, not just ritual. His name is precious to him, and he's grieved when it's dishonored."</p>
+      </div>
+    </div>
+
+    <!-- SPIRITUAL GEMS -->
+    <div class="card">
+      <div class="card-title">
+        <span>2.</span>
+        <span>Spiritual Gems</span>
+        <span class="badge badge-blue">10 min</span>
+      </div>
+
+      <h4>Featured Question</h4>
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)">
+          <span><button class="scripture-chip" onclick="showSidebar('Jer 8:22','Jeremiah 8:22','Is there no balsam in Gilead? Or is there no healer there? Why has the daughter of my people not been restored to health?','https://www.jw.org/en/library/bible/study-bible/books/jeremiah/8/')">Jer 8:22</button> — In what sense was there "no balsam in Gilead"? <em>(jr 135 ¶14)</em></span>
+          <span>▶</span>
+        </div>
+        <div class="qa-answer">
+          <p>Gilead was famous for its precious balsam resin — a highly valued medicinal salve exported across the ancient world. When Jeremiah asked, "Is there no balsam in Gilead?", he was using a powerful rhetorical question. <strong>Literally</strong> there WAS balsam in Gilead — but <strong>spiritually</strong>, there was none for Israel.</p>
+          <p>The prophets and priests had become spiritually useless healers. Instead of applying the truth of God's Word to the nation's moral wounds, they minimized sin: "There is peace! There is peace!" when there was no peace. (Jer 8:11) The only true "healer" who could have restored them was Jehovah himself — but the nation refused his remedy.</p>
+          <p><strong>Application today:</strong> The "balsam of Gilead" pictures the healing and comfort available through Jehovah — through prayer, the Scriptures, congregation association, and qualified elders. When we feel spiritually discouraged, the remedy is available; we need to actively apply it.</p>
+          <div class="comment-prep" style="margin-top:10px;">
+            <div class="label">💬 Sample comment</div>
+            <p>"I found it meaningful that there WAS literal balsam in Gilead, yet no spiritual healing. It reminded me that Jehovah provides all we need for spiritual restoration — but we have to actively reach out for help rather than minimizing our problems."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h4>10 Suggested Spiritual Gems from Jeremiah 7–8</h4>
+      <p style="font-size:0.85rem;color:#64748b;margin-bottom:10px;">First-person, varied angles — each under 60 seconds</p>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>1. The danger of substituting ritual for genuine obedience <button class="scripture-chip" onclick="event.stopPropagation();showSidebar('Jer 7:22,23','Jeremiah 7:22,23','On the day I brought your forefathers out of Egypt, I did not speak with them or command them concerning whole burnt offerings and sacrifices. But I did give them this command: \"Obey my voice, and I will become your God, and you will become my people.\"','https://www.jw.org/en/library/bible/study-bible/books/jeremiah/7/')">Jer 7:22, 23</button></span><span>▶</span></div>
+        <div class="qa-answer"><p>"I was moved by Jeremiah 7:22, 23 where Jehovah says his primary command was 'Obey my voice' — not sacrifice. It made me ask myself: Do I sometimes substitute religious activities for actually living by Bible principles in daily life?"</p></div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>2. Jehovah's persistence in warning his people <button class="scripture-chip" onclick="event.stopPropagation();showSidebar('Jer 7:25,26','Jeremiah 7:25,26','I kept sending all my servants the prophets to you, sending them each day, again and again. But they refused to listen to me... they acted worse than their forefathers!','https://www.jw.org/en/library/bible/study-bible/books/jeremiah/7/')">Jer 7:25, 26</button></span><span>▶</span></div>
+        <div class="qa-answer"><p>"I appreciated seeing Jehovah's patience in Jeremiah 7:25 — he sent prophets 'again and again.' It shows how long-suffering Jehovah is. But it also shows that persistent rejection of his warnings has consequences. I want to be responsive to spiritual counsel."</p></div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>3. Wisdom is useless without obedience <button class="scripture-chip" onclick="event.stopPropagation();showSidebar('Jer 8:8,9','Jeremiah 8:8,9','How can you say: \"We are wise, and we have the law of Jehovah\"? For in fact, the lying stylus of the scribes has been used only for falsehood. The wise have been put to shame... they have rejected the word of Jehovah, and what wisdom do they have?','https://www.jw.org/en/library/bible/study-bible/books/jeremiah/8/')">Jer 8:8, 9</button></span><span>▶</span></div>
+        <div class="qa-answer"><p>"Jeremiah 8:8 really spoke to me — the scribes claimed wisdom but rejected Jehovah's word. Knowing the Bible academically isn't enough; I need to let it actually shape my decisions and actions."</p></div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>4. False teachers cause real harm <button class="scripture-chip" onclick="event.stopPropagation();showSidebar('Jer 8:11','Jeremiah 8:11','They try to heal the breakdown of the daughter of my people lightly, saying, \"There is peace! There is peace!\" When there is no peace.','https://www.jw.org/en/library/bible/study-bible/books/jeremiah/8/')">Jer 8:11</button></span><span>▶</span></div>
+        <div class="qa-answer"><p>"The priests said 'There is peace!' when there was none. I appreciate that Jehovah's organization doesn't minimize problems — it gives us the real spiritual medicine from God's Word, even when the message requires personal adjustment."</p></div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>5. Animals follow instinct; humans can choose faithfulness <button class="scripture-chip" onclick="event.stopPropagation();showSidebar('Jer 8:7','Jeremiah 8:7','Even the stork in the sky knows its seasons; the turtledove and the swift and the thrush keep to the time of their return. But my own people do not understand the judgment of Jehovah.','https://www.jw.org/en/library/bible/study-bible/books/jeremiah/8/')">Jer 8:7</button></span><span>▶</span></div>
+        <div class="qa-answer"><p>"I found Jeremiah 8:7 striking — migratory birds instinctively follow their Creator's design, but Israel refused to respond to Jehovah's clear guidance. It motivates me to be even more responsive to spiritual direction."</p></div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>6. Idolatry ultimately hurts the worshiper <button class="scripture-chip" onclick="event.stopPropagation();showSidebar('Jer 7:18,19','Jeremiah 7:18,19','Am I the one they are hurting? declares Jehovah. Is it not they themselves, to their own shame?','https://www.jw.org/en/library/bible/study-bible/books/jeremiah/7/')">Jer 7:18, 19</button></span><span>▶</span></div>
+        <div class="qa-answer"><p>"Jehovah asked, 'Am I the one they are hurting?' — showing that false worship harms the worshiper, not Jehovah. Modern idols — excessive screen time, money, status — similarly harm us spiritually. I want to guard my heart against anything that competes with Jehovah."</p></div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>7. Jehovah values those who call out sincerely <button class="scripture-chip" onclick="event.stopPropagation();showSidebar('Jer 7:2,3','Jeremiah 7:2,3','Hear the word of Jehovah... Reform your ways and your actions, and I will allow you to keep residing in this place.','https://www.jw.org/en/library/bible/study-bible/books/jeremiah/7/')">Jer 7:2, 3</button></span><span>▶</span></div>
+        <div class="qa-answer"><p>"Even in this severe condemnation, Jehovah extended mercy — 'Reform your ways and I will allow you to stay.' His patience in offering that escape route shows he takes no pleasure in punishment and genuinely wants people to change."</p></div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>8. Spiritual healing is available — if we seek it <button class="scripture-chip" onclick="event.stopPropagation();showSidebar('Jer 8:22','Jeremiah 8:22','Is there no balsam in Gilead? Or is there no healer there?','https://www.jw.org/en/library/bible/study-bible/books/jeremiah/8/')">Jer 8:22</button></span><span>▶</span></div>
+        <div class="qa-answer"><p>"The rhetorical power of Jeremiah 8:22 is that there WAS balsam available — the nation just refused to use it. Today Jehovah provides spiritual healing through prayer, elders, and God's Word. The remedy exists; I want to use it when I need it."</p></div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>9. Grief at the world's suffering can motivate our ministry <button class="scripture-chip" onclick="event.stopPropagation();showSidebar('Jer 8:18,19','Jeremiah 8:18,19','My grief is incurable; my heart is sick. From a distant land there is a cry for help from the daughter of my people.','https://www.jw.org/en/library/bible/study-bible/books/jeremiah/8/')">Jer 8:18, 19</button></span><span>▶</span></div>
+        <div class="qa-answer"><p>"Jeremiah expressed genuine grief over his people's suffering — 'My grief is incurable.' He didn't preach from a position of indifference. I want to cultivate that same empathy for the people I meet in the ministry."</p></div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>10. Trusting in Jehovah rather than human systems <button class="scripture-chip" onclick="event.stopPropagation();showSidebar('Jer 7:4','Jeremiah 7:4','Do not put your trust in deceptive words and say, \"This is the temple of Jehovah, the temple of Jehovah, the temple of Jehovah!\"','https://www.jw.org/en/library/bible/study-bible/books/jeremiah/7/')">Jer 7:4</button></span><span>▶</span></div>
+        <div class="qa-answer"><p>"The triple repetition of 'The temple of Jehovah!' reminds me how easy it is to develop a kind of talismanic trust — in our organization, our congregation, our routines — rather than our actual relationship with Jehovah. He wants heart worship, not just membership."</p></div>
+      </div>
+    </div>
+
+    <!-- BIBLE READING -->
+    <div class="card">
+      <div class="card-title">
+        <span>3.</span>
+        <span>Bible Reading</span>
+        <span class="badge badge-blue">4 min · th Study 2</span>
+      </div>
+      <p><strong>Reading Assignment:</strong> <button class="scripture-chip" onclick="showSidebar('Jer 8:4–13','Jeremiah 8:4–13','Will they fall and not get up again? If one would turn back, will the other not also turn back? Why is this people, Jerusalem, unfaithful with an enduring unfaithfulness? They hold fast to deception; they refuse to turn back. ...Each one keeps returning to the popular course, like a horse dashing into the battle. Even the stork in the sky knows its seasons; the turtledove and the swift and the thrush keep to the time of their return. But my own people do not understand the judgment of Jehovah. ...They try to heal the breakdown of the daughter of my people lightly, saying, \"There is peace! There is peace!\" When there is no peace. ...When I gather them, I will bring them to their end — there will be no grapes left on the vine, no figs on the fig tree, and the leaves will wither.','https://www.jw.org/en/library/bible/study-bible/books/jeremiah/8/')">Jer 8:4–13</button></p>
+      <p style="margin-top:8px;font-size:0.9rem;"><strong>th Study 2 — Conversational Manner.</strong> Read naturally, as if speaking to a friend. Avoid a monotone or overly dramatic style. Let the text breathe — especially the rhetorical questions in verse 4–5.</p>
+
+      <h4>Key Verse for Comment</h4>
+      <div class="comment-prep">
+        <div class="label">💬 Post-reading comment on Jer 8:7</div>
+        <p>"What struck me in this reading was verse 7 — even migratory birds instinctively follow their Creator's design, yet Israel refused to respond to Jehovah's direction. That comparison is quite humbling — natural creation obeys, but humans with the ability to reason can choose to disregard God's guidance."</p>
+      </div>
+    </div>
+
+  </div><!-- end treasures content -->
+
+  <!-- ===================== APPLY YOURSELF ===================== -->
+  <div class="section-header section-apply" onclick="toggleSection('apply')">
+    <span>🌱 APPLY YOURSELF TO THE FIELD MINISTRY</span>
+    <span class="arrow" id="arrow-apply">▶</span>
+  </div>
+  <div class="section-content" id="section-apply">
+
+    <!-- Part 4: Informal Witnessing -->
+    <div class="card">
+      <div class="card-title">
+        <span>4.</span>
+        <span>Starting a Conversation</span>
+        <span class="badge badge-green">3 min · Informal Witnessing</span>
+      </div>
+      <p><strong>Assignment:</strong> Demonstrate starting a conversation in an informal setting. Apply <strong>lmd Lesson 5, Point 5 — Tact: "Agree with and commend the person where possible."</strong></p>
+      <p style="font-size:0.88rem;color:#64748b;margin-top:4px;">Principle: "Let your words always be gracious." (Col. 4:6)</p>
+
+      <div class="divider"></div>
+      <h4>Sample Dialogue — Informal Setting (e.g., waiting room, grocery store)</h4>
+
+      <div class="dialogue">
+        <div class="dialogue-title">🎬 Scene: Two people waiting in a checkout line. Publisher notices householder is holding a book about mindfulness/peace.</div>
+
+        <div class="dialogue-line">
+          <div class="dialogue-role dialogue-pub">Publisher:</div>
+          <div>"That looks interesting — I've been hearing a lot lately about people searching for more inner peace. Is that something you've been thinking about?"</div>
+          <div class="coaching">← lmd L5 pt.4: Do not be quick to correct. Let them express themselves. Show genuine interest (L1).</div>
+        </div>
+
+        <div class="dialogue-line">
+          <div class="dialogue-role dialogue-hh">Householder:</div>
+          <div>"Yeah, honestly. There's so much stress these days — the news, work, everything. I've been trying different things."</div>
+        </div>
+
+        <div class="dialogue-line">
+          <div class="dialogue-role dialogue-pub">Publisher:</div>
+          <div>"That's so understandable — I think most people feel that way right now. I've actually found something that's made a real difference for me personally."</div>
+          <div class="coaching">← lmd L5 pt.5: Agree and commend first. Build common ground before introducing Bible truth.</div>
+        </div>
+
+        <div class="dialogue-line">
+          <div class="dialogue-role dialogue-hh">Householder:</div>
+          <div>"Oh really? What's that?"</div>
+        </div>
+
+        <div class="dialogue-line">
+          <div class="dialogue-role dialogue-pub">Publisher:</div>
+          <div>"I've been studying the Bible, and there's a verse I keep coming back to — Philippians 4:6, 7 — it talks about bringing anxieties to God in prayer and receiving a peace 'that surpasses all understanding.' That's been genuinely helpful to me."</div>
+          <div class="coaching">← Natural, personal testimony approach. Cite scripture briefly. Not preaching — sharing.</div>
+        </div>
+
+        <div class="dialogue-line">
+          <div class="dialogue-role dialogue-hh">Householder:</div>
+          <div>"Hm, I'm not really religious but... that sounds different from what I expected."</div>
+        </div>
+
+        <div class="dialogue-line">
+          <div class="dialogue-role dialogue-pub">Publisher:</div>
+          <div>"I completely understand — a lot of people feel the same way at first. Would it be okay if I left you something short to read? It actually addresses exactly what you're looking for — practical Bible-based solutions for stress and anxiety."</div>
+          <div class="coaching">← lmd L5 pt.3: Choose appealing words. Adjust language to non-religious background. Offer a tract/invitation naturally.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Part 5: House to House -->
+    <div class="card">
+      <div class="card-title">
+        <span>5.</span>
+        <span>Following Up</span>
+        <span class="badge badge-green">4 min · House to House</span>
+      </div>
+      <p><strong>Assignment:</strong> Share a truth from <a href="https://www.jw.org/en/library/brochures/love-people-make-disciples/appendix-a/" target="_blank">Appendix A</a> of the <em>Love People</em> brochure. Apply <strong>lmd Lesson 9, Point 3 — Empathy: Think about what the person is going through and why they need what the Bible offers.</strong></p>
+
+      <div class="divider"></div>
+      <h4>Sample Dialogue — Return Visit, House to House</h4>
+
+      <div class="dialogue">
+        <div class="dialogue-title">🎬 Scene: Publisher calls back on someone who expressed interest in the resurrection hope during a previous call. Using Appendix A truth: "The dead will live again."</div>
+
+        <div class="dialogue-line">
+          <div class="dialogue-role dialogue-pub">Publisher:</div>
+          <div>"Hi! I'm the one who stopped by a few weeks ago — you mentioned your mother had recently passed. I've been thinking about your situation, and I wanted to bring something that might be meaningful."</div>
+          <div class="coaching">← lmd L9 pt.3: Think about the person. Acknowledge their situation before diving into content. This shows genuine empathy.</div>
+        </div>
+
+        <div class="dialogue-line">
+          <div class="dialogue-role dialogue-hh">Householder:</div>
+          <div>"Oh yes, I remember you. Come in — things have been really hard."</div>
+        </div>
+
+        <div class="dialogue-line">
+          <div class="dialogue-role dialogue-pub">Publisher:</div>
+          <div>"I'm sorry to hear that. Grief is real, and there's no quick fix. But I did want to show you something — may I?" <em>[Opens Love People brochure to Appendix A or a Bible]</em> "The Bible actually promises something remarkable about the dead. Look at what Jesus said in John 5:28, 29..."</div>
+          <div class="coaching">← Ask permission before reading. Validate feelings first. Empathy comes before the message.</div>
+        </div>
+
+        <div class="dialogue-line">
+          <div class="dialogue-role dialogue-hh">Householder:</div>
+          <div>"'All those in the memorial tombs will come out...' Does that really mean what I think it means?"</div>
+        </div>
+
+        <div class="dialogue-line">
+          <div class="dialogue-role dialogue-pub">Publisher:</div>
+          <div>"Yes — it means your mother could literally live again on a paradise earth. This isn't wishful thinking — it's based on Jehovah God's promise, and he has never broken a promise. Does that give you some comfort?"</div>
+          <div class="coaching">← Connect truth directly to their personal need. Use Jehovah's name naturally. End with a question to engage the heart.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Part 6: Making Disciples -->
+    <div class="card">
+      <div class="card-title">
+        <span>6.</span>
+        <span>Making Disciples</span>
+        <span class="badge badge-green">5 min · lff Lesson 19 · th Study 19</span>
+      </div>
+      <p><strong>Assignment:</strong> Demonstrate a Bible study using <em>Enjoy Life Forever!</em> (lff) Lesson 19, Point 6. Apply <strong>th Study 19 — Effort to Reach the Heart</strong>.</p>
+      <p style="font-size:0.88rem;color:#64748b;margin-top:4px;">Lesson 19 covers baptism as a step of dedication to Jehovah. Point 6 focuses on helping the student understand that baptism is a personal decision — not something done for family or others, but as a heartfelt response to what they've learned about Jehovah.</p>
+
+      <div class="dialogue">
+        <div class="dialogue-title">🎬 Scene: Bible study — discussing the meaning of baptism and helping the student examine their own motivations.</div>
+
+        <div class="dialogue-line">
+          <div class="dialogue-role dialogue-pub">Publisher:</div>
+          <div>"We've covered a lot in our study. Before we talk about baptism specifically, I'd love to hear — how has your view of Jehovah changed since we started?"</div>
+          <div class="coaching">← th study 19: Reach the heart. Start with their journey, not a doctrinal quiz. Heart questions first.</div>
+        </div>
+
+        <div class="dialogue-line">
+          <div class="dialogue-role dialogue-hh">Student:</div>
+          <div>"Honestly, I see him very differently now. He actually cares about people — about me. It's not just a set of rules."</div>
+        </div>
+
+        <div class="dialogue-line">
+          <div class="dialogue-role dialogue-pub">Publisher:</div>
+          <div>"That's beautiful — that's exactly what we want to build: a real relationship. Now, look at what we read in lesson 19 — baptism isn't just an outward ceremony, it's a symbol of a decision you've already made in your heart. Who would you say you're doing this for?"</div>
+          <div class="coaching">← lff L19 pt.6: Help them verbalize that baptism is their personal dedication to Jehovah — not for family or tradition.</div>
+        </div>
+
+        <div class="dialogue-line">
+          <div class="dialogue-role dialogue-hh">Student:</div>
+          <div>"For Jehovah... and because I genuinely believe this is the truth."</div>
+        </div>
+
+        <div class="dialogue-line">
+          <div class="dialogue-role dialogue-pub">Publisher:</div>
+          <div>"That's exactly the right foundation. Romans 10:10 says 'with the heart one exercises faith.' Jehovah knows your heart — and if your heart is already there, baptism is simply the public declaration of what's already true. Are there any concerns you'd want to talk through first?"</div>
+          <div class="coaching">← Validate their answer, cite scripture, then invite further discussion. Never pressure — let the heart lead.</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end apply content -->
+
+  <!-- Mid-meeting song -->
+  <div class="song-banner">
+    <span class="icon">🎵</span>
+    <span><strong>Song 91</strong> — <a href="https://www.jw.org/en/library/music-songs/sing-out-joyfully/91-our-labor-of-love/" target="_blank">"Our Labor of Love"</a></span>
+  </div>
+
+  <!-- ===================== LIVING AS CHRISTIANS ===================== -->
+  <div class="section-header section-living" onclick="toggleSection('living')">
+    <span>✝️ LIVING AS CHRISTIANS</span>
+    <span class="arrow" id="arrow-living">▶</span>
+  </div>
+  <div class="section-content" id="section-living">
+
+    <!-- Part 7: Kingdom Hall Video -->
+    <div class="card">
+      <div class="card-title">
+        <span>7.</span>
+        <span>How We Can Show Appreciation for Our Kingdom Halls</span>
+        <span class="badge badge-purple">5 min · Discussion</span>
+      </div>
+
+      <div class="video-card">
+        <div class="label">🎬 Video — "Become Jehovah's Friend: Love Jehovah's House"</div>
+        <p><strong>Synopsis:</strong> In this animated video from the "Become Jehovah's Friend" series, Caleb and his family demonstrate the proper care and attitude toward the Kingdom Hall. Caleb is shown wiping down chairs and taking care not to damage or dirty the hall. The video teaches children (and reinforces for adults) that the Kingdom Hall is Jehovah's house — a special place dedicated to worship. Showing love for Jehovah's house reflects our love for Jehovah himself. The tone is warm and practical, showing that even small acts of care (putting things back in their place, arriving clean and prepared) are expressions of respect for sacred worship.</p>
+        <p style="margin-top:8px;font-size:0.85rem;">🔗 <a href="https://www.jw.org/open?wtlocale=E&lank=pub-pk_31_VIDEO" target="_blank">Watch video on JW.org</a></p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>Q: How should we treat the Kingdom Hall, and why?</span><span>▶</span></div>
+        <div class="qa-answer">
+          <p>The Kingdom Hall is dedicated to Jehovah's worship — it's a place where his name is honored and his people gather. Treating it with care shows:</p>
+          <ul style="margin:8px 0 0 20px;">
+            <li>Respect for Jehovah himself, whose name the hall represents</li>
+            <li>Appreciation for the brotherhood's collective efforts and donations that built and maintain it</li>
+            <li>A good witness to visitors who observe how we treat our place of worship</li>
+          </ul>
+          <div class="comment-prep" style="margin-top:10px;">
+            <div class="label">💬 Comment idea</div>
+            <p>"The video reminded me that showing love for the Kingdom Hall is really showing love for Jehovah. It made me want to be more intentional about arriving on time, keeping things clean, and treating the hall as the sacred space it is."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <p><strong>Read <button class="scripture-chip" onclick="showSidebar('1 Tim 2:9,10','1 Timothy 2:9, 10','I want women to adorn themselves in appropriate dress, with modesty and soundness of mind, not with styles of hair braiding and gold or pearls or very expensive clothing, but in the way that is proper for women professing devotion to God, namely, through good works.','https://www.jw.org/en/library/bible/study-bible/books/1-timothy/2/')">1 Timothy 2:9, 10</button></strong></p>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>Q: In what other way can brothers and sisters show respect when attending Christian meetings?</span><span>▶</span></div>
+        <div class="qa-answer">
+          <p>Paul's counsel to Timothy shows that our <em>appearance</em> at meetings also reflects our respect for Jehovah and his congregation. "Appropriate dress, with modesty and soundness of mind" means:</p>
+          <ul style="margin:8px 0 0 20px;">
+            <li>Dressing in a way that honors Jehovah — not drawing attention to ourselves</li>
+            <li>Coming prepared — with our Bible, watchtower/workbook, and a prepared heart</li>
+            <li>Arriving on time, phones silenced, and fully engaged — treating the meeting as time with Jehovah</li>
+          </ul>
+          <div class="comment-prep" style="margin-top:10px;">
+            <div class="label">💬 Comment idea</div>
+            <p>"I appreciated that Paul's counsel in 1 Timothy 2:9, 10 connects modest dress with 'devotion to God.' Our appearance at meetings is actually a form of worship — it says something about how seriously we take our time with Jehovah."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Part 8: Donations -->
+    <div class="card">
+      <div class="card-title">
+        <span>8.</span>
+        <span>How Your Donations Are Used — Maintaining Our Kingdom Halls</span>
+        <span class="badge badge-purple">10 min · Discussion</span>
+      </div>
+      <p>Based on <a href="https://www.jw.org/en/library/series/how-your-donations-are-used/Maintaining-Our-Kingdom-Halls/" target="_blank"><em>hdu</em> article 30 — "Maintaining Our Kingdom Halls"</a></p>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>Q: What expenses are involved in keeping Kingdom Halls in good condition, and why is this work important?</span><span>▶</span></div>
+        <div class="qa-answer">
+          <p>Typical ongoing expenses for a Kingdom Hall include: utilities (electricity, water, heating/cooling), cleaning supplies, landscaping, structural maintenance (roofing, plumbing, electrical systems), audio-visual equipment, furniture replacement, and insurance.</p>
+          <p>This work is important because:</p>
+          <ul style="margin:8px 0 0 20px;">
+            <li>A well-maintained hall honors Jehovah and reflects the congregation's values</li>
+            <li>It ensures comfort for all who attend — elderly, children, people with disabilities</li>
+            <li>It provides a good witness to the community about how Jehovah's people care for their property</li>
+          </ul>
+          <div class="comment-prep" style="margin-top:10px;">
+            <div class="label">💬 Comment idea</div>
+            <p>"I found it meaningful to think about how much goes into maintaining a Kingdom Hall — utilities, repairs, supplies. It made me appreciate the contributions brothers and sisters make, and motivated me to be more regular in my own contributions."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>Q: What do you appreciate about how large maintenance projects are organized and funded?</span><span>▶</span></div>
+        <div class="qa-answer">
+          <p>Large maintenance projects (major repairs, renovations, HVAC replacement) are often coordinated with the branch office, which may provide assistance through LDC (Local Design/Construction) volunteers and worldwide contribution funds. This shows the brotherhood truly acts as a global family — congregations with more resources help those with less.</p>
+          <div class="comment-prep" style="margin-top:10px;">
+            <div class="label">💬 Comment idea</div>
+            <p>"What touches me about how the organization handles large projects is the global cooperation. Skilled brothers volunteer their time and expertise. It's a visible expression of what Jesus said would identify his disciples — genuine love among themselves."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>Q: How can you help?</span><span>▶</span></div>
+        <div class="qa-answer">
+          <ul style="margin:6px 0 0 20px;">
+            <li>Contribute financially through the congregation contribution box or the jw.org Donations button</li>
+            <li>Volunteer time for cleaning, landscaping, and minor maintenance</li>
+            <li>Use the hall carefully to reduce unnecessary wear and damage</li>
+            <li>Encourage a culture of care by modeling good habits for children</li>
+          </ul>
+          <div class="comment-prep" style="margin-top:10px;">
+            <div class="label">💬 Comment idea</div>
+            <p>"After reading this article, I was reminded that helping maintain our Kingdom Hall is a privilege, not a burden. Even something as simple as wiping down a table or picking up litter in the parking lot is an act of worship."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end living content -->
+
+  <!-- ===================== CBS ===================== -->
+  <div class="section-header section-cbs" onclick="toggleSection('cbs')">
+    <span>📕 CONGREGATION BIBLE STUDY</span>
+    <span class="arrow" id="arrow-cbs">▶</span>
+  </div>
+  <div class="section-content" id="section-cbs">
+
+    <div class="card">
+      <div class="card-title">
+        <span>9.</span>
+        <span>CBS — Introduction to Section 14 &amp; Lessons 94–95</span>
+        <span class="badge badge-orange">30 min · lfb</span>
+      </div>
+      <p><strong>Book:</strong> <em>Lessons You Can Learn From the Bible</em> (lfb) · <strong>Section 14 Intro + Lesson 94–95</strong></p>
+      <p style="margin-top:4px;"><strong>Topic:</strong> Jesus' Disciples Receive Holy Spirit at Pentecost</p>
+      <p style="font-size:0.88rem;color:#64748b;">Key scriptures: Acts 2:1–8, 14–18, 32–42 · Joel 2:28, 29</p>
+
+      <div class="divider"></div>
+
+      <h4>Section 14 Introduction</h4>
+      <div class="img-card">
+        <img src="https://cms-imgp.jw-cdn.org/img/p/1102016144/univ/art/1102016144_univ_lsr_lg.jpg" alt="Introduction to Section 14 - Early Christians spread the good news">
+        <div class="caption">Under Jesus' direction, the early Christians spread the good news of God's Kingdom.</div>
+        <div class="analysis">Section 14 covers the period after Jesus' ascension to heaven, when the disciples received holy spirit and began the greatest preaching campaign in history. It shows how Jehovah empowers ordinary people to accomplish extraordinary spiritual work. The section emphasizes courage under persecution, the unity of the early congregation, and Jesus' active role as King.</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h4>Lessons 94–95 Narrative: The Holy Spirit at Pentecost</h4>
+
+      <div class="img-card">
+        <img src="https://cms-imgp.jw-cdn.org/img/p/1102016104/univ/art/1102016104_univ_lsr_lg.jpg" alt="Disciples receive holy spirit at Pentecost">
+        <div class="caption">Flames appeared over each disciple's head as they received holy spirit at Pentecost 33 C.E.</div>
+        <div class="analysis">This remarkable scene — the flames, the wind, the disciples speaking in multiple languages simultaneously — was Jehovah visibly demonstrating that the new Christian congregation had his approval and active backing. The miracle validated the disciples' message and broke through language barriers to reach Jews from across the Roman world who had gathered in Jerusalem for the festival.</div>
+      </div>
+
+      <p>It is Pentecost 33 C.E. — 10 days after Jesus returned to heaven. About 120 of his disciples are gathered together in Jerusalem (Acts 1:15). Suddenly, a sound like a rushing windstorm fills the house. Flames appear over each person's head. All of them are filled with holy spirit and begin speaking in languages they had never learned — people from at least 15 different regions hear the message in their own mother tongue.</p>
+
+      <p>The crowd is bewildered. Some mock, saying they must be drunk. But Peter, now bold and fearless (compare with his denials months earlier!), stands and addresses the crowd. He quotes Joel 2:28, 29 — showing this was fulfillment of Bible prophecy. He explains the death and resurrection of Jesus, presenting clear Scriptural proof. About 3,000 people are baptized that very day.</p>
+
+      <div class="divider"></div>
+
+      <h4>Questions &amp; Suggested Answers</h4>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>Q94-1: What happened 10 days after Jesus returned to heaven?</span><span>▶</span></div>
+        <div class="qa-answer">
+          <p>On the day of Pentecost, while about 120 disciples were gathered together in Jerusalem, Jehovah poured out holy spirit on them. There was a sound like a windstorm, flames appeared over each person's head, and they all began speaking in foreign languages they had never learned. (<button class="scripture-chip" onclick="showSidebar('Acts 2:1–4','Acts 2:1–4','When the day of Pentecost had arrived, they were all together in the same place. Suddenly there was a noise from heaven, just like that of a rushing, stiff breeze, and it filled the whole house where they were sitting. And tongues as if of fire became visible to them and were distributed, and one came to rest on each one of them, and they were all filled with holy spirit and started to speak in different languages, just as the spirit enabled them to speak.','https://www.jw.org/en/library/bible/study-bible/books/acts/2/')">Acts 2:1–4</button>)</p>
+          <div class="comment-prep" style="margin-top:8px;">
+            <div class="label">💬 Comment idea</div>
+            <p>"I was struck that Pentecost came exactly 50 days after Passover — Jehovah's timing is always precise. The disciples had been faithfully waiting and praying for 10 days. Their patient waiting was rewarded with something amazing."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>Q94-2: Why could people from many places understand what the disciples were saying?</span><span>▶</span></div>
+        <div class="qa-answer">
+          <p>Jehovah empowered the disciples to speak in the native languages of the visitors — not an unknown tongue, but actual languages from across the Roman world. Jews had come from Parthia, Media, Egypt, Rome, and at least 15 other regions. Each heard in his own language the "magnificent things of God." (<button class="scripture-chip" onclick="showSidebar('Acts 2:5–8','Acts 2:5–8','There were Jews living in Jerusalem, devout men from every nation under heaven. So when this sound occurred, a crowd gathered and were bewildered, because each one heard them speaking in his own language. Indeed, they were utterly amazed and said: \"See here, all these who are speaking are Galileans, are they not? How is it, then, that each one of us is hearing his own native language?\"','https://www.jw.org/en/library/bible/study-bible/books/acts/2/')">Acts 2:5–8</button>)</p>
+          <div class="comment-prep" style="margin-top:8px;">
+            <div class="label">💬 Comment idea</div>
+            <p>"What I find beautiful about this miracle is that Jehovah used it to show that his message was for people of ALL languages and backgrounds — not just for Jews or any one nation. Today we see that same breadth with JW.org in 1,000+ languages."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>Q94-3: What did Peter tell the crowd about Jesus?</span><span>▶</span></div>
+        <div class="qa-answer">
+          <p>Peter told the crowd that Jesus of Nazareth — whom they had killed — was raised from the dead by God, as the Scriptures had foretold (Psalm 16:10). He then explained that the risen Jesus had received holy spirit from his Father Jehovah and had poured it out on the disciples. Peter ended with this powerful declaration: "Let all the house of Israel know for a certainty that God made him both Lord and Christ — this Jesus whom you impaled." (<button class="scripture-chip" onclick="showSidebar('Acts 2:36','Acts 2:36','Therefore, let all the house of Israel know for a certainty that God made him both Lord and Christ, this Jesus whom you impaled.','https://www.jw.org/en/library/bible/study-bible/books/acts/2/')">Acts 2:36</button>)</p>
+          <div class="comment-prep" style="margin-top:8px;">
+            <div class="label">💬 Comment idea</div>
+            <p>"Peter's boldness here is remarkable — just 50 days earlier he was denying even knowing Jesus. Holy spirit transformed him into a fearless preacher willing to confront an entire crowd. That shows what Jehovah can do through imperfect people who rely on him."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>Q95-1: How did many in the crowd respond to Peter's message?</span><span>▶</span></div>
+        <div class="qa-answer">
+          <p>About 3,000 people were "stabbed to the heart" by Peter's words — they felt genuine remorse. They asked, "What shall we do?" Peter told them to repent and be baptized in the name of Jesus Christ for forgiveness of sins, and they would receive holy spirit. That very day, about 3,000 were baptized. (<button class="scripture-chip" onclick="showSidebar('Acts 2:37–41','Acts 2:37–41','Now when they heard this, they were stabbed to the heart, and they said to Peter and the rest of the apostles: \"Men, brothers, what shall we do?\" Peter said to them: \"Repent, and let each one of you be baptized in the name of Jesus Christ for forgiveness of your sins, and you will receive the free gift of the holy spirit...\" So those who gladly accepted his word were baptized, and on that day about 3,000 souls were added.','https://www.jw.org/en/library/bible/study-bible/books/acts/2/')">Acts 2:37–41</button>)</p>
+          <div class="comment-prep" style="margin-top:8px;">
+            <div class="label">💬 Comment idea</div>
+            <p>"3,000 people baptized in one day! It shows that when the right message reaches prepared hearts, people can respond quickly. It motivates me to keep sharing the good news — we never know whose heart Jehovah has already been preparing."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>Q95-2: How did the first-century Christians treat each other?</span><span>▶</span></div>
+        <div class="qa-answer">
+          <p>After baptism, these 3,000 new disciples devoted themselves to the apostles' teaching, to fellowship, to sharing meals together, and to prayer. They sold their possessions and helped anyone who had need. They met daily at the temple and in private homes. Verse 47 says "Jehovah continued to add to them daily those being saved." (<button class="scripture-chip" onclick="showSidebar('Acts 2:44–47','Acts 2:44–47','All those who became believers were together and had everything in common, and they would sell their possessions and goods and distribute the proceeds to all, according to what each one needed. And day after day they were in constant attendance at the temple together, and they took their meals in private homes and shared their food with great rejoicing and sincerity of heart, praising God and finding favor with all the people.','https://www.jw.org/en/library/bible/study-bible/books/acts/2/')">Acts 2:44–47</button>)</p>
+          <div class="comment-prep" style="margin-top:8px;">
+            <div class="label">💬 Comment idea</div>
+            <p>"The love and generosity of the early Christians described in Acts 2:44–47 is a beautiful picture of congregation life. They shared meals, goods, and worship every day. It makes me appreciate our congregation association even more."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h4>Wrap-Up Questions</h4>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>🙏 What does this teach us about Jehovah's character?</span><span>▶</span></div>
+        <div class="qa-answer">
+          <p>This account reveals several beautiful aspects of Jehovah's personality:</p>
+          <ul style="margin:8px 0 0 20px;">
+            <li><strong>He is a God who keeps his promises.</strong> He promised through Joel that he would pour out his spirit, and he did — exactly as foretold, on the right day.</li>
+            <li><strong>He empowers imperfect people.</strong> The disciples were ordinary Galileans, but holy spirit made them effective preachers in multiple languages. Jehovah doesn't wait for perfect people — he works with willing ones.</li>
+            <li><strong>He is impartial.</strong> Holy spirit was poured out on men AND women, young AND old (Acts 2:17, 18). Jehovah values all his worshippers equally.</li>
+            <li><strong>He is the ultimate Healer.</strong> Unlike the false prophets in Jeremiah's day who said "There is peace!" falsely, Jehovah provided genuine spiritual healing through the gospel — and 3,000 people found true peace that day.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-question" onclick="toggleQA(this)"><span>📌 What points from this lesson can we use in the ministry or daily life?</span><span>▶</span></div>
+        <div class="qa-answer">
+          <ul style="margin:6px 0 0 20px;">
+            <li><strong>In the ministry:</strong> Acts 2 is a powerful scripture to share about the reality of holy spirit and Jehovah's backing for our preaching work. It can also be used when people ask why we preach in so many languages.</li>
+            <li><strong>For personal courage:</strong> Peter's transformation from fearful denier to bold preacher encourages us that Jehovah can help us overcome our fears in the ministry.</li>
+            <li><strong>For congregation love:</strong> The early Christians modeled genuine care for each other. We can look for practical ways to support fellow brothers and sisters.</li>
+            <li><strong>For patience:</strong> The disciples waited 10 days for holy spirit — in prayer and unity. When Jehovah's answers seem delayed, keep waiting faithfully.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end CBS content -->
+
+  <!-- Closing Song -->
+  <div class="song-banner">
+    <span class="icon">🎵</span>
+    <span><strong>Song 71</strong> — <a href="https://www.jw.org/en/library/music-songs/sing-out-joyfully/71-jehovahs-army/" target="_blank">"Jehovah's Army"</a> &amp; Concluding Prayer</span>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>CLAM Study Guide · Week of June 15–21, 2026 · For personal study use only</p>
+    <p style="margin-top:4px;">📖 Scriptures from the <em>New World Translation of the Holy Scriptures</em> · Sources: <a href="https://www.jw.org" target="_blank">JW.org</a> · <a href="https://wol.jw.org" target="_blank">WOL</a></p>
+    <p style="margin-top:4px;">Generated automatically — all meeting content © Watch Tower Bible and Tract Society of Pennsylvania</p>
+  </div>
+
+</div><!-- end container -->
+
+<!-- SCRIPTS -->
+<script>
+// Sidebar data store
+const sidebarData = {};
+
+function showSidebar(title, ref, text, link) {
+  document.getElementById('sidebar-title').textContent = title;
+  document.getElementById('sidebar-ref').textContent = ref;
+  document.getElementById('sidebar-text').innerHTML = '<blockquote>' + text + '</blockquote>';
+  const linkEl = document.getElementById('sidebar-link');
+  if (link) { linkEl.href = link; linkEl.style.display = 'inline'; }
+  else { linkEl.style.display = 'none'; }
+  document.getElementById('sidebar').classList.add('open');
+  document.getElementById('sidebar-overlay').classList.add('open');
+}
+
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebar-overlay').classList.remove('open');
+}
+
+function toggleSection(id) {
+  const content = document.getElementById('section-' + id);
+  const arrow = document.getElementById('arrow-' + id);
+  const header = content.previousElementSibling;
+  const isOpen = content.classList.contains('open');
+  content.classList.toggle('open');
+  header.classList.toggle('open');
+  arrow.textContent = isOpen ? '▶' : '▼';
+}
+
+function expandAll() {
+  ['treasures','apply','living','cbs'].forEach(id => {
+    const content = document.getElementById('section-' + id);
+    const arrow = document.getElementById('arrow-' + id);
+    const header = content.previousElementSibling;
+    content.classList.add('open');
+    header.classList.add('open');
+    arrow.textContent = '▼';
+  });
+}
+
+function collapseAll() {
+  ['treasures','apply','living','cbs'].forEach(id => {
+    const content = document.getElementById('section-' + id);
+    const arrow = document.getElementById('arrow-' + id);
+    const header = content.previousElementSibling;
+    content.classList.remove('open');
+    header.classList.remove('open');
+    arrow.textContent = '▶';
+  });
+}
+
+function toggleQA(el) {
+  const answer = el.nextElementSibling;
+  const arrow = el.querySelector('span:last-child');
+  const isOpen = answer.classList.contains('open');
+  answer.classList.toggle('open');
+  arrow.textContent = isOpen ? '▶' : '▼';
+}
+
+// Auto-expand on load
+expandAll();
+</script>
+</body>
+</html>
