@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JW Meeting Study Guide – June 7, 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f0f4f8;color:#1a202c;line-height:1.6}
+.container{max-width:820px;margin:0 auto;padding:16px}
+/* HEADER */
+.site-header{background:linear-gradient(135deg,#1a365d 0%,#2c5282 100%);color:#fff;padding:24px 20px;border-radius:12px;margin-bottom:20px;text-align:center}
+.site-header h1{font-size:1.5rem;font-weight:700;letter-spacing:.5px;opacity:.9}
+.site-header h2{font-size:1.9rem;font-weight:800;margin:6px 0}
+.date-badge{display:inline-block;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);border-radius:20px;padding:6px 18px;font-size:.9rem;margin-top:10px;letter-spacing:.3px}
+.expand-btn{display:block;margin:0 auto 20px;background:#2c5282;color:#fff;border:none;border-radius:8px;padding:10px 28px;font-size:.95rem;cursor:pointer;font-weight:600;transition:background .2s}
+.expand-btn:hover{background:#1a365d}
+/* SONG BANNERS */
+.song-banner{background:#1a365d;color:#fff;padding:14px 20px;border-radius:10px;margin-bottom:16px;font-size:1rem;font-weight:600;display:flex;align-items:center;gap:12px}
+.song-banner span.icon{font-size:1.4rem}
+/* FOCUS BANNER */
+.focus-banner{background:#1a365d;color:#fff;padding:16px 20px;border-radius:10px;margin-bottom:16px;border-left:5px solid #f6ad55}
+.focus-banner .focus-label{font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px;opacity:.8;margin-bottom:4px}
+.focus-banner p{font-size:1rem;font-weight:600;line-height:1.5}
+/* THEME VERSE */
+.theme-verse{background:#fff;border-left:5px solid #2c5282;border-radius:10px;padding:18px 20px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.theme-verse blockquote{font-style:italic;font-size:1.05rem;line-height:1.7;color:#2d3748;margin-bottom:10px}
+/* SECTION HEADINGS */
+.section-heading{background:#2c5282;color:#fff;padding:12px 18px;border-radius:8px;margin:24px 0 14px;font-size:1rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+/* QUESTION CARD */
+.question-card{background:#fff;border-left:4px solid #b91c1c;border-radius:8px;padding:16px 18px;margin-bottom:8px;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.question-card .q-num{font-size:.8rem;font-weight:700;color:#b91c1c;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px}
+.question-card .q-text{font-size:1rem;font-weight:700;color:#1a202c;line-height:1.5}
+.question-card .q-ref{font-size:.85rem;color:#4a5568;margin-top:4px;font-style:italic}
+/* COLLAPSIBLE ANSWER */
+.answer-toggle{width:100%;background:#fffbeb;border:1px solid #f6ad55;border-left:3px solid #f59e0b;border-radius:6px;padding:10px 16px;cursor:pointer;font-weight:600;font-size:.9rem;color:#92400e;text-align:left;margin-bottom:6px;transition:background .2s;display:flex;align-items:center;gap:8px}
+.answer-toggle:hover{background:#fef3c7}
+.answer-toggle .arrow{transition:transform .2s;flex-shrink:0}
+.answer-toggle.open .arrow{transform:rotate(90deg)}
+.answer-box{background:#fffbeb;border:1px solid #f6ad55;border-left:3px solid #f59e0b;border-radius:6px;padding:16px 18px;margin-bottom:8px;display:none}
+.answer-box.open{display:block}
+.answer-box h4{font-size:.85rem;text-transform:uppercase;letter-spacing:.8px;color:#92400e;margin-bottom:8px;font-weight:700}
+.answer-box .suggested{color:#1a202c;font-size:.95rem;line-height:1.7;margin-bottom:14px}
+.comment-grid{display:grid;gap:10px;margin-top:12px}
+.comment-box{background:#fff;border-radius:8px;padding:12px 14px;border:1px solid #e2e8f0}
+.comment-box .cb-icon{font-size:1rem;margin-right:6px}
+.comment-box .cb-label{font-size:.8rem;font-weight:700;color:#4a5568;text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px}
+.comment-box p{font-size:.9rem;color:#2d3748;line-height:1.55}
+/* PARAGRAPH BLOCK */
+.para-block{background:#f8fafc;border-left:3px solid #e2e8f0;border-radius:8px;padding:14px 16px;margin-bottom:8px;font-size:.95rem;line-height:1.75;color:#2d3748}
+.para-block .para-num{font-weight:800;color:#4a5568;margin-right:4px}
+/* IMAGE */
+.img-block{background:#fff;border-radius:10px;overflow:hidden;margin-bottom:8px;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.img-block img{width:100%;display:block;max-height:380px;object-fit:cover}
+.img-block .img-caption{padding:12px 14px;font-size:.88rem;color:#4a5568;border-top:1px solid #e2e8f0;line-height:1.5}
+.img-block .img-caption strong{color:#1a202c;display:block;margin-bottom:2px}
+.img-block .img-note{font-size:.85rem;color:#718096;font-style:italic;margin-top:6px}
+/* SCRIPTURE CHIP */
+.chip{display:inline-block;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;border-radius:12px;padding:2px 10px;font-size:.8rem;cursor:pointer;margin:2px;font-weight:600;transition:background .2s;white-space:nowrap}
+.chip:hover{background:#dbeafe}
+/* HOW WOULD YOU ANSWER */
+.hwya-section{background:#fff;border-radius:12px;padding:20px;margin-top:24px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.hwya-section h2{color:#1a365d;font-size:1.1rem;font-weight:800;margin-bottom:16px;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #e2e8f0;padding-bottom:10px}
+.hwya-item{margin-bottom:14px}
+/* SOURCE LINK */
+.source-link{text-align:center;margin:20px 0;font-size:.85rem}
+.source-link a{color:#2c5282;font-weight:600}
+/* SIDEBAR */
+#sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:999;display:none;opacity:0;transition:opacity .25s}
+#sidebar-overlay.show{display:block;opacity:1}
+#sidebar{position:fixed;top:0;right:-380px;width:340px;height:100vh;background:#fff;z-index:1000;box-shadow:-4px 0 24px rgba(0,0,0,.18);display:flex;flex-direction:column;transition:right .3s ease}
+#sidebar.open{right:0}
+#sidebar-header{background:#1a365d;color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0}
+#sidebar-header h3{font-size:1rem;font-weight:700}
+#sidebar-close{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;line-height:1}
+#sidebar-body{flex:1;overflow-y:auto;padding:16px}
+#sidebar-body h4{font-size:.95rem;font-weight:700;color:#1a365d;margin-bottom:8px}
+#sidebar-body .verse-text{font-size:.93rem;line-height:1.7;color:#2d3748;background:#f8fafc;border-left:3px solid #2c5282;padding:10px 12px;border-radius:6px;margin-bottom:12px}
+#sidebar-body .article-excerpt{font-size:.88rem;line-height:1.65;color:#4a5568;margin-bottom:10px}
+#sidebar-body .sidebar-link{display:inline-block;background:#1a365d;color:#fff;border-radius:6px;padding:7px 14px;font-size:.83rem;font-weight:600;text-decoration:none;margin-top:8px}
+#sidebar-body .sidebar-link:hover{background:#2c5282}
+@media(max-width:600px){#sidebar{width:100%;right:-100%}#sidebar.open{right:0}}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+<div id="sidebar">
+  <div id="sidebar-header">
+    <h3 id="sidebar-title">Scripture</h3>
+    <button id="sidebar-close" onclick="closeSidebar()">&#x2715;</button>
+  </div>
+  <div id="sidebar-body" id="sidebar-content"></div>
+</div>
+
+<div class="container">
+
+<!-- HEADER -->
+<div class="site-header">
+  <div class="site-header h1">JW Meeting Study Guide</div>
+  <h2>Why You Can Be Happy<br>When You Are Hated</h2>
+  <div class="date-badge">&#128197; Sunday, June 7, 2026 &nbsp;|&nbsp; Watchtower Study</div>
+</div>
+
+<button class="expand-btn" onclick="expandAll()">&#9654; Expand All Comments</button>
+
+<!-- OPENING SONG -->
+<div class="song-banner"><span class="icon">&#127926;</span> Opening: Song 111 — Our Reasons for Joy</div>
+
+<!-- FOCUS -->
+<div class="focus-banner">
+  <div class="focus-label">&#127919; Focus</div>
+  <p>Why we can be happy when we are hated for serving Jehovah.</p>
+</div>
+
+<!-- THEME VERSE -->
+<div class="theme-verse">
+  <div style="font-size:.8rem;text-transform:uppercase;letter-spacing:1px;color:#4a5568;margin-bottom:6px;font-weight:700">Theme Verse</div>
+  <blockquote>"Happy are you whenever men hate you, and when they exclude you and reproach you and denounce your name as wicked for the sake of the Son of man."</blockquote>
+  <span class="chip" onclick="openSidebar('luke622','Luke 6:22','Luke 6:22','&ldquo;Happy are you whenever men hate you, and when they exclude you and reproach you and denounce your name as wicked for the sake of the Son of man.&rdquo; Luke 6:22, NWT','https://www.jw.org/en/library/bible/study-bible/books/luke/6/#v42006022')">Luke 6:22</span>
+</div>
+
+<!-- ============================
+     SECTION 1: WHY WE ARE HATED
+     ============================ -->
+<div class="section-heading">Why We Are Hated</div>
+
+<!-- Q1 -->
+<div class="question-card">
+  <div class="q-num">Question 1 &bull; Paragraph 1</div>
+  <div class="q-text">What surprising statement did Jesus make about being hated?</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)"><span class="arrow">&#9654;</span> Show Comment &amp; Answer</button>
+<div class="answer-box">
+  <h4>Suggested Comment</h4>
+  <div class="suggested">
+    Jesus' Sermon on the Mount contained a statement that must have surprised his listeners: "Happy are you whenever men hate you." Most people associate happiness with being liked and accepted, so this was counterintuitive. Jesus said this because his followers would face exactly this kind of hatred from the world. The reason this statement is worth examining is that it helps us understand both <em>why</em> we are hated and <em>why</em> we can still be happy despite it. It sets the foundation for everything the article covers.
+    <br><br>Key scriptures: <span class="chip" onclick="openSidebar('luke622','Luke 6:22','Luke 6:22','&ldquo;Happy are you whenever men hate you, and when they exclude you and reproach you and denounce your name as wicked for the sake of the Son of man.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/luke/6/#v42006022')">Luke 6:22</span>
+  </div>
+  <div class="comment-grid">
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128172;</span>Comment you could share</div><p>"I find it remarkable that Jesus connected happiness with being hated. It shows that our measure of success isn't how the world views us—it's whether we're standing firm for Jehovah."</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128204;</span>Ministry connection</div><p>When someone in the ministry says Jehovah's Witnesses are strange or different, we can explain that we actually expect that reaction—and that it confirms we're on the right path.</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128591;</span>Getting to know Jehovah</div><p>Jehovah, through Jesus, prepared us ahead of time for opposition. That forewarning is itself an act of love—He doesn't leave us surprised or unprepared.</p></div>
+  </div>
+</div>
+<div class="para-block"><span class="para-num">¶1</span> IN HIS Sermon on the Mount, Jesus said: "Happy are you whenever men hate you." (<span class="chip" onclick="openSidebar('luke622b','Luke 6:22','Luke 6:22','&ldquo;Happy are you whenever men hate you, and when they exclude you and reproach you and denounce your name as wicked for the sake of the Son of man.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/luke/6/#v42006022')">Luke 6:22</span>) Those words must have surprised his listeners. After all, no one enjoys being hated. Why did Jesus make that statement? That is a good question to consider because Jesus' followers today are hated by many people. We will discuss why we are hated and why we can be happy when we are hated.</div>
+
+<!-- Q2-3 -->
+<div class="question-card">
+  <div class="q-num">Question 2–3 &bull; Paragraphs 2–3</div>
+  <div class="q-text">What is one reason why true Christians are persecuted, and how might this affect our view of opposers?</div>
+  <div class="q-ref">See also <span class="chip" onclick="openSidebar('john1623','John 16:2, 3','John 16:2, 3','&ldquo;Men will expel you from the synagogue. In fact, the hour is coming when everyone who kills you will think he has offered a sacred service to God. But they will do these things because they have not come to know either the Father or me.&rdquo; — John 16:2, 3, NWT','https://www.jw.org/en/library/bible/study-bible/books/john/16/#v43016002')">John 16:2, 3</span></div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)"><span class="arrow">&#9654;</span> Show Comment &amp; Answer</button>
+<div class="answer-box">
+  <h4>Suggested Comment</h4>
+  <div class="suggested">
+    <strong>(Para 2)</strong> We are persecuted primarily because we worship Jehovah—and our opposers have been spiritually blinded by Satan. Jesus foretold that those who would even kill his followers would think they were doing God a sacred service, simply because they had not come to know the Father or Jesus. (<span class="chip" onclick="openSidebar('john1623b','John 16:2, 3','John 16:2, 3','&ldquo;Men will expel you from the synagogue. In fact, the hour is coming when everyone who kills you will think he has offered a sacred service to God. But they will do these things because they have not come to know either the Father or me.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/16/#v43016002')">John 16:2, 3</span>) Satan, as "the god of this system of things," blinds people so that they oppose those who love Jehovah. (<span class="chip" onclick="openSidebar('2cor434','2 Cor. 4:3, 4','2 Corinthians 4:3, 4','&ldquo;If, in fact, the good news we declare is veiled, it is veiled among those who are perishing, among whom the god of this system of things has blinded the minds of the unbelievers, so that the illumination of the glorious good news about the Christ, who is the image of God, might not shine through.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/2-corinthians/4/#v47004003')">2 Cor. 4:3, 4</span>) <br><br><strong>(Para 3)</strong> This understanding changes how we see our opposers. Brother Pavel, imprisoned in a country where our work is banned, came to realize that "most who work in the prison system have no personal animosity against us—they are simply doing their job." Knowing that our real enemy is Satan (<span class="chip" onclick="openSidebar('eph612','Eph. 6:12','Ephesians 6:12','&ldquo;Because we have a struggle, not against blood and flesh, but against the governments, against the authorities, against the world rulers of this darkness, against the wicked spirit forces in the heavenly places.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/ephesians/6/#v49006012')">Eph. 6:12</span>) helps us to avoid hating those who mistreat us.
+  </div>
+  <div class="comment-grid">
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128172;</span>Comment you could share</div><p>"What struck me is that Pavel's example shows us that recognizing Satan as the true enemy makes it possible to feel sorry for our opposers rather than resent them. That's a powerful shift in perspective."</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128204;</span>Ministry connection</div><p>When a householder slams the door or is rude in the ministry, we can remind ourselves: they are blinded, not malicious. That helps us return to the same door with patience and compassion.</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128591;</span>Getting to know Jehovah</div><p>Jehovah doesn't ask us to excuse wrong behavior, but He does ask us to understand its spiritual root—so we can respond with wisdom rather than anger. He models this by being patient even with the deceived.</p></div>
+  </div>
+</div>
+<div class="para-block"><span class="para-num">¶2</span> We are hated because we worship Jehovah. Regarding those who would persecute and even kill some of his followers, Jesus said: "They have not come to know either the Father or me." (Read <span class="chip" onclick="openSidebar('john1623c','John 16:2, 3','John 16:2, 3','&ldquo;Men will expel you from the synagogue. In fact, the hour is coming when everyone who kills you will think he has offered a sacred service to God. But they will do these things because they have not come to know either the Father or me.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/16/#v43016002')">John 16:2, 3</span>.) Who is ultimately to blame for the opposition to God's people? Satan is. He is "the god of this system of things." (<span class="chip" onclick="openSidebar('2cor434b','2 Cor. 4:3, 4','2 Corinthians 4:3, 4','&ldquo;If, in fact, the good news we declare is veiled, it is veiled among those who are perishing, among whom the god of this system of things has blinded the minds of the unbelievers, so that the illumination of the glorious good news about the Christ, who is the image of God, might not shine through.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/2-corinthians/4/#v47004003')">2 Cor. 4:3, 4</span>) He blinds people to the truth about Jehovah and influences them to oppose those who do know and love God. (<span class="chip" onclick="openSidebar('john844','John 8:44','John 8:44','&ldquo;You are from your father the Devil, and you wish to do the desires of your father. That one was a murderer when he began, and he did not stand fast in the truth, because truth is not in him. When he speaks the lie, he speaks according to his own disposition, because he is a liar and the father of the lie.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/8/#v43008042')">John 8:42-44</span>) How might knowing this affect our view of opposers? For one thing, realizing that they have been deceived will help us to avoid hating them in return.</div>
+<div class="para-block"><span class="para-num">¶3</span> Consider the example of Pavel, a who lives in a country where our work is banned. Because he continued faithfully worshipping Jehovah, he was arrested, cruelly beaten, and placed in solitary confinement for months. Pavel now says: "It is clear to me that persecution is due to demonic resistance to pure worship. It seems that most who work in the prison system have no personal animosity against us. They are simply doing their job." A brother in Croatia who endured vicious persecution from his unbelieving parents states: "I have come to see Satan as my real enemy, not my parents."— <span class="chip" onclick="openSidebar('eph612b','Eph. 6:12','Ephesians 6:12','&ldquo;Because we have a struggle, not against blood and flesh, but against the governments, against the authorities, against the world rulers of this darkness, against the wicked spirit forces in the heavenly places.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/ephesians/6/#v49006012')">Eph. 6:12</span>.</div>
+
+<!-- Q4 -->
+<div class="question-card">
+  <div class="q-num">Question 4 &bull; Paragraph 4</div>
+  <div class="q-text">What can we learn from the examples of Jesus and of the disciple Stephen?</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)"><span class="arrow">&#9654;</span> Show Comment &amp; Answer</button>
+<div class="answer-box">
+  <h4>Suggested Comment</h4>
+  <div class="suggested">
+    Rather than hating those who persecute us, we can be moved to pray for them—just as Jesus and Stephen did. While nailed to the stake, Jesus prayed, "Father, forgive them," thinking of those who didn't know what they were doing. (<span class="chip" onclick="openSidebar('luke2334','Luke 23:34','Luke 23:34','&ldquo;But Jesus was saying: 'Father, forgive them, for they do not know what they are doing.'&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/luke/23/#v42023034')">Luke 23:34</span>) Stephen asked God to forgive his executioners. (<span class="chip" onclick="openSidebar('acts758','Acts 7:58-60','Acts 7:59, 60','&ldquo;As they were stoning Stephen, he made appeal and said: 'Lord Jesus, receive my spirit.' Then he fell to his knees and cried out with a strong voice: 'Jehovah, do not charge this sin against them.'&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/acts/7/#v44007059')">Acts 7:58-60</span>) Did it matter? Yes—many who took part in these events later repented and got baptized, including Saul of Tarsus, who became Paul. (<span class="chip" onclick="openSidebar('1tim113','1 Tim. 1:13','1 Timothy 1:13','&ldquo;...although formerly I was a blasphemer and a persecutor and an insolent man. Nevertheless, I was shown mercy because I acted in ignorance and with a lack of faith.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/1-timothy/1/#v54001013')">1 Tim. 1:13</span>) These examples show that praying for our enemies is never futile.
+  </div>
+  <div class="comment-grid">
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128172;</span>Comment you could share</div><p>"I was moved by how Jehovah answered those prayers. Paul himself was once a violent persecutor. It shows that even the most opposed ones can change—which should motivate us to keep praying for our opposers."</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128204;</span>Ministry connection</div><p>When someone aggressively opposes us at the door or online, we can follow Jesus' pattern: respond calmly, don't retaliate, and even offer a prayer for them afterward.</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128591;</span>Getting to know Jehovah</div><p>Jehovah is a God who answers prayers even for those who once persecuted His people. He is merciful and draws people to Him even from difficult backgrounds. This shows the depth of His love for humans.</p></div>
+  </div>
+</div>
+<div class="para-block"><span class="para-num">¶4</span> We do not hate our opposers. In fact, we may be moved to pray for them. (<span class="chip" onclick="openSidebar('matt544','Matt. 5:44','Matthew 5:44','&ldquo;However, I say to you: Continue to love your enemies and to pray for those who persecute you.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/matthew/5/#v40005044')">Matt. 5:44</span>) In this regard, we can learn from Jesus and the disciple Stephen. While nailed to the torture stake by Roman soldiers, Jesus prayed: "Father, forgive them." (<span class="chip" onclick="openSidebar('luke2334b','Luke 23:34','Luke 23:34','&ldquo;But Jesus was saying: 'Father, forgive them, for they do not know what they are doing.'&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/luke/23/#v42023034')">Luke 23:34</span>) Similarly, the disciple Stephen asked God to forgive his executioners. (<span class="chip" onclick="openSidebar('acts758b','Acts 7:59, 60','Acts 7:59, 60','&ldquo;As they were stoning Stephen, he made appeal and said: 'Lord Jesus, receive my spirit.' Then he fell to his knees and cried out with a strong voice: 'Jehovah, do not charge this sin against them.'&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/acts/7/#v44007059')">Acts 7:58-60</span>) Did Jehovah answer those prayers? Yes. Many involved later repented, exercised faith in Jesus, and got baptized. (<span class="chip" onclick="openSidebar('acts2341','Acts 2:36-41','Acts 2:38','&ldquo;Peter said to them: 'Repent, and let each one of you be baptized in the name of Jesus Christ for forgiveness of your sins, and you will receive the free gift of the holy spirit.'&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/acts/2/#v44002036')">Acts 2:36-41</span>) And Saul of Tarsus became a Christian and deeply regretted what he had done. — <span class="chip" onclick="openSidebar('1tim113b','1 Tim. 1:13','1 Timothy 1:13','&ldquo;...although formerly I was a blasphemer and a persecutor and an insolent man. Nevertheless, I was shown mercy because I acted in ignorance and with a lack of faith.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/1-timothy/1/#v54001013')">1 Tim. 1:13</span></div>
+<div class="img-block">
+  <img src="https://assetsnffrgf-a.akamaihd.net/img/p/2026324/univ/art/2026324_univ_cnt_1_lg.jpg" alt="Jesus and Stephen praying for those persecuting them" loading="lazy" onerror="this.style.display='none'"/>
+  <div class="img-caption"><strong>Just as Jesus and Stephen prayed for their persecutors, we can do the same (See paragraph 4)</strong><div class="img-note">Application: When we face opposition—whether from a neighbor, coworker, or family member—we can follow this same pattern. Prayer for our opposers keeps our own hearts free from bitterness and opens the door for Jehovah to act.</div></div>
+</div>
+
+<!-- Q5 -->
+<div class="question-card">
+  <div class="q-num">Question 5 &bull; Paragraph 5</div>
+  <div class="q-text">What do you learn from César's experience?</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)"><span class="arrow">&#9654;</span> Show Comment &amp; Answer</button>
+<div class="answer-box">
+  <h4>Suggested Comment</h4>
+  <div class="suggested">
+    César's experience in Venezuela illustrates that Jehovah continues to answer prayers offered in behalf of opposers today. His father was violently opposed to the truth, but his mother persevered—treating her husband with respect, putting the Kingdom first, and teaching her children to do the same. Over time, his father softened. Eventually César's father said yes to a Bible study and later got baptized. The account shows that even in cases of active opposition within a family, respectful conduct and persistent prayer can yield results. Not all opposers change, but some do—and we long to see how Jehovah may draw such ones to him. (<span class="chip" onclick="openSidebar('gen1825','Gen. 18:25','Genesis 18:25','&ldquo;Will the Judge of all the earth not do what is right?&rdquo; — Genesis 18:25, NWT','https://www.jw.org/en/library/bible/study-bible/books/genesis/18/#v1018025')">Gen. 18:25</span>)
+  </div>
+  <div class="comment-grid">
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128172;</span>Comment you could share</div><p>"César's mother's consistency—never neglecting her husband while always putting the Kingdom first—is a beautiful model of how we can maintain our integrity without being harsh or combative."</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128204;</span>Ministry connection</div><p>This experience is a great tool when speaking with people who have a difficult spouse or family situation. We can honestly say that Jehovah has helped many families come together through patient, loving conduct.</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128591;</span>Getting to know Jehovah</div><p>Jehovah is described as the "Judge of all the earth" who will always do what is right. That includes drawing sincere-hearted ones to Him—even ones who were once violently opposed. He never gives up on people.</p></div>
+  </div>
+</div>
+<div class="para-block"><span class="para-num">¶5</span> Jehovah continues to answer prayers offered in behalf of opposers today. Consider the experience of César, who lives in Venezuela. His father was violently opposed to the truth. César says: "My mother was everything a wife and mother should be. Though she always put the Kingdom first, she never neglected my father. She taught my siblings and me to respect our father." Over the years, his father's attitude softened. César relates: "One day, after I said a heartfelt prayer, I asked my dad if I could study the Bible with him. It is hard to describe the emotions I felt when he said yes." In time, César's father got baptized. Not all opposers make such changes, but some do soften their attitude after observing our respectful speech and fine conduct. We long to see how Jehovah, the merciful "Judge of all the earth," may yet draw such ones to him. — <span class="chip" onclick="openSidebar('gen1825b','Gen. 18:25','Genesis 18:25','&ldquo;Will the Judge of all the earth not do what is right?&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/genesis/18/#v1018025')">Gen. 18:25</span>.</div>
+
+<!-- Q6 -->
+<div class="question-card">
+  <div class="q-num">Question 6 &bull; Paragraph 6</div>
+  <div class="q-text">According to Mark 13:13, what is another reason why we are hated?</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)"><span class="arrow">&#9654;</span> Show Comment &amp; Answer</button>
+<div class="answer-box">
+  <h4>Suggested Comment</h4>
+  <div class="suggested">
+    Another reason true Christians are hated is that they respect and honor Jesus as King. Jesus said his followers would be hated "on account of my name" — meaning his reputation and authority as King of God's Kingdom. (<span class="chip" onclick="openSidebar('mark1313','Mark 13:13','Mark 13:13','&ldquo;And you will be hated by all people on account of my name. But the one who has endured to the end will be saved.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/mark/13/#v41013013')">Mark 13:13</span>) Those who put their trust in earthly leaders or governments resist the Kingdom because it represents a rival authority. Jehovah's Witnesses are hated in part because they publicly proclaim Jesus as the rightful ruler of the universe—a claim that those who align with Satan's world reject. But this same Kingdom is what will ultimately bring true relief to mankind.
+  </div>
+  <div class="comment-grid">
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128172;</span>Comment you could share</div><p>"It's sobering that we are hated specifically because of Jesus' name—his kingly authority. It means our message is not just religious but political in a sense, which explains why governments sometimes see us as a threat."</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128204;</span>Ministry connection</div><p>In the ministry, we can explain that our allegiance to God's Kingdom doesn't make us disloyal citizens—it means we follow a higher authority that actually produces better citizens. Use examples of how publishers obey local laws while refusing to compromise worship.</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128591;</span>Getting to know Jehovah</div><p>Jehovah chose Jesus as King precisely because he proved himself worthy—through his faithfulness under the greatest opposition. Our support of that choice reflects our trust in Jehovah's judgment.</p></div>
+  </div>
+</div>
+<div class="para-block"><span class="para-num">¶6</span> We are hated because we respect Jesus. Jesus said that true Christians would be hated by all people "on account of [his] name." (Read <span class="chip" onclick="openSidebar('mark1313b','Mark 13:13','Mark 13:13','&ldquo;And you will be hated by all people on account of my name. But the one who has endured to the end will be saved.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/mark/13/#v41013013')">Mark 13:13</span>.) What does Jesus' "name" stand for? It stands for his reputation and his authority as the King of God's Kingdom. We are hated by people who have put their trust in earthly leaders, not in the one whom Jehovah has chosen to rule the universe, Jesus Christ. Jesus has been ruling as King of the Kingdom since 1914. Soon, he will remove all rival rulerships that have rejected his authority.</div>
+
+<!-- Q7-8 -->
+<div class="question-card">
+  <div class="q-num">Questions 7–8 &bull; Paragraphs 7–8</div>
+  <div class="q-text">Why do some of Jehovah's people become targets of ridicule?</div>
+  <div class="q-ref">See also <span class="chip" onclick="openSidebar('john151820','John 15:18-20','John 15:18-20','&ldquo;If the world hates you, you know that it has hated me before it hated you. If you were part of the world, the world would be fond of what is its own. Now because you are no part of the world, but I have chosen you out of the world, for this reason the world hates you.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/15/#v43015018')">John 15:18-20</span></div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)"><span class="arrow">&#9654;</span> Show Comment &amp; Answer</button>
+<div class="answer-box">
+  <h4>Suggested Comment</h4>
+  <div class="suggested">
+    <strong>(Para 7)</strong> We become targets of ridicule because we reject Satan's world—its ungodly attitudes, speech, and conduct. Jesus explained it clearly: "because you are no part of the world... the world hates you." (<span class="chip" onclick="openSidebar('john151820b','John 15:18-20','John 15:18-20','&ldquo;If the world hates you, you know that it has hated me before it hated you. Now because you are no part of the world, but I have chosen you out of the world, for this reason the world hates you.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/15/#v43015018')">John 15:18-20</span>) Those who indulge in the world's conduct are surprised when we don't join them. (<span class="chip" onclick="openSidebar('1pet434','1 Pet. 4:3, 4','1 Peter 4:3, 4','&ldquo;They are surprised because you do not continue running with them in the same decadent course of debauchery, and they speak abusively of you.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/1-peter/4/#v60004003')">1 Pet. 4:3, 4</span>)<br><br><strong>(Para 8)</strong> The experience of Ignacio in Central America is encouraging. A teacher mocked him for years because of his high moral standards. Yet before graduation, that same teacher asked how Ignacio was able to live by Bible principles in such a hostile environment. When Ignacio explained his view of God's laws as a protection and invited the teacher to a meeting, the teacher came—and was so impressed that he eventually got baptized. It's a reminder that even mockers can be reached.
+  </div>
+  <div class="comment-grid">
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128172;</span>Comment you could share</div><p>"Ignacio's story shows that sometimes the people who mock us are actually watching us more closely than they let on. Living by our principles consistently can answer the ridicule better than any argument could."</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128204;</span>Ministry connection</div><p>When we stand out at school or work for refusing to engage in certain activities, it opens natural opportunities. People often ask "why not?" which is an open door to share our beliefs respectfully.</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128591;</span>Getting to know Jehovah</div><p>Jehovah set us apart from the world not to make our lives harder but to protect us. His laws are not burdens—they're a shield. Ignacio understood this and it helped him stay firm even under mockery.</p></div>
+  </div>
+</div>
+<div class="para-block"><span class="para-num">¶7</span> We are hated because we reject Satan's world. Jesus explained that his followers would be hated because they "are no part of the world." (Read <span class="chip" onclick="openSidebar('john151820c','John 15:18-20','John 15:18-20','&ldquo;If the world hates you, you know that it has hated me before it hated you. Now because you are no part of the world, but I have chosen you out of the world, for this reason the world hates you.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/15/#v43015018')">John 15:18-20</span>.) Like the early Christians, we reject the world's ungodly attitudes, conduct, and speech. Because of this, many brothers and sisters have become targets of ridicule at work or at school. (<span class="chip" onclick="openSidebar('1pet434b','1 Pet. 4:3, 4','1 Peter 4:3, 4','&ldquo;They are surprised because you do not continue running with them in the same decadent course of debauchery, and they speak abusively of you.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/1-peter/4/#v60004003')">1 Pet. 4:3, 4</span>) We are pleased, however, that some opposers eventually have a change of heart and come to admire us for our stand.</div>
+<div class="para-block"><span class="para-num">¶8</span> Consider the experience of Ignacio, in Central America. He attended a school where one teacher mocked him for years for his high moral standards. However, before Ignacio graduated, that teacher asked him how he was able to live by Bible principles in such a hostile environment. Ignacio explained that he views God's laws as a protection. He then invited the teacher to a congregation meeting. To Ignacio's surprise, the teacher attended! The teacher was so impressed by the warmth of the congregation that he continued attending meetings. Later, because of studying the Bible, the teacher himself faced opposition. But he continued making spiritual progress and eventually got baptized.</div>
+<div class="img-block">
+  <img src="https://assetsnffrgf-a.akamaihd.net/img/p/2026324/univ/art/2026324_univ_cnt_2_lg.jpg" alt="Ignacio witnessing to his teacher" loading="lazy" onerror="this.style.display='none'"/>
+  <div class="img-caption"><strong>Regardless of our age, we can courageously and successfully defend our faith (See paragraph 8)</strong><div class="img-note">Application: A reenactment of Ignacio sharing his faith with his teacher. Living by our convictions—even under mockery—can be the most compelling testimony we give. When others see us at peace with our choices, curiosity often replaces criticism.</div></div>
+</div>
+
+<!-- Q9-10 -->
+<div class="question-card">
+  <div class="q-num">Questions 9–10 &bull; Paragraphs 9–10</div>
+  <div class="q-text">(a) For what other reason do Christians stand out as different from Satan's world? (b) What can we learn from the apostle Paul's example?</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)"><span class="arrow">&#9654;</span> Show Comment &amp; Answer</button>
+<div class="answer-box">
+  <h4>Suggested Comment</h4>
+  <div class="suggested">
+    <strong>(a)</strong> Christians also stand out because of their political neutrality. While we strive to be law-abiding citizens in harmony with <span class="chip" onclick="openSidebar('rom131','Rom. 13:1','Romans 13:1','&ldquo;Let every person be in subjection to the superior authorities, for there is no authority except by God; the existing authorities stand placed in their relative positions by God.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/romans/13/#v45013001')">Romans 13:1</span>, our allegiance is to Jehovah and His Kingdom, not to any earthly political party or military force. (<span class="chip" onclick="openSidebar('john1836','John 18:36','John 18:36','&ldquo;Jesus answered: 'My Kingdom is no part of this world. If my Kingdom were part of this world, my attendants would have fought that I should not be handed over to the Jews. But as it is, my Kingdom is not from this source.'&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/18/#v43018036')">John 18:36</span>) This has led to imprisonment for many of our brothers worldwide.<br><br><strong>(b)</strong> Paul, imprisoned for years, didn't see prison as punishment but as an opportunity. He preached to guards, governors, and even possibly officials of Emperor Nero. (<span class="chip" onclick="openSidebar('acts915','Acts 9:15','Acts 9:15','&ldquo;This man is a chosen vessel to me to bear my name to the nations as well as to kings and the sons of Israel.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/acts/9/#v44009015')">Acts 9:15</span>) Similarly, one brother who spent over six years in prison viewed his time not as punishment but as "an assignment from Jehovah to find sheeplike ones." (<span class="chip" onclick="openSidebar('col43','Col. 4:3','Colossians 4:3','&ldquo;...praying at the same time for us also, that God may open to us a door for the word to speak the sacred secret about the Christ, because of which I am in prison bonds.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/colossians/4/#v51004003')">Col. 4:3</span>)
+  </div>
+  <div class="comment-grid">
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128172;</span>Comment you could share</div><p>"What impresses me about the imprisoned brother's attitude is that he completely reframed his situation—not victimhood, but a divine assignment. That kind of perspective shift can only come from deep trust in Jehovah."</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128204;</span>Ministry connection</div><p>Political neutrality sometimes raises questions at the door. We can explain that our refusal to take sides isn't indifference—it's loyalty to a higher government that will actually solve humanity's problems.</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128591;</span>Getting to know Jehovah</div><p>Jehovah can use any circumstance—even prison—to accomplish His purpose. That's a comforting thought: no trial can ultimately stop His work or block our ability to serve Him.</p></div>
+  </div>
+</div>
+<div class="para-block"><span class="para-num">¶9</span> We also stand out as different from Satan's world because we are neutral with regard to politics and war. (<span class="chip" onclick="openSidebar('john1836b','John 18:36','John 18:36','&ldquo;Jesus answered: 'My Kingdom is no part of this world.'&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/18/#v43018036')">John 18:36</span>) In harmony with the counsel found at <span class="chip" onclick="openSidebar('rom131b','Rom. 13:1','Romans 13:1','&ldquo;Let every person be in subjection to the superior authorities, for there is no authority except by God.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/romans/13/#v45013001')">Romans 13:1</span>, we strive to be law-abiding citizens. Yet, as Christians, we remain neutral in political conflicts. Many of Jehovah's Witnesses have been imprisoned for their Christian faith. Nevertheless, imprisoned brothers and sisters continue to preach—imitating the apostle Paul, who spent years under house arrest and in prison. He continued to share the good news with all who would listen, including prison guards, court officials, governors, kings, and perhaps even officials of Roman Emperor Nero. — <span class="chip" onclick="openSidebar('acts915b','Acts 9:15','Acts 9:15','&ldquo;This man is a chosen vessel to me to bear my name to the nations as well as to kings and the sons of Israel.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/acts/9/#v44009015')">Acts 9:15</span>.</div>
+<div class="para-block"><span class="para-num">¶10</span> Similarly, our imprisoned brothers preach to all who will listen, including judges, government officials, and guards. One brother who spent more than six years in prison for remaining politically neutral said that he viewed his time in prison, not as a punishment, but as an assignment from Jehovah to find sheeplike ones. How happy we can be if Jehovah uses us to reach such individuals with the good news! (<span class="chip" onclick="openSidebar('col43b','Col. 4:3','Colossians 4:3','&ldquo;...praying at the same time for us also, that God may open to us a door for the word to speak the sacred secret about the Christ, because of which I am in prison bonds.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/colossians/4/#v51004003')">Col. 4:3</span>)</div>
+
+<!-- ===================================
+     SECTION 2: WHY WE CAN BE HAPPY
+     =================================== -->
+<div class="section-heading">Why We Can Be Happy When Hated</div>
+
+<!-- Q11 -->
+<div class="question-card">
+  <div class="q-num">Question 11 &bull; Paragraph 11</div>
+  <div class="q-text">How can experiencing persecution strengthen our faith? Give an example.</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)"><span class="arrow">&#9654;</span> Show Comment &amp; Answer</button>
+<div class="answer-box">
+  <h4>Suggested Comment</h4>
+  <div class="suggested">
+    Persecution actually serves as confirmation that we are serving the true God, because it fulfills Bible prophecy. Jehovah foretold in the very first recorded prophecy that there would be enmity between Satan's "offspring" and those who love God. (<span class="chip" onclick="openSidebar('gen315','Gen. 3:15','Genesis 3:15','&ldquo;And I will put enmity between you and the woman and between your offspring and her offspring. He will crush your head, and you will strike him in the heel.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/genesis/3/#v1003015')">Gen. 3:15</span>) Jesus confirmed it in all four Gospels. Paul and other apostles did too. (<span class="chip" onclick="openSidebar('2tim312','2 Tim. 3:12','2 Timothy 3:12','&ldquo;In fact, all those desiring to live with godly devotion in association with Christ Jesus will also be persecuted.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/2-timothy/3/#v55003012')">2 Tim. 3:12</span>) So when persecution arises, we aren't shocked—we're reassured. As one sister under restrictions said: "Experiencing it convinced me that this was the true religion." Rather than shrinking back, she grew stronger in faith. (<span class="chip" onclick="openSidebar('heb1039','Heb. 10:39','Hebrews 10:39','&ldquo;Now we are not the sort who shrink back to destruction, but the sort who have faith for the preserving of our lives.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/hebrews/10/#v58010039')">Heb. 10:39</span>)
+  </div>
+  <div class="comment-grid">
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128172;</span>Comment you could share</div><p>"The sister who said 'persecution was prophesied, so I knew it had to happen' shows a level of spiritual maturity that I find truly inspiring. She turned a painful trial into proof of her faith."</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128204;</span>Ministry connection</div><p>When someone asks why Jehovah's Witnesses face so much opposition, we can explain that the Bible actually predicted this exact situation—and that it confirms the authenticity of our faith.</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128591;</span>Getting to know Jehovah</div><p>Jehovah's word is so reliable that even opposition fulfills it precisely. He has never left us without warning about what to expect. His prophetic word is one of our greatest sources of confidence.</p></div>
+  </div>
+</div>
+<div class="para-block"><span class="para-num">¶11</span> We know that the world's hatred fulfills Bible prophecy. Jehovah foretold in the first recorded prophecy that Satan and his symbolic offspring—those who follow him—would hate individuals who love and serve Jehovah. (<span class="chip" onclick="openSidebar('gen315b','Gen. 3:15','Genesis 3:15','&ldquo;And I will put enmity between you and the woman and between your offspring and her offspring. He will crush your head, and you will strike him in the heel.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/genesis/3/#v1003015')">Gen. 3:15</span>) Jesus often reaffirmed the truthfulness of those prophetic words. (<span class="chip" onclick="openSidebar('matt1022','Matt. 10:22','Matthew 10:22','&ldquo;And you will be hated by all people on account of my name, but the one who has endured to the end will be saved.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/matthew/10/#v40010022')">Matt. 10:22</span>; <span class="chip" onclick="openSidebar('mark1312','Mark 13:9-12','Mark 13:9-12','&ldquo;But look out for yourselves... and you will be hated by all people on account of my name. But the one who has endured to the end will be saved.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/mark/13/#v41013009')">Mark 13:9-12</span>; <span class="chip" onclick="openSidebar('luke622c','Luke 6:22, 23','Luke 6:22, 23','&ldquo;Happy are you whenever men hate you... Rejoice in that day and leap for joy, for look! your reward is great in heaven.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/luke/6/#v42006022')">Luke 6:22, 23</span>; <span class="chip" onclick="openSidebar('john1520','John 15:20','John 15:20','&ldquo;If they have persecuted me, they will also persecute you.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/15/#v43015020')">John 15:20</span>) And other Christian Bible writers did likewise. (<span class="chip" onclick="openSidebar('2tim312b','2 Tim. 3:12','2 Timothy 3:12','&ldquo;In fact, all those desiring to live with godly devotion in association with Christ Jesus will also be persecuted.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/2-timothy/3/#v55003012')">2 Tim. 3:12</span>; <span class="chip" onclick="openSidebar('jas12','Jas. 1:2','James 1:2','&ldquo;Consider it all joy, my brothers, when you meet with various trials.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/james/1/#v59001002')">Jas. 1:2</span>) So when persecution arises, we are not shocked. Instead, we are happy that Bible prophecy is being fulfilled. A sister says: "Persecution was prophesied, so I knew that it had to happen. Experiencing it convinced me that this was the true religion." Her husband burned her Bible, but rather than shrink back in fear, she grew stronger in faith. (<span class="chip" onclick="openSidebar('heb1039b','Heb. 10:39','Hebrews 10:39','&ldquo;Now we are not the sort who shrink back to destruction, but the sort who have faith for the preserving of our lives.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/hebrews/10/#v58010039')">Heb. 10:39</span>)</div>
+
+<!-- Q12 -->
+<div class="question-card">
+  <div class="q-num">Question 12 &bull; Paragraph 12</div>
+  <div class="q-text">What helped one brother to cope with persecution?</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)"><span class="arrow">&#9654;</span> Show Comment &amp; Answer</button>
+<div class="answer-box">
+  <h4>Suggested Comment</h4>
+  <div class="suggested">
+    Even those who expect persecution can find it emotionally challenging. One imprisoned brother admitted he sometimes felt depressed and would cry. What helped him was persistent prayer—morning prayer, prayer during difficult moments, prayer when anger arose from injustices. He also meditated on ancient and modern examples of integrity. This combination gave him the peace Jesus promised: "I leave you peace; I give you my peace." (<span class="chip" onclick="openSidebar('john1427','John 14:27','John 14:27','&ldquo;I leave you peace; I give you my peace. I do not give it to you the way that the world gives it. Do not let your hearts be troubled nor let them shrink out of fear.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/14/#v43014027')">John 14:27</span>; <span class="chip" onclick="openSidebar('john1633','John 16:33','John 16:33','&ldquo;In the world you will have tribulation, but take courage! I have conquered the world.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/16/#v43016033')">John 16:33</span>) Prayer and meditation are practical tools Jehovah gives us to endure.
+  </div>
+  <div class="comment-grid">
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128172;</span>Comment you could share</div><p>"I appreciate that this brother was honest—he cried, he felt depressed. But his solution was always to pray, not to give up. That's a real, honest example of what endurance looks like."</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128204;</span>Ministry connection</div><p>When someone we're studying with faces opposition from family, we can share this experience: prayer and meditating on examples of faithfulness are proven tools to maintain emotional stability.</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128591;</span>Getting to know Jehovah</div><p>Jehovah provides real, practical comfort through prayer. The peace He offers isn't the absence of trouble—it's stability in the middle of it. That's a quality of God that makes Him truly worth knowing.</p></div>
+  </div>
+</div>
+<div class="para-block"><span class="para-num">¶12</span> Although we expect to be persecuted, we may still find it a challenge to endure. One brother wrote regarding his time in prison: "At times, I felt depressed or worried, and I would just cry." What helped this brother to cope? "I always prayed," he said. "I started each morning with prayer. During the day, I prayed whenever difficult situations arose. And when injustices made me angry, I would lock myself in the bathroom and pray." Our brother also meditated on ancient and modern-day examples of integrity. That helped him to endure the persecution and to gain the peace that Jesus promised his followers. — <span class="chip" onclick="openSidebar('john1427b','John 14:27','John 14:27','&ldquo;I leave you peace; I give you my peace. I do not give it to you the way that the world gives it. Do not let your hearts be troubled nor let them shrink out of fear.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/14/#v43014027')">John 14:27</span>; <span class="chip" onclick="openSidebar('john1633b','John 16:33','John 16:33','&ldquo;In the world you will have tribulation, but take courage! I have conquered the world.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/16/#v43016033')">John 16:33</span>.</div>
+
+<!-- Q13 -->
+<div class="question-card">
+  <div class="q-num">Question 13 &bull; Paragraph 13</div>
+  <div class="q-text">What can help us to conquer hatred?</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)"><span class="arrow">&#9654;</span> Show Comment &amp; Answer</button>
+<div class="answer-box">
+  <h4>Suggested Comment</h4>
+  <div class="suggested">
+    What can conquer hatred? Love—specifically, a deep love for both Jehovah and for our brothers and sisters. Jesus himself loved his Father and his friends to the very end. (<span class="chip" onclick="openSidebar('john131','John 13:1','John 13:1','&ldquo;He loved his own who were in the world and loved them to the end.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/13/#v43013001')">John 13:1</span>; <span class="chip" onclick="openSidebar('john1513','John 15:13','John 15:13','&ldquo;No one has love greater than this, that someone should surrender his life in behalf of his friends.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/15/#v43015013')">John 15:13</span>) When we develop that kind of love, we are empowered to overcome hatred. The article sets up Paul as the key example—someone whose love enabled him to face death itself.
+  </div>
+  <div class="comment-grid">
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128172;</span>Comment you could share</div><p>"The idea that love can conquer hatred is more than an inspirational phrase—it's what we see in people like Paul and Jesus who literally gave everything because of love. It makes hatred seem like the weaker force."</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128204;</span>Ministry connection</div><p>Our genuine love for the people we meet in the ministry—even difficult ones—is what makes our work more than just a duty. It's that love that keeps us coming back and treating people with dignity.</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128591;</span>Getting to know Jehovah</div><p>Jehovah is the source of love. When we draw close to Him, we gain access to a quality of love that doesn't evaporate under pressure. His love is the foundation of ours.</p></div>
+  </div>
+</div>
+<div class="para-block"><span class="para-num">¶13</span> We have love that is stronger than hatred. Down to his dying breath, Jesus loved his Father with all his heart. Jesus also loved his friends. (<span class="chip" onclick="openSidebar('john131b','John 13:1','John 13:1','&ldquo;He loved his own who were in the world and loved them to the end.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/13/#v43013001')">John 13:1</span>; <span class="chip" onclick="openSidebar('john1513b','John 15:13','John 15:13','&ldquo;No one has love greater than this, that someone should surrender his life in behalf of his friends.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/15/#v43015013')">John 15:13</span>) When we develop such love, both for Jehovah and for our brothers and sisters, we too will be able to conquer hatred.</div>
+
+<!-- Q14 -->
+<div class="question-card">
+  <div class="q-num">Question 14 &bull; Paragraph 14</div>
+  <div class="q-text">What helped Paul to stand firm in the face of death?</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)"><span class="arrow">&#9654;</span> Show Comment &amp; Answer</button>
+<div class="answer-box">
+  <h4>Suggested Comment</h4>
+  <div class="suggested">
+    Not long before his execution, Paul told Timothy: "God did not give us a spirit of cowardice, but one of power and of love." (<span class="chip" onclick="openSidebar('2tim17','2 Tim. 1:7','2 Timothy 1:7','&ldquo;For God did not give us a spirit of cowardice, but one of power and of love and of soundness of mind.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/2-timothy/1/#v55001007')">2 Tim. 1:7</span>) Paul was saying that strong love for Jehovah is what moves a Christian to willingly face intense trials. (<span class="chip" onclick="openSidebar('2tim18','2 Tim. 1:8','2 Timothy 1:8','&ldquo;So do not be ashamed of the witness about our Lord, nor of me his prisoner, but take your share of suffering for the good news according to the power of God.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/2-timothy/1/#v55001008')">2 Tim. 1:8</span>) His love for Jehovah enabled him to face death courageously without abandoning true worship. (<span class="chip" onclick="openSidebar('acts2024','Acts 20:22-24','Acts 20:24','&ldquo;Nevertheless, I do not consider my life of any importance to me, if only I may finish my course and the ministry that I received from the Lord Jesus.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/acts/20/#v44020022')">Acts 20:22-24</span>) It was not reckless courage—it was love-driven determination.
+  </div>
+  <div class="comment-grid">
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128172;</span>Comment you could share</div><p>"Paul didn't say 'I'm not afraid'—he acknowledged the reality of what was ahead. But love gave him the power to face it anyway. That's a kind of courage available to each one of us through our relationship with Jehovah."</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128204;</span>Ministry connection</div><p>When we feel hesitant to knock on a door or share our faith at work, this text helps: God didn't give us timidity—He gave us power and love. Love for the person overrides the fear of their reaction.</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128591;</span>Getting to know Jehovah</div><p>Jehovah gives his servants a "spirit of power"—not just emotional courage, but divine backing. Knowing that He equips us helps us face trials that might otherwise feel insurmountable.</p></div>
+  </div>
+</div>
+<div class="para-block"><span class="para-num">¶14</span> Not long before he was executed, Paul wrote to his dear friend Timothy: "God did not give us a spirit of cowardice, but one of power and of love." (<span class="chip" onclick="openSidebar('2tim17b','2 Tim. 1:7','2 Timothy 1:7','&ldquo;For God did not give us a spirit of cowardice, but one of power and of love and of soundness of mind.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/2-timothy/1/#v55001007')">2 Tim. 1:7</span>) What did Paul mean? Paul was saying that strong love for Jehovah can move a Christian to be willing to face intense trials. (<span class="chip" onclick="openSidebar('2tim18b','2 Tim. 1:8','2 Timothy 1:8','&ldquo;So do not be ashamed of the witness about our Lord, but take your share of suffering for the good news according to the power of God.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/2-timothy/1/#v55001008')">2 Tim. 1:8</span>) No doubt the love Paul had for Jehovah helped him to face death courageously, without abandoning true worship. — <span class="chip" onclick="openSidebar('acts2024b','Acts 20:22-24','Acts 20:24','&ldquo;Nevertheless, I do not consider my life of any importance to me, if only I may finish my course and the ministry that I received from the Lord Jesus.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/acts/20/#v44020022')">Acts 20:22-24</span>.</div>
+
+<!-- Q15 -->
+<div class="question-card">
+  <div class="q-num">Question 15 &bull; Paragraph 15</div>
+  <div class="q-text">How have our brothers and sisters in our time shown unselfish love for one another?</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)"><span class="arrow">&#9654;</span> Show Comment &amp; Answer</button>
+<div class="answer-box">
+  <h4>Suggested Comment</h4>
+  <div class="suggested">
+    Just as Aquila and Priscilla risked their lives for the apostle Paul (<span class="chip" onclick="openSidebar('rom1634','Rom. 16:3, 4','Romans 16:3, 4','&ldquo;Give my greetings to Priscilla and Aquila, my fellow workers in Christ Jesus, who have risked their own necks for my life.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/romans/16/#v45016003')">Rom. 16:3, 4</span>), modern-day brothers and sisters show similar courage. In Russia, many have gone to courthouses to support those who have been arrested. One arrested sister, upon seeing dozens of her fellow believers there, was so overcome with emotion she couldn't speak for a while. Their unselfish presence strengthened her at exactly the moment she needed it most. This kind of love—love that is stronger than personal risk—reflects what it truly means to be united as a congregation.
+  </div>
+  <div class="comment-grid">
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128172;</span>Comment you could share</div><p>"The image of that sister being unable to speak because she was so moved by seeing her brothers and sisters at the courthouse—that's what genuine brotherly love looks like. It speaks louder than any speech."</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128204;</span>Ministry connection</div><p>We can reflect on how our congregation's unity itself becomes a witness. When those outside see us supporting each other through trials—rather than abandoning one another—it sets us apart from the world.</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128591;</span>Getting to know Jehovah</div><p>Jehovah is a God who builds families—spiritual families. The love brothers and sisters show each other mirrors His own love for His people. When we support each other, we're reflecting His character.</p></div>
+  </div>
+</div>
+<div class="para-block"><span class="para-num">¶15</span> We certainly love our fellow believers who remain firm in the face of persecution. Some today willingly put themselves at risk for their brothers and sisters, as Aquila and Priscilla did when they risked their lives for Paul. (<span class="chip" onclick="openSidebar('rom1634b','Rom. 16:3, 4','Romans 16:3, 4','&ldquo;Give my greetings to Priscilla and Aquila, my fellow workers in Christ Jesus, who have risked their own necks for my life.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/romans/16/#v45016003')">Rom. 16:3, 4</span>) In Russia, for example, many have gone to courthouses to encourage those who have been arrested. When one sister who had been arrested saw dozens of her spiritual brothers and sisters at the courthouse, she was so overcome with emotion that she could not speak for a while. The unselfish love of her fellow believers strengthened her when she really needed it. How happy we can be that we have love that is stronger than hatred!</div>
+<div class="img-block">
+  <img src="https://assetsnffrgf-a.akamaihd.net/img/p/2026324/univ/art/2026324_univ_cnt_3_lg.jpg" alt="Brothers and sisters supporting a fellow worshipper being taken into custody" loading="lazy" onerror="this.style.display='none'"/>
+  <div class="img-caption"><strong>Even where our work is banned or restricted, our brothers and sisters have shown unselfish love for fellow Christians (See paragraph 15)</strong><div class="img-note">Application: A reenactment of brothers and sisters gathering to support a fellow worshipper being led into confinement. This is love in action—not just words, but presence and risk. We can ask ourselves: how do we show up for our brothers and sisters when they face difficulty?</div></div>
+</div>
+
+<!-- Q16 -->
+<div class="question-card">
+  <div class="q-num">Question 16 &bull; Paragraph 16</div>
+  <div class="q-text">Why did the apostle Peter say that those who are mistreated for serving God have reason to be happy?</div>
+  <div class="q-ref">Read <span class="chip" onclick="openSidebar('1pet414','1 Peter 4:14','1 Peter 4:14','&ldquo;If you are being reproached for the name of Christ, you are happy, because the spirit of glory, yes, the spirit of God, is resting upon you.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/1-peter/4/#v60004014')">1 Peter 4:14</span></div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)"><span class="arrow">&#9654;</span> Show Comment &amp; Answer</button>
+<div class="answer-box">
+  <h4>Suggested Comment</h4>
+  <div class="suggested">
+    Peter said that mistreatment for serving God is proof that "the spirit of glory, yes, the spirit of God, is resting upon" us. (Read <span class="chip" onclick="openSidebar('1pet414b','1 Peter 4:14','1 Peter 4:14','&ldquo;If you are being reproached for the name of Christ, you are happy, because the spirit of glory, yes, the spirit of God, is resting upon you.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/1-peter/4/#v60004014')">1 Peter 4:14</span>) This means persecution signals Jehovah's approval. Peter knew this personally—after being flogged by the Jewish temple police, he and his fellow apostles didn't stop preaching. Instead, they "rejoiced because they had been counted worthy to be dishonored in behalf of [Jesus'] name." (<span class="chip" onclick="openSidebar('acts54142','Acts 5:40-42','Acts 5:41','&ldquo;So they went out from before the Sanhedrin, rejoicing because they had been counted worthy to be dishonored in behalf of his name.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/acts/5/#v44005040')">Acts 5:40-42</span>) What a powerful example of reframing suffering as an honor.
+  </div>
+  <div class="comment-grid">
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128172;</span>Comment you could share</div><p>"It's striking that after being flogged, the apostles' response was joy. They didn't see it as punishment—they saw it as an honor. That changes everything about how we view opposition."</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128204;</span>Ministry connection</div><p>If someone dismisses or ridicules our message at the door, we can inwardly remind ourselves: this is evidence that God's spirit is with us. The opposition doesn't diminish our work—it confirms it.</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128591;</span>Getting to know Jehovah</div><p>Jehovah's approval is something we can feel even in painful moments. His spirit "resting upon us" is an active, ongoing gift—not just a reward for easy service, but a companion in hard times.</p></div>
+  </div>
+</div>
+<div class="para-block"><span class="para-num">¶16</span> We know that our endurance amid hatred brings God's approval. (Read <span class="chip" onclick="openSidebar('1pet414c','1 Peter 4:14','1 Peter 4:14','&ldquo;If you are being reproached for the name of Christ, you are happy, because the spirit of glory, yes, the spirit of God, is resting upon you.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/1-peter/4/#v60004014')">1 Peter 4:14</span>.) The apostle Peter said that those who endure mistreatment for serving God have reason to be happy—because such mistreatment is proof that God's spirit "is resting upon [us]." Peter knew what it felt like to have God's approval and to endure persecution. Shortly after Pentecost 33 C.E., the Jewish temple police arrested Peter and other apostles for preaching. But Peter boldly defended his faith. (<span class="chip" onclick="openSidebar('acts5529','Acts 5:24-29','Acts 5:29','&ldquo;We must obey God as ruler rather than men.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/acts/5/#v44005024')">Acts 5:24-29</span>) Even after being flogged, he and his fellow apostles did not stop preaching. Rather, they rejoiced because they had been "counted worthy to be dishonored in behalf of [Jesus'] name." — <span class="chip" onclick="openSidebar('acts54142b','Acts 5:40-42','Acts 5:41','&ldquo;So they went out from before the Sanhedrin, rejoicing because they had been counted worthy to be dishonored in behalf of his name.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/acts/5/#v44005040')">Acts 5:40-42</span>.</div>
+
+<!-- Q17 -->
+<div class="question-card">
+  <div class="q-num">Question 17 &bull; Paragraph 17</div>
+  <div class="q-text">What did Jesus tell his disciples on the night before his death?</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)"><span class="arrow">&#9654;</span> Show Comment &amp; Answer</button>
+<div class="answer-box">
+  <h4>Suggested Comment</h4>
+  <div class="suggested">
+    On the night before his death, Jesus told his disciples: "Whoever loves me will be loved by my Father, and I will love him." (<span class="chip" onclick="openSidebar('john1421','John 14:21','John 14:21','&ldquo;Whoever has my commandments and observes them is the one who loves me. In turn, whoever loves me will be loved by my Father, and I will love him and will clearly show myself to him.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/14/#v43014021')">John 14:21</span>) This is the future we're working toward—a time when we will be loved, not hated, for serving Jehovah. (<span class="chip" onclick="openSidebar('2thess168','2 Thess. 1:6-8','2 Thessalonians 1:6-8','&ldquo;This takes into account that it is righteous on God's part to repay tribulation to those who make tribulation for you, and to give relief to you who suffer tribulation together with us.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/2-thessalonians/1/#v53001006')">2 Thess. 1:6-8</span>) Until then, we have many reasons to be happy even when we are hated—and the article has beautifully laid them all out. What a privilege to serve a God who not only prepares us for trials but promises to be with us through them.
+  </div>
+  <div class="comment-grid">
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128172;</span>Comment you could share</div><p>"Jesus' words the night before his death are so personal. 'I will love him'—not Jehovah in general, but Jesus himself expressing love to each one of us. That kind of love makes any present hardship bearable."</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128204;</span>Ministry connection</div><p>This forward-looking perspective is a powerful message for people who feel like the world doesn't value them. The time is coming when Jehovah will right every wrong. That's a hope worth sharing.</p></div>
+    <div class="comment-box"><div class="cb-label"><span class="cb-icon">&#128591;</span>Getting to know Jehovah</div><p>Jehovah, through Jesus, has personally promised relief to those enduring trials. He doesn't just observe our suffering—He will act on our behalf. That's a deeply personal quality that builds trust.</p></div>
+  </div>
+</div>
+<div class="para-block"><span class="para-num">¶17</span> On the night before his death, Jesus told his disciples: "Whoever loves me will be loved by my Father, and I will love him." (<span class="chip" onclick="openSidebar('john1421b','John 14:21','John 14:21','&ldquo;Whoever has my commandments and observes them is the one who loves me. In turn, whoever loves me will be loved by my Father, and I will love him and will clearly show myself to him.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/14/#v43014021')">John 14:21</span>) How we look forward to the time when we will be loved—not hated—for serving Jehovah! (<span class="chip" onclick="openSidebar('2thess168b','2 Thess. 1:6-8','2 Thessalonians 1:6-8','&ldquo;...it is righteous on God's part to repay tribulation to those who make tribulation for you, and to give relief to you who suffer tribulation together with us.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/2-thessalonians/1/#v53001006')">2 Thess. 1:6-8</span>) In the meantime, may we find comfort and strength in the many reasons we have to be happy when we are hated.</div>
+
+<!-- ========================
+     HOW WOULD YOU ANSWER?
+     ======================== -->
+<div class="hwya-section">
+  <h2>&#127919; How Would You Answer?</h2>
+
+  <div class="hwya-item">
+    <div class="question-card" style="margin-bottom:8px">
+      <div class="q-num">Review Question 1</div>
+      <div class="q-text">Why are Jesus' followers hated?</div>
+    </div>
+    <button class="answer-toggle" onclick="toggleAnswer(this)"><span class="arrow">&#9654;</span> Show Summary Answer</button>
+    <div class="answer-box">
+      <h4>Summary Answer</h4>
+      <div class="suggested">Jesus' followers are hated for three main reasons: (1) they worship Jehovah—and those blinded by Satan oppose anyone who does (<span class="chip" onclick="openSidebar('john1623hw','John 16:2, 3','John 16:2, 3','&ldquo;They will do these things because they have not come to know either the Father or me.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/16/#v43016002')">John 16:2, 3</span>); (2) they respect Jesus and acknowledge his kingship, which those loyal to earthly rulers reject (<span class="chip" onclick="openSidebar('mark1313hw','Mark 13:13','Mark 13:13','&ldquo;You will be hated by all people on account of my name.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/mark/13/#v41013013')">Mark 13:13</span>); and (3) they are "no part of the world"—they reject its ungodly conduct, political allegiances, and moral standards, which sets them apart and draws ridicule (<span class="chip" onclick="openSidebar('john151820hw','John 15:18-20','John 15:18-20','&ldquo;Because you are no part of the world, but I have chosen you out of the world, for this reason the world hates you.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/john/15/#v43015018')">John 15:18-20</span>). Ultimately, Satan is behind all opposition to Jehovah's people.</div>
+      <div class="comment-box" style="margin-top:10px"><div class="cb-label"><span class="cb-icon">&#128172;</span>Personal comment</div><p>"The three reasons all come back to one thing: our allegiance is to Jehovah, not to the world. That clarity of purpose is what makes opposition predictable and manageable."</p></div>
+    </div>
+  </div>
+
+  <div class="hwya-item">
+    <div class="question-card" style="margin-bottom:8px">
+      <div class="q-num">Review Question 2</div>
+      <div class="q-text">How is our love stronger than hatred?</div>
+    </div>
+    <button class="answer-toggle" onclick="toggleAnswer(this)"><span class="arrow">&#9654;</span> Show Summary Answer</button>
+    <div class="answer-box">
+      <h4>Summary Answer</h4>
+      <div class="suggested">Our love is stronger than hatred in several ways: It moves us to <em>pray</em> for our opposers rather than retaliate (following Jesus and Stephen's example). It empowers us to <em>endure</em> trials without abandoning our faith (as Paul demonstrated with his "spirit of power and love" — <span class="chip" onclick="openSidebar('2tim17hw','2 Tim. 1:7','2 Timothy 1:7','&ldquo;God did not give us a spirit of cowardice, but one of power and of love.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/2-timothy/1/#v55001007')">2 Tim. 1:7</span>). It motivates us to <em>support</em> each other under pressure, like the brothers and sisters who came to the courthouse in Russia. And it allows us to find genuine happiness—not despite the hatred, but because love fills the spaces hatred tries to destroy.</div>
+      <div class="comment-box" style="margin-top:10px"><div class="cb-label"><span class="cb-icon">&#128172;</span>Personal comment</div><p>"Hatred is reactive and self-focused; love is proactive and other-focused. That's why it wins—it operates on a completely different level."</p></div>
+    </div>
+  </div>
+
+  <div class="hwya-item">
+    <div class="question-card" style="margin-bottom:8px">
+      <div class="q-num">Review Question 3</div>
+      <div class="q-text">Why can we be happy when hated?</div>
+    </div>
+    <button class="answer-toggle" onclick="toggleAnswer(this)"><span class="arrow">&#9654;</span> Show Summary Answer</button>
+    <div class="answer-box">
+      <h4>Summary Answer</h4>
+      <div class="suggested">We can be happy when hated for at least four reasons: (1) It <em>fulfills Bible prophecy</em>, confirming we serve the true God and that His word is reliable. (2) Jehovah's <em>spirit rests on us</em> when we endure—persecution itself becomes evidence of God's approval (<span class="chip" onclick="openSidebar('1pet414hw','1 Pet. 4:14','1 Peter 4:14','&ldquo;If you are being reproached for the name of Christ, you are happy, because the spirit of glory, yes, the spirit of God, is resting upon you.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/1-peter/4/#v60004014')">1 Pet. 4:14</span>). (3) We have <em>love stronger than hatred</em>—a quality that sustains us through the deepest trials. (4) We have a <em>future to look forward to</em>—a time when we will be loved, not hated, for serving Jehovah, when all opposition will end. (<span class="chip" onclick="openSidebar('2thess168hw','2 Thess. 1:6-8','2 Thessalonians 1:6-8','&ldquo;...to give relief to you who suffer tribulation together with us at the revelation of the Lord Jesus.&rdquo;','https://www.jw.org/en/library/bible/study-bible/books/2-thessalonians/1/#v53001006')">2 Thess. 1:6-8</span>)</div>
+      <div class="comment-box" style="margin-top:10px"><div class="cb-label"><span class="cb-icon">&#128172;</span>Personal comment</div><p>"What I love about this article is that happiness when hated isn't forced positivity—it's grounded in facts: prophecy fulfilled, God's spirit present, a guaranteed future. That's real happiness."</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- CLOSING SONG -->
+<div class="song-banner" style="margin-top:20px"><span class="icon">&#127926;</span> Closing: Song 149 — A Victory Song</div>
+
+<!-- SOURCE LINK -->
+<div class="source-link">
+  <a href="https://www.jw.org/en/library/magazines/watchtower-study-march-2026/Why-You-Can-Be-Happy-When-You-Are-Hated/" target="_blank">&#128214; Read the full article on JW.org (w26 March pp. 26-31)</a>
+</div>
+
+<div style="text-align:center;font-size:.78rem;color:#a0aec0;padding:16px 0 8px">
+  Generated for personal study use only &bull; June 7, 2026 Watchtower Study
+</div>
+
+</div><!-- end container -->
+
+<script>
+function toggleAnswer(btn) {
+  btn.classList.toggle('open');
+  const box = btn.nextElementSibling;
+  box.classList.toggle('open');
+  btn.innerHTML = btn.classList.contains('open')
+    ? '<span class="arrow" style="transform:rotate(90deg);display:inline-block">&#9654;</span> Hide Comment &amp; Answer'
+    : '<span class="arrow">&#9654;</span> Show Comment &amp; Answer';
+}
+
+function expandAll() {
+  const toggles = document.querySelectorAll('.answer-toggle');
+  const boxes = document.querySelectorAll('.answer-box');
+  const allOpen = [...toggles].every(t => t.classList.contains('open'));
+  toggles.forEach(t => {
+    if(allOpen) {
+      t.classList.remove('open');
+      t.innerHTML = '<span class="arrow">&#9654;</span> Show Comment &amp; Answer';
+    } else {
+      t.classList.add('open');
+      t.innerHTML = '<span class="arrow" style="transform:rotate(90deg);display:inline-block">&#9654;</span> Hide Comment &amp; Answer';
+    }
+  });
+  boxes.forEach(b => { if(allOpen) b.classList.remove('open'); else b.classList.add('open'); });
+  document.querySelector('.expand-btn').textContent = allOpen ? '▶ Expand All Comments' : '▼ Collapse All Comments';
+}
+
+// SIDEBAR SYSTEM
+function openSidebar(id, title, refLabel, verseText, jwoUrl) {
+  document.getElementById('sidebar-title').textContent = refLabel;
+  document.getElementById('sidebar-body').innerHTML = \`
+    <h4>\${refLabel}</h4>
+    <div class="verse-text">\${verseText}</div>
+    <div class="article-excerpt">Tap "Open full article" to read the complete context and study notes from JW.org.</div>
+    <a class="sidebar-link" href="\${jwoUrl}" target="_blank">Open full article &#8594;</a>
+  \`;
+  document.getElementById('sidebar').classList.add('open');
+  document.getElementById('sidebar-overlay').classList.add('show');
+}
+
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebar-overlay').classList.remove('show');
+}
+
+// Keyboard close
+document.addEventListener('keydown', function(e) { if(e.key === 'Escape') closeSidebar(); });
+</script>
+</body>
+</html>
