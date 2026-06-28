@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WT Study Guide – June 22–28, 2026</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Georgia', serif; background: #f0f4f8; color: #1a202c; line-height: 1.75; }
+
+  /* ── HEADER ── */
+  .site-header { background: #1a365d; color: #fff; padding: 18px 20px 14px; text-align: center; }
+  .site-header h1 { font-size: 1.05rem; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; opacity: .8; }
+  .site-header h2 { font-size: 1.65rem; font-weight: 700; margin: 4px 0 8px; }
+  .date-badge { display: inline-block; background: #c53030; color: #fff; font-size: .78rem; font-weight: 700;
+    letter-spacing: .06em; padding: 4px 14px; border-radius: 20px; text-transform: uppercase; }
+
+  /* ── MAIN WRAPPER ── */
+  .main { max-width: 820px; margin: 0 auto; padding: 20px 16px 60px; }
+
+  /* ── SONG BANNERS ── */
+  .song-banner { background: #2d4a7a; color: #fff; border-radius: 10px; padding: 14px 20px;
+    margin: 18px 0; display: flex; align-items: center; gap: 12px; }
+  .song-banner .icon { font-size: 1.6rem; }
+  .song-banner .text strong { display: block; font-size: 1rem; }
+  .song-banner .text span { font-size: .88rem; opacity: .85; }
+
+  /* ── FOCUS BANNER ── */
+  .focus-banner { background: #1a365d; color: #e2e8f0; border-radius: 10px; padding: 16px 22px;
+    margin: 18px 0; border-left: 5px solid #f6ad55; }
+  .focus-banner .label { font-size: .7rem; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: #f6ad55; margin-bottom: 6px; }
+  .focus-banner p { font-size: .97rem; font-style: italic; }
+
+  /* ── THEME VERSE ── */
+  .theme-verse { background: #fff; border-left: 5px solid #2b6cb0; border-radius: 0 10px 10px 0;
+    padding: 16px 20px; margin: 18px 0; box-shadow: 0 1px 4px rgba(0,0,0,.07); }
+  .theme-verse blockquote { font-size: 1.08rem; font-style: italic; color: #2c3e50; margin-bottom: 8px; }
+
+  /* ── EXPAND ALL ── */
+  .expand-all-bar { text-align: right; margin: 14px 0 4px; }
+  .expand-all-bar button { background: #2b6cb0; color: #fff; border: none; border-radius: 6px;
+    padding: 7px 16px; font-size: .85rem; cursor: pointer; transition: background .2s; }
+  .expand-all-bar button:hover { background: #1a365d; }
+
+  /* ── SECTION HEADING ── */
+  .section-heading { background: #2d4a7a; color: #fff; border-radius: 8px; padding: 10px 18px;
+    margin: 28px 0 14px; font-size: 1rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+
+  /* ── QUESTION CARD ── */
+  .question-card { background: #fff; border-left: 4px solid #b91c1c; border-radius: 8px;
+    padding: 14px 18px; margin: 20px 0 0; box-shadow: 0 1px 3px rgba(0,0,0,.07); }
+  .question-card .q-label { font-size: .7rem; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: #b91c1c; margin-bottom: 5px; }
+  .question-card .q-text { font-size: 1rem; font-weight: 700; color: #1a202c; }
+
+  /* ── ANSWER COLLAPSIBLE ── */
+  .answer-toggle { width: 100%; background: none; border: none; text-align: left; cursor: pointer;
+    padding: 10px 18px; font-size: .88rem; color: #92400e; font-weight: 700;
+    display: flex; align-items: center; gap: 6px; transition: color .2s; }
+  .answer-toggle:hover { color: #b45309; }
+  .answer-box { background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 0 0 8px 8px;
+    padding: 0 18px; max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .3s; }
+  .answer-box.open { max-height: 1200px; padding: 14px 18px 18px; }
+  .answer-box h4 { font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    color: #92400e; margin: 14px 0 5px; }
+  .answer-box h4:first-child { margin-top: 0; }
+  .answer-box p { font-size: .93rem; color: #2d3748; margin-bottom: 8px; }
+  .answer-box ul { padding-left: 18px; margin-bottom: 8px; }
+  .answer-box ul li { font-size: .92rem; color: #2d3748; margin-bottom: 4px; }
+  .sub-part { background: #fef3c7; border-radius: 6px; padding: 10px 14px; margin-bottom: 8px; }
+  .sub-part .part-label { font-weight: 700; color: #b45309; font-size: .85rem; }
+
+  /* ── COMMENT PREP ── */
+  .comment-prep { background: #f0fff4; border: 1px solid #9ae6b4; border-radius: 8px;
+    padding: 12px 14px; margin: 10px 0; }
+  .comment-prep .cp-icon { font-size: 1rem; margin-right: 5px; }
+  .comment-prep .cp-label { font-weight: 700; font-size: .82rem; color: #276749; }
+  .comment-prep p { font-size: .88rem; color: #2f4a39; margin-top: 4px; }
+
+  /* ── PARAGRAPH BLOCK ── */
+  .para-block { background: #f8fafc; border-left: 3px solid #e2e8f0; border-radius: 8px;
+    padding: 14px 18px; margin: 12px 0; }
+  .para-block .para-num { font-size: .7rem; font-weight: 700; letter-spacing: .08em; color: #718096;
+    text-transform: uppercase; margin-bottom: 6px; }
+  .para-block p { font-size: .95rem; color: #2d3748; }
+
+  /* ── SCRIPTURE CHIPS ── */
+  .chip { display: inline-block; background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe;
+    border-radius: 4px; padding: 2px 7px; font-size: .78rem; font-weight: 600; cursor: pointer;
+    margin: 0 2px; transition: background .15s; vertical-align: baseline; text-decoration: none; }
+  .chip:hover { background: #dbeafe; }
+  .chip.bold-read { background: #fef3c7; color: #92400e; border-color: #fcd34d; font-weight: 700; }
+  .chip.bold-read:hover { background: #fde68a; }
+
+  /* ── IMAGES ── */
+  .img-block { margin: 14px 0; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+  .img-block img { width: 100%; display: block; }
+  .img-block .img-caption { background: #1a365d; color: #e2e8f0; padding: 10px 14px; font-size: .84rem; }
+  .img-block .img-application { background: #edf2f7; padding: 10px 14px; font-size: .84rem;
+    color: #4a5568; font-style: italic; border-top: 1px solid #e2e8f0; }
+
+  /* ── HOW WOULD YOU ANSWER ── */
+  .hwya-section { background: #fff; border: 2px solid #1a365d; border-radius: 12px;
+    padding: 20px 22px; margin: 30px 0; }
+  .hwya-section h2 { color: #1a365d; font-size: 1.1rem; font-weight: 700; margin-bottom: 16px;
+    text-transform: uppercase; letter-spacing: .04em; }
+  .hwya-card { border-bottom: 1px solid #e2e8f0; padding: 14px 0; }
+  .hwya-card:last-child { border-bottom: none; }
+  .hwya-card .q { font-weight: 700; font-size: .97rem; color: #1a365d; margin-bottom: 6px; }
+
+  /* ── SIDEBAR ── */
+  .sidebar-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,.35);
+    z-index: 999; display: none; }
+  .sidebar-overlay.open { display: block; }
+  .sidebar { position: fixed; top: 0; right: -360px; width: 340px; height: 100%; background: #fff;
+    box-shadow: -4px 0 20px rgba(0,0,0,.15); z-index: 1000; overflow-y: auto;
+    transition: right .3s ease; display: flex; flex-direction: column; }
+  .sidebar.open { right: 0; }
+  .sidebar-header { background: #1a365d; color: #fff; padding: 16px 18px; display: flex;
+    justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10; }
+  .sidebar-header h3 { font-size: 1rem; font-weight: 700; }
+  .sidebar-close { background: none; border: none; color: #fff; font-size: 1.3rem; cursor: pointer;
+    padding: 2px 6px; border-radius: 4px; transition: background .15s; }
+  .sidebar-close:hover { background: rgba(255,255,255,.2); }
+  .sidebar-body { padding: 18px; flex: 1; }
+  .sidebar-ref-label { font-size: .7rem; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: #718096; margin-bottom: 4px; }
+  .sidebar-ref { font-size: 1.05rem; font-weight: 700; color: #1a365d; margin-bottom: 12px; }
+  .sidebar-text { font-size: .93rem; color: #2d3748; line-height: 1.7; background: #f8fafc;
+    border-left: 3px solid #2b6cb0; border-radius: 0 6px 6px 0; padding: 12px 14px; margin-bottom: 14px; }
+  .sidebar-insight { background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px;
+    padding: 12px 14px; font-size: .88rem; color: #4a3000; line-height: 1.65; }
+  .sidebar-insight h4 { font-size: .75rem; font-weight: 700; color: #92400e; text-transform: uppercase;
+    letter-spacing: .07em; margin-bottom: 6px; }
+  .sidebar-open-link { display: block; margin-top: 14px; text-align: center; background: #2b6cb0;
+    color: #fff; padding: 9px; border-radius: 6px; font-size: .85rem; text-decoration: none;
+    font-weight: 600; transition: background .2s; }
+  .sidebar-open-link:hover { background: #1a365d; }
+
+  @media (max-width: 480px) {
+    .sidebar { width: 100%; right: -100%; }
+    .site-header h2 { font-size: 1.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR OVERLAY -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<!-- SIDEBAR PANEL -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h3 id="sidebarTitle">Scripture</h3>
+    <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+  </div>
+  <div class="sidebar-body" id="sidebarBody">
+    <p>Loading...</p>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="site-header">
+  <h1>JW Meeting Study Guide</h1>
+  <h2>Learn From "the God of All Comfort"</h2>
+  <span class="date-badge">Watchtower Study · June 28, 2026</span>
+</div>
+
+<div class="main">
+
+  <div class="expand-all-bar">
+    <button onclick="toggleAll()">Expand All Answers</button>
+  </div>
+
+  <!-- OPENING SONG -->
+  <div class="song-banner">
+    <div class="icon">🎵</div>
+    <div class="text">
+      <strong>Opening Song 90</strong>
+      <span>Encourage One Another</span>
+    </div>
+  </div>
+
+  <!-- FOCUS -->
+  <div class="focus-banner">
+    <div class="label">Focus</div>
+    <p>How to comfort others by following the examples of Jehovah and of those who imitate him.</p>
+  </div>
+
+  <!-- THEME VERSE -->
+  <div class="theme-verse">
+    <div style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#718096;margin-bottom:6px;">Theme Verse</div>
+    <blockquote>"Comfort others . . . with the comfort that we receive from God."</blockquote>
+    <span class="chip" onclick="openSidebar('2cor1-4')">2 Cor. 1:4</span>
+  </div>
+
+  <!-- PARAGRAPH 1 / QUESTION 1 -->
+  <div class="question-card">
+    <div class="q-label">Question 1</div>
+    <div class="q-text">Why should we comfort others?</div>
+  </div>
+  <button class="answer-toggle" onclick="toggleAnswer('a1')">▸ Show comment</button>
+  <div class="answer-box" id="a1">
+    <h4>💡 Core Idea</h4>
+    <p>We should comfort others because Jehovah — "the God of all comfort" — sets the example of providing comfort to <em>all</em> who suffer, and because we love our brothers and sisters. It's not an obligation but an expression of love.</p>
+    <h4>📖 Key Scriptures</h4>
+    <p><span class="chip" onclick="openSidebar('1pet1-6')">1 Pet. 1:6</span> — We are all distressed by various trials. <span class="chip" onclick="openSidebar('matt7-12')">Matt. 7:12</span> — The Golden Rule applies: we should give others what we'd want. <span class="chip" onclick="openSidebar('2cor1-3-4')">2 Cor. 1:3, 4</span> — Jehovah comforts us so we can comfort others. <span class="chip" onclick="openSidebar('1thess4-18')">1 Thess. 4:18</span> — We are commanded to keep comforting one another.</p>
+    <div class="comment-prep">
+      <span class="cp-icon">💬</span><span class="cp-label">Comment you could share:</span>
+      <p>"What struck me is that the article says we comfort others not because we <em>have to</em>, but because we <em>love</em> them. That motivation makes all the difference in how naturally comfort flows from us."</p>
+    </div>
+    <div class="comment-prep">
+      <span class="cp-icon">📌</span><span class="cp-label">Ministry connection:</span>
+      <p>We can point out to people in our territory that there is a God who truly comforts — and that his people are trained to reflect that comfort to others. That's a unique message.</p>
+    </div>
+    <div class="comment-prep">
+      <span class="cp-icon">🙏</span><span class="cp-label">Getting to know Jehovah:</span>
+      <p>Jehovah is called "the Father of tender mercies." His comfort is tied to his personality — it's not distant or corporate, but genuinely tender and personal.</p>
+    </div>
+  </div>
+
+  <div class="para-block">
+    <div class="para-num">Paragraph 1</div>
+    <p>WE ARE all "distressed by various trials," so we at times need comfort and encouragement. <span class="chip" onclick="openSidebar('1pet1-6')">(1 Pet. 1:6)</span> Just as we appreciate receiving comfort from others, we should be quick to provide it to those who are suffering adversity. <span class="chip" onclick="openSidebar('matt7-12')">(Matt. 7:12)</span> Jehovah, "the God of all comfort," shows us how to "comfort others in any sort of trial." We can follow his example by "comforting one another." <span class="chip" onclick="openSidebar('2cor1-3-4')">(2 Cor. 1:3, 4;</span> <span class="chip" onclick="openSidebar('1thess4-18')">1 Thess. 4:18)</span> We do so, not because we have to, but because we love our brothers and sisters. In this article, we will consider (1) the meaning of comfort as described in the Bible, (2) how we can comfort others, and (3) what we can do when we need comfort.</p>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section-heading">Comfort as Described in the Bible</div>
+
+  <!-- Q2 -->
+  <div class="question-card">
+    <div class="q-label">Question 2</div>
+    <div class="q-text">In the Bible, what range of meanings can the word translated "comfort" have?</div>
+  </div>
+  <button class="answer-toggle" onclick="toggleAnswer('a2')">▸ Show comment</button>
+  <div class="answer-box" id="a2">
+    <h4>💡 Core Idea</h4>
+    <p>The Greek word for "comfort" is broader than we might assume. It means "to call to one's side" — like a friend rushing over to help. It can also mean to encourage, exhort, or urge. Whatever form the help takes, the outcome is the same: the suffering person is built up and strengthened.</p>
+    <h4>📖 Key Scriptures</h4>
+    <p><span class="chip" onclick="openSidebar('rom12-8')">Rom. 12:8</span> — "encourages" — same Greek root. The literal picture is a friend rushing to stand alongside someone in need.</p>
+    <div class="comment-prep">
+      <span class="cp-icon">💬</span><span class="cp-label">Comment you could share:</span>
+      <p>"I found it interesting that the original word literally means 'to call to one's side.' That image of someone immediately coming to stand with you — not sending a text later, but <em>coming alongside</em> — is really moving."</p>
+    </div>
+    <div class="comment-prep">
+      <span class="cp-icon">🙏</span><span class="cp-label">Getting to know Jehovah:</span>
+      <p>Jehovah is literally the one who "calls to his side" anyone who is suffering. That's an intimate, present picture of who he is — not a distant God, but one who rushes to our side.</p>
+    </div>
+  </div>
+
+  <div class="para-block">
+    <div class="para-num">Paragraph 2</div>
+    <p>In the Bible, the Greek word translated "comfort" can have a wide range of meanings, depending on the context. It can mean "encourage," "exhort," or "urge." <span class="chip" onclick="openSidebar('rom12-8')">(Rom. 12:8)</span> The literal meaning of this word is "to call to one's side." So we can picture a friend coming quickly to the aid of his companion who is suffering, providing whatever help or support he needs. Regardless of the type of help that friend gives, true comfort produces the same outcome — the one suffering is built up and strengthened.</p>
+  </div>
+
+  <!-- Q3 -->
+  <div class="question-card">
+    <div class="q-label">Question 3</div>
+    <div class="q-text">How did Barnabas set an example in comforting others?</div>
+  </div>
+  <button class="answer-toggle" onclick="toggleAnswer('a3')">▸ Show comment</button>
+  <div class="answer-box" id="a3">
+    <h4>💡 Core Idea</h4>
+    <p>Barnabas was so skilled at comforting and encouraging that his given name — Joseph — was completely replaced by the nickname "Son of Comfort." His most notable act: he trusted the newly converted Saul (Paul) when everyone else feared him, and introduced him to the apostles. Comfort sometimes requires personal courage.</p>
+    <h4>📖 Key Scriptures</h4>
+    <p><span class="chip" onclick="openSidebar('acts4-36')">Acts 4:36</span> — "Son of Comfort." <span class="chip" onclick="openSidebar('acts9-26-28')">Acts 9:26–28</span> — Barnabas vouches for Paul despite the risk.</p>
+    <div class="comment-prep">
+      <span class="cp-icon">💬</span><span class="cp-label">Comment you could share:</span>
+      <p>"What stood out to me about Barnabas is that his comfort often involved taking a personal risk — introducing someone unpopular, defending someone others doubted. Real comfort isn't always the safe or easy choice."</p>
+    </div>
+    <div class="comment-prep">
+      <span class="cp-icon">📌</span><span class="cp-label">Ministry connection:</span>
+      <p>When we introduce ourselves to new ones in the ministry who feel like outsiders or are nervous, we're doing what Barnabas did — standing alongside them and vouching for them.</p>
+    </div>
+  </div>
+
+  <div class="para-block">
+    <div class="para-num">Paragraph 3</div>
+    <p>A Christian named Joseph displayed such an outstanding ability to encourage and comfort others that the apostles called him Barnabas, which means "Son of Comfort." <span class="chip" onclick="openSidebar('acts4-36')">(Acts 4:36)</span> That name fit him so well that the Bible never again refers to him by his given name. On various occasions, Barnabas lived up to his name by coming to the aid of his fellow believers when they needed help. For instance, when the recently converted disciple Saul arrived in Jerusalem, he wanted to meet the disciples. However, they were afraid of him because of his reputation as a persecutor. But Barnabas trusted Saul and introduced him to the apostles. <span class="chip" onclick="openSidebar('acts9-26-28')">(Acts 9:26–28)</span></p>
+  </div>
+
+  <div class="img-block">
+    <img src="https://cms-imgp.jw-cdn.org/img/p/2026367/univ/art/2026367_univ_cnt_1_lg.jpg" alt="Barnabas bringing Saul to the apostles" loading="lazy">
+    <div class="img-caption">📷 Barnabas lived up to the meaning of his name (See paragraph 3)</div>
+    <div class="img-application">Consider: Barnabas didn't just offer words — he physically placed himself between Saul and skeptical apostles. How can you similarly "stand in the gap" for someone in your congregation who feels like an outsider?</div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section-heading">How to Comfort Others</div>
+
+  <!-- Q4 -->
+  <div class="question-card">
+    <div class="q-label">Question 4</div>
+    <div class="q-text">What is one of the best ways to provide comfort? <span class="chip bold-read" onclick="openSidebar('rom1-11-12')">READ: Romans 1:11, 12</span></div>
+  </div>
+  <button class="answer-toggle" onclick="toggleAnswer('a4')">▸ Show comment</button>
+  <div class="answer-box" id="a4">
+    <h4>💡 Core Idea</h4>
+    <p>Personal visits are the most powerful form of comfort. Jehovah used an angel to visit the depressed Elijah. Paul longed to visit his brothers personally. Even when a visit isn't possible, don't underestimate a phone call, letter, card, or text.</p>
+    <h4>📖 Romans 1:11, 12 (READ)</h4>
+    <p class="sidebar-text" style="background:#fef3c7;border-left:3px solid #f59e0b;border-radius:0 6px 6px 0;padding:10px 14px;font-size:.92rem;">"For I am longing to see you, that I may impart some spiritual gift to you for you to be made firm; or, rather, that we may have an interchange of encouragement among you, by each one being encouraged by the other's faith, both yours and mine." — Romans 1:11, 12</p>
+    <h4>📖 Other Key Scriptures</h4>
+    <p><span class="chip" onclick="openSidebar('1ki19-4-7')">1 Ki. 19:4–7</span> — Angel visited and fed the depressed Elijah. <span class="chip" onclick="openSidebar('1cor16-7')">1 Cor. 16:7</span> — Paul wanted more than a brief interaction.</p>
+    <div class="comment-prep">
+      <span class="cp-icon">💬</span><span class="cp-label">Comment you could share:</span>
+      <p>"I liked that Paul didn't just want to visit — he wanted mutual encouragement. He expected to <em>receive</em> comfort too. That's a beautiful picture of how visiting someone isn't a one-way service; it often strengthens both people."</p>
+    </div>
+    <div class="comment-prep">
+      <span class="cp-icon">📌</span><span class="cp-label">Ministry connection:</span>
+      <p>Making return visits in the ministry is a form of this same principle — showing up again for someone says: "I was thinking about you. You matter."</p>
+    </div>
+    <div class="comment-prep">
+      <span class="cp-icon">🙏</span><span class="cp-label">Getting to know Jehovah:</span>
+      <p>Jehovah didn't just send a message to the exhausted Elijah — he sent an angel to <em>touch</em> him, prepare food, and let him sleep. Jehovah's comfort is physically attentive and patient.</p>
+    </div>
+  </div>
+
+  <div class="para-block">
+    <div class="para-num">Paragraph 4</div>
+    <p>Visit them if possible. Jehovah uses his servants to provide comfort to others. For instance, when the prophet Elijah was depressed, Jehovah used an angel to encourage him. <span class="chip" onclick="openSidebar('1ki19-4-7')">(1 Ki. 19:4–7)</span> The apostle Paul also recognized the power of visiting his brothers in person to encourage them. <span class="chip bold-read" onclick="openSidebar('rom1-11-12')">(Read Romans 1:11, 12.)</span> When you visit someone to provide comfort, allow time for more than just a brief interaction. <span class="chip" onclick="openSidebar('1cor16-7')">(1 Cor. 16:7)</span> If you are unable to visit someone in need, however, do not underestimate the power of a phone call, a letter, a card, or a text message to strengthen him. Will you allow Jehovah to use you to provide comfort to others?</p>
+  </div>
+
+  <!-- Q5 -->
+  <div class="question-card">
+    <div class="q-label">Question 5</div>
+    <div class="q-text">What challenges can we expect to face?</div>
+  </div>
+  <button class="answer-toggle" onclick="toggleAnswer('a5')">▸ Show comment</button>
+  <div class="answer-box" id="a5">
+    <h4>💡 Core Idea</h4>
+    <p>As the last days intensify, comforting brothers in person will become more dangerous. Onesiphorus traveled from Ephesus to Rome to find Paul in prison — at personal risk. Brothers in Russia today visit imprisoned Witnesses in courtrooms, risking their own freedom. We should prepare ourselves spiritually for this kind of sacrificial support.</p>
+    <h4>📖 Key Scriptures</h4>
+    <p><span class="chip" onclick="openSidebar('2tim1-16-18')">2 Tim. 1:16–18</span> — Onesiphorus "searched diligently" for Paul and "found" him — implying real effort and risk.</p>
+    <div class="comment-prep">
+      <span class="cp-icon">💬</span><span class="cp-label">Comment you could share:</span>
+      <p>"The example of brothers in Russia showing up in courtrooms to support persecuted Witnesses really moved me. They could lose their own freedom just by being present. That's not passive comfort — that's courageous solidarity."</p>
+    </div>
+    <div class="comment-prep">
+      <span class="cp-icon">🙏</span><span class="cp-label">Getting to know Jehovah:</span>
+      <p>Jehovah trains his people collectively to face persecution together, so no one faces it alone. That communal strength is a gift he provides through the congregation.</p>
+    </div>
+  </div>
+
+  <div class="para-block">
+    <div class="para-num">Paragraph 5</div>
+    <p>As the last days become more critical, we can expect to face increased challenges when we try to comfort our brothers and sisters in person. During Paul's imprisonment in Rome, Onesiphorus, who was from Ephesus, searched for him at the risk of being imprisoned or even being put to death. <span class="chip" onclick="openSidebar('2tim1-16-18')">(2 Tim. 1:16–18)</span> Witnesses in Russia have shown a similar spirit when their brothers and sisters are being persecuted for their faith. When Witnesses are brought to trial, their brothers and sisters are present in the courtroom to show their support, even though doing so could put their own freedom at risk. Why not prepare yourself to follow their brave example by studying how God's people in ancient and in modern times have supported one another and have found joy despite persecution?</p>
+  </div>
+
+  <!-- Q6 -->
+  <div class="question-card">
+    <div class="q-label">Question 6</div>
+    <div class="q-text">How can we imitate Jehovah as we comfort others?</div>
+  </div>
+  <button class="answer-toggle" onclick="toggleAnswer('a6')">▸ Show comment</button>
+  <div class="answer-box" id="a6">
+    <h4>💡 Core Idea</h4>
+    <p>Listen. Jehovah listened to Elijah even when Elijah <em>repeated himself</em> and said things that were inaccurate about his situation. Jehovah also let Habakkuk express doubts that seemed to challenge God's authority. The lesson: before we offer solutions or corrections, we should truly listen — quickly, respectfully, without interrupting.</p>
+    <h4>📖 Key Scriptures</h4>
+    <p><span class="chip" onclick="openSidebar('1ki19-9-14')">1 Ki. 19:9, 10, 14</span> — Elijah repeated himself and Jehovah listened both times. <span class="chip" onclick="openSidebar('hab1-2-3')">Hab. 1:2, 3</span> — Habakkuk's bold questions; Jehovah responded with patience. <span class="chip" onclick="openSidebar('jas1-19')">Jas. 1:19</span> — "Be quick to listen." <span class="chip" onclick="openSidebar('eccl7-9')">Eccl. 7:9</span> — Do not be hasty to become upset.</p>
+    <div class="comment-prep">
+      <span class="cp-icon">💬</span><span class="cp-label">Comment you could share:</span>
+      <p>"What struck me is that Jehovah listened to Elijah <em>twice</em> even though Elijah repeated himself almost word for word. Jehovah didn't say 'I already told you the answer.' He let Elijah process. That's a patience I want to imitate."</p>
+    </div>
+    <div class="comment-prep">
+      <span class="cp-icon">📌</span><span class="cp-label">Ministry connection:</span>
+      <p>In the ministry, when a householder has repeated concerns or doubts they keep coming back to, the most comforting thing we can do is keep listening — not try to quickly "fix" them.</p>
+    </div>
+    <div class="comment-prep">
+      <span class="cp-icon">🙏</span><span class="cp-label">Getting to know Jehovah:</span>
+      <p>Jehovah "listens closely to our prayers even though he already knows what we need." He doesn't skip the conversation because he has the answers. He values <em>our expression</em> of faith in coming to him.</p>
+    </div>
+  </div>
+
+  <div class="para-block">
+    <div class="para-num">Paragraph 6</div>
+    <p>Listen to them. When the prophet Elijah felt that his life was in danger, he poured out his heart to Jehovah. Our loving God listened to Elijah as he expressed his concerns even though He already knew what was troubling him. Jehovah even listened patiently as Elijah repeated himself! <span class="chip" onclick="openSidebar('1ki19-9-14')">(1 Ki. 19:9, 10, 14)</span> Jehovah also allowed the prophet Habakkuk to express his concerns and doubts in a way that could have seemed as if he were challenging God's authority. <span class="chip" onclick="openSidebar('hab1-2-3')">(Hab. 1:2, 3)</span> Today, Jehovah listens closely to our prayers even though he already knows what we need. We can imitate Jehovah by listening carefully and respectfully when our brothers and sisters speak. "Be quick to listen" <span class="chip" onclick="openSidebar('jas1-19')">(Jas. 1:19;</span> <span class="chip" onclick="openSidebar('eccl7-9')">Eccl. 7:9)</span> as they talk, and avoid interrupting or taking offense, even if they seem to be speaking rashly or if they are repeating themselves.</p>
+  </div>
+
+  <div class="img-block">
+    <img src="https://cms-imgp.jw-cdn.org/img/p/2026367/univ/art/2026367_univ_cnt_2_lg.jpg" alt="A sister listening patiently to a distressed sister late at night" loading="lazy">
+    <div class="img-caption">📷 Imitate Jehovah by listening carefully when your brothers and sisters speak (See paragraph 6)</div>
+    <div class="img-application">Notice she's staying late — into the evening. True listening doesn't watch the clock. It creates a safe space where the person feels unhurried and truly heard.</div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="question-card">
+    <div class="q-label">Question 7</div>
+    <div class="q-text">How can we discern the needs of someone in distress?</div>
+  </div>
+  <button class="answer-toggle" onclick="toggleAnswer('a7')">▸ Show comment</button>
+  <div class="answer-box" id="a7">
+    <h4>💡 Core Idea</h4>
+    <p>We can't read hearts like Jehovah. To discern what someone actually needs, we must listen attentively — and not assume we know what they need based on what <em>we</em> would need in the same situation. People are different. Ask tactful questions to draw out their feelings.</p>
+    <h4>📖 Key Scriptures</h4>
+    <p><span class="chip" onclick="openSidebar('prov20-5')">Prov. 20:5</span> — "The thoughts of a man's heart are like deep waters, but the discerning man draws them out." — Tactful questions do the drawing.</p>
+    <div class="comment-prep">
+      <span class="cp-icon">💬</span><span class="cp-label">Comment you could share:</span>
+      <p>"I appreciated the warning not to assume you know what someone needs just because you know what <em>you'd</em> need. I've caught myself doing that — projecting my own needs onto others. It's a subtle mistake that can make people feel more misunderstood."</p>
+    </div>
+    <div class="comment-prep">
+      <span class="cp-icon">📌</span><span class="cp-label">Ministry connection:</span>
+      <p>In the field service, we learn to ask open questions — "What do you think about...?" rather than telling people what they should believe. That same skill helps us comfort people in the congregation.</p>
+    </div>
+  </div>
+
+  <div class="para-block">
+    <div class="para-num">Paragraph 7</div>
+    <p>Discern what a person needs. We cannot read hearts as Jehovah does, so we can only discern what comfort a person needs if we listen to him attentively. Do not assume that you know what the person needs because you know what you would need if you were in a similar situation. We are all different. So take your time, listen carefully, and ask tactful questions that will help to draw out his feelings. <span class="chip" onclick="openSidebar('prov20-5')">(Prov. 20:5)</span></p>
+  </div>
+
+  <!-- Q8 -->
+  <div class="question-card">
+    <div class="q-label">Question 8</div>
+    <div class="q-text">How did Jesus comfort Martha and Mary after Lazarus died?</div>
+  </div>
+  <button class="answer-toggle" onclick="toggleAnswer('a8')">▸ Show comment</button>
+  <div class="answer-box" id="a8">
+    <h4>💡 Core Idea</h4>
+    <p>Martha and Mary had the same loss, but Jesus comforted them differently. With Martha, he shared truths about the resurrection — she needed intellectual grounding. With Mary, who came weeping, Jesus simply wept alongside her and asked where Lazarus was — she needed emotional presence. There is no one-size-fits-all approach.</p>
+    <h4>📖 Key Scriptures</h4>
+    <p><span class="chip" onclick="openSidebar('john11-20-35')">John 11:20–35</span> — The full account. Verse 35 is famously the shortest verse in the Bible: "Jesus gave way to tears." Even knowing he would raise Lazarus, Jesus still wept <em>with</em> Mary.</p>
+    <div class="comment-prep">
+      <span class="cp-icon">💬</span><span class="cp-label">Comment you could share:</span>
+      <p>"What I find remarkable is that Jesus <em>knew</em> he was about to raise Lazarus — yet he still cried with Mary. He didn't skip the emotion because he had the solution. He fully entered her grief. That's something I want to imitate."</p>
+    </div>
+    <div class="comment-prep">
+      <span class="cp-icon">🙏</span><span class="cp-label">Getting to know Jehovah:</span>
+      <p>Jesus perfectly reflected his Father. Jehovah too meets us where we are — whether we need doctrine (like Martha) or just a presence in our grief (like Mary). He adapts to our individual need.</p>
+    </div>
+  </div>
+
+  <div class="para-block">
+    <div class="para-num">Paragraph 8</div>
+    <p>Consider how Jesus comforted Martha and Mary after the death of their brother, Lazarus. Both women had suffered the same loss; yet, Jesus comforted them in different ways. After Martha spoke with him, Jesus shared truths about the resurrection and helped to reinforce her faith in that loving provision. But when Mary came to him weeping, Jesus apparently did not mention the resurrection. Instead, he wept with Mary and asked where Lazarus had been laid. <span class="chip" onclick="openSidebar('john11-20-35')">(John 11:20–35)</span> The lesson? When we comfort those who are suffering, we must discern their needs rather than try to use a one-size-fits-all approach.</p>
+  </div>
+
+  <div class="img-block">
+    <img src="https://cms-imgp.jw-cdn.org/img/p/2026367/univ/art/2026367_univ_cnt_3_lg.jpg" alt="Elder visiting widowers at their homes" loading="lazy">
+    <div class="img-caption">📷 When comforting others, strive to discern what they need (See paragraph 8)</div>
+    <div class="img-application">The elder in the image approaches each widower differently — physical comfort for one, shared memories and scripture for the other. Discernment in action: watching, listening, and adapting.</div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="question-card">
+    <div class="q-label">Question 9</div>
+    <div class="q-text">How can we use the Bible to comfort others? <span class="chip bold-read" onclick="openSidebar('rom15-4-5')">READ: Romans 15:4, 5</span></div>
+  </div>
+  <button class="answer-toggle" onclick="toggleAnswer('a9')">▸ Show comment</button>
+  <div class="answer-box" id="a9">
+    <h4>💡 Core Idea</h4>
+    <p>The Scriptures bring hope, and hope brings comfort. Practical suggestions: keep a personal list of comforting verses; use resources like "Scriptures for Christian Living"; pray for the spirit's help to recall the right scripture at the right time.</p>
+    <h4>📖 Romans 15:4, 5 (READ)</h4>
+    <p class="sidebar-text" style="background:#fef3c7;border-left:3px solid #f59e0b;border-radius:0 6px 6px 0;padding:10px 14px;font-size:.92rem;">"For all the things that were written beforehand were written for our instruction, so that through our endurance and through the comfort from the Scriptures we might have hope. Now may the God who supplies endurance and comfort grant you to have among yourselves the same mental attitude that Christ Jesus had." — Romans 15:4, 5</p>
+    <h4>📖 Other Key Scriptures</h4>
+    <p><span class="chip" onclick="openSidebar('isa40-31')">Isa. 40:31</span> — Hope from scripture leads to renewed strength. <span class="chip" onclick="openSidebar('john14-26')">John 14:26</span> — Holy spirit helps us recall appropriate scriptures in the moment.</p>
+    <div class="comment-prep">
+      <span class="cp-icon">💬</span><span class="cp-label">Comment you could share:</span>
+      <p>"I keep a note in my phone of scriptures that have helped me personally during hard times. When I need to comfort someone, I go to that list first — because those verses have already proven themselves. I'd encourage everyone to do something similar."</p>
+    </div>
+    <div class="comment-prep">
+      <span class="cp-icon">📌</span><span class="cp-label">Ministry connection:</span>
+      <p>In the ministry, we can offer someone a Bible verse and invite them to read it themselves — that personal discovery of scripture's comfort can be more powerful than us simply explaining it.</p>
+    </div>
+  </div>
+
+  <div class="para-block">
+    <div class="para-num">Paragraph 9</div>
+    <p>Use the Bible. When you share "the comfort from the Scriptures" with someone, you can help that person to gain hope. <span class="chip bold-read" onclick="openSidebar('rom15-4-5')">(Read Romans 15:4, 5.)</span> That hope, in turn, provides further comfort and encouragement. <span class="chip" onclick="openSidebar('isa40-31')">(Isa. 40:31)</span> How can you find a Bible passage to encourage someone? Some keep a list of verses that they consult when needed, such as those under the topic "Comfort" in Scriptures for Christian Living. Ask Jehovah to help you to use his Word in the best way possible in order to provide encouragement. His spirit can help you to recall appropriate scriptures when you need them. <span class="chip" onclick="openSidebar('john14-26')">(John 14:26)</span></p>
+  </div>
+
+  <!-- Q10 -->
+  <div class="question-card">
+    <div class="q-label">Question 10</div>
+    <div class="q-text">Why must we speak kindly when we try to encourage someone?</div>
+  </div>
+  <button class="answer-toggle" onclick="toggleAnswer('a10')">▸ Show comment</button>
+  <div class="answer-box" id="a10">
+    <h4>💡 Core Idea</h4>
+    <p>Sometimes comfort requires correction — but the delivery must be kind. Jehovah corrected Elijah's mistaken thinking without directly pointing out his errors. Words can heal or hurt; the same message delivered harshly can wound rather than help. Think carefully before speaking.</p>
+    <h4>📖 Key Scriptures</h4>
+    <p><span class="chip" onclick="openSidebar('prov12-18')">Prov. 12:18</span> — "Thoughtless speech is like the stabs of a sword, but the tongue of the wise is a healing." <span class="chip" onclick="openSidebar('1ki19-15-18')">1 Ki. 19:15–18</span> — Jehovah's gentle redirection of Elijah, giving him a new assignment and revealing there were 7,000 faithful ones.</p>
+    <div class="comment-prep">
+      <span class="cp-icon">💬</span><span class="cp-label">Comment you could share:</span>
+      <p>"The article points out that Jehovah corrected Elijah's wrong thinking without directly pointing out his errors. Instead, he gave Elijah something productive to do and expanded his view. Sometimes the kindest correction is redirecting someone toward a purpose, not confronting their mistake head-on."</p>
+    </div>
+    <div class="comment-prep">
+      <span class="cp-icon">🙏</span><span class="cp-label">Getting to know Jehovah:</span>
+      <p>Jehovah's correction is never harsh. When Elijah was wrong, Jehovah's response was to give him food, rest, meaningful work, and perspective. That's a model of how comfort and gentle correction go hand in hand.</p>
+    </div>
+  </div>
+
+  <div class="para-block">
+    <div class="para-num">Paragraph 10</div>
+    <p>Speak kindly. The original-language word used for "comfort" can also be rendered "exhort," or "urge." At times, you might need to exhort, or urge, the person you are comforting to adjust his thinking. If that becomes necessary, think carefully before you speak so that your words heal rather than hurt. <span class="chip" onclick="openSidebar('prov12-18')">(Prov. 12:18)</span> Jehovah set the perfect example when he spoke with Elijah, who was mistaken about the value of his work and about the scope of Israel's apostasy. Jehovah kindly helped Elijah to correct his thinking without directly pointing out his errors. <span class="chip" onclick="openSidebar('1ki19-15-18')">(1 Ki. 19:15–18)</span> With kindness and careful thought, you can do the same. When you give talks or make comments at Christian meetings, always speak kindly and positively as you try to encourage and strengthen your brothers and sisters.</p>
+  </div>
+
+  <!-- Q11 -->
+  <div class="question-card">
+    <div class="q-label">Question 11</div>
+    <div class="q-text">What do those in distress often need? <span class="chip bold-read" onclick="openSidebar('1john3-18')">READ: 1 John 3:18</span></div>
+  </div>
+  <button class="answer-toggle" onclick="toggleAnswer('a11')">▸ Show comment</button>
+  <div class="answer-box" id="a11">
+    <h4>💡 Core Idea</h4>
+    <p>Words alone are often not enough. Practical help — food, labor, finances — can be the most tangible expression of love. Barnabas sold property to support struggling Christians. Today, many brothers follow his example. When actions accompany words, the comfort becomes real and memorable.</p>
+    <h4>📖 1 John 3:18 (READ)</h4>
+    <p class="sidebar-text" style="background:#fef3c7;border-left:3px solid #f59e0b;border-radius:0 6px 6px 0;padding:10px 14px;font-size:.92rem;">"Little children, we should love, not in word or with the tongue, but in deed and truth." — 1 John 3:18</p>
+    <h4>📖 Other Key Scriptures</h4>
+    <p><span class="chip" onclick="openSidebar('acts4-36-37')">Acts 4:36, 37</span> — Barnabas sold property to help others.</p>
+    <div class="comment-prep">
+      <span class="cp-icon">💬</span><span class="cp-label">Comment you could share:</span>
+      <p>"The experience of Gabriela from Poland really stuck with me — brothers came and did a lot of work in a single day. She said it 'strengthened her faith that Jehovah is directing his people.' When we show practical love, people don't just feel comforted — they see Jehovah in it."</p>
+    </div>
+    <div class="comment-prep">
+      <span class="cp-icon">📌</span><span class="cp-label">Ministry connection:</span>
+      <p>We can offer practical help to people we meet in our territory too — connecting them with resources, following up during a crisis, or simply being present when they're dealing with something hard.</p>
+    </div>
+  </div>
+
+  <div class="para-block">
+    <div class="para-num">Paragraph 11</div>
+    <p>Provide practical help. Those who are in distress often need more than words of comfort. <span class="chip bold-read" onclick="openSidebar('1john3-18')">(Read 1 John 3:18.)</span> Barnabas set a good example when he sold some property and donated the proceeds to support his newly baptized brothers and sisters who were in need. <span class="chip" onclick="openSidebar('acts4-36-37')">(Acts 4:36, 37)</span> Many of our fellow Christians today follow his fine example by providing practical help to those who need it. Gabriela, from Poland, was devastated when a flood severely damaged her home. She relates: "I was really frightened and worried, and so were my parents, who lived with me. I wondered how I was going to cope. But brothers from nearby congregations came and did a lot of work in just one day. That experience strengthened my faith that Jehovah is directing his people to comfort those who are suffering."</p>
+  </div>
+
+  <!-- Q12 -->
+  <div class="question-card">
+    <div class="q-label">Question 12</div>
+    <div class="q-text">How can you help your fellow Christians when you faithfully endure trials?</div>
+  </div>
+  <button class="answer-toggle" onclick="toggleAnswer('a12')">▸ Show comment</button>
+  <div class="answer-box" id="a12">
+    <h4>💡 Core Idea</h4>
+    <p>Our endurance itself comforts and energizes others. When Paul heard that the Thessalonians were enduring faithfully, he gained renewed energy. He also hoped that <em>his own</em> trials — even his imprisonment — would comfort brothers far away. Our faithful endurance is a gift we give the whole congregation.</p>
+    <h4>📖 Key Scriptures</h4>
+    <p><span class="chip" onclick="openSidebar('1thess3-5-8')">1 Thess. 3:5–8</span> — Paul renewed by the Thessalonians' endurance. <span class="chip" onclick="openSidebar('col2-1-2')">Col. 2:1, 2</span> — Paul's struggles comfort brothers he hadn't even met.</p>
+    <div class="comment-prep">
+      <span class="cp-icon">💬</span><span class="cp-label">Comment you could share:</span>
+      <p>"I hadn't thought about this before — that simply enduring a trial faithfully, without even saying a word, can be a source of comfort to others. People watch how we handle hardship. Our response either strengthens or discourages those around us."</p>
+    </div>
+    <div class="comment-prep">
+      <span class="cp-icon">🙏</span><span class="cp-label">Getting to know Jehovah:</span>
+      <p>Jehovah designed the congregation so that each person's faithfulness strengthens the whole body. No one's endurance is wasted — it ripples outward in ways we may never see in this system.</p>
+    </div>
+  </div>
+
+  <div class="para-block">
+    <div class="para-num">Paragraph 12</div>
+    <p>Endure your trials. Paul told the Thessalonians that he gained comfort and renewed energy when he learned about their faithful endurance. He knew that his work among them had not been in vain. <span class="chip" onclick="openSidebar('1thess3-5-8')">(1 Thess. 3:5–8)</span> Paul, in turn, hoped to comfort his brothers — even those who had not met him — by means of his struggles in their behalf. <span class="chip" onclick="openSidebar('col2-1-2')">(Col. 2:1, 2)</span> Similarly, when our fellow Christians see how Jehovah is helping us to endure our trials successfully, they are greatly encouraged.</p>
+  </div>
+
+  <!-- Q13 -->
+  <div class="question-card">
+    <div class="q-label">Question 13</div>
+    <div class="q-text">What must we continue to do as we encourage others?</div>
+  </div>
+  <button class="answer-toggle" onclick="toggleAnswer('a13')">▸ Show comment</button>
+  <div class="answer-box" id="a13">
+    <h4>💡 Core Idea</h4>
+    <p>Be patient. Discouraged people may not respond quickly. The phrase "keep encouraging" in 1 Thessalonians 5:11 describes an <em>ongoing activity</em> — not a one-time task. Don't give up on someone just because your first or second effort didn't seem to help.</p>
+    <h4>📖 Key Scriptures</h4>
+    <p><span class="chip" onclick="openSidebar('1thess5-11')">1 Thess. 5:11</span> — "Keep encouraging one another." <span class="chip" onclick="openSidebar('1thess5-14')">1 Thess. 5:14</span> — "Console the depressed, support the weak, be patient with everyone."</p>
+    <div class="comment-prep">
+      <span class="cp-icon">💬</span><span class="cp-label">Comment you could share:</span>
+      <p>"The idea that 'keep encouraging' describes an ongoing activity really helped me. It's not like you comfort someone once and check it off. Some people need repeated, patient, steady presence — and that's the kind of comfort the article is describing."</p>
+    </div>
+  </div>
+
+  <div class="para-block">
+    <div class="para-num">Paragraph 13</div>
+    <p>Be patient. Brothers and sisters who are discouraged may not respond immediately to our efforts to comfort them. But the Scriptures admonish us to "keep encouraging one another." The expression "keep encouraging" describes an ongoing activity. <span class="chip" onclick="openSidebar('1thess5-11')">(1 Thess. 5:11)</span> Be patient as you continue to console and comfort those who need your support. <span class="chip" onclick="openSidebar('1thess5-14')">(1 Thess. 5:14)</span> Of course, at times, each of us will need to receive comfort. What can we do then?</p>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section-heading">When You Need Comfort</div>
+
+  <!-- Q14-15 -->
+  <div class="question-card">
+    <div class="q-label">Questions 14–15</div>
+    <div class="q-text">What should we do when we are facing times of anxiety or distress?</div>
+  </div>
+  <button class="answer-toggle" onclick="toggleAnswer('a14')">▸ Show comment</button>
+  <div class="answer-box" id="a14">
+    <h4>💡 Core Idea</h4>
+    <p>Two main steps: (1) Pray — be specific, pour out your heart; (2) Ask others for help — your brothers and sisters may not know you're struggling unless you tell them.</p>
+    <div class="sub-part">
+      <div class="part-label">(a) Pray to Jehovah</div>
+      <p style="font-size:.92rem;margin-top:6px;">Be specific in your prayers. Sharing your innermost thoughts demonstrates faith. Jehovah's peace "surpasses all understanding" — it's not a feeling you manufacture; it's something he provides in response to faith-filled prayer. <span class="chip" onclick="openSidebar('ps94-19')">Ps. 94:19</span> <span class="chip" onclick="openSidebar('ps62-8')">Ps. 62:8</span> <span class="chip" onclick="openSidebar('mark11-24')">Mark 11:24</span> <span class="chip" onclick="openSidebar('phil4-6-7')">Phil. 4:6, 7</span></p>
+    </div>
+    <div class="sub-part">
+      <div class="part-label">(b) Ask Others for Help</div>
+      <p style="font-size:.92rem;margin-top:6px;">Share your feelings with a mature friend or trusted elder. People cannot read minds — they need you to open up. Ask for what you actually need: a listening ear, a scripture, an article. <span class="chip" onclick="openSidebar('prov14-10')">Prov. 14:10</span></p>
+    </div>
+    <div class="comment-prep">
+      <span class="cp-icon">💬</span><span class="cp-label">Comment you could share:</span>
+      <p>"Philippians 4:6, 7 says the peace of God 'surpasses all understanding.' That word 'surpasses' is significant — it means it works in ways we can't fully explain or predict. Even when circumstances don't change, that peace can guard your heart. I've personally experienced that."</p>
+    </div>
+    <div class="comment-prep">
+      <span class="cp-icon">🙏</span><span class="cp-label">Getting to know Jehovah:</span>
+      <p>Jehovah designed prayer as a two-way channel: we pour out our heart, and he responds with peace that transcends logic. He never ignores a sincere, faith-filled prayer.</p>
+    </div>
+  </div>
+
+  <div class="para-block">
+    <div class="para-num">Paragraph 14</div>
+    <p>Pray to Jehovah. Ask him to comfort you in times of anxiety or distress. <span class="chip" onclick="openSidebar('ps94-19')">(Ps. 94:19)</span> Be specific in your prayers, pouring out your heart to him. <span class="chip" onclick="openSidebar('ps62-8')">(Ps. 62:8)</span> Granted, Jehovah already knows how you feel even before you pray. But sharing your innermost thoughts in heartfelt prayer demonstrates your faith. And Jehovah never fails to respond in his own way to prayers offered in faith. <span class="chip" onclick="openSidebar('mark11-24')">(Mark 11:24)</span> Philippians 4:6, 7 urges us: "Let your petitions be made known to God; and the peace of God that surpasses all understanding will guard your hearts and your mental powers." <span class="chip" onclick="openSidebar('phil4-6-7')">(Phil. 4:6, 7)</span></p>
+  </div>
+  <div class="para-block">
+    <div class="para-num">Paragraph 15</div>
+    <p>Ask others for help. Share your feelings with a mature friend, or confide in a trusted elder. Your brothers and sisters can be a source of comfort, but they may not know how you feel or what you need unless you tell them. <span class="chip" onclick="openSidebar('prov14-10')">(Prov. 14:10)</span> You can ask them to listen empathetically or to share a scripture or an article that they have found comforting.</p>
+  </div>
+
+  <!-- Q16 -->
+  <div class="question-card">
+    <div class="q-label">Question 16</div>
+    <div class="q-text">What might happen when others try to encourage you, but what should you remember?</div>
+  </div>
+  <button class="answer-toggle" onclick="toggleAnswer('a16')">▸ Show comment</button>
+  <div class="answer-box" id="a16">
+    <h4>💡 Core Idea</h4>
+    <p>Others may say or do something that unintentionally makes you feel worse. Be patient and forgiving. Remember: "no one is perfect in word." Focus on their <em>good motives</em> rather than their imperfect execution. "The spirit is eager, but the flesh is weak" applies to those helping us, not just to us.</p>
+    <h4>📖 Key Scriptures</h4>
+    <p><span class="chip" onclick="openSidebar('1cor13-4-7')">1 Cor. 13:4, 7</span> — Love is patient; love bears all things. <span class="chip" onclick="openSidebar('james3-2')">James 3:2</span> — "If anyone does not stumble in word, he is a perfect man." <span class="chip" onclick="openSidebar('matt26-41')">Matt. 26:41</span> — "The spirit is eager, but the flesh is weak."</p>
+    <div class="comment-prep">
+      <span class="cp-icon">💬</span><span class="cp-label">Comment you could share:</span>
+      <p>"The reminder that 'the spirit is eager but the flesh is weak' applies to those comforting us, not just ourselves, was really helpful. When someone says the wrong thing, they're usually trying hard. Choosing to see their good motive rather than their poor execution is an act of love."</p>
+    </div>
+    <div class="comment-prep">
+      <span class="cp-icon">📌</span><span class="cp-label">Ministry connection:</span>
+      <p>We should extend the same patience to householders who react poorly to our message. They may have good questions underneath a rough exterior — just like our brothers may have good intentions underneath imperfect words.</p>
+    </div>
+  </div>
+
+  <div class="para-block">
+    <div class="para-num">Paragraph 16</div>
+    <p>Be patient and forgiving. Your brothers and sisters might make mistakes when they try to encourage you. For instance, they might say or do something that makes you feel worse, not better. If that happens, be patient with them. <span class="chip" onclick="openSidebar('1cor13-4-7')">(1 Cor. 13:4, 7)</span> And remember the words found at James 3:2: "If anyone does not stumble in word, he is a perfect man." <span class="chip" onclick="openSidebar('james3-2')">(James 3:2)</span> Focus on the good motives of your brothers and sisters. Bear in mind that "the spirit, of course, is eager, but the flesh is weak." <span class="chip" onclick="openSidebar('matt26-41')">(Matt. 26:41)</span></p>
+  </div>
+
+  <!-- Q17 / CONCLUSION -->
+  <div class="question-card">
+    <div class="q-label">Question 17 · Conclusion</div>
+    <div class="q-text">What should we be determined to do?</div>
+  </div>
+  <button class="answer-toggle" onclick="toggleAnswer('a17')">▸ Show comment</button>
+  <div class="answer-box" id="a17">
+    <h4>💡 Core Idea</h4>
+    <p>Our need for comfort will increase as the last days intensify and opposition grows. We must be <em>determined</em> — actively exerting ourselves — to comfort one another. This isn't passive; it requires consistent, courageous effort.</p>
+    <div class="comment-prep">
+      <span class="cp-icon">💬</span><span class="cp-label">Comment you could share:</span>
+      <p>"The article ends with the word 'determined' — not 'try to' or 'we should consider.' Jehovah expects us to be resolute about this. That's the kind of comforter I want to be — not someone who comforts when it's convenient, but someone who's <em>determined</em> to do it."</p>
+    </div>
+  </div>
+
+  <div class="para-block">
+    <div class="para-num">Paragraph 17</div>
+    <p>We all need comfort and encouragement, and our need will only increase as the last days become more critical and as God's enemies oppose us more furiously. Let us be determined to exert ourselves in comforting one another.</p>
+  </div>
+
+  <!-- HOW WOULD YOU ANSWER -->
+  <div class="hwya-section">
+    <h2>📋 How Would You Answer?</h2>
+
+    <div class="hwya-card">
+      <div class="q">As described in the Bible, what is meant by "comfort"?</div>
+      <button class="answer-toggle" onclick="toggleAnswer('hwya1')" style="padding:8px 0;">▸ Show answer</button>
+      <div class="answer-box" id="hwya1">
+        <p>The Greek word translated "comfort" literally means "to call to one's side" — picturing a friend who immediately rushes to the aid of someone suffering. It can also mean to encourage, exhort, or urge. Regardless of the specific form help takes, the outcome is always the same: the suffering person is built up and strengthened. <span class="chip" onclick="openSidebar('rom12-8')">(Rom. 12:8;</span> <span class="chip" onclick="openSidebar('2cor1-3-4')">2 Cor. 1:3, 4)</span></p>
+        <div class="comment-prep">
+          <span class="cp-icon">💬</span><span class="cp-label">Brief personal comment:</span>
+          <p>"What I found meaningful is that 'comfort' in the Bible isn't a passive feeling — it's an active rushing-to-the-side. Jehovah is described as that kind of God. He doesn't wait for us to come fully composed; he comes alongside us in our distress."</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hwya-card">
+      <div class="q">How can we comfort others?</div>
+      <button class="answer-toggle" onclick="toggleAnswer('hwya2')" style="padding:8px 0;">▸ Show answer</button>
+      <div class="answer-box" id="hwya2">
+        <p>The article identifies six ways: (1) Visit them in person — or use calls, messages if visits aren't possible. (2) Listen attentively — as Jehovah listened to Elijah, even patiently through repetition. (3) Discern what they actually need — don't assume one approach fits all. (4) Use the Bible to bring hope. (5) Speak kindly — correct gently if needed. (6) Provide practical help — love in deed, not just word. And continue patiently, since discouraged ones may not respond immediately. <span class="chip" onclick="openSidebar('1john3-18')">(1 John 3:18;</span> <span class="chip" onclick="openSidebar('1thess5-11')">1 Thess. 5:11)</span></p>
+      </div>
+    </div>
+
+    <div class="hwya-card">
+      <div class="q">What can we do when we need comfort?</div>
+      <button class="answer-toggle" onclick="toggleAnswer('hwya3')" style="padding:8px 0;">▸ Show answer</button>
+      <div class="answer-box" id="hwya3">
+        <p>Three steps: (1) Pray specifically to Jehovah — pour out your heart and experience his surpassing peace. (2) Ask others for help — don't assume they know what you need; be specific about what would help. (3) Be patient and forgiving when others' attempts fall short — focus on their good motives, remembering that no one is perfect in word. <span class="chip" onclick="openSidebar('phil4-6-7')">(Phil. 4:6, 7;</span> <span class="chip" onclick="openSidebar('james3-2')">Jas. 3:2)</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSING SONG -->
+  <div class="song-banner" style="background:#1a4a2e;">
+    <div class="icon">🎵</div>
+    <div class="text">
+      <strong>Closing Song 130</strong>
+      <span>Be Forgiving</span>
+    </div>
+  </div>
+
+  <p style="text-align:center;font-size:.78rem;color:#718096;margin-top:14px;">
+    Source: <a href="https://www.jw.org/en/library/magazines/watchtower-study-april-2026/learn-from-the-god-of-all-comfort/" target="_blank" style="color:#2b6cb0;">Watchtower Study, April 2026 — Week of June 22–28, 2026</a>
+  </p>
+
+</div><!-- end .main -->
+
+<!-- ════════════════════════════════════ SCRIPTS ════════════════════════════════════ -->
+<script>
+// ─── SCRIPTURE DATA ───────────────────────────────────────────────────────────
+const SCRIPTURE_DATA = {
+  '2cor1-4': {
+    ref: '2 Corinthians 1:4',
+    text: 'who comforts us in all our trials so that we may be able to comfort others in any sort of trial with the comfort that we receive from God.',
+    insight: 'The purpose of the comfort we receive from Jehovah is explicitly stated: it equips us to pass that same comfort on. We are not just receivers — we are designed to be channels of God\'s comfort to others around us.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/47/1#v=47:1:4'
+  },
+  '2cor1-3-4': {
+    ref: '2 Corinthians 1:3, 4',
+    text: 'Praised be the God and Father of our Lord Jesus Christ, the Father of tender mercies and the God of all comfort, who comforts us in all our trials so that we may be able to comfort others in any sort of trial with the comfort that we receive from God.',
+    insight: 'Jehovah is literally called "the Father of tender mercies" — his comfort is deeply personal and gentle. The Greek for "tender mercies" (oiktirmón) refers to heartfelt compassion, the kind a father feels for a child in pain. This is the God who trains us to comfort others.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/47/1#v=47:1:3-47:1:4'
+  },
+  '1pet1-6': {
+    ref: '1 Peter 1:6',
+    text: 'In this you greatly rejoice, though now for a little while, if need be, you have been grieved by various trials,',
+    insight: 'Peter acknowledges that various trials are a normal part of Christian life. The phrase "if need be" suggests that trials serve a purpose. Because suffering is universal among believers, the ability to comfort one another is an essential skill.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/60/1#v=60:1:6'
+  },
+  'matt7-12': {
+    ref: 'Matthew 7:12',
+    text: 'All things, therefore, that you want men to do to you, you also must do to them. This, in fact, is what the Law and the Prophets mean.',
+    insight: 'The Golden Rule applies directly to comforting others: we appreciate receiving comfort, so we should give it. Jesus calls this the summary of "the Law and the Prophets" — it is foundational to how Jehovah wants humans to treat one another.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/7#v=40:7:12'
+  },
+  '1thess4-18': {
+    ref: '1 Thessalonians 4:18',
+    text: 'Therefore, keep comforting one another with these words.',
+    insight: 'The command is "keep comforting" — a present active imperative in Greek, indicating ongoing, repeated action. Comfort is not a one-time gesture but a lifestyle pattern expected of all Christians.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/52/4#v=52:4:18'
+  },
+  'rom12-8': {
+    ref: 'Romans 12:8',
+    text: 'or the one who exhorts, let him do so in his exhorting; the one who distributes, let him do it liberally; the one who presides, let him do it diligently; the one who shows mercy, let him do it cheerfully.',
+    insight: 'The word "exhorts" here (parakalon) is the same Greek root as "comfort." Paul lists it alongside generosity and mercy as a spiritual gift — suggesting that comforting others is a genuine gift that some may be especially equipped for, while all are called to practice it.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/45/12#v=45:12:8'
+  },
+  'acts4-36': {
+    ref: 'Acts 4:36',
+    text: 'Joseph, who was also called Barnabas by the apostles, which means, when translated, Son of Comfort, a Levite, a native of Cyprus,',
+    insight: 'The apostles gave Barnabas a new name based entirely on his character trait — his ability to encourage and comfort others. This was not a formal title but a recognition of who he was. It speaks to how central comfort was to his identity as a Christian.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/44/4#v=44:4:36'
+  },
+  'acts9-26-28': {
+    ref: 'Acts 9:26–28',
+    text: 'On arriving in Jerusalem, he made attempts to associate with the disciples, but they were all afraid of him, because they did not believe he was a disciple. But Barnabas took him, led him to the apostles, and explained to them how he had seen the Lord on the road and that the Lord had spoken to him, and how in Damascus he had spoken boldly in the name of Jesus. So he was with them, moving about freely in Jerusalem, and he was speaking boldly in the name of the Lord.',
+    insight: 'Barnabas took a personal risk by vouching for Paul. Accepting a former persecutor required courage. Barnabas\'s comfort here was not a gentle word but a bold action — physically bringing Paul to the apostles and standing behind him. True comfort sometimes requires us to put our own reputation on the line for others.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/44/9#v=44:9:26-44:9:28'
+  },
+  '1ki19-4-7': {
+    ref: '1 Kings 19:4–7',
+    text: 'He himself went a day\'s journey into the wilderness and came and sat down under a broom tree, and he asked that he might die and said: "It is enough! Now, O Jehovah, take away my life, for I am no better than my forefathers." Then he lay down and slept under a broom tree. But suddenly an angel touched him and said to him: "Get up and eat." When he looked, there at his head was a round loaf of bread baked on heated stones and a jug of water. He ate and drank and then lay down again. The angel of Jehovah came back a second time and touched him and said: "Get up and eat, for the journey is too much for you."',
+    insight: 'Jehovah\'s response to Elijah\'s deep depression was strikingly practical and tender: he didn\'t begin with a lecture or a correction. He let Elijah sleep, then provided food and water — twice. Only after Elijah\'s physical needs were met did Jehovah engage with him further. This teaches us that effective comfort often starts with meeting someone\'s most basic needs.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/11/19#v=11:19:4-11:19:7'
+  },
+  'rom1-11-12': {
+    ref: 'Romans 1:11, 12',
+    text: 'For I am longing to see you, that I may impart some spiritual gift to you for you to be made firm; or, rather, that we may have an interchange of encouragement among you, by each one being encouraged by the other\'s faith, both yours and mine.',
+    insight: 'Paul corrected himself mid-sentence: he started by saying he wanted to help them, then revised it to say the comfort would be mutual — "by each one being encouraged by the other\'s faith." Personal visits are not one-directional gifts; the one who gives comfort is also strengthened. This shows the congregation as an ecosystem of mutual encouragement.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/45/1#v=45:1:11-45:1:12'
+  },
+  '1cor16-7': {
+    ref: '1 Corinthians 16:7',
+    text: 'For I do not wish to see you now just in passing, for I hope to remain with you for some time, if Jehovah permits.',
+    insight: 'Paul wanted more than a brief visit — he wanted sustained, meaningful time with the Corinthians. This sets a standard: when we visit those who need comfort, we should allow time for genuine connection, not just a quick check-in that can feel more obligatory than loving.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/46/16#v=46:16:7'
+  },
+  '2tim1-16-18': {
+    ref: '2 Timothy 1:16–18',
+    text: 'May the Lord grant mercy to the household of Onesiphorus, for he refreshed me many times and was not ashamed of my chains. But when he was in Rome, he diligently searched for me and found me. May the Lord grant him to find mercy from Jehovah on that day. And all the services he rendered in Ephesus, you know very well.',
+    insight: 'The phrase "diligently searched for me and found me" implies real effort — Rome was a large city, and Paul was a prisoner. Onesiphorus didn\'t just plan to visit; he actively searched until he found Paul. His comfort came at personal risk, since associating with a known prisoner could attract dangerous attention.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/55/1#v=55:1:16-55:1:18'
+  },
+  '1ki19-9-14': {
+    ref: '1 Kings 19:9, 10, 14',
+    text: '"What are you doing here, Elijah?" To this he said: "I have been absolutely zealous for Jehovah the God of armies; for the Israelites have abandoned your covenant, your altars they have torn down, and your prophets they have killed with the sword, and I am the only one left, and now they are seeking to take my life away." ... [Elijah said] "I have been absolutely zealous for Jehovah the God of armies; for the Israelites have abandoned your covenant, your altars they have torn down, and your prophets they have killed with the sword, and I am the only one left, and now they are seeking to take my life away."',
+    insight: 'Elijah repeated his complaint almost word for word (v.10 and v.14), yet Jehovah responded patiently both times. He didn\'t say "I already answered this" or correct Elijah\'s inaccuracy ("I am the only one left" — there were 7,000 faithful ones). Jehovah waited until the right moment to gently expand Elijah\'s perspective. True listening means giving people space to process at their own pace.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/11/19#v=11:19:9-11:19:10'
+  },
+  'hab1-2-3': {
+    ref: 'Habakkuk 1:2, 3',
+    text: 'How long, O Jehovah, must I cry for help, and you do not hear? How long must I ask you to save us from violence, and you do not intervene? Why do you make me witness wrongdoing? And why do you tolerate oppression?',
+    insight: 'Habakkuk\'s words sound almost like a complaint against Jehovah — "Why do YOU make me witness this?" Yet Jehovah did not rebuke him harshly. He allowed the prophet to express genuine distress and doubt, then gave a measured, reassuring response. This models how we should respond when a suffering person says things that sound extreme or even unfair — let them express it fully before responding.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/35/1#v=35:1:2-35:1:3'
+  },
+  'jas1-19': {
+    ref: 'James 1:19',
+    text: 'Know this, my beloved brothers: Everyone must be quick to listen, slow to speak, slow to anger,',
+    insight: 'Note the sequence: quick to listen FIRST, then slow to speak. When comforting someone, the listening should be extensive and the speaking restrained. The tendency in most of us is the reverse — we rush to give advice before the person has fully expressed themselves.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/59/1#v=59:1:19'
+  },
+  'eccl7-9': {
+    ref: 'Ecclesiastes 7:9',
+    text: 'Do not be quick to be irritated, for irritation dwells in the bosom of fools.',
+    insight: 'When someone in distress says something that seems irrational, harsh, or even unjust, resist the impulse to take offense. Ecclesiastes cautions us that anger-in-the-moment (irritation) reflects immaturity. Mature comforters absorb the overflow of someone\'s pain without becoming defensive.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/21/7#v=21:7:9'
+  },
+  'prov20-5': {
+    ref: 'Proverbs 20:5',
+    text: 'The thoughts of a man\'s heart are like deep waters, but the discerning man draws them out.',
+    insight: 'Deep waters don\'t reveal their contents easily — you need the right tool to draw them out. In the context of comforting others, tactful, open questions are that tool. This proverb implies that the person being comforted may not even be aware of all that\'s troubling them; the wise comforter helps draw it to the surface.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/20#v=20:20:5'
+  },
+  'john11-20-35': {
+    ref: 'John 11:20–35',
+    text: 'Martha said to Jesus: "Lord, if you had been here, my brother would not have died... I know he will rise in the resurrection on the last day." Jesus said to her: "I am the resurrection and the life..." When Mary arrived where Jesus was and saw him, she fell at his feet and said to him: "Lord, if you had been here, my brother would not have died." When Jesus saw her weeping and the Jews who had come with her also weeping, he was deeply moved and troubled. He said: "Where have you laid him?" ... Jesus gave way to tears.',
+    insight: 'Martha and Mary both said the identical words to Jesus: "If you had been here, my brother would not have died." Yet Jesus responded entirely differently to each. With Martha (who engaged him intellectually), he taught the resurrection doctrine. With Mary (who came weeping), he asked no doctrinal questions — he simply wept with her. Even knowing he would raise Lazarus, Jesus fully entered Mary\'s grief rather than rush past it. Verse 35 ("Jesus gave way to tears") is the shortest verse in the English Bible and one of the most profound: emotional presence IS a form of comfort.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/43/11#v=43:11:20-43:11:35'
+  },
+  'rom15-4-5': {
+    ref: 'Romans 15:4, 5',
+    text: 'For all the things that were written beforehand were written for our instruction, so that through our endurance and through the comfort from the Scriptures we might have hope. Now may the God who supplies endurance and comfort grant you to have among yourselves the same mental attitude that Christ Jesus had.',
+    insight: 'Paul identifies two things that produce hope: endurance and "the comfort from the Scriptures." The Bible was designed by Jehovah to provide comfort specifically — its ancient accounts of faithful people enduring trials speak directly to our modern struggles. When we share scriptures with others, we\'re giving them access to Jehovah\'s own comfort system.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/45/15#v=45:15:4-45:15:5'
+  },
+  'isa40-31': {
+    ref: 'Isaiah 40:31',
+    text: 'But those hoping in Jehovah will regain power. They will soar on wings like eagles. They will run and not grow weary; they will walk and not tire out.',
+    insight: 'The progression is significant: soaring → running → walking. The greatest energy (soaring) comes first, but even walking — the slowest, most ordinary pace — is promised. Jehovah\'s hope-based comfort sustains us through every phase of trial, including the long, exhausting middle stages.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/23/40#v=23:40:31'
+  },
+  'john14-26': {
+    ref: 'John 14:26',
+    text: 'But the helper, the holy spirit, which the Father will send in my name, will teach you all things and bring back to your minds all the things I told you.',
+    insight: 'The holy spirit is promised to "bring back to your minds" the right scripture at the right moment. This is a practical gift for comforters — if we pray and study, the spirit can surface a specific verse exactly when a brother or sister needs it. This should make us confident and eager to use the Bible in our comforting efforts.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/43/14#v=43:14:26'
+  },
+  'prov12-18': {
+    ref: 'Proverbs 12:18',
+    text: 'Thoughtless speech is like the stabs of a sword, but the tongue of the wise is a healing.',
+    insight: 'The contrast is striking: the same organ — the tongue — can either stab or heal. The difference lies in thoughtfulness. When attempting to comfort or exhort someone, careless words delivered with good intentions can cause deeper wounds than the original problem. Wise comforters think before they speak.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/12#v=20:12:18'
+  },
+  '1ki19-15-18': {
+    ref: '1 Kings 19:15–18',
+    text: 'Jehovah then said to him: "Go back by the way of the wilderness of Damascus, and when you arrive, anoint Hazael as king over Syria. And Jehu the son of Nimshi you will anoint as king over Israel, and Elisha the son of Shaphat from Abel-meholah you will anoint as prophet in your place... I have preserved 7,000 in Israel — all whose knees have not bent down to Baal and whose mouths have not kissed him."',
+    insight: 'Jehovah corrected Elijah\'s two errors — that his work was in vain, and that he was the only faithful one — but not by directly confronting him. Instead, Jehovah gave Elijah: (1) meaningful new work to do, and (2) a broader perspective (7,000 faithful ones). This is gentle, purposeful correction: redirect the person toward something constructive and expand their view before addressing their mistakes.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/11/19#v=11:19:15-11:19:18'
+  },
+  '1john3-18': {
+    ref: '1 John 3:18',
+    text: 'Little children, we should love, not in word or with the tongue, but in deed and truth.',
+    insight: 'John uses the affectionate address "little children," which indicates the urgency and care behind this instruction. Love must be expressed tangibly, not just verbally. The phrase "in deed and truth" suggests that actions must be both practical AND genuine — done with authentic concern, not performatively.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/62/3#v=62:3:18'
+  },
+  'acts4-36-37': {
+    ref: 'Acts 4:36, 37',
+    text: 'Joseph, who was also called Barnabas by the apostles, which means, when translated, Son of Comfort, a Levite, a native of Cyprus, sold a field that he owned and brought the money and deposited it at the feet of the apostles.',
+    insight: 'Barnabas\'s practical generosity is the first specific action named after his introduction as "Son of Comfort" — linking his identity as a comforter directly to practical help. His comfort wasn\'t merely emotional or verbal; it involved real personal sacrifice. The "deposited it at the feet of the apostles" indicates full, unconditional giving.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/44/4#v=44:4:36-44:4:37'
+  },
+  '1thess3-5-8': {
+    ref: '1 Thessalonians 3:5–8',
+    text: 'For this reason, when I could bear it no longer, I sent to learn about your faith, for fear that somehow the tempter had tempted you and our labor had turned out to be in vain. But Timothy just now came to us from you and brought us the good news of your faith and love... so now we really live, as long as you are standing firm in the Lord.',
+    insight: '"Now we really live, as long as you are standing firm" — Paul\'s sense of spiritual vitality was directly tied to the Thessalonians\' endurance. Others\' faithful endurance genuinely energizes us. This is a two-way street: when we endure faithfully, we give others the gift of renewed life and energy.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/52/3#v=52:3:5-52:3:8'
+  },
+  'col2-1-2': {
+    ref: 'Colossians 2:1, 2',
+    text: 'For I want you to know how great a struggle I have for you and for those in Laodicea and for all those who have not personally seen my face, so that their hearts may be comforted, that they may be harmoniously joined together in love.',
+    insight: 'Paul\'s suffering in prison — his "struggle" — was intended to comfort people he had never even met. This principle extends to us: when others learn how we are coping faithfully with our own difficulties, it can comfort them, even if we never discuss it explicitly. Our endurance speaks.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/51/2#v=51:2:1-51:2:2'
+  },
+  '1thess5-11': {
+    ref: '1 Thessalonians 5:11',
+    text: 'Therefore, keep encouraging one another and building one another up, just as you are in fact doing.',
+    insight: '"Keep encouraging" is a present active imperative — an ongoing command, not a one-time instruction. Paul also acknowledged they were already doing this ("just as you are in fact doing"), affirming them. When comforting others, occasional encouragement of their progress also strengthens them.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/52/5#v=52:5:11'
+  },
+  '1thess5-14': {
+    ref: '1 Thessalonians 5:14',
+    text: 'On the other hand, we urge you, brothers, to warn the disorderly, speak consolingly to those who are depressed, support the weak, be patient with everyone.',
+    insight: 'Paul distinguishes between three groups requiring different approaches: the disorderly (warn), the depressed (console), the weak (support). Comfort is not a single method — it must be tailored. And all of it is wrapped in a fourth command that applies to every case: "be patient with everyone."',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/52/5#v=52:5:14'
+  },
+  'ps94-19': {
+    ref: 'Psalm 94:19',
+    text: 'When anxieties overwhelmed me, your consolations soothed my soul.',
+    insight: 'The psalmist used the word "overwhelmed" — not just troubled or anxious, but overwhelmed. Yet Jehovah\'s consolations still reached him. This is important to remember when our troubles feel disproportionately large: Jehovah\'s comfort is not limited by the scale of our distress.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/19/94#v=19:94:19'
+  },
+  'ps62-8': {
+    ref: 'Psalm 62:8',
+    text: 'Trust in him at all times, O people. Pour out your heart before him. God is a refuge for us.',
+    insight: '"Pour out your heart" implies full, unreserved expression — not a polished, formal prayer, but genuine outpouring. The image of Jehovah as a "refuge" suggests safety and containment: he can hold whatever we pour out. There is nothing too raw, too messy, or too confusing to bring to Jehovah in prayer.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/19/62#v=19:62:8'
+  },
+  'mark11-24': {
+    ref: 'Mark 11:24',
+    text: 'This is why I tell you, all the things you pray and ask for, have faith that you have received them, and you will have them.',
+    insight: 'Faith is a prerequisite for receiving Jehovah\'s comfort in prayer. This doesn\'t mean we must feel certain our prayer will be answered in a specific way — but that we trust Jehovah to respond. Prayers offered in faith open the channel through which his peace flows.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/41/11#v=41:11:24'
+  },
+  'phil4-6-7': {
+    ref: 'Philippians 4:6, 7',
+    text: 'Do not be anxious over anything, but in everything by prayer and supplication along with thanksgiving, let your petitions be made known to God; and the peace of God that surpasses all understanding will guard your hearts and your mental powers by means of Christ Jesus.',
+    insight: 'Note the elements Paul specifies: prayer (general communion), supplication (specific requests), and thanksgiving (gratitude). When these three are combined, the result is a peace that "surpasses all understanding" — it defies logical explanation. "Guard" is a military term; Jehovah\'s peace is like a sentinel standing watch over our mind and heart.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/50/4#v=50:4:6-50:4:7'
+  },
+  'prov14-10': {
+    ref: 'Proverbs 14:10',
+    text: 'The heart knows its own bitterness, and no outsider can share in its joy.',
+    insight: 'Each person\'s inner experience is fundamentally their own — others cannot fully know it unless we communicate it. This proverb explains why asking for help is necessary: even the most perceptive friend cannot know the depth of our pain unless we share it. Opening up is not weakness; it is wisdom.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/14#v=20:14:10'
+  },
+  '1cor13-4-7': {
+    ref: '1 Corinthians 13:4, 7',
+    text: 'Love is patient and kind. Love is not jealous. It does not brag, does not get puffed up... it bears all things, believes all things, hopes all things, endures all things.',
+    insight: '"Bears all things" — love absorbs difficult emotions, imperfect attempts, and even hurtful words without collapsing. When a brother\'s attempt to comfort us goes wrong, love extends the same patient "bearing" we would want if our own effort fell short. The circular nature of 1 Corinthians 13 means the love standard applies equally to comforters and those being comforted.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/46/13#v=46:13:4-46:13:7'
+  },
+  'james3-2': {
+    ref: 'James 3:2',
+    text: 'For we all stumble many times. If anyone does not stumble in word, he is a perfect man, able to bridle also his whole body.',
+    insight: 'James uses the word "all" — no one is exempt. This universal admission of imperfection should make us generous in forgiving those who say the wrong thing when trying to help us. No one has ever perfectly comforted another person with words; we are all works in progress.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/59/3#v=59:3:2'
+  },
+  'matt26-41': {
+    ref: 'Matthew 26:41',
+    text: 'Keep on the watch and pray continually, that you may not enter into temptation. The spirit, of course, is eager, but the flesh is weak.',
+    insight: 'Jesus spoke these words to disciples who had just fallen asleep when he needed their support. Even in that moment of personal disappointment, he explained rather than condemned: "the spirit is eager, but the flesh is weak." When others fail us in moments of need, Jesus\'s own words to his disciples model the response: understanding, not resentment.',
+    wol: 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/26#v=40:26:41'
+  }
+};
+
+// ─── SIDEBAR LOGIC ────────────────────────────────────────────────────────────
+function openSidebar(key) {
+  const data = SCRIPTURE_DATA[key];
+  if (!data) return;
+  document.getElementById('sidebarTitle').textContent = data.ref;
+  document.getElementById('sidebarBody').innerHTML = `
+    <div class="sidebar-ref-label">Scripture Reference</div>
+    <div class="sidebar-ref">${data.ref}</div>
+    <div class="sidebar-text">"${data.text}"</div>
+    <div class="sidebar-insight">
+      <h4>📖 Insight for Comments</h4>
+      <p>${data.insight}</p>
+    </div>
+    <a class="sidebar-open-link" href="${data.wol}" target="_blank">Open full passage in WOL →</a>
+  `;
+  document.getElementById('sidebar').classList.add('open');
+  document.getElementById('sidebarOverlay').classList.add('open');
+}
+
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebarOverlay').classList.remove('open');
+}
+
+// ─── TOGGLE ANSWERS ───────────────────────────────────────────────────────────
+function toggleAnswer(id) {
+  const box = document.getElementById(id);
+  const btn = box.previousElementSibling;
+  const isOpen = box.classList.toggle('open');
+  btn.textContent = isOpen ? '▾ Hide comment' : '▸ Show comment';
+}
+
+function toggleAll() {
+  const boxes = document.querySelectorAll('.answer-box');
+  const anyOpen = Array.from(boxes).some(b => b.classList.contains('open'));
+  boxes.forEach(box => {
+    const btn = box.previousElementSibling;
+    if (!btn) return;
+    if (anyOpen) {
+      box.classList.remove('open');
+      btn.textContent = '▸ Show comment';
+    } else {
+      box.classList.add('open');
+      btn.textContent = '▾ Hide comment';
+    }
+  });
+  document.querySelector('.expand-all-bar button').textContent =
+    anyOpen ? 'Expand All Answers' : 'Collapse All Answers';
+}
+</script>
+</body>
+</html>
