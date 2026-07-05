@@ -3,1061 +3,615 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WT Study Guide – Bible Principles: Why Are They Important? | July 5, 2026</title>
+<title>Watchtower Study Guide — July 5, 2026</title>
 <style>
-  :root {
-    --primary: #1a365d;
-    --accent: #b91c1c;
-    --gold: #f59e0b;
-    --light-bg: #f0f4f8;
-    --card-bg: #ffffff;
-    --answer-bg: #fffbeb;
-    --para-bg: #f8fafc;
-    --scripture-chip: #eff6ff;
-    --scripture-border: #3b82f6;
-    --focus-bg: #1a365d;
-    --text: #1e293b;
-    --muted: #64748b;
-  }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f4f8; color: #1a202c; line-height: 1.75; }
+  .container { max-width: 820px; margin: 0 auto; padding: 16px; }
 
-  body {
-    font-family: 'Georgia', serif;
-    background: var(--light-bg);
-    color: var(--text);
-    line-height: 1.75;
-    font-size: 16px;
-  }
+  /* Header */
+  .header { background: linear-gradient(135deg, #1a365d 0%, #2d4a7a 100%); color: #fff; border-radius: 12px; padding: 28px 24px; margin-bottom: 20px; text-align: center; }
+  .header .badge { background: rgba(255,255,255,0.15); border-radius: 20px; display: inline-block; padding: 4px 14px; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+  .header h1 { font-size: 1.55rem; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+  .header .subtitle { font-size: 0.95rem; opacity: 0.85; }
 
-  .container {
-    max-width: 820px;
-    margin: 0 auto;
-    padding: 16px;
-  }
+  /* Song banners */
+  .song-banner { background: #2d4a7a; color: #fff; border-radius: 8px; padding: 12px 18px; margin-bottom: 18px; display: flex; align-items: center; gap: 12px; font-weight: 600; }
+  .song-banner .icon { font-size: 1.4rem; }
 
-  /* HEADER */
-  .guide-header {
-    background: var(--primary);
-    color: white;
-    padding: 24px 20px 20px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  .guide-header .label {
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #93c5fd;
-    font-family: sans-serif;
-    margin-bottom: 6px;
-  }
-  .guide-header h1 {
-    font-size: 1.65rem;
-    font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 8px;
-  }
-  .guide-header .subtitle {
-    font-size: 0.95rem;
-    color: #bfdbfe;
-    font-family: sans-serif;
-  }
-  .date-badge {
-    display: inline-block;
-    background: var(--accent);
-    color: white;
-    font-family: sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 4px 14px;
-    border-radius: 20px;
-    margin-top: 10px;
-    letter-spacing: 0.5px;
-  }
+  /* Focus banner */
+  .focus-banner { background: #1a365d; color: #e2e8f0; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; border-left: 5px solid #f6ad55; }
+  .focus-banner .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #f6ad55; font-weight: 700; margin-bottom: 4px; }
+  .focus-banner .text { font-size: 1rem; font-style: italic; }
 
-  /* CONTROLS */
-  .controls {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 18px;
-    flex-wrap: wrap;
-  }
-  .btn {
-    padding: 8px 18px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 13px;
-    font-family: sans-serif;
-    font-weight: 600;
-    transition: background 0.2s;
-  }
-  .btn-primary { background: var(--primary); color: white; }
-  .btn-primary:hover { background: #2d4a73; }
-  .btn-outline { background: white; color: var(--primary); border: 1.5px solid var(--primary); }
-  .btn-outline:hover { background: #eff6ff; }
+  /* Theme verse */
+  .theme-verse { background: #fff; border-left: 5px solid #b91c1c; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; }
+  .theme-verse .label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: #b91c1c; font-weight: 700; margin-bottom: 6px; }
+  .theme-verse blockquote { font-style: italic; color: #2d3748; font-size: 1.05rem; line-height: 1.7; }
+  .theme-verse .ref { font-size: 0.82rem; color: #718096; margin-top: 6px; }
 
-  /* SONG / FOCUS / THEME BANNERS */
-  .song-banner {
-    background: var(--primary);
-    color: white;
-    padding: 14px 20px;
-    border-radius: 10px;
-    font-family: sans-serif;
-    font-size: 14px;
-    margin-bottom: 14px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .song-banner .icon { font-size: 22px; }
-  .song-banner .song-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #93c5fd; }
-  .song-banner .song-name { font-weight: 700; font-size: 15px; margin-top: 2px; }
+  /* Section headings */
+  .section-header { background: #2b6cb0; color: #fff; border-radius: 8px; padding: 10px 18px; margin: 24px 0 16px; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.5px; text-transform: uppercase; }
 
-  .focus-banner {
-    background: #1a365d;
-    color: white;
-    padding: 16px 20px;
-    border-radius: 10px;
-    margin-bottom: 14px;
-    border-left: 5px solid var(--gold);
-    font-family: sans-serif;
-  }
-  .focus-banner .focus-label {
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 4px;
-    font-weight: 700;
-  }
-  .focus-banner p { font-size: 14px; line-height: 1.6; color: #e2e8f0; }
+  /* Expand all */
+  .expand-btn { background: #e2e8f0; border: none; border-radius: 6px; padding: 8px 16px; cursor: pointer; font-size: 0.85rem; font-weight: 600; color: #4a5568; margin-bottom: 16px; }
+  .expand-btn:hover { background: #cbd5e0; }
 
-  .theme-verse {
-    background: white;
-    border-left: 4px solid var(--scripture-border);
-    border-radius: 8px;
-    padding: 16px 20px;
-    margin-bottom: 20px;
-    font-style: italic;
-    font-size: 15px;
-    color: #334155;
-  }
-  .theme-verse .ref {
-    display: inline-block;
-    background: var(--scripture-chip);
-    border: 1px solid #bfdbfe;
-    color: #1d4ed8;
-    font-size: 12px;
-    font-family: sans-serif;
-    font-style: normal;
-    padding: 3px 10px;
-    border-radius: 20px;
-    margin-top: 8px;
-    cursor: pointer;
-    font-weight: 600;
-  }
-  .theme-verse .ref:hover { background: #dbeafe; }
+  /* Question card */
+  .qa-unit { margin-bottom: 20px; }
+  .question-card { background: #fff; border-left: 4px solid #b91c1c; border-radius: 8px 8px 0 0; padding: 14px 18px; font-weight: 700; color: #1a202c; font-size: 1rem; }
+  .question-num { color: #b91c1c; margin-right: 6px; }
 
-  /* SECTION HEADINGS */
-  .section-heading {
-    background: var(--primary);
-    color: white;
-    font-family: sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 10px 18px;
-    border-radius: 8px;
-    margin: 24px 0 14px;
-  }
+  /* Answer collapsible */
+  .answer-toggle-header { padding: 10px 18px; color: #92400e; font-size: 0.85rem; font-weight: 700; display: flex; justify-content: space-between; align-items: center; background: #fffbeb; cursor: pointer; border-left: 3px solid #f59e0b; }
+  .answer-content { display: none; padding: 14px 18px; background: #fffbeb; border-left: 3px solid #f59e0b; }
+  .answer-content.open { display: block; }
+  .answer-content p { margin-bottom: 12px; color: #2d3748; line-height: 1.75; }
+  .answer-content p:last-child { margin-bottom: 0; }
 
-  /* QUESTION CARD */
-  .question-card {
-    background: var(--card-bg);
-    border-left: 4px solid var(--accent);
-    border-radius: 8px;
-    padding: 16px 20px;
-    margin-bottom: 12px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-  }
-  .question-card .q-label {
-    font-family: sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 6px;
-  }
-  .question-card .q-text {
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1.5;
-  }
+  /* Comment prep boxes */
+  .comment-prep { background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 6px; padding: 12px 16px; margin: 12px 0; border-top: 1px solid #fde68a; }
+  .comment-prep .label { font-size: 0.72rem; font-weight: 700; color: #92400e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .comment-prep p { color: #451a03; font-style: italic; font-size: 0.92rem; line-height: 1.65; }
 
-  /* ANSWER COLLAPSIBLE */
-  .answer-toggle {
-    width: 100%;
-    text-align: left;
-    background: none;
-    border: 1.5px solid var(--gold);
-    border-radius: 6px;
-    padding: 9px 16px;
-    font-family: sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    color: #92400e;
-    cursor: pointer;
-    margin-bottom: 4px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: #fef3c7;
-    transition: background 0.15s;
-  }
-  .answer-toggle:hover { background: #fde68a; }
-  .answer-toggle .arrow { font-size: 11px; transition: transform 0.2s; }
-  .answer-toggle.open .arrow { transform: rotate(90deg); }
+  /* Paragraph block */
+  .para-block { background: #f8fafc; border-left: 3px solid #e2e8f0; border-radius: 0 0 8px 8px; padding: 14px 18px; color: #2d3748; line-height: 1.8; font-size: 0.97rem; }
+  .para-num { font-weight: 700; color: #718096; margin-right: 4px; }
 
-  .answer-box {
-    display: none;
-    background: var(--answer-bg);
-    border-left: 3px solid var(--gold);
-    border-radius: 0 0 8px 8px;
-    padding: 16px 20px;
-    margin-bottom: 14px;
-    font-size: 14.5px;
-    line-height: 1.8;
-  }
-  .answer-box.open { display: block; }
-
-  .answer-box h4 {
-    font-family: sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #92400e;
-    margin: 14px 0 6px;
-  }
-  .answer-box h4:first-child { margin-top: 0; }
-
-  .sub-answer {
-    margin: 8px 0 12px;
-    padding-left: 14px;
-    border-left: 2px solid #fcd34d;
-  }
-  .sub-label { font-family: sans-serif; font-weight: 700; color: var(--accent); font-size: 13px; }
-
-  /* COMMENT PREP */
-  .comment-prep {
-    background: #f0fdf4;
-    border: 1px solid #bbf7d0;
-    border-radius: 8px;
-    padding: 12px 16px;
-    margin-top: 12px;
-    font-size: 13.5px;
-  }
-  .comment-prep .prep-item { margin-bottom: 8px; }
-  .comment-prep .prep-item:last-child { margin-bottom: 0; }
-
-  /* PARAGRAPH BLOCK */
-  .para-block {
-    background: var(--para-bg);
-    border-left: 3px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 16px 20px;
-    margin-bottom: 14px;
-    font-size: 15px;
-    line-height: 1.75;
-    color: #334155;
-  }
-  .para-block .para-num {
-    font-family: sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-  }
-  .para-block p { margin-bottom: 10px; }
-  .para-block p:last-child { margin-bottom: 0; }
-
-  /* IMAGE BLOCK */
-  .image-block {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  }
-  .image-block img { width: 100%; height: auto; display: block; max-height: 320px; object-fit: cover; }
-  .image-block .img-caption {
-    padding: 12px 16px;
-    font-size: 13px;
-    font-style: italic;
-    color: var(--muted);
-    font-family: sans-serif;
-    border-top: 1px solid #e2e8f0;
-    background: #f8fafc;
-  }
-  .image-block .img-application {
-    padding: 10px 16px;
-    font-size: 13px;
-    color: #374151;
-    background: #fffbeb;
-    border-top: 1px solid #fde68a;
-  }
-
-  /* SCRIPTURE CHIP */
-  .chip {
-    display: inline-block;
-    background: var(--scripture-chip);
-    border: 1px solid #bfdbfe;
-    color: #1d4ed8;
-    font-size: 12px;
-    font-family: sans-serif;
-    padding: 2px 9px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 600;
-    margin: 2px 2px;
-    text-decoration: none;
-    transition: background 0.15s;
-  }
+  /* Scripture chip */
+  .chip { display: inline-block; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 4px; padding: 1px 7px; font-size: 0.8rem; cursor: pointer; font-weight: 600; margin: 0 2px; transition: background 0.15s; white-space: nowrap; }
   .chip:hover { background: #dbeafe; }
 
-  /* HOW WOULD YOU ANSWER */
-  .review-section {
-    background: #f0f9ff;
-    border: 2px solid #bae6fd;
-    border-radius: 12px;
-    padding: 20px;
-    margin: 24px 0;
-  }
-  .review-section h2 {
-    font-family: sans-serif;
-    font-size: 14px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #0369a1;
-    margin-bottom: 16px;
-    font-weight: 700;
-  }
+  /* Scripture blockquote in answers */
+  .scripture-quote { background: #f0f9ff; border-left: 3px solid #3b82f6; border-radius: 6px; padding: 10px 16px; margin: 10px 0; }
+  .scripture-quote p { color: #1e3a5f; font-style: italic; line-height: 1.7; }
+  .scripture-quote .ref { font-size: 0.8rem; color: #3b82f6; font-weight: 700; margin-top: 4px; font-style: normal; }
 
-  /* SIDEBAR */
-  #sidebar-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    z-index: 100;
-  }
-  #sidebar {
-    display: none;
-    position: fixed;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 340px;
-    max-width: 100%;
-    background: white;
-    z-index: 101;
-    box-shadow: -4px 0 24px rgba(0,0,0,0.2);
-    overflow-y: auto;
-    padding: 20px;
-  }
-  #sidebar.open, #sidebar-overlay.open { display: block; }
-  #sidebar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 16px;
-  }
-  #sidebar-title { font-weight: 700; font-size: 16px; color: var(--primary); font-family: sans-serif; }
-  #sidebar-close {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    color: var(--muted);
-    padding: 0 4px;
-  }
-  #sidebar-content { font-size: 14px; line-height: 1.8; color: #334155; }
-  #sidebar-content blockquote {
-    background: var(--scripture-chip);
-    border-left: 3px solid var(--scripture-border);
-    padding: 10px 14px;
-    border-radius: 4px;
-    font-style: italic;
-    margin: 10px 0;
-    font-size: 13.5px;
-  }
-  #sidebar-link {
-    display: inline-block;
-    margin-top: 14px;
-    padding: 8px 16px;
-    background: var(--primary);
-    color: white;
-    font-family: sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    border-radius: 6px;
-    text-decoration: none;
-    cursor: pointer;
-  }
+  /* Box */
+  .info-box { background: #f0fff4; border: 2px solid #68d391; border-radius: 10px; padding: 18px 20px; margin: 20px 0; }
+  .info-box h3 { color: #276749; font-size: 0.95rem; font-weight: 700; margin-bottom: 12px; }
+  .info-box ol { padding-left: 20px; }
+  .info-box ol li { margin-bottom: 14px; color: #2f855a; line-height: 1.65; }
+  .info-box ol li strong { color: #276749; }
 
-  @media (max-width: 600px) {
-    .guide-header h1 { font-size: 1.3rem; }
-    #sidebar { width: 100%; }
-    .controls { gap: 8px; }
+  /* Review section */
+  .review-header { background: #2d3748; color: #fff; border-radius: 8px; padding: 10px 18px; margin: 24px 0 16px; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+  .review-card { background: #fff; border-left: 4px solid #6b7280; border-radius: 8px; margin-bottom: 14px; overflow: hidden; }
+  .review-question { padding: 12px 18px; font-weight: 700; color: #1a202c; font-size: 0.97rem; border-bottom: 1px solid #e2e8f0; }
+  .review-answer { padding: 14px 18px; background: #f9fafb; color: #374151; font-size: 0.9rem; line-height: 1.7; display: none; }
+  .review-answer.open { display: block; }
+  .review-toggle { padding: 8px 18px; background: #f3f4f6; color: #4b5563; font-size: 0.8rem; font-weight: 600; cursor: pointer; border: none; width: 100%; text-align: left; display: flex; justify-content: space-between; }
+
+  /* Sidebar */
+  .sidebar { position: fixed; top: 0; right: -360px; width: 340px; height: 100vh; background: #fff; box-shadow: -4px 0 24px rgba(0,0,0,0.15); z-index: 9999; transition: right 0.3s ease; overflow-y: auto; }
+  .sidebar.open { right: 0; }
+  .sidebar-header { background: #1a365d; color: #fff; padding: 16px 18px; display: flex; justify-content: space-between; align-items: center; }
+  .sidebar-header h3 { font-size: 0.95rem; font-weight: 700; }
+  .sidebar-close { background: none; border: none; color: #fff; font-size: 1.3rem; cursor: pointer; line-height: 1; }
+  .sidebar-body { padding: 18px; }
+  .sidebar-ref { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #3b82f6; font-weight: 700; margin-bottom: 6px; }
+  .sidebar-text { font-style: italic; color: #2d3748; line-height: 1.75; font-size: 0.95rem; }
+  .sidebar-link { display: inline-block; margin-top: 12px; color: #1d4ed8; font-size: 0.85rem; text-decoration: none; font-weight: 600; }
+  .sidebar-link:hover { text-decoration: underline; }
+  .overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.4); z-index: 9998; display: none; }
+  .overlay.open { display: block; }
+
+  /* Footer */
+  .footer { text-align: center; color: #718096; font-size: 0.8rem; padding: 24px 0; margin-top: 16px; }
+
+  @media(max-width: 600px) {
+    .sidebar { width: 100%; right: -100%; }
+    .header h1 { font-size: 1.25rem; }
   }
 </style>
 </head>
 <body>
 
-<!-- SIDEBAR -->
-<div id="sidebar-overlay" onclick="closeSidebar()"></div>
-<div id="sidebar">
-  <div id="sidebar-header">
-    <div id="sidebar-title">Scripture</div>
-    <button id="sidebar-close" onclick="closeSidebar()">✕</button>
+<div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-header">
+    <h3 id="sidebar-title">Scripture</h3>
+    <button class="sidebar-close" onclick="closeSidebar()">&#x2715;</button>
   </div>
-  <div id="sidebar-content"></div>
-  <a id="sidebar-link" href="#" target="_blank" rel="noopener">Open full article →</a>
+  <div class="sidebar-body">
+    <div class="sidebar-ref" id="sidebar-ref"></div>
+    <div class="sidebar-text" id="sidebar-text"></div>
+    <a class="sidebar-link" id="sidebar-link" href="#" target="_blank">Open full chapter on WOL &#x2192;</a>
+  </div>
 </div>
 
 <div class="container">
 
-  <!-- HEADER -->
-  <div class="guide-header">
-    <div class="label">JW Meeting Study Guide · Watchtower Study</div>
-    <h1>Bible Principles—Why Are They Important?</h1>
-    <div class="subtitle">The Watchtower — Study Edition · May 2026 · pp. 2–7</div>
-    <div class="date-badge">☉ Sunday, July 5, 2026 · Week of July 6–12</div>
+  <div class="header">
+    <div class="badge">Watchtower Study &middot; July 5, 2026</div>
+    <h1>Keep Strengthening Your Friendship With Your Mate</h1>
+    <div class="subtitle">The Watchtower &mdash; Study Edition &nbsp;|&nbsp; June 29 &ndash; July 5, 2026</div>
   </div>
 
-  <!-- CONTROLS -->
-  <div class="controls">
-    <button class="btn btn-primary" onclick="expandAll()">▾ Expand All Answers</button>
-    <button class="btn btn-outline" onclick="collapseAll()">▴ Collapse All</button>
-  </div>
+  <button class="expand-btn" onclick="expandAll()">&#x25BE; Expand All Answers</button>
 
-  <!-- OPENING SONG -->
   <div class="song-banner">
-    <div class="icon">🎵</div>
-    <div>
-      <div class="song-label">Opening Song</div>
-      <div class="song-name">Song 98 — "The Scriptures—Inspired of God"</div>
-    </div>
+    <span class="icon">&#x1F3B5;</span>
+    <span>Opening Song 131 &mdash; &#x201C;What God Has Yoked Together&#x201D;
+      <a href="https://www.jw.org/en/library/songs/jw-songbook/song-131/" target="_blank" style="color:#a5d8ff;font-size:0.8rem;margin-left:8px;">Listen &#x2192;</a>
+    </span>
   </div>
 
-  <!-- FOCUS -->
-  <div class="focus-banner">
-    <div class="focus-label">📌 Study Focus</div>
-    <p>To explain what principles are and how we can identify them when we read the Bible.</p>
-  </div>
-
-  <!-- THEME VERSE -->
   <div class="theme-verse">
-    "Present your bodies as . . . a sacred service with your power of reason."
-    <br>
-    <span class="chip" onclick="openSidebar('Romans 12:1', `<blockquote>"I urge you, therefore, brothers, by the mercies of God, to present your bodies as a living sacrifice, holy and acceptable to God, a sacred service with your power of reason. And stop being molded by this system of things, but be transformed by making your mind over, so that you may prove to yourselves the good and acceptable and perfect will of God."</blockquote><p>Paul urges Christians to use their God-given reasoning ability—not just follow rules, but understand <em>why</em>, and let transformed thinking guide their choices.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/45/12')">Romans 12:1</span>
-  </div>
-
-  <!-- ==================== SECTION 1 ==================== -->
-  <div class="section-heading">Paragraphs 1–3 · Why the Bible Remains Relevant</div>
-
-  <!-- Q 1-2 -->
-  <div class="question-card">
-    <div class="q-label">Question 1–2</div>
-    <div class="q-text">(a) Why can the Bible be called an ancient book? (b) Why is it still relevant today?</div>
-  </div>
-
-  <button class="answer-toggle" onclick="toggleAnswer(this)">
-    <span class="arrow">▶</span> Show comment
-  </button>
-  <div class="answer-box">
-    <h4>Suggested Answer</h4>
-    <div class="sub-answer">
-      <span class="sub-label">(a)</span> The Bible's writing began about 3,500 years ago and was completed nearly 2,000 years ago, making it one of humanity's oldest written works still in active use.
-    </div>
-    <div class="sub-answer">
-      <span class="sub-label">(b)</span> The Bible remains relevant for two key reasons: its message comes from the "living God," the all-wise Creator
-      <span class="chip" onclick="openSidebar('1 Timothy 4:10', `<blockquote>"We have rested our hope on a living God, who is the Savior of all sorts of men, especially of faithful ones."</blockquote><p>Jehovah is described as the "living God"—active, present, and the source of timeless wisdom. This sets the Bible apart from human philosophy.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/54/4')">1 Tim. 4:10</span>; and it is written to reveal timeless <em>principles</em> that apply in any era and in any situation.
-      <span class="chip" onclick="openSidebar('Hebrews 4:12', `<blockquote>"The word of God is alive and exerts power and is sharper than any two-edged sword and pierces even to the dividing of soul and spirit, and of joints from the marrow, and is able to discern thoughts and intentions of the heart."</blockquote><p>This verse shows that God's word is not static text—it is living and active, able to reach into our innermost being and guide our thinking right now.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/58/4')">Heb. 4:12</span>
-      <span class="chip" onclick="openSidebar('2 Timothy 3:16-17', `<blockquote>"All Scripture is inspired of God and beneficial for teaching, for reproving, for setting things straight, for disciplining in righteousness, so that the man of God may be fully competent, completely equipped for every good work."</blockquote><p>Paul asserts that all Scripture has divine inspiration and practical benefit—not just for ancient readers, but for us today in our "every good work."</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/55/3')">2 Tim. 3:16–17</span>
-    </div>
-    <div class="comment-prep">
-      <div class="prep-item">💬 <strong>Comment you could share:</strong> "What struck me is that the Bible isn't just a history book—it's timeless because the principles behind its laws never expire. Jehovah built in a kind of wisdom that outlasts any era."</div>
-      <div class="prep-item">📌 <strong>Ministry connection:</strong> When householders say the Bible is outdated, we can point to how its principles on topics like family, ethics, and mental health are confirmed by modern research.</div>
-      <div class="prep-item">🙏 <strong>Getting to know Jehovah:</strong> Jehovah is the "living God"—He didn't write a book and walk away. His word is alive and still speaks to us today.</div>
+    <div class="label">Theme Verse</div>
+    <blockquote>&#x201C;There are companions ready to crush one another, But there is a friend who sticks closer than a brother.&#x201D;</blockquote>
+    <div class="ref">
+      &mdash; <span class="chip" onclick="showSidebar('Prov. 18:24','There are companions ready to crush one another, But there is a friend who sticks closer than a brother.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/18')">Prov. 18:24</span>
     </div>
   </div>
 
-  <div class="para-block">
-    <div class="para-num">Paragraphs 1–2</div>
-    <p><strong>¶1.</strong> The Bible is an ancient book. Its writing was started some 3,500 years ago, and it was completed nearly 2,000 years ago. And yet "the word of God" found within its pages is alive and powerful today. (<span class="chip" onclick="openSidebar('Hebrews 4:12', `<blockquote>&quot;The word of God is alive and exerts power and is sharper than any two-edged sword...&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/58/4')">Heb. 4:12</span>; <span class="chip" onclick="openSidebar('2 Timothy 3:16-17', `<blockquote>&quot;All Scripture is inspired of God and beneficial for teaching...&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/55/3')">2 Tim. 3:16, 17</span>) Millions of people testify that the Bible has helped them to cope with life in this modern world.</p>
-    <p><strong>¶2.</strong> But how could such an old book still be relevant today? First, the Bible's message comes from the "living God," the all-wise Creator. (<span class="chip" onclick="openSidebar('1 Timothy 4:10', `<blockquote>&quot;We have rested our hope on a living God...&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/54/4')">1 Tim. 4:10</span>; <span class="chip" onclick="openSidebar('Romans 16:26-27', `<blockquote>&quot;...made known to all the nations to promote obedience of faith—to God, who alone is wise, be the glory through Jesus Christ forever. Amen.&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/45/16')">Rom. 16:26, 27</span>) Second, the Bible is written in a way that reveals timeless principles. These principles remain beneficial no matter what era a person lives in or what challenges a person faces.</p>
+  <div class="focus-banner">
+    <div class="label">Focus</div>
+    <div class="text">A happy marriage is built on a close friendship between a husband and a wife and on their mutual love for Jehovah.</div>
   </div>
 
-  <!-- Q 3 -->
-  <div class="question-card">
-    <div class="q-label">Question 3</div>
-    <div class="q-text">What questions will be answered in this article?</div>
-  </div>
+  <!-- SECTION 1 -->
+  <div class="section-header">&#x1F91D; How to Choose a Lifelong Friend</div>
 
-  <button class="answer-toggle" onclick="toggleAnswer(this)">
-    <span class="arrow">▶</span> Show comment
-  </button>
-  <div class="answer-box">
-    <h4>Suggested Answer</h4>
-    <p>This article will answer three questions: <em>What</em> are Bible principles? <em>Why</em> are they so important for us today? <em>How</em> can we identify them when we read the Bible? The article also examines how Jesus' teachings in the Sermon on the Mount highlight the practical value of principles.</p>
-    <div class="comment-prep">
-      <div class="prep-item">💬 <strong>Comment:</strong> "I like how this article sets up three practical questions—it's not abstract theology, it's a how-to guide for using the Bible in everyday decisions."</div>
+  <!-- Q1 -->
+  <div class="qa-unit">
+    <div class="question-card"><span class="question-num">1.</span> Why are good friends a gift from Jehovah?</div>
+    <div class="answer-toggle-header" onclick="toggleAnswer('a1')">
+      <span id="a1-label">&#x25B8; Show Comment</span><span id="a1-arrow">&#x25B8;</span>
     </div>
-  </div>
-
-  <div class="para-block">
-    <div class="para-num">Paragraph 3</div>
-    <p><strong>¶3.</strong> What are Bible principles? Why are they so important for us today? How can we identify principles when we read the Bible? This article will answer these questions. We will also see how the teachings of Jesus highlight the value of principles.</p>
-  </div>
-
-  <!-- ==================== SECTION 2 ==================== -->
-  <div class="section-heading">Paragraphs 4–5 · What Are Bible Principles?</div>
-
-  <!-- Q 4 -->
-  <div class="question-card">
-    <div class="q-label">Question 4</div>
-    <div class="q-text">What are Bible principles?</div>
-  </div>
-
-  <button class="answer-toggle" onclick="toggleAnswer(this)">
-    <span class="arrow">▶</span> Show comment
-  </button>
-  <div class="answer-box">
-    <h4>Suggested Answer</h4>
-    <p>Bible principles are <strong>basic truths on which God's laws are based.</strong> They could be described as the <em>reason behind the law.</em> While specific laws may be limited to a particular time or situation, principles reflect Jehovah's thinking more broadly. Principles are timeless—they do not expire or become outdated.</p>
-    <p>Key distinctions:</p>
-    <ul style="margin-left:20px; margin-top:6px;">
-      <li>Laws = specific commands, sometimes for a particular era or situation</li>
-      <li>Principles = the <em>why</em> behind the law; timeless; broadly applicable</li>
-    </ul>
-    <p style="margin-top:10px;">Supporting scriptures: <span class="chip" onclick="openSidebar('Matthew 22:37', `<blockquote>&quot;He said to him: 'You must love Jehovah your God with your whole heart and with your whole soul and with your whole mind.'&quot;</blockquote><p>Jesus distilled all of God's law into this core principle—love. This single principle underpins hundreds of specific commandments.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/22')">Matt. 22:37</span> <span class="chip" onclick="openSidebar('Psalm 119:111', `<blockquote>&quot;I have taken your reminders as a lasting inheritance, for they are the exultation of my heart.&quot;</blockquote><p>The psalmist treasured God's reminders—not just rules to follow but heart-transforming truths. These reminders (principles) become a personal inheritance.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/19/119')">Ps. 119:111</span> <span class="chip" onclick="openSidebar('Isaiah 40:8', `<blockquote>&quot;The green grass dries up, the blossom withers, but the word of our God endures forever.&quot;</blockquote><p>Human laws and customs change like grass—but the principles in God's word endure permanently. This is why Bible principles are still perfectly applicable today.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/23/40')">Isa. 40:8</span></p>
-    <div class="comment-prep">
-      <div class="prep-item">💬 <strong>Comment:</strong> "I found it helpful to think of principles as the 'why' behind the law. Once you know the why, you can apply the same thinking to hundreds of situations the law never directly addresses."</div>
-      <div class="prep-item">🙏 <strong>Getting to know Jehovah:</strong> Jehovah doesn't just issue commands—He explains His thinking. That reveals a God who wants relationship and understanding, not just compliance.</div>
-    </div>
-  </div>
-
-  <div class="para-block">
-    <div class="para-num">Paragraph 4</div>
-    <p><strong>¶4.</strong> Bible principles are basic truths on which God's laws are based. At times, a principle may be clearly stated within the law. (<span class="chip" onclick="openSidebar('Matthew 22:37', `<blockquote>&quot;You must love Jehovah your God with your whole heart...&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/22')">Matt. 22:37</span>) Principles are, however, superior to specific laws. Specific laws may be limited in application—given for a particular time or situation. But Bible principles reflect Jehovah's thinking in a broader sense. Principles could be described as the reason behind the law. The principles on which they are based can be applied in a number of different circumstances and are timeless. (<span class="chip" onclick="openSidebar('Psalm 119:111', `<blockquote>&quot;I have taken your reminders as a lasting inheritance...&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/19/119')">Ps. 119:111</span>) Laws may need to change, but principles do not expire or become outdated.—<span class="chip" onclick="openSidebar('Isaiah 40:8', `<blockquote>&quot;The green grass dries up...but the word of our God endures forever.&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/23/40')">Isa. 40:8</span>.</p>
-  </div>
-
-  <!-- Q 5 -->
-  <div class="question-card">
-    <div class="q-label">Question 5</div>
-    <div class="q-text">How can we illustrate the difference between laws and principles?</div>
-  </div>
-
-  <button class="answer-toggle" onclick="toggleAnswer(this)">
-    <span class="arrow">▶</span> Show comment
-  </button>
-  <div class="answer-box">
-    <h4>Suggested Answer</h4>
-    <p>The article uses the illustration of a mother telling a child: "Don't touch the stove." The law is specific—don't touch the stove. But the <em>principle</em> is: don't touch anything that could burn you. That principle extends to an iron, a heater, a campfire—anywhere, anytime. As the child grows, the narrow rule fades, but the principle never does.</p>
-    <p>Similarly, Bible laws are like specific applications. The principles behind them apply across cultures, time periods, and technologies that didn't exist when the Bible was written.</p>
-    <div class="comment-prep">
-      <div class="prep-item">💬 <strong>Comment:</strong> "The stove illustration really clicked for me. A specific rule ages out—but the principle behind it stays forever. That's why the Bible speaks to smartphones and social media even though those didn't exist."</div>
-      <div class="prep-item">📌 <strong>Ministry connection:</strong> This is a great point for people who feel the Bible is too old to be practical. It doesn't need to address every specific technology—its principles cover all of them.</div>
-    </div>
-  </div>
-
-  <div class="para-block">
-    <div class="para-num">Paragraph 5</div>
-    <p><strong>¶5.</strong> To help us better understand the difference between laws and principles, consider this illustration. A mother may say to a small child, 'Don't touch the stove.' That is a command or a law. But the principle, or thinking, behind that law is: Don't touch something that is hot; otherwise, you will get hurt. That principle is not just limited to a stove—it could be applied to a clothing iron, a heater, or any other hot item. That principle does not just apply in the family's home but applies elsewhere too. Of course, as the child grows older, he will probably use the stove. However, he will still need to be careful. So the law may change, but the basic principle behind it remains.</p>
-  </div>
-
-  <div class="image-block">
-    <img src="https://cms-imgp.jw-cdn.org/img/p/2026400/univ/art/2026400_univ_lsr_xl.jpg" alt="Article illustration" loading="lazy" onerror="this.style.display='none'">
-    <div class="img-caption">A law may change, but the basic principle behind it remains (See paragraph 5)</div>
-    <div class="img-application">💡 <strong>Application:</strong> Think about rules your parents gave you as a child. Many of those specific rules no longer apply—but the principles behind them (safety, respect, kindness) still guide you daily. Bible principles work the same way.</div>
-  </div>
-
-  <!-- ==================== SECTION 3 ==================== -->
-  <div class="section-heading">Paragraphs 6–9 · Why Are Bible Principles Important?</div>
-
-  <!-- Q 6 -->
-  <div class="question-card">
-    <div class="q-label">Question 6</div>
-    <div class="q-text">(a) What does Jehovah provide for us in his Word? (b) How does Jehovah dignify us?</div>
-  </div>
-
-  <button class="answer-toggle" onclick="toggleAnswer(this)">
-    <span class="arrow">▶</span> Show comment
-  </button>
-  <div class="answer-box">
-    <h4>Suggested Answer</h4>
-    <div class="sub-answer">
-      <span class="sub-label">(a)</span> Jehovah provides both specific laws (clear commands to protect us from danger) <span class="chip" onclick="openSidebar('James 2:11', `<blockquote>&quot;For the one who said, 'Do not commit adultery,' also said, 'Do not murder.' If, now, you do not commit adultery but you do murder, you have become a transgressor of law.&quot;</blockquote><p>James highlights how Jehovah's specific laws protect us and that they stem from consistent, coherent principles about how to treat people well.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/59/2')">Jas. 2:11</span> and the understanding of the <em>principles</em> behind those laws—covering the many life areas where no specific law exists.
-    </div>
-    <div class="sub-answer">
-      <span class="sub-label">(b)</span> By providing principles rather than an exhaustive list of rules, Jehovah treats us as mature adults. He gives us the freedom—and the responsibility—to make decisions that prove our love for him. This is true dignity. <span class="chip" onclick="openSidebar('Galatians 5:13', `<blockquote>&quot;You were called to freedom, brothers; only do not use this freedom as an opportunity to do whatever your flesh wants, but through love slave for one another.&quot;</blockquote><p>True freedom under God is not lawlessness but the freedom to make wise, loving choices guided by principles—not fear of punishment.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/48/5')">Gal. 5:13</span>
-    </div>
-    <div class="comment-prep">
-      <div class="prep-item">💬 <strong>Comment:</strong> "I appreciate that Jehovah doesn't treat us like little children who need a rule for every situation. By giving us principles, he's saying he trusts us to think—and that trust is a form of love."</div>
-      <div class="prep-item">🙏 <strong>Getting to know Jehovah:</strong> Jehovah is a God who dignifies us. He could have issued thousands of specific rules, but instead He gives us principles and trusts our judgment—that's a respectful, loving God.</div>
-    </div>
-  </div>
-
-  <div class="para-block">
-    <div class="para-num">Paragraph 6</div>
-    <p><strong>¶6.</strong> Out of love for us, Jehovah gives us specific direction in the form of laws so that we can avoid danger. (<span class="chip" onclick="openSidebar('James 2:11', `<blockquote>&quot;the one who said, 'Do not commit adultery,' also said, 'Do not murder'...&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/59/2')">Jas. 2:11</span>) Additionally, he helps us to understand the principles, or the thinking, behind those laws. By means of his Word, he provides us with his guidance in many areas of life that may not be governed by specific laws. Bible principles help us to make good decisions in life and to do what is right. By providing these principles, Jehovah dignifies us and allows us the freedom to make decisions that prove our love for him and his standards.—<span class="chip" onclick="openSidebar('Galatians 5:13', `<blockquote>&quot;You were called to freedom, brothers...&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/48/5')">Gal. 5:13</span>.</p>
-  </div>
-
-  <!-- Q 7 -->
-  <div class="question-card">
-    <div class="q-label">Question 7</div>
-    <div class="q-text">How can we illustrate the value of Bible principles?</div>
-  </div>
-
-  <button class="answer-toggle" onclick="toggleAnswer(this)">
-    <span class="arrow">▶</span> Show comment
-  </button>
-  <div class="answer-box">
-    <h4>Suggested Answer</h4>
-    <p>The article uses road signs as an illustration. Some signs are laws—speed limits, stop signs—with penalties for breaking them. But other signs are <em>warnings</em>: slippery road ahead, animals crossing. An experienced driver uses good judgment when seeing a warning sign and adjusts behavior proactively—even if no law specifically covers that exact situation.</p>
-    <p>Similarly, Christians strictly avoid what God's Word specifically condemns, but Bible principles also help us <em>avoid the path that leads toward</em> wrongdoing—before we arrive at a specific sin. This requires using our "power of reason." <span class="chip" onclick="openSidebar('Romans 12:1-2', `<blockquote>&quot;I urge you, therefore, brothers, by the mercies of God, to present your bodies as a living sacrifice, holy and acceptable to God, a sacred service with your power of reason. And stop being molded by this system of things, but be transformed by making your mind over...&quot;</blockquote><p>Paul calls on us to use our <em>power of reason</em>—our thinking ability—as an act of sacred worship. Principles trained minds are transformed minds.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/45/12')">Rom. 12:1, 2</span></p>
-    <div class="comment-prep">
-      <div class="prep-item">💬 <strong>Comment:</strong> "The road sign illustration helped me see that Bible principles are like warning signs—they don't just tell us what's illegal; they help us avoid danger in the first place."</div>
-      <div class="prep-item">📌 <strong>Ministry connection:</strong> Many people want permission slips for borderline behavior. Understanding principles helps us see why certain things are "warning signs," even if not strictly condemned in a single verse.</div>
-    </div>
-  </div>
-
-  <div class="para-block">
-    <div class="para-num">Paragraph 7</div>
-    <p><strong>¶7.</strong> Think of road signs that drivers see along highways. Many of these signs inform us of laws that carry penalties for those who disregard them—speed limits, stop signs. However, many other signs alert drivers to possible dangers—slippery road, animals crossing. An experienced driver uses good judgment and drives cautiously when he sees these warning signs. Similarly, while Christians strictly avoid any conduct that is specifically condemned in God's Word, they also avoid any thoughts or actions that could lead them to break God's laws. This calls for good judgment on their part.</p>
-  </div>
-
-  <!-- Q 8 -->
-  <div class="question-card">
-    <div class="q-label">Question 8</div>
-    <div class="q-text">As mentioned at Romans 12:1, 2, what can our search for Bible principles train us to do?</div>
-  </div>
-
-  <button class="answer-toggle" onclick="toggleAnswer(this)">
-    <span class="arrow">▶</span> Show comment
-  </button>
-  <div class="answer-box">
-    <h4>Suggested Answer</h4>
-    <p>Our search for Bible principles trains us to understand Jehovah's <em>thinking</em> on matters. When we read Bible accounts, we look for the deeper lesson behind events and ask: "Why did Jehovah include this in His Word? How can I apply it?" This exercise trains us to use our "power of reason"—our rationality—in Jehovah's service.</p>
-    <p>The result? We "prove to ourselves the good and acceptable and perfect will of God"—not because we fear punishment, but because we've internalized His values through renewed thinking. <span class="chip" onclick="openSidebar('Romans 12:1-2', `<blockquote>&quot;...be transformed by making your mind over, so that you may prove to yourselves the good and acceptable and perfect will of God.&quot;</blockquote><p>Making our mind over means a complete mental renovation—replacing worldly value systems with Jehovah's thinking so we can evaluate any situation through His eyes.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/45/12')">Rom. 12:1, 2</span></p>
-    <div class="comment-prep">
-      <div class="prep-item">💬 <strong>Comment:</strong> "What stands out to me is that searching for principles is itself an act of worship. We're not just learning rules—we're learning to think the way Jehovah thinks."</div>
-      <div class="prep-item">🙏 <strong>Getting to know Jehovah:</strong> Jehovah wants us to understand His will—not just follow orders. He wants a relationship where His thinking becomes our thinking.</div>
-    </div>
-  </div>
-
-  <div class="para-block">
-    <div class="para-num">Paragraph 8</div>
-    <p><strong>¶8.</strong> There are other important benefits that come from searching for Bible principles and living by them. For example, we are trained to understand Jehovah's thinking on matters. When reading accounts in the Scriptures, we learn to look for practical lessons. We ask ourselves why Jehovah included these lessons in his written Word and how we can benefit from them. In this way, we learn how to use our "power of reason" to serve Jehovah. We prove to ourselves "the good and acceptable and perfect will of God."—<span class="chip" onclick="openSidebar('Romans 12:1-2', `<blockquote>&quot;...a sacred service with your power of reason...prove to yourselves the good and acceptable and perfect will of God.&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/45/12')">Read Romans 12:1, 2.</span></p>
-  </div>
-
-  <!-- Q 9 -->
-  <div class="question-card">
-    <div class="q-label">Question 9</div>
-    <div class="q-text">What additional benefit do we gain from living by Bible principles? (Hebrews 5:13, 14)</div>
-  </div>
-
-  <button class="answer-toggle" onclick="toggleAnswer(this)">
-    <span class="arrow">▶</span> Show comment
-  </button>
-  <div class="answer-box">
-    <h4>Suggested Answer</h4>
-    <p>Living by Bible principles helps us become <strong>mature Christians.</strong> <span class="chip" onclick="openSidebar('Hebrews 5:13-14', `<blockquote>&quot;For everyone who continues to feed on milk is unacquainted with the word of righteousness, for he is a young child. But solid food belongs to mature people, to those who through use have their powers of discernment trained to distinguish both right and wrong.&quot;</blockquote><p>The "solid food" Paul refers to is not just advanced doctrine—it is the ability to apply principles to distinguish right from wrong in complex, real-life situations. This discernment is developed through <em>practice</em>.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/58/5')">Heb. 5:13, 14</span></p>
-    <p>Mature Christians move beyond needing a law for every situation. Jehovah treats us as mature adults, trusting us to make decisions that honor Him—not out of fear of punishment but out of genuine love. This brings great joy to Jehovah's heart. <span class="chip" onclick="openSidebar('Proverbs 27:11', `<blockquote>&quot;Be wise, my son, and make my heart rejoice, so that I can make a reply to him who taunts me.&quot;</blockquote><p>Our wise, principled decisions bring Jehovah joy and vindicate His name against those who doubt that humans can live righteously under God's guidance.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/27')">Prov. 27:11</span> <span class="chip" onclick="openSidebar('Psalm 147:11', `<blockquote>&quot;Jehovah is pleased with those who fear him, with those waiting for his loyal love.&quot;</blockquote><p>Jehovah's pleasure is not just in our obedience—it's in our trust and love for him. Applying principles reflects that trust.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/19/147')">Ps. 147:11</span></p>
-    <div class="comment-prep">
-      <div class="prep-item">💬 <strong>Comment:</strong> "I like the contrast between 'milk' and 'solid food.' Maturity isn't about knowing more rules—it's about developing discernment to handle situations the rules never directly address."</div>
-      <div class="prep-item">📌 <strong>Ministry connection:</strong> Many people feel religion is about following a list of dos and don'ts. We can explain that true Christian maturity is about developing wisdom and discernment, not just checking boxes.</div>
-    </div>
-  </div>
-
-  <div class="para-block">
-    <div class="para-num">Paragraph 9</div>
-    <p><strong>¶9.</strong> Learning to live by Bible principles helps us to become mature Christians. When we live by Bible principles, our relationship with Jehovah improves. (Read <span class="chip" onclick="openSidebar('Hebrews 5:13-14', `<blockquote>&quot;...solid food belongs to mature people, to those who through use have their powers of discernment trained to distinguish both right and wrong.&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/58/5')">Hebrews 5:13, 14.</span>) Young children may need an extensive list of laws so they know how to act. But Jehovah treats us, not as young children, but as mature adults. He trusts us to make decisions that are in harmony with his will, and when we do so, this brings great joy to his heart.—<span class="chip" onclick="openSidebar('Psalm 147:11', `<blockquote>&quot;Jehovah is pleased with those who fear him...&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/19/147')">Ps. 147:11</span>; <span class="chip" onclick="openSidebar('Proverbs 27:11', `<blockquote>&quot;Be wise, my son, and make my heart rejoice...&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/27')">Prov. 27:11</span>.</p>
-  </div>
-
-  <!-- ==================== SECTION 4 ==================== -->
-  <div class="section-heading">Paragraphs 10–17 · How Can We Identify Bible Principles?</div>
-
-  <!-- Q 10 -->
-  <div class="question-card">
-    <div class="q-label">Question 10</div>
-    <div class="q-text">How can we identify Bible principles?</div>
-  </div>
-
-  <button class="answer-toggle" onclick="toggleAnswer(this)">
-    <span class="arrow">▶</span> Show comment
-  </button>
-  <div class="answer-box">
-    <h4>Suggested Answer</h4>
-    <p>We identify Bible principles by searching the Bible for:</p>
-    <ul style="margin-left:20px; margin-top:6px; margin-bottom:10px;">
-      <li>Lessons that show how Jehovah thinks and feels about matters</li>
-      <li>The reasons behind specific laws ("Why did God give this law?")</li>
-      <li>What a Bible account reveals about Jehovah's character</li>
-    </ul>
-    <p>This requires prayer for wisdom and developing our own thinking ability. <span class="chip" onclick="openSidebar('Proverbs 2:10-12', `<blockquote>&quot;When wisdom enters your heart and knowledge becomes pleasant to your soul, discretion will keep watch over you, and discernment will safeguard you, to save you from the bad course...&quot;</blockquote><p>Wisdom that enters the heart changes behavior from the inside out—this is how Bible principles work. They become part of who we are, guiding us even in situations no specific law covers.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/2')">Prov. 2:10–12</span></p>
-    <p>Good questions to ask: "Why did God give this law? If Jehovah doesn't approve of this conduct, how would He feel about similar conduct? What lesson do I learn from this account, and how can I apply it in my life?"</p>
-    <div class="comment-prep">
-      <div class="prep-item">💬 <strong>Comment:</strong> "The three questions in paragraph 10 are like a formula I can actually use in personal study. Instead of just reading a passage, I ask: What is the principle? How does it reveal Jehovah's thinking? How can I apply it?"</div>
-      <div class="prep-item">🙏 <strong>Getting to know Jehovah:</strong> Identifying principles means we're learning to see the world through Jehovah's eyes—understanding not just what He commands, but why. That's a deep form of knowing Him.</div>
-    </div>
-  </div>
-
-  <div class="para-block">
-    <div class="para-num">Paragraph 10</div>
-    <p><strong>¶10.</strong> When we search the Bible for lessons, we find principles that help us to understand how Jehovah thinks and feels about matters. We can also identify principles when we look for the reasons behind certain laws. The more we understand the reasons, the more we understand Jehovah. But in order to understand God's thinking, we must pray to him for help and we must develop our own thinking ability. (<span class="chip" onclick="openSidebar('Proverbs 2:10-12', `<blockquote>&quot;When wisdom enters your heart...&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/2')">Prov. 2:10–12</span>) We can ask ourselves: 'Why did God give this law? If Jehovah does not approve of this conduct, how would he feel about similar conduct? What lesson do I learn from this Bible account, and how can I apply it in my life?'</p>
-  </div>
-
-  <!-- Q 11 -->
-  <div class="question-card">
-    <div class="q-label">Question 11</div>
-    <div class="q-text">In what way did Jesus show us how to identify Bible principles in his Sermon on the Mount?</div>
-  </div>
-
-  <button class="answer-toggle" onclick="toggleAnswer(this)">
-    <span class="arrow">▶</span> Show comment
-  </button>
-  <div class="answer-box">
-    <h4>Suggested Answer</h4>
-    <p>In the Sermon on the Mount, Jesus demonstrated a clear method: He <strong>first stated the law</strong>, then <strong>revealed the principle</strong> (the thinking) behind it. He showed three examples — on murder, adultery, and love of neighbor. By doing so, Jesus showed that understanding the principle allows us to apply timeless wisdom to modern situations that the original law never specifically addressed.</p>
-    <div class="comment-prep">
-      <div class="prep-item">💬 <strong>Comment:</strong> "What I appreciate about Jesus' approach is that he wasn't abolishing the law—he was going deeper, helping us understand the intention behind it. That's the same approach we use when applying Bible principles today."</div>
-    </div>
-  </div>
-
-  <div class="para-block">
-    <div class="para-num">Paragraph 11</div>
-    <p><strong>¶11.</strong> In his Sermon on the Mount, Jesus showed us how we can identify Bible principles. Let us examine three examples. In each case, Jesus first stated the law. Then he revealed the thinking, or the principle, behind that law. As we meditate on what Jesus revealed, we will see how these principles can be applied in our modern world. At the same time, we will discern the practical benefits of these life lessons.</p>
-  </div>
-
-  <div class="image-block">
-    <img src="https://cms-imgp.jw-cdn.org/img/p/2026400/univ/art/2026400_univ_lsr_xl.jpg" alt="Jesus Sermon on Mount" loading="lazy" onerror="this.style.display='none'">
-    <div class="img-caption">In his Sermon on the Mount, Jesus showed us how to identify the Bible principles behind God's laws (See paragraph 11)</div>
-    <div class="img-application">💡 <strong>Application:</strong> Think of the Sermon on the Mount as Jesus' masterclass in principle-based thinking. He took his listeners deeper—from the letter of the law to the heart of it. We can use this same approach in our personal study.</div>
-  </div>
-
-  <!-- Q 12 -->
-  <div class="question-card">
-    <div class="q-label">Question 12</div>
-    <div class="q-text">What is one principle behind the law stated at Matthew 5:21, 22?</div>
-  </div>
-
-  <button class="answer-toggle" onclick="toggleAnswer(this)">
-    <span class="arrow">▶</span> Show comment
-  </button>
-  <div class="answer-box">
-    <h4>Suggested Answer</h4>
-    <p>The law: <em>"You must not murder."</em> <span class="chip" onclick="openSidebar('Matthew 5:21-22', `<blockquote>&quot;You heard that it was said to those of ancient times: 'You must not murder; but whoever commits a murder will be accountable to the court of justice.' However, I say to you that everyone who continues wrathful with his brother will be accountable to the court of justice; but whoever addresses his brother with an unspeakable word of contempt will be accountable to the Supreme Court; whereas whoever says, 'You despicable fool!' will be liable to the fiery Gehenna.&quot;</blockquote><p>Jesus expands the law on murder to include anger, contempt, and hateful speech. The principle behind "do not murder" is: Jehovah does not want hatred in any form—whether in action, word, or thought.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/5')">Matt. 5:21, 22</span></p>
-    <p>The principle: <strong>Jehovah does not want us to hate others—in action, word, or even thought.</strong> Jesus showed that even wrathful attitudes or verbal abuse violate the spirit of this law. Hatred and contempt are the seeds from which murder grows. <span class="chip" onclick="openSidebar('1 John 3:15', `<blockquote>&quot;Everyone who hates his brother is a murderer, and you know that no murderer has everlasting life remaining in him.&quot;</blockquote><p>John confirms Jesus' expansion of the murder principle: hatred in the heart is morally equivalent to murder. The principle targets the root, not just the fruit.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/62/3')">1 John 3:15</span></p>
-    <div class="comment-prep">
-      <div class="prep-item">💬 <strong>Comment:</strong> "It's striking that the principle behind 'do not murder' reaches all the way to how we speak and think about others. Jehovah cares not just about actions but about what's going on in our hearts."</div>
-      <div class="prep-item">📌 <strong>Ministry connection:</strong> When discussing how the Bible applies today, this principle shows that social media posts, gossip, or online attacks can violate the same principle as the law against murder.</div>
-    </div>
-  </div>
-
-  <div class="para-block">
-    <div class="para-num">Paragraph 12</div>
-    <p><strong>¶12.</strong> Read <span class="chip" onclick="openSidebar('Matthew 5:21-22', `<blockquote>&quot;You heard that it was said to those of ancient times: 'You must not murder'...&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/5')">Matthew 5:21, 22.</span> "You must not murder." What is one principle behind this law? Jehovah does not want us to hate others—in action, word, or even thought. Jesus indicated that even though a person may not commit an act of murder, he could still violate the reason for that law if he hates his brother. If someone "continues wrathful with his brother" or verbally abuses him, the individual who is wrathful would still be "accountable." In fact, these are the very attitudes and actions that lead to murder.—<span class="chip" onclick="openSidebar('1 John 3:15', `<blockquote>&quot;Everyone who hates his brother is a murderer...&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/62/3')">1 John 3:15</span>.</p>
-  </div>
-
-  <!-- Q 13 -->
-  <div class="question-card">
-    <div class="q-label">Question 13</div>
-    <div class="q-text">How can we apply the principle found at Matthew 5:21, 22 in our life?</div>
-  </div>
-
-  <button class="answer-toggle" onclick="toggleAnswer(this)">
-    <span class="arrow">▶</span> Show comment
-  </button>
-  <div class="answer-box">
-    <h4>Suggested Answer</h4>
-    <p>The principle alerts us to avoid resentment and grudges, because these feelings can stir up hatred that leads to hurtful speech or actions. <span class="chip" onclick="openSidebar('Leviticus 19:18', `<blockquote>&quot;You must not take vengeance nor hold a grudge against the sons of your people; and you must love your fellow man as yourself. I am Jehovah.&quot;</blockquote><p>Even under the Mosaic Law, Jehovah prohibited the inner attitudes—grudges and vengeance—that the principle behind Matthew 5:21, 22 targets. The principle is consistent across both covenants.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/3/19')">Lev. 19:18</span> This includes gossip, slander, and any form of "character assassination" in person or online.</p>
-    <p>Jesus provided this principle <em>before</em> social media, blogs, or messaging apps existed—yet it applies perfectly to all of them. A principle doesn't need updating to remain current.</p>
-    <div class="comment-prep">
-      <div class="prep-item">💬 <strong>Comment:</strong> "This hits close to home with social media. The principle against hateful speech applies just as much to online posts as to face-to-face conversations—Jesus gave us the answer before the technology existed."</div>
-      <div class="prep-item">📌 <strong>Ministry connection:</strong> Many people wonder if the Bible addresses modern problems like cyberbullying. This is a concrete example of a principle that covers exactly that—without the Bible needing to be updated.</div>
-    </div>
-  </div>
-
-  <div class="para-block">
-    <div class="para-num">Paragraph 13</div>
-    <p><strong>¶13.</strong> How can the principle found at Matthew 5:21, 22 be applied today? We should avoid becoming resentful or holding a grudge. (<span class="chip" onclick="openSidebar('Leviticus 19:18', `<blockquote>&quot;You must not take vengeance nor hold a grudge...&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/3/19')">Lev. 19:18</span>) Why? Because these feelings can stir up hatred in our heart, which may lead to hurtful speech or actions. This includes gossip and slander that can damage or ruin the reputation of others. So even before there were such things as social media, blogs, the Internet, or messaging apps, Jesus provided a principle that would alert mature Christians to the possible dangers when using these modern tools. In all situations, we should avoid hateful speech that could lead to character assassination.</p>
-  </div>
-
-  <!-- Q 14 -->
-  <div class="question-card">
-    <div class="q-label">Question 14</div>
-    <div class="q-text">What is the principle behind the law stated at Matthew 5:27, 28?</div>
-  </div>
-
-  <button class="answer-toggle" onclick="toggleAnswer(this)">
-    <span class="arrow">▶</span> Show comment
-  </button>
-  <div class="answer-box">
-    <h4>Suggested Answer</h4>
-    <p>The law: <em>"You must not commit adultery."</em> <span class="chip" onclick="openSidebar('Matthew 5:27-28', `<blockquote>&quot;You heard that it was said: 'You must not commit adultery.' But I say to you that everyone who keeps on looking at a woman so as to have a passion for her has already committed adultery with her in his heart.&quot;</blockquote><p>Jesus moves from the act to the thought process behind it. The principle targets immoral desire itself—not just the resulting action. Jehovah cares about what we <em>dwell on</em>, not just what we do.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/5')">Matt. 5:27, 28</span></p>
-    <p>The principle: <strong>Jehovah hates not only immorality itself but also the thoughts that can lead to it.</strong> Immoral desires should be avoided before they become actions—even intense effort is required. This principle applies to both married and single Christians.</p>
-    <div class="comment-prep">
-      <div class="prep-item">💬 <strong>Comment:</strong> "This principle shows that Jehovah is concerned with what we let our minds dwell on. That's a high standard—but it also shows He knows that prevention starts in the heart."</div>
-      <div class="prep-item">🙏 <strong>Getting to know Jehovah:</strong> Jehovah is concerned with our inner life—our thoughts and desires—not just our outward actions. This reveals a God who cares about the whole person.</div>
-    </div>
-  </div>
-
-  <div class="para-block">
-    <div class="para-num">Paragraph 14</div>
-    <p><strong>¶14.</strong> Read <span class="chip" onclick="openSidebar('Matthew 5:27-28', `<blockquote>&quot;You must not commit adultery...everyone who keeps on looking at a woman so as to have a passion for her has already committed adultery with her in his heart.&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/5')">Matthew 5:27, 28.</span> "You must not commit adultery." What is the principle behind this law? Jehovah hates not only immorality but also thoughts that can lead to immoral conduct. Jesus explained that if a married man continues to look at a woman (other than his wife) in such a way as to have a passion for her, he has sinned. So immoral thoughts should be avoided at all costs, even if this requires intense effort on our part. This principle also applies to single Christians.</p>
-  </div>
-
-  <!-- Q 15 -->
-  <div class="question-card">
-    <div class="q-label">Question 15</div>
-    <div class="q-text">How can the principle found at Matthew 5:27, 28 be applied today?</div>
-  </div>
-
-  <button class="answer-toggle" onclick="toggleAnswer(this)">
-    <span class="arrow">▶</span> Show comment
-  </button>
-  <div class="answer-box">
-    <h4>Suggested Answer</h4>
-    <p>A mature Christian avoids all forms of pornography, not rationalizing that "it's only looking." The principle shows that dwelling on immoral desires is itself sinful, regardless of the medium. Modern practices like sexting or virtual sexual role-play also fall under this principle—Jehovah is "greatly displeased" by anything that mimics or promotes sexual immorality.</p>
-    <p>This principle was stated centuries before films, photographs, or digital devices existed, yet it addresses them all perfectly. The principle endures; the technologies come and go.</p>
-    <div class="comment-prep">
-      <div class="prep-item">💬 <strong>Comment:</strong> "It's remarkable that Jesus gave us a principle 2,000 years ago that covers something as modern as online pornography. The Bible really doesn't need updating—its principles are comprehensive enough."</div>
-      <div class="prep-item">📌 <strong>Ministry connection:</strong> In an era when pornography is normalized, this principle—that immoral thoughts themselves are sinful—provides a clear basis for Christians to stand apart from the world's standards.</div>
-    </div>
-  </div>
-
-  <div class="para-block">
-    <div class="para-num">Paragraph 15</div>
-    <p><strong>¶15.</strong> How can the principle found at Matthew 5:27, 28 be applied today? We should avoid dwelling on immoral desires. Obviously, then, a mature Christian avoids all forms of pornography. He does not reason that he is only looking at immorality, so he is not doing anything wrong. In Jesus' day, there were no electronic devices, movies, or photographs. Even so, Jesus gave us a principle that teaches us how Jehovah feels about such material. This helps us understand that Jehovah would be greatly displeased by modern practices such as sexting or engaging in virtual activities that mimic sexual immorality. Heeding this principle helps all Christians—married or single—to avoid anything that could lead to sexual immorality.</p>
-  </div>
-
-  <!-- Q 16 -->
-  <div class="question-card">
-    <div class="q-label">Question 16</div>
-    <div class="q-text">What is the principle behind the law stated at Matthew 5:43, 44?</div>
-  </div>
-
-  <button class="answer-toggle" onclick="toggleAnswer(this)">
-    <span class="arrow">▶</span> Show comment
-  </button>
-  <div class="answer-box">
-    <h4>Suggested Answer</h4>
-    <p>The law: <em>"You must love your neighbor."</em> <span class="chip" onclick="openSidebar('Matthew 5:43-44', `<blockquote>&quot;You heard that it was said: 'You must love your neighbor and hate your enemy.' However, I say to you: Continue to love your enemies and to pray for those who persecute you, so that you may prove yourselves sons of your Father who is in the heavens...&quot;</blockquote><p>Jesus corrects a misapplication—the religious leaders had taught that "neighbor" meant only fellow Jews. Jesus reveals the true principle: Jehovah's love extends to everyone, regardless of background.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/5')">Matt. 5:43, 44</span></p>
-    <p>The principle: <strong>Jehovah wants us to view all people as our neighbors and show them love.</strong> The Jews in Jesus' day had narrowed "neighbor" to mean only those they liked—allowing them to hate "enemies." But Jesus revealed that Jehovah expects love to extend across racial, national, and religious lines.</p>
-    <div class="comment-prep">
-      <div class="prep-item">💬 <strong>Comment:</strong> "The principle here is that love of neighbor has no exclusions. Even people who oppose us are our neighbors in Jehovah's view. That's a high standard—but it's also beautifully consistent with His character."</div>
-      <div class="prep-item">🙏 <strong>Getting to know Jehovah:</strong> Jehovah doesn't play favorites based on nationality, race, or religion. His love is universal, and He wants that same love reflected in us.</div>
-    </div>
-  </div>
-
-  <div class="para-block">
-    <div class="para-num">Paragraph 16</div>
-    <p><strong>¶16.</strong> Read <span class="chip" onclick="openSidebar('Matthew 5:43-44', `<blockquote>&quot;You must love your neighbor...love your enemies and pray for those who persecute you...&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/5')">Matthew 5:43, 44.</span> "You must love your neighbor." What is the principle behind this law? Jehovah wants us to view all as our neighbor and show them love. Sadly, the Jews in Jesus' day had misapplied this instruction to mean that they could hate their enemies. But Jesus knew that this was not the intent of this law. He knew that his loving heavenly Father expects us to view everyone as our neighbor, regardless of race or nationality.</p>
-  </div>
-
-  <!-- Q 17 -->
-  <div class="question-card">
-    <div class="q-label">Question 17</div>
-    <div class="q-text">What is the benefit of applying the principle found at Matthew 5:43, 44 in our life?</div>
-  </div>
-
-  <button class="answer-toggle" onclick="toggleAnswer(this)">
-    <span class="arrow">▶</span> Show comment
-  </button>
-  <div class="answer-box">
-    <h4>Suggested Answer</h4>
-    <p>Love of neighbor produces practical benefits:</p>
-    <ul style="margin-left:20px; margin-top:8px; margin-bottom:10px;">
-      <li>It moves us to <strong>refuse to get involved in wars and conflicts</strong> of this world <span class="chip" onclick="openSidebar('Isaiah 2:4', `<blockquote>&quot;He will render judgment among the nations and set matters straight respecting many peoples. They will beat their swords into plowshares and their spears into pruning shears. Nation will not lift up sword against nation, nor will they learn war anymore.&quot;</blockquote><p>The principle of universal love for neighbor will reach its full expression in Jehovah's new world—but Christians practice it now by maintaining strict neutrality in political and military conflicts.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/23/2')">Isa. 2:4</span></li>
-      <li>It helps us to <strong>deal kindly with people from different backgrounds</strong> <span class="chip" onclick="openSidebar('Acts 10:34-35', `<blockquote>&quot;Now I truly understand that God is not partial, but in every nation the man who fears him and does what is right is acceptable to him.&quot;</blockquote><p>Peter's epiphany applies the love-of-neighbor principle across racial and national lines. This is the principle working itself out in practice.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/44/10')">Acts 10:34, 35</span></li>
-      <li>It helps us to <strong>forgive those who have hurt us</strong> <span class="chip" onclick="openSidebar('Matthew 18:21-22', `<blockquote>&quot;Then Peter came and said to him: 'Lord, how many times is my brother to sin against me and am I to forgive him? Up to seven times?' Jesus said to him: 'I say to you, not up to seven times, but up to 77 times.'&quot;</blockquote><p>The principle of love requires generous, ongoing forgiveness—not a limited quota. Jehovah's love for us is not exhausted by our repeated failings; our love for others should reflect that same generosity.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/18')">Matt. 18:21, 22</span></li>
-    </ul>
-    <div class="comment-prep">
-      <div class="prep-item">💬 <strong>Comment:</strong> "Applying this principle is what sets us apart. Jehovah's organization is a brotherhood of people from every nation who genuinely care for one another—that's the love-of-neighbor principle at work on a global scale."</div>
-      <div class="prep-item">📌 <strong>Ministry connection:</strong> In a world polarized by race and nationality, the principle of universal love for neighbor is one of the most striking features of our international brotherhood that we can highlight in the ministry.</div>
-    </div>
-  </div>
-
-  <div class="para-block">
-    <div class="para-num">Paragraphs 16–17</div>
-    <p><strong>¶17.</strong> How can we apply the principle found at Matthew 5:43, 44 today? Love of neighbor will move us to refuse to get involved in this world's wars and conflicts. (<span class="chip" onclick="openSidebar('Isaiah 2:4', `<blockquote>&quot;They will beat their swords into plowshares...&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/23/2')">Isa. 2:4</span>) It will help us to deal kindly with those who are from a different racial, national, or religious background. (<span class="chip" onclick="openSidebar('Acts 10:34-35', `<blockquote>&quot;God is not partial, but in every nation the man who fears him...is acceptable to him.&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/44/10')">Acts 10:34, 35</span>) It will also help us to forgive others who have hurt us or those whom we love. (<span class="chip" onclick="openSidebar('Matthew 18:21-22', `<blockquote>&quot;Up to 77 times&quot;—Jesus' call for generous ongoing forgiveness.</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/18')">Matt. 18:21, 22</span>)</p>
-  </div>
-
-  <!-- ==================== SECTION 5 ==================== -->
-  <div class="section-heading">Paragraph 18 · Be Determined to Live by Bible Principles</div>
-
-  <!-- Q 18 -->
-  <div class="question-card">
-    <div class="q-label">Question 18</div>
-    <div class="q-text">(a) What should we be determined to do? (b) What will we discuss in the next article?</div>
-  </div>
-
-  <button class="answer-toggle" onclick="toggleAnswer(this)">
-    <span class="arrow">▶</span> Show comment
-  </button>
-  <div class="answer-box">
-    <h4>Suggested Answer</h4>
-    <div class="sub-answer">
-      <span class="sub-label">(a)</span> We should be determined to keep "perceiving what the will of Jehovah is." <span class="chip" onclick="openSidebar('Ephesians 5:17', `<blockquote>&quot;On this account stop being unreasonable, but keep perceiving what the will of Jehovah is.&quot;</blockquote><p>Paul's call to "keep perceiving"—ongoing, active discernment—is exactly what principle-based living requires. It's not a one-time decision but a continuous exercise of our God-given reasoning ability.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/49/5')">Eph. 5:17</span> Our motivation should be love for Jehovah, not fear of punishment. Jehovah treats us as adults—let us respond accordingly with mature, principle-guided decisions. <span class="chip" onclick="openSidebar('1 Corinthians 14:20', `<blockquote>&quot;Brothers, do not be young children in your understanding, but be babies as to badness; yet become full-grown in your understanding.&quot;</blockquote><p>Paul calls for adult-level understanding—not naïve simplicity about good things, but sophisticated comprehension of Jehovah's will that enables wise, principled choices.</p>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/46/14')">1 Cor. 14:20</span>
-    </div>
-    <div class="sub-answer">
-      <span class="sub-label">(b)</span> The next article will discuss our <strong>conscience</strong>—another gift that helps us apply Bible principles and make decisions that honor Jehovah.
-    </div>
-    <div class="comment-prep">
-      <div class="prep-item">💬 <strong>Comment:</strong> "The closing reminder that our motivation is <em>love</em>, not fear, really resonates. Following Bible principles isn't a burden—it's a privilege that reflects our relationship with Jehovah."</div>
-      <div class="prep-item">🙏 <strong>Getting to know Jehovah:</strong> Jehovah is not a demanding taskmaster waiting for us to fail. He's a loving Father who trusts us, gives us principles, and takes joy when we make wise decisions.</div>
-    </div>
-  </div>
-
-  <div class="para-block">
-    <div class="para-num">Paragraph 18</div>
-    <p><strong>¶18.</strong> How grateful we are that Jehovah is willing to treat us as adults and not as small children! He wants us to apply Bible principles that will help us with the decisions we regularly make. (<span class="chip" onclick="openSidebar('1 Corinthians 14:20', `<blockquote>&quot;Brothers, do not be young children in your understanding...become full-grown in your understanding.&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/46/14')">1 Cor. 14:20</span>) As we make those decisions, let us be determined to "keep perceiving what the will of Jehovah is." (<span class="chip" onclick="openSidebar('Ephesians 5:17', `<blockquote>&quot;Stop being unreasonable, but keep perceiving what the will of Jehovah is.&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/49/5')">Eph. 5:17</span>) Our love for Jehovah, not fear of punishment, will help us make decisions that are in harmony with his will. But there is another gift that will help us in this endeavor—our conscience. That is what we will discuss in the next article.</p>
-  </div>
-
-  <!-- ==================== HOW WOULD YOU ANSWER ==================== -->
-  <div class="review-section">
-    <h2>❓ How Would You Answer?</h2>
-
-    <div class="question-card" style="margin-bottom:10px;">
-      <div class="q-label">Review Question 1</div>
-      <div class="q-text">What is a Bible principle?</div>
-    </div>
-    <button class="answer-toggle" onclick="toggleAnswer(this)">
-      <span class="arrow">▶</span> Show summary answer
-    </button>
-    <div class="answer-box">
-      <p>A Bible principle is a basic truth on which God's laws are based—it is the <em>thinking</em> or <em>reason behind the law</em>. While specific laws may be limited to a particular time, situation, or circumstance, principles reflect Jehovah's broader values and remain applicable in any era. They do not expire or become outdated. (¶4; <span class="chip" onclick="openSidebar('Isaiah 40:8', `<blockquote>&quot;The green grass dries up, the blossom withers, but the word of our God endures forever.&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/23/40')">Isa. 40:8</span>)</p>
+    <div class="answer-content" id="a1">
+      <p>Good friends are truly a gift from Jehovah &mdash; they come from him. (Jas. 1:17) They support us in joy and sorrow, give honest advice, and remain loyal. The Bible says such friendship makes &ldquo;the heart rejoice.&rdquo;</p>
+      <div class="scripture-quote">
+        <p>&#x201C;Oil and incense make the heart rejoice; So does sweet friendship springing from sincere counsel.&#x201D;</p>
+        <div class="ref">&mdash; <span class="chip" onclick="showSidebar('Prov. 27:9','Oil and incense make the heart rejoice; So does sweet friendship springing from sincere counsel.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/27')">Prov. 27:9</span></div>
+      </div>
       <div class="comment-prep">
-        <div class="prep-item">💬 <strong>Personal comment:</strong> "A Bible principle is like the DNA of a law—the core truth that gives it life and makes it applicable far beyond its original stated context."</div>
+        <div class="label">&#x1F4AC; Comment You Could Share</div>
+        <p>&ldquo;I found it moving that Jehovah himself views good friendship as something he gives &mdash; it&rsquo;s not accidental. It made me think about how much he values our relationships.&rdquo;</p>
+      </div>
+      <div class="comment-prep">
+        <div class="label">&#x1F64F; Getting to Know Jehovah</div>
+        <p>&ldquo;This shows Jehovah is relational &mdash; he designed us to need friends, and he provides them. It reveals his deep care for our emotional well-being.&rdquo;</p>
       </div>
     </div>
-
-    <div class="question-card" style="margin-bottom:10px; margin-top:16px;">
-      <div class="q-label">Review Question 2</div>
-      <div class="q-text">How do principles differ from laws?</div>
-    </div>
-    <button class="answer-toggle" onclick="toggleAnswer(this)">
-      <span class="arrow">▶</span> Show summary answer
-    </button>
-    <div class="answer-box">
-      <p>Laws are specific commands that may be tailored to a particular era, situation, or people. They can change or become obsolete. Principles are the timeless truths behind those laws—broader, deeper, and universally applicable. A law tells us what to do in a specific case; a principle tells us <em>why</em> and enables us to handle countless situations no specific law ever addresses. Example: The law "don't touch the stove" → the principle "don't touch what will burn you." The law may not apply when you're an adult, but the principle still does—everywhere. (¶4–5)</p>
-    </div>
-
-    <div class="question-card" style="margin-bottom:10px; margin-top:16px;">
-      <div class="q-label">Review Question 3</div>
-      <div class="q-text">What are some of the principles Jesus taught in the Sermon on the Mount?</div>
-    </div>
-    <button class="answer-toggle" onclick="toggleAnswer(this)">
-      <span class="arrow">▶</span> Show summary answer
-    </button>
-    <div class="answer-box">
-      <p>Jesus taught three key principles through laws:</p>
-      <ol style="margin-left:20px; margin-top:8px;">
-        <li><strong>"Do not murder" → Don't hate.</strong> Even anger, contempt, and hateful speech violate this principle. Today it applies to gossip, slander, and online harassment. (¶12–13; <span class="chip" onclick="openSidebar('Matthew 5:21-22', `<blockquote>&quot;You must not murder...everyone who continues wrathful with his brother will be accountable...&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/5')">Matt. 5:21, 22</span>)</li>
-        <li><strong>"Do not commit adultery" → Don't dwell on immoral thoughts.</strong> Jehovah cares about what we let our minds linger on. Today it covers pornography, sexting, and virtual immorality. (¶14–15; <span class="chip" onclick="openSidebar('Matthew 5:27-28', `<blockquote>&quot;...everyone who keeps on looking at a woman so as to have a passion for her has already committed adultery with her in his heart.&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/5')">Matt. 5:27, 28</span>)</li>
-        <li><strong>"Love your neighbor" → Love everyone, including enemies.</strong> Jehovah's love is universal—no exclusions based on race, nationality, or religion. Today it guides our neutrality, kindness, and forgiveness. (¶16–17; <span class="chip" onclick="openSidebar('Matthew 5:43-44', `<blockquote>&quot;...love your enemies and pray for those who persecute you...&quot;</blockquote>`, 'https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/5')">Matt. 5:43, 44</span>)</li>
-      </ol>
+    <div class="para-block">
+      <span class="para-num">1</span>GOOD friends are a gift from Jehovah. (Jas. 1:17) They love God, and they love us. They share in our joy when we are happy, comfort us when we feel down, and give us honest advice when we need it. They are loyal, and we can trust them. Such friends truly &ldquo;make the heart rejoice&rdquo;! &mdash;<span class="chip" onclick="showSidebar('Prov. 27:9','Oil and incense make the heart rejoice; So does sweet friendship springing from sincere counsel.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/27')">Prov. 27:9</span>
     </div>
   </div>
 
-  <!-- CLOSING SONG -->
-  <div class="song-banner" style="margin-top:20px;">
-    <div class="icon">🎵</div>
-    <div>
-      <div class="song-label">Closing Song</div>
-      <div class="song-name">Song 95 — "The Light Gets Brighter"</div>
+  <!-- Q2 -->
+  <div class="qa-unit">
+    <div class="question-card"><span class="question-num">2.</span> Why is it important for a married couple to keep strengthening their friendship? <span class="chip" onclick="showSidebar('Matt. 19:6','So that they are no longer two, but one flesh. Therefore, what God has yoked together, let no man put apart.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/19')">Matt. 19:6</span></div>
+    <div class="answer-toggle-header" onclick="toggleAnswer('a2')">
+      <span id="a2-label">&#x25B8; Show Comment</span><span id="a2-arrow">&#x25B8;</span>
+    </div>
+    <div class="answer-content" id="a2">
+      <p>Because marriage is designed by God to be the closest bond two humans can share. Jesus stated that husband and wife become &ldquo;one flesh&rdquo; &mdash; no longer two separate individuals.</p>
+      <div class="scripture-quote">
+        <p>&#x201C;So that they are no longer two, but one flesh. Therefore, what God has yoked together, let no man put apart.&#x201D;</p>
+        <div class="ref">&mdash; <span class="chip" onclick="showSidebar('Matt. 19:6','So that they are no longer two, but one flesh. Therefore, what God has yoked together, let no man put apart.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/19')">Matt. 19:6</span></div>
+      </div>
+      <p>If a couple neglects their friendship, they risk feeling lonely and disconnected &mdash; but nurturing it yields the deepest human bond possible.</p>
+      <div class="comment-prep">
+        <div class="label">&#x1F4AC; Comment You Could Share</div>
+        <p>&ldquo;What struck me is that this is not automatic &mdash; the article says they &lsquo;cannot take their friendship for granted.&rsquo; It takes intentional effort, just like any friendship.&rdquo;</p>
+      </div>
+      <div class="comment-prep">
+        <div class="label">&#x1F4CC; Personal Application</div>
+        <p>&ldquo;I want to look for practical ways to invest in the friendship with those closest to me, not just assume it stays strong on its own.&rdquo;</p>
+      </div>
+    </div>
+    <div class="para-block">
+      <span class="para-num">2</span>It is important for a man and his wife to be the best of friends. They cannot take their friendship for granted &mdash; they need to keep working at strengthening it. If they neglect their friendship, they could start feeling lonely, frustrated, even angry. But if they keep nurturing their friendship, they can enjoy the closest bond that two humans could ever have. (Read <span class="chip" onclick="showSidebar('Matt. 19:6','So that they are no longer two, but one flesh. Therefore, what God has yoked together, let no man put apart.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/19')">Matthew 19:6</span>.) In this article, we will see how married couples can keep strengthening their friendship. But first, let us consider how single Christians can choose a mate who will become their best friend for life.
     </div>
   </div>
 
-  <!-- SOURCE LINK -->
-  <div style="text-align:center; padding: 20px 0 30px; font-family:sans-serif; font-size:13px; color: var(--muted);">
-    <a href="https://www.jw.org/en/library/magazines/watchtower-study-may-2026/Bible-Principles-Why-Are-They-Important/" target="_blank" style="color: #3b82f6;">📖 View original article on JW.org →</a>
-    <br><br>
-    <em>Guide prepared for Sunday, July 5, 2026 · For personal study use</em>
+  <!-- Q3-4 -->
+  <div class="qa-unit">
+    <div class="question-card"><span class="question-num">3&ndash;4.</span> What will help a person to find a good marriage mate? <span class="chip" onclick="showSidebar('Prov. 18:22','The one who finds a good wife has found something good, And he receives Jehovah\'s favor.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/18')">Prov. 18:22</span></div>
+    <div class="answer-toggle-header" onclick="toggleAnswer('a34')">
+      <span id="a34-label">&#x25B8; Show Comment</span><span id="a34-arrow">&#x25B8;</span>
+    </div>
+    <div class="answer-content" id="a34">
+      <p>Carefully seeking Jehovah&rsquo;s guidance through his Word. Since he created marriage, he knows what qualities make a good mate. His Word provides the principles to guide this most important decision.</p>
+      <div class="scripture-quote">
+        <p>&#x201C;The one who finds a good wife has found something good, And he receives Jehovah&rsquo;s favor.&#x201D;</p>
+        <div class="ref">&mdash; Prov. 18:22</div>
+      </div>
+      <div class="scripture-quote">
+        <p>&#x201C;This is what Jehovah says, your Repurchaser, the Holy One of Israel: &lsquo;I, Jehovah, am your God, The One teaching you to benefit yourself, The One guiding you in the way you should walk. If only you would pay attention to my commandments! Then your peace would become just like a river And your righteousness like the waves of the sea.&rsquo;&#x201D;</p>
+        <div class="ref">&mdash; <span class="chip" onclick="showSidebar('Isa. 48:17-18','This is what Jehovah says, your Repurchaser, the Holy One of Israel: I, Jehovah, am your God, The One teaching you to benefit yourself, The One guiding you in the way you should walk. If only you would pay attention to my commandments! Then your peace would become just like a river And your righteousness like the waves of the sea.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/23/48')">Isa. 48:17-18</span></div>
+      </div>
+      <div class="comment-prep">
+        <div class="label">&#x1F4AC; Comment You Could Share</div>
+        <p>&ldquo;I appreciated how the article framed this as one of the most important decisions we&rsquo;ll ever make &mdash; and therefore one that deserves the most careful thought and reliance on Jehovah.&rdquo;</p>
+      </div>
+    </div>
+    <div class="para-block">
+      <span class="para-num">3</span>Before we make any big decision, we need to think about the possible risks, benefits, and outcomes. Big decisions can affect our life for a long time, so it is important to consider them carefully.
+      <br><br>
+      <span class="para-num">4</span>When choosing a lifelong friend &mdash; a marriage mate &mdash; we are making one of the most important decisions we will ever make. Since Jehovah created the marriage arrangement, it makes sense to look to him for guidance when choosing a mate. He wants a man to find a good wife, and He wants a woman to find a good husband. (Read <span class="chip" onclick="showSidebar('Prov. 18:22','The one who finds a good wife has found something good, And he receives Jehovah\'s favor.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/18')">Proverbs 18:22</span>; <span class="chip" onclick="showSidebar('Isa. 48:17-18','This is what Jehovah says, your Repurchaser, the Holy One of Israel: I, Jehovah, am your God, The One teaching you to benefit yourself, The One guiding you in the way you should walk. If only you would pay attention to my commandments! Then your peace would become just like a river And your righteousness like the waves of the sea.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/23/48')">Isa. 48:17, 18</span>) The principles found in God&rsquo;s Word can help a Christian to find someone who is right for him or for her.
+    </div>
   </div>
 
-</div><!-- end container -->
+  <!-- Q5 -->
+  <div class="qa-unit">
+    <div class="question-card"><span class="question-num">5.</span> Why is it important to choose a baptized person as a mate?</div>
+    <div class="answer-toggle-header" onclick="toggleAnswer('a5')">
+      <span id="a5-label">&#x25B8; Show Comment</span><span id="a5-arrow">&#x25B8;</span>
+    </div>
+    <div class="answer-content" id="a5">
+      <p>When baptized, we become Jehovah&rsquo;s friends. (<span class="chip" onclick="showSidebar('Ps. 25:14','Close friendship with Jehovah belongs to those who fear him, And he makes his covenant known to them.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/19/25')">Ps. 25:14</span>) Choosing a mate from among Jehovah&rsquo;s friends means choosing someone with the same spiritual foundation. The Bible is clear: marry &ldquo;only in the Lord.&rdquo;</p>
+      <div class="scripture-quote">
+        <p>&#x201C;Close friendship with Jehovah belongs to those who fear him, And he makes his covenant known to them.&#x201D;</p>
+        <div class="ref">&mdash; Ps. 25:14</div>
+      </div>
+      <div class="scripture-quote">
+        <p>&#x201C;A wife is bound as long as her husband is alive. But if her husband should fall asleep in death, she is free to be married to whomever she wants, only in the Lord.&#x201D;</p>
+        <div class="ref">&mdash; <span class="chip" onclick="showSidebar('1 Cor. 7:39','A wife is bound as long as her husband is alive. But if her husband should fall asleep in death, she is free to be married to whomever she wants, only in the Lord.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/46/7')">1 Cor. 7:39</span></div>
+      </div>
+      <div class="scripture-quote">
+        <p>&#x201C;Do not become unevenly yoked with unbelievers. For what fellowship do righteousness and lawlessness have? Or what sharing does light have with darkness?&#x201D;</p>
+        <div class="ref">&mdash; <span class="chip" onclick="showSidebar('2 Cor. 6:14','Do not become unevenly yoked with unbelievers. For what fellowship do righteousness and lawlessness have? Or what sharing does light have with darkness?','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/47/6')">2 Cor. 6:14</span></div>
+      </div>
+      <div class="comment-prep">
+        <div class="label">&#x1F4AC; Comment You Could Share</div>
+        <p>&ldquo;I was struck by how the article calls a good mate &lsquo;from Jehovah&rsquo; &mdash; it&rsquo;s not just a practical choice, it&rsquo;s a spiritual one. Choosing a fellow worshipper means you both have Jehovah as the foundation.&rdquo;</p>
+      </div>
+    </div>
+    <div class="para-block">
+      <span class="para-num">5</span>When we get baptized, we become friends of God. (<span class="chip" onclick="showSidebar('Ps. 25:14','Close friendship with Jehovah belongs to those who fear him, And he makes his covenant known to them.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/19/25')">Ps. 25:14</span>) If you would like to get married, you should choose your prospective mate from among Jehovah&rsquo;s friends. (<span class="chip" onclick="showSidebar('1 Cor. 7:39','A wife is bound as long as her husband is alive. But if her husband should fall asleep in death, she is free to be married to whomever she wants, only in the Lord.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/46/7')">1 Cor. 7:39</span>) By doing so, you show appreciation for Jehovah&rsquo;s standards and you will come to see your mate as a blessing from Jehovah. (<span class="chip" onclick="showSidebar('Prov. 19:14','A house and wealth are inherited from fathers, But a discreet wife is from Jehovah.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/19')">Prov. 19:14</span>) You will also avoid the problems that come from being &ldquo;unevenly yoked&rdquo; with an unbeliever. (<span class="chip" onclick="showSidebar('2 Cor. 6:14','Do not become unevenly yoked with unbelievers. For what fellowship do righteousness and lawlessness have? Or what sharing does light have with darkness?','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/47/6')">2 Cor. 6:14</span>)
+    </div>
+  </div>
+
+  <!-- Q6-7 -->
+  <div class="qa-unit">
+    <div class="question-card"><span class="question-num">6&ndash;7.</span> What kind of questions should be answered during courtship?</div>
+    <div class="answer-toggle-header" onclick="toggleAnswer('a67')">
+      <span id="a67-label">&#x25B8; Show Comment</span><span id="a67-arrow">&#x25B8;</span>
+    </div>
+    <div class="answer-content" id="a67">
+      <p>Questions about character: How does the person treat family? Handle disagreements? What is their attitude toward money? And most importantly, do they show deep love for Jehovah and are they putting on &ldquo;the new personality&rdquo;?</p>
+      <div class="scripture-quote">
+        <p>&#x201C;Do not lie to one another. Strip off the old personality with its practices, and clothe yourselves with the new personality, which through accurate knowledge is being made new according to the image of the One who created it.&#x201D;</p>
+        <div class="ref">&mdash; <span class="chip" onclick="showSidebar('Col. 3:9-10','Do not lie to one another. Strip off the old personality with its practices, and clothe yourselves with the new personality, which through accurate knowledge is being made new according to the image of the One who created it.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/51/3')">Col. 3:9, 10</span></div>
+      </div>
+      <div class="scripture-quote">
+        <p>&#x201C;But I want you to know that the head of every man is the Christ; in turn, the head of a woman is the man; in turn, the head of the Christ is God.&#x201D;</p>
+        <div class="ref">&mdash; <span class="chip" onclick="showSidebar('1 Cor. 11:3','But I want you to know that the head of every man is the Christ; in turn, the head of a woman is the man; in turn, the head of the Christ is God.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/46/11')">1 Cor. 11:3</span></div>
+      </div>
+      <div class="comment-prep">
+        <div class="label">&#x1F4AC; Comment You Could Share</div>
+        <p>&ldquo;I liked how the article encourages looking beyond surface-level qualities to spiritual depth &mdash; asking whether this person will help me serve Jehovah more fully is such a key question.&rdquo;</p>
+      </div>
+    </div>
+    <div class="para-block">
+      <span class="para-num">6</span>Of course, not just any baptized person is a suitable mate. Look at your prospective mate objectively. Ask yourself: &lsquo;How does he treat his family? Is he considerate and respectful? Who are his friends? How does he handle disagreements? Does he insist on having his own way, or is he willing to yield when no Scriptural principle is involved? What is his attitude toward money?&rsquo;
+      <br><br>
+      <span class="para-num">7</span>You could further ask yourself: &lsquo;Does my friend show a deep love for Jehovah? Is he putting on &ldquo;the new personality&rdquo;? Will he help me to keep serving Jehovah more fully? Do we share the same spiritual goals? Can I see us becoming not just good friends but the closest of friends?&rsquo; (<span class="chip" onclick="showSidebar('Col. 3:9-10','Do not lie to one another. Strip off the old personality with its practices, and clothe yourselves with the new personality, which through accurate knowledge is being made new according to the image of the One who created it.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/51/3')">Col. 3:9, 10</span>) If you are a sister, will the brother you are dating be a good friend and a good family head? (<span class="chip" onclick="showSidebar('1 Cor. 11:3','But I want you to know that the head of every man is the Christ; in turn, the head of a woman is the man; in turn, the head of the Christ is God.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/46/11')">1 Cor. 11:3</span>)
+    </div>
+  </div>
+
+  <!-- Q8-9 -->
+  <div class="qa-unit">
+    <div class="question-card"><span class="question-num">8&ndash;9.</span> What can help someone who is courting to make a wise decision?</div>
+    <div class="answer-toggle-header" onclick="toggleAnswer('a89')">
+      <span id="a89-label">&#x25B8; Show Comment</span><span id="a89-arrow">&#x25B8;</span>
+    </div>
+    <div class="answer-content" id="a89">
+      <p>Seeking input from others who know the person well &mdash; elders, fellow Christians, family members &mdash; and paying attention to their honest observations. Don&rsquo;t ignore nagging doubts. Use the courtship period to genuinely discern the person&rsquo;s real character, not just their best behaviour.</p>
+      <div class="comment-prep">
+        <div class="label">&#x1F4AC; Comment You Could Share</div>
+        <p>&ldquo;I appreciated the idea of consulting multiple people who know your prospective mate &mdash; a pioneer partner, an elder, mutual friends. That kind of thoroughness reflects real wisdom in a decision this important.&rdquo;</p>
+      </div>
+      <div class="comment-prep">
+        <div class="label">&#x1F4CC; Personal Application</div>
+        <p>&ldquo;The counsel not to ignore nagging doubts is practical for many decisions in life, not just marriage. Jehovah often speaks through the wisdom of mature Christians around us.&rdquo;</p>
+      </div>
+    </div>
+    <div class="para-block">
+      <span class="para-num">8</span>During courtship, you are more likely to make a wise decision if you try to discern what the person is really like. Find out how others view your friend. You might ask about the person&rsquo;s reputation and qualities. For example, is he or she known for being humble, kind, and reasonable? You might kindly ask the person you are dating if there is anything from his or her past or present that you would need to know, since some factors or habits might later cause serious marital difficulties.
+      <br><br>
+      <span class="para-num">9</span>Do not ignore nagging doubts you might have or honest observations that mature friends make. With such an approach, you will be able to decide whether it is wise to continue the courtship or not.
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section-header">&#x23F1; Spend Time Together Building Your Friendship</div>
+
+  <!-- Q10 -->
+  <div class="qa-unit">
+    <div class="question-card"><span class="question-num">10.</span> Why is it good for a husband and wife to give their time and attention to each other?</div>
+    <div class="answer-toggle-header" onclick="toggleAnswer('a10')">
+      <span id="a10-label">&#x25B8; Show Comment</span><span id="a10-arrow">&#x25B8;</span>
+    </div>
+    <div class="answer-content" id="a10">
+      <p>Time together is what friendship is built on. It creates opportunities to communicate openly, show affection, and simply enjoy each other&rsquo;s company. Without regular, intentional time together, even the best marriage can grow distant.</p>
+      <div class="comment-prep">
+        <div class="label">&#x1F4AC; Comment You Could Share</div>
+        <p>&ldquo;What I found practical is the phrase &lsquo;no matter how busy they are&rsquo; &mdash; it&rsquo;s not about having free time, it&rsquo;s about making time a priority for the relationship.&rdquo;</p>
+      </div>
+    </div>
+    <div class="para-block">
+      <span class="para-num">10</span>A husband and wife can keep their friendship and marriage strong by making time for each other, no matter how busy they are. This gives them an opportunity to talk about everyday happenings, share their deepest thoughts and feelings, show affection to each other, and simply have fun together.
+    </div>
+  </div>
+
+  <!-- Q11 -->
+  <div class="qa-unit">
+    <div class="question-card"><span class="question-num">11.</span> What can threaten the friendship between a husband and wife?</div>
+    <div class="answer-toggle-header" onclick="toggleAnswer('a11')">
+      <span id="a11-label">&#x25B8; Show Comment</span><span id="a11-arrow">&#x25B8;</span>
+    </div>
+    <div class="answer-content" id="a11">
+      <p>Extended separation &mdash; such as long-distance work arrangements &mdash; can be very damaging to a marriage. While close friends prefer to be together, prolonged absence weakens the bond, even when the financial motive seems logical.</p>
+      <div class="comment-prep">
+        <div class="label">&#x1F4AC; Comment You Could Share</div>
+        <p>&ldquo;I appreciated the practical warning here. Financial gain can seem logical, but the hidden cost to a marriage can be far greater. Keeping priorities in the right order protects our most important relationship.&rdquo;</p>
+      </div>
+    </div>
+    <div class="para-block">
+      <span class="para-num">11</span>A husband and wife who are close friends prefer to be together rather than apart. Of course, they may sometimes have to be apart temporarily. But being apart for long periods of time can be dangerous. For example, some have accepted a job in another country, keeping them away from their family for an extended period. Although there may be some financial advantages to such an arrangement, a prolonged absence can be disastrous for a marriage.
+    </div>
+  </div>
+
+  <!-- Q12-13 -->
+  <div class="qa-unit">
+    <div class="question-card"><span class="question-num">12&ndash;13.</span> (a) What have some married Christians done to spend time with their mate? (b) Where does our relationship with our mate fit in? <em>(See box)</em></div>
+    <div class="answer-toggle-header" onclick="toggleAnswer('a1213')">
+      <span id="a1213-label">&#x25B8; Show Comment</span><span id="a1213-arrow">&#x25B8;</span>
+    </div>
+    <div class="answer-content" id="a1213">
+      <p>(a) They have scheduled time together intentionally, done activities together, pursued each other&rsquo;s interests, limited phone use, and most importantly &mdash; spent time together in spiritual activities like Bible reading, prayer, and field ministry. As Proverbs 27:17 puts it:</p>
+      <div class="scripture-quote">
+        <p>&#x201C;As iron sharpens iron, So one man sharpens his friend.&#x201D;</p>
+        <div class="ref">&mdash; <span class="chip" onclick="showSidebar('Prov. 27:17','As iron sharpens iron, So one man sharpens his friend.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/27')">Prov. 27:17</span></div>
+      </div>
+      <p>(b) Our mate comes second only to Jehovah &mdash; above all other people and responsibilities.</p>
+      <div class="scripture-quote">
+        <p>&#x201C;that you may make sure of the more important things, so that you may be flawless and not stumbling others up to the day of Christ;&#x201D;</p>
+        <div class="ref">&mdash; <span class="chip" onclick="showSidebar('Phil. 1:10','that you may make sure of the more important things, so that you may be flawless and not stumbling others up to the day of Christ;','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/50/1')">Phil. 1:10</span></div>
+      </div>
+      <div class="comment-prep">
+        <div class="label">&#x1F4AC; Comment You Could Share</div>
+        <p>&ldquo;The tip about scheduling time together like other important events really stood out to me. Treating time with your spouse as a priority &mdash; not just something that happens when other things are done &mdash; makes all the difference.&rdquo;</p>
+      </div>
+      <div class="comment-prep">
+        <div class="label">&#x1F64F; Getting to Know Jehovah</div>
+        <p>&ldquo;Spending spiritual time together &mdash; praying, reading the Bible, sharing the ministry &mdash; reflects Jehovah&rsquo;s design for marriage: two people bound together with him at the center.&rdquo;</p>
+      </div>
+    </div>
+    <div class="para-block">
+      <span class="para-num">12</span>Note what some married couples have done to ensure that they regularly spend time together. Scheduling time together intentionally, doing a variety of activities together, taking interest in each other&rsquo;s passions (<span class="chip" onclick="showSidebar('Matt. 7:12','All things, therefore, that you want men to do to you, you also must do to them. This, in fact, is what the Law and the Prophets mean.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/7')">Matt. 7:12</span>), and minimising distractions such as phones.
+      <br><br>
+      <span class="para-num">13</span>Above all, spend time together in spiritual activities &mdash; reading the Bible together, praying together, and sharing the ministry. &mdash;<span class="chip" onclick="showSidebar('Prov. 27:17','As iron sharpens iron, So one man sharpens his friend.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/27')">Prov. 27:17</span>
+    </div>
+  </div>
+
+  <!-- BOX -->
+  <div class="info-box">
+    <h3>&#x1F4CB; Your Mate&rsquo;s Place in Your Life &mdash; <span class="chip" onclick="showSidebar('Phil. 1:10','that you may make sure of the more important things, so that you may be flawless and not stumbling others up to the day of Christ;','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/50/1')">Phil. 1:10</span></h3>
+    <p style="margin-bottom:12px;color:#2f855a;font-size:0.92rem;">We have many important friendships in life. Where does our mate fit in?</p>
+    <ol>
+      <li><strong>Jehovah</strong> &mdash; We give our friendship with Jehovah first place in our life. (<span class="chip" onclick="showSidebar('Matt. 6:33','Keep on, then, seeking first the Kingdom and his righteousness, and all these other things will be added to you.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/6')">Matt. 6:33</span>; <span class="chip" onclick="showSidebar('Mark 12:30','and you must love Jehovah your God with your whole heart and with your whole soul and with your whole mind and with your whole strength.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/41/12')">Mark 12:30</span>) We will never be disloyal to Jehovah just to please our mate. &mdash;<span class="chip" onclick="showSidebar('Acts 5:29','In answer Peter and the other apostles said: We must obey God as ruler rather than men.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/44/5')">Acts 5:29</span>
+        <div class="scripture-quote" style="margin-top:10px;">
+          <p>&#x201C;Keep on, then, seeking first the Kingdom and his righteousness, and all these other things will be added to you.&#x201D;</p>
+          <div class="ref">&mdash; Matt. 6:33</div>
+        </div>
+        <div class="scripture-quote">
+          <p>&#x201C;and you must love Jehovah your God with your whole heart and with your whole soul and with your whole mind and with your whole strength.&#x201D;</p>
+          <div class="ref">&mdash; Mark 12:30</div>
+        </div>
+      </li>
+      <li><strong>Our mate</strong> &mdash; We are &ldquo;one flesh&rdquo; with our mate. We care as deeply about him or her as we do about ourselves.
+        <div class="scripture-quote" style="margin-top:10px;">
+          <p>&#x201C;That is why a man will leave his father and his mother and he will stick to his wife, and they will become one flesh.&#x201D;</p>
+          <div class="ref">&mdash; <span class="chip" onclick="showSidebar('Gen. 2:24','That is why a man will leave his father and his mother and he will stick to his wife, and they will become one flesh.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/1/2')">Gen. 2:24</span></div>
+        </div>
+        <div class="scripture-quote">
+          <p>&#x201C;In the same way husbands should love their wives as their own bodies. A man who loves his wife loves himself, for no man ever hated his own body, but he feeds and cherishes it, just as the Christ does the congregation, Nevertheless, each one of you must love his wife as he does himself; on the other hand, the wife should have deep respect for her husband.&#x201D;</p>
+          <div class="ref">&mdash; <span class="chip" onclick="showSidebar('Eph. 5:28-29,33','In the same way husbands should love their wives as their own bodies. A man who loves his wife loves himself, for no man ever hated his own body, but he feeds and cherishes it, just as the Christ does the congregation. Nevertheless, each one of you must love his wife as he does himself; on the other hand, the wife should have deep respect for her husband.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/49/5')">Eph. 5:28, 29, 33</span></div>
+        </div>
+      </li>
+      <li><strong>Other people and responsibilities</strong> &mdash; We take care of parents, relatives, and theocratic responsibilities. But besides Jehovah, no one and nothing should take priority over our mate&rsquo;s well-being.
+        <div class="scripture-quote" style="margin-top:10px;">
+          <p>&#x201C;Certainly if anyone does not provide for those who are his own, and especially for those who are members of his household, he has disowned the faith and is worse than a person without faith.&#x201D;</p>
+          <div class="ref">&mdash; <span class="chip" onclick="showSidebar('1 Tim. 5:8','Certainly if anyone does not provide for those who are his own, and especially for those who are members of his household, he has disowned the faith and is worse than a person without faith.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/54/5')">1 Tim. 5:8</span></div>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section-header">&#x1F4AA; Stick Together When Challenges Arise</div>
+
+  <!-- Q14-15 -->
+  <div class="qa-unit">
+    <div class="question-card"><span class="question-num">14&ndash;15.</span> Why should a couple do their best to overcome challenges that may arise in their marriage?</div>
+    <div class="answer-toggle-header" onclick="toggleAnswer('a1415')">
+      <span id="a1415-label">&#x25B8; Show Comment</span><span id="a1415-arrow">&#x25B8;</span>
+    </div>
+    <div class="answer-content" id="a1415">
+      <p>Because all marriages are precious to Jehovah &mdash; he is the Originator of marriage and he hates divorce.</p>
+      <div class="scripture-quote">
+        <p>&#x201C;For I hate divorce,&#x201D; says Jehovah the God of Israel, &#x201C;and the one who covers his garment with violence,&#x201D; says Jehovah of armies. &#x201C;And guard yourselves respecting your spirit, and you must not deal treacherously.&#x201D;</p>
+        <div class="ref">&mdash; <span class="chip" onclick="showSidebar('Mal. 2:16','For I hate divorce, says Jehovah the God of Israel, and the one who covers his garment with violence, says Jehovah of armies. And guard yourselves respecting your spirit, and you must not deal treacherously.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/39/2')">Mal. 2:16</span></div>
+      </div>
+      <p>Just as a damaged building can be restored with effort and resources, a troubled marriage can be saved. Jehovah is pleased when couples work hard to remain together.</p>
+      <div class="comment-prep">
+        <div class="label">&#x1F4AC; Comment You Could Share</div>
+        <p>&ldquo;I found the illustration of restoring a precious building very effective &mdash; it&rsquo;s not about whether it&rsquo;s damaged, but whether it&rsquo;s worth restoring. And the answer for marriage is always yes.&rdquo;</p>
+      </div>
+      <div class="comment-prep">
+        <div class="label">&#x1F64F; Getting to Know Jehovah</div>
+        <p>&ldquo;Jehovah&rsquo;s clear statement &lsquo;I hate divorce&rsquo; (Mal. 2:16) reveals how deeply he values the marriage bond. He is not indifferent to our family life &mdash; he cares about its preservation.&rdquo;</p>
+      </div>
+    </div>
+    <div class="para-block">
+      <span class="para-num">14</span>As imperfect humans, married couples will experience challenges in their marriage. The Bible realistically says that married people &ldquo;will have tribulation in their flesh.&rdquo; (<span class="chip" onclick="showSidebar('1 Cor. 7:28','But even if you did marry, you would commit no sin. And if a virgin married, such a person would commit no sin. However, those who do will have tribulation in their flesh. But I am trying to spare you.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/46/7')">1 Cor. 7:28</span>) When such problems arise, why should they do their best to stick together and overcome the challenge?
+      <br><br>
+      <span class="para-num">15</span>All marriages are precious. Even in the best of marriages, conflicts will arise. However, just as a damaged building or a work of art can often be repaired, a troubled marriage can be saved. The restoration process will likely take time and involve some hard work, and yet, Jehovah will be pleased if the couple work hard to strengthen their marriage and remain together. (<span class="chip" onclick="showSidebar('Mal. 2:16','For I hate divorce, says Jehovah the God of Israel, and the one who covers his garment with violence, says Jehovah of armies. And guard yourselves respecting your spirit, and you must not deal treacherously.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/39/2')">Mal. 2:16</span>) By doing so, they show love and respect not just for each other but also for Jehovah, the Originator of marriage.
+    </div>
+  </div>
+
+  <!-- Q16 -->
+  <div class="qa-unit">
+    <div class="question-card"><span class="question-num">16.</span> According to 1 Corinthians 13:4-8a, what can help a couple facing a serious challenge in their marriage?</div>
+    <div class="answer-toggle-header" onclick="toggleAnswer('a16')">
+      <span id="a16-label">&#x25B8; Show Comment</span><span id="a16-arrow">&#x25B8;</span>
+    </div>
+    <div class="answer-content" id="a16">
+      <p>Rather than looking for a way out, focus on what love looks like in practice. 1 Corinthians 13 gives a detailed portrait of love &mdash; patient, kind, not jealous, not keeping account of injury. Don&rsquo;t be quick to separate.</p>
+      <div class="scripture-quote">
+        <p>&#x201C;Love is patient and kind. Love is not jealous. It does not brag, does not get puffed up, does not behave indecently, does not look for its own interests, does not become provoked. It does not keep account of the injury. It does not rejoice over unrighteousness, but rejoices with the truth. It bears all things, believes all things, hopes all things, endures all things. Love never fails.&#x201D;</p>
+        <div class="ref">&mdash; <span class="chip" onclick="showSidebar('1 Cor. 13:4-8a','Love is patient and kind. Love is not jealous. It does not brag, does not get puffed up, does not behave indecently, does not look for its own interests, does not become provoked. It does not keep account of the injury. It does not rejoice over unrighteousness, but rejoices with the truth. It bears all things, believes all things, hopes all things, endures all things. Love never fails.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/46/13')">1 Cor. 13:4-8a</span></div>
+      </div>
+      <div class="scripture-quote">
+        <p>&#x201C;And someone may overpower one alone, but two together can take a stand against him. And a threefold cord cannot quickly be torn apart.&#x201D;</p>
+        <div class="ref">&mdash; <span class="chip" onclick="showSidebar('Eccl. 4:12','And someone may overpower one alone, but two together can take a stand against him. And a threefold cord cannot quickly be torn apart.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/21/4')">Eccl. 4:12</span></div>
+      </div>
+      <div class="comment-prep">
+        <div class="label">&#x1F4AC; Comment You Could Share</div>
+        <p>&ldquo;What I found meaningful is the phrase &lsquo;does not keep account of the injury&rsquo; &mdash; that&rsquo;s often the hardest part of marriage. But Jehovah&rsquo;s definition of love actively lets go of wrongs, rather than cataloguing them.&rdquo;</p>
+      </div>
+      <div class="comment-prep">
+        <div class="label">&#x1F4CC; Personal Application</div>
+        <p>&ldquo;The image of the threefold cord really helped me. A marriage with Jehovah at the center has a strength that two people alone cannot generate. Prayer and reliance on Jehovah together makes an enormous difference.&rdquo;</p>
+      </div>
+    </div>
+    <div class="para-block">
+      <span class="para-num">16</span>If problems arise in your marriage, do not be quick to separate. (<span class="chip" onclick="showSidebar('1 Cor. 7:10-11','To the married people I give instructions, not I but the Lord, that a wife should not separate from her husband. But if she does separate, let her remain unmarried or else be reconciled with her husband; and a husband should not leave his wife.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/46/7')">1 Cor. 7:10, 11</span>) Instead, ask yourself, &lsquo;Could I do more to strengthen our friendship?&rsquo; Review what the Bible says about showing love, and ask yourself if you can improve in displaying some of the characteristics mentioned at 1 Corinthians 13:4-8a. (Read <span class="chip" onclick="showSidebar('1 Cor. 13:4-8a','Love is patient and kind. Love is not jealous. It does not brag, does not get puffed up, does not behave indecently, does not look for its own interests, does not become provoked. It does not keep account of the injury. It does not rejoice over unrighteousness, but rejoices with the truth. It bears all things, believes all things, hopes all things, endures all things. Love never fails.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/46/13')">1 Corinthians 13:4-8a</span>.) Rather than look for a way out of your relationship, do your best to look for a way back into each other&rsquo;s heart. Pray for Jehovah to guide you. By relying on Jehovah, the third and strongest strand in the &ldquo;threefold cord,&rdquo; your marriage will not &ldquo;quickly be torn apart.&rdquo; &mdash;<span class="chip" onclick="showSidebar('Eccl. 4:12','And someone may overpower one alone, but two together can take a stand against him. And a threefold cord cannot quickly be torn apart.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/21/4')">Eccl. 4:12</span>
+    </div>
+  </div>
+
+  <!-- Q17 -->
+  <div class="qa-unit">
+    <div class="question-card"><span class="question-num">17.</span> How can those contemplating marriage and those who are married find happiness?</div>
+    <div class="answer-toggle-header" onclick="toggleAnswer('a17')">
+      <span id="a17-label">&#x25B8; Show Comment</span><span id="a17-arrow">&#x25B8;</span>
+    </div>
+    <div class="answer-content" id="a17">
+      <p>Singles: choose carefully with Jehovah&rsquo;s guidance. Married: keep working at the friendship, overcome challenges by relying on Jehovah. The beautiful result is what Ecclesiastes promises:</p>
+      <div class="scripture-quote">
+        <p>&#x201C;Enjoy life with your beloved wife all the days of your futile life, which He has given you under the sun, all the days of your futility, for that is your lot in life and in your hard work at which you toil under the sun.&#x201D;</p>
+        <div class="ref">&mdash; <span class="chip" onclick="showSidebar('Eccl. 9:9','Enjoy life with your beloved wife all the days of your futile life, which He has given you under the sun, all the days of your futility, for that is your lot in life and in your hard work at which you toil under the sun.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/21/9')">Eccl. 9:9</span></div>
+      </div>
+      <div class="comment-prep">
+        <div class="label">&#x1F4AC; Comment You Could Share</div>
+        <p>&ldquo;I love the encouragement that Jehovah wants his servants to be happy &mdash; including in marriage. He is not indifferent to our joy. When we follow his guidance, we &lsquo;enjoy life&rsquo; with our mate.&rdquo;</p>
+      </div>
+    </div>
+    <div class="para-block">
+      <span class="para-num">17</span>Jehovah wants all his servants to be happy, including those contemplating marriage and those already married. So if you are single and would like to get married, choose your lifelong friend carefully. And if you are married, continue strengthening your friendship with your mate. Work to overcome challenges that may arise in your marriage, relying on Jehovah&rsquo;s help. By doing these things, you will &ldquo;enjoy life&rdquo; with your beloved mate! &mdash;<span class="chip" onclick="showSidebar('Eccl. 9:9','Enjoy life with your beloved wife all the days of your futile life, which He has given you under the sun, all the days of your futility, for that is your lot in life and in your hard work at which you toil under the sun.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/21/9')">Eccl. 9:9</span>
+    </div>
+  </div>
+
+  <!-- HOW WOULD YOU ANSWER? -->
+  <div class="review-header">&#x2753; How Would You Answer?</div>
+
+  <div class="review-card">
+    <div class="review-question">How can a single Christian choose a mate who will be a good lifelong friend?</div>
+    <button class="review-toggle" onclick="toggleReview('r1')"><span id="r1-label">&#x25B8; Show Answer</span><span>&#x25B8;</span></button>
+    <div class="review-answer" id="r1">
+      <p>By relying on Jehovah&rsquo;s guidance through his Word: (1) choosing a fellow worshipper &mdash; only marrying &ldquo;in the Lord&rdquo; (<span class="chip" onclick="showSidebar('1 Cor. 7:39','A wife is bound as long as her husband is alive. But if her husband should fall asleep in death, she is free to be married to whomever she wants, only in the Lord.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/46/7')">1 Cor. 7:39</span>); (2) asking the right questions during courtship about character, spiritual depth, and goals (<span class="chip" onclick="showSidebar('Col. 3:9-10','Do not lie to one another. Strip off the old personality with its practices, and clothe yourselves with the new personality, which through accurate knowledge is being made new according to the image of the One who created it.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/51/3')">Col. 3:9, 10</span>); (3) seeking the observations of mature Christians who know the person well; and (4) not ignoring honest doubts. A good mate is &ldquo;from Jehovah.&rdquo; (<span class="chip" onclick="showSidebar('Prov. 19:14','A house and wealth are inherited from fathers, But a discreet wife is from Jehovah.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/19')">Prov. 19:14</span>)</p>
+    </div>
+  </div>
+
+  <div class="review-card">
+    <div class="review-question">What can help a married couple to strengthen their friendship?</div>
+    <button class="review-toggle" onclick="toggleReview('r2')"><span id="r2-label">&#x25B8; Show Answer</span><span>&#x25B8;</span></button>
+    <div class="review-answer" id="r2">
+      <p>Making intentional time for each other &mdash; scheduling it like any important commitment &mdash; doing activities together including things the other is passionate about (<span class="chip" onclick="showSidebar('Matt. 7:12','All things, therefore, that you want men to do to you, you also must do to them. This, in fact, is what the Law and the Prophets mean.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/7')">Matt. 7:12</span>), minimising distractions, and especially spending time together spiritually: Bible reading, prayer, and field service. As &ldquo;iron sharpens iron,&rdquo; two Christians together grow sharper. (<span class="chip" onclick="showSidebar('Prov. 27:17','As iron sharpens iron, So one man sharpens his friend.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/27')">Prov. 27:17</span>)</p>
+    </div>
+  </div>
+
+  <div class="review-card">
+    <div class="review-question">What can help a married couple to stick together when challenges arise in their marriage?</div>
+    <button class="review-toggle" onclick="toggleReview('r3')"><span id="r3-label">&#x25B8; Show Answer</span><span>&#x25B8;</span></button>
+    <div class="review-answer" id="r3">
+      <p>Not being quick to separate, but instead reflecting on how to apply the love qualities of 1 Corinthians 13:4-8a: &#x201C;Love is patient and kind. Love is not jealous. It does not brag, does not get puffed up, does not behave indecently, does not look for its own interests, does not become provoked. It does not keep account of the injury. It does not rejoice over unrighteousness, but rejoices with the truth. It bears all things, believes all things, hopes all things, endures all things. Love never fails.&#x201D; (<span class="chip" onclick="showSidebar('1 Cor. 13:4-8a','Love is patient and kind. Love is not jealous. It does not brag, does not get puffed up, does not behave indecently, does not look for its own interests, does not become provoked. It does not keep account of the injury. It does not rejoice over unrighteousness, but rejoices with the truth. It bears all things, believes all things, hopes all things, endures all things. Love never fails.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/46/13')">1 Cor. 13:4-8a</span>) Seeking Jehovah&rsquo;s help through prayer, using the organization&rsquo;s publications, and consulting elders. Keeping Jehovah as the third strand of the cord ensures the marriage won&rsquo;t &ldquo;quickly be torn apart.&rdquo; (<span class="chip" onclick="showSidebar('Eccl. 4:12','And someone may overpower one alone, but two together can take a stand against him. And a threefold cord cannot quickly be torn apart.','https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/21/4')">Eccl. 4:12</span>)</p>
+    </div>
+  </div>
+
+  <div class="song-banner" style="margin-top:24px;">
+    <span class="icon">&#x1F3B5;</span>
+    <span>Closing Song 132 &mdash; &#x201C;Now We Are One&#x201D;
+      <a href="https://www.jw.org/en/library/songs/jw-songbook/song-132/" target="_blank" style="color:#a5d8ff;font-size:0.8rem;margin-left:8px;">Listen &#x2192;</a>
+    </span>
+  </div>
+
+  <div class="footer">
+    <p>Source: <a href="https://www.jw.org/en/library/magazines/watchtower-study-april-2026/Keep-Strengthening-Your-Friendship-With-Your-Mate/" target="_blank" style="color:#3b82f6;">jw.org &mdash; Watchtower Study April 2026</a></p>
+    <p style="margin-top:4px;">All scripture texts quoted verbatim from the New World Translation of the Holy Scriptures &mdash; Study Edition (NWTsty), fetched from wol.jw.org</p>
+    <p style="margin-top:4px;">Generated July 5, 2026 &middot; For personal study &amp; comment preparation</p>
+  </div>
+
+</div>
 
 <script>
-function toggleAnswer(btn) {
-  btn.classList.toggle('open');
-  const box = btn.nextElementSibling;
-  box.classList.toggle('open');
-  btn.childNodes[0].textContent = box.classList.contains('open') ? '▼ ' : '▶ ';
-  btn.childNodes[1].textContent = box.classList.contains('open') ? ' Hide comment' : ' Show comment';
-  // Fix arrow span
-  const arrow = btn.querySelector('.arrow');
-  if (arrow) arrow.textContent = box.classList.contains('open') ? '▾' : '▸';
-  const textNode = btn.childNodes[btn.childNodes.length - 1];
-  if (textNode && textNode.nodeType === 3) {
-    textNode.textContent = box.classList.contains('open') ? ' Hide comment' : ' Show comment';
+  function showSidebar(ref, text, url) {
+    document.getElementById('sidebar-title').textContent = ref;
+    document.getElementById('sidebar-ref').textContent = ref;
+    document.getElementById('sidebar-text').textContent = text;
+    document.getElementById('sidebar-link').href = url;
+    document.getElementById('sidebar').classList.add('open');
+    document.getElementById('overlay').classList.add('open');
   }
-}
 
-function expandAll() {
-  document.querySelectorAll('.answer-toggle').forEach(btn => {
-    const box = btn.nextElementSibling;
-    if (box && !box.classList.contains('open')) {
-      btn.classList.add('open');
-      box.classList.add('open');
-      const arrow = btn.querySelector('.arrow');
-      if (arrow) arrow.textContent = '▾';
+  function closeSidebar() {
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('overlay').classList.remove('open');
+  }
+
+  function toggleAnswer(id) {
+    const content = document.getElementById(id);
+    const label = document.getElementById(id + '-label');
+    const arrow = document.getElementById(id + '-arrow');
+    if (content.classList.contains('open')) {
+      content.classList.remove('open');
+      if(label) label.textContent = '▸ Show Comment';
+      if(arrow) arrow.textContent = '▸';
+    } else {
+      content.classList.add('open');
+      if(label) label.textContent = '▾ Hide Comment';
+      if(arrow) arrow.textContent = '▾';
     }
-  });
-}
+  }
 
-function collapseAll() {
-  document.querySelectorAll('.answer-toggle').forEach(btn => {
-    const box = btn.nextElementSibling;
-    if (box && box.classList.contains('open')) {
-      btn.classList.remove('open');
-      box.classList.remove('open');
-      const arrow = btn.querySelector('.arrow');
-      if (arrow) arrow.textContent = '▸';
+  function toggleReview(id) {
+    const content = document.getElementById(id);
+    const label = document.getElementById(id + '-label');
+    if (content.classList.contains('open')) {
+      content.classList.remove('open');
+      if(label) label.textContent = '▸ Show Answer';
+    } else {
+      content.classList.add('open');
+      if(label) label.textContent = '▾ Hide Answer';
     }
-  });
-}
+  }
 
-// SIDEBAR
-const sidebarData = {};
+  function expandAll() {
+    const btn = document.querySelector('.expand-btn');
+    const allAnswers = document.querySelectorAll('.answer-content');
+    const allReviews = document.querySelectorAll('.review-answer');
+    const isExpanded = btn.textContent.includes('Collapse');
 
-function openSidebar(title, content, url) {
-  document.getElementById('sidebar-title').textContent = title;
-  document.getElementById('sidebar-content').innerHTML = content;
-  document.getElementById('sidebar-link').href = url || '#';
-  document.getElementById('sidebar').classList.add('open');
-  document.getElementById('sidebar-overlay').classList.add('open');
-}
+    allAnswers.forEach(el => { isExpanded ? el.classList.remove('open') : el.classList.add('open'); });
+    allReviews.forEach(el => { isExpanded ? el.classList.remove('open') : el.classList.add('open'); });
 
-function closeSidebar() {
-  document.getElementById('sidebar').classList.remove('open');
-  document.getElementById('sidebar-overlay').classList.remove('open');
-}
+    ['a1','a2','a34','a5','a67','a89','a10','a11','a1213','a1415','a16','a17'].forEach(id => {
+      const label = document.getElementById(id + '-label');
+      const arrow = document.getElementById(id + '-arrow');
+      if(label) label.textContent = isExpanded ? '▸ Show Comment' : '▾ Hide Comment';
+      if(arrow) arrow.textContent = isExpanded ? '▸' : '▾';
+    });
+    ['r1','r2','r3'].forEach(id => {
+      const label = document.getElementById(id + '-label');
+      if(label) label.textContent = isExpanded ? '▸ Show Answer' : '▾ Hide Answer';
+    });
 
-// Close sidebar on Escape
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeSidebar();
-});
+    btn.textContent = isExpanded ? '▾ Expand All Answers' : '▲ Collapse All Answers';
+  }
 </script>
-
 </body>
 </html>
