@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLAM Study Guide — July 6–12, 2026</title>
+<style>
+  :root{
+    --blue:#1d4ed8; --blue-bg:#eff6ff;
+    --green:#15803d; --green-bg:#f0fdf4;
+    --purple:#7e22ce; --purple-bg:#faf5ff;
+    --orange:#c2410c; --orange-bg:#fff7ed;
+    --amber:#f59e0b; --amber-bg:#fffbeb;
+    --imggreen:#22c55e;
+    --videoorange:#d97706;
+    --coach:#6366f1;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:0; background:#f0f4f8;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:#1f2937; line-height:1.55;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:14px 14px 60px;}
+  header.top{
+    background:linear-gradient(135deg,#1e3a8a,#1d4ed8 60%,#2563eb);
+    color:#fff; border-radius:14px; padding:22px 20px; margin:14px auto;
+    max-width:820px; text-align:center;
+  }
+  .week-badge{
+    display:inline-block; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.4);
+    border-radius:999px; padding:5px 16px; font-weight:700; letter-spacing:.5px; font-size:14px;
+  }
+  header.top h1{margin:12px 0 2px; font-size:26px;}
+  header.top p.subtitle{margin:0; opacity:.9; font-size:15px;}
+  header.top p.theme{margin:8px 0 0; font-size:15px; font-weight:600; opacity:.95;}
+  .expand-all-bar{max-width:820px; margin:0 auto 8px; display:flex; justify-content:flex-end; padding:0 4px;}
+  #expandAllBtn{
+    background:#111827; color:#fff; border:none; border-radius:8px; padding:10px 16px;
+    font-size:14px; font-weight:600; cursor:pointer;
+  }
+  #expandAllBtn:active{transform:scale(.98);}
+  .song-banner{
+    background:#fff; border-radius:12px; padding:14px 18px; margin:10px auto; max-width:820px;
+    display:flex; align-items:center; justify-content:space-between; box-shadow:0 1px 3px rgba(0,0,0,.08);
+    border-left:6px solid #111827;
+  }
+  .song-banner a{color:#1d4ed8; font-weight:600; text-decoration:none;}
+  .song-banner a:hover{text-decoration:underline;}
+  .section-divider{
+    display:flex; align-items:center; gap:10px; margin:26px auto 10px; max-width:820px;
+    font-weight:800; font-size:18px; padding:10px 14px; border-radius:10px; color:#fff;
+  }
+  .section-divider.treasures{background:var(--blue);}
+  .section-divider.apply{background:var(--green);}
+  .section-divider.living{background:var(--purple);}
+  .section-divider.cbs{background:var(--orange);}
+  .card{
+    background:#fff; border-radius:12px; margin:10px auto; max-width:820px; box-shadow:0 1px 3px rgba(0,0,0,.08);
+    overflow:hidden;
+  }
+  .card-head{
+    padding:14px 16px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:10px;
+  }
+  .card-head h2{margin:0; font-size:16.5px;}
+  .card-head .meta{font-size:12.5px; color:#6b7280; font-weight:600;}
+  .card-head .chevron{transition:transform .25s ease; font-size:14px; color:#9ca3af; flex-shrink:0;}
+  .card.open .chevron{transform:rotate(180deg);}
+  .card-body{max-height:0; overflow:hidden; transition:max-height .35s ease; padding:0 16px;}
+  .card.open .card-body{max-height:6000px; padding:0 16px 18px;}
+  .treasures .card-head{border-top:4px solid var(--blue);}
+  .apply .card-head{border-top:4px solid var(--green);}
+  .living .card-head{border-top:4px solid var(--purple);}
+  .cbs .card-head{border-top:4px solid var(--orange);}
+
+  img.embed{max-width:100%; border-radius:8px; margin:10px 0; display:block;}
+  .caption{font-size:13px; color:#6b7280; font-style:italic; margin:-4px 0 8px;}
+
+  .box{border-radius:8px; padding:12px 14px; margin:12px 0; font-size:14.5px;}
+  .box.comment{background:var(--amber-bg); border-left:5px solid var(--amber);}
+  .box.image-note{background:#f0fdf4; border-left:5px solid var(--imggreen);}
+  .box.video-note{background:#fffaf0; border-left:5px solid var(--videoorange);}
+  .box.remember{background:#fef2f2; border-left:5px solid #dc2626;}
+  .box p{margin:6px 0;}
+  .box strong.tag{display:block; margin-bottom:4px;}
+
+  .scripture-chip{
+    display:inline-block; background:var(--blue-bg); color:var(--blue); border:1px solid #bfdbfe;
+    border-radius:999px; padding:3px 12px; font-size:13.5px; font-weight:600; cursor:pointer; margin:2px 4px 2px 0;
+  }
+  .scripture-chip:hover{background:#dbeafe;}
+
+  .dialogue{background:#f8f8f8; border-radius:10px; padding:14px 16px; margin:10px 0; font-size:14.5px;}
+  .dialogue p{margin:8px 0;}
+  .dialogue .pub{color:#111827;}
+  .dialogue .house{color:#374151;}
+  .dialogue .coach{color:var(--coach); font-style:italic; font-size:13px;}
+
+  .qa{border-top:1px solid #f0f0f0; padding:10px 0;}
+  .qa summary{cursor:pointer; font-weight:600; list-style:none; position:relative; padding-right:20px;}
+  .qa summary::-webkit-details-marker{display:none;}
+  .qa summary::after{content:"+"; position:absolute; right:0; top:0; font-size:18px; color:#9ca3af;}
+  .qa[open] summary::after{content:"–";}
+  .qa .answer{margin-top:8px; font-size:14.5px; color:#374151;}
+
+  .warn-banner{
+    max-width:820px; margin:10px auto; background:#fef2f2; border:2px solid #dc2626; color:#7f1d1d;
+    border-radius:10px; padding:14px; font-weight:700; text-align:center;
+  }
+
+  footer.foot{max-width:820px; margin:26px auto 10px; text-align:center; color:#6b7280; font-size:13px;}
+  footer.foot a{color:#1d4ed8;}
+
+  /* Sidebar */
+  #sidebarOverlay{
+    position:fixed; inset:0; background:rgba(0,0,0,.35); opacity:0; pointer-events:none;
+    transition:opacity .25s ease; z-index:998;
+  }
+  #sidebarOverlay.show{opacity:1; pointer-events:auto;}
+  #sidebar{
+    position:fixed; top:0; right:-360px; width:340px; max-width:100%; height:100%; background:#fff;
+    box-shadow:-4px 0 18px rgba(0,0,0,.2); z-index:999; transition:right .3s ease; overflow-y:auto;
+  }
+  #sidebar.show{right:0;}
+  .sb-head{
+    background:#111827; color:#fff; padding:16px; display:flex; justify-content:space-between; align-items:flex-start;
+    position:sticky; top:0;
+  }
+  .sb-head h3{margin:0; font-size:16px; padding-right:10px;}
+  .sb-close{background:transparent; border:none; color:#fff; font-size:22px; cursor:pointer; line-height:1;}
+  .sb-body{padding:16px; font-size:14.5px; color:#374151;}
+  .sb-body p{margin:0 0 10px;}
+  .sb-link{
+    display:inline-block; margin-top:6px; background:#1d4ed8; color:#fff; text-decoration:none;
+    padding:8px 14px; border-radius:8px; font-size:13.5px; font-weight:600;
+  }
+  @media (max-width:480px){
+    #sidebar{width:100%; right:-100%;}
+    header.top h1{font-size:22px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="expand-all-bar"><button id="expandAllBtn" onclick="toggleAll()">Expand All</button></div>
+
+<header class="top">
+  <span class="week-badge">JULY 6–12, 2026</span>
+  <h1>Our Christian Life &amp; Ministry</h1>
+  <p class="subtitle">Personal study &amp; comment-prep guide for congregation members</p>
+  <p class="theme">Bible Reading: Jeremiah 13–15</p>
+</header>
+
+<div class="song-banner">
+  <span>🎵 Opening: <strong>Song 123</strong> and Prayer</span>
+  <a href="https://www.jw.org/en/library/songs/jw-songbook/song-123/" target="_blank" rel="noopener">Open song →</a>
+</div>
+
+<!-- ================= TREASURES ================= -->
+<div class="section-divider treasures">⛏️ TREASURES FROM GOD'S WORD</div>
+
+<div class="card treasures">
+  <div class="card-head" onclick="toggleCard(this)">
+    <div><h2>1. Jehovah Deserves Our Obedience</h2><div class="meta">Talk · 10 min.</div></div>
+    <div class="chevron">▾</div>
+  </div>
+  <div class="card-body">
+    <img class="embed" src="https://cms-imgp.jw-cdn.org/img/p/202026241/univ/art/202026241_univ_cnt_1_lg.jpg" alt="Jeremiah contemplating Jehovah's instructions">
+    <div class="caption">Jeremiah follows Jehovah's instructions: he holds the linen belt, travels by camel into the desert, and later leads the camel home as the sun sets.</div>
+    <div class="box image-note">
+      <strong class="tag">🖼️ Image application</strong>
+      <p>Jeremiah didn't wait to understand the "why" before obeying — he set out for the Euphrates simply because Jehovah said so. That willingness to act on trust, even before all the reasons are clear, is exactly the quality Jehovah is looking for in us today.</p>
+    </div>
+
+    <p>Jehovah told Jeremiah to buy a linen belt, wear it, and then travel a long distance to hide it near the Euphrates <span class="scripture-chip" onclick="openSidebar('jer13_1-7')">Jer 13:1-7</span>. Only much later did Jeremiah dig it up and find it completely ruined. The instructions must have seemed strange and inconvenient, yet Jeremiah carried them out anyway. It wasn't until afterward that the lesson became clear.</p>
+
+    <p>Jehovah then explained the point of the illustration <span class="scripture-chip" onclick="openSidebar('jer13_8-11')">Jer 13:8-11</span>: just as a belt is meant to cling closely to a person, Jehovah wanted Israel and Judah to cling closely to him as a treasured people. Because they refused to listen and chased after other gods instead, they became as useless to him as that ruined belt.</p>
+
+    <div class="box comment">
+      <strong class="tag">💬 Comment you could share</strong>
+      <p>"I found it interesting that Jeremiah obeyed the instruction to hide the belt even though he probably had no idea what it meant at the time. It shows that real obedience doesn't wait for a full explanation."</p>
+      <strong class="tag">📌 Personal application</strong>
+      <p>There are congregation and family arrangements I don't always fully understand the reasoning behind. This account reminds me that I can trust Jehovah's direction even when the "why" isn't immediately obvious, the way Jeremiah did.</p>
+      <strong class="tag">🙏 Getting to know Jehovah</strong>
+      <p>Jehovah doesn't ask for blind obedience for its own sake — he later explained the reason to Jeremiah. This shows a God who is patient and who wants his servants to understand him, not just comply with him.</p>
+    </div>
+
+    <div class="box video-note">
+      <strong class="tag">🎬 Related theme</strong>
+      <p>This point pairs naturally with the discussion in Living as Christians (part 7) and the video on obeying Jehovah even when we can't see him — both hinge on the same underlying quality: trust that precedes full understanding.</p>
+    </div>
+  </div>
+</div>
+
+<div class="card treasures">
+  <div class="card-head" onclick="toggleCard(this)">
+    <div><h2>2. Spiritual Gems</h2><div class="meta">10 min.</div></div>
+    <div class="chevron">▾</div>
+  </div>
+  <div class="card-body">
+    <p><span class="scripture-chip" onclick="openSidebar('jer15_16-17')">Jer 15:16, 17</span> — How can we imitate Jeremiah and fight discouragement?</p>
+    <p>Jeremiah admits that his assignment left him isolated — he couldn't join in the light-hearted gatherings of the people around him, and he felt indignation because of the message Jehovah gave him to deliver. Yet in the very same verses, he says that Jehovah's words became "the exultation and the rejoicing of" his heart. Personal Bible reading was what refreshed him and kept him going even while the preaching work itself brought loneliness and rejection.</p>
+
+    <p style="font-weight:600; margin-top:14px;">10 comment ideas for this question (pick 1–2 you can say naturally, in 30–60 seconds):</p>
+    <div class="box comment">
+      <p>1. "What stood out to me is that Jeremiah's discouragement came from doing the right thing — from delivering an unpopular message — not from doing wrong. That helped me see that opposition to my ministry isn't a sign I'm doing something wrong."</p>
+      <p>2. "I appreciated that Jeremiah didn't hide his feelings from Jehovah. He openly admitted he sat alone and felt indignation. That tells me it's okay to be honest with Jehovah in prayer about discouragement instead of masking it."</p>
+      <p>3. "The phrase 'I ate them' about Jehovah's words really struck me — it suggests personal Bible reading isn't just information gathering, it's something that nourishes us the way food does."</p>
+      <p>4. "This reminds me that feeling isolated at times doesn't mean Jehovah has left me alone — Jeremiah still had a close relationship with him even during his loneliest moments."</p>
+      <p>5. "I can imitate Jeremiah by making sure my personal Bible reading isn't rushed — he clearly spent time letting God's words affect his heart, not just his head."</p>
+      <p>6. "Something practical I took from this is to expect that faithful service can bring some friction with others, and to not let that friction convince me something is wrong with my spirituality."</p>
+      <p>7. "I like how honest this account is — the Bible doesn't hide Jeremiah's struggle, which makes it easier for me to relate to him instead of feeling like Bible characters never struggled."</p>
+      <p>8. "This helped me see a direct connection between how much joy I get from Jehovah's word and how well I can handle discouragement in the ministry."</p>
+      <p>9. "I want to build the habit Jeremiah had — turning to Jehovah's word specifically in moments of discouragement, rather than only during my 'regular' study time."</p>
+      <p>10. "It struck me that Jeremiah's source of joy wasn't his circumstances — those were hard — but his relationship with Jehovah's word. That's an example I want to follow when things around me feel discouraging."</p>
+    </div>
+
+    <div class="box comment">
+      <strong class="tag">💬 On the open question</strong>
+      <p>"What spiritual gems from this week's Bible reading would you like to share?" — Consider mentioning something from Jeremiah 13 that struck you personally, such as the ruined belt illustration or the warning about pride, and briefly say why it stood out.</p>
+    </div>
+  </div>
+</div>
+
+<div class="card treasures">
+  <div class="card-head" onclick="toggleCard(this)">
+    <div><h2>3. Bible Reading</h2><div class="meta">Jer 13:1-14 · 4 min. (th study 2)</div></div>
+    <div class="chevron">▾</div>
+  </div>
+  <div class="card-body">
+    <p>This reading covers the linen belt account <span class="scripture-chip" onclick="openSidebar('jer13_1-14')">Jer 13:1-14</span> and a second illustration involving wine jars: just as jars are meant to be filled with wine, Judah was meant to be filled with Jehovah's blessing, but instead Jehovah warns that the nation, from the king down to the common people, would be smashed against each other like clay jars.</p>
+    <div class="box image-note">
+      <strong class="tag">🎯 th study point 2 — Correct pronunciation</strong>
+      <p>Watch the unfamiliar names and places in this reading (Euphrates, Jerusalem) and practice them beforehand so the reading flows smoothly without stumbling over pronunciation.</p>
+    </div>
+    <div class="box comment">
+      <strong class="tag">💬 Key-verse comment suggestion</strong>
+      <p>Verse 11 shows the purpose behind the belt illustration — Jehovah wanted Israel and Judah to cling to him as "a name, a praise, and something beautiful." That phrase highlights how much Jehovah valued a close relationship with his people, which makes their refusal to obey all the more tragic.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= APPLY YOURSELF ================= -->
+<div class="section-divider apply">🌱 APPLY YOURSELF TO THE FIELD MINISTRY</div>
+
+<div class="card apply">
+  <div class="card-head" onclick="toggleCard(this)">
+    <div><h2>4. Starting a Conversation</h2><div class="meta">House to House · 3 min. (lmd lesson 1 pt. 5)</div></div>
+    <div class="chevron">▾</div>
+  </div>
+  <div class="card-body">
+    <p>Assignment: use a tract to start a conversation, house to house.</p>
+    <div class="dialogue">
+      <p class="pub"><strong>Publisher:</strong> "Hi, good afternoon. I'm visiting the neighborhood with a short message that's been an encouragement to a lot of people lately." <span class="coach">← lmd lesson 1 pt. 5: open with a brief, warm self-introduction that doesn't feel scripted</span></p>
+      <p class="house"><strong>Householder:</strong> "Oh, okay. What's it about?"</p>
+      <p class="pub"><strong>Publisher:</strong> "It's about whether we can really trust that things will get better. This tract asks the question, 'Is there any real hope for the future?' Can I leave it with you?" <span class="coach">← lets the tract's question do the work of arousing interest rather than over-explaining</span></p>
+      <p class="house"><strong>Householder:</strong> "Sure, I'll take a look."</p>
+      <p class="pub"><strong>Publisher:</strong> "Thank you. Actually, may I ask — when you think about the future, does it feel more hopeful or more uncertain to you?" <span class="coach">← follows the tract with a simple, non-threatening question to keep the conversation going</span></p>
+      <p class="house"><strong>Householder:</strong> "Honestly, uncertain. There's a lot going on in the world."</p>
+      <p class="pub"><strong>Publisher:</strong> "That's exactly why I wanted to share this. The Bible actually gives a very specific reason for confidence, at Jeremiah 29:11, where Jehovah says he knows the thoughts he has for us — thoughts of peace, not calamity. We could talk more about that next time I'm in the area, if that's alright." <span class="coach">← ends by setting up a return visit naturally</span></p>
+      <p class="house"><strong>Householder:</strong> "Yeah, that would be fine."</p>
+    </div>
+    <div class="box comment">
+      <strong class="tag">📌 Personal application</strong>
+      <p>Keeping the opening short and letting the tract's question spark curiosity takes the pressure off me to "explain everything" in the first 30 seconds.</p>
+    </div>
+  </div>
+</div>
+
+<div class="card apply">
+  <div class="card-head" onclick="toggleCard(this)">
+    <div><h2>5. Following Up</h2><div class="meta">Informal Witnessing · 4 min. (lmd lesson 9 pt. 4)</div></div>
+    <div class="chevron">▾</div>
+  </div>
+  <div class="card-body">
+    <p>Assignment: share an article from jw.org on the subject of a previous conversation, in an informal setting (e.g., with a coworker or acquaintance).</p>
+    <div class="dialogue">
+      <p class="pub"><strong>Publisher:</strong> "Hey, remember last week you mentioned you'd been feeling really stressed about work? I actually thought of you when I came across something." <span class="coach">← lmd lesson 9 pt. 4: reference the specific earlier conversation to show genuine personal interest</span></p>
+      <p class="house"><strong>Acquaintance:</strong> "Oh yeah, it's been a rough few weeks."</p>
+      <p class="pub"><strong>Publisher:</strong> "There's an article on jw.org called 'How Can I Cope With Stress?' I pulled it up on my phone — it's short, just a couple of minutes to read. Want me to send you the link?" <span class="coach">← keeps it low-pressure by offering to simply send the link rather than reading it aloud on the spot</span></p>
+      <p class="house"><strong>Acquaintance:</strong> "Sure, that'd be great, thanks."</p>
+      <p class="pub"><strong>Publisher:</strong> "One point that helped me is that it suggests identifying exactly what's causing the stress instead of just feeling overwhelmed by everything at once. I'll send it over — let me know what you think after you read it." <span class="coach">← previews one practical point and invites feedback, opening the door to a future conversation</span></p>
+    </div>
+    <div class="box comment">
+      <strong class="tag">📌 Personal application</strong>
+      <p>Following up on something specific someone told me shows I was really listening, not just looking for an opportunity to preach.</p>
+    </div>
+  </div>
+</div>
+
+<div class="card apply">
+  <div class="card-head" onclick="toggleCard(this)">
+    <div><h2>6. Talk</h2><div class="meta">5 min. · lmd appendix A pt. 18 (th study 7)</div></div>
+    <div class="chevron">▾</div>
+  </div>
+  <div class="card-body">
+    <p><strong>Theme: Jesus Foretold Events We See Today</strong></p>
+    <div class="dialogue">
+      <p>"Have you ever wondered whether current world events were actually predicted long ago? About 2,000 years ago, Jesus was asked by his disciples what would be the sign of his presence and of the conclusion of the system of things. His answer, recorded at Matthew 24, described a composite sign — wars, food shortages, earthquakes, increasing lawlessness, and a global preaching work. <span class="coach">← th study 7: use vivid, concrete language that helps listeners picture the point being made</span></p>
+      <p>"Consider just one detail: Jesus said this good news of the Kingdom would be preached in all the inhabited earth as a witness to all the nations. <span class="scripture-chip" onclick="openSidebar('matt24_14')">Matthew 24:14</span> Today, that preaching work is being carried out in over 240 lands and in more than 1,000 languages. <span class="coach">← supports the point with a specific, verifiable fact rather than a vague generalization</span></p>
+      <p>"None of these developments proves the exact day or hour, but together they form a pattern that matches what Jesus described with striking accuracy. That gives us solid reason to trust the rest of what he promised — including a righteous new world just ahead." <span class="coach">← th study 7: end with a clear, confident conclusion that ties back to the theme</span></p>
+    </div>
+    <div class="box comment">
+      <strong class="tag">📌 Personal application</strong>
+      <p>When I explain this to someone, keeping to one or two concrete proofs (rather than listing everything) makes the point easier for a listener to follow and remember.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= LIVING AS CHRISTIANS ================= -->
+<div class="section-divider living">✝️ LIVING AS CHRISTIANS</div>
+
+<div class="song-banner">
+  <span>🎵 <strong>Song 49</strong></span>
+  <a href="https://www.jw.org/en/library/songs/jw-songbook/song-49/" target="_blank" rel="noopener">Open song →</a>
+</div>
+
+<div class="card living">
+  <div class="card-head" onclick="toggleCard(this)">
+    <div><h2>7. "To Obey Is Better Than a Sacrifice"</h2><div class="meta">Discussion · 15 min.</div></div>
+    <div class="chevron">▾</div>
+  </div>
+  <div class="card-body">
+    <p>These words were spoken by Samuel to King Saul after Saul disobeyed a clear, direct instruction from Jehovah delivered through the prophet.</p>
+
+    <p><span class="scripture-chip" onclick="openSidebar('1sam15')">1 Samuel 15:3, 7-9, 22, 23</span></p>
+    <details class="qa">
+      <summary>How did King Saul disobey Jehovah, and for what possible reasons?</summary>
+      <div class="answer">Jehovah instructed Saul, through Samuel, to completely destroy the Amalekites and all their livestock. Instead, Saul spared King Agag and kept the best of the sheep and cattle, claiming later that the animals were meant for sacrifice. Likely reasons include valuing personal gain and public approval (he "feared the people," v. 24) over strict obedience, and perhaps rationalizing that a partial obedience dressed up in religious language (sacrifice) would be acceptable.</div>
+    </details>
+    <details class="qa">
+      <summary>Why is obedience to Jehovah better than a sacrifice?</summary>
+      <div class="answer">A sacrifice can be offered while the heart is still self-willed, but obedience reflects genuine submission to Jehovah's authority. Samuel's words show that Jehovah values a heart that listens to him above ritual acts performed for appearance's sake or convenience.</div>
+    </details>
+    <details class="qa">
+      <summary>How is rebelliousness the same as the sin of divination?</summary>
+      <div class="answer">Divination looks to a source other than Jehovah for guidance and direction. When someone rebels against Jehovah's clear instructions and substitutes his own judgment instead, he is effectively doing the same thing — rejecting Jehovah as the source of direction and trusting his own reasoning instead.</div>
+    </details>
+
+    <p style="margin-top:14px;"><span class="scripture-chip" onclick="openSidebar('luke16_10')">Luke 16:10</span></p>
+    <details class="qa">
+      <summary>Why should we obey even in seemingly minor matters?</summary>
+      <div class="answer">Jesus said that whoever is faithful in what is least will be faithful also in much. Our handling of small matters reveals our underlying character and trains us in faithfulness for greater responsibilities and trust.</div>
+    </details>
+    <details class="qa">
+      <summary>What might some consider to be minor matters?</summary>
+      <div class="answer">Things like exact starting times for meetings and field service, small points of congregation procedure, minor counsel from an elder, or details in a work or school assignment — situations where cutting a corner seems harmless because "no one will notice."</div>
+    </details>
+
+    <div class="box video-note">
+      <strong class="tag">🎬 Video: Become Jehovah's Friend — Why Obey God if We Can't See Him?</strong>
+      <p>This short video for children (part of the "Become Jehovah's Friend" series, Lesson 45) opens with a boy asking his father how he can show his little sister Zoe that Jehovah really sees them, even though Jehovah is invisible. The video then follows a girl named Sofia who faces a real test: during a classroom exam, she has the chance to copy a classmate's answer without anyone finding out. Because she is convinced that Jehovah truly sees her even when no human does, Sofia declines to copy the answer. The video uses the beauty and detail of creation as a reminder that the unseen Creator behind it all is real, personally aware of us, and cares about our choices — which is exactly why obedience matters even in private, unwatched moments.</p>
+      <a class="sb-link" href="https://www.jw.org/en/library/videos/become-jehovahs-friend-2/why-obey-god-we-cant-see/" target="_blank" rel="noopener">Watch the video →</a>
+      <p style="margin-top:10px;"><strong>What lessons did you learn from the video?</strong> Sofia's honesty in a moment with no human witnesses illustrates that real obedience is proven by what we do when we could get away with disobedience — because Jehovah, though unseen, is always aware of our conduct and cares about it.</p>
+    </div>
+
+    <div class="box comment">
+      <strong class="tag">💬 Comment you could share</strong>
+      <p>"What struck me is that Saul's disobedience was dressed up as devotion — he called the spared animals a 'sacrifice.' It made me think about whether I ever rationalize doing things my own way while telling myself it's still serving Jehovah."</p>
+      <strong class="tag">📌 Personal application</strong>
+      <p>In small everyday matters — like being fully honest on an assignment or arriving on time — I want to treat those as genuine tests of faithfulness rather than unimportant details.</p>
+      <strong class="tag">🙏 Getting to know Jehovah</strong>
+      <p>Jehovah isn't interested in outward religious performance that masks a disobedient heart — he looks past the sacrifice to the motive behind it, showing he values sincerity over show.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= CBS ================= -->
+<div class="section-divider cbs">📕 CONGREGATION BIBLE STUDY</div>
+
+<div class="card cbs">
+  <div class="card-head" onclick="toggleCard(this)">
+    <div><h2>8. Lessons You Can Learn From the Bible — Lessons 100–101</h2><div class="meta">30 min.</div></div>
+    <div class="chevron">▾</div>
+  </div>
+  <div class="card-body">
+
+    <h3 style="color:var(--orange); margin-top:4px;">Lesson 100 — Paul and Timothy</h3>
+    <img class="embed" src="https://cms-imgp.jw-cdn.org/img/p/1102016110/univ/art/1102016110_univ_cnt_2_md.jpg" alt="Eunice, Lois, and little Timothy">
+    <div class="caption">Timothy's mother, Eunice, and grandmother Lois, taught him about Jehovah from early childhood.</div>
+    <div class="box image-note">
+      <strong class="tag">🖼️ Application</strong>
+      <p>Timothy's spiritual foundation began at home, long before Paul ever met him. It's a reminder that consistent, everyday Bible teaching in the family — even from just one or two believing relatives — can produce a servant of Jehovah who is later entrusted with major responsibility.</p>
+    </div>
+
+    <img class="embed" src="https://cms-imgp.jw-cdn.org/img/p/1102016110/univ/art/1102016110_univ_cnt_3_md.jpg" alt="The apostle Paul dictates a letter to Timothy while under house arrest, chained to a guard">
+    <div class="caption">Even while a prisoner under guard, Paul continued writing letters to encourage Timothy and the congregations.</div>
+    <div class="box image-note">
+      <strong class="tag">🖼️ Application</strong>
+      <p>Paul's circumstances were about as limiting as they could get, yet he still found a way to keep training and encouraging Timothy. It shows that difficult personal circumstances don't have to stop us from strengthening others.</p>
+    </div>
+
+    <p>Timothy grew up in Lystra with a Jewish mother and Greek father, and from childhood learned about Jehovah from his mother, Eunice, and grandmother, Lois. When Paul met him during his second missionary tour, he recognized Timothy's genuine love for the brothers and invited him to join the preaching work. Over the years that followed, Paul trained him carefully, and the two labored side by side through hardship — including being forced to flee persecution in Thessalonica and Beroea. Paul later relied on Timothy heavily, sending him to encourage struggling congregations and calling him a son-like companion whose concern for others was genuine rather than self-seeking.</p>
+
+    <details class="qa">
+      <summary>Who was Timothy? Why were Paul and Timothy such good friends?</summary>
+      <div class="answer">Timothy was a young disciple from Lystra, raised in the faith by his mother and grandmother, whom Paul invited to join his missionary journeys after observing his sincere love for the brothers. Their friendship grew out of years of shared hardship, mutual trust, and Timothy's proven, unselfish concern for the congregations — qualities Paul specifically praised, noting that Timothy genuinely cared for others' interests rather than his own. <span class="scripture-chip" onclick="openSidebar('phil2_20-21')">Php 2:20, 21</span></div>
+    </details>
+
+    <h3 style="color:var(--orange); margin-top:26px;">Lesson 101 — Paul Is Sent to Rome</h3>
+    <img class="embed" src="https://cms-imgp.jw-cdn.org/img/p/502012436/univ/art/502012436_univ_sqs_lg.jpg" alt="Paul surrounded by soldiers">
+    <div class="caption">Paul was escorted by Roman soldiers after appealing to Caesar, ultimately being shipped toward Rome under guard.</div>
+    <div class="box image-note">
+      <strong class="tag">🖼️ Application</strong>
+      <p>Paul used the legal system available to him (his right as a Roman citizen to appeal to Caesar) as a means of advancing the preaching work, rather than as a way of avoiding hardship. It's a reminder that legitimate means available to us can be used to further Kingdom interests.</p>
+    </div>
+
+    <p>After his third missionary tour ended in his arrest in Jerusalem, Paul spent two years in prison in Caesarea before appealing to Caesar and being placed on a ship bound for Rome. During the voyage a violent storm raged for fourteen days, and it looked as though everyone aboard would perish — yet an angel assured Paul that all 276 people on the ship would survive, and they did, washing ashore safely on Malta after the ship broke apart. Three months later Paul finally reached Rome, where — although still a prisoner, guarded by a soldier — he was permitted to live in a rented house for two years, receiving visitors and continuing to preach about God's Kingdom and teach about Jesus.</p>
+
+    <details class="qa">
+      <summary>Why did Festus send Paul to Rome? What happened to Paul on the way to Rome?</summary>
+      <div class="answer">Paul exercised his right as a Roman citizen to appeal directly to Caesar, so Festus was obligated to send him to Rome. On the journey, the ship encountered a violent 14-day storm and was wrecked off the island of Malta, yet — exactly as an angel had told Paul in advance — every one of the 276 people aboard reached shore safely. <span class="scripture-chip" onclick="openSidebar('2cor6_4')">2Co 6:4</span></div>
+    </details>
+
+    <p style="font-weight:600; margin-top:20px;">Wrap-up questions</p>
+    <details class="qa">
+      <summary>What does this teach us about Jehovah?</summary>
+      <div class="answer">Jehovah kept his word to protect Paul and everyone with him, exactly as promised in advance, even amid a violent and life-threatening storm — showing that Jehovah's promises hold firm even when circumstances look hopeless. He also continued to use Paul productively even while Paul was a prisoner, showing that Jehovah is not limited by human restrictions when it comes to accomplishing his purpose.</div>
+    </details>
+    <details class="qa">
+      <summary>Are there any points from this lesson we can use in the ministry or our daily life?</summary>
+      <div class="answer">Like Timothy, we can benefit from mentors who invest time in training us, and we can look for opportunities to do the same for others. Like Paul, we can look for ways to keep preaching and encouraging others even when our circumstances are restricted or difficult, using whatever legitimate means are available to us.</div>
+    </details>
+
+    <div class="box comment">
+      <strong class="tag">🙏 Getting to know Jehovah</strong>
+      <p>Both lessons show a God who works through imperfect, ordinary circumstances — a young man's upbringing, a legal appeal, even a shipwreck — to accomplish his purpose and care personally for his servants.</p>
+    </div>
+
+    <p style="font-size:13px; color:#6b7280; margin-top:16px;">Bible references for further study: <span class="scripture-chip" onclick="openSidebar('acts16')">Ac 16:1-12</span> <span class="scripture-chip" onclick="openSidebar('acts17')">Ac 17:1-15</span> <span class="scripture-chip" onclick="openSidebar('phil2_20-21')">Php 2:19-22</span> <span class="scripture-chip" onclick="openSidebar('heb13_23')">Heb 13:23</span> <span class="scripture-chip" onclick="openSidebar('acts21_30')">Ac 21:30</span> <span class="scripture-chip" onclick="openSidebar('acts27')">Ac 27:1–28:31</span> <span class="scripture-chip" onclick="openSidebar('rom15_25')">Ro 15:25, 26</span></p>
+  </div>
+</div>
+
+<div class="song-banner">
+  <span>🎵 Closing: <strong>Song 61</strong> and Prayer</span>
+  <a href="https://www.jw.org/en/library/songs/jw-songbook/song-61/" target="_blank" rel="noopener">Open song →</a>
+</div>
+
+<footer class="foot">
+  Source: <a href="https://www.jw.org/en/library/jw-meeting-workbook/july-august-2026-mwb/Life-and-Ministry-Meeting-Schedule-for-July-6-12-2026/" target="_blank" rel="noopener">jw.org Meeting Workbook, July 6-12, 2026</a><br>
+  Personal study guide prepared for congregation-member comment prep — not for use as the meeting conductor's outline.
+</footer>
+
+<!-- Sidebar -->
+<div id="sidebarOverlay" onclick="closeSidebar()"></div>
+<div id="sidebar">
+  <div class="sb-head">
+    <h3 id="sbTitle">Title</h3>
+    <button class="sb-close" onclick="closeSidebar()">×</button>
+  </div>
+  <div class="sb-body" id="sbBody">Body</div>
+</div>
+
+<script>
+function toggleCard(headEl){
+  const card = headEl.parentElement;
+  card.classList.toggle('open');
+}
+let allOpen = false;
+function toggleAll(){
+  allOpen = !allOpen;
+  document.querySelectorAll('.card').forEach(c=>{
+    if(allOpen) c.classList.add('open'); else c.classList.remove('open');
+  });
+  document.getElementById('expandAllBtn').textContent = allOpen ? 'Collapse All' : 'Expand All';
+}
+</script>
+<script>
+const SB = {
+  "jer13_1-7": {
+    title: "Jeremiah 13:1-7",
+    body: "Jehovah instructed Jeremiah to buy a linen belt, wear it, and later hide it in a rock crevice near the Euphrates River — a long journey each way. Jeremiah obeyed at each step even though the purpose wasn't yet explained. Much later, Jehovah told him to retrieve the belt, and Jeremiah found it completely ruined and useless.<br><br><em>Why it matters:</em> Jeremiah's willingness to carry out an unusual, inconvenient instruction without first understanding its purpose is the model of obedience this week's Treasures talk is built around."
+  },
+  "jer13_8-11": {
+    title: "Jeremiah 13:8-11",
+    body: "Jehovah explains the illustration: a belt is meant to cling tightly to a person's waist, just as Jehovah wanted the whole house of Israel and Judah to cling closely to him, becoming to him \"a name, a praise, and something beautiful.\" But because the nation refused to obey and pursued other gods instead, they became as ruined and useless to Jehovah as that buried belt."
+  },
+  "jer13_1-14": {
+    title: "Jeremiah 13:1-14 (Bible reading)",
+    body: "This reading combines two illustrations: the ruined linen belt (vv. 1-11), showing how Judah's refusal to obey ruined their intended closeness with Jehovah, and the wine jars (vv. 12-14), where Jehovah warns that he will fill the nation — kings, priests, and people alike — with confusion and \"smash them against each other,\" like jars deliberately dashed together. Both illustrations emphasize the same theme: a people who were meant for a beautiful purpose brought ruin on themselves through disobedience."
+  },
+  "jer15_16-17": {
+    title: "Jeremiah 15:16, 17",
+    body: "Jeremiah says that Jehovah's words, once found, became \"the exultation and the rejoicing of\" his heart — even though his prophetic assignment meant he couldn't join in the light-hearted company of others and instead sat alone, filled with indignation because of the message he had to deliver. The verses show both the cost of his loyalty (isolation, opposition) and the source of his endurance (personal appreciation for God's word)."
+  },
+  "1sam15": {
+    title: "1 Samuel 15:3, 7-9, 22, 23",
+    body: "Jehovah, through Samuel, commanded Saul to completely destroy the Amalekites and their livestock. Saul carried out the attack but spared King Agag and the best animals, later claiming they were intended for sacrifice. Samuel's response: \"Does Jehovah take as much pleasure in burnt offerings and sacrifices as in obeying the voice of Jehovah? Look! To obey is better than a sacrifice... for rebelliousness is the same as the sin of divination.\" Because of this partial obedience, Jehovah rejected Saul from continuing as king."
+  },
+  "luke16_10": {
+    title: "Luke 16:10",
+    body: "Jesus taught: \"The person faithful in what is least is faithful also in much, and the person unrighteous in what is least is unrighteous also in much.\" The principle: our handling of small, seemingly unimportant matters reveals and shapes our underlying trustworthiness, and prepares us (or disqualifies us) for greater trust and responsibility."
+  },
+  "matt24_14": {
+    title: "Matthew 24:14",
+    body: "Jesus foretold that \"this good news of the Kingdom will be preached in all the inhabited earth for a witness to all the nations, and then the end will come\" — one clearly identifiable element of the composite sign of his presence, alongside wars, food shortages, earthquakes, and increasing lawlessness described earlier in the chapter."
+  },
+  "phil2_20-21": {
+    title: "Philippians 2:19-22",
+    body: "Paul writes of Timothy: \"I have no one else of a disposition like his who will genuinely care for your concerns. For all the others are seeking their own interests, not those of Jesus Christ. But you know the proof he has given, that as a child with a father he slaved with me in furtherance of the good news.\" A rare, specific commendation showing the depth of trust Paul placed in Timothy after years of proven service."
+  },
+  "2cor6_4": {
+    title: "2 Corinthians 6:4",
+    body: "Paul describes how true ministers of God recommend themselves \"by the endurance of much, by tribulations, by times of need, by difficulties\" — a fitting description of what Paul himself experienced on the journey to Rome: shipwreck, imprisonment, and continued hardship, endured while still carrying out his ministry."
+  },
+  "acts16": {
+    title: "Acts 16:1-12",
+    body: "Describes Paul's second missionary tour arriving in Lystra, where he meets Timothy — well spoken of by the brothers — and invites him to join the missionary party. The chapter goes on to describe the vision of the man of Macedonia calling for help, leading the group to cross into Europe to preach."
+  },
+  "acts17": {
+    title: "Acts 17:1-15",
+    body: "Recounts the preaching in Thessalonica, where many became believers but jealous opposers stirred up a mob, forcing Paul and his companions to flee by night to Beroea, where the Jews there were noted for examining the Scriptures carefully to verify what they were taught."
+  },
+  "heb13_23": {
+    title: "Hebrews 13:23",
+    body: "A brief personal note mentioning that \"our brother Timothy has been released,\" showing that Timothy, like Paul, faced imprisonment for his faith at some point in his service."
+  },
+  "acts21_30": {
+    title: "Acts 21:30",
+    body: "Describes the riot in Jerusalem during which Paul was seized by an angry crowd in the temple, the event that led to his arrest and the long legal process that eventually brought him to Rome."
+  },
+  "acts27": {
+    title: "Acts 27:1–28:31",
+    body: "The detailed account of Paul's voyage to Rome: the violent 14-day storm, the shipwreck at Malta where all 276 aboard survived exactly as an angel had foretold, and Paul's eventual two years under house arrest in Rome, where he continued to preach and teach freely to all who came to him."
+  },
+  "rom15_25": {
+    title: "Romans 15:25, 26",
+    body: "Paul mentions traveling to Jerusalem \"to minister to the holy ones,\" referring to a relief contribution gathered from congregations in Macedonia and Achaia — an example of the practical, congregation-wide cooperation Paul organized alongside his preaching work."
+  }
+};
+
+function openSidebar(key){
+  const data = SB[key];
+  if(!data) return;
+  document.getElementById('sbTitle').textContent = data.title;
+  document.getElementById('sbBody').innerHTML = "<p>" + data.body + "</p>";
+  document.getElementById('sidebar').classList.add('show');
+  document.getElementById('sidebarOverlay').classList.add('show');
+}
+function closeSidebar(){
+  document.getElementById('sidebar').classList.remove('show');
+  document.getElementById('sidebarOverlay').classList.remove('show');
+}
+</script>
+
+</body>
+</html>
