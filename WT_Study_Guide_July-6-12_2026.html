@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JW Meeting Study Guide — Watchtower Study, July 12, 2026</title>
+<style>
+  :root{
+    --navy:#1a365d; --red:#b91c1c; --amber:#f59e0b; --amber-bg:#fffbeb;
+    --para-bg:#f8fafc; --para-border:#e2e8f0; --chip-bg:#eff6ff; --page-bg:#f0f4f8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--page-bg); color:#1e293b;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:0 0 60px;}
+  header.top{
+    background:linear-gradient(135deg,var(--navy),#2c5282);
+    color:#fff; padding:28px 20px 22px; text-align:center;
+  }
+  header.top h1{margin:0 0 4px; font-size:1.5rem; letter-spacing:.02em;}
+  header.top .subtitle{font-size:1rem; opacity:.9; margin:0 0 12px;}
+  .date-badge{
+    display:inline-block; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.4);
+    border-radius:999px; padding:6px 16px; font-size:.9rem; font-weight:600;
+  }
+  .controls{padding:16px 20px 0; text-align:right;}
+  #expandAllBtn{
+    background:var(--navy); color:#fff; border:none; border-radius:8px;
+    padding:10px 18px; font-size:.9rem; font-weight:600; cursor:pointer;
+  }
+  #expandAllBtn:hover{background:#264a73;}
+  .banner{margin:16px 20px 0; border-radius:10px; padding:16px 18px; color:#fff; font-size:.95rem;}
+  .banner.song{background:#475569;}
+  .banner.focus{background:var(--navy);}
+  .banner .label{font-weight:700; text-transform:uppercase; font-size:.75rem; letter-spacing:.06em; opacity:.85; margin-bottom:4px;}
+  .theme-block{margin:18px 20px 0; background:#fff; border-radius:10px; padding:20px; border-left:5px solid var(--navy);}
+  .theme-block blockquote{margin:0 0 10px; font-style:italic; font-size:1.05rem; color:#1e293b;}
+  .section-card{
+    margin:22px 20px 0; background:#fff; border-radius:10px; overflow:hidden;
+    box-shadow:0 1px 3px rgba(0,0,0,.08);
+  }
+  .section-head{
+    background:var(--navy); color:#fff; padding:12px 18px; font-size:1rem;
+    font-weight:700; letter-spacing:.02em;
+  }
+  .section-body{padding:4px 18px 18px;}
+  .q-card{
+    background:#fff; border-left:4px solid var(--red); border-radius:6px;
+    padding:14px 16px; margin:18px 0 10px; font-weight:600; font-size:1rem;
+  }
+  .q-card .qnum{color:var(--red); margin-right:6px;}
+  .toggle-btn{
+    display:inline-flex; align-items:center; gap:6px; background:none; border:none;
+    color:#b45309; font-weight:700; font-size:.9rem; cursor:pointer; padding:6px 0 6px;
+  }
+  .answer-box{
+    display:none; background:var(--amber-bg); border-left:3px solid var(--amber);
+    border-radius:6px; padding:14px 16px; margin-bottom:10px; font-size:.95rem;
+  }
+  .answer-box.open{display:block;}
+  .answer-box p{margin:0 0 10px;}
+  .answer-box p:last-child{margin-bottom:0;}
+  .sub-label{font-weight:700; color:#92400e;}
+  .prep-box{
+    background:#fff; border:1px solid #fde68a; border-radius:6px; padding:10px 12px; margin:10px 0;
+    font-size:.9rem;
+  }
+  .prep-box .prep-title{font-weight:700; display:block; margin-bottom:3px;}
+  .para-block{
+    background:var(--para-bg); border-left:3px solid var(--para-border); border-radius:8px;
+    padding:14px 16px; margin:10px 0; font-size:.95rem; line-height:1.75; color:#334155;
+  }
+  .para-block .pnum{font-weight:700; color:#0f172a;}
+  figure.wt-image{margin:14px 0; text-align:center;}
+  figure.wt-image img{max-width:100%; border-radius:8px; display:block; margin:0 auto;}
+  figure.wt-image figcaption{font-size:.82rem; color:#64748b; margin-top:6px; font-style:italic;}
+  .scripture-chip{
+    display:inline-block; background:var(--chip-bg); color:#1d4ed8; border-radius:6px;
+    padding:2px 8px; font-size:.85rem; font-weight:600; cursor:pointer; border:1px solid #bfdbfe;
+    margin:0 2px;
+  }
+  .scripture-chip:hover{background:#dbeafe;}
+  .hwya{margin:22px 20px 0;}
+  .hwya-head{font-weight:700; color:var(--navy); font-size:1.1rem; margin-bottom:8px;}
+  footer.bottom{margin:26px 20px 0; text-align:center; font-size:.85rem; color:#64748b;}
+  footer.bottom a{color:var(--navy);}
+  /* Sidebar */
+  #sidebarOverlay{
+    display:none; position:fixed; inset:0; background:rgba(15,23,42,.4); z-index:40;
+  }
+  #sidebar{
+    position:fixed; top:0; right:-100%; width:340px; max-width:100%; height:100%;
+    background:#fff; z-index:50; box-shadow:-4px 0 16px rgba(0,0,0,.2);
+    transition:right .25s ease; overflow-y:auto; padding:20px;
+  }
+  #sidebar.open{right:0;}
+  #sidebar .sb-close{
+    background:none; border:none; font-size:1.4rem; float:right; cursor:pointer; color:#64748b;
+  }
+  #sidebar h2{font-size:1.1rem; color:var(--navy); margin:6px 0 10px; clear:both;}
+  #sidebar .sb-text{font-size:.95rem; font-style:italic; color:#1e293b; line-height:1.6; margin-bottom:14px;}
+  #sidebar .sb-link{
+    display:inline-block; margin-top:8px; background:var(--navy); color:#fff; text-decoration:none;
+    padding:8px 14px; border-radius:6px; font-size:.85rem; font-weight:600;
+  }
+  @media (max-width:480px){
+    #sidebar{width:100%;}
+    header.top h1{font-size:1.25rem;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <h1>JW Meeting Study Guide</h1>
+    <p class="subtitle">Watchtower Study</p>
+    <span class="date-badge">Sunday, July 12, 2026</span>
+  </header>
+
+  <div class="controls">
+    <button id="expandAllBtn" onclick="toggleAll()">Expand All</button>
+  </div>
+
+  <div class="banner song">
+    <div class="label">Opening Song</div>
+    Song 98 — The Scriptures—Inspired of God
+  </div>
+
+  <div class="banner focus">
+    <div class="label">Focus</div>
+    To explain what principles are and how we can identify them when we read the Bible.
+  </div>
+
+  <div class="theme-block">
+    <div class="label" style="color:#64748b; font-weight:700; text-transform:uppercase; font-size:.75rem; letter-spacing:.06em; margin-bottom:6px;">Theme Scripture</div>
+    <blockquote>"Present your bodies as . . . a sacred service with your power of reason."</blockquote>
+    <span class="scripture-chip" onclick="openSidebar('rom12-1')">Rom. 12:1</span>
+  </div>
+
+  <!-- ================= INTRO ================= -->
+  <div class="section-card">
+    <div class="section-head">Bible Principles—Why Are They Important?</div>
+    <div class="section-body">
+
+      <div class="q-card"><span class="qnum">1-2.</span> (a) Why can the Bible be called an ancient book? (b) Why is the Bible still relevant today?</div>
+      <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p><span class="sub-label">(a)</span> The Bible's writing began about 3,500 years ago and was completed nearly 2,000 years ago — yet "the word of God" found in it is still alive and powerful today (<span class="scripture-chip" onclick="openSidebar('heb4-12')">Heb. 4:12</span>; <span class="scripture-chip" onclick="openSidebar('2tim3-16')">2 Tim. 3:16, 17</span>).</p>
+        <p><span class="sub-label">(b)</span> Two reasons: first, the Bible's message comes from the "living God," the all-wise Creator (<span class="scripture-chip" onclick="openSidebar('1tim4-10')">1 Tim. 4:10</span>; <span class="scripture-chip" onclick="openSidebar('rom16-26')">Rom. 16:26, 27</span>). Second, the Bible reveals timeless principles that remain beneficial no matter the era or the challenges a person faces.</p>
+        <div class="prep-box"><span class="prep-title">💬 Comment you could share:</span> "What struck me is that millions of people say the Bible still helps them cope with modern life — even though it's thousands of years old. I think that's because it gives us principles, not just rules for one time and place."</div>
+        <div class="prep-box"><span class="prep-title">🙏 Getting to know Jehovah:</span> Jehovah didn't just hand down rules for one culture — he built his Word so it would speak to every generation. That shows how far ahead he thinks, and how much he cares about people who wouldn't even be born for thousands of years.</div>
+      </div>
+      <div class="para-block"><span class="pnum">1</span> THE Bible is an ancient book. Its writing was started some 3,500 years ago, and it was completed nearly 2,000 years ago. And yet "the word of God" found within its pages is alive and powerful today. Millions of people testify that the Bible has helped them to cope with life in this modern world.</div>
+      <div class="para-block"><span class="pnum">2</span> But how could such an old book still be relevant today? There are two basic reasons. First, the Bible's message comes from the "living God," the all-wise Creator. Second, the Bible is written in a way that reveals timeless principles. These principles remain beneficial no matter what era a person lives in or what challenges a person faces.</div>
+
+      <div class="q-card"><span class="qnum">3.</span> What questions will be answered in this article?</div>
+      <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p>The article answers: What are Bible principles? Why are they so important for us today? How can we identify principles when we read the Bible? It also shows how the teachings of Jesus highlight the value of principles.</p>
+        <div class="prep-box"><span class="prep-title">📌 Ministry connection:</span> Many people think of the Bible as a rulebook. Explaining that it's really full of timeless principles can open a good conversation about why it still matters today.</div>
+      </div>
+      <div class="para-block"><span class="pnum">3</span> What are Bible principles? Why are they so important for us today? How can we identify principles when we read the Bible? This article will answer these questions. We will also see how the teachings of Jesus highlight the value of principles.</div>
+    </div>
+  </div>
+
+  <!-- ================= SECTION: WHAT ARE BIBLE PRINCIPLES ================= -->
+  <div class="section-card">
+    <div class="section-head">What Are Bible Principles?</div>
+    <div class="section-body">
+
+      <div class="q-card"><span class="qnum">4.</span> What are Bible principles?</div>
+      <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p>Bible principles are basic truths on which God's laws are based. Sometimes a principle is clearly stated within the law itself (<span class="scripture-chip" onclick="openSidebar('matt22-37')">Matt. 22:37</span>). Principles are superior to specific laws — laws may be limited to a particular time or situation, but principles reflect Jehovah's thinking in a broader sense and are timeless (<span class="scripture-chip" onclick="openSidebar('ps119-111')">Ps. 119:111</span>; <span class="scripture-chip" onclick="openSidebar('isa40-8')">Isa. 40:8</span>). Laws may need to change, but principles never expire or become outdated.</p>
+        <div class="prep-box"><span class="prep-title">💬 Comment you could share:</span> "I like how the article puts it — a principle is 'the reason behind the law.' That helped me see that Jehovah isn't just giving commands; he's sharing his thinking with us."</div>
+      </div>
+      <div class="para-block"><span class="pnum">4</span> Bible principles are basic truths on which God's laws are based. At times, a principle may be clearly stated within the law. Principles are, however, superior to specific laws. Specific laws may be limited in application. They may be given for a particular time or situation. But Bible principles reflect Jehovah's thinking in a broader sense. Principles could be described as the reason behind the law. There is a valid reason behind every one of Jehovah's laws. But the principles on which they are based can be applied in a number of different circumstances and are timeless. Laws may need to change, but principles do not expire or become outdated.</div>
+
+      <div class="q-card"><span class="qnum">5.</span> How can we illustrate the difference between laws and principles?</div>
+      <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p>Think of a mother telling a small child, "Don't touch the stove." That's a law. But the principle behind it — don't touch something hot or you'll get hurt — applies to a clothing iron, a heater, or anything else that could cause injury, and it applies outside the home too. As the child grows and eventually uses the stove himself, the law changes, but the principle behind it remains the same.</p>
+        <div class="prep-box"><span class="prep-title">📌 Ministry connection:</span> This illustration is easy to use when explaining to a householder why Bible "rules" written thousands of years ago can still guide decisions today — the principle behind the rule never goes out of date.</div>
+      </div>
+      <div class="para-block"><span class="pnum">5</span> To help us better understand the difference between laws and principles, consider this illustration. A mother may say to a small child, 'Don't touch the stove.' That is a command or a law. But the principle, or thinking, behind that law is: Don't touch something that is hot; otherwise, you will get hurt. That principle is not just limited to a stove. It could be applied to a clothing iron, a heater, or any other hot item that could cause injury. That principle does not just apply in the family's home but applies elsewhere too. Of course, as the child grows older, he will probably use the stove. However, he will still need to be careful not to touch it in a way that would harm him. So the law may change, but the basic principle behind it remains.</div>
+      <figure class="wt-image">
+        <img src="https://wol.jw.org/en/wol/mp/r1/lp-e/w26/2026/258" alt="A mother and her son cooking together in the kitchen">
+        <figcaption>A mother warns her young son not to touch the hot stove; years later, she prepares a meal with him as he cooks on the stove. A law may change, but the basic principle behind it remains (paragraph 5).</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- ================= SECTION: WHY IMPORTANT ================= -->
+  <div class="section-card">
+    <div class="section-head">Why Are Bible Principles Important?</div>
+    <div class="section-body">
+
+      <div class="q-card"><span class="qnum">6.</span> (a) What does Jehovah provide for us in his Word? (b) How does Jehovah dignify us?</div>
+      <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p><span class="sub-label">(a)</span> Out of love, Jehovah gives us specific direction in the form of laws so we can avoid danger (<span class="scripture-chip" onclick="openSidebar('jas2-11')">Jas. 2:11</span>). He also helps us understand the thinking behind those laws, and by means of his Word he guides us in many areas of life not covered by specific laws.</p>
+        <p><span class="sub-label">(b)</span> By providing principles rather than an exhaustive rulebook, Jehovah dignifies us and allows us the freedom to make decisions that prove our love for him and his standards (<span class="scripture-chip" onclick="openSidebar('gal5-13')">Gal. 5:13</span>).</p>
+        <div class="prep-box"><span class="prep-title">🙏 Getting to know Jehovah:</span> Jehovah could have given us a rule for every possible situation, but instead he trusts us to reason from principles. That says something beautiful about how he views us — not as children who need to be micromanaged, but as loved ones capable of proving our devotion.</div>
+      </div>
+      <div class="para-block"><span class="pnum">6</span> Out of love for us, Jehovah gives us specific direction in the form of laws so that we can avoid danger. Additionally, he helps us to understand the principles, or the thinking, behind those laws. By means of his Word, he provides us with his guidance in many areas of life that may not be governed by specific laws. Bible principles help us to make good decisions in life and to do what is right. By providing these principles, Jehovah dignifies us and allows us the freedom to make decisions that prove our love for him and his standards.</div>
+
+      <div class="q-card"><span class="qnum">7.</span> How can we illustrate the value of Bible principles?</div>
+      <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p>Think of road signs along a highway. Some indicate laws with penalties (speed limits, stop signs). But other signs simply warn of possible dangers — a slippery road, animals crossing. An experienced driver uses good judgment and drives more cautiously when he sees these warning signs, adjusting for rain or snow. Similarly, Christians strictly avoid conduct specifically condemned in God's Word, but they also use good judgment to avoid thoughts or actions that could lead them to break God's laws.</p>
+        <div class="prep-box"><span class="prep-title">💬 Comment you could share:</span> "I liked the road-sign picture — some signs are hard rules, but others are just warnings that call for good judgment. That's exactly how Bible principles work in areas the Bible doesn't specifically legislate."</div>
+      </div>
+      <div class="para-block"><span class="pnum">7</span> To illustrate how Bible principles can help us, think of the road signs that drivers see along highways in some countries. Many of these signs inform us of laws that carry penalties for those who disregard them. These signs may specify the maximum speed limit or indicate when a driver must bring his vehicle to a stop. However, many other signs alert drivers to possible dangers. For example, these signs may warn that the road might be slippery or that animals might be crossing the road. An experienced driver uses good judgment and drives cautiously when he sees signs that alert him to dangers. For example, if it is raining or snowing, the driver will adjust his driving in these dangerous conditions. Similarly, while Christians strictly avoid any conduct that is specifically condemned in God's Word, they also avoid any thoughts or actions that could lead them to break God's laws. This calls for good judgment on their part.</div>
+      <figure class="wt-image">
+        <img src="https://wol.jw.org/en/wol/mp/r1/lp-e/w26/2026/260" alt="A car being driven on a winding mountainside road at night, headlights illuminating warning signs">
+        <figcaption>Many road signs represent warnings that alert drivers to possible dangers. Bible principles can help us in a similar way (paragraph 7).</figcaption>
+      </figure>
+
+      <div class="q-card"><span class="qnum">8.</span> As mentioned at Romans 12:1, 2, what can our search for Bible principles train us to do?</div>
+      <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p>Searching for Bible principles and living by them trains us to understand Jehovah's thinking on matters. When reading Bible accounts, we learn to look for practical lessons, asking why Jehovah included them and how we can benefit. In this way we learn to use our "power of reason" to serve Jehovah, proving to ourselves "the good and acceptable and perfect will of God."</p>
+        <blockquote class="scripture-quote" style="margin:8px 0; font-style:italic; border-left:3px solid var(--amber); padding-left:10px;">"Therefore, I appeal to you by the compassions of God, brothers, to present your bodies as a living sacrifice, holy and acceptable to God, a sacred service with your power of reason. And stop being molded by this system of things, but be transformed by making your mind over, so that you may prove to yourselves the good and acceptable and perfect will of God." <span class="scripture-chip" onclick="openSidebar('rom12-1-2')">Rom. 12:1, 2</span></blockquote>
+        <div class="prep-box"><span class="prep-title">🙏 Getting to know Jehovah:</span> Jehovah wants worship that engages our mind, not empty ritual. That tells me he values a genuine, reasoning relationship with each of us — not just outward compliance.</div>
+      </div>
+      <div class="para-block"><span class="pnum">8</span> However, there are other important benefits that come from searching for Bible principles and living by them. For example, we are trained to understand Jehovah's thinking on matters. When reading accounts in the Scriptures, we learn to look for practical lessons. We ask ourselves why Jehovah included these lessons in his written Word and how we can benefit from them. In this way, we learn how to use our "power of reason" to serve Jehovah. We prove to ourselves "the good and acceptable and perfect will of God." — Read Romans 12:1, 2.</div>
+
+      <div class="q-card"><span class="qnum">9.</span> What additional benefit do we gain from living by Bible principles? (Hebrews 5:13, 14)</div>
+      <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p>Learning to live by Bible principles helps us become mature Christians, and our relationship with Jehovah improves. Young children may need an extensive list of rules and may obey only out of fear of punishment. But Jehovah treats us as mature adults — he trusts us to make decisions in harmony with his will, and doing so brings great joy to his heart (<span class="scripture-chip" onclick="openSidebar('ps147-11')">Ps. 147:11</span>; <span class="scripture-chip" onclick="openSidebar('prov23-15')">Prov. 23:15, 26</span>; <span class="scripture-chip" onclick="openSidebar('prov27-11')">27:11</span>).</p>
+        <blockquote class="scripture-quote" style="margin:8px 0; font-style:italic; border-left:3px solid var(--amber); padding-left:10px;">"For everyone who continues to feed on milk is unacquainted with the word of righteousness, for he is a young child. But solid food belongs to mature people, to those who through use have their powers of discernment trained to distinguish both right and wrong." <span class="scripture-chip" onclick="openSidebar('heb5-13-14')">Heb. 5:13, 14</span></blockquote>
+        <div class="prep-box"><span class="prep-title">💬 Comment you could share:</span> "It really struck me that Jehovah doesn't just want obedience — he wants us to grow up spiritually to the point where we're applying principles ourselves, the way a mature adult would."</div>
+      </div>
+      <div class="para-block"><span class="pnum">9</span> Learning to live by Bible principles helps us to become mature Christians. When we live by Bible principles, our relationship with Jehovah improves. Young children may need an extensive list of laws, or rules, so that they will know how to act in various situations. They may obey these rules simply out of fear of punishment. But Jehovah treats us, not as young children, but as mature adults. He trusts us to make decisions that are in harmony with his will, and when we do so, this brings great joy to his heart. — Read Hebrews 5:13, 14.</div>
+    </div>
+  </div>
+
+  <!-- ================= SECTION: HOW IDENTIFY ================= -->
+  <div class="section-card">
+    <div class="section-head">How Can We Identify Bible Principles?</div>
+    <div class="section-body">
+
+      <div class="q-card"><span class="qnum">10.</span> How can we identify Bible principles?</div>
+      <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p>When we search the Bible for lessons, we find principles that help us understand how Jehovah thinks and feels about matters. We can also identify principles by looking for the reasons behind certain laws — but understanding God's thinking requires prayer and developing our own thinking ability (<span class="scripture-chip" onclick="openSidebar('prov2-10')">Prov. 2:10-12</span>). Helpful questions: 'Why did God give this law? If Jehovah does not approve of this conduct, how would he feel about similar conduct? What lesson do I learn, and how can I apply it?'</p>
+        <div class="prep-box"><span class="prep-title">📌 Ministry connection:</span> These three questions are a great tool to share with a Bible student who wants to move beyond memorizing rules to actually reasoning the way Jehovah does.</div>
+      </div>
+      <div class="para-block"><span class="pnum">10</span> When we search the Bible for lessons, we find principles that help us to understand how Jehovah thinks and feels about matters. We can also identify principles when we look for the reasons behind certain laws. The more we understand the reasons, the more we understand Jehovah. But in order to understand God's thinking, we must pray to him for help and we must develop our own thinking ability. We can ask ourselves such questions as: 'Why did God give this law? If Jehovah does not approve of this conduct, how would he feel about similar conduct? What lesson do I learn from this Bible account, and how can I apply it in my life?' Once we identify the reasons and the lessons behind the laws and the accounts in the Bible, we will be able to make good decisions in life — decisions that are in harmony with Jehovah's will.</div>
+
+      <div class="q-card"><span class="qnum">11.</span> In what way did Jesus show us how to identify Bible principles in his Sermon on the Mount?</div>
+      <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p>In the Sermon on the Mount, Jesus first stated the law, then revealed the thinking, or principle, behind it. We'll examine three examples: the laws against murder, adultery, and hating one's enemy — and the principles behind them.</p>
+      </div>
+      <div class="para-block"><span class="pnum">11</span> In his Sermon on the Mount, Jesus showed us how we can identify Bible principles. Let us examine three examples. In each case, Jesus first stated the law. Then he revealed the thinking, or the principle, behind that law. As we meditate on what Jesus revealed, we will see how these principles can be applied in our modern world. At the same time, we will discern the practical benefits of these life lessons.</div>
+      <figure class="wt-image">
+        <img src="https://wol.jw.org/en/wol/mp/r1/lp-e/w26/2026/262" alt="Jesus sitting under a tree, teaching a group of his disciples">
+        <figcaption>In his Sermon on the Mount, Jesus showed us how to identify the Bible principles behind God's laws (paragraph 11).</figcaption>
+      </figure>
+
+      <div class="q-card"><span class="qnum">12-13.</span> What is one principle behind the law at Matthew 5:21, 22, and how can it be applied today?</div>
+      <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p><span class="sub-label">(12)</span> "You must not murder." The principle: Jehovah does not want us to hate others — in action, word, or even thought. Jesus showed that a person who "continues wrathful with his brother" or verbally abuses him is "accountable," even without committing murder — because these attitudes are what lead to murder (<span class="scripture-chip" onclick="openSidebar('1john3-15')">1 John 3:15</span>).</p>
+        <blockquote class="scripture-quote" style="margin:8px 0; font-style:italic; border-left:3px solid var(--amber); padding-left:10px;">"'You heard that it was said to those of ancient times: "You must not murder, but whoever commits a murder will be accountable to the court of justice." However, I say to you that everyone who continues wrathful with his brother will be accountable to the court of justice; and whoever addresses his brother with an unspeakable word of contempt will be accountable to the Supreme Court; whereas whoever says, 'You despicable fool!' will be liable to the fiery Gehenna.'" <span class="scripture-chip" onclick="openSidebar('matt5-21-22')">Matt. 5:21, 22</span></blockquote>
+        <p><span class="sub-label">(13)</span> How to apply it: avoid becoming resentful or holding a grudge (<span class="scripture-chip" onclick="openSidebar('lev19-18')">Lev. 19:18</span>; <span class="scripture-chip" onclick="openSidebar('job36-13')">Job 36:13</span>), because such feelings can stir up hatred that leads to hurtful speech (<span class="scripture-chip" onclick="openSidebar('prov10-12')">Prov. 10:12</span>) — including gossip and slander that damage others' reputations (<span class="scripture-chip" onclick="openSidebar('prov20-19')">Prov. 20:19</span>; <span class="scripture-chip" onclick="openSidebar('prov25-23')">25:23</span>). Jesus' principle applies just as much to social media, texting, and online comments as to spoken words.</p>
+        <div class="prep-box"><span class="prep-title">💬 Comment you could share:</span> "What stood out to me is that Jesus traced 'you must not murder' all the way back to how we feel about a person in our heart. That's a much higher standard than just avoiding violence."</div>
+        <div class="prep-box"><span class="prep-title">📌 Ministry connection:</span> This is a good example to use when a householder says the Bible is just an old book of rules — Jesus shows the standard is really about the heart, which is timeless.</div>
+      </div>
+      <div class="para-block"><span class="pnum">12</span> Read Matthew 5:21, 22. "You must not murder." What is one principle behind this law? Jehovah does not want us to hate others — in action, word, or even thought. Jesus indicated that even though a person may not commit an act of murder, he could still violate the reason for that law if he hates his brother. If someone "continues wrathful with his brother" or verbally abuses him, the individual who is wrathful would still be "accountable." In fact, these are the very attitudes and actions that lead to murder.</div>
+      <div class="para-block"><span class="pnum">13</span> How can the principle found at Matthew 5:21, 22 be applied today? We should avoid becoming resentful or holding a grudge. Why? Because these feelings can stir up hatred in our heart, which may lead to hurtful speech or actions. This includes gossip and slander that can damage or ruin the reputation of others. So even before there were such things as social media, blogs, the Internet, or messaging apps, Jesus provided a principle that would alert mature Christians to the possible dangers when using these modern tools. In all situations, though, we should avoid hateful speech that could lead to what is often called character assassination.</div>
+      <figure class="wt-image">
+        <img src="https://wol.jw.org/en/wol/mp/r1/lp-e/w26/2026/264" alt="Two sisters gossip while another sister listens uncomfortably">
+        <figcaption>The Bible law states: "You must not murder." Two sisters gossip while another listens uncomfortably (paragraphs 12-13).</figcaption>
+      </figure>
+
+      <div class="q-card"><span class="qnum">14-15.</span> What is the principle behind the law at Matthew 5:27, 28, and how can it be applied today?</div>
+      <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p><span class="sub-label">(14)</span> "You must not commit adultery." The principle: Jehovah hates not only immorality but also thoughts that can lead to immoral conduct. A married man who keeps looking at another woman with passion has already sinned (<span class="scripture-chip" onclick="openSidebar('matt5-29-30')">Matt. 5:29, 30</span>). This principle applies to single Christians too.</p>
+        <blockquote class="scripture-quote" style="margin:8px 0; font-style:italic; border-left:3px solid var(--amber); padding-left:10px;">"'You heard that it was said: "You must not commit adultery." But I say to you that everyone who keeps on looking at a woman so as to have a passion for her has already committed adultery with her in his heart.'" <span class="scripture-chip" onclick="openSidebar('matt5-27-28')">Matt. 5:27, 28</span></blockquote>
+        <p><span class="sub-label">(15)</span> How to apply it: avoid dwelling on immoral desires (<span class="scripture-chip" onclick="openSidebar('2sam11-2')">2 Sam. 11:2-4</span>; <span class="scripture-chip" onclick="openSidebar('job31-1')">Job 31:1-3</span>) — this means avoiding all forms of pornography, including "soft porn," sexting, or virtual activities that mimic immorality. This principle helps a married person avoid dealing treacherously with a marriage mate (<span class="scripture-chip" onclick="openSidebar('mal2-15')">Mal. 2:15</span>) and helps all Christians avoid anything leading to sexual immorality (<span class="scripture-chip" onclick="openSidebar('prov5-3')">Prov. 5:3-14</span>).</p>
+        <div class="prep-box"><span class="prep-title">💬 Comment you could share:</span> "I appreciated that the article didn't let us off the hook by saying 'I'm only looking' — Jesus' words show that the heart attitude is what matters to Jehovah, whether it's an old photograph or something on a screen today."</div>
+        <div class="prep-box"><span class="prep-title">🙏 Getting to know Jehovah:</span> Jehovah cares about the inside of the cup, not just the outside — he's not satisfied with technical innocence, he wants a clean heart.</div>
+      </div>
+      <div class="para-block"><span class="pnum">14</span> Read Matthew 5:27, 28. "You must not commit adultery." What is the principle behind this law? Jehovah hates not only immorality but also thoughts that can lead to immoral conduct. Jesus explained that if a married man continues to look at a woman (other than his wife) in such a way as to have a passion for her, he has sinned. So immoral thoughts should be avoided at all costs, even if this requires intense effort on our part. This principle also applies to single Christians.</div>
+      <div class="para-block"><span class="pnum">15</span> How can the principle found at Matthew 5:27, 28 be applied today? We should avoid dwelling on immoral desires. Obviously, then, a mature Christian avoids all forms of pornography. He does not reason that he is only looking at immorality, so he is not doing anything wrong. He does not try to excuse such activity as simply looking at "soft porn," which some consider to be less offensive than more explicit forms of pornography. In Jesus' day, there were no electronic devices, movies, or photographs. Even so, Jesus gave us a principle that teaches us how Jehovah feels about the material that might be published on such modern devices. This helps us understand that Jehovah would be greatly displeased by such modern practices as sexting or engaging in virtual activities that mimic sexual immorality. Heeding this principle helps a married person to avoid dealing treacherously with his or her marriage mate. It also helps all Christians — married or single — to avoid anything that could lead to sexual immorality.</div>
+      <figure class="wt-image">
+        <img src="https://wol.jw.org/en/wol/mp/r1/lp-e/w26/2026/266" alt="A brother deletes a social media app from his phone">
+        <figcaption>The Bible law states: "You must not commit adultery." A brother deletes a social media app from his phone (paragraphs 14-15).</figcaption>
+      </figure>
+
+      <div class="q-card"><span class="qnum">16-17.</span> What is the principle behind the law at Matthew 5:43, 44, and what is the benefit of applying it?</div>
+      <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p><span class="sub-label">(16)</span> "You must love your neighbor." The principle: Jehovah wants us to view everyone as our neighbor and show them love — regardless of race or nationality (<span class="scripture-chip" onclick="openSidebar('matt5-45-48')">Matt. 5:45-48</span>). The Jews of Jesus' day had misapplied the law to justify hating enemies, but Jesus corrected that misunderstanding.</p>
+        <blockquote class="scripture-quote" style="margin:8px 0; font-style:italic; border-left:3px solid var(--amber); padding-left:10px;">"'You heard that it was said: "You must love your neighbor and hate your enemy." However, I say to you: Continue to love your enemies and to pray for those who persecute you, so that you may prove yourselves sons of your Father who is in the heavens.'" <span class="scripture-chip" onclick="openSidebar('matt5-43-44')">Matt. 5:43, 44</span></blockquote>
+        <p><span class="sub-label">(17)</span> Benefits: love of neighbor moves us to refuse involvement in this world's wars and conflicts (<span class="scripture-chip" onclick="openSidebar('isa2-4')">Isa. 2:4</span>; <span class="scripture-chip" onclick="openSidebar('mic4-3')">Mic. 4:3</span>); it helps us deal kindly with people of different backgrounds (<span class="scripture-chip" onclick="openSidebar('acts10-34')">Acts 10:34, 35</span>); and it helps us forgive those who have hurt us (<span class="scripture-chip" onclick="openSidebar('matt18-21')">Matt. 18:21, 22</span>; <span class="scripture-chip" onclick="openSidebar('mark11-25')">Mark 11:25</span>; <span class="scripture-chip" onclick="openSidebar('luke17-3')">Luke 17:3, 4</span>).</p>
+        <div class="prep-box"><span class="prep-title">📌 Ministry connection:</span> This principle is a wonderful talking point on neutrality and why Witnesses of all nationalities refuse to fight each other — it flows directly from this Sermon-on-the-Mount principle.</div>
+        <div class="prep-box"><span class="prep-title">💬 Comment you could share:</span> "I found it powerful that loving your neighbor isn't limited by nationality or background — Jesus makes clear our Father shows kindness to everyone, and he expects the same open-hearted love from us."</div>
+      </div>
+      <div class="para-block"><span class="pnum">16</span> Read Matthew 5:43, 44. "You must love your neighbor." What is the principle behind this law? Jehovah wants us to view all as our neighbor and show them love. Sadly, the Jews in Jesus' day had misapplied this instruction to mean that they could hate their enemies. But Jesus knew that this was not the intent of this law. He knew that his loving heavenly Father expects us to view everyone as our neighbor, regardless of race or nationality.</div>
+      <div class="para-block"><span class="pnum">17</span> How can we apply the principle found at Matthew 5:43, 44 today? Love of neighbor will move us to refuse to get involved in this world's wars and conflicts. It will help us to deal kindly with those who are from a different racial, national, or religious background. It will also help us to forgive others who have hurt us or have hurt those whom we love.</div>
+      <figure class="wt-image">
+        <img src="https://wol.jw.org/en/wol/mp/r1/lp-e/w26/2026/268" alt="A couple in the ministry show the Enjoy Life Forever brochure to a man of a different race in a market">
+        <figcaption>The Bible law states: "You must love your neighbor." A couple in the ministry show the "Enjoy Life Forever!" brochure to a man of a different race in a market (paragraphs 16-17).</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- ================= SECTION: BE DETERMINED ================= -->
+  <div class="section-card">
+    <div class="section-head">Be Determined to Live by Bible Principles</div>
+    <div class="section-body">
+      <div class="q-card"><span class="qnum">18.</span> (a) What should we be determined to do? (b) What will we discuss in the next article?</div>
+      <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p><span class="sub-label">(a)</span> We're grateful Jehovah treats us as adults, not small children. He wants us to apply Bible principles to the decisions we regularly make (<span class="scripture-chip" onclick="openSidebar('1cor14-20')">1 Cor. 14:20</span>). Let us be determined to "keep perceiving what the will of Jehovah is" (<span class="scripture-chip" onclick="openSidebar('eph5-17')">Eph. 5:17</span>). Love for Jehovah, not fear of punishment, should motivate our decisions.</p>
+        <p><span class="sub-label">(b)</span> The next article will discuss another gift that helps us in this endeavor: our conscience.</p>
+        <div class="prep-box"><span class="prep-title">🙏 Getting to know Jehovah:</span> Jehovah wants our obedience to flow from love, not fear. That tells me our relationship with him is meant to be a bond of trust and affection, not a transaction driven by anxiety.</div>
+      </div>
+      <div class="para-block"><span class="pnum">18</span> How grateful we are that Jehovah is willing to treat us as adults and not as small children! He wants us to apply Bible principles that will help us with the decisions we regularly make. As we make those decisions, let us be determined to "keep perceiving what the will of Jehovah is." Our love for Jehovah, not fear of punishment, will help us make decisions that are in harmony with his will. But there is another gift that will help us in this endeavor. It is our conscience. That is what we will discuss in the next article.</div>
+    </div>
+  </div>
+
+  <!-- ================= HOW WOULD YOU ANSWER ================= -->
+  <div class="hwya">
+    <div class="hwya-head">How Would You Answer?</div>
+    <div class="section-card" style="margin-top:0;">
+      <div class="section-body">
+
+        <div class="q-card">What is a Bible principle?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>A Bible principle is a basic truth on which God's laws are based — the reason or thinking behind the law, which reflects Jehovah's thinking in a broader sense and never expires or becomes outdated.</p>
+          <div class="prep-box"><span class="prep-title">💬 Personal comment:</span> "For me, thinking of a principle as 'the reason behind the law' finally made this concept click."</div>
+        </div>
+
+        <div class="q-card">How do principles differ from laws?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Laws may be limited to a particular time, place, or situation and can change. Principles, however, are timeless and can be applied in many different circumstances — like the "don't touch the stove" principle that outlives the specific rule a child is given.</p>
+          <div class="prep-box"><span class="prep-title">💬 Personal comment:</span> "The stove illustration really helped me see the difference — the rule changes as the child grows, but the underlying principle never does."</div>
+        </div>
+
+        <div class="q-card">What are some of the principles that Jesus taught in the Sermon on the Mount?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Jesus showed that behind "you must not murder" is the principle that Jehovah hates hatred itself, not only the act. Behind "you must not commit adultery" is the principle that Jehovah hates immoral thoughts, not only the act. And behind "you must love your neighbor" is the principle that Jehovah wants us to love everyone, without limiting "neighbor" to people like ourselves.</p>
+          <div class="prep-box"><span class="prep-title">💬 Personal comment:</span> "What ties all three together for me is that Jesus keeps pointing back to the heart — Jehovah always cares about what's going on inside us, not just our outward actions."</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="banner song" style="margin-top:22px;">
+    <div class="label">Closing Song</div>
+    Song 95 — The Light Gets Brighter
+  </div>
+
+  <footer class="bottom">
+    Source: <a href="https://wol.jw.org/en/wol/d/r1/lp-e/2026400" target="_blank" rel="noopener">The Watchtower (Study), May 2026, pp. 2-7 — wol.jw.org</a>
+  </footer>
+
+</div>
+
+<!-- Sidebar -->
+<div id="sidebarOverlay" onclick="closeSidebar()"></div>
+<div id="sidebar">
+  <button class="sb-close" onclick="closeSidebar()">×</button>
+  <h2 id="sb-ref"></h2>
+  <div class="sb-text" id="sb-text"></div>
+  <a id="sb-link" class="sb-link" href="#" target="_blank" rel="noopener">Open full article →</a>
+</div>
+
+<script>
+  var verses = {
+    'rom12-1': { ref:'Romans 12:1', text:'Therefore, I appeal to you by the compassions of God, brothers, to present your bodies as a living sacrifice, holy and acceptable to God, a sacred service with your power of reason.', link:'https://www.jw.org/en/library/bible/nwt/books/romans/12/#v45012001' },
+    'rom12-1-2': { ref:'Romans 12:1, 2', text:'Therefore, I appeal to you by the compassions of God, brothers, to present your bodies as a living sacrifice, holy and acceptable to God, a sacred service with your power of reason. And stop being molded by this system of things, but be transformed by making your mind over, so that you may prove to yourselves the good and acceptable and perfect will of God.', link:'https://www.jw.org/en/library/bible/nwt/books/romans/12/#v45012001' },
+    'heb4-12': { ref:'Hebrews 4:12', text:'For the word of God is alive and exerts power and is sharper than any two-edged sword and pierces even to the dividing of soul and spirit, and of joints from the marrow, and is able to discern thoughts and intentions of the heart.', link:'https://www.jw.org/en/library/bible/nwt/books/hebrews/4/#v58004012' },
+    '2tim3-16': { ref:'2 Timothy 3:16, 17', text:'All Scripture is inspired of God and beneficial for teaching, for reproving, for setting things straight, for disciplining in righteousness, so that the man of God may be fully competent, completely equipped for every good work.', link:'https://www.jw.org/en/library/bible/nwt/books/2-timothy/3/#v55003016' },
+    '1tim4-10': { ref:'1 Timothy 4:10', text:'This is why we are working hard and exerting ourselves, because we have rested our hope on a living God, who is a Savior of all sorts of men, especially of faithful ones.', link:'https://www.jw.org/en/library/bible/nwt/books/1-timothy/4/#v54004010' },
+    'rom16-26': { ref:'Romans 16:26, 27', text:'…but has now been made manifest and has been made known through the prophetic Scriptures among all the nations according to the command of the everlasting God to promote obedience by faith; to God, who alone is wise, be the glory through Jesus Christ forever. Amen.', link:'https://www.jw.org/en/library/bible/nwt/books/romans/16/#v45016026' },
+    'matt22-37': { ref:'Matthew 22:37', text:'He said to him: "\'You must love Jehovah your God with your whole heart and with your whole soul and with your whole mind.\'"', link:'https://www.jw.org/en/library/bible/nwt/books/matthew/22/#v40022037' },
+    'ps119-111': { ref:'Psalm 119:111', text:'I take your reminders as my permanent possession, for they are the joy of my heart.', link:'https://www.jw.org/en/library/bible/nwt/books/psalms/119/#v19119111' },
+    'isa40-8': { ref:'Isaiah 40:8', text:'The green grass dries up, the blossom withers, but the word of our God endures forever.', link:'https://www.jw.org/en/library/bible/nwt/books/isaiah/40/#v23040008' },
+    'jas2-11': { ref:'James 2:11', text:'For the one who said, "You must not commit adultery," also said, "You must not murder." If, now, you do not commit adultery but you do murder, you have become a transgressor of law.', link:'https://www.jw.org/en/library/bible/nwt/books/james/2/#v59002011' },
+    'gal5-13': { ref:'Galatians 5:13', text:'You were called to freedom, brothers; only do not use this freedom as an opportunity to pursue fleshly desires, but through love slave for one another.', link:'https://www.jw.org/en/library/bible/nwt/books/galatians/5/#v48005013' },
+    'heb5-13-14': { ref:'Hebrews 5:13, 14', text:'For everyone who continues to feed on milk is unacquainted with the word of righteousness, for he is a young child. But solid food belongs to mature people, to those who through use have their powers of discernment trained to distinguish both right and wrong.', link:'https://www.jw.org/en/library/bible/nwt/books/hebrews/5/#v58005013' },
+    'ps147-11': { ref:'Psalm 147:11', text:'Jehovah finds pleasure in those who fear him, in those waiting for his loyal love.', link:'https://www.jw.org/en/library/bible/nwt/books/psalms/147/#v19147011' },
+    'prov23-15': { ref:'Proverbs 23:15, 26', text:'My son, if your heart becomes wise, then my own heart will rejoice. … My son, do give your heart to me, and may your eyes take pleasure in my ways.', link:'https://www.jw.org/en/library/bible/nwt/books/proverbs/23/#v20023015' },
+    'prov27-11': { ref:'Proverbs 27:11', text:'Be wise, my son, and make my heart rejoice, so that I can make a reply to him who taunts me.', link:'https://www.jw.org/en/library/bible/nwt/books/proverbs/27/#v20027011' },
+    'prov2-10': { ref:'Proverbs 2:10-12', text:'When wisdom enters your heart and knowledge becomes pleasant to your soul, thinking ability will keep watch over you, and discernment will safeguard you, to save you from the bad course, from the man speaking perverse things.', link:'https://www.jw.org/en/library/bible/nwt/books/proverbs/2/#v20002010' },
+    '1john3-15': { ref:'1 John 3:15', text:'Everyone who hates his brother is a murderer, and you know that no murderer has everlasting life remaining in him.', link:'https://www.jw.org/en/library/bible/nwt/books/1-john/3/#v62003015' },
+    'lev19-18': { ref:'Leviticus 19:18', text:'"You must not take vengeance nor hold a grudge against the sons of your people, and you must love your fellow man as yourself. I am Jehovah.', link:'https://www.jw.org/en/library/bible/nwt/books/leviticus/19/#v03019018' },
+    'job36-13': { ref:'Job 36:13', text:'The godless at heart will harbor resentment. They do not cry for help even when he binds them.', link:'https://www.jw.org/en/library/bible/nwt/books/job/36/#v18036013' },
+    'prov10-12': { ref:'Proverbs 10:12', text:'Hatred is what stirs up contentions, but love covers over all transgressions.', link:'https://www.jw.org/en/library/bible/nwt/books/proverbs/10/#v20010012' },
+    'prov20-19': { ref:'Proverbs 20:19', text:'A slanderer goes about revealing confidential talk; do not associate with one who loves to gossip.', link:'https://www.jw.org/en/library/bible/nwt/books/proverbs/20/#v20020019' },
+    'prov25-23': { ref:'Proverbs 25:23', text:'The north wind brings a downpour, and a gossiping tongue brings an angry face.', link:'https://www.jw.org/en/library/bible/nwt/books/proverbs/25/#v20025023' },
+    'matt5-21-22': { ref:'Matthew 5:21, 22', text:'"You heard that it was said to those of ancient times: \'You must not murder, but whoever commits a murder will be accountable to the court of justice.\' However, I say to you that everyone who continues wrathful with his brother will be accountable to the court of justice; and whoever addresses his brother with an unspeakable word of contempt will be accountable to the Supreme Court; whereas whoever says, \'You despicable fool!\' will be liable to the fiery Gehenna.', link:'https://www.jw.org/en/library/bible/nwt/books/matthew/5/#v40005021' },
+    'matt5-27-28': { ref:'Matthew 5:27, 28', text:'"You heard that it was said: \'You must not commit adultery.\' But I say to you that everyone who keeps on looking at a woman so as to have a passion for her has already committed adultery with her in his heart.', link:'https://www.jw.org/en/library/bible/nwt/books/matthew/5/#v40005027' },
+    'matt5-29-30': { ref:'Matthew 5:29, 30', text:'If, now, your right eye is making you stumble, tear it out and throw it away from you. For it is better for you to lose one of your members than for your whole body to be pitched into Gehenna. Also, if your right hand is making you stumble, cut it off and throw it away from you. For it is better for you to lose one of your members than for your whole body to land in Gehenna.', link:'https://www.jw.org/en/library/bible/nwt/books/matthew/5/#v40005029' },
+    '2sam11-2': { ref:'2 Samuel 11:2-4', text:'One evening David got up from his bed and walked around on the rooftop of the king\'s house. From the rooftop he saw a woman bathing, and the woman was very beautiful. David sent someone to inquire about the woman, and he reported: "Is this not Bath-sheba the daughter of Eliam and the wife of Uriah the Hittite?" Then David sent messengers to bring her. So she came in to him, and he lay down with her. (This happened while she was purifying herself from her uncleanness.) Afterward, she returned to her house.', link:'https://www.jw.org/en/library/bible/nwt/books/2-samuel/11/#v10011002' },
+    'job31-1': { ref:'Job 31:1-3', text:'"I have made a covenant with my eyes. So how could I show improper attention to a virgin? What, then, would be my share from God above, what inheritance from the Almighty on high? Does not disaster await the wrongdoer and calamity those doing what is harmful?', link:'https://www.jw.org/en/library/bible/nwt/books/job/31/#v18031001' },
+    'mal2-15': { ref:'Malachi 2:15', text:'But there was one who did not do it, for he had what remained of the spirit. And what was that one seeking? The offspring of God. So guard yourselves respecting your spirit, and do not deal treacherously with the wife of your youth.', link:'https://www.jw.org/en/library/bible/nwt/books/malachi/2/#v39002015' },
+    'prov5-3': { ref:'Proverbs 5:3-14', text:'For the lips of a wayward woman drip like a honeycomb, and her mouth is smoother than oil. But in the end she is as bitter as wormwood and as sharp as a two-edged sword. Her feet descend into death. Her steps lead straight to the Grave. She gives no thought to the path of life. Her course wanders, but she does not know where. Now, my sons, listen to me and do not turn away from what I am saying. Stay far away from her; do not go near the entrance of her house, so that you may not give your dignity to others nor reap years of what is cruel; so that strangers may not drain your resources and what you labored for go to the house of a foreigner. Otherwise, you will groan at the end of your life when your flesh and body waste away and you say: "How I hated discipline! How my heart despised reproof! I did not listen to the voice of my instructors or pay attention to my teachers. I have come to the brink of complete ruin in the midst of the entire congregation."', link:'https://www.jw.org/en/library/bible/nwt/books/proverbs/5/#v20005003' },
+    'matt5-43-44': { ref:'Matthew 5:43, 44', text:'"You heard that it was said: \'You must love your neighbor and hate your enemy.\' However, I say to you: Continue to love your enemies and to pray for those who persecute you,', link:'https://www.jw.org/en/library/bible/nwt/books/matthew/5/#v40005043' },
+    'matt5-45-48': { ref:'Matthew 5:45-48', text:'…so that you may prove yourselves sons of your Father who is in the heavens, since he makes his sun rise on both the wicked and the good and makes it rain on both the righteous and the unrighteous. For if you love those loving you, what reward do you have? Are not also the tax collectors doing the same thing? And if you greet your brothers only, what extraordinary thing are you doing? Are not also the people of the nations doing the same thing? You must accordingly be perfect, as your heavenly Father is perfect.', link:'https://www.jw.org/en/library/bible/nwt/books/matthew/5/#v40005045' },
+    'isa2-4': { ref:'Isaiah 2:4', text:'He will render judgment among the nations and set matters straight respecting many peoples. They will beat their swords into plowshares and their spears into pruning shears. Nation will not lift up sword against nation, nor will they learn war anymore.', link:'https://www.jw.org/en/library/bible/nwt/books/isaiah/2/#v23002004' },
+    'mic4-3': { ref:'Micah 4:3', text:'He will render judgment among many peoples and set matters straight respecting mighty nations far away. They will beat their swords into plowshares and their spears into pruning shears. Nation will not lift up sword against nation, nor will they learn war anymore.', link:'https://www.jw.org/en/library/bible/nwt/books/micah/4/#v33004003' },
+    'acts10-34': { ref:'Acts 10:34, 35', text:'At this Peter began to speak, and he said: "Now I truly understand that God is not partial, but in every nation the man who fears him and does what is right is acceptable to him."', link:'https://www.jw.org/en/library/bible/nwt/books/acts/10/#v44010034' },
+    'matt18-21': { ref:'Matthew 18:21, 22', text:'Then Peter came and said to him: "Lord, how many times is my brother to sin against me and am I to forgive him? Up to seven times?" Jesus said to him: "I say to you, not up to seven times, but up to 77 times.', link:'https://www.jw.org/en/library/bible/nwt/books/matthew/18/#v40018021' },
+    'mark11-25': { ref:'Mark 11:25', text:'And when you stand praying, forgive whatever you have against anyone, so that your Father who is in the heavens may also forgive you your trespasses.', link:'https://www.jw.org/en/library/bible/nwt/books/mark/11/#v41011025' },
+    'luke17-3': { ref:'Luke 17:3, 4', text:'Pay attention to yourselves. If your brother commits a sin, rebuke him, and if he repents, forgive him. Even if he sins seven times a day against you and he comes back to you seven times, saying, \'I repent,\' you must forgive him."', link:'https://www.jw.org/en/library/bible/nwt/books/luke/17/#v42017003' },
+    '1cor14-20': { ref:'1 Corinthians 14:20', text:'Brothers, do not become young children in your understanding, but be young children as to badness; and become full-grown in your understanding.', link:'https://www.jw.org/en/library/bible/nwt/books/1-corinthians/14/#v46014020' },
+    'eph5-17': { ref:'Ephesians 5:17', text:'On this account stop being unreasonable, but keep perceiving what the will of Jehovah is.', link:'https://www.jw.org/en/library/bible/nwt/books/ephesians/5/#v49005017' }
+  };
+
+  function openSidebar(key){
+    var v = verses[key];
+    if(!v) return;
+    document.getElementById('sb-ref').textContent = v.ref;
+    document.getElementById('sb-text').textContent = '"' + v.text + '"';
+    document.getElementById('sb-link').href = v.link;
+    document.getElementById('sidebar').classList.add('open');
+    document.getElementById('sidebarOverlay').style.display = 'block';
+  }
+  function closeSidebar(){
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('sidebarOverlay').style.display = 'none';
+  }
+  function toggleAnswer(btn){
+    var box = btn.nextElementSibling;
+    box.classList.toggle('open');
+    btn.textContent = box.classList.contains('open') ? '▾ Hide comment' : '▸ Show comment';
+  }
+  var allExpanded = false;
+  function toggleAll(){
+    allExpanded = !allExpanded;
+    var boxes = document.querySelectorAll('.answer-box');
+    var btns = document.querySelectorAll('.toggle-btn');
+    boxes.forEach(function(b){ if(allExpanded){ b.classList.add('open'); } else { b.classList.remove('open'); } });
+    btns.forEach(function(b){ b.textContent = allExpanded ? '▾ Hide comment' : '▸ Show comment'; });
+    document.getElementById('expandAllBtn').textContent = allExpanded ? 'Collapse All' : 'Expand All';
+  }
+</script>
+</body>
+</html>
