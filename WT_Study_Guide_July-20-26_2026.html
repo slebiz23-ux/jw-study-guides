@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JW Meeting Study Guide — July 20-26, 2026</title>
+<style>
+  :root{
+    --navy:#1a365d;
+    --red:#b91c1c;
+    --amber:#f59e0b;
+    --amber-bg:#fffbeb;
+    --para-bg:#f8fafc;
+    --para-border:#e2e8f0;
+    --chip-bg:#eff6ff;
+    --page-bg:#f0f4f8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:0;
+    background:var(--page-bg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:#1e293b;
+    line-height:1.5;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:0 0 60px 0;}
+  header.top{
+    background:#fff;
+    padding:22px 20px 18px 20px;
+    border-bottom:1px solid #dbe3ee;
+    text-align:center;
+  }
+  header.top h1{margin:0;font-size:1.5rem;color:var(--navy);}
+  header.top p.subtitle{margin:4px 0 12px 0;color:#64748b;font-size:0.95rem;}
+  .date-badge{
+    display:inline-block;background:var(--navy);color:#fff;
+    padding:6px 16px;border-radius:20px;font-size:0.9rem;font-weight:600;
+    letter-spacing:0.3px;
+  }
+  .expand-all-wrap{text-align:center;margin:16px 0 8px 0;}
+  #expandAllBtn{
+    background:#fff;border:1.5px solid var(--navy);color:var(--navy);
+    padding:9px 18px;border-radius:8px;font-size:0.9rem;font-weight:600;
+    cursor:pointer;
+  }
+  #expandAllBtn:hover{background:var(--navy);color:#fff;}
+  .banner{margin:18px 16px;border-radius:10px;padding:16px 18px;}
+  .song-banner{
+    background:#eef2ff;border-left:4px solid #4338ca;color:#3730a3;
+    font-size:0.95rem;
+  }
+  .song-banner b{color:#312e81;}
+  .focus-banner{background:var(--navy);color:#fff;}
+  .focus-banner .label{font-size:0.75rem;letter-spacing:1.5px;opacity:0.8;text-transform:uppercase;margin-bottom:6px;}
+  .focus-banner p{margin:0;font-size:1.05rem;line-height:1.5;}
+  .theme-verse{
+    margin:16px 16px 24px 16px;
+    padding:18px 20px;
+    background:#fff;
+    border-left:4px solid var(--navy);
+    border-radius:8px;
+    font-style:italic;
+    font-size:1.1rem;
+    color:#1e293b;
+  }
+  .theme-verse .chip{margin-top:10px;}
+  .section-card{
+    margin:0 16px 18px 16px;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 1px 3px rgba(0,0,0,0.06);
+  }
+  .section-head{
+    background:var(--navy);color:#fff;
+    padding:14px 18px;
+    font-weight:700;
+    font-size:1.05rem;
+    cursor:pointer;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .section-head .arrow{transition:transform 0.2s;}
+  .section-head.open .arrow{transform:rotate(90deg);}
+  .section-body{display:none;padding:16px 18px 20px 18px;}
+  .section-body.open{display:block;}
+  .qa-unit{margin-bottom:22px;padding-bottom:18px;border-bottom:1px dashed #e2e8f0;}
+  .qa-unit:last-child{border-bottom:none;}
+  .question-card{
+    background:#fff;border-left:4px solid var(--red);
+    padding:12px 14px;border-radius:6px;font-weight:700;
+    font-size:1rem;color:#1e1e1e;margin-bottom:8px;
+    box-shadow:0 1px 2px rgba(0,0,0,0.04);
+  }
+  .question-card .qnum{color:var(--red);margin-right:6px;}
+  .show-comment-btn{
+    background:none;border:none;color:var(--amber);
+    font-weight:700;cursor:pointer;font-size:0.9rem;
+    padding:6px 0;margin-bottom:4px;
+  }
+  .answer-box{
+    display:none;
+    background:var(--amber-bg);
+    border-left:3px solid var(--amber);
+    border-radius:6px;
+    padding:14px 16px;
+    margin-bottom:10px;
+    font-size:0.95rem;
+  }
+  .answer-box.open{display:block;}
+  .answer-box p{margin:0 0 10px 0;}
+  .answer-box .sub-part{margin:8px 0;padding-left:10px;border-left:2px solid #f2d49b;}
+  .prep-box{
+    background:#fff;border:1px solid #f0e0b8;border-radius:6px;
+    padding:9px 12px;margin-top:8px;font-size:0.9rem;
+  }
+  .prep-box b{display:block;margin-bottom:2px;}
+  .para-block{
+    background:var(--para-bg);
+    border-left:3px solid var(--para-border);
+    border-radius:8px;
+    padding:14px 16px;
+    margin-bottom:10px;
+    line-height:1.75;
+    font-size:0.95rem;
+    color:#334155;
+  }
+  .para-block .pnum{font-weight:700;color:var(--navy);margin-right:4px;}
+  .para-block + .para-block{margin-top:-4px;}
+  figure.study-img{margin:10px 0 14px 0;text-align:center;}
+  figure.study-img img{max-width:100%;border-radius:8px;display:block;margin:0 auto;}
+  figure.study-img figcaption{font-size:0.82rem;color:#64748b;margin-top:6px;font-style:italic;}
+  .app-note{font-size:0.85rem;color:#475569;margin-top:6px;background:#f1f5f9;padding:8px 10px;border-radius:6px;}
+  .chip{
+    display:inline-block;background:var(--chip-bg);color:#1d4ed8;
+    padding:3px 10px;border-radius:14px;font-size:0.82rem;font-weight:600;
+    cursor:pointer;border:1px solid #dbeafe;margin:2px 3px 2px 0;
+  }
+  .chip:hover{background:#dbeafe;}
+  .link-chip{
+    display:inline-block;color:#1d4ed8;font-size:0.85rem;font-weight:600;
+    cursor:pointer;text-decoration:underline;margin:2px 0;
+  }
+  .review-section{margin:24px 16px;}
+  .review-section h2{color:var(--navy);font-size:1.2rem;border-bottom:2px solid var(--navy);padding-bottom:8px;}
+  .footnotes{margin:24px 16px;padding:14px 16px;background:#fff;border-radius:8px;font-size:0.82rem;color:#64748b;}
+  .footnotes p{margin:0 0 8px 0;}
+  footer.src{text-align:center;margin:26px 16px 10px 16px;font-size:0.85rem;color:#64748b;}
+  footer.src a{color:var(--navy);}
+
+  /* Sidebar */
+  #overlay{
+    position:fixed;inset:0;background:rgba(15,23,42,0.35);
+    display:none;z-index:40;
+  }
+  #overlay.open{display:block;}
+  #sidebar{
+    position:fixed;top:0;right:-360px;width:340px;max-width:90vw;height:100%;
+    background:#fff;box-shadow:-2px 0 12px rgba(0,0,0,0.15);
+    z-index:50;transition:right 0.25s ease;
+    display:flex;flex-direction:column;
+  }
+  #sidebar.open{right:0;}
+  #sidebar .sb-head{
+    background:var(--navy);color:#fff;padding:16px 18px;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  #sidebar .sb-head h3{margin:0;font-size:1rem;}
+  #sidebar .sb-close{background:none;border:none;color:#fff;font-size:1.3rem;cursor:pointer;line-height:1;}
+  #sidebar .sb-body{padding:18px;overflow-y:auto;flex:1;font-size:0.92rem;}
+  #sidebar .sb-body blockquote{
+    font-style:italic;background:var(--amber-bg);border-left:3px solid var(--amber);
+    padding:10px 12px;border-radius:6px;margin:0 0 14px 0;
+  }
+  #sidebar .sb-full-btn{
+    display:inline-block;margin-top:10px;background:var(--navy);color:#fff;
+    padding:8px 14px;border-radius:6px;font-size:0.85rem;text-decoration:none;font-weight:600;
+  }
+  #sidebar .sb-refs{margin-top:16px;padding-top:12px;border-top:1px solid #e2e8f0;}
+  #sidebar .sb-refs h4{margin:0 0 6px 0;font-size:0.85rem;color:var(--navy);text-transform:uppercase;letter-spacing:0.5px;}
+  #sidebar .sb-refs ul{margin:0;padding-left:18px;}
+  #sidebar .sb-refs li{margin-bottom:4px;}
+  @media (max-width:480px){
+    #sidebar{width:100%;right:-100%;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <h1>JW Meeting Study Guide</h1>
+    <p class="subtitle">Watchtower Study</p>
+    <span class="date-badge">Sunday, July 26, 2026</span>
+  </header>
+
+  <div class="expand-all-wrap">
+    <button id="expandAllBtn" onclick="toggleExpandAll()">Expand All Sections</button>
+  </div>
+
+  <div class="banner song-banner">
+    🎵 <b>Opening Song:</b> Song 133 — "Worship Jehovah During Youth"
+  </div>
+
+  <div class="banner focus-banner">
+    <div class="label">Focus</div>
+    <p>Factors and Bible principles to consider when deciding whether to obtain additional education.</p>
+  </div>
+
+  <div class="theme-verse">
+    "The shrewd one ponders each step."
+    <div class="chip" onclick="openSidebar('Prov. 14:15')">Proverbs 14:15</div>
+  </div>
+
+  <!-- SECTION 1: INTRODUCTION -->
+  <div class="section-card">
+    <div class="section-head" onclick="toggleSection(this)">
+      <span>Introduction — What Decisions Do Young People Face?</span>
+      <span class="arrow">▸</span>
+    </div>
+    <div class="section-body">
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">1-2.</span> (a) What decisions do young people face? (b) What is meant by the term "additional education"?</div>
+        <button class="show-comment-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <div class="sub-part"><b>(a)</b> Young people are often asked what kind of work they'd like to do when they grow up. While full-time service is the best "career" a Christian can choose, everyone still needs to support themselves financially, so many young ones wonder whether they should pursue additional education, and if so, what type.</div>
+          <div class="sub-part"><b>(b)</b> "Additional education" refers to <i>any</i> secular education or training beyond the basic education provided by the government — including universities, apprenticeships, trade schools, technical schools, vocational training, short courses, and continuing education.</div>
+          <div class="prep-box">
+            <b>💬 Comment you could share:</b> "I found it interesting that this article doesn't just tell us what to decide — it gives us principles so we can think it through for ourselves, whether we're the one facing the decision or a parent guiding a child."
+          </div>
+          <div class="prep-box">
+            <b>📌 Ministry connection:</b> This is a great conversation-starter with young people or parents in the territory who are wrestling with career and education choices for their family.
+          </div>
+          <div class="prep-box">
+            <b>🙏 Getting to know Jehovah:</b> Jehovah cares about the practical, everyday decisions we face — not just what we'd call "spiritual" ones. He wants to help guide our whole life, including our education and career.
+          </div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">1</span> "WHAT type of work would you like to do when you grow up?" If you are young, you have likely been asked this question many times. The best career that you could choose is a career in full-time service. However, you will also need to support yourself financially.
+          <span class="chip" onclick="openSidebar('2 Thess. 3:10')">2 Thess. 3:10</span>
+          No doubt, you have thought about what secular work you could do in the future.
+        </div>
+        <div class="para-block">
+          <span class="pnum">2</span> To find employment, some young people — usually under parental guidance — choose to get additional education after completing the required schooling where they live. Maybe you have wondered if you should get additional education. If so, what type? This article will discuss Bible principles that can help you think wisely about your education. Wise thinking leads to wise decisions. Although this article is primarily addressed to young people, it can help any Christian who is considering additional education. The principles can also help parents guide their children.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 2: SHOULD YOU OBTAIN ADDITIONAL EDUCATION? -->
+  <div class="section-card">
+    <div class="section-head" onclick="toggleSection(this)">
+      <span>Should You Obtain Additional Education?</span>
+      <span class="arrow">▸</span>
+    </div>
+    <div class="section-body">
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">3.</span> Why might some Christians consider obtaining additional education?</div>
+        <button class="show-comment-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>In some places a person can earn an adequate living without further education. In other places, additional education may help someone find employment that pays better or has better hours — which could free up more time for preaching or other theocratic activities. But additional education also requires sacrifices and presents real challenges.</p>
+          <div class="prep-box"><b>💬 Comment you could share:</b> "What struck me was that this isn't a one-size-fits-all answer — it really depends on where you live and what opportunities are realistically available."</div>
+          <div class="prep-box"><b>📌 Ministry connection:</b> Helpful when talking with someone discouraged about job prospects — showing that Jehovah's organization doesn't hand down a single rule, but principles that respect each person's circumstances.</div>
+          <div class="prep-box"><b>🙏 Getting to know Jehovah:</b> Jehovah doesn't micromanage every detail of our lives; he trusts us to reason on principles. That shows the kind of respect he has for our ability to make good decisions.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">3</span> In some places, a person can earn an adequate living without further education. In other places, additional education may help someone find employment that pays better or has better hours. For a Christian, this could allow him to spend more time in the preaching work or in other theocratic activities. Yet, additional education requires sacrifices and can present a Christian with certain challenges.
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">4.</span> Who should decide if a Christian will obtain additional education?</div>
+        <button class="show-comment-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>The Bible says that each person must "carry his own load of responsibility"
+            <span class="chip" onclick="openSidebar('Gal. 6:5')">Gal. 6:5</span>.
+            So each adult Christian must make his or her own decision about whether to obtain additional education. Parents are responsible for decisions regarding their young child's education
+            <span class="chip" onclick="openSidebar('Eph. 6:1')">Eph. 6:1</span>,
+            and their guidance can prepare their child to make wise decisions about education once he is an adult
+            <span class="chip" onclick="openSidebar('Prov. 22:6')">Prov. 22:6</span>.
+          </p>
+          <div class="prep-box"><b>💬 Comment you could share:</b> "I found it interesting that this decision is placed squarely on the individual — not on the elders, not on the branch, but on each Christian personally."</div>
+          <div class="prep-box"><b>📌 Ministry connection:</b> Useful with parents who ask "what does your religion say about college?" — you can explain there's no blanket rule, just personal responsibility guided by Bible principles.</div>
+          <div class="prep-box"><b>🙏 Getting to know Jehovah:</b> Jehovah gives us the dignity of carrying our own load — he's a God who builds our decision-making ability rather than dictating every choice.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">4</span> The Bible says that each person must "carry his own load of responsibility."
+          <span class="chip" onclick="openSidebar('Gal. 6:5')">Gal. 6:5</span>, see study note.
+          Thus, each adult Christian must make his or her own decision about whether to obtain additional education. Parents are also responsible for decisions regarding their young child's education.
+          <span class="chip" onclick="openSidebar('Eph. 6:1')">Eph. 6:1</span>
+          And their guidance can prepare their child to make wise decisions about education once he is an adult. —
+          <span class="chip" onclick="openSidebar('Prov. 22:6')">Prov. 22:6</span>
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">5.</span> When should a person begin thinking about additional education, and why? (See also picture.)</div>
+        <button class="show-comment-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Young people often need to decide before finishing their required schooling, so it's wise to discuss the topic with parents well before the decision point — giving time to research options together. But a decision isn't always necessary before finishing school
+            <span class="chip" onclick="openSidebar('Prov. 21:5')">Prov. 21:5</span>.
+            Some have chosen to finish school, find work, and start pioneering while they determine whether to obtain additional education.
+          </p>
+          <div class="prep-box"><b>💬 Comment you could share:</b> "What struck me was that there's no pressure to decide right away — some pioneer for a while first and figure it out as they go."</div>
+          <div class="prep-box"><b>📌 Ministry connection:</b> Great encouragement for young publishers who feel rushed to decide their whole future immediately after school.</div>
+          <div class="prep-box"><b>🙏 Getting to know Jehovah:</b> Jehovah's timing isn't rigid — he values careful, unhurried planning over hasty decisions.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">5</span> Young people often need to make a decision about whether they will pursue additional education before they finish their required schooling. Of course, it is wise for a young person to discuss this topic with his parents well before he has to decide. This will give them time to work together, researching different options. They may be able to choose subjects at school that will prepare him for his future education or employment. Do they have to make a decision before the young person finishes his required schooling? Not necessarily.
+          <span class="chip" onclick="openSidebar('Prov. 21:5')">Prov. 21:5</span>
+          Some young ones have chosen to finish school, find work, and start pioneering while they determine whether to obtain additional education. Even later in life, a person may consider such a decision.
+        </div>
+        <figure class="study-img">
+          <img src="https://wol.jw.org/en/wol/mp/r1/lp-e/w26/2026/280" alt="A teenage sister and her parents discussing her options for additional education, consulting school brochures, a JW Broadcasting video, and the Bible.">
+          <figcaption>Christian parents help their child to make wise decisions about additional education (See paragraph 5)</figcaption>
+        </figure>
+        <div class="app-note">Application: Involving parents early — and using resources like JW Broadcasting and the Bible alongside school brochures — keeps the decision spiritually grounded from the very start.</div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">6.</span> What can help someone to make a wise decision regarding additional education?</div>
+        <button class="show-comment-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Be sure to pray about the matter
+            <span class="chip" onclick="openSidebar('Jas. 1:5')">Jas. 1:5</span>.
+            Furthermore, take two steps: first, honestly analyze your motives
+            <span class="chip" onclick="openSidebar('Ps. 26:2')">Ps. 26:2</span>;
+            second, carefully analyze the education you are considering
+            <span class="chip" onclick="openSidebar('Prov. 14:15')">Prov. 14:15</span>.
+          </p>
+          <div class="prep-box"><b>💬 Comment you could share:</b> "I found it interesting that prayer comes before all the practical research — it sets the whole decision on the right foundation."</div>
+          <div class="prep-box"><b>📌 Ministry connection:</b> A simple two-step process (motives, then the education itself) is easy to share with someone feeling overwhelmed by a big decision.</div>
+          <div class="prep-box"><b>🙏 Getting to know Jehovah:</b> Jehovah, who "gives generously... and without reproaching" (Jas. 1:5), welcomes our prayers even about "ordinary" life decisions.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">6</span> What can help you to make a wise decision regarding additional education? Be sure to pray about the matter.
+          <span class="chip" onclick="openSidebar('Jas. 1:5')">Jas. 1:5</span>
+          Furthermore, consider taking the following steps. First, honestly analyze your motives.
+          <span class="chip" onclick="openSidebar('Ps. 26:2')">Ps. 26:2</span>
+          Second, carefully analyze the education that you are considering.
+          <span class="chip" onclick="openSidebar('Prov. 14:15')">Prov. 14:15</span>
+          Let us discuss these steps one at a time.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 3: ANALYZE YOUR MOTIVES -->
+  <div class="section-card">
+    <div class="section-head" onclick="toggleSection(this)">
+      <span>Analyze Your Motives</span>
+      <span class="arrow">▸</span>
+    </div>
+    <div class="section-body">
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">7.</span> What care should Christians take when considering additional education?</div>
+        <button class="show-comment-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>A key question to ask is, "Why do I want this education?" Wanting a job you'll enjoy or that pays better isn't necessarily wrong
+            <span class="chip" onclick="openSidebar('1 Tim. 5:8')">1 Tim. 5:8</span>.
+            However, the Bible warns of the dangers of materialism and seeking security in this system of things
+            <span class="chip" onclick="openSidebar('Prov. 23:4, 5')">Prov. 23:4, 5</span>,
+            <span class="chip" onclick="openSidebar('1 Tim. 6:8-10')">1 Tim. 6:8-10</span>,
+            <span class="chip" onclick="openSidebar('1 John 2:17')">1 John 2:17</span>.
+            A motive of obtaining wealth or prestige could leave a person feeling empty and could cause him to drift from Jehovah.
+          </p>
+          <div class="prep-box"><b>💬 Comment you could share:</b> "What struck me was that wanting to provide for family isn't the wrong motive to watch for — it's wanting wealth or status for their own sake."</div>
+          <div class="prep-box"><b>📌 Ministry connection:</b> Helpful when discussing materialism with someone in the territory who equates more education with a "better life."</div>
+          <div class="prep-box"><b>🙏 Getting to know Jehovah:</b> Jehovah sees past our outward plans to our heart's real motives — he wants our friendship with him, not our resumé, to be central.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">7</span> If you are thinking of obtaining further education, a key question to ask yourself is, 'Why do I want to obtain this form of education?' Many people pursue education so that they can get a job that they will enjoy or one that pays better. Are these motives wrong? Not necessarily.
+          <span class="chip" onclick="openSidebar('1 Tim. 5:8')">1 Tim. 5:8</span>
+          However, the Bible warns us of the dangers of materialism and of seeking security in this system of things.
+          <span class="chip" onclick="openSidebar('Prov. 23:4, 5')">Prov. 23:4, 5</span>;
+          <span class="chip" onclick="openSidebar('1 Tim. 6:8-10')">1 Tim. 6:8-10</span>;
+          <span class="chip" onclick="openSidebar('1 John 2:17')">1 John 2:17</span>
+          If your motive is to obtain wealth or prestige, not only might you be left feeling empty but you could also drift away from Jehovah.
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">8-9.</span> (a) How should Christians view education? (b) What do you learn from the comments made by Josefina, Morine, and Iris?</div>
+        <button class="show-comment-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <div class="sub-part"><b>(a)</b> Nothing should be more important than serving Jehovah
+            <span class="chip" onclick="openSidebar('Matt. 22:37, 38')">Matt. 22:37, 38</span>,
+            <span class="chip" onclick="openSidebar('Phil. 3:8')">Phil. 3:8</span>.
+            View education as a means to help you support yourself while you focus your life on serving Jehovah wholeheartedly — read
+            <span class="chip" onclick="openSidebar('Matt. 6:33')">Matthew 6:33</span>.
+          </div>
+          <div class="sub-part"><b>(b)</b> Josefina let her spiritual goals drive her education program, not the other way around. Morine chose a short course specifically to reach the goal of serving where the need is greater. Iris learned that true success and satisfaction come only from putting Jehovah at the center of life. All three show that keeping our friendship with Jehovah first leads to lasting happiness, whatever education path we take.</div>
+          <div class="prep-box"><b>💬 Comment you could share:</b> "What struck me was Iris's comment: 'If Jehovah is the center of your life, satisfaction and success are guaranteed.' That's such a simple but powerful formula."</div>
+          <div class="prep-box"><b>📌 Ministry connection:</b> A great way to redirect a conversation about career success toward what true, lasting success actually looks like.</div>
+          <div class="prep-box"><b>🙏 Getting to know Jehovah:</b> Jehovah defines success differently than the world does — closeness to him, not credentials, is the real measure.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">8</span> How then should you view education? Nothing should be more important to us than serving Jehovah.
+          <span class="chip" onclick="openSidebar('Matt. 22:37, 38')">Matt. 22:37, 38</span>;
+          <span class="chip" onclick="openSidebar('Phil. 3:8')">Phil. 3:8</span>
+          So view education as a means to help you support yourself while you focus your life on serving Jehovah wholeheartedly. — <b>Read Matthew 6:33.</b>
+        </div>
+        <div class="para-block">
+          <span class="pnum">9</span> Note what helped some Christians to keep a proper view of additional education. Josefina, from Chile, says: "Secular studies were a means to help me serve Jehovah as fully as possible. My education program had to revolve around my spiritual goals, not the other way around." A sister named Morine chose a one-year course to become a hair stylist. Why? She says: "My goal was to serve where the need was greater. So I looked for a course that would help me to reach that goal. After finishing the course, I used what I had learned to work as a hair stylist and save money for the move. And once I moved to where the need was greater, my education helped me to find work." Iris, who completed a longer course in the dental field, says: "Additional education may have some advantages, but it will never give you true success and satisfaction. The formula is simple: If Jehovah is the center of your life, satisfaction and success are guaranteed." Yes, when our friendship with Jehovah is the most important thing in our life, we will make decisions that result in lasting happiness.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 4: ANALYZE THE EDUCATION -->
+  <div class="section-card">
+    <div class="section-head" onclick="toggleSection(this)">
+      <span>Analyze the Education</span>
+      <span class="arrow">▸</span>
+    </div>
+    <div class="section-body">
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">10.</span> How can the principle found at Deuteronomy 32:29 be applied when deciding on additional education?</div>
+        <button class="show-comment-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Consider other possibilities besides the one specific course you have in mind — compare
+            <span class="chip" onclick="openSidebar('Prov. 18:17')">Prov. 18:17</span>.
+            Also consider whether you could support yourself without further education at all, as Johanna from Finland did. Weigh whether the advantages are worth the disadvantages — read
+            <span class="chip" onclick="openSidebar('Deut. 32:29')">Deuteronomy 32:29</span>;
+            <span class="chip" onclick="openSidebar('1 Cor. 10:23')">1 Cor. 10:23</span>.
+          </p>
+          <div class="prep-box"><b>💬 Comment you could share:</b> "I found it interesting that not getting additional education is treated as a completely legitimate option too, not just a fallback."</div>
+          <div class="prep-box"><b>📌 Ministry connection:</b> Encouraging for a young publisher who feels pressure to pursue college simply because 'everyone else is.'</div>
+          <div class="prep-box"><b>🙏 Getting to know Jehovah:</b> Jehovah always keeps his promise to provide for those who put him first, as Johanna experienced firsthand.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">10</span> You may have in mind a specific course or training program. But it is also useful to consider other possibilities — either in the same field or in other fields. (Compare
+          <span class="chip" onclick="openSidebar('Prov. 18:17')">Prov. 18:17</span>.)
+          Today, there are education options that did not exist in the past, such as online courses. And do not forget to consider whether you could support yourself without further education. For example, Johanna, from Finland, did not get any additional education. She says: "After I finished school, I started working part-time and pioneering. I've had a variety of jobs, and I've seen how Jehovah always keeps his promise to provide what we need." Remember that all decisions regarding additional education — whether to obtain it and what type to obtain — involve advantages and disadvantages. So ask yourself: 'Are the advantages worth the disadvantages?' <b>(Read
+          <span class="chip" onclick="openSidebar('Deut. 32:29')">Deuteronomy 32:29</span>;
+          <span class="chip" onclick="openSidebar('1 Cor. 10:23')">1 Cor. 10:23</span>.)</b>
+          Let us consider some factors that will help you answer that question.
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">11.</span> Why is it important to consider the schedule of the education or training? (See also pictures.)</div>
+        <button class="show-comment-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Consider how many hours a week you'd spend on classes, training, and homework — will there still be time for your spiritual routine and family obligations?
+            <span class="chip" onclick="openSidebar('Phil. 1:10')">Phil. 1:10</span>.
+            Jeroz found the schedule left him too tired for meeting preparation and personal study, and he missed meetings — in hindsight, not worth it. Rabeca, by contrast, found a two-hour-a-day course that let her keep pioneering.</p>
+          <div class="prep-box"><b>💬 Comment you could share:</b> "What struck me was Jeroz's honesty — he said looking back, the course wasn't worth the time and energy it cost him spiritually."</div>
+          <div class="prep-box"><b>📌 Ministry connection:</b> A practical talking point when discussing work-life-spiritual balance with someone juggling studies.</div>
+          <div class="prep-box"><b>🙏 Getting to know Jehovah:</b> Jehovah cares whether we have "time" for him — he doesn't want to be squeezed into the leftover hours of a busy schedule.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">11</span> <i>The schedule.</i> Consider how many hours you will spend each week attending classes, receiving training, and doing homework. Will you still have time for your spiritual routine and family obligations?
+          <span class="chip" onclick="openSidebar('Phil. 1:10')">Phil. 1:10</span>
+          Could your secular studies leave you feeling too tired mentally for meeting preparation or personal study? This was the case for Jeroz, from India. He says: "I struggled to focus on spiritual activities. At times, I missed meetings. Looking back, I realize that the course was not worth the time and energy." Then again, some courses are not so time-consuming; some are part-time, others require little homework. For example, Rabeca, from Mozambique, is happy with her choice of education. She says: "The course was only two hours a day. It allowed me to continue regular pioneering."
+        </div>
+        <figure class="study-img">
+          <img src="https://wol.jw.org/en/wol/mp/r1/lp-e/w26/2026/282" alt="Collage: A brother considering whether he can balance additional education with all of his other responsibilities — microphone duty, door-to-door ministry, working as a barista, and attending class.">
+          <figcaption>If you are considering obtaining additional education, make sure that you will have time for all your important responsibilities (See paragraph 11)</figcaption>
+        </figure>
+        <div class="app-note">Application: Picture the full week — meeting duties, ministry, secular work, and class — before committing, not after.</div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">12.</span> How can a person make the best use of his time with respect to education?</div>
+        <button class="show-comment-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Consider the length of the program — would it be the best use of your time?
+            <span class="chip" onclick="openSidebar('Eph. 5:15-17')">Eph. 5:15-17</span>.
+            If young, will it still let you give Jehovah your best during your youth, perhaps in full-time ministry? Read
+            <span class="chip" onclick="openSidebar('Eccl. 12:1')">Ecclesiastes 12:1</span>.
+            Shorter options like vocational training or trade schools may give practical skills faster and cheaper than universities, as Mario's two-year technical course did.</p>
+          <div class="prep-box"><b>💬 Comment you could share:</b> "I found it interesting that a shorter, practical course is presented as just as valid a choice as a longer university degree — maybe more so for some."</div>
+          <div class="prep-box"><b>📌 Ministry connection:</b> Useful when someone assumes a four-year degree is the only "real" path to a career.</div>
+          <div class="prep-box"><b>🙏 Getting to know Jehovah:</b> Remembering our Grand Creator "in the days of your youth" (Eccl. 12:1) means giving him our best years, not our leftover ones.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">12</span> <i>The length.</i> Consider how many months or years it will take to complete the education program. Would acquiring that education be the best use of your time?
+          <span class="chip" onclick="openSidebar('Eph. 5:15-17')">Eph. 5:15-17</span>
+          If you are young, will the education program allow you to give Jehovah your best during your youth, perhaps in the full-time ministry? <b>(Read
+          <span class="chip" onclick="openSidebar('Eccl. 12:1')">Ecclesiastes 12:1</span>.)</b>
+          Are there shorter education options in the same field? For example, vocational training and trade schools may give you practical skills in less time and at less cost than universities. Mario, from Chile, says: "I chose a two-year technical course that was cheaper than a university course. I had classes only four days a week, which permitted me to pioneer while taking the course."
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">13.</span> How could a person be affected by where he lives while obtaining additional education?</div>
+        <button class="show-comment-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Moving away from family — especially to room with people who don't share your faith — poses a serious spiritual danger
+            <span class="chip" onclick="openSidebar('Prov. 22:3')">Prov. 22:3</span>,
+            <span class="chip" onclick="openSidebar('1 Cor. 15:33')">1 Cor. 15:33</span>.
+            Matias regretted an inexpensive course that required boarding school, where he faced daily temptation. A Russian sister avoided danger by living at home instead of on campus.</p>
+          <div class="prep-box"><b>💬 Comment you could share:</b> "What struck me was that the cheapest course isn't always the wisest choice — Matias's course was inexpensive but cost him spiritually."</div>
+          <div class="prep-box"><b>📌 Ministry connection:</b> Good discussion point with parents concerned about a child moving away for school.</div>
+          <div class="prep-box"><b>🙏 Getting to know Jehovah:</b> Jehovah warns us, out of love, about the danger of bad associations — he wants to protect our relationship with him, not restrict us needlessly.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">13</span> <i>The location.</i> You may find an education program that is close to home. But what if you find a program in another city? Or what if the education program requires you to live on campus? Be aware that moving away from your family poses a serious spiritual danger, especially if you will room with people who do not share your faith.
+          <span class="chip" onclick="openSidebar('Prov. 22:3')">Prov. 22:3</span>;
+          <span class="chip" onclick="openSidebar('1 Cor. 15:33')">1 Cor. 15:33</span>
+          Matias, from Mozambique, completed an inexpensive one-year course. Yet, he regrets his decision. Why? He says: "I had to spend the entire time at a boarding school. I was tempted daily to do wrong things. I recommend taking a course that will not separate you from your family." A sister from Russia says: "I avoided dangers and temptations by living at home with my parents instead of on campus or in a dormitory." You may even be able to find an online course.
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">14.</span> How can the principle found at Luke 14:28 help you when considering additional education?</div>
+        <button class="show-comment-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Calculate the full cost before committing, the way a builder calculates a tower's expense — read
+            <span class="chip" onclick="openSidebar('Luke 14:28')">Luke 14:28</span>.
+            Ask: How much will it cost? Can I or my family afford it? Is there a cheaper option? If debt is involved, how long to pay it off, and will future income sustain both living costs and the loan?
+            <span class="chip" onclick="openSidebar('Prov. 22:7')">Prov. 22:7</span>.
+            Adilson's family sacrificed food and other basic needs to fund his four-year course — a cost he now regrets.</p>
+          <div class="prep-box"><b>💬 Comment you could share:</b> "I found it interesting that the Bible's own illustration about calculating a tower's cost applies so directly to something as modern as student debt."</div>
+          <div class="prep-box"><b>📌 Ministry connection:</b> Very relevant when discussing financial pressures and debt with people in the territory.</div>
+          <div class="prep-box"><b>🙏 Getting to know Jehovah:</b> Jehovah values careful planning over presumption — he wants us to "sit down" and think things through, not rush ahead.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">14</span> <i>The financial cost.</i> Some courses are inexpensive or may be funded by the government. In such cases, getting additional education may be an affordable way to gain knowledge and skills that will help you to obtain employment. But in other cases, additional education is expensive. There may also be indirect costs, such as private schooling or tutoring to help you qualify for enrollment. Some courses leave students with many years of debt. Adilson, from Mozambique, regrets his choice in education. He says: "My family sacrificed food and other basic needs to pay for my four-year course." As you analyze a course or training program, ask yourself: 'How much will it cost? Can my family or I afford it? Is there a less expensive option?' <b>(Read
+          <span class="chip" onclick="openSidebar('Luke 14:28')">Luke 14:28</span>.)</b>
+          'If I get into debt, how long will it take to pay it off? Will my future employment pay enough to sustain me and pay off the loan?' —
+          <span class="chip" onclick="openSidebar('Prov. 22:7')">Prov. 22:7</span>
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">15.</span> Why should you consider the work prospects before deciding on a particular type of education?</div>
+        <button class="show-comment-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Will the education actually help you find a job in the local employment market? Some courses provide little practical training and are mostly theoretical, academic, or philosophical
+            <span class="chip" onclick="openSidebar('Col. 2:8')">Col. 2:8</span>.
+            A sister from India found her course didn't develop the practical skills employers required. Sublime's course (repairing air conditioners) had little demand where he lives.</p>
+          <div class="prep-box"><b>💬 Comment you could share:</b> "What struck me was how practical this is — checking real job listings before enrolling, not just assuming a diploma equals a job."</div>
+          <div class="prep-box"><b>📌 Ministry connection:</b> Good angle when talking with young adults weighing "passion" versus "practicality" in career choices.</div>
+          <div class="prep-box"><b>🙏 Getting to know Jehovah:</b> Jehovah wants our thinking grounded in reality and truth, not "empty deception" — that's true whether we're studying the Bible or a career field.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">15</span> <i>The work prospects.</i> Consider the employment market where you live or where you want to live. Will the education actually help you to find a job? Some courses provide little practical training. Instead, they are mostly theoretical or they focus on intellectual, academic, or philosophical subjects.
+          <span class="chip" onclick="openSidebar('Col. 2:8')">Col. 2:8</span>
+          A sister from India says: "My course did not help me to develop the practical skills that employers require. As a result, I was not able to find work in the field I had studied." Other education may be in a field with few job opportunities. Sublime, from the Central African Republic, completed a course on repairing air conditioners. However, he says: "Where I live, most people repair things themselves, so it can be difficult to find work."
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">16.</span> Why is it worthwhile to consider the type of work that the education may lead to?</div>
+        <button class="show-comment-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Will you enjoy the work?
+            <span class="chip" onclick="openSidebar('Eccl. 3:12, 13')">Eccl. 3:12, 13</span>.
+            What's the environment like — safe, competitive, stressful? Will pay be enough, and will the work allow you to put Kingdom interests first?
+            <span class="chip" onclick="openSidebar('Eccl. 12:13')">Eccl. 12:13</span>.
+            Tabitha's six-month sewing course gave her flexible, always-in-demand work that supported her pioneering.</p>
+          <div class="prep-box"><b>💬 Comment you could share:</b> "I found it interesting that Tabitha reasoned this all out in advance — flexible schedule, steady demand, low investment — and it worked out exactly as she planned."</div>
+          <div class="prep-box"><b>📌 Ministry connection:</b> A helpful, concrete example to share with someone hoping to combine secular work with full-time service.</div>
+          <div class="prep-box"><b>🙏 Getting to know Jehovah:</b> "Fear the true God and keep his commandments, for this is the whole obligation of man" (Eccl. 12:13) — a good reminder of what should shape every career choice.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">16</span> Contemplate also the type of work you are likely to find. Will you enjoy it?
+          <span class="chip" onclick="openSidebar('Eccl. 3:12, 13')">Eccl. 3:12, 13</span>
+          What will the work environment be like? Is it an industry known for being unsafe, competitive, or stressful? How much money does that type of work typically pay? Will it be enough to support yourself? Will you need ongoing education to keep the job? Most important, will it allow you to put Kingdom interests first?
+          <span class="chip" onclick="openSidebar('Eccl. 12:13')">Eccl. 12:13</span>
+          Of course, when work is scarce, we cannot afford to be too choosy. But the choice you make regarding education can affect your employment opportunities in the future. Tabitha, from India, chose a six-month sewing course. She says: "I reasoned that working as a tailor would help me to pioneer. It is a job that would always be in demand, give me a flexible schedule, and not require a large investment." The course helped Tabitha find work to support her pioneering.
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">17.</span> (a) How can a Christian find the information he needs to make a wise decision regarding education? (b) What Bible principles shed light on this decision?</div>
+        <button class="show-comment-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <div class="sub-part"><b>(a)</b> Research potential courses by visiting the institution or its website, check job listings in that field, and consult with those who have completed similar training or work in that field
+            <span class="chip" onclick="openSidebar('Prov. 13:10')">Prov. 13:10</span>.
+            Also talk to others who are happily serving Jehovah
+            <span class="chip" onclick="openSidebar('Prov. 15:22')">Prov. 15:22</span>
+            — they may suggest options you hadn't considered.</div>
+          <div class="sub-part"><b>(b)</b> See the box "Bible Principles to Consider," which lists six key questions with their supporting scriptures — motives, time, length, location, cost, and whether the work supports Kingdom goals.</div>
+          <div class="prep-box"><b>💬 Comment you could share:</b> "What struck me was how much this echoes ordinary good research — talk to people who've actually done it, not just the brochure."</div>
+          <div class="prep-box"><b>📌 Ministry connection:</b> This whole list of questions could be shared with a young adult in the territory currently facing this very decision.</div>
+          <div class="prep-box"><b>🙏 Getting to know Jehovah:</b> Seeking counsel from many advisers reflects Jehovah's own wisdom — he never wants us to decide important matters in isolation.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">17</span> We have discussed various factors to consider about additional education. How can you find the information you need to make a wise decision? Research potential courses by visiting the institution or its website. Check job listings to learn how many jobs are available in that field. You could also consult with those who have completed similar training or who work in that field.
+          <span class="chip" onclick="openSidebar('Prov. 13:10')">Prov. 13:10</span>
+          Ask them, "What are the pros and cons of that education or employment?" Talk to others who are happily serving Jehovah.
+          <span class="chip" onclick="openSidebar('Prov. 15:22')">Prov. 15:22</span>
+          What education and employment do they suggest? They may even mention a field of employment that you have not considered.
+        </div>
+        <div class="para-block" style="background:#fff;border:1px solid #dbe3ee;">
+          <b style="color:var(--navy);">📋 Bible Principles to Consider</b>
+          <ul style="margin:10px 0 0 0;padding-left:20px;">
+            <li>What are my motives for pursuing additional education? <span class="chip" onclick="openSidebar('Matt. 6:33')">Matt. 6:33</span> <span class="chip" onclick="openSidebar('1 Tim. 6:8-10')">1 Tim. 6:8-10</span></li>
+            <li>How much time will I spend on schooling and homework each week? <span class="chip" onclick="openSidebar('Phil. 1:10')">Phil. 1:10</span></li>
+            <li>How many years will the education take to complete? <span class="chip" onclick="openSidebar('Eph. 5:15-17')">Eph. 5:15-17</span></li>
+            <li>Where will I live? <span class="chip" onclick="openSidebar('1 Cor. 15:33')">1 Cor. 15:33</span></li>
+            <li>How much will the education cost? <span class="chip" onclick="openSidebar('Luke 14:28')">Luke 14:28</span></li>
+            <li>Will the education help me find work that supports me and my spiritual goals? <span class="chip" onclick="openSidebar('Eccl. 12:13')">Eccl. 12:13</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">18.</span> What should we remember?</div>
+        <button class="show-comment-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Additional education has both advantages and disadvantages, so prayerfully consider your options. Further education may provide material stability, but only a close friendship with Jehovah brings true happiness
+            <span class="chip" onclick="openSidebar('Ps. 16:9, 11')">Ps. 16:9, 11</span>.
+            Jehovah will always care for his people, regardless of their secular education
+            <span class="chip" onclick="openSidebar('Heb. 13:5')">Heb. 13:5</span>.
+          </p>
+          <div class="prep-box"><b>💬 Comment you could share:</b> "I found it comforting that no matter which path we choose, Jehovah's care for us isn't tied to our education level."</div>
+          <div class="prep-box"><b>📌 Ministry connection:</b> A reassuring closing thought for anyone in the territory anxious about their future because of limited education.</div>
+          <div class="prep-box"><b>🙏 Getting to know Jehovah:</b> "I will never leave you, and I will never abandon you" (Heb. 13:5) — Jehovah's loyalty to us doesn't depend on our résumé.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">18</span> As we have seen, additional education has advantages and disadvantages. So prayerfully consider your options. Remember, further education may provide a measure of material stability, but the only way to be truly happy is to have a close friendship with Jehovah.
+          <span class="chip" onclick="openSidebar('Ps. 16:9, 11')">Ps. 16:9, 11</span>
+          Jehovah will always care for his people, regardless of their secular education.
+          <span class="chip" onclick="openSidebar('Heb. 13:5')">Heb. 13:5</span>
+          Now, what if you have decided to get additional education? What can help you to remain close to Jehovah during your studies? This will be discussed in the next article.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- HOW WOULD YOU ANSWER -->
+  <div class="review-section">
+    <h2>How Would You Answer?</h2>
+
+    <div class="qa-unit">
+      <div class="question-card">1. How does Galatians 6:5 apply to decisions regarding additional education?</div>
+      <button class="show-comment-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p>Since "each one will carry his own load"
+          <span class="chip" onclick="openSidebar('Gal. 6:5')">Gal. 6:5</span>,
+          the decision to pursue additional education (or not) belongs personally to each adult Christian — not to elders or fellow believers to dictate.</p>
+        <div class="prep-box"><b>💬 Personal comment:</b> "This verse reminds me that I shouldn't judge someone else's choice about education — that load is theirs to carry, not mine to weigh in on."</div>
+      </div>
+    </div>
+
+    <div class="qa-unit">
+      <div class="question-card">2. How should Christians view further education?</div>
+      <button class="show-comment-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p>As a means to support ourselves while we keep serving Jehovah wholeheartedly at the center of our life — not as an end in itself, and never at the expense of our relationship with him
+          <span class="chip" onclick="openSidebar('Matt. 6:33')">Matt. 6:33</span>.
+        </p>
+        <div class="prep-box"><b>💬 Personal comment:</b> "I appreciated how the article put it — education should revolve around our spiritual goals, not the other way around."</div>
+      </div>
+    </div>
+
+    <div class="qa-unit">
+      <div class="question-card">3. What factors should a Christian consider when deciding whether to obtain additional education?</div>
+      <button class="show-comment-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p>Motives, schedule, length, location, financial cost, and work prospects — all weighed prayerfully and in light of Bible principles, using research from the institution, job listings, and trusted, spiritually mature people.</p>
+        <div class="prep-box"><b>💬 Personal comment:</b> "What helped me most was seeing this as a short checklist I can actually use, not just a vague warning to 'be careful.'"</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="banner song-banner">
+    🎵 <b>Closing Song:</b> Song 45 — "The Meditation of My Heart"
+  </div>
+
+  <div class="footnotes">
+    <p><b>a</b> <b>EXPRESSION EXPLAINED:</b> In this article and in the next, "additional education" refers to <i>any</i> secular education or training beyond the basic education provided by the government, including universities, apprenticeships, trade schools, technical schools, vocational training, short courses, and continuing education.</p>
+    <p><b>b</b> This information also applies to sisters.</p>
+    <p><b>c</b> In the past, our publications have discouraged Christians from obtaining certain types of additional education. While these dangers still exist, deciding whether to obtain additional education is a personal matter. Each Christian — and in the case of young children, each family head — should prayerfully consider Bible principles and the unique factors involved with a certain educational program before making a decision. No Christian — including elders — should judge a fellow Christian's personal decision on this matter. —
+      <span class="chip" onclick="openSidebar('Jas. 4:12')">Jas. 4:12</span>
+    </p>
+  </div>
+
+  <footer class="src">
+    Source: <i>The Watchtower</i> (Study), May 2026, pp. 14-19 — "Make Wise Decisions Regarding Additional Education"<br>
+    <a href="https://wol.jw.org/en/wol/d/r1/lp-e/2026402" target="_blank" rel="noopener">wol.jw.org/en/wol/d/r1/lp-e/2026402</a>
+  </footer>
+
+</div>
+
+<!-- Sidebar -->
+<div id="overlay" onclick="closeSidebar()"></div>
+<div id="sidebar">
+  <div class="sb-head">
+    <h3 id="sbTitle">Scripture</h3>
+    <button class="sb-close" onclick="closeSidebar()">×</button>
+  </div>
+  <div class="sb-body" id="sbBody"></div>
+</div>
+
+<script>
+// Verbatim NWT (Study Edition) verse text, fetched directly from wol.jw.org
+const scriptures = {
+  "Prov. 14:15": {
+    text: "The naive person believes every word, But the shrewd one ponders each step.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/14",
+    refs: ["The Watchtower (Study), 2/2023, p. 23", "Bible Questions Answered, article 186"]
+  },
+  "2 Thess. 3:10": {
+    text: "In fact, when we were with you, we used to give you this order: “If anyone does not want to work, neither let him eat.”",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/53/3",
+    refs: ["The Watchtower, 7/15/1987, p. 18"]
+  },
+  "Gal. 6:5": {
+    text: "For each one will carry his own load.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/48/6",
+    refs: ["Study note on Gal. 6:5, NWT Study Edition"]
+  },
+  "Eph. 6:1": {
+    text: "Children, be obedient to your parents in union with the Lord, for this is righteous.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/49/6",
+    refs: []
+  },
+  "Prov. 22:6": {
+    text: "Train a boy in the way he should go; Even when he grows old he will not depart from it.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/22",
+    refs: ["Bible Verses Explained, article 47"]
+  },
+  "Prov. 21:5": {
+    text: "The plans of the diligent surely lead to success, But all who are hasty surely head for poverty.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/21",
+    refs: ["Enjoy Life Forever!, lesson 60"]
+  },
+  "Jas. 1:5": {
+    text: "So if any one of you is lacking in wisdom, let him keep asking God, for he gives generously to all and without reproaching, and it will be given him.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/59/1",
+    refs: []
+  },
+  "Ps. 26:2": {
+    text: "Examine me, O Jehovah, and put me to the test; Refine my innermost thoughts and my heart.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/19/26",
+    refs: []
+  },
+  "1 Tim. 5:8": {
+    text: "Certainly if anyone does not provide for those who are his own, and especially for those who are members of his household, he has disowned the faith and is worse than a person without faith.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/54/5",
+    refs: []
+  },
+  "Prov. 23:4, 5": {
+    text: "Do not wear yourself out to gain wealth. Stop and show understanding. When you cast your eyes on it, it is not there, For it will surely sprout wings like an eagle and fly off into the sky.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/23",
+    refs: []
+  },
+  "1 Tim. 6:8-10": {
+    text: "So, having food and clothing, we will be content with these things. But those who are determined to be rich fall into temptation and a snare and many senseless and harmful desires that plunge men into destruction and ruin. For the love of money is a root of all sorts of injurious things, and by reaching out for this love some have been led astray from the faith and have stabbed themselves all over with many pains.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/54/6",
+    refs: []
+  },
+  "1 John 2:17": {
+    text: "Furthermore, the world is passing away and so is its desire, but the one who does the will of God remains forever.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/62/2",
+    refs: []
+  },
+  "Matt. 22:37, 38": {
+    text: "He said to him: “‘You must love Jehovah your God with your whole heart and with your whole soul and with your whole mind.’ This is the greatest and first commandment.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/22",
+    refs: []
+  },
+  "Phil. 3:8": {
+    text: "What is more, I do indeed also consider all things to be loss on account of the excelling value of the knowledge of Christ Jesus my Lord. For his sake I have taken the loss of all things and I consider them as a lot of refuse, that I may gain Christ.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/50/3",
+    refs: []
+  },
+  "Matt. 6:33": {
+    text: "“Keep on, then, seeking first the Kingdom and his righteousness, and all these other things will be added to you.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/6",
+    refs: []
+  },
+  "Prov. 18:17": {
+    text: "The first to state his case seems right, Until the other party comes and cross-examines him.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/18",
+    refs: ["The Watchtower, 8/15/2011, p. 30"]
+  },
+  "Deut. 32:29": {
+    text: "If only they were wise! They would ponder over this. They would think about their outcome.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/5/32",
+    refs: []
+  },
+  "1 Cor. 10:23": {
+    text: "All things are lawful, but not all things are advantageous. All things are lawful, but not all things build up.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/46/10",
+    refs: []
+  },
+  "Phil. 1:10": {
+    text: "that you may make sure of the more important things, so that you may be flawless and not stumbling others up to the day of Christ;",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/50/1",
+    refs: []
+  },
+  "Eph. 5:15-17": {
+    text: "So keep strict watch that how you walk is not as unwise but as wise persons, making the best use of your time, because the days are wicked. On this account stop being unreasonable, but keep perceiving what the will of Jehovah is.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/49/5",
+    refs: []
+  },
+  "Eccl. 12:1": {
+    text: "Remember, then, your Grand Creator in the days of your youth, before the days of distress come and the years arrive when you will say: “I have no pleasure in them”;",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/21/12",
+    refs: []
+  },
+  "Prov. 22:3": {
+    text: "The shrewd one sees the danger and conceals himself, But the inexperienced keep right on going and suffer the consequences.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/22",
+    refs: []
+  },
+  "1 Cor. 15:33": {
+    text: "Do not be misled. Bad associations spoil useful habits.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/46/15",
+    refs: []
+  },
+  "Luke 14:28": {
+    text: "For example, who of you wanting to build a tower does not first sit down and calculate the expense to see if he has enough to complete it?",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/42/14",
+    refs: []
+  },
+  "Prov. 22:7": {
+    text: "The rich one rules the poor, And the borrower is a slave to the lender.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/22",
+    refs: []
+  },
+  "Col. 2:8": {
+    text: "Look out that no one takes you captive by means of the philosophy and empty deception according to human tradition, according to the elementary things of the world and not according to Christ;",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/51/2",
+    refs: []
+  },
+  "Prov. 15:22": {
+    text: "Plans fail when there is no consultation, But there is accomplishment through many advisers.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/15",
+    refs: []
+  },
+  "Prov. 13:10": {
+    text: "Presumptuousness leads only to strife, But wisdom belongs to those who seek advice.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/13",
+    refs: []
+  },
+  "Eccl. 3:12, 13": {
+    text: "I have concluded that there is nothing better for them than to rejoice and to do good during their life, also that everyone should eat and drink and find enjoyment for all his hard work. It is the gift of God.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/21/3",
+    refs: []
+  },
+  "Eccl. 12:13": {
+    text: "The conclusion of the matter, everything having been heard, is: Fear the true God and keep his commandments, for this is the whole obligation of man.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/21/12",
+    refs: []
+  },
+  "Ps. 16:9, 11": {
+    text: "So my heart rejoices, my whole being is joyful. And I reside in security. ... You make known to me the path of life. In your presence is abundant joy; There is happiness at your right hand forever.",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/19/16",
+    refs: []
+  },
+  "Heb. 13:5": {
+    text: "Let your way of life be free of the love of money, while you are content with the present things. For he has said: “I will never leave you, and I will never abandon you.”",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/58/13",
+    refs: []
+  },
+  "Jas. 4:12": {
+    text: "There is only one who is Lawgiver and Judge, the one who is able to save and to destroy. But you, who are you to be judging your neighbor?",
+    url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/59/4",
+    refs: []
+  }
+};
+
+function openSidebar(key){
+  const data = scriptures[key];
+  const body = document.getElementById('sbBody');
+  const title = document.getElementById('sbTitle');
+  if(!data){
+    title.textContent = key;
+    body.innerHTML = '<p>Reference not available.</p>';
+  } else {
+    title.textContent = key;
+    let refsHtml = '';
+    if(data.refs && data.refs.length){
+      refsHtml = '<div class="sb-refs"><h4>Research Guide</h4><ul>' +
+        data.refs.map(r => '<li>' + r + '</li>').join('') +
+        '</ul></div>';
+    }
+    body.innerHTML =
+      '<blockquote>“' + data.text + '”</blockquote>' +
+      '<a class="sb-full-btn" href="' + data.url + '" target="_blank" rel="noopener">Open full article →</a>' +
+      refsHtml;
+  }
+  document.getElementById('sidebar').classList.add('open');
+  document.getElementById('overlay').classList.add('open');
+}
+function closeSidebar(){
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+}
+function toggleSection(headEl){
+  headEl.classList.toggle('open');
+  const body = headEl.nextElementSibling;
+  body.classList.toggle('open');
+  const arrow = headEl.querySelector('.arrow');
+  arrow.textContent = body.classList.contains('open') ? '▾' : '▸';
+}
+function toggleAnswer(btn){
+  const box = btn.nextElementSibling;
+  box.classList.toggle('open');
+  btn.textContent = box.classList.contains('open') ? '▾ Hide comment' : '▸ Show comment';
+}
+let allExpanded = false;
+function toggleExpandAll(){
+  allExpanded = !allExpanded;
+  document.querySelectorAll('.section-head').forEach(h=>{
+    const body = h.nextElementSibling;
+    if(allExpanded){ h.classList.add('open'); body.classList.add('open'); h.querySelector('.arrow').textContent='▾'; }
+    else { h.classList.remove('open'); body.classList.remove('open'); h.querySelector('.arrow').textContent='▸'; }
+  });
+  document.querySelectorAll('.answer-box').forEach(box=>{
+    if(allExpanded) box.classList.add('open'); else box.classList.remove('open');
+  });
+  document.querySelectorAll('.show-comment-btn').forEach(btn=>{
+    btn.textContent = allExpanded ? '▾ Hide comment' : '▸ Show comment';
+  });
+  document.getElementById('expandAllBtn').textContent = allExpanded ? 'Collapse All Sections' : 'Expand All Sections';
+}
+// Open first section by default for convenience
+document.addEventListener('DOMContentLoaded', function(){
+  const firstHead = document.querySelector('.section-head');
+  if(firstHead) toggleSection(firstHead);
+});
+</script>
+
+</body>
+</html>
