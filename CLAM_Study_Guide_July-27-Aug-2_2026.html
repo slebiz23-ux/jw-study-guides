@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLAM Study Guide | July 27–August 2, 2026</title>
+<style>
+  :root{
+    --treasures:#1d4ed8; --apply:#15803d; --living:#7e22ce; --cbs:#c2410c;
+    --amber:#f59e0b; --amber-bg:#fffbeb; --green:#22c55e; --orange:#d97706;
+    --indigo:#6366f1; --chip:#eff6ff;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:#f0f4f8;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1f2937;line-height:1.55;}
+  .wrap{max-width:820px;margin:0 auto;padding:14px 14px 60px;}
+  header.top{background:linear-gradient(135deg,#1e3a8a,#1d4ed8);color:#fff;border-radius:14px;padding:22px 20px;margin:10px 0 16px;text-align:center;}
+  .weekbadge{display:inline-block;background:rgba(255,255,255,.18);padding:6px 14px;border-radius:999px;font-size:13px;letter-spacing:.5px;font-weight:600;margin-bottom:8px;}
+  header.top h1{margin:4px 0 2px;font-size:22px;}
+  header.top p{margin:0;opacity:.9;font-size:14px;}
+  .expandBtn{display:block;margin:0 auto 18px;background:#111827;color:#fff;border:none;padding:10px 18px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;}
+  .expandBtn:active{opacity:.85;}
+  .songbanner{background:#fff;border-radius:12px;padding:14px 16px;margin:14px 0;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 3px rgba(0,0,0,.08);font-size:14px;}
+  .songbanner a{color:#1d4ed8;text-decoration:none;font-weight:600;}
+  .warnbanner{background:#fef2f2;border:2px solid #dc2626;color:#7f1d1d;border-radius:12px;padding:14px 16px;margin:16px 0;font-size:14px;font-weight:600;}
+  .divider{display:flex;align-items:center;gap:10px;margin:26px 0 10px;font-weight:700;font-size:15px;letter-spacing:.3px;text-transform:uppercase;}
+  .divider .line{flex:1;height:3px;border-radius:3px;}
+  .divider.treasures{color:var(--treasures);} .divider.treasures .line{background:var(--treasures);}
+  .divider.apply{color:var(--apply);} .divider.apply .line{background:var(--apply);}
+  .divider.living{color:var(--living);} .divider.living .line{background:var(--living);}
+  .divider.cbs{color:var(--cbs);} .divider.cbs .line{background:var(--cbs);}
+  .card{background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.08);margin-bottom:12px;overflow:hidden;}
+  .cardhead{padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;}
+  .cardhead h2,.cardhead h3{margin:0;font-size:16px;}
+  .cardhead .meta{font-size:12px;color:#6b7280;font-weight:500;}
+  .chevron{transition:transform .2s;font-size:13px;color:#9ca3af;flex-shrink:0;}
+  .card.open .chevron{transform:rotate(180deg);}
+  .cardbody{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 16px;}
+  .card.open .cardbody{padding:0 16px 16px;}
+  .cardbody img{max-width:100%;border-radius:8px;margin:10px 0;display:block;}
+  .caption{font-size:12.5px;color:#6b7280;font-style:italic;margin-top:-4px;margin-bottom:10px;}
+  blockquote.scripture{background:var(--chip);border-left:4px solid var(--treasures);margin:10px 0;padding:10px 14px;border-radius:6px;font-size:14.5px;}
+  blockquote.scripture cite{display:block;margin-top:6px;font-size:12.5px;font-weight:700;color:var(--treasures);font-style:normal;}
+  .chip{display:inline-block;background:var(--chip);color:#1d4ed8;border:1px solid #bfdbfe;border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:600;cursor:pointer;margin:2px 3px 2px 0;}
+  .box{border-radius:8px;padding:12px 14px;margin:10px 0;font-size:14px;}
+  .prep{border-left:4px solid var(--amber);background:var(--amber-bg);}
+  .prep .label{font-weight:700;font-size:13px;margin-bottom:3px;display:block;}
+  .imgnote{border-left:4px solid var(--green);background:#f0fdf4;}
+  .videonote{border-left:4px solid var(--orange);background:#fffaf0;}
+  .remember{border-left:4px solid #dc2626;background:#fef2f2;}
+  .dialogue{background:#f8f8f8;border-radius:8px;padding:12px 14px;margin:10px 0;font-size:14px;}
+  .dialogue p{margin:6px 0;}
+  .dialogue .coach{color:var(--indigo);font-style:italic;font-size:12.5px;}
+  .qa{margin:10px 0;padding:10px 12px;background:#f9fafb;border-radius:8px;font-size:14px;}
+  .qa .q{font-weight:700;margin-bottom:4px;}
+  .qa .a{color:#374151;}
+  .tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;padding:2px 8px;border-radius:5px;margin-right:6px;}
+  .tag.treasures{background:#dbeafe;color:var(--treasures);}
+  .tag.apply{background:#dcfce7;color:var(--apply);}
+  .tag.living{background:#f3e8ff;color:var(--living);}
+  .tag.cbs{background:#ffedd5;color:var(--cbs);}
+  ol.comments{padding-left:20px;font-size:14px;}
+  ol.comments li{margin-bottom:8px;}
+  footer{text-align:center;font-size:12.5px;color:#6b7280;margin-top:30px;padding-top:16px;border-top:1px solid #e5e7eb;}
+  footer a{color:#1d4ed8;}
+  /* Sidebar */
+  #sidebarOverlay{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .25s;z-index:40;}
+  #sidebarOverlay.show{opacity:1;pointer-events:auto;}
+  #sidebar{position:fixed;top:0;right:-100%;width:340px;max-width:100%;height:100%;background:#fff;box-shadow:-4px 0 18px rgba(0,0,0,.2);z-index:50;transition:right .3s ease;overflow-y:auto;padding:20px;}
+  #sidebar.show{right:0;}
+  #sidebar .sbclose{float:right;background:none;border:none;font-size:20px;cursor:pointer;color:#6b7280;}
+  #sidebar h3{margin-top:6px;color:var(--treasures);}
+  #sidebar blockquote{background:var(--chip);border-left:4px solid var(--treasures);padding:10px 12px;border-radius:6px;font-size:14.5px;}
+  #sidebar a.openfull{display:inline-block;margin-top:12px;background:var(--treasures);color:#fff;text-decoration:none;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;}
+  @media (max-width:480px){ #sidebar{width:100%;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="weekbadge">JULY 27 – AUGUST 2, 2026</div>
+    <h1>Our Christian Life &amp; Ministry</h1>
+    <p>Personal study &amp; comment-prep guide · Bible reading: Jeremiah 20‑21</p>
+  </header>
+
+  <button class="expandBtn" id="expandAllBtn" onclick="toggleAll()">Expand All</button>
+
+  <div class="songbanner">
+    <span>🎵 Opening — <a href="https://www.jw.org/en/library/music-songs/jw-songbook/73-grant-us-boldness/" target="_blank">Song 73 – Grant Us Boldness</a> and Prayer</span>
+  </div>
+
+  <!-- ============ TREASURES ============ -->
+  <div class="divider treasures">⛏️ <span>Treasures From God's Word</span><span class="line"></span></div>
+
+  <div class="card" data-section="treasures">
+    <div class="cardhead" onclick="toggleCard(this)">
+      <div><span class="tag treasures">Talk · 10 min</span><h3>1. He Was a Bold Preacher</h3></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="cardbody">
+      <img src="https://assetsnffrgf-a.akamaihd.net/assets/m/202026244/univ/wpub/202026244_univ_cnt_1_xs.jpg" alt="Jeremiah fearlessly proclaiming Jehovah's message in public. Some refuse to listen while others shout at him.">
+      <div class="caption">Jeremiah fearlessly proclaiming Jehovah's message in public. Some refuse to listen while others shout at him.</div>
+      <div class="box imgnote"><span class="label">🖼️ Image application</span> The illustration shows how mixed the response to our message can be — some walk away, others react with hostility. It's a reminder that Jeremiah kept speaking even when the reaction was ugly, and that the content of the message, not the audience's reaction, is what determines whether we keep proclaiming it.</div>
+
+      <p><strong>Jeremiah was persecuted for delivering Jehovah's judgments.</strong></p>
+      <span class="chip" onclick="openSidebar('Jer 20:2')">Jer. 20:2</span><span class="chip" onclick="openSidebar('Jer 20:8')">Jer. 20:8</span>
+      <blockquote class="scripture">“Then Pashʹhur struck Jeremiah the prophet and put him in the stocks that were at the Upper Gate of Benjamin, which was in the house of Jehovah.”<cite>Jeremiah 20:2, NWT Study Edition</cite></blockquote>
+      <blockquote class="scripture">“For whenever I speak, I must cry out and proclaim, “Violence and destruction!” For me the word of Jehovah has been the cause of insults and jeering all day long.”<cite>Jeremiah 20:8, NWT Study Edition</cite></blockquote>
+
+      <p><strong>Jeremiah became discouraged and considered giving up.</strong></p>
+      <span class="chip" onclick="openSidebar('Jer 20:9')">Jer. 20:9</span>
+      <blockquote class="scripture">“So I said: “I am not going to make mention of him, And I will speak no more in his name.” But in my heart it became like a burning fire shut up in my bones, And I was tired of holding it in; I could no longer endure it.”<cite>Jeremiah 20:9, NWT Study Edition</cite></blockquote>
+
+      <p><strong>Jeremiah was able to continue preaching boldly because of Jehovah's word and His support.</strong></p>
+      <span class="chip" onclick="openSidebar('Jer 20:11')">Jer. 20:11</span>
+      <blockquote class="scripture">“But Jehovah was with me like a fearsome warrior. That is why those persecuting me will stumble and will not prevail. They will be put to great shame, for they will not succeed. Their everlasting humiliation will not be forgotten.”<cite>Jeremiah 20:11, NWT Study Edition</cite></blockquote>
+      <p style="font-size:13px;color:#6b7280;">Further reading cited in the workbook: <em>w11</em> 3/15 p.30 ¶9 and <em>w10</em> 2/15 p.7 ¶8‑9 (Watchtower Library / Online Library).</p>
+
+      <div class="box prep"><span class="label">💬 Comment you could share</span> "I found it interesting that even though Jeremiah felt like giving up, he says the message became 'like a burning fire' inside him — he couldn't hold it in. That shows real conviction wasn't something he could just switch off."</div>
+      <div class="box prep"><span class="label">📌 Personal application</span> There are days I don't feel like starting a conversation in the ministry. Jeremiah's honesty about wanting to quit — and then not being able to stay silent — reminds me that feelings of reluctance don't have to be the last word.</div>
+      <div class="box prep"><span class="label">🙏 Getting to know Jehovah</span> Jehovah didn't leave Jeremiah to face persecution alone; he calls himself "a fearsome warrior" on Jeremiah's behalf. That tells me Jehovah personally takes note of what his servants go through for speaking up for him.</div>
+    </div>
+  </div>
+
+  <div class="card" data-section="treasures">
+    <div class="cardhead" onclick="toggleCard(this)">
+      <div><span class="tag treasures">Q&amp;A · 10 min</span><h3>2. Spiritual Gems</h3></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="cardbody">
+      <div class="qa">
+        <div class="q">Jer. 20:12 — What does this verse motivate us to do? <span class="chip" onclick="openSidebar('Jer 20:12')">Jer. 20:12</span></div>
+        <blockquote class="scripture">“But you, O Jehovah of armies, are examining the righteous one; You see the innermost thoughts and the heart. Let me see your vengeance on them, For to you I have committed my legal case.”<cite>Jeremiah 20:12, NWT Study Edition</cite></blockquote>
+        <div class="a">Jeremiah didn't try to avenge himself against Pashhur or those mocking him — he handed the matter over to Jehovah, confident that Jehovah "examines" hearts and motives with perfect accuracy. This motivates us to leave judgment of unfair treatment in Jehovah's hands rather than reacting in anger or trying to get even. (Cited source: <em>w13</em> 3/15 p.10 ¶11.)</div>
+      </div>
+      <div class="box prep"><span class="label">💬 Comment you could share</span> "This verse motivates me to trust that Jehovah sees things I can't see — including people's hearts — so I don't need to carry resentment when I'm treated unfairly."</div>
+      <p><strong>What spiritual gems from this week's Bible reading would you like to share?</strong> (open comment — see the Bible Reading section below for material to draw on.)</p>
+      <div class="box prep"><span class="label">📌 Personal application</span> A gem I noticed in the reading: Jeremiah's prayer moves from despair (v.14‑18) back to praise (v.13) earlier in the same chapter — proof that raw honesty with Jehovah and continued faith in him aren't contradictory.</div>
+    </div>
+  </div>
+
+  <div class="card" data-section="treasures">
+    <div class="cardhead" onclick="toggleCard(this)">
+      <div><span class="tag treasures">Bible Reading · 4 min</span><h3>3. Jeremiah 20:7‑18</h3></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="cardbody">
+      <p>This reading is Jeremiah's unusually candid prayer after being beaten and publicly humiliated by Pashhur. It moves through raw complaint (v.7‑10), renewed confidence in Jehovah (v.11‑13), and back into deep personal anguish (v.14‑18) — read as an outburst of genuine emotion, not a scripted speech, so vary your pace and tone between the discouraged verses and the confident ones.</p>
+      <span class="chip" onclick="openSidebar('Jer 20:14-18')">Jer. 20:14‑18</span>
+      <blockquote class="scripture">“Cursed be the day I was born! May the day my mother gave birth to me not be blessed! … Why did I have to come out of the womb To see trouble and grief, To end my days in shame?”<cite>Jeremiah 20:14, 18, NWT Study Edition</cite></blockquote>
+      <p><strong>Teaching quality (th study 2 — Read with feeling and appropriate tone):</strong> Because this reading contains such an emotional swing, pause briefly at the end of verse 13 before dropping into the lament of verse 14 — the shift itself communicates how real Jeremiah's struggle was.</p>
+      <div class="box prep"><span class="label">💬 Key-verse comment</span> "What struck me in verse 11 is that right in the middle of describing his suffering, Jeremiah suddenly declares, 'Jehovah was with me like a fearsome warrior.' He didn't wait until his circumstances improved to say that — he said it while still in the middle of the trial."</div>
+    </div>
+  </div>
+
+  <!-- ============ APPLY YOURSELF ============ -->
+  <div class="divider apply">🌱 <span>Apply Yourself to the Field Ministry</span><span class="line"></span></div>
+
+  <div class="card" data-section="apply">
+    <div class="cardhead" onclick="toggleCard(this)">
+      <div><span class="tag apply">Informal Witnessing · 4 min</span><h3>4. Starting a Conversation</h3></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="cardbody">
+      <p>Goal: find a natural way to let the person know you are one of Jehovah's Witnesses. (<em>lmd</em> lesson 2 point 4)</p>
+      <div class="dialogue">
+        <p><strong>Setting:</strong> Publisher strikes up a conversation with a cashier/co‑worker/neighbor in an everyday setting.</p>
+        <p><strong>Publisher:</strong> "Busy day today! Do you get much of a break, or is it go-go-go the whole shift?"</p>
+        <p class="coach">← lmd lesson 2 pt.4: opens with genuine, ordinary small talk — no scripted "spiritual" opener yet.</p>
+        <p><strong>Householder:</strong> "Barely ten minutes! It's been non-stop."</p>
+        <p><strong>Publisher:</strong> "I hear you. Actually, that's part of why I like what I do on the weekends — I get out and talk with people, kind of the opposite of rushing around. I'm one of Jehovah's Witnesses, and we're out in the neighborhood this week."</p>
+        <p class="coach">← lmd lesson 2 pt.4: identifies himself naturally, growing out of the conversation already happening, rather than announcing it as an opening line.</p>
+        <p><strong>Householder:</strong> "Oh okay, I've seen you all around."</p>
+        <p><strong>Publisher:</strong> "We have been! I'd love to leave you something short to look at whenever you do get a real break — would that be alright?"</p>
+      </div>
+      <div class="box prep"><span class="label">📌 Personal application</span> This approach works because it doesn't force a spiritual topic into a conversation that hasn't earned it yet — it lets genuine interest in the person come first.</div>
+    </div>
+  </div>
+
+  <div class="card" data-section="apply">
+    <div class="cardhead" onclick="toggleCard(this)">
+      <div><span class="tag apply">House to House · 4 min</span><h3>5. Following Up</h3></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="cardbody">
+      <p>Goal: share a truth from Appendix A of the <em>Love People</em> brochure. (<em>lmd</em> lesson 9 point 3)</p>
+      <div class="dialogue">
+        <p><strong>Publisher:</strong> "Hi again — last time we spoke about who's really behind all the suffering in the world, and you mentioned you weren't sure God was to blame. I brought something short that lays out what the Bible actually says about that."</p>
+        <p class="coach">← lmd lesson 9 pt.3: references the specific point of interest from the earlier visit before introducing new material — shows the publisher was listening.</p>
+        <p><strong>Householder:</strong> "Oh right, yes — go ahead."</p>
+        <p><strong>Publisher:</strong> "Appendix A of this brochure points out that the Bible traces suffering back to Satan, not God — and it shows a verse where Jesus himself calls him 'the ruler of this world.' Can I read that with you?"</p>
+        <p class="coach">← lmd lesson 9 pt.3: uses the printed appendix as a visual aid and invites participation rather than lecturing.</p>
+        <p><strong>Householder:</strong> "Sure, that's actually the kind of thing I've wondered about."</p>
+      </div>
+      <div class="box prep"><span class="label">💬 Comment you could share</span> "What I appreciate about following up this way is that it treats the householder's earlier question as something worth remembering, not just moving on to a new topic."</div>
+    </div>
+  </div>
+
+  <div class="card" data-section="apply">
+    <div class="cardhead" onclick="toggleCard(this)">
+      <div><span class="tag apply">Demonstration · 4 min</span><h3>6. Explaining Your Beliefs</h3></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="cardbody">
+      <p>A child rehearses with a parent a report he plans to give his class, based on <em>ijwwd</em> article 41 ("Specialized Cells"). (th study 13 — make the practical value of the point clear.)</p>
+      <div class="dialogue">
+        <p><strong>Child (rehearsing):</strong> "Did you know your body has trillions of cells, and they're not all the same? Some carry oxygen, some fight germs, some send signals to your brain — and each one does its specific job perfectly, like it was designed for it."</p>
+        <p class="coach">← th study 13: states a fact, then immediately draws out why it matters ("designed for it") instead of leaving the listener to guess the point.</p>
+        <p><strong>Parent:</strong> "That's a great start — what made you want to bring this up for your report?"</p>
+        <p><strong>Child:</strong> "Because it made me think that something this complicated didn't just happen by accident — it points to a Designer."</p>
+        <p class="coach">← th study 13: personalizes the conclusion in the child's own words, making the "practical value" of the fact clear rather than just reciting information.</p>
+      </div>
+      <div class="box prep"><span class="label">📌 Personal application</span> Even a simple biology fact can become a natural opening to talk about the Designer — the key is pausing to state why the fact matters, not just presenting it.</div>
+    </div>
+  </div>
+
+  <!-- ============ LIVING AS CHRISTIANS ============ -->
+  <div class="divider living">✝️ <span>Living as Christians</span><span class="line"></span></div>
+
+  <div class="songbanner">
+    <span>🎵 <a href="https://www.jw.org/en/library/music-songs/jw-songbook/57-preaching-to-all-sorts-of-people/" target="_blank">Song 57 – Preaching to All Sorts of People</a></span>
+  </div>
+
+  <div class="card" data-section="living">
+    <div class="cardhead" onclick="toggleCard(this)">
+      <div><span class="tag living">Discussion · 15 min</span><h3>7. Be Adaptable — Show Personal Interest</h3></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="cardbody">
+      <p>Before going out in the ministry, we might prepare to start a conversation on a topic many in the territory are thinking about (<em>lmd</em> lesson 1 point 3). But what if a different topic would serve a particular householder better? Before sharing the good news with a blind man, Jesus first showed him kindness.</p>
+      <span class="chip" onclick="openSidebar('John 9:1')">John 9:1</span><span class="chip" onclick="openSidebar('John 9:6-7')">John 9:6, 7</span><span class="chip" onclick="openSidebar('John 9:35-38')">John 9:35‑38</span>
+      <blockquote class="scripture">“As he was passing along, he saw a man who had been blind from birth.”<cite>John 9:1, NWT Study Edition</cite></blockquote>
+      <blockquote class="scripture">“After he said these things, he spat on the ground and made a paste with the saliva, and he smeared the paste on the man's eyes and said to him: “Go wash in the pool of Si·loʹam” (which is translated “Sent Forth”). And he went and washed, and came back seeing.”<cite>John 9:6, 7, NWT Study Edition</cite></blockquote>
+      <blockquote class="scripture">“Jesus heard that they had thrown him out, and on finding him, he said: “Are you putting faith in the Son of man?” The man answered: “And who is he, sir, so that I may put faith in him?” Jesus said to him: “You have seen him, and in fact, he is the one speaking with you.” He said: “I do put faith in him, Lord.” And he did obeisance to him.”<cite>John 9:35‑38, NWT Study Edition</cite></blockquote>
+      <p>When someone senses that we genuinely care, he is more likely to listen to our message. So when preaching house to house, it's important to imagine how the householder feels and to demonstrate personal interest.</p>
+
+      <p><strong>Read 1 Corinthians 9:20‑23.</strong></p>
+      <span class="chip" onclick="openSidebar('1 Cor 9:20-23')">1 Cor. 9:20‑23</span>
+      <blockquote class="scripture">“To the Jews I became as a Jew in order to gain Jews; to those under law I became as under law, though I myself am not under law, in order to gain those under law. To those without law I became as without law, although I am not without law toward God but under law toward Christ, in order to gain those without law. To the weak I became weak, in order to gain the weak. I have become all things to people of all sorts, so that I might by all possible means save some. But I do all things for the sake of the good news, in order to share it with others.”<cite>1 Corinthians 9:20‑23, NWT Study Edition</cite></blockquote>
+
+      <div class="qa">
+        <div class="q">How did Paul show that he cared about people?</div>
+        <div class="a">Paul deliberately adjusted his approach to fit each audience — becoming "as a Jew" to Jews, adapting to those "under law" and those "without law," and becoming "weak" to the weak — not to change his message, but so that people from very different backgrounds would feel he understood and respected them.</div>
+      </div>
+      <div class="qa">
+        <div class="q">Why did Paul make the effort to adapt his message?</div>
+        <div class="a">His stated motive: "so that I might by all possible means save some" — his focus was on the individual's salvation, not on personal convenience or a fixed script.</div>
+      </div>
+
+      <img src="https://assetsnffrgf-a.akamaihd.net/assets/m/202026244/univ/wpub/202026244_univ_cnt_2_xs.jpg" alt="A scene from the video 'Eager to Declare the Good News—Be Ready With the Right Equipment'—Excerpt. The couple in the video preach to a man in the door-to-door ministry.">
+      <div class="caption">A scene from the video "'Eager to Declare the Good News'—Be Ready With the Right Equipment"—Excerpt. The couple preach to a man in the door‑to‑door ministry.</div>
+
+      <div class="box videonote">
+        <span class="label">🎬 Video — "Eager to Declare the Good News"—Be Ready With the Right Equipment—Excerpt</span>
+        This part-of-broadcast excerpt was not retrievable in full (JW.ORG's video player did not return a transcript to automated fetching), so no synopsis details are invented here. Based on the caption supplied in the workbook itself, the excerpt shows a publisher couple engaging a man in door‑to‑door ministry and adjusting their approach on the spot. Watch it directly before the meeting: <a href="https://www.jw.org/en/library/videos/" target="_blank">jw.org video library</a> (search "Be Ready With the Right Equipment").
+      </div>
+      <div class="qa">
+        <div class="q">Although the brother had prepared a topic to start a conversation, how did he adapt to the situation?</div>
+        <div class="a"><em>Answer from the video itself — fill in after watching, since the transcript could not be verified automatically. Base your comment only on what you actually see/hear in the video, consistent with the theme: recognizing when the prepared topic isn't the best fit and pivoting to what genuinely interests the householder.</em></div>
+      </div>
+      <div class="qa">
+        <div class="q">Why is it important to show that we care?</div>
+        <div class="a">Genuine care is what makes a householder willing to listen in the first place — technique without sincere interest in the person tends to come across as just that, technique.</div>
+      </div>
+
+      <div class="box prep"><span class="label">💬 Comment you could share</span> "What stood out to me about Jesus and the blind man is that Jesus showed kindness before he ever explained the spiritual point — the kindness itself opened the man up to listening."</div>
+      <div class="box prep"><span class="label">🙏 Getting to know Jehovah</span> Both Jesus' compassion for the blind man and Paul's willingness to adapt reflect Jehovah's own personality — he meets people where they are rather than requiring them to come to him on his terms first.</div>
+    </div>
+  </div>
+
+  <!-- ============ CBS ============ -->
+  <div class="divider cbs">📕 <span>Congregation Bible Study</span><span class="line"></span></div>
+
+  <div class="warnbanner">⚠️ NEW CBS PUBLICATION DETECTED: "wcg" (<em>Walk Courageously With God</em>) — the schedule now studies <em>Walk Courageously With God</em>, not <em>Lessons You Can Learn From the Bible</em> ("lfb"). This section has been built directly from the wcg chapter format (Read the Bible Account / Dig Deeper / Reflect on the Lessons / Meditate on the Bigger Picture) instead of the lfb layout. Please update the scheduled task instructions to reflect "wcg" as the current CBS publication going forward.</div>
+
+  <div class="card" data-section="cbs">
+    <div class="cardhead" onclick="toggleCard(this)">
+      <div><span class="tag cbs">CBS · 30 min</span><h3>8. Chapter 1 — Enoch: "He Walked With God"</h3></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="cardbody">
+      <p><em>wcg</em> intro to Section 1, timeline, and chapter 1.</p>
+      <img src="https://assetsnffrgf-a.akamaihd.net/img/p/1102025901/univ/art/1102025901_univ_cnt_1_xs.jpg" alt="Enoch proclaiming God's judgment message to people on a busy street. Some in the group look angry and annoyed, and some have weapons.">
+      <div class="caption">Enoch proclaiming God's judgment message to people on a busy street. Some in the group look angry and annoyed, and some have weapons.</div>
+      <div class="box imgnote"><span class="label">🖼️ Image application</span> The armed, hostile crowd shows just how dangerous Enoch's assignment was — he wasn't reciting a message to friendly listeners, he was confronting an angry, violent culture. It's a picture worth holding onto whenever declaring Bible truth feels socially risky.</div>
+
+      <p>Enoch was the only man of his time whom the Bible describes as one who "kept walking with the true God." He stood apart from the world of his day in two ways: in what he refused to do, and in what he did. Cain's violent, godless spirit had spread through the human family, and Enoch refused to be shaped by it, remaining a man of peace. He also refused to take part in the blasphemous, counterfeit "calling on the name of Jehovah" practiced by some in his generation.</p>
+
+      <span class="chip" onclick="openSidebar('Gen 4:23-24')">Gen. 4:23, 24</span><span class="chip" onclick="openSidebar('Gen 4:26')">Gen. 4:26</span>
+      <blockquote class="scripture">“Then Laʹmech composed these words for his wives Aʹdah and Zilʹlah: “Hear my voice, you wives of Laʹmech; Give ear to my saying: A man I have killed for wounding me, Yes, a young man for striking me. If 7 times Cain is to be avenged, Then Laʹmech 77 times.””<cite>Genesis 4:23, 24, NWT Study Edition</cite></blockquote>
+      <blockquote class="scripture">“There was also born to Seth a son, and he named him Eʹnosh. At that time people began calling on the name of Jehovah.”<cite>Genesis 4:26, NWT Study Edition</cite></blockquote>
+
+      <p>God gave Enoch a special assignment — to serve as a prophet, delivering a strong judgment message to a hostile audience. Enoch's prophecy, quoted centuries later by Jude, was worded as if God's judgment had already happened, showing how certain its fulfillment was:</p>
+      <span class="chip" onclick="openSidebar('Jude 14-15')">Jude 14, 15</span>
+      <blockquote class="scripture">“Yes, the seventh one in line from Adam, Eʹnoch, also prophesied about them when he said: “Look! Jehovah came with his holy myriads to execute judgment against all, and to convict all the ungodly concerning all their ungodly deeds that they did in an ungodly way, and concerning all the shocking things that ungodly sinners spoke against him.””<cite>Jude 14, 15, NWT Study Edition</cite></blockquote>
+
+      <p>When persecution against Enoch grew dangerous, Jehovah lovingly transferred him from the dangers of life into peaceful death, rather than allowing enemies to harm him.</p>
+      <span class="chip" onclick="openSidebar('Gen 5:21-24')">Gen. 5:21‑24</span><span class="chip" onclick="openSidebar('Heb 11:5')">Heb. 11:5</span>
+      <blockquote class="scripture">“Eʹnoch lived for 65 years and then became father to Me·thuʹse·lah. After becoming father to Me·thuʹse·lah, Eʹnoch continued to walk with the true God for 300 years. And he became father to sons and daughters. So all the days of Eʹnoch amounted to 365 years. Eʹnoch kept walking with the true God. Then he was no more, for God took him.”<cite>Genesis 5:21‑24, NWT Study Edition</cite></blockquote>
+      <blockquote class="scripture">“By faith Eʹnoch was transferred so as not to see death, and he was nowhere to be found because God had transferred him; for before he was transferred he received the witness that he had pleased God well.”<cite>Hebrews 11:5, NWT Study Edition</cite></blockquote>
+
+      <img src="https://assetsnffrgf-a.akamaihd.net/img/p/1102025901/univ/art/1102025901_univ_cnt_2_xs.jpg" alt="Collage: Enoch meditating on events relating to his ancestors — the garden of Eden guarded by cherubs, Adam and Eve in old age, Cain standing over the body of murdered Abel.">
+      <div class="caption">Picture A — Enoch meditating on events relating to his ancestors: the guarded garden of Eden, Adam and Eve in old age, and Cain standing over Abel's body.</div>
+      <div class="box imgnote"><span class="label">🖼️ Image application</span> This collage helps explain Enoch's courage: he lived close enough to these events (through his elders' firsthand accounts) that Jehovah's warnings and mankind's rebellion weren't ancient history to him — they were living memory, which likely deepened his conviction.</div>
+
+      <img src="https://assetsnffrgf-a.akamaihd.net/img/p/1102025901/univ/art/1102025901_univ_cnt_3_xs.jpg" alt="A brother working at an auto repair shop approaching a tough-looking workmate to give him an invitation to a meeting, while other workmates laugh.">
+      <div class="caption">Picture B — A brother at an auto repair shop approaches a tough-looking workmate with a meeting invitation while others laugh.</div>
+      <div class="box prep"><span class="label">📌 Personal application</span> This modern picture pairs naturally with Enoch's account — courage to speak up in an unsupportive environment isn't just an ancient challenge, it's one some of us face at work or school this very week.</div>
+
+      <h4>Printed Questions</h4>
+      <div class="qa">
+        <div class="q">For discussion: In what ways did Enoch show courage?</div>
+        <div class="a">He refused to imitate the violence and false religion of his contemporaries, and he obeyed an assignment to deliver an unpopular, confrontational message to a hostile audience — fully aware it could cost him his life.</div>
+      </div>
+      <div class="qa">
+        <div class="q">1. How might people have begun "calling on the name of Jehovah" (Gen. 4:26) in a way Enoch refused to join?</div>
+        <div class="a">The Bible's later description suggests this early "calling on the name of Jehovah" was corrupted into a form of false worship — invoking Jehovah's name blasphemously rather than sincerely — which is why Enoch, though living among such people, still stood apart. (Source cited in the chapter: <em>w01</em> 9/15 p.29 ¶3.)</div>
+      </div>
+      <div class="qa">
+        <div class="q">2. Enoch was the first faithful human to do what? How was he able to fulfill his assignment?</div>
+        <div class="a">Enoch was the first faithful prophet of God recorded in the Bible. He was able to fulfill the assignment because of his close relationship with Jehovah — described as "walking with" God — which gave him the courage to deliver a message he knew would provoke hostility. (Source cited: <em>w01</em> 9/15 p.31 ¶5.)</div>
+      </div>
+      <div class="qa">
+        <div class="q">3. Even before he started prophesying, why would Enoch likely have known his courage would be tested?</div>
+        <div class="a">Enoch lived among people descended from Cain, whose murderous, defiant spirit toward Jehovah was well known within the family line; anyone who chose to remain loyal to Jehovah in that environment could expect opposition. (Source cited: <em>w06</em> 10/1 p.19 ¶13‑14.)</div>
+      </div>
+      <div class="qa">
+        <div class="q">4. How could you show that Enoch was not taken to heaven, as some believe?</div>
+        <div class="a"><span class="chip" onclick="openSidebar('John 3:13')">John 3:13</span> <span class="chip" onclick="openSidebar('Heb 11:13')">Heb. 11:13</span>
+        <blockquote class="scripture">“Moreover, no man has ascended into heaven but the one who descended from heaven, the Son of man.”<cite>John 3:13, NWT Study Edition</cite></blockquote>
+        <blockquote class="scripture">“In faith all of these died, although they did not receive the fulfillment of the promises; but they saw them from a distance and welcomed them and publicly declared that they were strangers and temporary residents in the land.”<cite>Hebrews 11:13, NWT Study Edition</cite></blockquote>
+        Jesus stated plainly that no man had ascended to heaven before him, and Hebrews groups Enoch among the faithful ones who "died" without receiving the fulfillment of God's promises — both facts rule out the idea that Enoch went to heaven.</div>
+      </div>
+
+      <h4>Reflect on the Lessons</h4>
+      <div class="qa">
+        <div class="q">When might we especially need courage to preach? Based on Enoch's example, what can help us?</div>
+        <div class="a">Situations where the message is unwelcome — at work, among unbelieving relatives, or in a territory hostile to religion — call for the same kind of courage Enoch needed. What helped him was his ongoing relationship with Jehovah ("walking with" him), not a personality trait; cultivating that same closeness through prayer and Bible study strengthens our own courage.</div>
+      </div>
+      <div class="qa">
+        <div class="q">How does Jehovah feel when we walk courageously with him? <span class="chip" onclick="openSidebar('Prov 27:11')">Prov. 27:11</span></div>
+        <blockquote class="scripture">“Be wise, my son, and make my heart rejoice, So that I can make a reply to him who taunts me.”<cite>Proverbs 27:11, NWT Study Edition</cite></blockquote>
+        <div class="a">Jehovah says our wise, courageous conduct literally makes his heart rejoice — it isn't a small thing to him. Enoch likewise "received the witness that he had pleased God well" before he died.</div>
+      </div>
+      <div class="qa">
+        <div class="q">How might you imitate Enoch's courage in your life?</div>
+        <div class="a">Open comment — think of one specific situation this week (a conversation at work, with a relative, or in the ministry) where speaking up for Jehovah will take deliberate courage.</div>
+      </div>
+
+      <h4>Wrap-Up Questions</h4>
+      <div class="qa">
+        <div class="q">What does this account teach us about Jehovah?</div>
+        <div class="a">Jehovah notices and rewards quiet, personal loyalty even when it isn't publicly celebrated in the moment — and he actively protects his loyal ones, even through means as unexpected as bringing Enoch's life to a peaceful end rather than letting him suffer at his enemies' hands.</div>
+      </div>
+      <div class="qa">
+        <div class="q">Are there any points from this lesson we can use in the ministry or our daily life?</div>
+        <div class="a">Enoch's example shows that "walking with God" — staying in step with him through consistent prayer, study, and obedience — is what equips ordinary people for uncomfortable assignments, whether that's a bold conversation in the ministry or standing firm among people who don't share our values.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="songbanner">
+    <span>🎵 Concluding Comments (3 min) — <a href="https://www.jw.org/en/library/music-songs/jw-songbook/31-walk-with-god/" target="_blank">Song 31 – Walk With God</a> and Prayer</span>
+  </div>
+
+  <footer>
+    Source: <a href="https://www.jw.org/en/library/jw-meeting-workbook/july-august-2026-mwb/Life-and-Ministry-Meeting-Schedule-for-July-27-August-2-2026/" target="_blank">jw.org — Life and Ministry Meeting Schedule, July 27–August 2, 2026</a><br>
+    All scripture quotations are taken verbatim from the New World Translation of the Holy Scriptures (Study Edition), © Watch Tower Bible and Tract Society of Pennsylvania.<br>
+    Personal study guide prepared for comment preparation — not an official publication of Jehovah's Witnesses.
+  </footer>
+</div>
+
+<div id="sidebarOverlay" onclick="closeSidebar()"></div>
+<div id="sidebar">
+  <button class="sbclose" onclick="closeSidebar()">×</button>
+  <h3 id="sbTitle">Scripture</h3>
+  <blockquote id="sbText"></blockquote>
+  <a class="openfull" id="sbLink" href="#" target="_blank">Open full article →</a>
+</div>
+
+<script>
+const scriptureTexts = {
+  "Jer 20:2": ["Jeremiah 20:2","“Then Pashʹhur struck Jeremiah the prophet and put him in the stocks that were at the Upper Gate of Benjamin, which was in the house of Jehovah.”","https://www.jw.org/en/library/bible/study-bible/books/jeremiah/20/#v24020002"],
+  "Jer 20:8": ["Jeremiah 20:8","“For whenever I speak, I must cry out and proclaim, “Violence and destruction!” For me the word of Jehovah has been the cause of insults and jeering all day long.”","https://www.jw.org/en/library/bible/study-bible/books/jeremiah/20/#v24020008"],
+  "Jer 20:9": ["Jeremiah 20:9","“So I said: “I am not going to make mention of him, And I will speak no more in his name.” But in my heart it became like a burning fire shut up in my bones, And I was tired of holding it in; I could no longer endure it.”","https://www.jw.org/en/library/bible/study-bible/books/jeremiah/20/#v24020009"],
+  "Jer 20:11": ["Jeremiah 20:11","“But Jehovah was with me like a fearsome warrior. That is why those persecuting me will stumble and will not prevail. They will be put to great shame, for they will not succeed. Their everlasting humiliation will not be forgotten.”","https://www.jw.org/en/library/bible/study-bible/books/jeremiah/20/#v24020011"],
+  "Jer 20:12": ["Jeremiah 20:12","“But you, O Jehovah of armies, are examining the righteous one; You see the innermost thoughts and the heart. Let me see your vengeance on them, For to you I have committed my legal case.”","https://www.jw.org/en/library/bible/study-bible/books/jeremiah/20/#v24020012"],
+  "Jer 20:14-18": ["Jeremiah 20:14-18","“Cursed be the day I was born! May the day my mother gave birth to me not be blessed! … Why did I have to come out of the womb To see trouble and grief, To end my days in shame?”","https://www.jw.org/en/library/bible/study-bible/books/jeremiah/20/#v24020014-v24020018"],
+  "John 9:1": ["John 9:1","“As he was passing along, he saw a man who had been blind from birth.”","https://www.jw.org/en/library/bible/study-bible/books/john/9/#v43009001"],
+  "John 9:6-7": ["John 9:6, 7","“After he said these things, he spat on the ground and made a paste with the saliva, and he smeared the paste on the man's eyes and said to him: “Go wash in the pool of Si·loʹam” (which is translated “Sent Forth”). And he went and washed, and came back seeing.”","https://www.jw.org/en/library/bible/study-bible/books/john/9/#v43009006-v43009007"],
+  "John 9:35-38": ["John 9:35-38","“Jesus heard that they had thrown him out, and on finding him, he said: “Are you putting faith in the Son of man?” The man answered: “And who is he, sir, so that I may put faith in him?” Jesus said to him: “You have seen him, and in fact, he is the one speaking with you.” He said: “I do put faith in him, Lord.” And he did obeisance to him.”","https://www.jw.org/en/library/bible/study-bible/books/john/9/#v43009035-v43009038"],
+  "1 Cor 9:20-23": ["1 Corinthians 9:20-23","“To the Jews I became as a Jew in order to gain Jews; to those under law I became as under law, though I myself am not under law, in order to gain those under law. To those without law I became as without law, although I am not without law toward God but under law toward Christ, in order to gain those without law. To the weak I became weak, in order to gain the weak. I have become all things to people of all sorts, so that I might by all possible means save some. But I do all things for the sake of the good news, in order to share it with others.”","https://www.jw.org/en/library/bible/study-bible/books/1-corinthians/9/#v46009020-v46009023"],
+  "Gen 4:23-24": ["Genesis 4:23, 24","“Then Laʹmech composed these words for his wives Aʹdah and Zilʹlah: “Hear my voice, you wives of Laʹmech; Give ear to my saying: A man I have killed for wounding me, Yes, a young man for striking me. If 7 times Cain is to be avenged, Then Laʹmech 77 times.””","https://www.jw.org/en/library/bible/study-bible/books/genesis/4/#v1004023-v1004024"],
+  "Gen 4:26": ["Genesis 4:26","“There was also born to Seth a son, and he named him Eʹnosh. At that time people began calling on the name of Jehovah.”","https://www.jw.org/en/library/bible/study-bible/books/genesis/4/#v1004026"],
+  "Gen 5:21-24": ["Genesis 5:21-24","“Eʹnoch lived for 65 years and then became father to Me·thuʹse·lah. After becoming father to Me·thuʹse·lah, Eʹnoch continued to walk with the true God for 300 years. And he became father to sons and daughters. So all the days of Eʹnoch amounted to 365 years. Eʹnoch kept walking with the true God. Then he was no more, for God took him.”","https://www.jw.org/en/library/bible/study-bible/books/genesis/5/#v1005021-v1005024"],
+  "Heb 11:5": ["Hebrews 11:5","“By faith Eʹnoch was transferred so as not to see death, and he was nowhere to be found because God had transferred him; for before he was transferred he received the witness that he had pleased God well.”","https://www.jw.org/en/library/bible/study-bible/books/hebrews/11/#v58011005"],
+  "Heb 11:13": ["Hebrews 11:13","“In faith all of these died, although they did not receive the fulfillment of the promises; but they saw them from a distance and welcomed them and publicly declared that they were strangers and temporary residents in the land.”","https://www.jw.org/en/library/bible/study-bible/books/hebrews/11/#v58011013"],
+  "Jude 14-15": ["Jude 14, 15","“Yes, the seventh one in line from Adam, Eʹnoch, also prophesied about them when he said: “Look! Jehovah came with his holy myriads to execute judgment against all, and to convict all the ungodly concerning all their ungodly deeds that they did in an ungodly way, and concerning all the shocking things that ungodly sinners spoke against him.””","https://www.jw.org/en/library/bible/study-bible/books/jude/1/#v65001014-v65001015"],
+  "John 3:13": ["John 3:13","“Moreover, no man has ascended into heaven but the one who descended from heaven, the Son of man.”","https://www.jw.org/en/library/bible/study-bible/books/john/3/#v43003013"],
+  "Prov 27:11": ["Proverbs 27:11","“Be wise, my son, and make my heart rejoice, So that I can make a reply to him who taunts me.”","https://www.jw.org/en/library/bible/study-bible/books/proverbs/27/#v20027011"]
+};
+
+function toggleCard(head){
+  const card = head.parentElement;
+  card.classList.toggle('open');
+  const body = card.querySelector('.cardbody');
+  if(card.classList.contains('open')){
+    body.style.maxHeight = body.scrollHeight + 200 + 'px';
+  } else {
+    body.style.maxHeight = 0;
+  }
+}
+function toggleAll(){
+  const cards = document.querySelectorAll('.card');
+  const anyClosed = Array.from(cards).some(c=>!c.classList.contains('open'));
+  cards.forEach(c=>{
+    const body = c.querySelector('.cardbody');
+    if(anyClosed){ c.classList.add('open'); body.style.maxHeight = body.scrollHeight + 200 + 'px'; }
+    else { c.classList.remove('open'); body.style.maxHeight = 0; }
+  });
+  document.getElementById('expandAllBtn').textContent = anyClosed ? 'Collapse All' : 'Expand All';
+}
+function openSidebar(key){
+  const entry = scriptureTexts[key];
+  if(!entry) return;
+  document.getElementById('sbTitle').textContent = entry[0];
+  document.getElementById('sbText').textContent = entry[1];
+  document.getElementById('sbLink').href = entry[2];
+  document.getElementById('sidebar').classList.add('show');
+  document.getElementById('sidebarOverlay').classList.add('show');
+}
+function closeSidebar(){
+  document.getElementById('sidebar').classList.remove('show');
+  document.getElementById('sidebarOverlay').classList.remove('show');
+}
+</script>
+</body>
+</html>
