@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JW Meeting Study Guide — August 3-9, 2026</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f0f4f8;
+    color: #1a202c;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 0 60px; }
+  header.top {
+    background: #1a365d;
+    color: #fff;
+    padding: 28px 20px 22px;
+    text-align: center;
+  }
+  header.top h1 { margin: 0 0 4px; font-size: 22px; letter-spacing: 0.3px; }
+  header.top .subtitle { font-size: 15px; opacity: 0.85; margin-bottom: 14px; }
+  .date-badge {
+    display: inline-block;
+    background: #b91c1c;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 6px 16px;
+    border-radius: 20px;
+  }
+  .controls { padding: 16px 20px 0; text-align: right; }
+  #expandAllBtn {
+    background: #1a365d; color: #fff; border: none; border-radius: 6px;
+    padding: 10px 16px; font-size: 14px; font-weight: 600; cursor: pointer;
+  }
+  #expandAllBtn:active { transform: scale(0.98); }
+
+  .banner { margin: 18px 20px 0; border-radius: 10px; padding: 16px 20px; }
+  .banner.song { background: #eef2ff; border-left: 4px solid #4f46e5; font-weight: 600; }
+  .banner.focus { background: #1a365d; color: #fff; }
+  .banner.focus .label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.75; margin-bottom: 4px; }
+  .banner.closing-song { background: #eef2ff; border-left: 4px solid #4f46e5; font-weight: 600; }
+
+  .theme-verse {
+    margin: 18px 20px 0;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    border-left: 4px solid #1a365d;
+    font-size: 17px;
+    font-style: italic;
+    color: #1a365d;
+  }
+  .theme-verse .chip-row { margin-top: 10px; }
+
+  section.card {
+    margin: 22px 20px 0;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .card-heading {
+    background: #1a365d;
+    color: #fff;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  .card-body { padding: 4px 18px 18px; }
+
+  .q-unit { margin-top: 20px; }
+  .question-card {
+    background: #fff;
+    border-left: 4px solid #b91c1c;
+    border-radius: 6px;
+    padding: 14px 16px;
+    font-weight: 600;
+    font-size: 15.5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  }
+  .question-card .qnum { color: #b91c1c; margin-right: 6px; }
+
+  .toggle-answer {
+    margin-top: 8px;
+    display: inline-block;
+    background: none;
+    border: none;
+    color: #b45309;
+    font-weight: 700;
+    font-size: 13.5px;
+    cursor: pointer;
+    padding: 4px 0;
+  }
+
+  .answer-box {
+    display: none;
+    background: #fffbeb;
+    border-left: 3px solid #f59e0b;
+    border-radius: 6px;
+    padding: 14px 16px;
+    margin-top: 8px;
+    font-size: 14.5px;
+  }
+  .answer-box.open { display: block; }
+  .answer-box p { margin: 0 0 10px; }
+  .answer-box .sub-label { font-weight: 700; color: #92400e; }
+
+  .comment-box {
+    background: #fff;
+    border: 1px dashed #f59e0b;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-top: 10px;
+    font-size: 13.5px;
+  }
+  .comment-box .ctag { font-weight: 700; margin-right: 4px; }
+
+  .para-block {
+    background: #f8fafc;
+    border-left: 3px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-top: 10px;
+    line-height: 1.75;
+    font-size: 14.5px;
+    color: #2d3748;
+  }
+  .para-block .pnum { font-weight: 700; color: #1a365d; margin-right: 4px; }
+
+  .img-block { margin-top: 12px; }
+  .img-block img { max-width: 100%; border-radius: 8px; display: block; }
+  .img-caption { font-size: 12.5px; color: #4a5568; font-style: italic; margin-top: 6px; }
+  .img-application { font-size: 13px; color: #2d3748; margin-top: 6px; background: #f8fafc; border-radius: 6px; padding: 8px 10px; }
+
+  .box-callout {
+    background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 8px;
+    padding: 14px 16px; margin-top: 14px;
+  }
+  .box-callout h4 { margin: 0 0 8px; font-size: 14px; color: #075985; }
+  .box-callout ul { margin: 6px 0 8px 18px; padding: 0; font-size: 14px; }
+  .box-callout li { margin-bottom: 6px; }
+
+  .scripture-chip {
+    display: inline-block;
+    background: #eff6ff;
+    color: #1d4ed8;
+    border-radius: 14px;
+    padding: 3px 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 2px 4px 2px 0;
+    border: 1px solid #bfdbfe;
+  }
+  .scripture-chip:hover { background: #dbeafe; }
+
+  .scripture-quote {
+    margin-top: 8px;
+    background: #eff6ff;
+    border-left: 3px solid #1d4ed8;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 13.5px;
+    font-style: italic;
+    color: #1e3a5f;
+  }
+  .scripture-quote cite { display: block; margin-top: 4px; font-style: normal; font-weight: 700; font-size: 12.5px; color: #1d4ed8; }
+
+  .review-section { margin: 30px 20px 0; }
+  .review-title {
+    background: #b91c1c; color: #fff; padding: 14px 20px; border-radius: 10px 10px 0 0;
+    font-weight: 700; font-size: 16px;
+  }
+  .review-body { background: #fff; border-radius: 0 0 10px 10px; padding: 4px 18px 18px; }
+
+  .source-link { margin: 26px 20px 0; text-align: center; font-size: 13px; }
+  .source-link a { color: #1d4ed8; }
+
+  /* Sidebar */
+  #sidebarOverlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.35);
+    display: none; z-index: 998;
+  }
+  #sidebarOverlay.open { display: block; }
+  #sidebar {
+    position: fixed; top: 0; right: -100%; width: 340px; max-width: 90%;
+    height: 100%; background: #fff; z-index: 999;
+    box-shadow: -4px 0 16px rgba(0,0,0,0.2);
+    transition: right 0.25s ease;
+    overflow-y: auto;
+  }
+  #sidebar.open { right: 0; }
+  .sidebar-header {
+    background: #1a365d; color: #fff; padding: 16px 18px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .sidebar-header h3 { margin: 0; font-size: 15px; }
+  .sidebar-close { background: none; border: none; color: #fff; font-size: 20px; cursor: pointer; line-height: 1; }
+  .sidebar-content { padding: 16px 18px; font-size: 14px; }
+  .sidebar-content .sb-text { background: #eff6ff; border-radius: 6px; padding: 12px; font-style: italic; margin-bottom: 12px; }
+  .sidebar-content .sb-note { color: #2d3748; margin-bottom: 14px; }
+  .sidebar-content a.open-full {
+    display: inline-block; background: #1a365d; color: #fff; text-decoration: none;
+    padding: 8px 14px; border-radius: 6px; font-size: 13px; font-weight: 600;
+  }
+
+  @media (max-width: 480px) {
+    #sidebar { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div id="sidebarOverlay" onclick="closeSidebar()"></div>
+<div id="sidebar">
+  <div class="sidebar-header">
+    <h3 id="sbTitle">Reference</h3>
+    <button class="sidebar-close" onclick="closeSidebar()">&times;</button>
+  </div>
+  <div class="sidebar-content">
+    <div class="sb-text" id="sbText"></div>
+    <div class="sb-note" id="sbNote"></div>
+    <a class="open-full" id="sbLink" href="#" target="_blank" rel="noopener">Open full chapter →</a>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="top">
+    <h1>JW Meeting Study Guide</h1>
+    <div class="subtitle">Watchtower Study</div>
+    <div class="date-badge">Sunday, August 9, 2026</div>
+  </header>
+
+  <div class="controls">
+    <button id="expandAllBtn" onclick="toggleAll()">Expand All</button>
+  </div>
+
+  <div class="banner song">🎵 Opening Song: Song 113 — "Our Possession of Peace"</div>
+
+  <div class="banner focus">
+    <div class="label">Focus</div>
+    How to show respect for fellow believers when they make decisions that we do not agree with.
+  </div>
+
+  <div class="theme-verse">
+    “Do not pass judgment on differing opinions.”
+    <div class="chip-row">
+      <span class="scripture-chip" onclick="openSidebar('Rom. 14:1')">Rom. 14:1</span>
+    </div>
+  </div>
+
+  <!-- INTRODUCTION -->
+  <section class="card">
+    <div class="card-heading">Introduction</div>
+    <div class="card-body">
+
+      <div class="q-unit">
+        <div class="question-card"><span class="qnum">1-2.</span> Why do our personal decisions sometimes differ from those of other Christians?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>We are each unique — our thinking is shaped by our culture, family background, and personal experiences. So it isn't surprising that our decisions sometimes differ from those of other faithful Christians. The danger is letting those differing opinions threaten the peace and unity of the congregation.</p>
+          <p><span class="sub-label">Scripture cited:</span> <span class="scripture-chip" onclick="openSidebar('Eph. 4:3')">Eph. 4:3</span></p>
+          <div class="comment-box"><span class="ctag">💬 Comment you could share:</span> "What struck me was that having a different opinion from a brother or sister isn't automatically a problem — it's actually expected, since Jehovah made each of us unique."</div>
+          <div class="comment-box"><span class="ctag">📌 Ministry connection:</span> When people assume Witnesses are "all the same," this paragraph shows we genuinely value individuality while staying united in worship.</div>
+          <div class="comment-box"><span class="ctag">🙏 Getting to know Jehovah:</span> Jehovah doesn't demand uniformity from his people — he values the unity of the spirit, not sameness of personality.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">1</span> HAVE you ever felt unfairly judged because of a decision you made? Have you ever judged a fellow Christian on the basis of a decision he made? No doubt most of us could answer yes to both questions.
+          <br><br>
+          <span class="pnum">2</span> We should not be surprised that at times our decisions differ from those of other faithful Christians. Why? Because we are unique. Each of us has his or her own viewpoint. Our thinking is influenced by our culture, family background, and personal experiences. But we should not allow our differing opinions to threaten the peace and unity of the congregation.
+          <div class="scripture-quote">"earnestly endeavoring to maintain the oneness of the spirit in the uniting bond of peace."<cite>Ephesians 4:3</cite></div>
+        </div>
+      </div>
+
+      <div class="q-unit">
+        <div class="question-card"><span class="qnum">3.</span> What might cause us to judge a fellow Christian for a decision he has made?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Usually good motives — we love our brothers and sisters and don't want to see them get hurt or make a decision they'll regret. But good motives don't give us the right to pressure or judge them.</p>
+          <p><span class="sub-label">Scripture cited:</span> <span class="scripture-chip" onclick="openSidebar('Prov. 17:17')">Prov. 17:17</span></p>
+          <div class="comment-box"><span class="ctag">💬 Comment you could share:</span> "I found it interesting that the paragraph doesn't criticize our motives — it says we usually mean well. The issue is what we do with that concern."</div>
+          <div class="comment-box"><span class="ctag">📌 Ministry connection:</span> Useful when discussing why Witnesses don't pressure people into decisions — we can care about someone without controlling them.</div>
+          <div class="comment-box"><span class="ctag">🙏 Getting to know Jehovah:</span> Jehovah loves us enough to let us make our own choices, even when he could easily override them.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">3</span> When a fellow Christian makes a decision that we disagree with, we might feel the need to convince him to change his mind or we might voice our concerns to others. Likely, we have good motives. We love our brothers and sisters, and we want what is best for them. So we do not want to see them make a decision that they will later regret or that could damage them spiritually.
+          <div class="scripture-quote">"A true friend shows love at all times And is a brother who is born for times of distress."<cite>Proverbs 17:17</cite></div>
+        </div>
+      </div>
+
+      <div class="q-unit">
+        <div class="question-card"><span class="qnum">4-5.</span> What should we do if a fellow Christian decides to do something that differs from what we would have done?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p><span class="sub-label">(a)</span> If a brother's decision would violate a Bible command, love moves us to try to help him correct his thinking.</p>
+          <p><span class="sub-label">(b)</span> But if his decision simply differs from what we would choose — without breaking any of God's laws — our theme scripture applies: we "do not pass judgment on differing opinions."</p>
+          <p><span class="sub-label">Scriptures cited:</span> <span class="scripture-chip" onclick="openSidebar('Prov. 27:5-6')">Prov. 27:5, 6</span> <span class="scripture-chip" onclick="openSidebar('Rom. 14:1')">Rom. 14:1</span></p>
+          <div class="comment-box"><span class="ctag">💬 Comment you could share:</span> "What struck me was the clear line drawn here — violating a Bible command is different from simply making a choice I wouldn't make myself."</div>
+          <div class="comment-box"><span class="ctag">📌 Ministry connection:</span> Helpful when someone asks whether Witnesses judge each other over lifestyle choices — we show there's real room for personal decisions.</div>
+          <div class="comment-box"><span class="ctag">🙏 Getting to know Jehovah:</span> Jehovah's standards are clear and unchanging, but he leaves enormous room for personal preference within them.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">4</span> Should we discuss our concerns with our brother if we disagree with his decision? That depends on a number of factors. For example, if we learn that he is thinking about doing something that violates a Bible command, then out of love for him, we should try to help him to correct his thinking. Yet, what should we do if a brother decides to do something that does not break one of God's laws but simply differs from what we would have done? We find the answer in our theme scripture. We "do not pass judgment on differing opinions."
+          <br><br>
+          <span class="pnum">5</span> Still, we may find it hard to respect his decision. In this article, we will discuss why we should respect the decisions of others and how we can do so. But first, let us consider some situations involving personal decisions that could lead us to pass judgment on our brothers and sisters.
+          <div class="scripture-quote">"Open reproof is better than concealed love." / "The wounds inflicted by a friend are faithful, But an enemy's kisses are plentiful."<cite>Proverbs 27:5, 6</cite></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: WHAT PERSONAL DECISIONS -->
+  <section class="card">
+    <div class="card-heading">What Personal Decisions Could Cause Us to Judge Others?</div>
+    <div class="card-body">
+
+      <div class="q-unit">
+        <div class="question-card"><span class="qnum">6-7.</span> Describe scenarios in which we might judge others for their decisions.</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>The article gives five scenarios: (1) a brother raised by an alcoholic father is troubled seeing others drink alcohol responsibly, (2) a sister who beat an illness pressures a friend with the same diagnosis to follow her treatment, (3) a former member of a false religion is offended when a fellow Christian attends a funeral held in a church, (4) a brother insists on outdated views about beards and dress, and (5) an elder pressures a young brother's family over the choice to pursue additional education.</p>
+          <div class="comment-box"><span class="ctag">💬 Comment you could share:</span> "What struck me was how ordinary these scenarios are — alcohol, diet, funerals, appearance, education. These are things I could easily have an opinion on without realizing I'm judging someone."</div>
+          <div class="comment-box"><span class="ctag">📌 Ministry connection:</span> Shows householders that Witnesses recognize their own tendency toward judgmental attitudes and work to correct it — a point of relatable honesty.</div>
+          <div class="comment-box"><span class="ctag">🙏 Getting to know Jehovah:</span> None of these scenarios involve Bible law — they reveal how easily personal background gets mistaken for divine standard.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">6</span> As mentioned earlier, we might have strong opinions about certain topics because of our background or experiences. We might assume that others share our viewpoint. Yet, that may not be the case. Consider a few scenarios. Scenario 1: Before learning the truth, a brother grew up with a father who abused alcohol. At a gathering, the brother sees other Christians drinking alcohol. He is disappointed and tells them that what they are doing is wrong. Scenario 2: A sister has successfully battled a serious disease. Later, she learns that another sister has been diagnosed with the same illness. The first sister wants to help, so she pressures her friend to follow the same medical treatment she did. Scenario 3: A brother used to be a member of a false religion. He hates his former life course. When he learns that a fellow Christian attended a funeral in a church, he is offended.
+          <br><br>
+          <span class="pnum">7</span> Consider a few additional scenarios. Scenario 4: A brother grew up during a time when most people felt that it was inappropriate for men to grow beards or for women to wear dress slacks to formal events. While the brother is aware of the recent adjustment in our view of this subject, he insistently tells others that Christian men should not wear beards and that Christian women should wear dresses while engaged in theocratic activities. Scenario 5: An elder knew a brother who pursued additional education and later left the truth. Now a young brother in the elder's congregation has decided to seek additional education. The elder is concerned and tries to convince the young brother and his parents to change their mind.
+        </div>
+      </div>
+
+      <div class="q-unit">
+        <div class="question-card"><span class="qnum">8.</span> (a) What could cause a parent to become judgmental of other parents? (b) How might our having a critical attitude toward others affect the congregation?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p><span class="sub-label">(a)</span> Comparing our own parenting choices (curfews, video games, cell phone age) to more permissive parents, especially when our own children point out the difference.</p>
+          <p><span class="sub-label">(b)</span> A critical attitude toward others' personal decisions — about money, vacations, or entertainment — can threaten the unity of the congregation if we let those feelings outweigh unity.</p>
+          <p><span class="sub-label">Scripture cited:</span> <span class="scripture-chip" onclick="openSidebar('Eph. 6:4')">Eph. 6:4</span></p>
+          <div class="comment-box"><span class="ctag">💬 Comment you could share:</span> "What struck me was that the pressure often doesn't even come from other adults — it comes from our own kids saying 'why can't you be like my friend's parents.' That's a very real, relatable trigger for judgment."</div>
+          <div class="comment-box"><span class="ctag">📌 Ministry connection:</span> Good for conversations with parents who feel judged for their parenting style by other families, including in the congregation.</div>
+          <div class="comment-box"><span class="ctag">🙏 Getting to know Jehovah:</span> Jehovah's counsel to parents at Ephesians 6:4 focuses on not being "irritating" — he cares about the emotional tone of the home, not just the rules.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">8</span> Consider a situation that could affect parents. Scenario 6: As a parent, you work hard to raise your children "in the discipline and admonition of Jehovah." But other Christian parents seem to be more permissive than you are. For example, they allow their children to have a later curfew, to play nonviolent video games, or to have a cell phone at an early age. As a result, your child feels that you are being overly strict. "Why can't you be more like my friend's parents?" he asks. Such a situation could cause you to become critical of the other parents. The truth is that any Christian's personal decision that differs from ours could cause disagreements. For example, we might question how he spends his money, how often he goes on vacation, or what entertainment he chooses. But we must not allow our feelings to become more important to us than the unity of the congregation.
+          <div class="scripture-quote">"And fathers, do not be irritating your children, but go on bringing them up in the discipline and admonition of Jehovah."<cite>Ephesians 6:4</cite></div>
+        </div>
+      </div>
+
+      <div class="q-unit">
+        <div class="question-card"><span class="qnum">9.</span> What should we remember? (See also picture.)</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Differing decisions don't mean one Christian is right and another wrong. Just because we're to "think in agreement" on Jehovah's standards doesn't mean we must think alike on personal matters. Like travelers choosing different routes to the same destination, Christians can make different personal choices while still aiming for the same goal — pleasing Jehovah.</p>
+          <p><span class="sub-label">Scriptures cited:</span> <span class="scripture-chip" onclick="openSidebar('Rom. 14:5')">Rom. 14:5</span> <span class="scripture-chip" onclick="openSidebar('2 Cor. 13:11')">2 Cor. 13:11</span> <span class="scripture-chip" onclick="openSidebar('Matt. 7:1')">Matt. 7:1</span> <span class="scripture-chip" onclick="openSidebar('1 Thess. 4:11')">1 Thess. 4:11</span></p>
+          <div class="comment-box"><span class="ctag">💬 Comment you could share:</span> "I found the travel illustration really practical — different routes, same destination. It reframes a 'different' decision as still headed the right way, not as a wrong turn."</div>
+          <div class="comment-box"><span class="ctag">📌 Ministry connection:</span> Great illustration to use when explaining to people that Christianity isn't about everyone living identical lives.</div>
+          <div class="comment-box"><span class="ctag">🙏 Getting to know Jehovah:</span> Jehovah is not looking for identical servants — he's looking for hearts aimed at the same destination: pleasing him.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">9</span> While the decisions of one Christian may differ from those of another, this does not necessarily mean that one is right and the other is wrong. Just because Christians are instructed "to think in agreement" when it comes to Jehovah's standards, this does not mean that we have to think alike in all personal matters. We could compare our personal decisions to the choices we make when we travel to a certain location. Often, there are several different routes that lead to the same destination. We choose the one that suits our preferences and limitations. In a similar way, Christians may make different choices in personal matters, but our destination is the same: We seek to please Jehovah. So we do not judge others for the personal decisions they make.
+          <div class="scripture-quote">"One man judges one day as above another; another judges one day the same as all others; let each one be fully convinced in his own mind."<cite>Romans 14:5</cite></div>
+        </div>
+        <div class="img-block">
+          <img src="https://cms-imgp.jw-cdn.org/img/p/2026404/univ/art/2026404_univ_cnt_1_lg.jpg" alt="A GPS app on a phone, displaying multiple routes and transportation modes that all lead to the same destination.">
+          <div class="img-caption">Travelers may choose from several routes to reach a destination; likewise, Christians may make different decisions in personal matters when serving Jehovah (See paragraph 9)</div>
+          <div class="img-application">Application: Just as a GPS shows several valid routes, two Christians can take different — equally acceptable — paths in personal matters and still arrive at the same goal of pleasing Jehovah.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: WHY RESPECT -->
+  <section class="card">
+    <div class="card-heading">Why Respect the Personal Decisions of Others?</div>
+    <div class="card-body">
+
+      <div class="q-unit">
+        <div class="question-card"><span class="qnum">10.</span> According to James 4:12, what do we not have the authority to do, and why?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>We do not have the authority to judge others in personal matters. Jehovah alone is the righteous Lawgiver and Judge — our brothers and sisters are accountable to him, not to us.</p>
+          <p><span class="sub-label">Read:</span> <span class="scripture-chip" onclick="openSidebar('James 4:12')">James 4:12</span></p>
+          <div class="scripture-quote">"There is only one who is Lawgiver and Judge, the one who is able to save and to destroy. But you, who are you to be judging your neighbor?"<cite>James 4:12</cite></div>
+          <p><span class="sub-label">Also cited:</span> <span class="scripture-chip" onclick="openSidebar('Rom. 14:10')">Rom. 14:10</span></p>
+          <div class="comment-box"><span class="ctag">💬 Comment you could share:</span> "What struck me was the rhetorical question — 'who are you to be judging your neighbor?' It's a direct reminder that judgment isn't my role to take on."</div>
+          <div class="comment-box"><span class="ctag">📌 Ministry connection:</span> Useful when discussing why Witnesses avoid condemning others for lifestyle choices that don't involve moral wrongdoing.</div>
+          <div class="comment-box"><span class="ctag">🙏 Getting to know Jehovah:</span> Jehovah reserves the role of Judge for himself — he doesn't delegate that authority to us over personal matters.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">10</span> The Bible provides several reasons why we should respect the personal decisions of others. Consider a few of them. We do not have the authority to judge others in personal matters. Jehovah is the righteous Lawgiver and Judge. Only he has the right to set standards and rules for life. So our brothers and sisters are accountable to Jehovah, not to us. We do not have the right to judge or criticize the decisions of others based on our own standards or opinions.
+        </div>
+      </div>
+
+      <div class="q-unit">
+        <div class="question-card"><span class="qnum">11.</span> How can we contribute to the unity of the congregation? (See also picture.)</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Jehovah requires unity, not uniformity. He loves variety — evident in creation, from snowflakes to the diversity of over eight billion people. He wants us united, not cloned. So we place greater value on congregation unity than on our own opinions and preferences.</p>
+          <p><span class="sub-label">Scripture cited:</span> <span class="scripture-chip" onclick="openSidebar('Rom. 14:19')">Rom. 14:19</span></p>
+          <div class="comment-box"><span class="ctag">💬 Comment you could share:</span> "I found it interesting that the paragraph uses snowflakes and human diversity as evidence that Jehovah loves variety — unity was never meant to mean sameness."</div>
+          <div class="comment-box"><span class="ctag">📌 Ministry connection:</span> Helps answer the objection that all Witnesses "think alike" — we're united in worship, not personality.</div>
+          <div class="comment-box"><span class="ctag">🙏 Getting to know Jehovah:</span> Jehovah is the Creator of endless variety — he designed diversity into creation itself, then invites that same diversity into his organization united in worship.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">11</span> Jehovah requires unity among his worshippers, not uniformity. In fact, our God loves variety! We see evidence of this in creation. For example, no two snowflakes are the same. And just think about humans. Of the over eight billion people on earth, no two people are exactly alike in appearance or personality. Jehovah created us to be different. He does not want us to be clones of one another. But he does want us to be united. So rather than let our differences divide us, we promote peace. We place greater value on the unity of the congregation than on our opinions and preferences.
+          <div class="scripture-quote">"So, then, let us pursue the things making for peace and the things that build one another up."<cite>Romans 14:19</cite></div>
+        </div>
+        <div class="img-block">
+          <img src="https://cms-imgp.jw-cdn.org/img/p/2026404/univ/art/2026404_univ_cnt_2_lg.jpg" alt="A diverse group of Witnesses of various races and ages enjoying a meal together. Some have alcohol to drink, while others do not. And some brothers have beards, while others do not.">
+          <div class="img-caption">Jehovah created us to be different from one another, but he wants us to be united (See paragraph 11)</div>
+          <div class="img-application">Application: The picture shows brothers and sisters of different backgrounds, some with beards and some without, some drinking alcohol and some not — sharing a meal together in unity, illustrating that differing personal choices don't need to divide us.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: HOW TO RESPECT -->
+  <section class="card">
+    <div class="card-heading">How to Respect the Viewpoints of Others</div>
+    <div class="card-body">
+
+      <div class="q-unit">
+        <div class="question-card"><span class="qnum">12-13.</span> What should we keep in mind if we feel that someone has taken "a false step"? <em>(Galatians 6:1; see also the box "When You Disagree.")</em></div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p><span class="sub-label">(a)</span> Ask yourself whether the person is taking a false step (violating a Bible command) or simply a different step. If it's a false step and you're scripturally qualified, try to reason with him in a spirit of mildness.</p>
+          <p><span class="sub-label">Read:</span> <span class="scripture-chip" onclick="openSidebar('Gal. 6:1')">Galatians 6:1</span></p>
+          <div class="scripture-quote">"Brothers, even if a man takes a false step before he is aware of it, you who have spiritual qualifications try to readjust such a man in a spirit of mildness. But keep an eye on yourself, for fear you too may be tempted."<cite>Galatians 6:1</cite></div>
+          <p><span class="sub-label">(b)</span> If it's simply a different step — not a Bible violation — don't question or criticize the decision. Respect his right to decide for himself, illustrated by the restaurant comparison: you wouldn't insist a friend order the same meal as you.</p>
+          <p><span class="sub-label">Also cited:</span> <span class="scripture-chip" onclick="openSidebar('Rom. 14:2-4')">Rom. 14:2-4</span></p>
+          <div class="comment-box"><span class="ctag">💬 Comment you could share:</span> "What struck me was the restaurant illustration — I'd never insist a friend order what I ordered. It made the point about personal decisions feel very concrete."</div>
+          <div class="comment-box"><span class="ctag">📌 Ministry connection:</span> Useful when someone asks how Witnesses handle disagreements within the congregation without division.</div>
+          <div class="comment-box"><span class="ctag">🙏 Getting to know Jehovah:</span> Even when correction is warranted, Jehovah's Word calls for a "spirit of mildness" — reflecting his own gentle way of dealing with imperfect people.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">12</span> When others make decisions in personal matters. Ask yourself, 'Is the person taking "a false step" or simply a different step?' If he is taking a false step, one that violates a Bible command, ask yourself, 'Do I have the Scriptural qualifications needed to readjust him, or is someone else in a better position to do so?' If you are qualified to help, try to reason with him in a spirit of mildness. However, you may often find that his choice is simply a different step — one that does not align with your viewpoint. If that is the case, do not question him or speak negatively about his decision. Respect his right to decide for himself, and do not judge him.
+          <br><br>
+          <span class="pnum">13</span> Think of this comparison: If you went to a restaurant with a friend, would you insist that he order the same food that you ordered? No. You would respect his right to select his own meal. After all, what he chooses to eat has little impact on you. And if the roles were reversed, you likely would not want your friend to order your meal based on his preferences. Similarly, we can show respect for others by allowing them to make personal decisions without trying to impose our opinions on them.
+        </div>
+        <div class="box-callout">
+          <h4>When You Disagree</h4>
+          <p style="font-size:13.5px;">If you disagree with the decision of a fellow Christian, try asking yourself the questions below. You may find that this exercise will spare you unneeded worry. <span class="scripture-chip" onclick="openSidebar('Gal. 6:5')">Gal. 6:5</span></p>
+          <ul>
+            <li>Does his decision violate a Bible command?</li>
+            <li>How might his background have a bearing on his decision?</li>
+            <li>Will his decision really harm him, or am I just imagining the worst-case scenario?</li>
+            <li>What good results might come from his decision?</li>
+            <li>Is he taking "a false step" or simply a different step than I would take?</li>
+            <li>If he is taking a false step, do I have the Scriptural qualifications needed to help him adjust his thinking?</li>
+          </ul>
+          <div class="scripture-quote">"For each one will carry his own load."<cite>Galatians 6:5</cite></div>
+        </div>
+      </div>
+
+      <div class="q-unit">
+        <div class="question-card"><span class="qnum">14.</span> How can you promote unity when making personal decisions? <em>(1 Corinthians 8:12, 13)</em></div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>By doing your best to avoid offending others. A decision may be "lawful" (acceptable) but not "advantageous" if it will offend a brother. Rather than insist on our rights, we can consider putting our own preferences aside for the sake of peace.</p>
+          <p><span class="sub-label">Read:</span> <span class="scripture-chip" onclick="openSidebar('1 Cor. 8:12-13')">1 Corinthians 8:12, 13</span></p>
+          <div class="scripture-quote">"When you sin against your brothers in this way and wound their weak conscience, you are sinning against Christ." / "That is why if food makes my brother stumble, I will never again eat meat at all, so that I will not make my brother stumble."<cite>1 Corinthians 8:12, 13</cite></div>
+          <p><span class="sub-label">Also cited:</span> <span class="scripture-chip" onclick="openSidebar('1 Cor. 10:23-24')">1 Cor. 10:23, 24</span> <span class="scripture-chip" onclick="openSidebar('Rom. 15:1')">Rom. 15:1</span> <span class="scripture-chip" onclick="openSidebar('Rom. 12:18')">Rom. 12:18</span></p>
+          <div class="comment-box"><span class="ctag">💬 Comment you could share:</span> "I found it interesting that unity isn't only about respecting others' decisions — it also means being willing to set aside my own rights so I don't offend someone else."</div>
+          <div class="comment-box"><span class="ctag">📌 Ministry connection:</span> Good example of Christian love in action — sometimes love means giving up a personal preference, not just tolerating others'.</div>
+          <div class="comment-box"><span class="ctag">🙏 Getting to know Jehovah:</span> Jehovah values peace so highly that he asks us to willingly limit our own freedoms for the sake of a brother's conscience.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">14</span> When you make decisions in personal matters. You can promote unity by doing your best to avoid offending others. At times, you may know that a decision you are about to make is "lawful," that is, acceptable. But if it will offend your brother, will it be "advantageous"? In such cases, rather than insist on your rights, consider putting your preferences aside. But didn't we just establish that others should respect our decisions in personal matters? Yes. They should respect our choices just as we should respect theirs. But we should also keep in mind the Bible's counsel found at Romans 12:18, which says: "As far as it depends on you, be peaceable with all men." Therefore, we do all that we reasonably can to maintain peace with others and avoid needlessly offending them.
+          <div class="scripture-quote">"If possible, as far as it depends on you, be peaceable with all men."<cite>Romans 12:18</cite></div>
+        </div>
+      </div>
+
+      <div class="q-unit">
+        <div class="question-card"><span class="qnum">15.</span> How can elders contribute to the unity of the congregation? <em>(1 Corinthians 4:6)</em></div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>By not making rules on personal matters and not going "beyond the things that are written" in the Bible — including not going beyond what our publications say. When giving advice, elders base counsel on God's Word, not solely on their own experience.</p>
+          <p><span class="sub-label">Read:</span> <span class="scripture-chip" onclick="openSidebar('1 Cor. 4:6')">1 Corinthians 4:6</span></p>
+          <div class="scripture-quote">"Now, brothers, these things I have applied to myself and Apollos for your good, that through us you may learn the rule: 'Do not go beyond the things that are written,' so that you may not be puffed up with pride, favoring one against the other."<cite>1 Corinthians 4:6</cite></div>
+          <p><span class="sub-label">Also cited:</span> <span class="scripture-chip" onclick="openSidebar('Isa. 48:17-18')">Isa. 48:17, 18</span></p>
+          <div class="comment-box"><span class="ctag">💬 Comment you could share:</span> "What struck me was the caution about elders not going 'beyond the things that are written' — even applying to how they use our publications, not just the Bible."</div>
+          <div class="comment-box"><span class="ctag">📌 Ministry connection:</span> Demonstrates that congregation elders aren't making up personal rules — they stick closely to what Scripture actually says.</div>
+          <div class="comment-box"><span class="ctag">🙏 Getting to know Jehovah:</span> Isaiah 48:17,18 shows Jehovah as the one "teaching you to benefit yourself" — his guidance, followed carefully, leads to real peace like a river.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">15</span> Elders show respect for the decisions of others. Elders contribute to the unity of the congregation by not making rules on personal matters and by not going "beyond the things that are written" in the Bible. And by extension, they do not go beyond the Bible-based counsel that is written in our publications. Additionally, when a fellow Christian asks for help, elders are careful not to rely solely on their own experience when giving advice. Instead, they base their counsel on God's Word.
+        </div>
+      </div>
+
+      <div class="q-unit">
+        <div class="question-card"><span class="qnum">16.</span> How can an elder show respect for the decisions made by the body of elders?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>By supporting a decision the body of elders has reached — after prayer for holy spirit and review of Scriptural direction — even when his personal opinion wasn't adopted by the majority. Elders are also careful not to read more into theocratic direction than is really there, or take a sentence out of context to support a personal viewpoint.</p>
+          <p><span class="sub-label">Scripture cited:</span> <span class="scripture-chip" onclick="openSidebar('Eph. 5:17')">Eph. 5:17</span></p>
+          <div class="comment-box"><span class="ctag">💬 Comment you could share:</span> "I found it interesting that supporting a body-of-elders decision applies even when an elder's own opinion wasn't the one adopted — it takes real humility."</div>
+          <div class="comment-box"><span class="ctag">📌 Ministry connection:</span> Shows the congregation's structure is built on collective, prayerful decision-making rather than any one person's authority.</div>
+          <div class="comment-box"><span class="ctag">🙏 Getting to know Jehovah:</span> Ephesians 5:17 links respecting Jehovah's will with not being "unreasonable" — Jehovah wants thoughtful, not rigid, servants.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">16</span> An elder also shows respect for the collective decisions made by the body of elders. Once the body of elders has prayed for holy spirit, reviewed and applied Scriptural direction, and come to a decision, each elder should support that decision even when his personal opinion is not adopted by the majority. In addition, elders are careful not to read more into theocratic direction than is really there. For example, an elder would not take a sentence in one of our publications out of context in an effort to support his own personal viewpoint.
+          <div class="scripture-quote">"On this account stop being unreasonable, but keep perceiving what the will of Jehovah is."<cite>Ephesians 5:17</cite></div>
+        </div>
+      </div>
+
+      <div class="q-unit">
+        <div class="question-card"><span class="qnum">17.</span> How do we benefit when we respect the decisions of others?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Our different backgrounds and personalities make the congregation an inviting place. By promoting peace, avoiding offense, and respecting others' personal decisions, we enjoy a happy, united congregation.</p>
+          <p><span class="sub-label">Scriptures cited:</span> <span class="scripture-chip" onclick="openSidebar('Ps. 133:1')">Ps. 133:1</span> <span class="scripture-chip" onclick="openSidebar('Matt. 5:9')">Matt. 5:9</span></p>
+          <div class="comment-box"><span class="ctag">💬 Comment you could share:</span> "What struck me was the closing thought — variety is called 'a good thing,' not something to merely tolerate. It's actually part of what makes the congregation appealing."</div>
+          <div class="comment-box"><span class="ctag">📌 Ministry connection:</span> A warm closing point for showing people what genuine Christian community looks like — diverse, peaceful, and united.</div>
+          <div class="comment-box"><span class="ctag">🙏 Getting to know Jehovah:</span> Jehovah calls peacemakers his "sons" — Matthew 5:9 shows how highly he values this quality in his worshippers.</div>
+        </div>
+        <div class="para-block">
+          <span class="pnum">17</span> As we have learned, we are unique. Each of us has his own opinions and preferences. But such variety is a good thing! Our different backgrounds and personalities make the congregation an inviting place to be. So rather than let our differences divide us, we promote peace. We are careful not to offend others. We respect the decisions of others in personal matters. When we do so, our effort will be rewarded. We will enjoy a happy, united congregation.
+          <div class="scripture-quote">"Look! How good and how pleasant it is For brothers to dwell together in unity!"<cite>Psalm 133:1</cite></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REVIEW SECTION -->
+  <div class="review-section">
+    <div class="review-title">How Would You Answer?</div>
+    <div class="review-body">
+
+      <div class="q-unit">
+        <div class="question-card">According to James 4:12, why do we not have the authority to judge others in personal matters?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Because Jehovah alone is the Lawgiver and Judge, able to save and to destroy — our brothers and sisters answer to him, not to us.</p>
+          <p><span class="scripture-chip" onclick="openSidebar('James 4:12')">James 4:12</span></p>
+          <div class="comment-box"><span class="ctag">💬 Brief personal comment:</span> "This reminds me that judging isn't my role — it belongs to Jehovah alone."</div>
+        </div>
+      </div>
+
+      <div class="q-unit">
+        <div class="question-card">According to Galatians 6:1, how should we respond if a brother takes "a false step"?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>If we're spiritually qualified, we try to readjust him in a spirit of mildness — while watching out that we ourselves are not tempted.</p>
+          <p><span class="scripture-chip" onclick="openSidebar('Gal. 6:1')">Galatians 6:1</span></p>
+          <div class="comment-box"><span class="ctag">💬 Brief personal comment:</span> "The phrase 'spirit of mildness' stood out to me — even correction should be gentle."</div>
+        </div>
+      </div>
+
+      <div class="q-unit">
+        <div class="question-card">According to 1 Corinthians 4:6 and 8:12, 13, how do elders and all of us contribute to unity?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Elders avoid going "beyond the things that are written," basing counsel on God's Word rather than personal opinion. All of us avoid actions that would wound a brother's conscience, even giving up something "lawful" for the sake of not causing a fellow believer to stumble.</p>
+          <p><span class="scripture-chip" onclick="openSidebar('1 Cor. 4:6')">1 Cor. 4:6</span> <span class="scripture-chip" onclick="openSidebar('1 Cor. 8:12-13')">1 Cor. 8:12, 13</span></p>
+          <div class="comment-box"><span class="ctag">💬 Brief personal comment:</span> "It's a good reminder that unity takes effort from everyone, not just those in positions of oversight."</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="banner closing-song" style="margin-top:26px;">🎵 Closing Song: Song 89 — "Listen, Obey, and Be Blessed"</div>
+
+  <div class="source-link">
+    Source: <a href="https://www.jw.org/en/library/magazines/watchtower-study-may-2026/Respect-the-Decisions-of-Others/" target="_blank" rel="noopener">jw.org — "Respect the Decisions of Others"</a>, The Watchtower, May 2026, studied August 3–9, 2026.
+  </div>
+
+</div>
+
+<script>
+const scriptureData = {
+  "Rom. 14:1": { ref: "Romans 14:1", text: "Welcome the man having weaknesses in his faith, but do not pass judgment on differing opinions.", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/45/14", note: "The theme scripture for this week's study — sets the tone for the whole article." },
+  "Rom. 14:2-4": { ref: "Romans 14:2-4", text: "One man has faith to eat everything, but the man who is weak eats only vegetables. Let the one eating not look down on the one not eating, and let the one not eating not judge the one eating, for God has welcomed him. Who are you to judge the servant of another? To his own master he stands or falls. Indeed, he will be made to stand, for Jehovah can make him stand.", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/45/14", note: "Paul's original context: differing views among first-century Christians about which foods to eat." },
+  "Rom. 14:5": { ref: "Romans 14:5", text: "One man judges one day as above another; another judges one day the same as all others; let each one be fully convinced in his own mind.", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/45/14", note: "Another first-century example — observing certain days — used the same way as the food example." },
+  "Rom. 14:10": { ref: "Romans 14:10", text: "But why do you judge your brother? Or why do you also look down on your brother? For we will all stand before the judgment seat of God.", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/45/14", note: "A pointed reminder that we too will answer to Jehovah for our own conduct, including how we treat others." },
+  "Rom. 14:19": { ref: "Romans 14:19", text: "So, then, let us pursue the things making for peace and the things that build one another up.", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/45/14", note: "Peace and mutual upbuilding are presented as an active pursuit, not just an absence of conflict." },
+  "Rom. 15:1": { ref: "Romans 15:1", text: "We, though, who are strong ought to bear the weaknesses of those not strong, and not to be pleasing ourselves.", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/45/15", note: "Follows directly on Romans 14 — the 'strong' are called to accommodate the 'weak,' not the reverse." },
+  "Rom. 12:18": { ref: "Romans 12:18", text: "If possible, as far as it depends on you, be peaceable with all men.", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/45/12", note: "A broader principle of peace-seeking that applies to relationships both inside and outside the congregation." },
+  "Eph. 4:3": { ref: "Ephesians 4:3", text: "earnestly endeavoring to maintain the oneness of the spirit in the uniting bond of peace.", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/49/4", note: "Part of Paul's appeal for unity — note the effort implied by 'earnestly endeavoring.'" },
+  "Eph. 5:17": { ref: "Ephesians 5:17", text: "On this account stop being unreasonable, but keep perceiving what the will of Jehovah is.", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/49/5", note: "Links reasonableness directly with understanding and doing God's will." },
+  "Eph. 6:4": { ref: "Ephesians 6:4", text: "And fathers, do not be irritating your children, but go on bringing them up in the discipline and admonition of Jehovah.", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/49/6", note: "Balance is key — discipline and admonition are to be given in a way that doesn't provoke or irritate." },
+  "Prov. 17:17": { ref: "Proverbs 17:17", text: "A true friend shows love at all times And is a brother who is born for times of distress.", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/17", note: "True friendship is tested most in hard times — a helpful backdrop for why we want to help, not judge." },
+  "Prov. 27:5-6": { ref: "Proverbs 27:5, 6", text: "Open reproof is better than concealed love. The wounds inflicted by a friend are faithful, But an enemy's kisses are plentiful.", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/27", note: "Honest, loving correction (when actually warranted) is valuable — distinct from unsolicited judgment." },
+  "2 Cor. 13:11": { ref: "2 Corinthians 13:11", text: "Finally, brothers, continue to rejoice, to be readjusted, to be comforted, to think in agreement, to live peaceably; and the God of love and of peace will be with you.", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/47/13", note: "'Think in agreement' refers to unity on core matters — not identical opinions on every personal decision." },
+  "Matt. 5:9": { ref: "Matthew 5:9", text: "“Happy are the peacemakers, since they will be called sons of God.", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/5", note: "From the Sermon on the Mount — peacemaking is tied directly to reflecting Jehovah's own qualities." },
+  "Matt. 7:1": { ref: "Matthew 7:1", text: "“Stop judging that you may not be judged;", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/40/7", note: "Jesus' own words set the standard the article builds on throughout." },
+  "1 Thess. 4:11": { ref: "1 Thessalonians 4:11", text: "Make it your aim to live quietly and to mind your own business and to work with your hands, just as we instructed you,", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/52/4", note: "'Mind your own business' is a direct, practical antidote to the tendency to judge others' personal choices." },
+  "James 4:12": { ref: "James 4:12", text: "There is only one who is Lawgiver and Judge, the one who is able to save and to destroy. But you, who are you to be judging your neighbor?", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/59/4", note: "One of the clearest statements in Scripture that judgment authority belongs to Jehovah alone." },
+  "Gal. 6:1": { ref: "Galatians 6:1", text: "Brothers, even if a man takes a false step before he is aware of it, you who have spiritual qualifications try to readjust such a man in a spirit of mildness. But keep an eye on yourself, for fear you too may be tempted.", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/48/6", note: "Notice the self-check built into the verse — the one helping is warned to watch himself too." },
+  "Gal. 6:5": { ref: "Galatians 6:5", text: "For each one will carry his own load.", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/48/6", note: "A reminder that each person bears responsibility for his own decisions before Jehovah." },
+  "1 Cor. 4:6": { ref: "1 Corinthians 4:6", text: "Now, brothers, these things I have applied to myself and Apollos for your good, that through us you may learn the rule: “Do not go beyond the things that are written,” so that you may not be puffed up with pride, favoring one against the other.", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/46/4", note: "Paul used himself and Apollos as examples to teach the Corinthians not to play favorites or overreach Scripture." },
+  "1 Cor. 8:12-13": { ref: "1 Corinthians 8:12, 13", text: "When you sin against your brothers in this way and wound their weak conscience, you are sinning against Christ. That is why if food makes my brother stumble, I will never again eat meat at all, so that I will not make my brother stumble.", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/46/8", note: "Paul's personal example — he was willing to give up something lawful for a brother's sake." },
+  "1 Cor. 10:23-24": { ref: "1 Corinthians 10:23, 24", text: "All things are lawful, but not all things are advantageous. All things are lawful, but not all things build up. Let each one keep seeking, not his own advantage, but that of the other person.", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/46/10", note: "'Lawful' versus 'advantageous' is the key distinction the article draws on for paragraph 14." },
+  "Isa. 48:17-18": { ref: "Isaiah 48:17, 18", text: "This is what Jehovah says, your Repurchaser, the Holy One of Israel: “I, Jehovah, am your God, The One teaching you to benefit yourself, The One guiding you in the way you should walk. If only you would pay attention to my commandments! Then your peace would become just like a river And your righteousness like the waves of the sea.", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/23/48", note: "Following Jehovah's guidance closely, rather than personal opinion, is what produces real peace." },
+  "Ps. 133:1": { ref: "Psalm 133:1", text: "Look! How good and how pleasant it is For brothers to dwell together in unity!", url: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/19/133", note: "A short, memorable psalm capturing the joy of true unity among brothers." }
+};
+
+function openSidebar(key) {
+  const d = scriptureData[key];
+  if (!d) return;
+  document.getElementById('sbTitle').textContent = d.ref;
+  document.getElementById('sbText').textContent = '“' + d.text + '”';
+  document.getElementById('sbNote').textContent = d.note || '';
+  document.getElementById('sbLink').href = d.url;
+  document.getElementById('sidebar').classList.add('open');
+  document.getElementById('sidebarOverlay').classList.add('open');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebarOverlay').classList.remove('open');
+}
+
+function toggleAnswer(btn) {
+  const box = btn.nextElementSibling;
+  box.classList.toggle('open');
+  btn.textContent = box.classList.contains('open') ? '▾ Hide comment' : '▸ Show comment';
+}
+
+let allExpanded = false;
+function toggleAll() {
+  allExpanded = !allExpanded;
+  document.querySelectorAll('.answer-box').forEach(box => {
+    box.classList.toggle('open', allExpanded);
+  });
+  document.querySelectorAll('.toggle-answer').forEach(btn => {
+    btn.textContent = allExpanded ? '▾ Hide comment' : '▸ Show comment';
+  });
+  document.getElementById('expandAllBtn').textContent = allExpanded ? 'Collapse All' : 'Expand All';
+}
+</script>
+
+</body>
+</html>
