@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLAM Study Guide — August 10-16, 2026</title>
+<style>
+  :root{
+    --treasures:#1d4ed8; --apply:#15803d; --living:#7e22ce; --cbs:#c2410c;
+    --amber:#f59e0b; --amberbg:#fffbeb; --green:#22c55e; --greenbg:#f0fdf4;
+    --orange:#d97706; --orangebg:#fff7ed; --gray:#f8f8f8; --coach:#6366f1;
+    --chipbg:#eff6ff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:#f0f4f8; color:#1f2937; line-height:1.55;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:14px 14px 60px;}
+  header.top{
+    background:linear-gradient(135deg,#1d4ed8,#7e22ce);
+    color:#fff; padding:26px 20px; border-radius:0 0 18px 18px; margin-bottom:16px;
+  }
+  .week-badge{
+    display:inline-block; background:rgba(255,255,255,.18); padding:5px 14px;
+    border-radius:999px; font-size:13px; font-weight:600; letter-spacing:.03em;
+  }
+  header.top h1{margin:10px 0 2px; font-size:26px;}
+  header.top p.sub{margin:0; opacity:.9; font-size:15px;}
+  .bible-reading-badge{margin-top:10px;font-size:13px;opacity:.85;}
+  .toolbar{display:flex; gap:10px; margin:14px 0;}
+  .btn{
+    background:#fff; border:1px solid #d1d5db; border-radius:10px; padding:10px 16px;
+    font-size:14px; font-weight:600; cursor:pointer; color:#1f2937;
+  }
+  .btn:hover{background:#f3f4f6;}
+  .warning-banner{
+    background:#fee2e2; border:1px solid #fca5a5; color:#7f1d1d; padding:14px 16px;
+    border-radius:12px; margin-bottom:16px; font-size:14px; font-weight:600;
+  }
+  .song-banner{
+    background:#fff; border-radius:12px; padding:12px 16px; margin-bottom:14px;
+    border-left:5px solid #9ca3af; font-size:14px;
+  }
+  .song-banner a{color:#1d4ed8; text-decoration:none; font-weight:600;}
+  .section-divider{
+    display:flex; align-items:center; gap:10px; margin:26px 0 12px; font-weight:800;
+    font-size:18px; color:#fff; padding:12px 16px; border-radius:12px;
+  }
+  .section-divider.treasures{background:var(--treasures);}
+  .section-divider.apply{background:var(--apply);}
+  .section-divider.living{background:var(--living);}
+  .section-divider.cbs{background:var(--cbs);}
+  .card{
+    background:#fff; border-radius:14px; padding:16px 18px; margin-bottom:14px;
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+  }
+  .card h3{margin:0 0 4px; font-size:17px;}
+  .card .meta{font-size:12.5px; color:#6b7280; margin-bottom:10px; font-weight:600;}
+  .collapsible-header{
+    cursor:pointer; display:flex; justify-content:space-between; align-items:center;
+  }
+  .collapsible-header .arrow{transition:transform .2s; font-size:14px; color:#9ca3af;}
+  .collapsible-header.open .arrow{transform:rotate(90deg);}
+  .collapsible-body{
+    max-height:0; overflow:hidden; transition:max-height .3s ease;
+  }
+  .collapsible-body.open{max-height:4000px;}
+  .collapsible-body-inner{padding-top:10px;}
+  .scripture-chip{
+    display:inline-block; background:var(--chipbg); color:#1d4ed8; border:1px solid #bfdbfe;
+    padding:3px 10px; border-radius:999px; font-size:13px; font-weight:700; cursor:pointer;
+    margin:2px 4px 2px 0;
+  }
+  .scripture-chip:hover{background:#dbeafe;}
+  blockquote.scripture-quote{
+    margin:10px 0; padding:10px 14px; background:#f8fafc; border-left:4px solid #93c5fd;
+    border-radius:6px; font-style:italic; font-size:14.5px; color:#374151;
+  }
+  .point{margin:8px 0; padding-left:2px; font-size:14.5px;}
+  ul.points{margin:6px 0; padding-left:20px;}
+  ul.points li{margin-bottom:8px; font-size:14.5px;}
+  .comment-prep{
+    background:var(--amberbg); border-left:5px solid var(--amber); border-radius:8px;
+    padding:12px 14px; margin:10px 0; font-size:14px;
+  }
+  .comment-prep .label{font-weight:700; margin-bottom:4px;}
+  .image-block{
+    border-left:5px solid var(--green); background:var(--greenbg); border-radius:8px;
+    padding:12px 14px; margin:12px 0;
+  }
+  .image-block img{max-width:100%; border-radius:8px; margin:6px 0; display:block;}
+  .image-block .caption{font-size:12.5px; color:#4b5563; font-style:italic;}
+  .image-block .application{font-size:14px; margin-top:6px;}
+  .video-notes{
+    border-left:5px solid var(--orange); background:var(--orangebg); border-radius:8px;
+    padding:12px 14px; margin:12px 0; font-size:14px;
+  }
+  .dialogue{
+    background:var(--gray); border-radius:10px; padding:14px; margin:10px 0; font-size:14px;
+  }
+  .dialogue p{margin:8px 0;}
+  .dialogue .coach{color:var(--coach); font-style:italic;}
+  .remember-box{
+    background:#eef2ff; border:1px solid #c7d2fe; border-radius:8px; padding:10px 14px;
+    font-size:13.5px; margin:10px 0; color:#3730a3;
+  }
+  .qa-question{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .qa-answer{font-size:14.5px; color:#374151;}
+  footer{text-align:center; font-size:13px; color:#6b7280; margin-top:30px; padding:20px 0;}
+  footer a{color:#1d4ed8;}
+  /* Sidebar */
+  #sidebar{
+    position:fixed; top:0; right:-100%; width:340px; max-width:100%; height:100%;
+    background:#fff; box-shadow:-4px 0 20px rgba(0,0,0,.15); z-index:1000;
+    transition:right .3s ease; overflow-y:auto; padding:20px;
+  }
+  #sidebar.open{right:0;}
+  #sidebar .close-btn{
+    float:right; background:none; border:none; font-size:22px; cursor:pointer; color:#6b7280;
+  }
+  #sidebar h4{margin:30px 0 6px; font-size:16px; color:#1d4ed8;}
+  #sidebar blockquote{
+    background:#f8fafc; border-left:4px solid #93c5fd; padding:10px 12px; border-radius:6px;
+    font-style:italic; font-size:14px; margin:8px 0;
+  }
+  #sidebar .article-excerpt{font-size:13.5px; color:#374151; margin:8px 0;}
+  #sidebar .open-full{
+    display:inline-block; margin-top:10px; background:#1d4ed8; color:#fff; padding:8px 14px;
+    border-radius:8px; text-decoration:none; font-size:13px; font-weight:600;
+  }
+  #overlay{
+    display:none; position:fixed; inset:0; background:rgba(0,0,0,.3); z-index:999;
+  }
+  #overlay.open{display:block;}
+  @media (max-width:480px){
+    #sidebar{width:100%;}
+    header.top h1{font-size:22px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <span class="week-badge">WEEK OF AUGUST 10–16, 2026</span>
+    <h1>Our Christian Life &amp; Ministry</h1>
+    <p class="sub">Personal study guide for your comments and assignments</p>
+    <p class="bible-reading-badge">📖 Bible reading: Jeremiah 24–25</p>
+  </header>
+
+  <div class="toolbar">
+    <button class="btn" id="expandAllBtn" onclick="toggleAll()">Expand All</button>
+  </div>
+
+  <div class="warning-banner">
+    ⚠️ NEW CBS PUBLICATION DETECTED: "wcg" (<em>Walk Courageously With God</em>) — the Congregation Bible Study book has changed from <em>Lessons You Can Learn From the Bible</em> (lfb). The CBS section below has been built directly from the new book's chapter structure. Please update the scheduled task instructions to reference "wcg" going forward.
+  </div>
+
+  <div class="song-banner">
+    🎵 Opening: <a href="https://www.jw.org/en/library/songs/jw-songbook/song-124/" target="_blank">Song 124</a> and Prayer &nbsp;|&nbsp; Opening Comments (1 min.)
+  </div>
+
+  <!-- ========================= TREASURES ========================= -->
+  <div class="section-divider treasures">⛏️ TREASURES FROM GOD'S WORD</div>
+
+  <div class="card">
+    <div class="collapsible-header" onclick="toggleCard(this)">
+      <h3>1. What Made "Figs" Good or Bad? <span style="font-weight:400;font-size:13px;color:#6b7280;">(10 min.)</span></h3>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <div class="image-block">
+          <img src="https://cms-imgp.jw-cdn.org/img/p/202026246/univ/art/202026246_univ_cnt_1_lg.jpg" alt="Two baskets of figs in front of Jehovah's temple. One basket is filled with good figs, and the other is filled with rotten figs.">
+          <div class="caption">Two baskets of figs in front of Jehovah's temple — one good, one rotten (Jeremiah 24).</div>
+          <div class="application">This vivid picture sets up the whole chapter: Jehovah used something as ordinary as figs to teach a lesson about the heart condition of his people. It's a reminder that appearances (being "in Jerusalem" vs. exiled) don't determine Jehovah's view of us — our heart attitude does.</div>
+        </div>
+        <p class="point"><strong>Repentant exiled Jews were like good figs</strong> — <span class="scripture-chip" onclick="openSidebar('Jer. 24:1, 2')">Jer 24:1, 2</span> <span class="scripture-chip" onclick="openSidebar('Jer. 24:5-7')">5-7</span></p>
+        <blockquote class="scripture-quote">"This is what Jehovah the God of Israel says, 'Like these good figs, so I will regard in a good way the exiles of Judah... I will give them a heart to know me, that I am Jehovah. They will become my people, and I will become their God, for they will return to me with all their heart.'" — Jeremiah 24:5-7 (NWT Study Edition)</blockquote>
+
+        <p class="point"><strong>Disobedient, unrepentant Jews were like bad figs</strong> — <span class="scripture-chip" onclick="openSidebar('Jer. 24:8-10')">Jer 24:8-10</span></p>
+        <blockquote class="scripture-quote">"But concerning the bad figs that are so bad they cannot be eaten... this is what Jehovah says: 'So I will regard King Zedekiah of Judah, his princes, the remnant of Jerusalem who are left in this land... I will make them an object of horror and calamity to all the kingdoms of the earth, a reproach, a proverbial saying, a cause for ridicule, and a curse.'" — Jeremiah 24:8, 9 (NWT Study Edition)</blockquote>
+
+        <p class="point"><strong>Christians can be like good figs</strong> by doing an honest self-examination and by making needed adjustments.</p>
+
+        <div class="comment-prep">
+          <div class="label">💬 Comment you could share:</div>
+          I found it interesting that Jehovah didn't judge the exiles by their circumstances — being taken from Jerusalem could have looked like punishment, yet he called them "good figs" because of their heart. It shows that our location or situation in life isn't what matters most to Jehovah.
+        </div>
+        <div class="comment-prep">
+          <div class="label">📌 Personal application:</div>
+          When I go through a hard change — a move, a job loss, a health setback — this account reminds me to ask "what is Jehovah doing with my heart through this?" instead of just wishing for the old circumstances back.
+        </div>
+        <div class="comment-prep">
+          <div class="label">🙏 Getting to know Jehovah:</div>
+          This account shows Jehovah as a God who looks past outward appearances and evaluates the heart — and who is willing to "build up" and "plant" those who turn back to him with their whole heart.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="collapsible-header" onclick="toggleCard(this)">
+      <h3>2. Spiritual Gems <span style="font-weight:400;font-size:13px;color:#6b7280;">(10 min.)</span></h3>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <div class="qa-question">Jer 25:8, 9, 12 — Why did Jehovah punish Babylon when it acted as his "servant" to execute judgment on his people?</div>
+        <p><span class="scripture-chip" onclick="openSidebar('Jer. 25:8, 9, 12')">Jer 25:8, 9, 12</span></p>
+        <blockquote class="scripture-quote">"Therefore this is what Jehovah of armies says, '"Because you would not obey my words, I am sending for all the families of the north," declares Jehovah, "sending for King Nebuchadnezzar of Babylon, my servant..."'" — Jeremiah 25:8, 9 (NWT Study Edition)</blockquote>
+        <blockquote class="scripture-quote">"'But when 70 years have been fulfilled, I will call to account the king of Babylon and that nation for their error,' declares Jehovah, 'and I will make the land of the Chaldeans a desolate wasteland for all time.'" — Jeremiah 25:12 (NWT Study Edition)</blockquote>
+        <div class="qa-answer">Jehovah used Babylon as an instrument of judgment, but Babylon acted out of its own ambition and cruelty, not obedience to Jehovah — so once it had served its purpose, Jehovah held it accountable for its own errors and excessive brutality. (See <em>Insight on the Scriptures</em>, "Kingdom of God" ¶36.)</div>
+
+        <div class="comment-prep" style="margin-top:14px;">
+          <div class="label">💬 Comment you could share:</div>
+          It struck me that Jehovah can use even a wicked nation to accomplish his purpose, yet he still holds that nation responsible for how it acted. Being "used" by Jehovah's providence never excuses cruelty or pride.
+        </div>
+        <div class="comment-prep">
+          <div class="label">📌 Personal application:</div>
+          This helps me trust that even when unfair things happen because of others' bad choices, Jehovah is still keeping accounts — nothing done against his people goes unnoticed forever.
+        </div>
+
+        <div class="qa-question" style="margin-top:16px;">What spiritual gems from this week's Bible reading would you like to share?</div>
+        <div class="qa-answer">One gem worth sharing: in <span class="scripture-chip" onclick="openSidebar('Jer. 24:8-10')">Jer 24:8-10</span> Jehovah names Zedekiah and "the remnant of Jerusalem" as the bad figs — proof that living in Jehovah's favored city didn't automatically make someone approved. It's a good gem on not relying on outward religious status.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="collapsible-header" onclick="toggleCard(this)">
+      <h3>3. Bible Reading <span style="font-weight:400;font-size:13px;color:#6b7280;">(4 min.) Jer 24:1-10</span></h3>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <p><span class="scripture-chip" onclick="openSidebar('Jer. 24:1-10')">Jer 24:1-10</span></p>
+        <p style="font-size:14.5px;">This short chapter is a single vision built entirely around one everyday object — two baskets of figs — used to illustrate two groups of people. Reading it well means bringing out the contrast: the tone shifts from tender and hopeful in verses 5-7 to solemn and severe in verses 8-10. (th study 5)</p>
+        <div class="comment-prep">
+          <div class="label">💬 Key-verse comment suggestion:</div>
+          "I'll be reading Jeremiah 24:6, 7, where Jehovah says of the good figs, 'I will give them a heart to know me... They will become my people, and I will become their God.' I like how personal and warm that promise is compared to the harsh judgment that follows for the bad figs."
+          <blockquote class="scripture-quote" style="margin-top:8px;">"I will keep my eye on them for their good, and I will cause them to return to this land. I will build them up, and I will not tear down; I will plant them, and I will not uproot." — Jeremiah 24:6 (NWT Study Edition)</blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================= APPLY YOURSELF ========================= -->
+  <div class="section-divider apply">🌱 APPLY YOURSELF TO THE FIELD MINISTRY</div>
+
+  <div class="card">
+    <div class="collapsible-header" onclick="toggleCard(this)">
+      <h3>4. Starting a Conversation <span style="font-weight:400;font-size:13px;color:#6b7280;">(4 min.) House to House</span></h3>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <p style="font-size:14.5px;">Direction: After starting with a timely topic, switch to something that seems more relevant to the person. <em>(lmd lesson 2 point 5)</em></p>
+        <div class="dialogue">
+          <p><strong>Publisher:</strong> "Hi, good morning. I'm visiting briefly because so many people we talk with these days are concerned about the cost of everyday living. Have you noticed prices going up on things your family needs?" <span class="coach">(← lmd lesson 2 pt. 5: open with a timely topic that has broad appeal)</span></p>
+          <p><strong>Householder:</strong> "Oh, definitely. Groceries especially. It's stressful, honestly, trying to plan for the future with everything so unpredictable."</p>
+          <p><strong>Publisher:</strong> "I hear that a lot, and it makes people think seriously about the future — not just their finances, but where the world is really headed. Have you ever wondered whether there's a real solution to problems like this, not just a temporary fix?" <span class="coach">(← lmd lesson 2 pt. 5: switch to something more relevant — from the timely topic to the person's real concern)</span></p>
+          <p><strong>Householder:</strong> "I guess I try not to think about it too much. What do you mean by a real solution?"</p>
+          <p><strong>Publisher:</strong> "The Bible actually promises a time when God's Kingdom will remove the root causes of these problems, not just the symptoms. May I show you a short verse about that?"</p>
+        </div>
+        <div class="comment-prep">
+          <div class="label">📌 Personal application:</div>
+          The key skill here isn't the opening line — it's noticing the emotional cue in the householder's response ("stressful," "unpredictable") and pivoting there instead of sticking rigidly to a script.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="collapsible-header" onclick="toggleCard(this)">
+      <h3>5. Following Up <span style="font-weight:400;font-size:13px;color:#6b7280;">(4 min.) Informal Witnessing</span></h3>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <p style="font-size:14.5px;">Direction: Share a truth from Appendix A of the <em>Love People</em> brochure. <em>(lmd lesson 9 point 5)</em></p>
+        <div class="dialogue">
+          <p><strong>Publisher:</strong> "Last time we spoke, you mentioned you'd been thinking more about whether God actually cares about individuals. I wanted to follow up on that." <span class="coach">(← lmd lesson 9 pt. 5: refer back to the previous conversation to build continuity)</span></p>
+          <p><strong>Person:</strong> "Yeah, I have. It's hard to believe sometimes with everything going on in the world."</p>
+          <p><strong>Publisher:</strong> "That's a fair struggle. Something from Appendix A of a brochure I have has helped me with that — it points out that the Bible doesn't hide from suffering, it explains its cause and shows a genuine end to it. Can I read you a short thought?" <span class="coach">(← lmd lesson 9 pt. 5: use the Love People brochure to bring in a Bible-based truth naturally)</span></p>
+          <p><strong>Person:</strong> "Sure, go ahead."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="collapsible-header" onclick="toggleCard(this)">
+      <h3>6. Making Disciples <span style="font-weight:400;font-size:13px;color:#6b7280;">(4 min.)</span></h3>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <p style="font-size:14.5px;">Direction: Give encouragement to a Bible student who is struggling to break free from an addiction. <em>(lmd lesson 12 point 4)</em></p>
+        <div class="dialogue">
+          <p><strong>Student:</strong> "I really wanted to quit smoking before our study this week, but I slipped again. I feel like I'm never going to be ready to get baptized."</p>
+          <p><strong>Publisher:</strong> "I appreciate you being honest with me about that — that actually takes courage. Can I share something that's helped me see this differently?" <span class="coach">(← lmd lesson 12 pt. 4: acknowledge the struggle warmly before correcting or teaching)</span></p>
+          <p><strong>Student:</strong> "Please."</p>
+          <p><strong>Publisher:</strong> "Jehovah doesn't expect perfection overnight — he values the direction we're heading and the sincere effort we keep making. One setback doesn't erase the real progress you've made. What matters is that you keep getting back up and keep relying on Jehovah's help through prayer." <span class="coach">(← lmd lesson 12 pt. 4: frame progress, not perfection, and point back to Jehovah as the source of strength)</span></p>
+          <p><strong>Student:</strong> "That actually helps. I don't want to give up."</p>
+          <p><strong>Publisher:</strong> "Good — let's talk about a couple of practical, prayerful steps you could try before we meet again."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================= LIVING AS CHRISTIANS ========================= -->
+  <div class="section-divider living">✝️ LIVING AS CHRISTIANS</div>
+
+  <div class="song-banner">🎵 Song 65</div>
+
+  <div class="card">
+    <div class="collapsible-header" onclick="toggleCard(this)">
+      <h3>7. Local Needs <span style="font-weight:400;font-size:13px;color:#6b7280;">(15 min.)</span></h3>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <div class="remember-box">
+          📌 This part is assigned locally by the body of elders and its content varies by congregation. Check with your congregation for the specific topic and whether you have an assigned part.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================= CBS ========================= -->
+  <div class="section-divider cbs">📕 CONGREGATION BIBLE STUDY</div>
+
+  <div class="card">
+    <div class="collapsible-header" onclick="toggleCard(this)">
+      <h3>8. "Sarah — She Refused to Look Back" <span style="font-weight:400;font-size:13px;color:#6b7280;">(30 min.) wcg chap. 3</span></h3>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+
+        <div class="image-block">
+          <img src="https://cms-imgp.jw-cdn.org/img/p/1102025903/univ/art/1102025903_univ_cnt_1_lg.jpg" alt="Sarah and Abraham leaving Ur. They are riding on camels and are accompanied by their large household.">
+          <div class="caption">Sarah and Abraham leaving the comforts of Ur, traveling by camel with their household.</div>
+          <div class="application">Sarah walked away from a walled city with running water, a marketplace, and security — for a tent. It's a strong reminder that faith sometimes means giving up comfort, not just risk.</div>
+        </div>
+
+        <div class="image-block">
+          <img src="https://cms-imgp.jw-cdn.org/img/p/1102025903/univ/art/1102025903_univ_cnt_2_lg.jpg" alt="A piece of jewelry made of precious metals and colorful gemstones.">
+          <div class="caption">A piece of jewelry unearthed at the site of ancient Ur (photo courtesy of the British Museum).</div>
+          <div class="application">This artifact helps me appreciate just how materially rich Ur was — Sarah left behind real luxury, not a hardship post, showing her move was a matter of faith, not necessity.</div>
+        </div>
+
+        <div class="image-block">
+          <img src="https://cms-imgp.jw-cdn.org/img/p/1102025903/univ/art/1102025903_univ_cnt_3_lg.jpg" alt="Sarah speaking frankly to Abraham, who seems displeased.">
+          <div class="caption">Sarah speaking candidly to Abraham about Hagar and Ishmael.</div>
+          <div class="application">Sarah's submissiveness to Abraham didn't mean she stayed silent — she spoke up plainly when something mattered. That's a healthy balance worth applying in my own close relationships.</div>
+        </div>
+
+        <div class="image-block">
+          <img src="https://cms-imgp.jw-cdn.org/img/p/1102025903/univ/art/1102025903_univ_cnt_4_lg.jpg" alt="Collage: A young couple happily pack their belongings and move out of a comfortable high-rise apartment in a city, then preach joyfully to a farmer in a rural territory.">
+          <div class="caption">A modern couple downsizes from city life to serve where the need is greater.</div>
+          <div class="application">This is the modern parallel to Sarah's example: trading comfort and familiarity for a simpler life in order to put Kingdom interests first.</div>
+        </div>
+
+        <p style="font-size:14.5px;"><strong>Bible account:</strong> <span class="scripture-chip" onclick="openSidebar('Gen. 21:1-7')">Genesis 12:1-20; 15:18; 16:1, 2; 17:3-8, 15-19; 18:9-15; 20:1-17; 21:1-13</span> &nbsp; <span class="scripture-chip" onclick="openSidebar('')">Acts 7:1-7</span></p>
+
+        <h4 style="margin-top:20px;">Printed Questions</h4>
+
+        <div class="collapsible-header" onclick="toggleQA(this)" style="cursor:pointer;background:#f9fafb;padding:8px 10px;border-radius:8px;margin-top:8px;">
+          <span class="qa-question" style="margin:0;">1. Was it wrong for Sarah to marry Abraham even though he was her half brother?</span>
+          <span class="arrow">▶</span>
+        </div>
+        <div class="collapsible-body">
+          <div class="collapsible-body-inner qa-answer">
+            No — in Sarah and Abraham's day, before the Mosaic Law was given, marriage between close relatives was not prohibited by God and was a common, culturally accepted practice for preserving family lines and property. (Reference: wp17.3 12 ¶5, footnote)
+          </div>
+        </div>
+
+        <div class="collapsible-header" onclick="toggleQA(this)" style="cursor:pointer;background:#f9fafb;padding:8px 10px;border-radius:8px;margin-top:8px;">
+          <span class="qa-question" style="margin:0;">2. Describe what Sarah may have left behind in Ur.</span>
+          <span class="arrow">▶</span>
+        </div>
+        <div class="collapsible-body">
+          <div class="collapsible-body-inner qa-answer">
+            Ur was a prosperous, walled city on the Euphrates with solid houses, courtyards, running water, guarded security, and an active marketplace supplied by river trade. Archaeological finds — like fine jewelry uncovered there — show that some residents enjoyed real wealth and refinement, which Sarah gave up to live in tents. (Reference: wp17.3 13 ¶3–14 ¶2)
+          </div>
+        </div>
+
+        <div class="collapsible-header" onclick="toggleQA(this)" style="cursor:pointer;background:#f9fafb;padding:8px 10px;border-radius:8px;margin-top:8px;">
+          <span class="qa-question" style="margin:0;">3. What evidence shows that Abraham acted wisely when he concealed Sarah's identity as his wife?</span>
+          <span class="arrow">▶</span>
+        </div>
+        <div class="collapsible-body">
+          <div class="collapsible-body-inner qa-answer">
+            Twice — with Pharaoh in Egypt and later with Abimelech — presenting Sarah as his "sister" (a half-truth, since she was also his half sister) protected Abraham's life in cultures where a ruler might kill a husband to take a beautiful wife. In both cases, Jehovah personally intervened to rescue Sarah and return her unharmed, showing that Abraham's caution didn't rely on the deception itself but on Jehovah's protection. (Reference: wp17.3 14 ¶6–15 ¶2)
+          </div>
+        </div>
+
+        <div class="collapsible-header" onclick="toggleQA(this)" style="cursor:pointer;background:#f9fafb;padding:8px 10px;border-radius:8px;margin-top:8px;">
+          <span class="qa-question" style="margin:0;">4. Although Sarah was submissive to Abraham, does that mean she never spoke up? Explain.</span>
+          <span class="arrow">▶</span>
+        </div>
+        <div class="collapsible-body">
+          <div class="collapsible-body-inner qa-answer">
+            No. Sarah's submissiveness was not passivity — she spoke frankly to Abraham about the tension between Hagar/Ishmael and Isaac, and the Bible record shows Jehovah himself told Abraham to listen to what Sarah said. Genuine submission can include honest, respectful communication. (Reference: g 1/08 29 ¶4-5)
+          </div>
+        </div>
+
+        <h4 style="margin-top:20px;">Reflect on the Lessons</h4>
+        <div class="qa-question">Compare Sarah and Lot's wife — in what ways were they similar? In what ways were they different?</div>
+        <div class="qa-answer" style="margin-bottom:10px;">Both women left settled homes to follow their husbands' course of faith. But Lot's wife longed for what was left behind and looked back, losing her life, while Sarah — per <span class="scripture-chip" onclick="openSidebar('Heb. 11:15')">Hebrews 11:15</span> — refused to keep remembering the place she had departed from.</div>
+        <blockquote class="scripture-quote">"And yet, if they had kept remembering the place from which they had departed, they would have had opportunity to return." — Hebrews 11:15 (NWT Study Edition)</blockquote>
+
+        <div class="qa-question" style="margin-top:14px;">Sarah was very beautiful and her husband wealthy — what example does she set regarding our view of physical or material advantages?</div>
+        <div class="qa-answer">She never leaned on those advantages for security or let them define her worth; her lasting praise came from fearing Jehovah, not from beauty or wealth. <span class="scripture-chip" onclick="openSidebar('Prov. 31:30')">Prov 31:30</span></div>
+        <blockquote class="scripture-quote">"Charm may be false, and beauty may be fleeting, but the woman who fears Jehovah will be praised." — Proverbs 31:30 (NWT Study Edition)</blockquote>
+
+        <div class="comment-prep">
+          <div class="label">💬 Comment you could share:</div>
+          I never thought about how much Sarah gave up materially just to move to Canaan — it wasn't hardship that tested her faith at first, it was giving up comfort.
+        </div>
+        <div class="comment-prep">
+          <div class="label">📌 Personal application:</div>
+          When I'm tempted to romanticize "how things used to be" before a change I made for spiritual reasons, I want to imitate Sarah and refuse to look back.
+        </div>
+
+        <h4 style="margin-top:20px;">Wrap-Up Questions</h4>
+        <div class="qa-question">What does this teach us about Jehovah?</div>
+        <div class="qa-answer" style="margin-bottom:10px;">Jehovah rewards patient faith even when the promise is delayed for decades, and he personally intervenes to protect those who trust him, as he did for Sarah in Egypt and with Abimelech. He also cares about the details of an imperfect woman's private struggle — her inability to have a child — and acted at just the right time.</div>
+        <blockquote class="scripture-quote">"Jehovah turned his attention to Sarah just as he had said, and Jehovah did for Sarah what he had promised. So Sarah became pregnant and then bore a son to Abraham in his old age at the appointed time God had promised him." — Genesis 21:1, 2 (NWT Study Edition)</blockquote>
+
+        <div class="qa-question">Are there any points from this lesson we can use in the ministry or our daily life?</div>
+        <div class="qa-answer">Sarah's willingness to leave material comfort behind is a strong illustration for people today who feel they have "too much to lose" by making changes for Bible-based reasons — in the ministry, or in my own choices about how I use time and resources.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="song-banner" style="margin-top:20px;">
+    Concluding Comments (3 min.) &nbsp;|&nbsp; 🎵 Closing: <a href="https://www.jw.org/en/library/songs/jw-songbook/song-137/" target="_blank">Song 137</a> and Prayer
+  </div>
+
+  <footer>
+    Source: <a href="https://www.jw.org/en/library/jw-meeting-workbook/july-august-2026-mwb/Life-and-Ministry-Meeting-Schedule-for-August-10-16-2026/" target="_blank">jw.org — Life and Ministry Meeting Schedule, August 10–16, 2026</a><br>
+    All scripture quotations are from the New World Translation of the Holy Scriptures — Study Edition (NWTsty), fetched verbatim from wol.jw.org.<br>
+    Personal study guide generated for congregation-member comment preparation — not the conductor's outline.
+  </footer>
+</div>
+
+<div id="overlay" onclick="closeSidebar()"></div>
+<div id="sidebar">
+  <button class="close-btn" onclick="closeSidebar()">×</button>
+  <div id="sidebarContent"></div>
+</div>
+
+<script>
+const scriptureData = {
+  "Jer. 24:1, 2": {
+    ref: "Jeremiah 24:1, 2",
+    text: "Then Jehovah showed me two baskets of figs set before the temple of Jehovah, after King Nebuchadnezzar of Babylon had carried into exile Jeconiah son of Jehoiakim, the king of Judah, along with the princes of Judah, the craftsmen, and the metalworkers; he took them from Jerusalem to Babylon. One basket had very good figs, like early figs, but the other basket had very bad figs, so bad that they could not be eaten.",
+    link: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/24/24",
+    article: "Research Guide: this vision dates to shortly after 617 B.C.E., when Jeconiah (Jehoiachin) and the upper class of Judah were taken to Babylon, years before Jerusalem's final destruction — showing Jehovah was already sorting hearts long before the final judgment came."
+  },
+  "Jer. 24:5-7": {
+    ref: "Jeremiah 24:5-7",
+    text: "“This is what Jehovah the God of Israel says, ‘Like these good figs, so I will regard in a good way the exiles of Judah, whom I have sent away from this place to the land of the Chaldeans. I will keep my eye on them for their good, and I will cause them to return to this land. I will build them up, and I will not tear down; I will plant them, and I will not uproot. And I will give them a heart to know me, that I am Jehovah. They will become my people, and I will become their God, for they will return to me with all their heart.",
+    link: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/24/24",
+    article: "Research Guide (Insight, \"Kingdom of God\"): this promise of restoration shows that exile itself was not a rejection — Jehovah viewed the exiles who kept faith as objects of coming favor, not abandonment."
+  },
+  "Jer. 24:8-10": {
+    ref: "Jeremiah 24:8-10",
+    text: "“‘But concerning the bad figs that are so bad they cannot be eaten, this is what Jehovah says: “So I will regard King Zedekiah of Judah, his princes, the remnant of Jerusalem who are left in this land, and those who are dwelling in the land of Egypt. I will make them an object of horror and calamity to all the kingdoms of the earth, a reproach, a proverbial saying, a cause for ridicule, and a curse in all the places to which I disperse them. And I will send against them the sword, the famine, and the pestilence, until they have perished from the land that I gave to them and to their forefathers.”’”",
+    link: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/24/24",
+    article: "Research Guide (Insight, \"Egypt, Egyptian\" ¶74): those who fled to Egypt for safety instead of trusting Jehovah's discipline were counted among the bad figs, showing that self-reliance in defiance of Jehovah's direction does not equal safety."
+  },
+  "Jer. 24:1-10": {
+    ref: "Jeremiah 24:1-10",
+    text: "Then Jehovah showed me two baskets of figs set before the temple of Jehovah... [vv. 1-4] Then the word of Jehovah came to me, saying: “This is what Jehovah the God of Israel says, ‘Like these good figs, so I will regard in a good way the exiles of Judah... I will give them a heart to know me, that I am Jehovah. They will become my people, and I will become their God, for they will return to me with all their heart. ‘But concerning the bad figs that are so bad they cannot be eaten... I will make them an object of horror and calamity to all the kingdoms of the earth... And I will send against them the sword, the famine, and the pestilence, until they have perished from the land that I gave to them and to their forefathers.’”",
+    link: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/24/24",
+    article: "th study point 5 focuses on conveying the emotion of the passage: warmth in verses 5-7, solemnity in verses 8-10."
+  },
+  "Jer. 25:8, 9, 12": {
+    ref: "Jeremiah 25:8, 9, 12",
+    text: "“Therefore this is what Jehovah of armies says, ‘“Because you would not obey my words, I am sending for all the families of the north,” declares Jehovah, “sending for King Nebuchadnezzar of Babylon, my servant, and I will bring them against this land and against its inhabitants and against all these surrounding nations. I will devote them to destruction and make them an object of horror and something to whistle at and a perpetual ruin... ‘But when 70 years have been fulfilled, I will call to account the king of Babylon and that nation for their error,’ declares Jehovah, ‘and I will make the land of the Chaldeans a desolate wasteland for all time.’",
+    link: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/24/25",
+    article: "Research Guide (Insight, \"Kingdom of God\" ¶36): Babylon's role as Jehovah's “servant” to execute judgment did not excuse its own cruelty and pride; Jehovah later called Babylon to account for how it acted, showing that being used providentially never removes personal accountability."
+  },
+  "Heb. 11:15": {
+    ref: "Hebrews 11:15",
+    text: "And yet, if they had kept remembering the place from which they had departed, they would have had opportunity to return.",
+    link: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/58/11",
+    article: "Research Guide: Paul uses Sarah and the other patriarchs as proof that genuine faith looks forward, not backward — the temptation to “remember” and long for what was left behind is treated as the real danger to faith, more than any external hardship."
+  },
+  "Prov. 31:30": {
+    ref: "Proverbs 31:30",
+    text: "Charm may be false, and beauty may be fleeting, but the woman who fears Jehovah will be praised.",
+    link: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/31",
+    article: "Research Guide: this closing verse of the “capable wife” acrostic poem sets the standard for lasting praise — not physical attributes, which fade, but reverence for Jehovah, which Sarah displayed throughout her life."
+  },
+  "Gen. 21:1-7": {
+    ref: "Genesis 21:1-7",
+    text: "Jehovah turned his attention to Sarah just as he had said, and Jehovah did for Sarah what he had promised. So Sarah became pregnant and then bore a son to Abraham in his old age at the appointed time God had promised him. Abraham named his newborn son, whom Sarah bore to him, Isaac. And Abraham circumcised his son Isaac when he was eight days old, just as God had commanded him. Abraham was 100 years old when his son Isaac was born to him. Then Sarah said: “God has brought me laughter; everybody hearing of it will laugh with me.” And she added: “Who would have said to Abraham, ‘Sarah will certainly nurse children’? Yet, I have given birth to a son for him in his old age.”",
+    link: "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/1/21",
+    article: "Research Guide: Isaac's name, meaning “Laughter,” commemorates both Abraham's and Sarah's initial laughter of disbelief (Gen 17:17; 18:12) transformed into laughter of joy once Jehovah fulfilled his promise, illustrating that Jehovah's timing, though it tested faith for decades, was exact."
+  }
+};
+
+function toggleCard(headerEl){
+  headerEl.classList.toggle('open');
+  const body = headerEl.nextElementSibling;
+  body.classList.toggle('open');
+}
+function toggleQA(headerEl){
+  headerEl.classList.toggle('open');
+  const body = headerEl.nextElementSibling;
+  body.classList.toggle('open');
+}
+let allOpen = false;
+function toggleAll(){
+  allOpen = !allOpen;
+  document.querySelectorAll('.collapsible-header').forEach(h=>{
+    const body = h.nextElementSibling;
+    if(allOpen){ h.classList.add('open'); body.classList.add('open'); }
+    else { h.classList.remove('open'); body.classList.remove('open'); }
+  });
+  document.getElementById('expandAllBtn').textContent = allOpen ? 'Collapse All' : 'Expand All';
+}
+function openSidebar(key){
+  const data = scriptureData[key];
+  const content = document.getElementById('sidebarContent');
+  if(!data){
+    content.innerHTML = '<h4>Scripture Reference</h4><p style="font-size:14px;color:#6b7280;">Text not available — view directly on wol.jw.org.</p>';
+  } else {
+    content.innerHTML = `
+      <h4>${data.ref}</h4>
+      <blockquote>${data.text}</blockquote>
+      <div class="article-excerpt"><strong>Research Guide note:</strong> ${data.article}</div>
+      <a class="open-full" href="${data.link}" target="_blank">Open full article →</a>
+    `;
+  }
+  document.getElementById('sidebar').classList.add('open');
+  document.getElementById('overlay').classList.add('open');
+}
+function closeSidebar(){
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+}
+</script>
+</body>
+</html>
