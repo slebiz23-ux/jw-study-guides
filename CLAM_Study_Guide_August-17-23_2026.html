@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLAM Study Guide — August 17–23, 2026</title>
+<style>
+:root{
+  --treasures:#1d4ed8; --apply:#15803d; --living:#7e22ce; --cbs:#c2410c;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; padding:0; background:#f0f4f8;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:#1f2937; line-height:1.55;
+}
+.wrap{max-width:820px; margin:0 auto; padding:0 14px 60px;}
+.top-header{
+  background:linear-gradient(135deg,#1d4ed8,#7e22ce);
+  color:#fff; padding:28px 18px 22px; text-align:center;
+  border-radius:0 0 18px 18px; margin-bottom:18px;
+}
+.week-badge{font-size:.78rem; letter-spacing:.06em; opacity:.9; font-weight:600; text-transform:uppercase;}
+.top-header h1{margin:8px 0 2px; font-size:1.55rem;}
+.subtitle{font-size:.95rem; opacity:.92; margin-bottom:16px;}
+.expand-all-btn{
+  background:#fff; color:#1d4ed8; border:none; padding:9px 20px; border-radius:20px;
+  font-weight:700; font-size:.85rem; cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,.15);
+}
+.expand-all-btn:active{transform:scale(.97);}
+.song-banner{
+  background:#fff; border-radius:12px; padding:12px 16px; margin:14px 0; font-size:.92rem;
+  box-shadow:0 1px 3px rgba(0,0,0,.08); text-align:center;
+}
+.song-banner a{color:#1d4ed8; text-decoration:none; font-weight:600;}
+.song-banner.mid-song{margin-top:6px;}
+.opening-comments{font-size:.8rem; color:#6b7280; margin-top:4px;}
+.section-divider{margin:26px 0 10px;}
+.section-divider h2{
+  font-size:1.15rem; margin:0 0 12px; padding-bottom:6px; border-bottom:3px solid currentColor;
+}
+.section-divider.treasures h2{color:var(--treasures);}
+.section-divider.apply h2{color:var(--apply);}
+.section-divider.living h2{color:var(--living);}
+.part-card{
+  background:#fff; border-radius:12px; margin-bottom:12px; overflow:hidden;
+  box-shadow:0 1px 4px rgba(0,0,0,.08); border-left:6px solid #ccc;
+}
+.part-card.treasures{border-left-color:var(--treasures);}
+.part-card.apply{border-left-color:var(--apply);}
+.part-card.living{border-left-color:var(--living);}
+.part-card.cbs{border-left-color:var(--cbs);}
+.part-header{
+  width:100%; background:none; border:none; padding:14px 16px; display:flex; align-items:center;
+  justify-content:space-between; gap:10px; cursor:pointer; text-align:left; font-size:1rem; font-weight:700;
+  color:#111827;
+}
+.part-title{flex:1;}
+.part-min{font-size:.78rem; color:#6b7280; font-weight:500; white-space:nowrap;}
+.chevron{transition:transform .25s ease; color:#9ca3af;}
+.part-card.open .chevron{transform:rotate(180deg);}
+.part-body{
+  max-height:0; overflow:hidden; transition:max-height .35s ease; padding:0 16px;
+}
+.part-card.open .part-body{padding:0 16px 18px;}
+.theme-summary{color:#374151;}
+.point-block{margin:14px 0;}
+.point-block.wrapup{background:#f9fafb; padding:10px 12px; border-radius:8px;}
+h4{margin:18px 0 8px; color:#111827; font-size:1rem;}
+.scripture-quote{
+  background:#eff6ff; border-left:4px solid #1d4ed8; margin:8px 0; padding:10px 14px;
+  border-radius:0 8px 8px 0; font-style:italic; color:#1e293b; font-size:.94rem;
+}
+.chip{
+  display:inline-block; background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe;
+  border-radius:14px; padding:3px 10px; font-size:.82rem; font-weight:600; cursor:pointer;
+  margin:2px 4px 2px 0;
+}
+.chip:hover{background:#dbeafe;}
+.chip-row{margin:6px 0;}
+.src-note{color:#6b7280; font-size:.82rem; font-weight:500;}
+.comment-box{
+  background:#fffbeb; border-left:4px solid #f59e0b; border-radius:0 8px 8px 0;
+  padding:10px 14px; margin:10px 0; font-size:.93rem;
+}
+.image-box{
+  background:#f0fdf4; border-left:4px solid #22c55e; border-radius:0 8px 8px 0;
+  padding:10px 14px; margin:12px 0;
+}
+.image-box img{max-width:100%; border-radius:8px; margin:4px 0; display:block;}
+.img-caption{font-size:.8rem; color:#4b5563; font-style:italic; margin-top:4px;}
+.img-application{font-size:.9rem; margin-top:6px; color:#166534;}
+.video-box{
+  background:#fff7ed; border-left:4px solid #d97706; border-radius:0 8px 8px 0;
+  padding:10px 14px; margin:12px 0; font-size:.92rem;
+}
+.dialogue-script{
+  background:#f8f8f8; border-radius:10px; padding:14px 16px; margin:12px 0; font-size:.93rem;
+}
+.dialogue-script p{margin:8px 0;}
+.dialogue-script em{color:#6366f1; font-style:italic;}
+.qa-item{margin:10px 0; border:1px solid #e5e7eb; border-radius:10px; overflow:hidden;}
+.qa-q{
+  width:100%; text-align:left; background:#f9fafb; border:none; padding:10px 14px; font-weight:600;
+  cursor:pointer; font-size:.92rem; color:#111827;
+}
+.qa-a{max-height:0; overflow:hidden; transition:max-height .3s ease; padding:0 14px;}
+.qa-a.open{padding:10px 14px;}
+.gem-chapter-group{margin:14px 0; padding:12px; background:#f9fafb; border-radius:10px;}
+.gem-chapter-label{font-weight:700; color:var(--treasures); margin-bottom:8px; font-size:.9rem; text-transform:uppercase; letter-spacing:.03em;}
+.gem-option{margin:10px 0; padding-bottom:10px; border-bottom:1px dashed #d1d5db;}
+.gem-option:last-child{border-bottom:none;}
+.gem-ref{margin:0 0 4px;}
+.gem-note{font-size:.9rem; color:#374151; margin:6px 0 0;}
+.account-text-block{margin-top:10px;}
+.learn-more-list{padding-left:20px; font-size:.92rem;}
+.cbs-flow-label{font-size:.78rem; color:#9a3412; background:#fff7ed; padding:8px 12px; border-radius:8px; margin-bottom:10px; font-weight:600;}
+.closing-block{text-align:center; margin-top:24px;}
+.page-footer{text-align:center; font-size:.78rem; color:#6b7280; margin-top:20px; padding:0 10px;}
+.page-footer a{color:#1d4ed8;}
+.generated-note{margin-top:8px; font-style:italic;}
+.warning-banner{background:#fee2e2; border:2px solid #dc2626; color:#7f1d1d; padding:12px 16px; border-radius:10px; margin:14px 0; font-weight:600; font-size:.9rem;}
+
+/* Sidebar */
+.sidebar-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.35); opacity:0; pointer-events:none;
+  transition:opacity .25s ease; z-index:40;
+}
+.sidebar-overlay.show{opacity:1; pointer-events:auto;}
+.sidebar{
+  position:fixed; top:0; right:0; height:100%; width:340px; max-width:100%; background:#fff;
+  box-shadow:-4px 0 16px rgba(0,0,0,.2); transform:translateX(100%); transition:transform .3s ease;
+  z-index:50; padding:20px; overflow-y:auto;
+}
+.sidebar.show{transform:translateX(0);}
+.sidebar-close{
+  position:absolute; top:12px; right:14px; background:none; border:none; font-size:1.5rem;
+  cursor:pointer; color:#6b7280;
+}
+.sidebar-ref{font-weight:800; font-size:1.1rem; color:var(--treasures); margin:6px 0 14px; padding-right:30px;}
+.sidebar-content{font-size:.95rem; line-height:1.6; color:#1f2937; white-space:pre-wrap;}
+
+@media (max-width:480px){
+  .top-header h1{font-size:1.3rem;}
+  .part-header{font-size:.94rem;}
+}
+</style>
+</head>
+<body>
+<script>window.SCRIPTURE_DATA = {"Jer 26:2-6": "2 “This is what Jehovah says, ‘Stand in the courtyard of the house of Jehovah and speak concerning all the people of the cities of Judah who are coming in to worship at the house of Jehovah. Tell them everything that I command you; do not take away a word. 3 Perhaps they will listen and each one will turn back from his evil way, and I will change my mind concerning the calamity that I intend to bring on them because of their evil deeds. 4 Say to them: “This is what Jehovah says, ‘If you will not listen to me by following my law that I have placed before you, 5 by listening to the words of my servants the prophets, whom I am sending to you again and again, whom you have not listened to, 6 then I will make this house like Shiʹloh, and I will make this city an object of cursing to all the nations of the earth.’”’”", "Jer 27:14, 15": "14 Do not listen to the words of the prophets who are saying to you, ‘You will not serve the king of Babylon,’ because they are prophesying lies to you. 15 “‘For I have not sent them,’ declares Jehovah, ‘but they are prophesying lies in my name, with the result that I will disperse you and you will perish, you and the prophets who are prophesying to you.’”", "Jer 26:20-23": "20 “And there was another man prophesying in the name of Jehovah, U·riʹjah son of She·maiʹah from Kirʹi·ath-jeʹa·rim, who prophesied against this city and against this land with words like those of Jeremiah. 21 King Je·hoiʹa·kim and all his mighty men and all the princes heard his words, and the king sought to put him to death. When U·riʹjah heard of it, he at once became afraid and fled to Egypt. 22 Then King Je·hoiʹa·kim sent El·naʹthan the son of Achʹbor and other men with him to Egypt. 23 They brought U·riʹjah from Egypt and took him to King Je·hoiʹa·kim, who then struck him down with the sword and cast his dead body into the graveyard of the common people.”", "Jer 28:5-17": "5 Then Jeremiah the prophet spoke to Han·a·niʹah the prophet in the presence of the priests and all the people who were standing in the house of Jehovah. 6 Jeremiah the prophet said: “Amen! May Jehovah do this! May Jehovah fulfill your words that you prophesied by bringing back from Babylon to this place the utensils of the house of Jehovah and all the exiled people! 7 However, hear, please, this message that I am speaking in your ears and in the ears of all the people. 8 Long ago the prophets who were prior to me and prior to you used to prophesy concerning many lands and great kingdoms, about war, calamity, and pestilence. 9 If a prophet prophesies about peace and the word of that prophet comes true, then it will be known that Jehovah truly sent that prophet.” 10 At that Han·a·niʹah the prophet took the yoke bar off the neck of the prophet Jeremiah and broke it. 11 Han·a·niʹah then said in the presence of all the people: “This is what Jehovah says, ‘Just like this I will break the yoke of King Neb·u·chad·nezʹzar of Babylon from off the neck of all the nations within two years.’” And Jeremiah the prophet went on his way. 12 After Han·a·niʹah the prophet had broken the yoke bar from off the neck of Jeremiah the prophet, this message of Jehovah came to Jeremiah: 13 “Go and say to Han·a·niʹah, ‘This is what Jehovah says: “You have broken yoke bars of wood, but instead of them you will make yoke bars of iron.” 14 For this is what Jehovah of armies, the God of Israel, says: “I will put an iron yoke bar on the neck of all these nations, to serve King Neb·u·chad·nezʹzar of Babylon, and they must serve him. Even the wild beasts of the field I will give him.”’” 15 Jeremiah the prophet then said to Han·a·niʹah the prophet: “Listen, please, O Han·a·niʹah! Jehovah has not sent you, but you have caused this people to trust in a lie. 16 Therefore this is what Jehovah says, ‘Look! I am removing you from the face of the ground. This year you will die, for you have urged rebellion against Jehovah.’” 17 So Han·a·niʹah the prophet died in that year, in the seventh month.", "Jer 26:14": "14 But as for me, I am in your hand. Do to me whatever seems good and right in your eyes.", "Jer 26:16": "16 Then the princes and all the people said to the priests and the prophets: “This man does not deserve the death penalty, for he spoke to us in the name of Jehovah our God.”", "Jer 26:24": "24 But A·hiʹkam the son of Shaʹphan supported Jeremiah, so that he was not handed over to the people to be put to death.", "Jer 27:5, 6": "5 ‘It is I who made the earth, mankind, and the beasts that are on the surface of the earth by my great power and by my outstretched arm; and I have given it to whomever I please. 6 And now I have given all these lands into the hand of my servant King Neb·u·chad·nezʹzar of Babylon; even the wild beasts of the field I have given him to serve him.", "Jer 27:11": "11 “‘“‘But the nation that brings its neck under the yoke of the king of Babylon and serves him, I will allow to remain on its land,’ declares Jehovah, ‘to cultivate it and dwell in it.’”’”", "Jer 27:17": "17 Do not listen to them. Serve the king of Babylon and you will keep living. Why should this city become a ruin?", "Jer 28:9": "9 If a prophet prophesies about peace and the word of that prophet comes true, then it will be known that Jehovah truly sent that prophet.”", "Jer 28:16, 17": "16 Therefore this is what Jehovah says, ‘Look! I am removing you from the face of the ground. This year you will die, for you have urged rebellion against Jehovah.’” 17 So Han·a·niʹah the prophet died in that year, in the seventh month.", "Gen 12:2": "2 I will make you a great nation, and I will bless you, and I will make your name great, and you will become a blessing.", "Gen 13:14, 15": "14 Jehovah said to Aʹbram, after Lot had separated from him: “Raise your eyes, please, and look from the place where you are, to the north and south, east and west, 15 because all the land that you see, I will give to you and your offspring as a lasting possession.", "Gen 3:15": "15 And I will put enmity between you and the woman and between your offspring and her offspring. He will crush your head, and you will strike him in the heel.”", "Gen 13:8-13": "8 So Aʹbram said to Lot: “Please, there should be no quarreling between me and you and between my herdsmen and your herdsmen, for we are brothers. 9 Is not the whole land available to you? Please, separate from me. If you go to the left, then I will go to the right; but if you go to the right, then I will go to the left.” 10 So Lot raised his eyes and saw that the whole district of the Jordan was a well-watered region (before Jehovah destroyed Sodʹom and Go·morʹrah), like the garden of Jehovah, like the land of Egypt, as far as Zoʹar. 11 Then Lot chose for himself the whole district of the Jordan, and Lot moved his camp to the east. So they separated from each other. 12 Aʹbram lived in the land of Caʹnaan, but Lot lived among the cities of the district. Finally he set up his tent near Sodʹom. 13 Now the men of Sodʹom were wicked, gross sinners against Jehovah.", "Num 21:14": "14 That is why the book of the Wars of Jehovah speaks of “Vaʹheb in Suʹphah and the valleys of Arʹnon,", "Heb 7:1-4": "1 For this Mel·chizʹe·dek, king of Saʹlem, priest of the Most High God, met Abraham returning from the slaughter of the kings and blessed him, 2 and Abraham gave him a tenth of everything. First, his name is translated “King of Righteousness,” and then also king of Saʹlem, that is, “King of Peace.” 3 In being fatherless, motherless, without genealogy, having neither a beginning of days nor an end of life, but being made like the Son of God, he remains a priest for all time. 4 See how great this man was to whom Abraham, the family head, gave a tenth out of the best spoils.", "Gen 28:14": "14 And your offspring will certainly become like the dust particles of the earth, and you will spread abroad to the west and to the east and to the north and to the south, and by means of you and by means of your offspring all the families of the ground will certainly be blessed.", "Ex 3:6": "6 He went on to say: “I am the God of your father, the God of Abraham, the God of Isaac, and the God of Jacob.” Then Moses hid his face, because he was afraid to look at the true God.", "Luke 20:37, 38": "37 But that the dead are raised up, even Moses made known in the account about the thornbush, when he calls Jehovah ‘the God of Abraham and God of Isaac and God of Jacob.’ 38 He is a God, not of the dead, but of the living, for they are all living to him.”", "Hos 12:4": "4 He kept contending with an angel and prevailed. He wept and begged for his favor.” He found him at Bethʹel, and there He spoke with us,", "Gen 31:38-40": "38 During these 20 years that I have been with you, your sheep and your goats never miscarried, and I never ate the rams of your flock. 39 I did not bring you any animal torn by wild beasts. I would stand the loss of it myself. Whether the animal was stolen by day or was stolen by night, you would demand compensation from me. 40 By day the heat consumed me, and the cold by night, and sleep would flee from my eyes.", "Gen 32:6-12": "6 In time the messengers returned to Jacob, saying: “We met your brother Eʹsau, and he is now on his way to meet you, and there are 400 men with him.” 7 And Jacob became very frightened and anxious. So he divided the people who were with him, as well as the flocks, the cattle, and the camels, into two camps. 8 He said: “If Eʹsau attacks the one camp, then the other camp will be able to escape.” 9 After that Jacob said: “O God of my father Abraham and God of my father Isaac, O Jehovah, you who are saying to me, ‘Return to your land and to your relatives, and I will deal well with you,’ 10 I am unworthy of all the loyal love and of all the faithfulness that you have shown toward your servant, for with only my staff I crossed this Jordan and now I have become two camps. 11 Save me, I pray you, from the hand of my brother Eʹsau, for I am afraid of him that he may come and attack me, as well as the mothers and their children. 12 And you have said: ‘I will certainly deal well with you, and I will make your offspring like the grains of sand of the sea, which are too numerous to count.’”", "Matt 26:52": "52 Then Jesus said to him: “Return your sword to its place, for all those who take up the sword will perish by the sword.", "Gen 14:1-24": "1 Now in the days of Amʹra·phel king of Shiʹnar, Arʹi·och king of El·laʹsar, Ched·or·la·oʹmer king of Eʹlam, and Tiʹdal king of Goiʹim, 2 these made war with Beʹra king of Sodʹom, Birʹsha king of Go·morʹrah, Shiʹnab king of Adʹmah, Shem·eʹber king of Ze·boiʹim, and the king of Beʹla, that is, Zoʹar. 3 All of these joined forces at the Valley of Sidʹdim, that is, the Salt Sea. 4 They had served Ched·or·la·oʹmer for 12 years, but they rebelled in the 13th year. 5 So in the 14th year, Ched·or·la·oʹmer and the kings who were with him came and defeated the Rephʹa·im in Ashʹte·roth-kar·naʹim, the Zuʹzim in Ham, the Eʹmim in Shaʹveh-kir·i·a·thaʹim, 6 and the Horʹites in their mountain of Seʹir down to El-paʹran, which is at the wilderness. 7 Then they turned back and came to En-mishʹpat, that is, Kaʹdesh, and conquered the whole territory of the A·malʹek·ites and also the Amʹor·ites who were dwelling in Hazʹa·zon-taʹmar. 8 At this point, the king of Sodʹom went on the march, and also the king of Go·morʹrah, the king of Adʹmah, the king of Ze·boiʹim, and the king of Beʹla, that is, Zoʹar, and they drew up in battle formation against them in the Valley of Sidʹdim, 9 against Ched·or·la·oʹmer king of Eʹlam, Tiʹdal king of Goiʹim, Amʹra·phel king of Shiʹnar, and Arʹi·och king of El·laʹsar —four kings against the five. 10 Now the Valley of Sidʹdim was full of bitumen pits, and the kings of Sodʹom and Go·morʹrah tried to escape and fell into them, and those who remained fled to the mountainous region. 11 Then the victors took all the goods of Sodʹom and Go·morʹrah and all their food and went on their way. 12 They also took Lot, the son of Aʹbram’s brother who was dwelling in Sodʹom, as well as his goods, and they continued on their way. 13 After that a man who had escaped came and told Aʹbram the Hebrew. He was then dwelling among the big trees of Mamʹre the Amʹor·ite, the brother of Eshʹcol and Aʹner. These men were allies of Aʹbram. 14 Thus Aʹbram heard that his relative had been taken captive. With that he mobilized his trained men, 318 servants born in his household, and went in pursuit up to Dan. 15 During the night, he divided his forces, and he and his servants attacked and defeated them. And he pursued them up to Hoʹbah, which is north of Damascus. 16 He recovered all the goods, and he also recovered Lot his relative, his goods, the women, and the other people. 17 After Aʹbram returned from defeating Ched·or·la·oʹmer and the kings who were with him, the king of Sodʹom went out to meet Aʹbram at the Valley of Shaʹveh, that is, the Valley of the King. 18 And Mel·chizʹe·dek king of Saʹlem brought out bread and wine; he was priest of the Most High God. 19 Then he blessed him and said: “Blessed be Aʹbram by the Most High God, Maker of heaven and earth; 20 And praised be the Most High God, Who has handed your oppressors over to you!” And Aʹbram gave him a tenth of everything. 21 After that the king of Sodʹom said to Aʹbram: “Give me the people, but take the goods for yourself.” 22 But Aʹbram said to the king of Sodʹom: “I raise my hand in an oath to Jehovah the Most High God, Maker of heaven and earth, 23 that I will not take anything that is yours, from a thread to a sandal lace, so that you may not say, ‘I made Aʹbram rich.’ 24 I will take nothing except what the young men have already eaten. As for the share of the men who went with me, Aʹner, Eshʹcol, and Mamʹre —let them take their share.”", "Gen 27:41-45": "41 However, Eʹsau harbored animosity against Jacob because of the blessing his father had given him, and Eʹsau kept saying in his heart: “The days of mourning for my father are getting closer. After that I am going to kill Jacob my brother.” 42 When the words of her older son Eʹsau were told to Re·bekʹah, she at once sent for her younger son Jacob and said to him: “Look! Your brother Eʹsau is planning to take revenge by killing you. 43 Now, my son, do as I say. Get up and run away to my brother Laʹban at Haʹran. 44 Dwell with him for a while until your brother’s rage calms down, 45 until your brother’s anger toward you subsides and he forgets what you have done to him. Then I will send for you from there. Why should I lose both of you in one day?”", "Gen 31:1-29": "1 In time he heard what the sons of Laʹban were saying: “Jacob has taken everything that belonged to our father, and from what belonged to our father, he has amassed all this wealth.” 2 When Jacob would look at the face of Laʹban, he saw that his attitude toward him was not what it used to be. 3 Finally Jehovah said to Jacob: “Return to the land of your fathers and to your relatives, and I will continue with you.” 4 Then Jacob sent a message to Rachel and Leʹah to come out to the field to his flock, 5 and he said to them: “I have seen that your father’s attitude toward me has changed, but the God of my father has been with me. 6 You yourselves certainly know that I have served your father with all my power. 7 And your father has tried to cheat me and has changed my wages ten times; but God has not allowed him to do me harm. 8 If on the one hand he would say, ‘The speckled ones will be your wages,’ then the whole flock produced speckled ones; but if on the other hand he would say, ‘The striped ones will be your wages,’ then the whole flock produced striped ones. 9 So God kept taking your father’s livestock away from him and giving it to me. 10 Once when the flock got into heat, I raised my eyes and saw in a dream that the he-goats mating with the flock were striped, speckled, and spotty. 11 Then the angel of the true God said to me in the dream, ‘Jacob!’ to which I said, ‘Here I am.’ 12 And he continued, ‘Raise your eyes, please, and see that all the he-goats mating with the flock are striped, speckled, and spotty, for I have seen all that Laʹban is doing to you. 13 I am the true God of Bethʹel, where you anointed a pillar and where you made a vow to me. Now get up, go out of this land, and return to the land of your birth.’” 14 At this Rachel and Leʹah answered him: “Is there any share left for us to inherit in our father’s house? 15 Does he not consider us as foreigners, since he has sold us and has been using up the money given for us? 16 All the riches that God has taken away from our father are ours and our children’s. So, then, do everything that God has told you to do.” 17 Then Jacob got up and lifted his children and his wives on the camels, 18 and he began driving all his herd and all the goods that he had accumulated, the livestock in his possession that he had accumulated in Padʹdan-aʹram, to go to Isaac his father in the land of Caʹnaan. 19 Now Laʹban had gone to shear his sheep, and Rachel stole the teraphim statues that belonged to her father. 20 Moreover, Jacob outwitted Laʹban the A·ra·maeʹan, for he had not told him that he was running away. 21 And he ran away and crossed the River, he and all he had. Then he headed toward the mountainous region of Gilʹe·ad. 22 On the third day, Laʹban was told that Jacob had run away. 23 So he took his brothers with him and pursued him for a journey of seven days and caught up with him in the mountainous region of Gilʹe·ad. 24 Then God came to Laʹban the A·ra·maeʹan in a dream by night and said to him: “Be careful about what you say to Jacob, either good or bad.” 25 So Laʹban approached Jacob, as Jacob had pitched his tent in the mountain and Laʹban had encamped with his brothers in the mountainous region of Gilʹe·ad. 26 Then Laʹban said to Jacob: “What have you done? Why have you resorted to outwitting me and carrying my daughters off like captives taken by the sword? 27 Why did you run away secretly and outwit me and not tell me? If you had told me, I could have sent you away with rejoicing and with songs, with tambourine and with harp. 28 But you did not give me a chance to kiss my grandchildren and my daughters. You have acted foolishly. 29 It is in my power to do harm to you, but the God of your father spoke to me last night, saying, ‘Be careful about what you say to Jacob, either good or bad.’", "Gen 31:36-55": "36 At that Jacob became angry and began to criticize Laʹban. Jacob then said to Laʹban: “What is my offense, and for what sin are you hotly pursuing me? 37 Now that you have searched through all my goods, what have you found that belongs to your house? Put it here in front of my brothers and your brothers, and let them decide between the two of us. 38 During these 20 years that I have been with you, your sheep and your goats never miscarried, and I never ate the rams of your flock. 39 I did not bring you any animal torn by wild beasts. I would stand the loss of it myself. Whether the animal was stolen by day or was stolen by night, you would demand compensation from me. 40 By day the heat consumed me, and the cold by night, and sleep would flee from my eyes. 41 This makes 20 years for me in your house. I have served you 14 years for your two daughters and 6 years for your flock, and you kept changing my wages ten times. 42 If the God of my father, the God of Abraham and the One whom Isaac fears, had not been on my side, you would now have sent me away empty-handed. God has seen my affliction and the toil of my hands, and that is why he reproved you last night.” 43 Then Laʹban answered Jacob: “The daughters are my daughters and the children my children and the flock my flock, and everything you are looking at is mine and my daughters’. What can I do today against these or against their children whom they have borne? 44 Now come, let us make a covenant, you and I, and it will serve as a witness between us.” 45 So Jacob took a stone and set it up as a pillar. 46 Then Jacob said to his brothers: “Pick up stones!” And they took stones and made a pile. After that they ate there on the pile of stones. 47 And Laʹban began calling it Jeʹgar-sa·ha·duʹtha, but Jacob called it Galʹe·ed. 48 Laʹban then said: “This pile of stones is a witness between me and you today.” That is why he named it Galʹe·ed, 49 and the Watchtower, for he said: “Let Jehovah keep watch between you and me when we are out of each other’s sight. 50 If you mistreat my daughters and if you start taking wives in addition to my daughters, though there is no man with us, remember that God will be a witness between you and me.” 51 Laʹban went on to say to Jacob: “Here is this pile of stones, and here is the pillar that I have erected between you and me. 52 This pile of stones is a witness, and the pillar is something that bears witness, that I will not pass beyond this pile of stones to bring harm to you and you will not pass beyond this pile of stones and this pillar to bring harm to me. 53 Let the God of Abraham and the God of Naʹhor, the God of their father, judge between us.” And Jacob swore by the One whom his father Isaac fears. 54 After that Jacob offered a sacrifice in the mountain and invited his brothers to eat bread. So they ate and spent the night in the mountain. 55 However, Laʹban got up early in the morning and kissed his grandchildren and his daughters and blessed them. Then Laʹban departed and returned home.", "Gen 32:1-33:16": "1 Jacob then went on his way, and the angels of God met up with him. 2 As soon as he saw them, Jacob said: “This is the camp of God!” So he named that place Ma·ha·naʹim. 3 Then Jacob sent messengers ahead of him to his brother Eʹsau in the land of Seʹir, the territory of Eʹdom, 4 and he commanded them: “This is what you will say to my lord, to Eʹsau, ‘This is what your servant Jacob says: “I have resided with Laʹban for a long time until now. 5 And I have acquired bulls, donkeys, sheep, and male and female servants, and I send this message to inform my lord, in order to find favor in your eyes.”’” 6 In time the messengers returned to Jacob, saying: “We met your brother Eʹsau, and he is now on his way to meet you, and there are 400 men with him.” 7 And Jacob became very frightened and anxious. So he divided the people who were with him, as well as the flocks, the cattle, and the camels, into two camps. 8 He said: “If Eʹsau attacks the one camp, then the other camp will be able to escape.” 9 After that Jacob said: “O God of my father Abraham and God of my father Isaac, O Jehovah, you who are saying to me, ‘Return to your land and to your relatives, and I will deal well with you,’ 10 I am unworthy of all the loyal love and of all the faithfulness that you have shown toward your servant, for with only my staff I crossed this Jordan and now I have become two camps. 11 Save me, I pray you, from the hand of my brother Eʹsau, for I am afraid of him that he may come and attack me, as well as the mothers and their children. 12 And you have said: ‘I will certainly deal well with you, and I will make your offspring like the grains of sand of the sea, which are too numerous to count.’” 13 And he spent the night there. Then he took some of his possessions as a gift for Eʹsau his brother: 14 200 female goats, 20 male goats, 200 female sheep, 20 rams, 15 30 camels nursing their young, 40 cows, 10 bulls, 20 female donkeys and 10 full-grown male donkeys. 16 He handed them over to his servants, one drove after another, and he said to his servants: “Cross over ahead of me, and you are to set a space between one drove and the next.” 17 He also commanded the first one: “In case Eʹsau my brother should meet you and ask, ‘To whom do you belong, and where are you going, and to whom do these ahead of you belong?’ 18 then you should say, ‘To your servant Jacob. It is a gift sent to my lord, to Eʹsau, and look! he himself is also behind us.’” 19 And he commanded also the second, the third, and all those following the droves: “According to this word, you are to speak to Eʹsau when you meet him. 20 And you should also say, ‘Here is your servant Jacob behind us.’” For he said to himself: ‘If I appease him by sending a gift ahead of me, then afterward when I see him, he may give me a kindly reception.’ 21 So the gift crossed over ahead of him, but he himself spent the night in the camp. 22 Later during that night, he rose and took his two wives and his two female servants and his 11 young sons and crossed over the ford of Jabʹbok. 23 So he took them and brought them across the stream, and he brought over everything else he had. 24 Finally Jacob was left by himself. Then a man began to wrestle with him until the dawn broke. 25 When he saw that he had not prevailed over him, he touched the socket of his hip; and the socket of Jacob’s hip was dislocated during his wrestling with him. 26 After that he said: “Let me go, for the dawn is breaking.” To this he said: “I am not going to let you go until you bless me.” 27 So he said to him: “What is your name?” to which he said: “Jacob.” 28 Then he said: “Your name will no longer be Jacob but Israel, for you have contended with God and with men and you have at last prevailed.” 29 In turn Jacob inquired: “Tell me, please, your name.” However, he said: “Why is it that you ask my name?” With that he blessed him there. 30 So Jacob named the place Pe·niʹel, for he said, “I have seen God face-to-face, yet my life was preserved.” 31 And the sun rose upon him as soon as he passed by Pe·nuʹel, but he was limping because of his hip. 32 That is why to this day the sons of Israel are not accustomed to eat the thigh sinew, which is on the socket of the hip joint, because he touched the socket of Jacob’s hip joint by the thigh sinew. | Genesis 33: 1 Now Jacob raised his eyes and saw Eʹsau coming, and 400 men were with him. So he divided the children among Leʹah, Rachel, and the two female servants. 2 He put the female servants and their children in front, Leʹah and her children after them, and Rachel and Joseph behind them. 3 Then he himself went ahead of them and bowed down to the earth seven times as he came near to his brother. 4 But Eʹsau ran to meet him, and he embraced him and kissed him, and they burst into tears. 5 When he raised his eyes and saw the women and the children, he said: “Who are these with you?” to which he said: “The children with whom God has favored your servant.” 6 At that the female servants came forward with their children and bowed down, 7 and Leʹah too came forward with her children, and they bowed down. Then Joseph came forward with Rachel, and they bowed down. 8 Eʹsau said: “What is the purpose of all this camp of travelers that I have met?” He replied: “In order to find favor in the eyes of my lord.” 9 Then Eʹsau said: “I have a great many possessions, my brother. Keep what is yours.” 10 However, Jacob said: “No, please. If I have found favor in your eyes, you must take my gift from my hand, because I brought it so that I could see your face. And I have seen your face as though seeing God’s face, in that you received me with pleasure. 11 Take, please, the gift conveying my blessing that was brought to you, for God has favored me and I have everything I need.” And he continued to urge him, so that he took it. 12 Later Eʹsau said: “Let us move out and go, and let me go in advance of you.” 13 But he said to him: “My lord is aware that the children are delicate and that in my care are sheep and cattle nursing their young. If they are driven too quickly for one day, then the whole flock will die. 14 Let my lord, please, go on ahead of his servant, but I will continue the journey more slowly at the pace of my livestock and of the children until I come to my lord at Seʹir.” 15 Then Eʹsau said: “Please, let me leave some of my people with you.” To this he said: “Why do this? Just let me find favor in the eyes of my lord.” 16 So that day Eʹsau went on his way back to Seʹir."};</script>
+<div class="wrap">
+<header class="top-header">
+  <div class="week-badge">CLAM WEEK &middot; August 17–23, 2026</div>
+  <h1>Our Christian Life &amp; Ministry</h1>
+  <div class="subtitle">Personal Study &amp; Comment Preparation Guide</div>
+  <button id="expandAllBtn" class="expand-all-btn">Expand All</button>
+</header>
+<div class="song-banner">
+  🎵 Opening Song <strong>77</strong> and Prayer &mdash; <a href="https://www.jw.org/en/library/songs/jw-songbook/song-77/" target="_blank" rel="noopener">View Song 77 &rarr;</a>
+  <div class="opening-comments">Opening Comments (1 min.)</div>
+</div>
+
+<section class="section-divider treasures">
+  <h2>⛏️ TREASURES FROM GOD'S WORD</h2>
+  <div class="part-card treasures" id="t1">
+  <button class="part-header" data-target="t1-body">
+    <span class="part-title">1. Do Not Be Fooled by False Prophets</span>
+    <span class="part-min">10 min.</span>
+    <span class="chevron">▾</span>
+  </button>
+  <div class="part-body" id="t1-body">
+    
+<p class="theme-summary">This talk shows how Jehovah's people avoid being misled by false claims and stay anchored to genuine direction from Jehovah's organization &mdash; just as Jehovah's prophet Jeremiah spoke lifesaving truth while false prophets contradicted him.</p>
+
+<h4>Key scripture points</h4>
+<div class="point-block">
+  <p><strong>God's prophet Jeremiah gave lifesaving direction</strong> <span class="chip" data-ref="Jer 26:2-6">Jer 26:2-6</span></p>
+  <blockquote class="scripture-quote">&ldquo;2 “This is what Jehovah says, ‘Stand in the courtyard of the house of Jehovah and speak concerning all the people of the cities of Judah who are coming in to worship at the house of Jehovah. Tell them everything that I command you; do not take away a word. 3 Perhaps they will listen and each one will turn back from his evil way, and I will change my mind concerning the calamity that I intend to bring on them because of their evil deeds. 4 Say to them: “This is what Jehovah says, ‘If you will not listen to me by following my law that I have placed before you, 5 by listening to the words of my servants the prophets, whom I am sending to you again and again, whom you have not listened to, 6 then I will make this house like Shiʹloh, and I will make this city an object of cursing to all the nations of the earth.’”’”&rdquo;</blockquote>
+</div>
+<div class="point-block">
+  <p><strong>False prophets contradicted Jeremiah</strong> <span class="chip" data-ref="Jer 27:14, 15">Jer 27:14, 15</span></p>
+  <blockquote class="scripture-quote">&ldquo;14 Do not listen to the words of the prophets who are saying to you, ‘You will not serve the king of Babylon,’ because they are prophesying lies to you. 15 “‘For I have not sent them,’ declares Jehovah, ‘but they are prophesying lies in my name, with the result that I will disperse you and you will perish, you and the prophets who are prophesying to you.’”&rdquo;</blockquote>
+</div>
+<div class="point-block">
+  <p><strong>We must use discernment to determine whether direction comes from Jehovah's organization or from God's enemies</strong> &mdash; <em>w24.07 12 &para;13-15</em> (see this week's referenced <em>Watchtower</em> study article for the full published discussion)</p>
+</div>
+
+<div class="comment-box"><strong>💬 Comment you could share:</strong> I noticed that Jehovah's true prophet spoke with total consistency, while the false prophets kept shifting their message to tell people what they wanted to hear. That contrast still helps me test any “new” idea against what Jehovah's organization actually teaches.</div>
+<div class="comment-box"><strong>📌 Personal application:</strong> Before I share or believe something that sounds urgent or exciting, I can ask: does this match what's published through the faithful and discreet slave, or is it coming from an unverified source?</div>
+<div class="comment-box"><strong>🙏 Getting to know Jehovah:</strong> Jehovah never leaves his people guessing forever &mdash; he keeps sending clear direction, even when it isn't popular. That shows his patient care for us.</div>
+
+  </div>
+</div>
+  <div class="part-card treasures" id="t2">
+  <button class="part-header" data-target="t2-body">
+    <span class="part-title">2. Spiritual Gems</span>
+    <span class="part-min">10 min.</span>
+    <span class="chevron">▾</span>
+  </button>
+  <div class="part-body" id="t2-body">
+    
+<div class="point-block">
+  <p><strong><span class="chip" data-ref="Jer 26:20-23">Jer 26:20-23</span> — What lesson may Jeremiah have learned from Urijah?</strong> <span class="src-note">(jr 122 &para;18)</span></p>
+  <blockquote class="scripture-quote">&ldquo;20 “And there was another man prophesying in the name of Jehovah, U·riʹjah son of She·maiʹah from Kirʹi·ath-jeʹa·rim, who prophesied against this city and against this land with words like those of Jeremiah. 21 King Je·hoiʹa·kim and all his mighty men and all the princes heard his words, and the king sought to put him to death. When U·riʹjah heard of it, he at once became afraid and fled to Egypt. 22 Then King Je·hoiʹa·kim sent El·naʹthan the son of Achʹbor and other men with him to Egypt. 23 They brought U·riʹjah from Egypt and took him to King Je·hoiʹa·kim, who then struck him down with the sword and cast his dead body into the graveyard of the common people.”&rdquo;</blockquote>
+  <div class="comment-box"><strong>💬 Comment you could share:</strong> Urijah had the same message as Jeremiah but fled instead of trusting Jehovah, and it cost him his life. Seeing how differently Jeremiah responded to opposition may have strengthened his own resolve to stay and speak boldly, trusting Jehovah to sustain him.</div>
+</div>
+
+<h4>What spiritual gems from this week's Bible reading would you like to share?</h4>
+<p class="theme-summary">The reading covers Jeremiah 26&ndash;28. Pick whichever chapter you were assigned to read and choose one gem from that chapter to mention.</p>
+
+<div class="gem-chapter-group">
+  <div class="gem-chapter-label">Chapter 26 — pick one</div>
+  <div class="gem-option">
+  <p class="gem-ref"><span class="chip" data-ref="Jer 26:14">Jer 26:14</span></p>
+  <blockquote class="scripture-quote">&ldquo;14 But as for me, I am in your hand. Do to me whatever seems good and right in your eyes.&rdquo;</blockquote>
+  <p class="gem-note">Jeremiah's calm answer &mdash; “do to me whatever seems good” &mdash; shows he left his life in Jehovah's hands rather than begging for mercy. I could mention how this models trust when facing pressure for standing up for truth.</p>
+</div><div class="gem-option">
+  <p class="gem-ref"><span class="chip" data-ref="Jer 26:16">Jer 26:16</span></p>
+  <blockquote class="scripture-quote">&ldquo;16 Then the princes and all the people said to the priests and the prophets: “This man does not deserve the death penalty, for he spoke to us in the name of Jehovah our God.”&rdquo;</blockquote>
+  <p class="gem-note">It's easy to overlook that the princes and people actually changed their minds once they heard reasoned, Scripture-based argument (v.17-19). That shows the value of calmly reasoning from the Scriptures rather than reacting emotionally.</p>
+</div><div class="gem-option">
+  <p class="gem-ref"><span class="chip" data-ref="Jer 26:24">Jer 26:24</span></p>
+  <blockquote class="scripture-quote">&ldquo;24 But A·hiʹkam the son of Shaʹphan supported Jeremiah, so that he was not handed over to the people to be put to death.&rdquo;</blockquote>
+  <p class="gem-note">Ahikam isn't a headline name, but his quiet support kept Jeremiah alive. It's a good reminder that standing behind someone who is doing what's right &mdash; even without fanfare &mdash; really matters to Jehovah.</p>
+</div>
+</div>
+
+<div class="gem-chapter-group">
+  <div class="gem-chapter-label">Chapter 27 — pick one</div>
+  <div class="gem-option">
+  <p class="gem-ref"><span class="chip" data-ref="Jer 27:5, 6">Jer 27:5, 6</span></p>
+  <blockquote class="scripture-quote">&ldquo;5 ‘It is I who made the earth, mankind, and the beasts that are on the surface of the earth by my great power and by my outstretched arm; and I have given it to whomever I please. 6 And now I have given all these lands into the hand of my servant King Neb·u·chad·nezʹzar of Babylon; even the wild beasts of the field I have given him to serve him.&rdquo;</blockquote>
+  <p class="gem-note">Jehovah describes himself as the one who made the earth and gives it to whomever he pleases &mdash; even allowing pagan Babylon temporary rule. This is a striking reminder of Jehovah's absolute sovereignty over world events, even when they seem to favor the wicked.</p>
+</div><div class="gem-option">
+  <p class="gem-ref"><span class="chip" data-ref="Jer 27:11">Jer 27:11</span></p>
+  <blockquote class="scripture-quote">&ldquo;11 “‘“‘But the nation that brings its neck under the yoke of the king of Babylon and serves him, I will allow to remain on its land,’ declares Jehovah, ‘to cultivate it and dwell in it.’”’”&rdquo;</blockquote>
+  <p class="gem-note">The nations that submitted to Babylon's yoke were allowed to “remain on its land.” I could compare this to how submitting to Jehovah's arrangements today, even when we don't love every detail, brings blessing and protection.</p>
+</div><div class="gem-option">
+  <p class="gem-ref"><span class="chip" data-ref="Jer 27:17">Jer 27:17</span></p>
+  <blockquote class="scripture-quote">&ldquo;17 Do not listen to them. Serve the king of Babylon and you will keep living. Why should this city become a ruin?&rdquo;</blockquote>
+  <p class="gem-note">Jeremiah's plain, practical appeal &mdash; “why should this city become a ruin?” &mdash; shows he reasoned with people using logic they could relate to, not just religious language.</p>
+</div>
+</div>
+
+<div class="gem-chapter-group">
+  <div class="gem-chapter-label">Chapter 28 — pick one</div>
+  <div class="gem-option">
+  <p class="gem-ref"><span class="chip" data-ref="Jer 28:9">Jer 28:9</span></p>
+  <blockquote class="scripture-quote">&ldquo;9 If a prophet prophesies about peace and the word of that prophet comes true, then it will be known that Jehovah truly sent that prophet.”&rdquo;</blockquote>
+  <p class="gem-note">This verse gives a simple test for a true prophet: does the message actually come true? It's a good gem to connect with how we can have confidence in Jehovah's own track record of fulfilled prophecy.</p>
+</div><div class="gem-option">
+  <p class="gem-ref"><span class="chip" data-ref="Jer 28:16, 17">Jer 28:16, 17</span></p>
+  <blockquote class="scripture-quote">&ldquo;16 Therefore this is what Jehovah says, ‘Look! I am removing you from the face of the ground. This year you will die, for you have urged rebellion against Jehovah.’” 17 So Han·a·niʹah the prophet died in that year, in the seventh month.&rdquo;</blockquote>
+  <p class="gem-note">Hananiah's popular, comforting message felt good to hear, but it was false, and the consequence was swift. It's sobering to consider how appealing a lie can sound compared to an unpopular truth.</p>
+</div>
+</div>
+
+  </div>
+</div>
+  <div class="part-card treasures" id="t3">
+  <button class="part-header" data-target="t3-body">
+    <span class="part-title">3. Bible Reading</span>
+    <span class="part-min">4 min.</span>
+    <span class="chevron">▾</span>
+  </button>
+  <div class="part-body" id="t3-body">
+    
+<p class="theme-summary">Assignment: <span class="chip" data-ref="Jer 28:5-17">Jer 28:5-17</span> (th study 5 &mdash; focus on natural conversational quality)</p>
+<blockquote class="scripture-quote">&ldquo;5 Then Jeremiah the prophet spoke to Han·a·niʹah the prophet in the presence of the priests and all the people who were standing in the house of Jehovah. 6 Jeremiah the prophet said: “Amen! May Jehovah do this! May Jehovah fulfill your words that you prophesied by bringing back from Babylon to this place the utensils of the house of Jehovah and all the exiled people! 7 However, hear, please, this message that I am speaking in your ears and in the ears of all the people. 8 Long ago the prophets who were prior to me and prior to you used to prophesy concerning many lands and great kingdoms, about war, calamity, and pestilence. 9 If a prophet prophesies about peace and the word of that prophet comes true, then it will be known that Jehovah truly sent that prophet.” 10 At that Han·a·niʹah the prophet took the yoke bar off the neck of the prophet Jeremiah and broke it. 11 Han·a·niʹah then said in the presence of all the people: “This is what Jehovah says, ‘Just like this I will break the yoke of King Neb·u·chad·nezʹzar of Babylon from off the neck of all the nations within two years.’” And Jeremiah the prophet went on his way. 12 After Han·a·niʹah the prophet had broken the yoke bar from off the neck of Jeremiah the prophet, this message of Jehovah came to Jeremiah: 13 “Go and say to Han·a·niʹah, ‘This is what Jehovah says: “You have broken yoke bars of wood, but instead of them you will make yoke bars of iron.” 14 For this is what Jehovah of armies, the God of Israel, says: “I will put an iron yoke bar on the neck of all these nations, to serve King Neb·u·chad·nezʹzar of Babylon, and they must serve him. Even the wild beasts of the field I will give him.”’” 15 Jeremiah the prophet then said to Han·a·niʹah the prophet: “Listen, please, O Han·a·niʹah! Jehovah has not sent you, but you have caused this people to trust in a lie. 16 Therefore this is what Jehovah says, ‘Look! I am removing you from the face of the ground. This year you will die, for you have urged rebellion against Jehovah.’” 17 So Han·a·niʹah the prophet died in that year, in the seventh month.&rdquo;</blockquote>
+<p><strong>What's happening:</strong> The false prophet Hananiah publicly contradicts Jeremiah, promising a quick end to Babylonian domination. Jeremiah first responds with a wish that Hananiah's words could come true, then delivers Jehovah's real message: instead of a broken yoke, an even heavier one is coming. Hananiah dies within the year, exactly as Jeremiah foretold.</p>
+<p><strong>Teaching quality to work on (th study 5):</strong> Vary your tone between Jeremiah's measured, hopeful opening (v.6) and his firm, sober correction (v.13-16) &mdash; the contrast itself teaches the account's lesson about testing what we hear.</p>
+<div class="comment-box"><strong>💬 Comment you could share:</strong> What stood out to me is that Jeremiah didn't respond to Hananiah with anger &mdash; he said ‘Amen! May Jehovah do this!’ before correcting him. He wanted the good outcome to be true, but he wouldn't pretend a lie was truth just because it was more comfortable.</div>
+
+  </div>
+</div>
+</section>
+
+
+<section class="section-divider apply">
+  <h2>🌱 APPLY YOURSELF TO THE FIELD MINISTRY</h2>
+  <div class="part-card apply" id="a4">
+  <button class="part-header" data-target="a4-body">
+    <span class="part-title">4. Starting a Conversation</span>
+    <span class="part-min">3 min.</span>
+    <span class="chevron">▾</span>
+  </button>
+  <div class="part-body" id="a4-body">
+    
+<p class="theme-summary"><strong>Setting:</strong> Public witnessing &mdash; a cart, informal witnessing, or a chance encounter in your territory. <span class="src-note">(lmd lesson 1 pt.4: &ldquo;Interest in Others&rdquo;)</span></p>
+
+<div class="dialogue-script">
+<p><strong>Publisher:</strong> &ldquo;Hi! I noticed you were reading on your phone &mdash; looks like there's a lot going on in the news today.&rdquo; <em>(&larr; lmd lesson 1 pt.4: be observant &mdash; notice what the person is currently doing before choosing a topic)</em></p>
+<p><strong>Householder:</strong> &ldquo;Yeah, it's pretty overwhelming honestly. Feels like everything is falling apart.&rdquo;</p>
+<p><strong>Publisher:</strong> &ldquo;I hear that a lot. Can I ask &mdash; when you see all that, do you ever wonder if there's a reason things feel so unstable right now?&rdquo; <em>(&larr; lmd lesson 1 pt.4: start with a topic that already interests the person rather than a scripted opener)</em></p>
+<p><strong>Householder:</strong> &ldquo;I guess I just figure that's how the world's always been.&rdquo;</p>
+<p><strong>Publisher:</strong> &ldquo;That's a fair thought. Something that's helped me is a promise at Jeremiah chapter 26 &mdash; it's about a time when people needed to listen to a warning even though it wasn't popular. Would you mind if I read you one verse?&rdquo; <em>(&larr; listen and don't talk too much &mdash; keep it brief, invite rather than lecture)</em></p>
+<p><strong>Householder:</strong> &ldquo;Sure, go ahead.&rdquo;</p>
+</div>
+<div class="comment-box"><strong>📌 Personal application:</strong> This week I can practice pausing to actually observe someone's situation &mdash; their clothing, what they're doing, what they seem to be thinking about &mdash; before I decide how to start, rather than using the same opening line with everyone.</div>
+
+  </div>
+</div>
+  <div class="part-card apply" id="a5">
+  <button class="part-header" data-target="a5-body">
+    <span class="part-title">5. Following Up</span>
+    <span class="part-min">4 min.</span>
+    <span class="chevron">▾</span>
+  </button>
+  <div class="part-body" id="a5-body">
+    
+<p class="theme-summary"><strong>Setting:</strong> House to house, following up with someone previously contacted. Share a truth from Appendix A of the <em>Love People</em> brochure. <span class="src-note">(lmd lesson 9 pt.3: &ldquo;Empathy&rdquo;)</span></p>
+
+<div class="dialogue-script">
+<p><strong>Publisher:</strong> &ldquo;Hi again! Last time we spoke, you mentioned you'd been going through a really difficult year. I've been thinking about that.&rdquo; <em>(&larr; lmd lesson 9 pt.3: listen carefully and don't quickly dismiss a person's feelings &mdash; show you remembered and cared)</em></p>
+<p><strong>Householder:</strong> &ldquo;Oh, that's kind of you to remember. Yeah, it's been rough.&rdquo;</p>
+<p><strong>Publisher:</strong> &ldquo;I brought something I thought might help &mdash; it's a short truth about how God views suffering. Can I share it?&rdquo;</p>
+<p><strong>Householder:</strong> &ldquo;Okay.&rdquo;</p>
+<p><strong>Publisher:</strong> <em>(shares the truth from Appendix A of the Love People brochure, then pauses)</em> &ldquo;What do you think about that?&rdquo; <em>(&larr; lmd lesson 9 pt.3: think about what would genuinely help this specific person, not a generic pitch)</em></p>
+<p><strong>Householder:</strong> &ldquo;Honestly, that's a nicer way to think about it than I expected.&rdquo;</p>
+<p><strong>Publisher:</strong> &ldquo;I'm glad it helped. Would it be all right if I came back and showed you more on this from the Bible?&rdquo;</p>
+</div>
+<div class="comment-box"><strong>📌 Personal application:</strong> Before I follow up with anyone this week, I want to ask myself: what does this specific person need, based on what they've already told me &mdash; not just what's next in my usual routine?</div>
+
+  </div>
+</div>
+  <div class="part-card apply" id="a6">
+  <button class="part-header" data-target="a6-body">
+    <span class="part-title">6. Making Disciples</span>
+    <span class="part-min">5 min.</span>
+    <span class="chevron">▾</span>
+  </button>
+  <div class="part-body" id="a6-body">
+    
+<p class="theme-summary"><strong>Material:</strong> <em>Enjoy Life Forever!</em> lesson 20, intro and points 1-3 &mdash; &ldquo;How the Congregation Is Organized.&rdquo; <span class="src-note">(lmd lesson 11 pt.4: &ldquo;Simplicity&rdquo;)</span></p>
+
+<div class="dialogue-script">
+<p><strong>Publisher:</strong> &ldquo;Last time we talked about how Jehovah is a God of order. Today's lesson looks at how that order shows up in the Christian congregation. Before we start &mdash; when you think of a well-run organization, what makes it work well?&rdquo; <em>(&larr; lmd lesson 11 pt.4: help your student connect new teachings with what he already knows)</em></p>
+<p><strong>Student:</strong> &ldquo;I guess everyone knowing their role, and someone in charge who's trustworthy.&rdquo;</p>
+<p><strong>Publisher:</strong> &ldquo;Exactly. So who do you think is the head of the Christian congregation?&rdquo; <em>(reads Ephesians 5:23 together)</em></p>
+<p><strong>Student:</strong> &ldquo;Christ.&rdquo;</p>
+<p><strong>Publisher:</strong> &ldquo;Right &mdash; and from heaven he appointed a small group of experienced elders, called the Governing Body, to give direction, the way the apostles and elders did in Jerusalem in the first century.&rdquo; <em>(&larr; lmd lesson 11 pt.4: don't talk too much &mdash; focus on the study publication's material and wait for the student to answer)</em></p>
+<p><strong>Student:</strong> &ldquo;So elders are like local leaders under that?&rdquo;</p>
+<p><strong>Publisher:</strong> &ldquo;That's it. Elders teach from the Scriptures and shepherd Jehovah's people &mdash; and they're not paid, they serve willingly. Once your student understands that main point, we can move on to what role each of us plays.&rdquo; <em>(&larr; lmd lesson 11 pt.4: once the main point is understood, move on rather than over-explaining)</em></p>
+</div>
+<div class="comment-box"><strong>📌 Personal application:</strong> With my own Bible students, I want to resist the urge to share everything I know about a topic and instead stick to the lesson's simple flow, pausing to let them answer before I move to the next point.</div>
+
+  </div>
+</div>
+</section>
+
+
+<section class="section-divider living">
+  <h2>✝️ LIVING AS CHRISTIANS</h2>
+  <div class="song-banner mid-song">
+    🎵 Song <strong>16</strong> — <a href="https://www.jw.org/en/library/songs/jw-songbook/song-16/" target="_blank" rel="noopener">View Song 16 →</a>
+  </div>
+  <div class="part-card living" id="l7">
+  <button class="part-header" data-target="l7-body">
+    <span class="part-title">7. Local Needs</span>
+    <span class="part-min">15 min.</span>
+    <span class="chevron">▾</span>
+  </button>
+  <div class="part-body" id="l7-body">
+    
+<p class="theme-summary">This part is prepared and delivered locally by the body of elders and is not published on jw.org. Check your congregation's midweek meeting schedule or ask an elder for the specific topic and assignment.</p>
+<div class="comment-box"><strong>📌 Personal application:</strong> Whatever the local topic turns out to be, I can prepare by thinking of one concrete way I've personally benefited from following counsel given at a past Local Needs part.</div>
+
+  </div>
+</div>
+  <div class="part-card cbs" id="l8">
+  <button class="part-header" data-target="l8-body">
+    <span class="part-title">8. Congregation Bible Study — <em>Walk Courageously With God</em> chap. 4: “The First Man to Wage a Righteous War”</span>
+    <span class="part-min">30 min.</span>
+    <span class="chevron">▾</span>
+  </button>
+  <div class="part-body" id="l8-body">
+    
+<div class="cbs-flow-label">Personal study &amp; Family Worship flow: Narrative &rarr; Bible account &rarr; Artwork &rarr; Dig Deeper &rarr; Reflect on the Lessons &rarr; Meditate on the Bigger Picture &rarr; Learn More</div>
+
+<h4>1. Narrative</h4>
+
+<p>Jehovah promised Abraham a great nation and a homeland, but Satan targeted that family from the start. When an alliance of four eastern kings raided Sodom and carried off Abraham's nephew Lot, Abraham had every reason to stay out of it &mdash; he was a shepherd, not a warrior, vastly outnumbered, and risking his own safety and reputation. Instead, he mobilized 318 trained men, pursued the raiders hundreds of miles, defeated them by night, and freed Lot and the other captives. Returning home, Abraham was met and blessed by Melchizedek, king-priest of Salem, to whom he humbly gave a tenth of the spoils. The account shows that this was, in the Bible's own words, one of "the Wars of Jehovah" &mdash; not a personal vendetta, but righteous action backed by God.</p>
+
+<div class="image-box">
+<img src="https://cms-imgp.jw-cdn.org/img/p/1102025904/univ/art/1102025904_univ_cnt_1_lg.jpg" alt="Abraham and his men riding on camels and charging across a moonlit landscape." loading="lazy">
+<div class="img-caption">Abraham and his men riding on camels and charging across a moonlit landscape.</div>
+<div class="img-application">Abraham mobilized 318 trained men from his own household to rescue Lot &mdash; a huge, costly undertaking. It reminds me that protecting family and fellow believers sometimes calls for real sacrifice and decisive action, not just good intentions.</div>
+</div><div class="image-box">
+<img src="https://cms-imgp.jw-cdn.org/img/p/1102025904/univ/art/1102025904_univ_cnt_2_lg.jpg" alt="A field of date palm trees and other vegetation near the region of ancient Sodom." loading="lazy">
+<div class="img-caption">A field of date palm trees and other vegetation near the region of ancient Sodom.</div>
+<div class="img-application">The lush vegetation shown here helps explain why Lot was drawn to that area &mdash; it looked like the best choice materially. It's a visual reminder that the most attractive option isn't always the safest spiritually.</div>
+</div><div class="image-box">
+<img src="https://cms-imgp.jw-cdn.org/img/p/1102025904/univ/art/1102025904_univ_cnt_3_lg.jpg" alt="Abraham and his men giving Melchizedek spoils from the war." loading="lazy">
+<div class="img-caption">Abraham and his men giving Melchizedek spoils from the war.</div>
+<div class="img-application">Abraham didn't keep the credit or the spoils for himself &mdash; he honored Melchizedek, a priest of Jehovah, with a tenth of the best. This models humility after a hard-won victory.</div>
+</div>
+
+<h4>2. Read the Bible account</h4>
+
+<div class="chip-row">
+  <span class="chip" data-ref="Gen 14:1-24">Genesis 14:1-24</span>
+  <span class="chip" data-ref="Heb 7:1-4">Hebrews 7:1-4</span>
+</div>
+<div class="account-text-block">
+<p><strong>Genesis 14:1-24</strong></p>
+<blockquote class="scripture-quote">&ldquo;1 Now in the days of Amʹra·phel king of Shiʹnar, Arʹi·och king of El·laʹsar, Ched·or·la·oʹmer king of Eʹlam, and Tiʹdal king of Goiʹim, 2 these made war with Beʹra king of Sodʹom, Birʹsha king of Go·morʹrah, Shiʹnab king of Adʹmah, Shem·eʹber king of Ze·boiʹim, and the king of Beʹla, that is, Zoʹar. 3 All of these joined forces at the Valley of Sidʹdim, that is, the Salt Sea. 4 They had served Ched·or·la·oʹmer for 12 years, but they rebelled in the 13th year. 5 So in the 14th year, Ched·or·la·oʹmer and the kings who were with him came and defeated the Rephʹa·im in Ashʹte·roth-kar·naʹim, the Zuʹzim in Ham, the Eʹmim in Shaʹveh-kir·i·a·thaʹim, 6 and the Horʹites in their mountain of Seʹir down to El-paʹran, which is at the wilderness. 7 Then they turned back and came to En-mishʹpat, that is, Kaʹdesh, and conquered the whole territory of the A·malʹek·ites and also the Amʹor·ites who were dwelling in Hazʹa·zon-taʹmar. 8 At this point, the king of Sodʹom went on the march, and also the king of Go·morʹrah, the king of Adʹmah, the king of Ze·boiʹim, and the king of Beʹla, that is, Zoʹar, and they drew up in battle formation against them in the Valley of Sidʹdim, 9 against Ched·or·la·oʹmer king of Eʹlam, Tiʹdal king of Goiʹim, Amʹra·phel king of Shiʹnar, and Arʹi·och king of El·laʹsar —four kings against the five. 10 Now the Valley of Sidʹdim was full of bitumen pits, and the kings of Sodʹom and Go·morʹrah tried to escape and fell into them, and those who remained fled to the mountainous region. 11 Then the victors took all the goods of Sodʹom and Go·morʹrah and all their food and went on their way. 12 They also took Lot, the son of Aʹbram’s brother who was dwelling in Sodʹom, as well as his goods, and they continued on their way. 13 After that a man who had escaped came and told Aʹbram the Hebrew. He was then dwelling among the big trees of Mamʹre the Amʹor·ite, the brother of Eshʹcol and Aʹner. These men were allies of Aʹbram. 14 Thus Aʹbram heard that his relative had been taken captive. With that he mobilized his trained men, 318 servants born in his household, and went in pursuit up to Dan. 15 During the night, he divided his forces, and he and his servants attacked and defeated them. And he pursued them up to Hoʹbah, which is north of Damascus. 16 He recovered all the goods, and he also recovered Lot his relative, his goods, the women, and the other people. 17 After Aʹbram returned from defeating Ched·or·la·oʹmer and the kings who were with him, the king of Sodʹom went out to meet Aʹbram at the Valley of Shaʹveh, that is, the Valley of the King. 18 And Mel·chizʹe·dek king of Saʹlem brought out bread and wine; he was priest of the Most High God. 19 Then he blessed him and said: “Blessed be Aʹbram by the Most High God, Maker of heaven and earth; 20 And praised be the Most High God, Who has handed your oppressors over to you!” And Aʹbram gave him a tenth of everything. 21 After that the king of Sodʹom said to Aʹbram: “Give me the people, but take the goods for yourself.” 22 But Aʹbram said to the king of Sodʹom: “I raise my hand in an oath to Jehovah the Most High God, Maker of heaven and earth, 23 that I will not take anything that is yours, from a thread to a sandal lace, so that you may not say, ‘I made Aʹbram rich.’ 24 I will take nothing except what the young men have already eaten. As for the share of the men who went with me, Aʹner, Eshʹcol, and Mamʹre —let them take their share.”&rdquo;</blockquote>
+<p><strong>Hebrews 7:1-4</strong></p>
+<blockquote class="scripture-quote">&ldquo;1 For this Mel·chizʹe·dek, king of Saʹlem, priest of the Most High God, met Abraham returning from the slaughter of the kings and blessed him, 2 and Abraham gave him a tenth of everything. First, his name is translated “King of Righteousness,” and then also king of Saʹlem, that is, “King of Peace.” 3 In being fatherless, motherless, without genealogy, having neither a beginning of days nor an end of life, but being made like the Son of God, he remains a priest for all time. 4 See how great this man was to whom Abraham, the family head, gave a tenth out of the best spoils.&rdquo;</blockquote>
+</div>
+
+
+<h4>3. For discussion</h4>
+
+<div class="point-block">
+  <p><strong>For discussion:</strong> In what ways did Abraham show courage during this part of his life?</p>
+  <div class="comment-box"><strong>💬 Comment you could share:</strong> Abraham acted even though he had no guarantee of success and everything to lose &mdash; his household, his safety, even his standing as a peaceable herdsman. Real courage isn't the absence of risk; it's acting for what's right despite the risk.</div>
+</div>
+
+
+<h4>4. Examine the artwork</h4>
+<div class="image-box">
+<img src="https://cms-imgp.jw-cdn.org/img/p/1102025904/univ/art/1102025904_univ_cnt_4_lg.jpg" alt="A young brother at a circuit assembly, offering his seats to an older couple." loading="lazy">
+<div class="img-caption">A young brother at a circuit assembly, offering his seats to an older couple.</div>
+<div class="img-application">This modern picture connects Abraham's self-sacrificing spirit to a simple, everyday way we can show that same courageous generosity today.</div>
+</div>
+
+<h4>5. Dig Deeper</h4>
+
+<div class="qa-item">
+  <button class="qa-q" data-target="dd1">1. What archaeological evidence supports the accuracy of this account? <span class="src-note">(w89 7/1 5 &para;4&ndash;6 &para;1)</span></button>
+  <div class="qa-a" id="dd1"><p>Extra-biblical and archaeological research into the ancient Near East, including records of city and regional names matching this period, has repeatedly corroborated details in Genesis 14 that critics once dismissed as unhistorical. For the full documented evidence, see the cited <em>Watchtower</em> article.</p></div>
+</div>
+<div class="qa-item">
+  <button class="qa-q" data-target="dd2">2. What geographical evidence supports the Bible's description of Sodom and Gomorrah? <span class="src-note">(it &ldquo;Salt Sea&rdquo; &para;6)</span></button>
+  <div class="qa-a" id="dd2">
+    <div class="image-box">
+<img src="https://cms-imgp.jw-cdn.org/img/p/1102025904/univ/art/1102025904_univ_cnt_2_lg.jpg" alt="Date palms and vegetation near the probable site of ancient Sodom." loading="lazy">
+<div class="img-caption">Date palms and vegetation near the probable site of ancient Sodom.</div>
+<div class="img-application">Even today, this region supports abundant vegetation &mdash; consistent with the Bible's picture of a well-watered, fertile district that drew Lot before its destruction.</div>
+</div>
+  </div>
+</div>
+<div class="qa-item">
+  <button class="qa-q" data-target="dd3">3. Melchizedek was king and priest of Salem. Where was Salem? <span class="src-note">(it &ldquo;Salem&rdquo;)</span></button>
+  <div class="qa-a" id="dd3"><p>Salem is widely identified with the site later known as Jerusalem, consistent with Psalm 76:2, which parallels &ldquo;Salem&rdquo; with &ldquo;Zion.&rdquo;</p></div>
+</div>
+<div class="qa-item">
+  <button class="qa-q" data-target="dd4">4. How was Melchizedek a prophetic type of Jesus? <span class="src-note">(it &ldquo;High Priest&rdquo; &para;27-28)</span></button>
+  <div class="qa-a" id="dd4">
+    <p><span class="chip" data-ref="Heb 7:1-4">Heb 7:1-4</span> Melchizedek uniquely combined the offices of king and priest with no recorded genealogy, beginning, or end &mdash; fitting him as a type of Christ, who likewise serves as both King and High Priest, a priest &ldquo;for all time.&rdquo;</p>
+    <blockquote class="scripture-quote">&ldquo;1 For this Mel·chizʹe·dek, king of Saʹlem, priest of the Most High God, met Abraham returning from the slaughter of the kings and blessed him, 2 and Abraham gave him a tenth of everything. First, his name is translated “King of Righteousness,” and then also king of Saʹlem, that is, “King of Peace.” 3 In being fatherless, motherless, without genealogy, having neither a beginning of days nor an end of life, but being made like the Son of God, he remains a priest for all time. 4 See how great this man was to whom Abraham, the family head, gave a tenth out of the best spoils.&rdquo;</blockquote>
+  </div>
+</div>
+
+
+<h4>6. Reflect on the Lessons</h4>
+
+<div class="point-block">
+  <p><strong>1.</strong> Jacob felt responsible for each of Laban's sheep. <span class="chip" data-ref="Gen 31:38-40">Gen 31:38-40</span> How can Christian shepherds today show even greater concern for Jehovah's sheep &mdash; their brothers and sisters?</p>
+  <blockquote class="scripture-quote">&ldquo;38 During these 20 years that I have been with you, your sheep and your goats never miscarried, and I never ate the rams of your flock. 39 I did not bring you any animal torn by wild beasts. I would stand the loss of it myself. Whether the animal was stolen by day or was stolen by night, you would demand compensation from me. 40 By day the heat consumed me, and the cold by night, and sleep would flee from my eyes.&rdquo;</blockquote>
+  <div class="comment-box"><strong>📌 Personal application:</strong> Jacob's tireless, personal watch-care over animals that weren't even his own is a good standard for how elders &mdash; and really any of us caring for others &mdash; should treat responsibilities entrusted to us: as if they truly matter, not just as a task to get through.</div>
+</div>
+<div class="point-block">
+  <p><strong>2.</strong> When Jacob was afraid, he prayed to Jehovah. <span class="chip" data-ref="Gen 32:6-12">Gen 32:6-12</span> What do you learn from Jacob about how to pray?</p>
+  <blockquote class="scripture-quote">&ldquo;6 In time the messengers returned to Jacob, saying: “We met your brother Eʹsau, and he is now on his way to meet you, and there are 400 men with him.” 7 And Jacob became very frightened and anxious. So he divided the people who were with him, as well as the flocks, the cattle, and the camels, into two camps. 8 He said: “If Eʹsau attacks the one camp, then the other camp will be able to escape.” 9 After that Jacob said: “O God of my father Abraham and God of my father Isaac, O Jehovah, you who are saying to me, ‘Return to your land and to your relatives, and I will deal well with you,’ 10 I am unworthy of all the loyal love and of all the faithfulness that you have shown toward your servant, for with only my staff I crossed this Jordan and now I have become two camps. 11 Save me, I pray you, from the hand of my brother Eʹsau, for I am afraid of him that he may come and attack me, as well as the mothers and their children. 12 And you have said: ‘I will certainly deal well with you, and I will make your offspring like the grains of sand of the sea, which are too numerous to count.’”&rdquo;</blockquote>
+  <div class="comment-box"><strong>💬 Comment you could share:</strong> Jacob's prayer is specific and honest &mdash; he names his fear plainly and reminds himself of Jehovah's own past promises. That's a helpful pattern: bring the actual fear to Jehovah, and anchor the request in what he has already said he'll do.</div>
+</div>
+<div class="point-block">
+  <p><strong>3.</strong> In what other ways might you imitate the courage shown by Abraham in this account?</p>
+  <div class="comment-box"><strong>📌 Personal application:</strong> Abraham acted decisively once he knew what was right, rather than waiting for perfect conditions. I can imitate that by not letting fear of inconvenience or risk stop me from doing what I already know is right.</div>
+</div>
+
+
+<h4>7. Meditate on the Bigger Picture</h4>
+
+<div class="point-block wrapup">
+  <p><strong>What does this teach us about Jehovah?</strong></p>
+  <div class="comment-box"><strong>🙏 Getting to know Jehovah:</strong> Jehovah backs up righteous action taken on his behalf, even when the odds look impossible &mdash; the account is literally called part of &ldquo;the book of the Wars of Jehovah.&rdquo; <span class="chip" data-ref="Num 21:14">Num 21:14</span> He notices and rewards courage shown for the right reasons.</div>
+  <blockquote class="scripture-quote">&ldquo;14 That is why the book of the Wars of Jehovah speaks of “Vaʹheb in Suʹphah and the valleys of Arʹnon,&rdquo;</blockquote>
+</div>
+<div class="point-block wrapup">
+  <p><strong>Are there any points from this lesson we can use in the ministry or our daily life?</strong></p>
+  <div class="comment-box"><strong>📌 Personal application:</strong> Just as Abraham refused to keep the war's spoils for personal gain and instead honored Jehovah's priest, I can look for practical ways to give Jehovah credit rather than taking recognition for myself when things go well &mdash; at work, in the ministry, or within the family.</div>
+</div>
+
+
+<h4>8. Learn More</h4>
+
+<ul class="learn-more-list">
+  <li><em>Imitate Their Faith&mdash;Abraham, Part 1</em> (10:43) &mdash; consider how Abraham came to trust Jehovah fully.</li>
+  <li>&ldquo;Abraham&mdash;A Man of Courage&rdquo; (<em>w12</em> 1/1 6-7) &mdash; how did Abraham display courage even before he left Ur?</li>
+</ul>
+
+
+  </div>
+</div>
+</section>
+
+
+<div class="closing-block">
+  <p>Concluding Comments (3 min.)</p>
+  <div class="song-banner">
+    🎵 Closing Song <strong>71</strong> and Prayer — <a href="https://www.jw.org/en/library/songs/jw-songbook/song-71/" target="_blank" rel="noopener">View Song 71 →</a>
+  </div>
+</div>
+<footer class="page-footer">
+  <p>Source: <a href="https://www.jw.org/en/library/jw-meeting-workbook/july-august-2026-mwb/Life-and-Ministry-Meeting-Schedule-for-August-17-23-2026/" target="_blank" rel="noopener">jw.org — Life and Ministry Meeting Schedule, August 17–23, 2026</a></p>
+  <p>All scripture quotations are from the New World Translation of the Holy Scriptures (Study Edition), fetched verbatim from wol.jw.org.</p>
+  <p class="generated-note">Personal study guide generated for congregation meeting preparation — not an official publication of Jehovah's Witnesses.</p>
+</footer>
+
+</div>
+
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+<aside id="sidebar" class="sidebar">
+  <button id="sidebarClose" class="sidebar-close">&times;</button>
+  <div class="sidebar-ref" id="sidebarRef"></div>
+  <div class="sidebar-content" id="sidebarContent"></div>
+</aside>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  // Collapsible part cards
+  document.querySelectorAll(".part-header").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var card = btn.closest(".part-card");
+      var body = card.querySelector(".part-body");
+      var isOpen = card.classList.contains("open");
+      if(isOpen){
+        card.classList.remove("open");
+        body.style.maxHeight = null;
+      } else {
+        card.classList.add("open");
+        body.style.maxHeight = body.scrollHeight + 200 + "px";
+      }
+    });
+  });
+
+  // Collapsible Q&A
+  document.querySelectorAll(".qa-q").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var id = btn.getAttribute("data-target");
+      var a = document.getElementById(id);
+      var open = a.classList.contains("open");
+      if(open){ a.classList.remove("open"); a.style.maxHeight = null; }
+      else { a.classList.add("open"); a.style.maxHeight = a.scrollHeight + 50 + "px"; }
+    });
+  });
+
+  // Expand All
+  var expanded = false;
+  document.getElementById("expandAllBtn").addEventListener("click", function(){
+    expanded = !expanded;
+    document.querySelectorAll(".part-card").forEach(function(card){
+      var body = card.querySelector(".part-body");
+      if(expanded){
+        card.classList.add("open");
+        body.style.maxHeight = body.scrollHeight + 400 + "px";
+      } else {
+        card.classList.remove("open");
+        body.style.maxHeight = null;
+      }
+    });
+    document.querySelectorAll(".qa-a").forEach(function(a){
+      if(expanded){ a.classList.add("open"); a.style.maxHeight = a.scrollHeight + 50 + "px"; }
+      else { a.classList.remove("open"); a.style.maxHeight = null; }
+    });
+    this.textContent = expanded ? "Collapse All" : "Expand All";
+  });
+
+  // Sidebar
+  var sidebar = document.getElementById("sidebar");
+  var overlay = document.getElementById("sidebarOverlay");
+  var sidebarRef = document.getElementById("sidebarRef");
+  var sidebarContent = document.getElementById("sidebarContent");
+
+  function openSidebar(ref){
+    var text = window.SCRIPTURE_DATA[ref];
+    sidebarRef.textContent = ref;
+    sidebarContent.textContent = text ? text : "Verse text not available.";
+    sidebar.classList.add("show");
+    overlay.classList.add("show");
+  }
+  function closeSidebar(){
+    sidebar.classList.remove("show");
+    overlay.classList.remove("show");
+  }
+  document.querySelectorAll(".chip").forEach(function(chip){
+    chip.addEventListener("click", function(){
+      openSidebar(chip.getAttribute("data-ref"));
+    });
+  });
+  document.getElementById("sidebarClose").addEventListener("click", closeSidebar);
+  overlay.addEventListener("click", closeSidebar);
+});
+</script>
+</body>
+</html>
