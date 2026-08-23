@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLAM Study Guide &mdash; August 24–30, 2026</title>
+<style>
+:root{
+  --treasures:#1d4ed8; --apply:#15803d; --living:#7e22ce; --cbs:#c2410c;
+  --bg:#f0f4f8; --card:#ffffff; --amber:#f59e0b; --amberbg:#fffbeb;
+  --green:#22c55e; --orange:#d97706; --indigo:#6366f1; --chipbg:#eff6ff;
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:#1f2937;line-height:1.55;}
+.wrap{max-width:820px;margin:0 auto;padding:16px;}
+header.top{background:linear-gradient(135deg,#1d4ed8,#312e81);color:#fff;border-radius:14px;padding:24px 20px;margin-bottom:16px;box-shadow:0 4px 14px rgba(0,0,0,.15);}
+.weekbadge{display:inline-block;background:rgba(255,255,255,.18);padding:6px 14px;border-radius:999px;font-weight:700;font-size:.9rem;letter-spacing:.03em;}
+header.top h1{margin:10px 0 2px;font-size:1.5rem;}
+header.top p{margin:0;opacity:.85;font-size:.95rem;}
+.expandBtn{margin-top:14px;background:#fff;color:#1d4ed8;border:none;padding:10px 16px;border-radius:8px;font-weight:700;cursor:pointer;font-size:.9rem;}
+.songbanner{background:#fff;border-radius:12px;padding:14px 16px;margin-bottom:16px;box-shadow:0 1px 4px rgba(0,0,0,.08);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;}
+.songbanner a{color:#1d4ed8;font-weight:700;text-decoration:none;}
+.divider{display:flex;align-items:center;gap:10px;margin:22px 0 10px;}
+.divider .bar{flex:1;height:3px;border-radius:2px;}
+.divider h2{margin:0;font-size:1.05rem;font-weight:800;white-space:nowrap;letter-spacing:.02em;}
+.divider.treasures h2,.divider.treasures .bar{color:var(--treasures);background:var(--treasures);}
+.divider.apply h2,.divider.apply .bar{color:var(--apply);background:var(--apply);}
+.divider.living h2,.divider.living .bar{color:var(--living);background:var(--living);}
+.divider.cbs h2,.divider.cbs .bar{color:var(--cbs);background:var(--cbs);}
+.card{background:var(--card);border-radius:12px;padding:16px 18px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.07);}
+.card h3{margin:0 0 8px;font-size:1.05rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+.card h3 .arrow{transition:transform .25s;font-size:.8rem;opacity:.6;}
+.card.collapsed h3 .arrow{transform:rotate(-90deg);}
+.card .body{max-height:4000px;overflow:hidden;transition:max-height .35s ease;}
+.card.collapsed .body{max-height:0;}
+.meta{font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:#6b7280;font-weight:700;margin-bottom:6px;}
+.treasures .meta,.treasures h3{color:var(--treasures);}
+.apply .meta,.apply h3{color:var(--apply);}
+.living .meta,.living h3{color:var(--living);}
+.cbs .meta,.cbs h3{color:var(--cbs);}
+blockquote.scripture{background:var(--chipbg);border-left:4px solid #93c5fd;margin:10px 0;padding:10px 14px;border-radius:6px;font-style:italic;}
+blockquote.scripture cite{display:block;margin-top:6px;font-style:normal;font-weight:700;font-size:.82rem;color:#1e3a8a;}
+.chip{display:inline-block;background:var(--chipbg);color:#1d4ed8;border:1px solid #bfdbfe;border-radius:999px;padding:3px 11px;font-size:.85rem;font-weight:700;cursor:pointer;margin:2px 4px 2px 0;}
+.chip:hover{background:#dbeafe;}
+.article-chip{background:#f3e8ff;color:#7e22ce;border-color:#e9d5ff;}
+.commentbox{border-left:4px solid var(--amber);background:var(--amberbg);border-radius:6px;padding:10px 14px;margin:10px 0;font-size:.93rem;}
+.commentbox b{display:block;margin-bottom:3px;}
+.imagebox{border-left:4px solid var(--green);background:#f0fdf4;border-radius:6px;padding:10px 14px;margin:10px 0;font-size:.9rem;}
+.imagebox img{max-width:100%;border-radius:8px;margin:6px 0;display:block;}
+.videobox{border-left:4px solid var(--orange);background:#fffaf0;border-radius:6px;padding:10px 14px;margin:10px 0;font-size:.93rem;}
+.dialogue{background:#f8f8f8;border-radius:8px;padding:12px 14px;margin:10px 0;font-size:.93rem;}
+.dialogue .pub{font-weight:700;color:#111827;}
+.dialogue .house{font-weight:700;color:#4b5563;}
+.dialogue .coach{font-style:italic;color:var(--indigo);display:block;margin:2px 0 10px 14px;font-size:.85rem;}
+.gemgroup{border:1px solid #e5e7eb;border-radius:8px;padding:10px 14px;margin:10px 0;}
+.gemgroup h4{margin:2px 0 8px;font-size:.92rem;color:#374151;}
+.warn{border-left:4px solid #ef4444;background:#fef2f2;border-radius:6px;padding:10px 14px;margin:10px 0;font-size:.9rem;}
+footer{text-align:center;padding:26px 10px;font-size:.82rem;color:#6b7280;}
+footer a{color:#1d4ed8;}
+/* Sidebar */
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .25s;z-index:40;}
+.sidebar-overlay.open{opacity:1;pointer-events:auto;}
+.sidebar{position:fixed;top:0;right:-100%;width:340px;max-width:100%;height:100%;background:#fff;box-shadow:-4px 0 18px rgba(0,0,0,.2);transition:right .3s ease;z-index:50;overflow-y:auto;padding:20px;}
+.sidebar.open{right:0;}
+.sidebar h4{margin:0 0 10px;color:#1d4ed8;}
+.sidebar .close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:#6b7280;}
+.sidebar blockquote{background:var(--chipbg);border-left:4px solid #93c5fd;padding:10px 14px;border-radius:6px;font-style:italic;margin:0 0 14px;}
+.sidebar .openfull{display:inline-block;margin-top:6px;background:#1d4ed8;color:#fff;padding:8px 14px;border-radius:8px;text-decoration:none;font-size:.85rem;font-weight:700;}
+@media (max-width:480px){.sidebar{width:100%;right:-100%;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+<span class="weekbadge">August 24–30, 2026</span>
+<h1>Our Christian Life &amp; Ministry</h1>
+<p>Personal study guide for the CLAM meeting &mdash; prepared for a congregation member giving comments.</p>
+<button class="expandBtn" onclick="expandAll(this)">Expand All</button>
+</header>
+
+<div class="songbanner">
+<span>&#127925; Opening: <a href="https://www.jw.org/en/library/music-songs/sing-out-joyfully/12-great-god-jehovah/" target="_blank" rel="noopener">Song 12 &mdash; Great God, Jehovah</a> and Prayer</span>
+<span style="font-size:.85rem;color:#6b7280;">Opening Comments &middot; 1 min.</span>
+</div>
+
+<div class="card" style="background:#eef2ff;border:1px dashed #a5b4fc;">
+<h3 onclick="toggleCard(this)">&#128214; Weekly Bible Reading: Jeremiah 29-30<span class="arrow">&#9660;</span></h3>
+<div class="body">
+<p>This week&rsquo;s assigned reading covers <b>Jeremiah chapters 29 and 30</b>. The Spiritual Gems section below offers gem options grouped by chapter &mdash; pick the chapter(s) you were assigned to read.</p>
+</div>
+</div>
+
+<div class="divider treasures"><div class="bar"></div><h2>&#9935;&#65039; TREASURES FROM GOD&amp;rsquo;S WORD</h2><div class="bar"></div></div><div class="card treasures">
+<h3 onclick="toggleCard(this)">1. Jehovah Disciplines His Servants to the Proper Degree<span class="arrow">&#9660;</span></h3>
+<div class="meta">Talk &amp;middot; 10 min.</div>
+<div class="body">
+<p>Jeremiah&rsquo;s letter to the exiles in Babylon contains one of the Bible&rsquo;s clearest lessons on how Jehovah views discipline &mdash; not as rejection, but as loving correction with a purpose.</p>
+<ul>
+<li>Repentant Jews would search for Jehovah with all their heart. <span class="chip" data-ref="Jer. 29:12, 13">Jer. 29:12, 13</span></li>
+<li>Jehovah would restore his people. <span class="chip" data-ref="Jer. 29:14">Jer. 29:14</span></li>
+<li>They would not be exterminated but instead disciplined &ldquo;to the proper degree.&rdquo; <span class="chip" data-ref="Jer. 30:11">Jer. 30:11</span> <span class="chip" data-ref="Heb. 12:6">Heb. 12:6</span></li>
+</ul>
+<blockquote class="scripture">“For I am with you,” declares Jehovah, “to save you. But I will make an extermination among all the nations to which I scattered you; However, you I will not exterminate. I will discipline you to the proper degree, And I will by no means leave you unpunished.”<cite>&mdash; Jer. 30:11</cite></blockquote>
+<div class="imagebox">
+<img src="https://assetsnffrgf-a.akamaihd.net/assets/m/202026248/univ/wpub/202026248_univ_cnt_1_xs.jpg" alt="Three elders meeting with a brother. The brother listens attentively while the elders speak to him.">
+<p><em>Three elders meeting with a brother, who listens attentively as they speak with him.</em> This picture reminds us that discipline in the congregation today is meant to reflect Jehovah&rsquo;s own pattern &mdash; given with genuine concern for the individual, not harshness.</p>
+</div>
+<p><b>For meditation:</b> How should we respond when Jehovah disciplines us? <span class="chip article-chip" data-art="w22.11-p13">w22.11 21 &amp;para;6</span></p>
+<div class="commentbox"><b>&#128172; Comment you could share:</b>&ldquo;I found it interesting that Jehovah&rsquo;s discipline in Jeremiah 30:11 is paired with a promise &mdash; he would not exterminate his people, only correct them. That tells me discipline is meant to preserve the relationship, not end it.&rdquo;</div>
+<div class="commentbox"><b>&#128204; Personal application:</b>When I receive counsel from an elder or from my own conscience shaped by Scripture, I can ask myself whether I am accepting it the way the exiles were urged to &mdash; as evidence that Jehovah still wants a relationship with me.</div>
+<div class="commentbox"><b>&#128591; Getting to know Jehovah:</b>This account shows that Jehovah&rsquo;s discipline is always measured &mdash; &ldquo;to the proper degree.&rdquo; He is not a harsh judge looking for an excuse to punish; he corrects the way a caring father does.</div>
+</div>
+</div><div class="card treasures">
+<h3 onclick="toggleCard(this)">2. Spiritual Gems<span class="arrow">&#9660;</span></h3>
+<div class="meta">10 min.</div>
+<div class="body">
+<div class="gemgroup">
+<h4>Assigned question</h4>
+<p><span class="chip" data-ref="Jer. 30:11">Jer. 30:11</span> &mdash; How can parents imitate Jehovah when administering discipline? <span class="chip article-chip" data-art="w14-0701-p18">w14 7/1 12 &amp;para;1-4</span></p>
+<div class="commentbox"><b>&#128172; Comment you could share:</b>Just as Jehovah disciplined his people &lsquo;to the proper degree&rsquo; &mdash; not excessively, and always with restoration in view &mdash; parents can aim discipline at correcting behavior rather than venting frustration, and can pair correction with reassurance of their love.</div>
+</div>
+
+<div class="gemgroup">
+<h4>Chapter 29 &mdash; pick one</h4>
+<p><span class="chip" data-ref="Jer. 29:7">Jer. 29:7</span></p>
+<blockquote class="scripture">And seek the peace of the city to which I have exiled you, and pray in its behalf to Jehovah, for in its peace you will have peace.<cite>&mdash; Jer. 29:7</cite></blockquote>
+<p><em>Easy to overlook, but striking: Jehovah told the exiles to seek the peace of Babylon itself &mdash; the very city that held them captive &mdash; because their own peace was tied to it. It is a reminder that we can look for ways to contribute positively wherever Jehovah&rsquo;s providence has placed us, even in less-than-ideal circumstances.</em></p>
+<p><span class="chip" data-ref="Jer. 29:23">Jer. 29:23</span></p>
+<blockquote class="scripture">“I am the One who knows, and I am a witness,” declares Jehovah.<cite>&mdash; Jer. 29:23</cite></blockquote>
+<p><em>A window into Jehovah&rsquo;s personality: even hidden sins committed &ldquo;in my name&rdquo; did not escape him. He describes himself as both the One who knows and a witness &mdash; a sobering yet comforting thought, since it means nothing sincere done for him goes unnoticed either.</em></p>
+</div>
+
+<div class="gemgroup">
+<h4>Chapter 30 &mdash; pick one</h4>
+<p><span class="chip" data-ref="Jer. 30:17">Jer. 30:17</span></p>
+<blockquote class="scripture">“But I will restore your health and heal your wounds,” declares Jehovah, “Though they called you an outcast: ‘Zion, for whom no one searches.’”<cite>&mdash; Jer. 30:17</cite></blockquote>
+<p><em>Jehovah answers the taunt that Zion was an outcast &ldquo;whom no one searches for&rdquo; with a personal promise to restore health and heal wounds. It shows how closely Jehovah identifies with those who feel forgotten or written off.</em></p>
+<p><span class="chip" data-ref="Jer. 30:21">Jer. 30:21</span></p>
+<blockquote class="scripture">His majestic one will be one of his own, And from his midst his ruler will emerge. I will cause him to come near, and he will approach me.” “For otherwise, who would dare to approach me?” declares Jehovah.<cite>&mdash; Jer. 30:21</cite></blockquote>
+<p><em>This verse looks ahead to a ruler who could safely &ldquo;approach&rdquo; Jehovah on the people&rsquo;s behalf &mdash; a foreshadowing of the role Jesus would fulfill. It ties this ancient promise to Jehovah&rsquo;s bigger purpose.</em></p>
+</div>
+</div>
+</div><div class="card treasures">
+<h3 onclick="toggleCard(this)">3. Bible Reading &amp;mdash; Jeremiah 30:1-11<span class="arrow">&#9660;</span></h3>
+<div class="meta">4 min. &amp;middot; th study 2</div>
+<div class="body">
+<p>This week&rsquo;s Bible reading covers <b>Jeremiah 30:1-11</b>, where Jehovah instructs Jeremiah to write down his promises of restoration so they would endure for later generations.</p>
+<blockquote class="scripture">The word that came to Jeremiah from Jehovah, saying: “This is what Jehovah the God of Israel says, ‘Write in a book all the words that I speak to you. For “look! the days are coming,” declares Jehovah, “when I will gather the captives of my people, Israel and Judah,” says Jehovah, “and I will bring them back to the land that I gave to their forefathers, and they will possess it once again.”’” These are the words that Jehovah spoke to Israel and Judah. This is what Jehovah says: “We have heard the sounds of trembling; There is terror, and no peace. Ask, please, whether a man can give birth. Why, then, do I see every strong man with his hands on his stomach Like a woman giving birth? Why has every face turned pale? Alas! For that day is a terrible one. There is none like it, A time of distress for Jacob. But he will be saved out of it.” “And in that day,” declares Jehovah of armies, “I will break the yoke from off your neck, and your straps I will tear in two; and no more will strangers make him their slave. They will serve Jehovah their God and David their king, whom I will raise up for them.” “And you, my servant Jacob, do not be afraid,” declares Jehovah, “And do not be terrified, O Israel. For I will save you from far away And your offspring from the land of their captivity. Jacob will return and be calm and undisturbed, With no one to make them afraid.” “For I am with you,” declares Jehovah, “to save you. But I will make an extermination among all the nations to which I scattered you; However, you I will not exterminate. I will discipline you to the proper degree, And I will by no means leave you unpunished.”<cite>&mdash; Jer. 30:1-11</cite></blockquote>
+<p><b>Teaching quality to work on (th study 2):</b> Use a conversational manner &mdash; read as though explaining the point to a friend rather than reciting it, using natural inflection at the poetic breaks.</p>
+<div class="commentbox"><b>Key verse comment suggestion:</b> <span class="chip" data-ref="Jer. 30:10">Jer. 30:10</span> &mdash; Jehovah&rsquo;s repeated reassurance &ldquo;do not be afraid&hellip; do not be terrified&rdquo; shows he understands that his people needed comfort, not just correction. I could mention how this balance of correction and comfort still describes how Jehovah deals with us.</div>
+</div>
+</div>
+<div class="divider apply"><div class="bar"></div><h2>&#127793; APPLY YOURSELF TO THE FIELD MINISTRY</h2><div class="bar"></div></div><div class="card apply">
+<h3 onclick="toggleCard(this)">4. Starting a Conversation<span class="arrow">&#9660;</span></h3>
+<div class="meta">House to House &amp;middot; 4 min.</div>
+<div class="body">
+<p><b>Setting:</b> House to house. The goal is to start a conversation on the subject of this month&rsquo;s special campaign and offer a Bible study.</p>
+<div class="dialogue">
+<span class="pub">Publisher:</span> &ldquo;Hi, thanks for coming to the door. We&rsquo;re visiting the neighborhood this month with a message many people have found encouraging. Have you noticed how differently people react to bad news these days &mdash; some feel numb, others feel anxious?&rdquo;
+<span class="coach">&larr; lmd lesson 3 pt.4: open with an observation the householder can relate to, rather than a question that invites an instant &ldquo;no.&rdquo;</span>
+<span class="house">Householder:</span> &ldquo;Yeah, honestly it&rsquo;s a lot. I try not to think about it too much.&rdquo;
+<span class="pub">Publisher:</span> &ldquo;That&rsquo;s a common way to cope. The Bible actually promises real, lasting relief &mdash; would you be open to seeing what it says in just a few minutes each week?&rdquo;
+<span class="coach">&larr; lmd lesson 3 pt.4: transition smoothly from the observation into the offer, keeping it brief and low-pressure.</span>
+<span class="house">Householder:</span> &ldquo;Maybe. What would that involve?&rdquo;
+<span class="pub">Publisher:</span> &ldquo;Just a short, free Bible discussion at a time that works for you &mdash; no obligation. Would [day] work, or would [day] be better?&rdquo;
+</div>
+<div class="commentbox"><b>&#128204; Personal application:</b>This is a good week to think through how I personally would explain, in one or two sentences, why the campaign topic matters to me &mdash; a genuine, personal reason tends to land better than a scripted line.</div>
+</div>
+</div><div class="card apply">
+<h3 onclick="toggleCard(this)">5. Starting a Conversation<span class="arrow">&#9660;</span></h3>
+<div class="meta">Public Witnessing &amp;middot; 3 min.</div>
+<div class="body">
+<p><b>Setting:</b> Public witnessing (cart, informal witnessing, etc.). The goal is simply to start a conversation on the subject of this month&rsquo;s special campaign.</p>
+<div class="dialogue">
+<span class="pub">Publisher:</span> &ldquo;Hi there &mdash; we&rsquo;re out today talking with people about a topic that comes up in almost every conversation lately. Do you ever wonder whether things will actually get better, or if this is just how the world is now?&rdquo;
+<span class="coach">&larr; lmd lesson 1 pt.5: use a question that is broad enough for almost anyone to relate to and answer honestly.</span>
+<span class="house">Passerby:</span> &ldquo;Honestly, I try not to think about it too much.&rdquo;
+<span class="pub">Publisher:</span> &ldquo;A lot of people feel that way. That&rsquo;s actually why we&rsquo;re out here &mdash; the Bible gives a specific, reassuring answer, and I&rsquo;d love to leave you with something short you could look at when you have a minute.&rdquo;
+<span class="coach">&larr; lmd lesson 1 pt.5: keep the offer brief and low-pressure, respecting that this is a short, informal contact.</span>
+</div>
+<div class="commentbox"><b>&#128172; Comment you could share:</b>In public witnessing especially, brevity matters &mdash; the goal here is simply to plant a thought, not to cover everything in one contact.</div>
+</div>
+</div><div class="card apply">
+<h3 onclick="toggleCard(this)">6. Talk<span class="arrow">&#9660;</span></h3>
+<div class="meta">5 min. &amp;middot; th study 1</div>
+<div class="body">
+<p><b>Assignment:</b> <span class="chip" data-ref="Jer. 29:11">Jer. 29:11</span> &mdash; Theme: What Is the Meaning of Jeremiah 29:11? (ijwbv article 6)</p>
+<blockquote class="scripture">“‘For I well know the thoughts that I am thinking toward you,’ declares Jehovah, ‘thoughts of peace, and not of calamity, to give you a future and a hope.<cite>&mdash; Jer. 29:11</cite></blockquote>
+<p><b>Sample talk outline (th study 1 &mdash; effective introduction):</b></p>
+<div class="dialogue">
+<span class="pub">Opening line:</span> &ldquo;Have you ever wondered whether the difficulties in your life are part of some bigger plan, or just random?&rdquo;
+<span class="coach">&larr; th study 1: an effective introduction connects immediately with something the listener has likely felt.</span>
+<span class="pub">Body:</span> Explain that Jeremiah 29:11 was originally addressed to the Jewish exiles in Babylon &mdash; a specific promise about their release after 70 years. Even though it was written to them, it reveals something timeless about Jehovah&rsquo;s attitude toward his people: his &ldquo;thoughts&rdquo; toward us are thoughts of peace, aimed at giving us &ldquo;a future and a hope.&rdquo;
+<span class="pub">Conclusion:</span> Point the householder to the linked jw.org article for the full explanation, and offer to explore related scriptures together.
+</div>
+</div>
+</div>
+<div class="divider living"><div class="bar"></div><h2>&#9877;&#65039; LIVING AS CHRISTIANS</h2><div class="bar"></div></div><div class="songbanner"><span>&#127925; <a href="https://www.jw.org/en/library/music-songs/sing-out-joyfully/3-our-strength-our-hope-our-confidence/" target="_blank" rel="noopener">Song 3 &mdash; Our Strength, Our Hope, Our Confidence</a></span></div><div class="card living">
+<h3 onclick="toggleCard(this)">7. Jehovah Gives His Servants Hope<span class="arrow">&#9660;</span></h3>
+<div class="meta">Discussion &amp;middot; 10 min.</div>
+<div class="body">
+<p>During the time the Jews were captive in Babylon, Jehovah promised they would eventually be restored to their homeland. <span class="chip" data-ref="Jer. 29:10">Jer. 29:10</span> Their misery would end. Such promises from God benefit his servants not only when they are fulfilled &mdash; even before they come true, they give us hope as we wait.</p>
+<blockquote class="scripture">“For this is what Jehovah says, ‘When 70 years at Babylon are fulfilled, I will turn my attention to you, and I will make good my promise by bringing you back to this place.’<cite>&mdash; Jer. 29:10</cite></blockquote>
+<ul>
+<li>Hope can make a difference in our physical health. <span class="chip" data-ref="Pr. 17:22">Pr. 17:22</span></li>
+<li>Hope can give us the strength to fight discouragement. <span class="chip" data-ref="Pr. 24:10">Pr. 24:10</span></li>
+<li>Hope can stabilize us in an unstable world. <span class="chip" data-ref="Heb. 6:19">Heb. 6:19</span></li>
+</ul>
+<blockquote class="scripture">A joyful heart is good medicine,But a crushed spirit saps one’s strength.<cite>&mdash; Pr. 17:22</cite></blockquote>
+<blockquote class="scripture">If you become discouraged in the day of distress,Your strength will be meager.<cite>&mdash; Pr. 24:10</cite></blockquote>
+<blockquote class="scripture">We have this hope as an anchor for the soul, both sure and firm, and it enters in within the curtain,<cite>&mdash; Heb. 6:19</cite></blockquote>
+<div class="videobox">
+<img src="https://assetsnffrgf-a.akamaihd.net/assets/m/202026248/univ/wpub/202026248_univ_cnt_2_xs.jpg" alt="A scene from the video Universal Peace Is Sure to Come!—Do Not Lose Hope. An elderly sister receives emotional support as she reads the book Learn From the Great Teacher with a young child." style="max-width:100%;border-radius:8px;margin-bottom:8px;">
+<p><b>VIDEO:</b> <em>Universal Peace Is Sure to Come!&mdash;Do Not Lose Hope.</em></p>
+<p>This short video illustrates how Bible-based hope sustains Jehovah&rsquo;s people through hardship. The pictured scene shows an elderly sister receiving emotional support as she reads the book <em>Learn From the Great Teacher</em> with a young child &mdash; a picture of how hope is nurtured and passed on within the congregation family, across generations. <a href="https://www.jw.org/en/library/videos/?item=pub-jwbcov22_20_VIDEO" target="_blank" rel="noopener">Watch on JW.org &rarr;</a></p>
+<p><b>After the video, ask the audience:</b> What lessons did you learn from the video?</p>
+<div class="commentbox"><b>&#128172; Comment you could share:</b>The video shows that hope is not just a private feeling &mdash; it is something we can actively give to one another, the way the sister in the scene received comfort through a shared study.</div>
+</div>
+<div class="commentbox"><b>&#128204; Personal application:</b>When I feel weighed down by circumstances, I can recall that Jehovah&rsquo;s promises give me hope even before they are fulfilled &mdash; the waiting itself is not wasted time.</div>
+</div>
+</div><div class="card living">
+<h3 onclick="toggleCard(this)">8. Special Campaign in September<span class="arrow">&#9660;</span></h3>
+<div class="meta">Talk &amp;middot; 5 min.</div>
+<div class="body">
+<p><b>Talk by the service overseer (5 min.):</b> This part is intended to stimulate enthusiasm for the September special campaign and to outline the specific local arrangements for the congregation &mdash; territory assignments, schedules, and any special materials being used. Because these details are announced live at the meeting rather than published in advance, congregation members should listen for and note the specific local arrangements given.</p>
+<div class="commentbox"><b>&#128204; Personal application:</b>I can plan ahead by checking my personal schedule now so I am ready to participate in whatever arrangements are announced.</div>
+</div>
+</div>
+<div class="divider cbs"><div class="bar"></div><h2>&#128213; CONGREGATION BIBLE STUDY</h2><div class="bar"></div></div><div class="card cbs">
+<h3 onclick="toggleCard(this)">9. He Faced His Hardest Challenge &amp;mdash; wcg chap. 5 (Abraham)<span class="arrow">&#9660;</span></h3>
+<div class="meta">30 min.</div>
+<div class="body">
+<div class="imagebox">
+<img src="https://assetsnffrgf-a.akamaihd.net/img/p/1102025905/univ/art/1102025905_univ_cnt_1_xs.jpg" alt="Abraham and Isaac traveling up a mountainside. Abraham is holding a vessel of hot embers, and Isaac is carrying a bundle of wood. Isaac is looking over his shoulder at Abraham, who is gazing at the heavens.">
+<p><em>Abraham and Isaac traveling up the mountainside &mdash; Abraham carries hot embers, Isaac carries the wood, and Isaac looks back at his father, who is gazing toward heaven.</em> This scene captures the quiet trust of both father and son as they approached the hardest moment of Abraham&rsquo;s life.</p>
+</div>
+
+<p>Abraham put one foot in front of the other, trudging steadily toward his destination. This trek would take only a few days, but it was surely the hardest journey of his long life.</p>
+<p>He kept thinking about what Jehovah had asked of him: take his son, his only son whom he so loved, Isaac, and offer him up as a burnt offering on a mountain in the land of Moriah. Jehovah knew how dear Isaac was to his father. How could God ask such a thing? And how could Abraham find the faith and courage he needed to obey?</p>
+<p>The Bible calls Abraham &ldquo;the father of all those having faith.&rdquo; <span class="chip" data-ref="Rom. 4:11">Rom. 4:11</span>. His faith was already outstanding long before this. Decades earlier, when Jehovah told him He would destroy Sodom and Gomorrah, Abraham asked whether Jehovah would really sweep away good people along with the bad, and Jehovah patiently taught him that He would spare the cities if even a few righteous people were found there (Gen. 18:16-33). Abraham never forgot the lesson: Jehovah is just and merciful.</p>
+<p>Not long afterward, Jehovah gave Abraham and Sarah a miraculous gift &mdash; though Sarah was almost 90 and Abraham almost 100, Jehovah revived their reproductive powers so they could have a son, Isaac. Abraham learned that nothing is impossible for Jehovah &mdash; he could even restore vitality to what had seemed dead. <span class="chip" data-ref="Rom. 4:18, 19">Rom. 4:18, 19</span></p>
+<p>Now, about 25 years later, Abraham turned those lessons over in his mind on the road to Moriah. He reasoned: even if Isaac were to die, Jehovah could and would resurrect him! <span class="chip" data-ref="Heb. 11:19">Heb. 11:19</span> So Abraham walked on, his hope giving him courage.</p>
+<p>At the mountain, Isaac meekly submitted as his aged father bound him and placed him on the altar. Abraham raised his arm, knife in hand &mdash; ready to do the unthinkable &mdash; when an angel&rsquo;s voice called out: &ldquo;Do not harm the boy.&rdquo; God praised Abraham for his faith and obedience, and confirmed his promise to bless him and make it possible for &ldquo;all nations of the earth&rdquo; to receive blessings because of what Abraham had been willing to do.</p>
+<p>Jehovah&rsquo;s dealings with Abraham and Isaac also gave insight into what Jehovah himself would go through to save mankind: as Abraham was willing to offer up his beloved son, Jehovah would prove willing to offer up his only-begotten Son, Jesus. <span class="chip" data-ref="John 3:16">John 3:16</span></p>
+<blockquote class="scripture">And he received a sign—namely, circumcision—as a seal of the righteousness by the faith he had while in his uncircumcised state, so that he might be the father of all those having faith while uncircumcised, in order for righteousness to be counted to them;<cite>&mdash; Rom. 4:11</cite></blockquote><blockquote class="scripture">Although beyond hope, yet based on hope, he had faith that he would become the father of many nations according to what had been said: “So your offspring will be.” And although he did not grow weak in faith, he considered his own body, now as good as dead (since he was about 100 years old), as well as the deadness of the womb of Sarah.<cite>&mdash; Rom. 4:18, 19</cite></blockquote><blockquote class="scripture">But he reasoned that God was able to raise him up even from the dead, and he did receive him from there in an illustrative way.<cite>&mdash; Heb. 11:19</cite></blockquote><blockquote class="scripture">“For God loved the world so much that he gave his only-begotten Son, so that everyone exercising faith in him might not be destroyed but have everlasting life.<cite>&mdash; John 3:16</cite></blockquote>
+<p><b>Read the Bible account:</b> <span class="chip" data-ref="Genesis 22:1-19">Gen. 22:1-19</span> &middot; <span class="chip" data-ref="Heb. 11:11, 12">Heb. 11:11, 12</span> &middot; <span class="chip" data-ref="Heb. 11:17-19">Heb. 11:17-19</span></p>
+<div class="commentbox"><b>For discussion:</b> In what ways did Abraham show courage during this part of his life?<br><br>
+<i>Comment-prep suggestion:</i> <div class="commentbox"><b>&#128172; Comment you could share:</b>Abraham showed courage not in a single dramatic moment, but in a three-day journey of quiet obedience &mdash; he had time to reconsider, yet kept walking toward Moriah because his faith in Jehovah&rsquo;s promises was stronger than his fear.</div></div>
+
+<h4 style="margin:18px 0 6px;color:#c2410c;">Dig Deeper</h4>
+<div class="gemgroup">
+<p><b>1.</b> What evidence is there that Abraham was a historical person? <span style="font-size:.85em;color:#6b7280;">(g 5/12 18, box; it &ldquo;Abraham&rdquo; &para;22-23)</span></p>
+<div class="imagebox"><img src="https://assetsnffrgf-a.akamaihd.net/img/p/1102025905/univ/art/1102025905_univ_cnt_2_xs.jpg" alt="A wall relief in Karnak, Egypt, mentions the Field of Abram"><p><em>Picture A: A wall relief in Karnak, Egypt, mentions the &ldquo;Field of Abram.&rdquo;</em></p></div>
+<div class="commentbox"><b>&#128172; Comment you could share:</b>Archaeological references like the Karnak wall relief, together with the detailed genealogies and place names in Genesis, are exactly the kind of specific, checkable details we would expect from a real historical record &mdash; not a legend.</div>
+
+<p><b>2.</b> How might Abraham have learned about Jehovah God? <span style="font-size:.85em;color:#6b7280;">(ia 26 &para;4-5)</span></p>
+<div class="commentbox"><b>&#128204; Personal application:</b>Abraham likely learned about Jehovah through a family line of true worship reaching back toward Noah &mdash; a reminder of how much influence faithful family members and forefathers can have on our own spiritual foundation.</div>
+
+<p><b>3.</b> What made Abraham&rsquo;s worship acceptable to Jehovah? <span style="font-size:.85em;color:#6b7280;">(rr 20 &para;18)</span></p>
+<div class="commentbox"><b>&#128591; Getting to know Jehovah:</b>Abraham&rsquo;s worship was acceptable because it was based on faith expressed through action &mdash; not mere belief, but a willingness to obey even when the reasons were not fully clear to him.</div>
+
+<p><b>4.</b> How does Jehovah&rsquo;s promise to Abraham at <span class="chip" data-ref="Gen. 22:17">Gen. 22:17</span> confirm the Bible&rsquo;s scientific accuracy? <span style="font-size:.85em;color:#6b7280;">(g88 4/8 25)</span></p>
+<blockquote class="scripture">I will surely bless you and I will surely multiply your offspring like the stars of the heavens and like the grains of sand on the seashore, and your offspring will take possession of the gate of his enemies.<cite>&mdash; Gen. 22:17</cite></blockquote>
+<div class="imagebox"><img src="https://assetsnffrgf-a.akamaihd.net/img/p/1102025905/univ/art/1102025905_univ_cnt_4_xs.jpg" alt="A star-filled sky over a sandy beach."><p><em>Picture B: A star-filled sky over a sandy beach.</em></p></div>
+<div class="commentbox"><b>&#128172; Comment you could share:</b>Jehovah&rsquo;s promise pairs the stars of the heavens with the grains of sand on the seashore &mdash; both were once thought to be countable by the naked eye, but modern science confirms both are effectively innumerable, matching the Bible&rsquo;s wording precisely.</div>
+</div>
+
+<h4 style="margin:18px 0 6px;color:#c2410c;">Reflect on the Lessons</h4>
+<div class="gemgroup">
+<p><b>How did Abraham&rsquo;s hope help him to be courageous? How will focusing on our hope help us to be courageous?</b></p>
+<div class="imagebox"><img src="https://assetsnffrgf-a.akamaihd.net/img/p/1102025905/univ/art/1102025905_univ_cnt_6_xs.jpg" alt="Collage: A grieving widower looks fondly at a picture of himself and his wife on their wedding day, then visualizes them in Paradise, walking hand in hand on a beach."><p><em>Picture C: A grieving widower looks fondly at a wedding photo, then visualizes reuniting with his wife in Paradise.</em></p></div>
+<div class="commentbox"><b>&#128204; Personal application:</b>Just as Abraham&rsquo;s hope in a resurrection gave him courage to keep walking toward Moriah, our own hope in the resurrection or in Jehovah&rsquo;s promises can give us the courage to face difficult decisions today.</div>
+
+<p><b>How might we imitate Abraham&rsquo;s courage and offer a sacrifice when we&hellip;</b></p>
+<ul>
+<li>see an opportunity to give a witness? <span class="chip" data-ref="Heb. 13:15">Heb. 13:15</span><br><blockquote class="scripture">Through him let us always offer to God a sacrifice of praise, that is, the fruit of our lips that make public declaration to his name.<cite>&mdash; Heb. 13:15</cite></blockquote></li>
+<li>decide how to use our material things? <span class="chip" data-ref="Prov. 3:9">Prov. 3:9</span><br><blockquote class="scripture">Honor Jehovah with your valuable things,With the firstfruits of all your produce;<cite>&mdash; Prov. 3:9</cite></blockquote></li>
+<li>learn that fellow believers need our help? <span class="chip" data-ref="Phil. 4:18">Phil. 4:18</span><br><blockquote class="scripture">However, I have everything I need and even more. I am fully supplied, now that I have received from E·paph·ro·diʹtus what you sent, a sweet fragrance, an acceptable sacrifice, well-pleasing to God.<cite>&mdash; Phil. 4:18</cite></blockquote></li>
+</ul>
+<div class="commentbox"><b>&#128172; Comment you could share:</b>Each of these &lsquo;sacrifices&rsquo; costs us something &mdash; comfort, money, or time &mdash; just as Abraham&rsquo;s obedience would have cost him everything. That parallel helps me see ordinary acts of generosity as small expressions of the same kind of faith.</div>
+<p><b>In what other ways might you imitate the courage shown by Abraham in this account?</b></p>
+<div class="commentbox"><b>&#128204; Personal application:</b>I could think of one decision this week where doing the right thing will cost me something &mdash; time, comfort, or convenience &mdash; and treat that as my own small &lsquo;Moriah moment.&rsquo;</div>
+</div>
+
+<h4 style="margin:18px 0 6px;color:#c2410c;">Wrap-up (from Meditate on the Bigger Picture)</h4>
+<div class="gemgroup">
+<p><b>1. What does this account teach us about Jehovah?</b></p>
+<div class="commentbox"><b>&#128591; Getting to know Jehovah:</b>This account shows Jehovah as one who does not merely test loyalty for its own sake &mdash; the whole account foreshadows his own far greater sacrifice of Jesus, so ultimately it teaches us how deeply Jehovah understands and shares in the cost of that kind of love.</div>
+<p><b>2. Are there any points from this lesson we can use in the ministry or our daily life?</b></p>
+<div class="commentbox"><b>&#128204; Personal application:</b>In the ministry, this account is a powerful way to explain why Jehovah allowed his own Son to die &mdash; using Abraham and Isaac as a real-life illustration people can relate to emotionally, not just intellectually.</div>
+</div>
+
+<h4 style="margin:18px 0 6px;color:#c2410c;">Learn More</h4>
+<ul>
+<li><em>Imitate Their Faith&mdash;Abraham, Part 2</em> (video, 11:10) &mdash; brings the events of this account to life.</li>
+<li>&ldquo;Jehovah Called Him &lsquo;My Friend&rsquo;&rdquo; (w16.02 8-12) &mdash; explores how Abraham became Jehovah&rsquo;s close friend and how we can strengthen our own friendship with him.</li>
+</ul>
+</div>
+</div>
+
+<div class="divider" style="margin-top:26px;"><div class="bar" style="background:#9ca3af;"></div><h2 style="color:#374151;">Concluding Comments</h2><div class="bar" style="background:#9ca3af;"></div></div>
+<div class="songbanner">
+<span>&#127925; Closing: <a href="https://www.jw.org/en/library/music-songs/sing-out-joyfully/156-with-eyes-of-faith/" target="_blank" rel="noopener">Song 156 &mdash; With Eyes of Faith</a> and Prayer</span>
+<span style="font-size:.85rem;color:#6b7280;">3 min.</span>
+</div>
+
+<footer>
+Source: <a href="https://www.jw.org/en/library/jw-meeting-workbook/july-august-2026-mwb/Life-and-Ministry-Meeting-Schedule-for-August-24-30-2026/" target="_blank" rel="noopener">jw.org &mdash; Life and Ministry Meeting Schedule, August 24–30, 2026</a><br>
+All scripture quotations are from the New World Translation of the Holy Scriptures (Study Edition), fetched verbatim from wol.jw.org.<br>
+Personal study guide &middot; not an official publication of Jehovah&rsquo;s Witnesses.
+</footer>
+
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<div class="sidebar" id="sidebarPanel">
+<button class="close" onclick="closeSidebar()">&times;</button>
+<div id="sidebarBody"></div>
+</div>
+
+
+<script>
+const SCRIPTURES = {"Jer. 29:10": {"ref": "Jer. 29:10", "text": "“For this is what Jehovah says, ‘When 70 years at Babylon are fulfilled, I will turn my attention to you, and I will make good my promise by bringing you back to this place.’"}, "Jer. 29:11": {"ref": "Jer. 29:11", "text": "“‘For I well know the thoughts that I am thinking toward you,’ declares Jehovah, ‘thoughts of peace, and not of calamity, to give you a future and a hope."}, "Jer. 29:12, 13": {"ref": "Jer. 29:12, 13", "text": "And you will call me and come and pray to me, and I will listen to you.’ “‘You will seek me and find me, for you will search for me with all your heart."}, "Jer. 29:14": {"ref": "Jer. 29:14", "text": "And I will let you find me,’ declares Jehovah. ‘And I will gather your captives and collect you together out of all the nations and places to which I have dispersed you,’ declares Jehovah. ‘And I will bring you back to the place from which I caused you to go into exile.’"}, "Jer. 29:7": {"ref": "Jer. 29:7", "text": "And seek the peace of the city to which I have exiled you, and pray in its behalf to Jehovah, for in its peace you will have peace."}, "Jer. 30:11": {"ref": "Jer. 30:11", "text": "“For I am with you,” declares Jehovah, “to save you. But I will make an extermination among all the nations to which I scattered you; However, you I will not exterminate. I will discipline you to the proper degree, And I will by no means leave you unpunished.”"}, "Jer. 30:17": {"ref": "Jer. 30:17", "text": "“But I will restore your health and heal your wounds,” declares Jehovah, “Though they called you an outcast: ‘Zion, for whom no one searches.’”"}, "Jer. 30:21": {"ref": "Jer. 30:21", "text": "His majestic one will be one of his own, And from his midst his ruler will emerge. I will cause him to come near, and he will approach me.” “For otherwise, who would dare to approach me?” declares Jehovah."}, "Jer. 30:1-11": {"ref": "Jer. 30:1-11", "text": "The word that came to Jeremiah from Jehovah, saying: “This is what Jehovah the God of Israel says, ‘Write in a book all the words that I speak to you. For “look! the days are coming,” declares Jehovah, “when I will gather the captives of my people, Israel and Judah,” says Jehovah, “and I will bring them back to the land that I gave to their forefathers, and they will possess it once again.”’” These are the words that Jehovah spoke to Israel and Judah. This is what Jehovah says: “We have heard the sounds of trembling; There is terror, and no peace. Ask, please, whether a man can give birth. Why, then, do I see every strong man with his hands on his stomach Like a woman giving birth? Why has every face turned pale? Alas! For that day is a terrible one. There is none like it, A time of distress for Jacob. But he will be saved out of it.” “And in that day,” declares Jehovah of armies, “I will break the yoke from off your neck, and your straps I will tear in two; and no more will strangers make him their slave. They will serve Jehovah their God and David their king, whom I will raise up for them.” “And you, my servant Jacob, do not be afraid,” declares Jehovah, “And do not be terrified, O Israel. For I will save you from far away And your offspring from the land of their captivity. Jacob will return and be calm and undisturbed, With no one to make them afraid.” “For I am with you,” declares Jehovah, “to save you. But I will make an extermination among all the nations to which I scattered you; However, you I will not exterminate. I will discipline you to the proper degree, And I will by no means leave you unpunished.”"}, "Heb. 12:6": {"ref": "Heb. 12:6", "text": "for those whom Jehovah loves he disciplines, in fact, he scourges everyone whom he receives as a son.”"}, "Pr. 17:22": {"ref": "Pr. 17:22", "text": "A joyful heart is good medicine,But a crushed spirit saps one’s strength."}, "Pr. 24:10": {"ref": "Pr. 24:10", "text": "If you become discouraged in the day of distress,Your strength will be meager."}, "Heb. 6:19": {"ref": "Heb. 6:19", "text": "We have this hope as an anchor for the soul, both sure and firm, and it enters in within the curtain,"}, "Gen. 22:17": {"ref": "Gen. 22:17", "text": "I will surely bless you and I will surely multiply your offspring like the stars of the heavens and like the grains of sand on the seashore, and your offspring will take possession of the gate of his enemies."}, "Heb. 13:15": {"ref": "Heb. 13:15", "text": "Through him let us always offer to God a sacrifice of praise, that is, the fruit of our lips that make public declaration to his name."}, "Prov. 3:9": {"ref": "Prov. 3:9", "text": "Honor Jehovah with your valuable things,With the firstfruits of all your produce;"}, "Phil. 4:18": {"ref": "Phil. 4:18", "text": "However, I have everything I need and even more. I am fully supplied, now that I have received from E·paph·ro·diʹtus what you sent, a sweet fragrance, an acceptable sacrifice, well-pleasing to God."}, "Rom. 4:11": {"ref": "Rom. 4:11", "text": "And he received a sign—namely, circumcision—as a seal of the righteousness by the faith he had while in his uncircumcised state, so that he might be the father of all those having faith while uncircumcised, in order for righteousness to be counted to them;"}, "Rom. 4:18, 19": {"ref": "Rom. 4:18, 19", "text": "Although beyond hope, yet based on hope, he had faith that he would become the father of many nations according to what had been said: “So your offspring will be.” And although he did not grow weak in faith, he considered his own body, now as good as dead (since he was about 100 years old), as well as the deadness of the womb of Sarah."}, "Heb. 11:19": {"ref": "Heb. 11:19", "text": "But he reasoned that God was able to raise him up even from the dead, and he did receive him from there in an illustrative way."}, "John 3:16": {"ref": "John 3:16", "text": "“For God loved the world so much that he gave his only-begotten Son, so that everyone exercising faith in him might not be destroyed but have everlasting life."}, "Heb. 11:11, 12": {"ref": "Heb. 11:11, 12", "text": "By faith also Sarah received power to conceive offspring, even when she was past the age, since she considered Him faithful who made the promise. For this reason, from one man who was as good as dead, there were born children, as many as the stars of heaven in number and as innumerable as the sands by the seaside."}, "Heb. 11:17-19": {"ref": "Heb. 11:17-19", "text": "By faith Abraham, when he was tested, as good as offered up Isaac—the man who had gladly received the promises attempted to offer up his only-begotten son— although it had been said to him: “What will be called your offspring will be through Isaac.” But he reasoned that God was able to raise him up even from the dead, and he did receive him from there in an illustrative way."}, "Jer. 29:23": {"ref": "Jer. 29:23", "text": "“I am the One who knows, and I am a witness,” declares Jehovah."}, "Jer. 30:10": {"ref": "Jer. 30:10", "text": "“And you, my servant Jacob, do not be afraid,” declares Jehovah, “And do not be terrified, O Israel. For I will save you from far away And your offspring from the land of their captivity. Jacob will return and be calm and undisturbed, With no one to make them afraid.”"}};
+const ARTICLES = {"w22.11-p13": {"title": "Keep Your Senses When Your Loyalty Is Tested (w22.11 21 ¶6)", "text": "Discusses how Jehovah's discipline, when properly understood and accepted, strengthens our loyalty to him rather than discouraging us."}, "w14-0701-p18": {"title": "How to Discipline Your Child (w14 7/1 12 ¶1-4)", "text": "Explores how parents can imitate Jehovah's example of discipline — administered with love and self-control, aimed at correction rather than punishment for its own sake."}};
+
+function toggleCard(el){
+  el.closest('.card').classList.toggle('collapsed');
+}
+function expandAll(btn){
+  const cards = document.querySelectorAll('.card');
+  const anyCollapsed = document.querySelectorAll('.card.collapsed').length > 0;
+  cards.forEach(c => { if(anyCollapsed) c.classList.remove('collapsed'); else c.classList.add('collapsed'); });
+  btn.textContent = anyCollapsed ? 'Collapse All' : 'Expand All';
+}
+function openSidebar(refOrKey, isArticle){
+  const panel = document.getElementById('sidebarPanel');
+  const overlay = document.getElementById('sidebarOverlay');
+  const body = document.getElementById('sidebarBody');
+  if(isArticle){
+    const a = ARTICLES[refOrKey];
+    if(!a){ body.innerHTML = '<p>Reference not available.</p>'; }
+    else {
+      body.innerHTML = '<h4>'+a.title+'</h4><p>'+a.text+'</p>';
+    }
+  } else {
+    const s = SCRIPTURES[refOrKey];
+    if(!s){ body.innerHTML = '<p>Verse text not available.</p>'; }
+    else {
+      body.innerHTML = '<h4>'+s.ref+'</h4><blockquote>'+s.text+'</blockquote>';
+    }
+  }
+  panel.classList.add('open');
+  overlay.classList.add('open');
+}
+function closeSidebar(){
+  document.getElementById('sidebarPanel').classList.remove('open');
+  document.getElementById('sidebarOverlay').classList.remove('open');
+}
+document.addEventListener('click', function(e){
+  const chip = e.target.closest('.chip');
+  if(chip){
+    if(chip.classList.contains('article-chip')){
+      openSidebar(chip.getAttribute('data-art'), true);
+    } else if(chip.getAttribute('data-ref')){
+      openSidebar(chip.getAttribute('data-ref'), false);
+    }
+  }
+});
+</script>
+
+</body>
+</html>
