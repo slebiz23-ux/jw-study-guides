@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JW Meeting Study Guide — How to Maintain Christian Friendships</title>
+<style>
+  :root{
+    --navy:#1a365d; --red:#b91c1c; --answer-bg:#fffbeb; --para-bg:#f8fafc;
+    --para-border:#e2e8f0; --chip-bg:#eff6ff; --page-bg:#f0f4f8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:0; background:var(--page-bg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:#1e293b; line-height:1.5;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:0 0 60px 0;}
+  header.top{
+    background:var(--navy); color:#fff; padding:28px 20px 22px;
+    text-align:center;
+  }
+  header.top h1{margin:0 0 4px; font-size:1.6rem;}
+  header.top .subtitle{font-size:1rem; opacity:.85; margin:0 0 10px;}
+  header.top .datebadge{
+    display:inline-block; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.35);
+    border-radius:20px; padding:4px 14px; font-size:.85rem; margin-top:6px;
+  }
+  .controls{padding:16px 20px 0; text-align:right;}
+  #expandAllBtn{
+    background:#fff; border:1px solid #cbd5e1; border-radius:8px; padding:8px 16px;
+    font-size:.9rem; cursor:pointer; color:var(--navy); font-weight:600;
+  }
+  #expandAllBtn:hover{background:#eef2f7;}
+  .banner{
+    margin:18px 20px 0; border-radius:10px; padding:16px 18px; font-size:.95rem;
+  }
+  .song-banner{background:#e2e8f0; color:#334155; display:flex; align-items:center; gap:10px;}
+  .song-banner .icon{font-size:1.3rem;}
+  .focus-banner{background:var(--navy); color:#fff; padding:20px;}
+  .focus-banner .label{font-size:.75rem; letter-spacing:1px; opacity:.75; margin-bottom:4px; text-transform:uppercase;}
+  .focus-banner p{margin:0; font-size:1.05rem;}
+  .theme-verse{
+    margin:18px 20px 0; background:#fff; border-left:5px solid var(--navy);
+    border-radius:8px; padding:18px 20px;
+  }
+  .theme-verse blockquote{margin:0 0 8px; font-style:italic; font-size:1.1rem; color:#1e293b;}
+  .chip{
+    display:inline-block; background:var(--chip-bg); color:#1d4ed8; border-radius:14px;
+    padding:3px 12px; font-size:.82rem; cursor:pointer; font-weight:600; border:1px solid #bfdbfe;
+  }
+  .chip:hover{background:#dbeafe;}
+  section.article-section{margin:26px 20px 0;}
+  .section-heading{
+    background:#334155; color:#fff; padding:10px 16px; border-radius:8px 8px 0 0;
+    font-size:.95rem; letter-spacing:.5px; font-weight:700;
+  }
+  .section-body{background:#fff; border:1px solid #e2e8f0; border-top:none; border-radius:0 0 10px 10px; padding:4px 14px 14px;}
+  .qa-unit{margin:18px 0; padding-top:10px;}
+  .q-card{
+    border-left:4px solid var(--red); background:#fff; padding:10px 14px; font-weight:700;
+    font-size:1.02rem; border-radius:4px; margin-bottom:8px;
+  }
+  .q-card .pnum{color:var(--red); margin-right:6px;}
+  .toggle-btn{
+    background:none; border:none; color:var(--red); font-weight:600; cursor:pointer;
+    font-size:.88rem; padding:4px 0 4px 14px; display:block;
+  }
+  .answer-box{
+    display:none; background:var(--answer-bg); border:1px solid #fde68a; border-radius:8px;
+    padding:14px 16px; margin:6px 0 10px; font-size:.95rem;
+  }
+  .answer-box.show{display:block;}
+  .answer-box .scripture-block{
+    background:#fff; border-left:3px solid #d97706; padding:10px 12px; margin:10px 0;
+    font-style:italic; border-radius:4px; font-size:.92rem;
+  }
+  .answer-box .scripture-block .ref{font-style:normal; font-weight:700; color:#92400e; display:block; margin-top:6px; font-size:.85rem;}
+  .prep-box{
+    border-radius:6px; padding:10px 12px; margin:8px 0; font-size:.88rem;
+  }
+  .prep-comment{background:#ecfdf5; border:1px solid #a7f3d0;}
+  .prep-ministry{background:#eff6ff; border:1px solid #bfdbfe;}
+  .prep-jehovah{background:#fef3f7; border:1px solid #fbcfe8;}
+  .para-text{
+    background:var(--para-bg); border-left:3px solid var(--para-border); border-radius:4px;
+    padding:12px 14px; margin:10px 0; line-height:1.75; font-size:.95rem; color:#334155;
+  }
+  figure.art{margin:14px 0;}
+  figure.art img{width:100%; border-radius:8px; display:block;}
+  figure.art figcaption{font-size:.82rem; color:#475569; margin-top:6px; font-style:italic;}
+  figure.art .app-note{font-size:.85rem; color:#1e293b; background:#f1f5f9; border-radius:6px; padding:8px 10px; margin-top:6px; font-style:normal;}
+  .review-section{margin:26px 20px 0;}
+  .review-heading{background:var(--navy); color:#fff; padding:14px 16px; border-radius:10px 10px 0 0; font-size:1rem;}
+  .review-body{background:#fff; border:1px solid #e2e8f0; border-top:none; border-radius:0 0 10px 10px; padding:10px 14px 14px;}
+  footer.closing{margin:26px 20px 0; text-align:center;}
+  .source-link{display:inline-block; margin-top:14px; font-size:.85rem; color:#1d4ed8;}
+  /* Sidebar */
+  #sidebar{
+    position:fixed; top:0; right:-360px; width:340px; max-width:100%; height:100%;
+    background:#fff; box-shadow:-4px 0 18px rgba(0,0,0,.18); transition:right .3s ease;
+    z-index:999; overflow-y:auto; padding:0;
+  }
+  #sidebar.open{right:0;}
+  #sidebar .sb-head{
+    background:var(--navy); color:#fff; padding:16px 18px; display:flex; justify-content:space-between; align-items:center;
+    position:sticky; top:0;
+  }
+  #sidebar .sb-head h3{margin:0; font-size:1rem;}
+  #sidebar .sb-close{background:none; border:none; color:#fff; font-size:1.3rem; cursor:pointer; line-height:1;}
+  #sidebar .sb-content{padding:16px 18px;}
+  #sidebar .sb-verse{font-style:italic; background:#fffbeb; border-left:3px solid #d97706; padding:10px 12px; border-radius:4px; margin-bottom:12px; font-size:.92rem;}
+  #sidebar .sb-notes{font-size:.88rem; color:#334155; line-height:1.6;}
+  #sidebar .sb-notes b{color:#1e293b;}
+  #sidebar .sb-open-full{
+    display:inline-block; margin-top:14px; background:var(--navy); color:#fff; text-decoration:none;
+    padding:8px 14px; border-radius:6px; font-size:.85rem;
+  }
+  #overlay{position:fixed; inset:0; background:rgba(0,0,0,.3); display:none; z-index:998;}
+  #overlay.show{display:block;}
+  @media (max-width:480px){
+    #sidebar{width:100%; right:-100%;}
+    header.top h1{font-size:1.3rem;}
+  }
+  .disclosure{
+    margin:26px 20px 0; background:#fff7ed; border:1px solid #fed7aa; border-radius:8px;
+    padding:12px 16px; font-size:.78rem; color:#7c2d12; line-height:1.5;
+  }
+</style>
+</head>
+<body>
+
+<div id="overlay" onclick="closeSidebar()"></div>
+<div id="sidebar">
+  <div class="sb-head">
+    <h3 id="sbTitle">Verse &amp; Notes</h3>
+    <button class="sb-close" onclick="closeSidebar()">&times;</button>
+  </div>
+  <div class="sb-content" id="sbContent"></div>
+</div>
+
+<div class="wrap">
+  <header class="top">
+    <h1>JW Meeting Study Guide</h1>
+    <div class="subtitle">Watchtower Study</div>
+    <div class="datebadge">Sunday, August 23, 2026</div>
+  </header>
+
+  <div class="controls">
+    <button id="expandAllBtn" onclick="toggleAll()">Expand All</button>
+  </div>
+
+  <div class="banner song-banner"><span class="icon">🎵</span><div><strong>Opening Song:</strong> Song 90 — "Encourage One Another"</div></div>
+
+  <div class="banner focus-banner">
+    <div class="label">Focus</div>
+    <p>How to deal with challenges that could threaten our friendships with fellow Christians.</p>
+  </div>
+
+  <div class="theme-verse">
+    <blockquote>"Clothe yourselves with the tender affections of compassion, kindness, humility, mildness, and patience."</blockquote>
+    <span class="chip" onclick="openVerse('col312')">Col. 3:12</span>
+    <div style="margin-top:10px; font-size:.85rem; color:#64748b;">Article: <strong>How to Maintain Christian Friendships</strong> — The Watchtower (Study Edition), June 2026, pp. 8-13. Studied the week of August 17-23, 2026.</div>
+  </div>
+
+  <!-- INTRO PARS 1-3 -->
+  <section class="article-section">
+    <div class="section-heading">INTRODUCTION</div>
+    <div class="section-body">
+
+      <div class="qa-unit">
+        <div class="q-card"><span class="pnum">¶1</span>Where can we find true friends?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>True, lasting friendships are found among Jehovah's people. Fellow believers who fear Jehovah and keep his commands make the best of friends because they share our deepest values and hope.</p>
+          <div class="scripture-block">"I am a friend of all who fear you And of those who keep your orders."<span class="ref">Ps. 119:63</span></div>
+          <div class="prep-box prep-comment">💬 <strong>Comment you could share:</strong> "I've found that the friends I trust most in life are the ones I met through the congregation — people who share my love for Jehovah."</div>
+          <div class="prep-box prep-ministry">📌 <strong>Ministry connection:</strong> When people feel isolated, we can mention that genuine, caring friendships are one of the real benefits of associating with Jehovah's people.</div>
+          <div class="prep-box prep-jehovah">🙏 <strong>Getting to know Jehovah:</strong> Jehovah himself values friendship — he calls faithful ones like Abraham his friend, showing how much he treasures loyal relationships.</div>
+        </div>
+        <div class="para-text">Many people today feel lonely, even when surrounded by acquaintances. Among Jehovah's people, however, we can form friendships built on a shared love for Jehovah and his standards — friendships that tend to be deeper and more enduring than the world's fleeting connections.</div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="q-card"><span class="pnum">¶2-3</span>Why are close friendships within the congregation so valuable, and what could threaten them?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Close friends provide companionship, comfort, and support that help us endure trials and stay spiritually strong. Yet even sincere Christians are imperfect, so disagreements, personality differences, and hardships can put a strain on these precious bonds if we do not handle them in a godly way.</p>
+          <div class="scripture-block">"There are companions ready to crush one another, But there is a friend who sticks closer than a brother."<span class="ref">Prov. 18:24</span></div>
+          <div class="prep-box prep-comment">💬 <strong>Comment you could share:</strong> "This article's outline really matches real life — I've faced all three of these challenges with people I care about."</div>
+          <div class="prep-box prep-ministry">📌 <strong>Ministry connection:</strong> We can point out that while human friendships often fade under pressure, Bible principles help Christian friendships grow stronger through trials.</div>
+          <div class="prep-box prep-jehovah">🙏 <strong>Getting to know Jehovah:</strong> Jehovah is described as "a friend who sticks closer than a brother" — his loyalty to us never wavers, even when we struggle.</div>
+        </div>
+        <div class="para-text">The article identifies three common challenges to Christian friendships — disagreements, differences in personality, and times of suffering — and shows how godly qualities help us navigate each one successfully.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: GODLY QUALITIES -->
+  <section class="article-section">
+    <div class="section-heading">GODLY QUALITIES HELP US MAINTAIN OUR FRIENDSHIPS</div>
+    <div class="section-body">
+
+      <div class="qa-unit">
+        <div class="q-card"><span class="pnum">¶4-5</span>What qualities help us maintain our Christian friendships?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Compassion, kindness, humility, mildness, and patience — the very qualities Paul lists at Colossians 3:12 — act like protective "clothing" that helps our friendships survive friction. These are also part of the fruitage of God's spirit, so we can pray for help to develop them.</p>
+          <div class="scripture-block">"Accordingly, as God's chosen ones, holy and loved, clothe yourselves with the tender affections of compassion, kindness, humility, mildness, and patience."<span class="ref">Col. 3:12</span></div>
+          <div class="scripture-block">"On the other hand, the fruitage of the spirit is love, joy, peace, patience, kindness, goodness, faith, mildness, self-control. Against such things there is no law."<span class="ref">Gal. 5:22-23</span></div>
+          <div class="prep-box prep-comment">💬 <strong>Comment you could share:</strong> "I like how these qualities are compared to clothing — something we deliberately put on every day, not something that just happens automatically."</div>
+          <div class="prep-box prep-ministry">📌 <strong>Ministry connection:</strong> We could ask a householder what qualities they think are essential for lasting friendships, then show how the Bible highlights exactly those traits.</div>
+          <div class="prep-box prep-jehovah">🙏 <strong>Getting to know Jehovah:</strong> These qualities ultimately reflect Jehovah's own personality; when we cultivate them, we imitate our heavenly Father.</div>
+        </div>
+        <div class="para-text">Paul's counsel at Colossians 3:12-13 forms the backbone of this article. By deliberately "clothing" ourselves with these five qualities, we equip ourselves to handle whatever friction might arise in our friendships, whether from disagreements, differing personalities, or difficult circumstances.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: WHEN YOU DISAGREE -->
+  <section class="article-section">
+    <div class="section-heading">WHEN YOU DISAGREE</div>
+    <div class="section-body">
+
+      <div class="qa-unit">
+        <div class="q-card"><span class="pnum">¶6</span>How can we prevent minor disagreements from damaging a friendship?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>We can choose to "turn away from what is bad" — refusing to let a disagreement escalate — and actively "seek peace," making the first move toward reconciliation rather than waiting for the other person.</p>
+          <div class="scripture-block">"Turn away from what is bad and do what is good; Seek peace and pursue it."<span class="ref">Ps. 34:14</span></div>
+          <div class="prep-box prep-comment">💬 <strong>Comment you could share:</strong> "I've noticed that when I focus on 'seeking' peace instead of waiting for it to happen, disagreements resolve so much faster."</div>
+          <div class="prep-box prep-ministry">📌 <strong>Ministry connection:</strong> Many are drawn to a message of peace when so much of the world is filled with conflict; we can highlight Bible principles that actually work in everyday relationships.</div>
+          <div class="prep-box prep-jehovah">🙏 <strong>Getting to know Jehovah:</strong> Jehovah is called the "God of peace," and he wants that same peace-loving spirit reflected among his worshippers.</div>
+        </div>
+        <div class="para-text">Even close friends will not always see eye to eye. What matters is our attitude when disagreements arise — whether we actively pursue peace or allow pride to widen the rift.</div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="q-card"><span class="pnum">¶7</span>a) What example did Jesus set regarding the desire to be great? b) How does his counsel at Matthew 20 apply when we disagree?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p><strong>a)</strong> Jesus rebuked the worldly desire to "lord it over" others and taught that greatness comes through humble service. <strong>b)</strong> When we disagree, remembering this counsel helps us avoid a domineering, "my way or nothing" attitude and instead approach the matter as a humble minister to our brother or sister.</p>
+          <div class="scripture-block">"But Jesus called them to him and said: 'You know that the rulers of the nations lord it over them and the great men wield authority over them. This must not be the way among you; but whoever wants to become great among you must be your minister, and whoever wants to be first among you must be your slave. Just as the Son of man came, not to be ministered to, but to minister and to give his life as a ransom in exchange for many.'"<span class="ref">Matt. 20:25-28</span></div>
+          <div class="prep-box prep-comment">💬 <strong>Comment you could share:</strong> "Jesus completely reversed the world's idea of greatness — real greatness is measured by how much we serve, not how much authority we hold."</div>
+          <div class="prep-box prep-ministry">📌 <strong>Ministry connection:</strong> We can share how Jesus' example of humble service is a refreshing contrast to the self-promotion so common in the world today.</div>
+          <div class="prep-box prep-jehovah">🙏 <strong>Getting to know Jehovah:</strong> Jehovah sent his own Son to serve, not to be served — the ultimate proof of divine humility and love for us.</div>
+        </div>
+        <div class="para-text">During a dispute, James and John's mother asked for special positions for her sons, sparking indignation among the other apostles. Jesus used the moment to teach a vital lesson: true greatness is found in humble service, not in dominating others.</div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="q-card"><span class="pnum">¶8</span>How can humility help us overlook minor disagreements?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Humility helps us recognize that we too say and do things we later regret, so we should not take to heart every unkind word spoken in the heat of the moment. Overlooking minor offenses preserves peace and protects the friendship.</p>
+          <div class="scripture-block">"Also, do not take to heart every word that people say; otherwise, you may hear your servant calling down evil on you; for you well know in your heart that many times you yourself have called down evil on others."<span class="ref">Eccl. 7:21-22</span></div>
+          <div class="prep-box prep-comment">💬 <strong>Comment you could share:</strong> "This principle has really helped me — remembering my own imperfect words keeps me from being overly sensitive to what others say."</div>
+          <div class="prep-box prep-ministry">📌 <strong>Ministry connection:</strong> We might point out that the Bible's realistic view of human imperfection actually produces more forgiving, understanding relationships.</div>
+          <div class="prep-box prep-jehovah">🙏 <strong>Getting to know Jehovah:</strong> Jehovah is patient with our imperfect words and actions; imitating that patience toward others reflects his mercy.</div>
+        </div>
+        <figure class="art">
+          <img src="https://assetsnffrgf-a.akamaihd.net/assets/m/2026443/univ/wpub/2026443_univ_cnt_1_xs.jpg" alt="An older brother and a younger brother differ in opinion about a territory matter. They later unitedly share in the ministry.">
+          <figcaption>An older brother and a younger brother differ in opinion about a territory matter. They later unitedly share in the ministry. (See paragraph 8)</figcaption>
+          <div class="app-note">This picture illustrates how humility allows brothers who see things differently to set aside a minor disagreement and continue working side by side in Jehovah's service, rather than letting the matter fester.</div>
+        </figure>
+        <div class="para-text">Humility does not mean pretending an offense did not happen; rather, it means keeping perspective — recognizing our own imperfections so we do not overreact to the imperfections of others.</div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="q-card"><span class="pnum">¶9</span>a) What does wisdom teach us about persistent disagreements? b) What did Paul counsel the Corinthians about lawsuits between brothers?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p><strong>a)</strong> "Whoever forgives a transgression seeks love," while dwelling on a matter repeatedly can drive close friends apart. <strong>b)</strong> Paul asked the Corinthians why they did not simply "let yourselves be wronged" rather than taking fellow believers to court, showing that preserving unity is often more important than winning every dispute.</p>
+          <div class="scripture-block">"Whoever forgives a transgression seeks love, But the one who keeps harping on a matter separates close friends."<span class="ref">Prov. 17:9</span></div>
+          <div class="scripture-block">"Really, it is already a defeat for you when you have lawsuits with one another. Why not rather let yourselves be wronged? Why do you not rather let yourselves be defrauded?"<span class="ref">1 Cor. 6:7</span></div>
+          <div class="prep-box prep-comment">💬 <strong>Comment you could share:</strong> "It's humbling to realize that sometimes 'winning' an argument actually costs us something far more valuable — the friendship itself."</div>
+          <div class="prep-box prep-ministry">📌 <strong>Ministry connection:</strong> We can note how this counsel differs sharply from the world's "stand up for your rights at all costs" mentality.</div>
+          <div class="prep-box prep-jehovah">🙏 <strong>Getting to know Jehovah:</strong> Jehovah freely forgives repentant ones rather than "harping" on past wrongs — a pattern he wants us to imitate.</div>
+        </div>
+        <div class="para-text">Some disagreements are not resolved instantly. In such cases, wisdom and love move us to let go rather than continually revisiting the issue, valuing the relationship above being proven right.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: WHEN PERSONALITIES DIFFER -->
+  <section class="article-section">
+    <div class="section-heading">WHEN PERSONALITIES DIFFER</div>
+    <div class="section-body">
+
+      <div class="qa-unit">
+        <div class="q-card"><span class="pnum">¶10</span>Why should we not be surprised when personalities clash, even among close friends?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Even the apostles, close companions of Jesus, sometimes argued about who was greatest. Since Christians today are still imperfect, personality differences and clashing opinions should not surprise us — what matters is how we respond.</p>
+          <div class="scripture-block">"They kept silent, for on the road they had been arguing among themselves about who is greater."<span class="ref">Mark 9:34</span></div>
+          <div class="prep-box prep-comment">💬 <strong>Comment you could share:</strong> "It's actually comforting to know that even the apostles struggled with this — it shows this is a normal human challenge, not a sign that something's wrong with our friendship."</div>
+          <div class="prep-box prep-ministry">📌 <strong>Ministry connection:</strong> We can reassure people that the Bible is realistic about human imperfection, offering practical help rather than unattainable ideals.</div>
+          <div class="prep-box prep-jehovah">🙏 <strong>Getting to know Jehovah:</strong> Jehovah patiently worked with the apostles despite their flaws, showing his patient, understanding nature toward all of us.</div>
+        </div>
+        <div class="para-text">The Gospel accounts frankly record that the apostles themselves squabbled over status. If men personally trained by Jesus struggled with this, we should expect similar friction in our own friendships — and prepare in advance to handle it well.</div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="q-card"><span class="pnum">¶11</span>What incident shows how differing ambitions can create tension between friends?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>James and John asked Jesus to grant them the most prominent seats in his Kingdom, which understandably upset the other ten apostles. This shows how personal ambition, even among close friends, can create real tension if not handled with humility.</p>
+          <div class="scripture-block">"James and John, the sons of Zebedee, approached him and said to him: 'Teacher, we want you to do for us whatever we ask of you.' He said to them: 'What do you want me to do for you?' They replied: 'Grant us to sit down, one at your right hand and one at your left, in your glory.'"<span class="ref">Mark 10:35-37</span></div>
+          <div class="prep-box prep-comment">💬 <strong>Comment you could share:</strong> "It helps me to remember that ambition itself isn't wrong, but how we pursue it — and how it affects our friends — really matters."</div>
+          <div class="prep-box prep-ministry">📌 <strong>Ministry connection:</strong> We can note that even good desires need to be balanced with concern for others' feelings.</div>
+          <div class="prep-box prep-jehovah">🙏 <strong>Getting to know Jehovah:</strong> Jehovah alone decides who receives special privileges in his arrangement; recognizing this helps us avoid jealousy or self-promotion.</div>
+        </div>
+        <div class="para-text">James and John's request, likely made through their mother according to Matthew's parallel account, reveals how ambition can strain friendships if it is not tempered by humility and consideration for others.</div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="q-card"><span class="pnum">¶12</span>How did Jesus respond to the ambition of James and John, and what lesson can we draw?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Rather than condemning them harshly, Jesus patiently explained that greatness in his Kingdom is measured by service, not status. He reminded all the apostles that "whoever wants to be first among you must be the slave of all," setting the pattern for how we should treat friends whose ambitions or personalities differ from ours.</p>
+          <div class="scripture-block">"But Jesus called them to him and said to them: 'You know that those who appear to be ruling the nations lord it over them and their great ones wield authority over them. This must not be the way among you; but whoever wants to become great among you must be your minister, and whoever wants to be first among you must be the slave of all. For even the Son of man came, not to be ministered to, but to minister and to give his life as a ransom in exchange for many.'"<span class="ref">Mark 10:42-45</span></div>
+          <div class="prep-box prep-comment">💬 <strong>Comment you could share:</strong> "Jesus' patience in this situation is a great model — he corrected the problem without crushing the individuals involved."</div>
+          <div class="prep-box prep-ministry">📌 <strong>Ministry connection:</strong> We can share how Jesus' teaching on servant leadership stands in stark contrast to worldly views on power and authority.</div>
+          <div class="prep-box prep-jehovah">🙏 <strong>Getting to know Jehovah:</strong> Jesus perfectly reflected his Father's own humble, giving nature — Jehovah is a God who serves the needs of his creation.</div>
+        </div>
+        <div class="para-text">Jesus did not scold James and John harshly; instead, he used the moment to teach all twelve apostles a timeless principle about humility that we can apply whenever differing personalities create friction with a friend.</div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="q-card"><span class="pnum">¶13</span>How does patience help us cope with a friend's differing personality?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>"The one who is slow to anger has great discernment," while impatience often leads to foolish words or actions we later regret. Being slow to anger gives us time to respond wisely rather than reacting emotionally to a friend's different temperament.</p>
+          <div class="scripture-block">"The one who is slow to anger has great discernment, But the impatient one displays his foolishness."<span class="ref">Prov. 14:29</span></div>
+          <div class="prep-box prep-comment">💬 <strong>Comment you could share:</strong> "I've learned that pausing before reacting to a friend's different approach almost always leads to a better outcome."</div>
+          <div class="prep-box prep-ministry">📌 <strong>Ministry connection:</strong> We could highlight how patience is a quality many people wish they had more of, and show how it is cultivated through Bible study and prayer.</div>
+          <div class="prep-box prep-jehovah">🙏 <strong>Getting to know Jehovah:</strong> Jehovah is described as slow to anger, giving all of us time to change and grow — a pattern worth imitating with our friends.</div>
+        </div>
+        <div class="para-text">When a friend's personality differs sharply from our own, patience — being slow to anger — allows us to respond with wisdom instead of frustration, preserving the relationship.</div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="q-card"><span class="pnum">¶14-15</span>How did Jesus display humility, and how can his example help us accept differences in others?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Although he was equal with God in his prehuman existence, Jesus "emptied himself" and became obedient even to death. Reflecting on his humility helps us set aside pride and accept that friends will not always think, feel, or act exactly as we do — and that is not necessarily wrong.</p>
+          <div class="scripture-block">"Keep this mental attitude in you that was also in Christ Jesus, who, although he was existing in God's form, did not even consider the idea of trying to be equal to God. No, but he emptied himself and took a slave's form and became human. More than that, when he came as a man, he humbled himself and became obedient to the point of death, yes, death on a torture stake."<span class="ref">Phil. 2:5-8</span></div>
+          <div class="prep-box prep-comment">💬 <strong>Comment you could share:</strong> "Jesus had every right to insist on his own way, yet he chose humility — that really challenges me to do the same with the people close to me."</div>
+          <div class="prep-box prep-ministry">📌 <strong>Ministry connection:</strong> We can share how imitating Christ's humility, rather than insisting on being right, is a powerful witness to those around us.</div>
+          <div class="prep-box prep-jehovah">🙏 <strong>Getting to know Jehovah:</strong> Jehovah highly exalted Jesus because of his humble obedience, showing how much value he places on this quality.</div>
+        </div>
+        <div class="para-text">Jesus' willingness to set aside his heavenly glory and serve humbly provides the perfect model for accepting differences in others. When we imitate his humility, we find it far easier to work through personality clashes with our friends.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: WHEN SUFFERING -->
+  <section class="article-section">
+    <div class="section-heading">WHEN OUR BROTHERS AND SISTERS ARE SUFFERING</div>
+    <div class="section-body">
+
+      <div class="qa-unit">
+        <div class="q-card"><span class="pnum">¶16</span>What example did Jesus set on the night before his death that teaches us about serving suffering friends?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Jesus humbly washed his disciples' feet, a task usually reserved for the lowest servant, and told them to follow his example. His love for his friends, even in his own final hours of stress, teaches us to set aside self-concern to serve others who are struggling.</p>
+          <div class="scripture-block">"So Jesus, knowing that the Father had given all things into his hands and that he came from God and was going to God, got up from the evening meal and laid aside his outer garments. And taking a towel, he wrapped it around his waist. After that he put water into a basin and started to wash the feet of the disciples and to dry them off with the towel that was wrapped around him."<span class="ref">John 13:3-5</span></div>
+          <div class="scripture-block">"Therefore, if I, the Lord and Teacher, washed your feet, you also should wash the feet of one another. For I set the pattern for you, that just as I did to you, you should also do."<span class="ref">John 13:12-16</span></div>
+          <div class="prep-box prep-comment">💬 <strong>Comment you could share:</strong> "What strikes me is that Jesus did this while he himself was facing enormous stress — real love serves others even when we're struggling too."</div>
+          <div class="prep-box prep-ministry">📌 <strong>Ministry connection:</strong> We can mention that true Christian love is proven by action, just as Jesus demonstrated with a towel and basin of water.</div>
+          <div class="prep-box prep-jehovah">🙏 <strong>Getting to know Jehovah:</strong> Jesus' humble service reflects Jehovah's own willingness to care for the lowly and needy among his people.</div>
+        </div>
+        <div class="para-text">On the very night he faced betrayal and arrest, Jesus took time to perform a humble act of service for his friends — a powerful, personal example of putting others' needs above our own.</div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="q-card"><span class="pnum">¶17</span>How did Jesus show compassion to those who were suffering?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Jesus was repeatedly "moved with pity" and took action to relieve suffering, such as healing two blind men and restoring sight to blind Bartimaeus. His compassion was not just an emotion but led to concrete, helpful action.</p>
+          <div class="scripture-block">"Moved with pity, Jesus touched their eyes, and immediately they recovered their sight, and they followed him."<span class="ref">Matt. 20:34</span></div>
+          <div class="scripture-block">"Then Jesus said to him: 'What do you want me to do for you?' The blind man said to him: 'Rabboni, let me recover my sight.' ... And Jesus said to him: 'Go. Your faith has made you well.' And immediately he recovered his sight."<span class="ref">Mark 10:46-52</span></div>
+          <div class="prep-box prep-comment">💬 <strong>Comment you could share:</strong> "Jesus didn't just feel sorry for people — he always did something to help them. That's the kind of compassion I want to show my friends."</div>
+          <div class="prep-box prep-ministry">📌 <strong>Ministry connection:</strong> We could point out that Jesus' compassionate healings show us what God's Kingdom will accomplish for all suffering people.</div>
+          <div class="prep-box prep-jehovah">🙏 <strong>Getting to know Jehovah:</strong> Jesus' compassion perfectly mirrors Jehovah's own tender concern for those who suffer.</div>
+        </div>
+        <div class="para-text">Jesus consistently responded to suffering with compassionate, practical action rather than mere words. His example teaches us that when a friend is hurting, genuine compassion moves us to actually help, not just express sympathy.</div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="q-card"><span class="pnum">¶18</span>How can we prove ourselves to be true friends "born for times of distress"?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Proverbs describes a true friend as one who "shows love at all times" and is "born for times of distress" — meaning our friendship should be most evident precisely when a friend is struggling, not just during easy times.</p>
+          <div class="scripture-block">"A true friend shows love at all times And is a brother who is born for times of distress."<span class="ref">Prov. 17:17</span></div>
+          <div class="prep-box prep-comment">💬 <strong>Comment you could share:</strong> "This verse challenges me to ask: am I only around when things are easy, or am I there when a friend really needs me?"</div>
+          <div class="prep-box prep-ministry">📌 <strong>Ministry connection:</strong> We can share that true friendship, as described in the Bible, is tested and proven during hardship — not just during good times.</div>
+          <div class="prep-box prep-jehovah">🙏 <strong>Getting to know Jehovah:</strong> Jehovah is described throughout Scripture as a refuge in times of distress, always available to those who call on him.</div>
+        </div>
+        <div class="para-text">A fair-weather friend is easy to find, but Proverbs 17:17 highlights a much higher standard — one who remains present and supportive specifically during hardship, when a friend needs us most.</div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="q-card"><span class="pnum">¶19</span>What practical ways can we comfort a suffering brother or sister?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>We can apply the Golden Rule, treating others as we would want to be treated, and cultivate "unity of mind, fellow feeling, brotherly affection, tender compassion, and humility." This may include listening, speaking consolingly, and offering practical, tangible help.</p>
+          <div class="scripture-block">"All things, therefore, that you want men to do to you, you also must do to them."<span class="ref">Matt. 7:12</span></div>
+          <div class="scripture-block">"Finally, all of you have unity of mind, fellow feeling, brotherly affection, tender compassion, and humility."<span class="ref">1 Pet. 3:8</span></div>
+          <div class="prep-box prep-comment">💬 <strong>Comment you could share:</strong> "Asking myself 'how would I want to be treated if I were going through this?' really helps me know what to say or do."</div>
+          <div class="prep-box prep-ministry">📌 <strong>Ministry connection:</strong> We can mention that Bible-based compassion and fellow feeling are qualities that draw sincere people toward Jehovah's organization.</div>
+          <div class="prep-box prep-jehovah">🙏 <strong>Getting to know Jehovah:</strong> Jehovah is "the God of all comfort," and when we comfort others, we act as his representatives.</div>
+        </div>
+        <figure class="art">
+          <img src="https://assetsnffrgf-a.akamaihd.net/assets/m/2026443/univ/wpub/2026443_univ_cnt_2_xs.jpg" alt="True friends provide comfort through compassion and kindness">
+          <figcaption>True friends provide comfort through compassion and kindness (See paragraph 19)</figcaption>
+          <div class="app-note">This image reminds us that comforting a suffering friend does not require grand gestures — simple, sincere expressions of compassion and kindness can make a real difference.</div>
+        </figure>
+        <div class="para-text">Comforting a suffering friend is not always complicated. Small, sincere acts of compassion — a listening ear, an encouraging word, or practical assistance — reflect the tender qualities Jehovah wants his people to display toward one another.</div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="q-card"><span class="pnum">¶20</span>What kind of friend do you want to be?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>By cultivating compassion, kindness, humility, mildness, and patience, we can be the kind of friend who helps others "warn the disorderly, speak consolingly to those who are depressed, support the weak," and remain patient toward all — a true friend who reflects Jehovah's own loving qualities.</p>
+          <div class="scripture-block">"On the other hand, we urge you, brothers, to warn the disorderly, speak consolingly to those who are depressed, support the weak, be patient toward all."<span class="ref">1 Thess. 5:14</span></div>
+          <div class="prep-box prep-comment">💬 <strong>Comment you could share:</strong> "This article has really made me reflect on what kind of friend I want to be — someone others can count on through disagreements, differences, and difficult times."</div>
+          <div class="prep-box prep-ministry">📌 <strong>Ministry connection:</strong> We can express how becoming part of a caring, spiritual family is one of the most valuable things a person can gain by studying the Bible.</div>
+          <div class="prep-box prep-jehovah">🙏 <strong>Getting to know Jehovah:</strong> Jehovah is the ultimate model of a faithful friend; as we imitate him, our own friendships become richer and more secure.</div>
+        </div>
+        <div class="para-text">In closing, this article reminds us that the qualities we cultivate — compassion, kindness, humility, mildness, and patience — determine what kind of friend we will be, whether during disagreements, personality differences, or difficult times.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REVIEW SECTION -->
+  <section class="review-section">
+    <div class="review-heading">HOW CAN YOU MAINTAIN CHRISTIAN FRIENDSHIPS . . .</div>
+    <div class="review-body">
+
+      <div class="qa-unit">
+        <div class="q-card">…when you disagree about a matter?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p><strong>Summary answer:</strong> Actively seek peace, imitate Jesus' humility rather than insisting on your own way, and be willing to overlook minor offenses instead of dwelling on them.</p>
+          <div class="prep-box prep-comment">💬 <strong>Personal comment:</strong> I want to remember that being "right" matters far less than preserving the friendship and staying at peace with my brother or sister.</div>
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="q-card">…when your personalities differ?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p><strong>Summary answer:</strong> Expect that friends, even close ones, will not always think or act the same way we do. Cultivate patience and humility, following Jesus' example of putting others first.</p>
+          <div class="prep-box prep-comment">💬 <strong>Personal comment:</strong> I can be slower to judge a friend's different approach and quicker to look for what I can learn from it instead.</div>
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="q-card">…when your brother or sister is suffering?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p><strong>Summary answer:</strong> Apply the Golden Rule, showing fellow feeling, tender compassion, and humility. Offer practical help and comforting words, following the pattern Jesus set when he washed his disciples' feet.</p>
+          <div class="prep-box prep-comment">💬 <strong>Personal comment:</strong> I want to be more proactive in noticing when someone is struggling instead of waiting to be asked for help.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="closing">
+    <div class="banner song-banner" style="margin:0 0 0;"><span class="icon">🎵</span><div><strong>Closing Song:</strong> Song 124 — "Ever Loyal"</div></div>
+    <a class="source-link" href="https://www.jw.org/en/library/magazines/watchtower-study-june-2026/How-to-Maintain-Christian-Friendships/" target="_blank" rel="noopener">Read the full article on jw.org →</a>
+  </footer>
+
+  <div class="disclosure">
+    <strong>Source note:</strong> All Scripture text in this guide is quoted verbatim from the New World Translation (jw.org Online Bible). Because wol.jw.org could not be accessed directly in this environment, scripture and study-note content were sourced from the equivalent jw.org Online Bible pages (Study Edition and 2013 Revision) instead. Paragraph discussion questions and summaries in this guide reflect the article's structure, section headings, and topical flow as published; paragraph numbers 1 and 20 quote the article's own question wording verbatim, while intervening paragraph questions/summaries are close topical reconstructions aligned to each paragraph's associated scripture, prepared to support personal comments at the meeting — please compare with your own magazine for exact wording.
+  </div>
+
+</div>
+
+<script>
+  const scriptureData = {
+    col312: {ref:"Colossians 3:12", text:"Accordingly, as God's chosen ones, holy and loved, clothe yourselves with the tender affections of compassion, kindness, humility, mildness, and patience.", notes:"<b>on the things above / clothe yourselves:</b> Paul continues a word picture of removing undesirable \"clothing\" (v.8-10) and putting on qualities that make up the \"new personality.\" The command \"clothe yourselves\" suggests both urgency and permanence — these qualities should become permanent Christian traits.<br><br><b>humility:</b> Or \"lowliness of mind.\"<br><br><b>compassion, kindness, mildness, patience:</b> These qualities are all part of the fruitage of God's spirit and reflect Jehovah's own personality."}
+  };
+
+  function toggleAnswer(btn){
+    const box = btn.nextElementSibling;
+    const showing = box.classList.toggle('show');
+    btn.textContent = showing ? '▾ Hide comment' : '▸ Show comment';
+  }
+
+  function toggleAll(){
+    const boxes = document.querySelectorAll('.answer-box');
+    const btns = document.querySelectorAll('.toggle-btn');
+    const anyClosed = Array.from(boxes).some(b=>!b.classList.contains('show'));
+    boxes.forEach(b=>{ if(anyClosed) b.classList.add('show'); else b.classList.remove('show'); });
+    btns.forEach(b=>{ b.textContent = anyClosed ? '▾ Hide comment' : '▸ Show comment'; });
+    document.getElementById('expandAllBtn').textContent = anyClosed ? 'Collapse All' : 'Expand All';
+  }
+
+  function openVerse(key){
+    const d = scriptureData[key];
+    if(!d) return;
+    document.getElementById('sbTitle').textContent = d.ref;
+    document.getElementById('sbContent').innerHTML =
+      '<div class="sb-verse">"' + d.text + '"<br><strong>— ' + d.ref + '</strong></div>' +
+      '<div class="sb-notes">' + d.notes + '</div>' +
+      '<a class="sb-open-full" href="https://www.jw.org/en/library/magazines/watchtower-study-june-2026/How-to-Maintain-Christian-Friendships/" target="_blank" rel="noopener">Open full article →</a>';
+    document.getElementById('sidebar').classList.add('open');
+    document.getElementById('overlay').classList.add('show');
+  }
+
+  function closeSidebar(){
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('overlay').classList.remove('show');
+  }
+
+  // Make all scripture references in answer boxes clickable chips retroactively
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.scripture-block .ref').forEach(function(refEl){
+      refEl.style.cursor = 'pointer';
+      refEl.addEventListener('click', function(){
+        const block = refEl.closest('.scripture-block');
+        const text = block.childNodes[0].textContent.replace(/^"|"$/g,'').trim();
+        document.getElementById('sbTitle').textContent = refEl.textContent;
+        document.getElementById('sbContent').innerHTML =
+          '<div class="sb-verse">"' + text + '"<br><strong>— ' + refEl.textContent + '</strong></div>' +
+          '<div class="sb-notes">Tap "Open full article" to view this passage and its Study Notes on jw.org.</div>' +
+          '<a class="sb-open-full" href="https://www.jw.org/en/library/magazines/watchtower-study-june-2026/How-to-Maintain-Christian-Friendships/" target="_blank" rel="noopener">Open full article →</a>';
+        document.getElementById('sidebar').classList.add('open');
+        document.getElementById('overlay').classList.add('show');
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
