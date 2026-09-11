@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JW Meeting Study Guide — September 7-13, 2026</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    background: #f0f4f8;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a202c;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 16px 60px; }
+  header.top {
+    background: #1a365d;
+    color: #fff;
+    padding: 28px 16px 22px;
+    text-align: center;
+  }
+  header.top h1 { margin: 0 0 4px; font-size: 1.5rem; letter-spacing: .3px; }
+  header.top .subtitle { font-size: 1rem; opacity: .85; margin-bottom: 14px; }
+  .date-badge {
+    display: inline-block;
+    background: #b91c1c;
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: .95rem;
+    letter-spacing: .3px;
+  }
+  .expand-all-wrap { text-align: center; margin: 18px 0; }
+  #expandAllBtn {
+    background: #1a365d; color: #fff; border: none;
+    padding: 10px 22px; border-radius: 8px; font-size: .95rem;
+    cursor: pointer; font-weight: 600;
+  }
+  #expandAllBtn:hover { background: #12294a; }
+
+  .song-banner {
+    background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 10px;
+    padding: 14px 18px; margin: 18px 0; font-size: .95rem; color: #3730a3;
+  }
+  .song-banner strong { color: #1e1b4b; }
+
+  .focus-banner {
+    background: #1a365d; color: #fff; border-radius: 10px;
+    padding: 18px 20px; margin: 18px 0;
+  }
+  .focus-banner .label { text-transform: uppercase; font-size: .75rem; letter-spacing: 1px; opacity: .75; margin-bottom: 6px; }
+  .focus-banner p { margin: 0; font-size: 1.05rem; line-height: 1.5; }
+
+  blockquote.theme-verse {
+    background: #fff; border-left: 4px solid #1a365d;
+    margin: 18px 0; padding: 16px 18px; border-radius: 0 8px 8px 0;
+    font-style: italic; font-size: 1.05rem; line-height: 1.6;
+  }
+  blockquote.theme-verse .chip { margin-top: 10px; }
+
+  .scripture-chip {
+    display: inline-block; background: #eff6ff; color: #1d4ed8;
+    border: 1px solid #bfdbfe; padding: 3px 10px; border-radius: 999px;
+    font-size: .82rem; font-weight: 600; cursor: pointer; text-decoration: none;
+    white-space: nowrap;
+  }
+  .scripture-chip:hover { background: #dbeafe; }
+
+  section.card {
+    background: #fff; border-radius: 10px; margin: 22px 0;
+    overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  section.card > .section-heading {
+    background: #1a365d; color: #fff; padding: 14px 18px;
+    font-size: 1.05rem; font-weight: 700; letter-spacing: .3px;
+  }
+  .section-body { padding: 4px 18px 18px; }
+
+  .qa-unit { margin: 20px 0; }
+  .question-card {
+    background: #fff; border-left: 4px solid #b91c1c;
+    padding: 14px 16px; border-radius: 0 8px 8px 0;
+    font-weight: 700; font-size: 1rem; line-height: 1.5;
+    box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  }
+  .question-card .qnum { color: #b91c1c; margin-right: 6px; }
+
+  .toggle-answer {
+    margin-top: 8px; background: none; border: none; color: #b45309;
+    font-weight: 600; cursor: pointer; font-size: .9rem; padding: 4px 0;
+  }
+  .answer-box {
+    display: none; background: #fffbeb; border-left: 3px solid #f59e0b;
+    border-radius: 0 8px 8px 0; padding: 14px 16px; margin-top: 8px;
+    font-size: .95rem; line-height: 1.65;
+  }
+  .answer-box.open { display: block; }
+  .answer-box p { margin: 0 0 10px; }
+  .answer-box p:last-child { margin-bottom: 0; }
+  .sub-label { font-weight: 700; color: #92400e; }
+
+  .prep-box {
+    background: #fff; border: 1px dashed #f59e0b; border-radius: 8px;
+    padding: 10px 12px; margin-top: 10px; font-size: .9rem; line-height: 1.55;
+  }
+  .prep-box .prep-label { font-weight: 700; display: block; margin-bottom: 3px; }
+
+  .paragraph-block {
+    background: #f8fafc; border-left: 3px solid #e2e8f0; border-radius: 8px;
+    padding: 14px 16px; margin-top: 12px; font-size: .95rem; line-height: 1.75; color: #334155;
+  }
+  .paragraph-block .pnum { font-weight: 700; color: #1a365d; margin-right: 4px; }
+
+  figure.article-image { margin: 14px 0 0; }
+  figure.article-image img { max-width: 100%; border-radius: 8px; display: block; }
+  figure.article-image figcaption { font-size: .82rem; color: #64748b; margin-top: 6px; font-style: italic; }
+  .application-note { font-size: .85rem; color: #475569; margin-top: 6px; }
+
+  .review-section {
+    background: #fff; border-radius: 10px; margin: 26px 0; padding: 4px 18px 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  .review-section > .section-heading {
+    background: #b91c1c; color: #fff; padding: 14px 18px; margin: 0 -18px 14px;
+    font-size: 1.05rem; font-weight: 700;
+  }
+
+  .closing-song-banner {
+    background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 10px;
+    padding: 14px 18px; margin: 24px 0 10px; font-size: .95rem; color: #3730a3;
+  }
+  .source-link { text-align: center; font-size: .85rem; margin-bottom: 30px; }
+  .source-link a { color: #1d4ed8; }
+
+  /* Sidebar */
+  #sidebarOverlay {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 999;
+  }
+  #sidebarOverlay.open { display: block; }
+  #sidebar {
+    position: fixed; top: 0; right: -100%; width: 340px; max-width: 90%; height: 100%;
+    background: #fff; z-index: 1000; box-shadow: -4px 0 16px rgba(0,0,0,.15);
+    transition: right .25s ease; overflow-y: auto; padding: 20px;
+  }
+  #sidebar.open { right: 0; }
+  #sidebar .sb-close {
+    float: right; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: #64748b;
+  }
+  #sidebar h3 { margin: 6px 0 12px; color: #1a365d; }
+  #sidebar .sb-text { font-style: italic; line-height: 1.6; color: #334155; margin-bottom: 16px; }
+  #sidebar .sb-open-full {
+    display: inline-block; background: #1a365d; color: #fff; text-decoration: none;
+    padding: 8px 14px; border-radius: 8px; font-size: .85rem; font-weight: 600;
+  }
+  @media (max-width: 480px) {
+    #sidebar { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>JW Meeting Study Guide</h1>
+  <div class="subtitle">Watchtower Study</div>
+  <div class="date-badge">Sunday, September 13, 2026</div>
+</header>
+
+<div class="wrap">
+
+  <div class="expand-all-wrap">
+    <button id="expandAllBtn" onclick="toggleAll()">Expand All</button>
+  </div>
+
+  <div class="song-banner">
+    <strong>Opening Song:</strong> Song 88 — <a href="https://www.jw.org/en/library/music-songs/sing-out-joyfully/88-make-me-know-your-ways/" target="_blank" rel="noopener">Make Me Know Your Ways</a>
+  </div>
+
+  <div class="focus-banner">
+    <div class="label">Focus</div>
+    <p>Identify lessons we can learn from the Gibeonites and from the way Jehovah dealt with them.</p>
+  </div>
+
+  <blockquote class="theme-verse">
+    “The inhabitants of Gibeon had made peace with Israel and remained among them.” — Joshua 10:1
+    <div class="chip"><span class="scripture-chip" onclick="openSidebar('Josh. 10:1')">Josh. 10:1</span></div>
+  </blockquote>
+
+  <p style="font-size:.95rem;color:#475569;line-height:1.7;background:#fff;padding:14px 16px;border-radius:8px;">
+    <em>w26 July pp. 2-7 — “Learn From the Gibeonites”</em> · Studied the week of September 7-13, 2026.
+  </p>
+
+  <!-- SECTION 1 -->
+  <section class="card">
+    <div class="section-heading">Introduction &amp; Act With Faith and Humility</div>
+    <div class="section-body">
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">1-2.</span> Why should we be interested in what the Bible says about the Gibeonites?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>In 1473 B.C.E., right after Israel's stunning victories over Jericho and Ai, a group of travelers showed up at the Israelite camp claiming to be from a far-off land and asking for a peace treaty. This is our first introduction to the Gibeonites in Scripture, but far from the last — the Bible traces their story across many centuries, and each account reveals something valuable about Jehovah's own personality as well as practical lessons for us today.</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            I found it interesting that the Bible doesn't just mention the Gibeonites once — their story keeps resurfacing across hundreds of years, almost like Jehovah wanted us to have multiple angles on the same lessons.
+          </div>
+          <div class="prep-box">
+            <span class="prep-label">🙏 Getting to know Jehovah:</span>
+            Even a "minor" nation like the Gibeonites gets extended, careful attention in the Bible record — a reminder that Jehovah notices and values people the world might overlook.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">1</span> THE year is 1473 B.C.E. The nation of Israel has just begun its conquest of the Promised Land. The Israelites have won extraordinary victories over the cities of Jericho and Ai. But later, something unexpected happens. A group of travelers comes to them, claiming to be from a distant land and seeking to establish a peace agreement with God's people.
+          <br><br>
+          <span class="pnum">2</span> Those travelers are the Gibeonites. This is the first time that the Gibeonites are mentioned in the Bible record, but it is not the last. A number of Bible accounts reveal that the Gibeonites were closely associated with the Israelites throughout the following centuries. These accounts contain valuable lessons for us, and they reveal much about Jehovah God.
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">3.</span> (a) Who were the Gibeonites? (b) Why did they seek peace with Israel?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p><span class="sub-label">(a)</span> The Gibeonites lived in the fortified city of Gibeon and were part of the Hivite nation — one of seven Canaanite nations that were, as <span class="scripture-chip" onclick="openSidebar('Deut. 7:1')">Deut. 7:1</span> notes, "more populous and mightier" than Israel.</p>
+          <p><span class="sub-label">(b)</span> Despite being militarily strong (<span class="scripture-chip" onclick="openSidebar('Josh. 10:2')">Josh. 10:2</span>), the Gibeonites could see that Jehovah was fighting for Israel and had promised to drive out the Canaanites (<span class="scripture-chip" onclick="openSidebar('Ex. 34:11')">Ex. 34:11</span>; <span class="scripture-chip" onclick="openSidebar('Josh. 9:24')">Josh. 9:24</span>). Rather than resist a battle they knew they'd lose, they sent a delegation to Joshua seeking peace.</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            What struck me was that the Gibeonites' strength didn't blind them to reality — they were militarily capable, yet humble enough to recognize Jehovah's hand and act accordingly.
+          </div>
+          <div class="prep-box">
+            <span class="prep-label">📌 Ministry connection:</span>
+            People today, like the Gibeonites, often recognize evidence of a greater power at work even before they fully understand who Jehovah is — that recognition can be a starting point in a Bible discussion.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">3</span> When the Israelites began their conquest of the land of Canaan, the Gibeonites lived in the fortified city of Gibeon. They were part of the Hivite nation, one of the seven Canaanite nations that were "more populous and mightier" than the Israelites. (Deut. 7:1) So the Gibeonites were a militarily strong people. (Josh. 10:2) Unlike the other Canaanites, however, they realized that resisting Israel would be pointless. They could see that Jehovah was fighting for his people, and they knew that he had promised to drive the Canaanites out of the land. (Ex. 34:11; Josh. 9:24) So after the Israelites conquered Jericho and Ai, the Gibeonites sent a delegation to Joshua at Gilgal in an effort to seek peace.
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">4.</span> (a) As shown at Joshua 9:8-13, how did the Gibeonites trick Israel into making a covenant of peace? (b) What happened when their deception was discovered?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p><span class="sub-label">(a)</span> <span class="scripture-chip" onclick="openSidebar('Josh. 9:8-13')">Read Joshua 9:8-13</span> — The Gibeonites pretended to be from a distant land, carefully avoiding any mention of Jericho and Ai since that news couldn't plausibly have reached a "very distant land" yet. Without consulting Jehovah, Israel's representatives accepted their evidence and made a covenant of peace.</p>
+          <p><span class="sub-label">(b)</span> When the deception was discovered shortly afterward, Israel still honored the covenant because they had "sworn an oath to them by Jehovah" (<span class="scripture-chip" onclick="openSidebar('Josh. 9:16-19')">Josh. 9:16-19</span>). The Gibeonites were assigned the humble role of "gatherers of wood and drawers of water for the assembly and for Jehovah's altar" (<span class="scripture-chip" onclick="openSidebar('Josh. 9:27')">Josh. 9:27</span>).</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            I found it interesting that Israel's leaders felt bound by an oath even though they'd been deceived into making it — that says something about how seriously Jehovah's people were meant to take their word.
+          </div>
+          <div class="prep-box">
+            <span class="prep-label">🙏 Getting to know Jehovah:</span>
+            Even though the Israelites acted without consulting him, Jehovah didn't undermine the oath his people had sworn — he values integrity to one's word so highly that he let the consequences stand.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">4</span> Read Joshua 9:8-13. The Gibeonites pretended to be from a distant land. They acknowledged that Jehovah had a hand in Israel's military success against Egypt and the Amorite Kings Sihon and Og. But wisely, they did not mention what had happened to Jericho and Ai, since such recent news could not yet have reached their so-called "very distant land." Without consulting Jehovah, Israel's representatives accepted the evidence that the Gibeonites presented and made a covenant of peace with them. (Josh. 9:14, 15) Shortly thereafter, the Gibeonites' deception was discovered, but the Israelites stuck to their peace agreement with the Gibeonites because they had "sworn an oath to them by Jehovah." (Josh. 9:16-19) The Gibeonites were given the humble assignment to serve indefinitely as "gatherers of wood and drawers of water for the assembly and for Jehovah's altar."—Josh. 9:27.
+        </div>
+        <figure class="article-image">
+          <img src="https://assetsnffrgf-a.akamaihd.net/img/p/2026482/univ/art/2026482_univ_cnt_1_xs.jpg" alt="A group of Gibeonite men kneeling and pleading with Joshua and other Israelite soldiers. The Gibeonites present their worn clothing and wine skins.">
+          <figcaption>The Gibeonites tricked Joshua into making peace with them (paragraph 4)</figcaption>
+          <div class="application-note">This scene is a reminder that appearances can be staged — but also that a promise made, even under mistaken circumstances, was still treated by Israel's leaders as binding before Jehovah.</div>
+        </figure>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">5.</span> In what ways did the Gibeonites show faith in Jehovah?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>When five Amorite kings banded together to attack Gibeon for making peace with Israel, the Gibeonites appealed to Joshua for help (<span class="scripture-chip" onclick="openSidebar('Josh. 10:3-7')">Josh. 10:3-7</span>). Joshua's rescue was blessed in a remarkable way — Jehovah hurled hailstones on the enemy and miraculously extended the daylight for battle (<span class="scripture-chip" onclick="openSidebar('Josh. 10:9-14')">Josh. 10:9-14</span>). By seeking peace and then appealing for help when threatened, the Gibeonites showed real faith in Jehovah's ability to fulfill his word and rescue them.</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            What struck me was that faith wasn't a one-time act for the Gibeonites — first they trusted Jehovah enough to seek peace, and later they trusted him enough to call for help when danger came.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">5</span> On hearing that the Gibeonites had made peace with Israel, five Amorite kings banded together to attack Gibeon. The Gibeonites appealed to Joshua for help. (Josh. 10:3-7) Joshua led Israel in a rescue operation, and their efforts were blessed. Jehovah even hurled down great hailstones on the enemy Amorite forces and miraculously extended the daylight for battle. (Josh. 10:9-14) By seeking a covenant of peace with Israel and by appealing to Joshua for help when threatened, the Gibeonites showed faith in Jehovah—faith in his ability to fulfill his word and to rescue them.
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">6.</span> What do we learn about Jehovah from the way he treated the Gibeonites during Israel's conquest of the Promised Land?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Jehovah is humble and merciful. He had instructed Israel to "drive away all the inhabitants of the land," which included the Gibeonites (<span class="scripture-chip" onclick="openSidebar('Num. 33:51, 52')">Num. 33:51, 52</span>). Yet in support of the covenant Israel had made, Jehovah mercifully permitted the Gibeonites to live — even though Israel hadn't consulted him first (<span class="scripture-chip" onclick="openSidebar('Josh. 9:26')">Josh. 9:26</span>; <span class="scripture-chip" onclick="openSidebar('Josh. 11:19')">Josh. 11:19</span>).</p>
+          <div class="prep-box">
+            <span class="prep-label">🙏 Getting to know Jehovah:</span>
+            Jehovah's willingness to work with an imperfect decision his people made — rather than simply overriding it — shows how much he values his people's integrity, even when they haven't consulted him as they should have.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">6</span> <em>What does this account teach us about Jehovah?</em> Jehovah is humble and merciful. He had previously instructed Israel to "drive away all the inhabitants of the land," which included the Gibeonites. (Num. 33:51, 52) Yet, in support of the covenant of peace Israel made with them, Jehovah mercifully permitted the Gibeonites to live. Jehovah did so even though the Israelites failed to consult him before entering into that covenant. He then helped Israel to stick to their agreement and miraculously rescued the Gibeonites.—Josh. 9:26; 11:19.
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">7.</span> How can we imitate the Gibeonites' faith and humility?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>By cultivating strong faith in Jehovah — we know far more about him than the Gibeonites did, giving us even more reason to trust him fully (<span class="scripture-chip" onclick="openSidebar('Ps. 40:4, 5')">Ps. 40:4, 5</span>). We can also imitate them by willingly doing humble tasks in Jehovah's service (<span class="scripture-chip" onclick="openSidebar('Josh. 9:23, 27')">Josh. 9:23, 27</span>). The example of Luke, a young brother who watched a prominent Bethelite quietly volunteer for a night shift guarding a Kingdom Hall construction site, illustrates that "humility is not simply a feeling. It is expressed by what we choose to do or not do."</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            What struck me about Luke's account is that the older brother didn't need anyone to see him do that humble task — Luke just happened to notice, which makes the example even more genuine.
+          </div>
+          <div class="prep-box">
+            <span class="prep-label">📌 Ministry connection:</span>
+            When we quietly take on unglamorous assignments in the congregation or the ministry, we're demonstrating the same spirit the Gibeonites showed — and that consistency speaks louder than words to those watching.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">7</span> <em>How can we imitate the Gibeonites?</em> By cultivating strong faith in Jehovah. Since we know so much more about Jehovah than did the Gibeonites at that time, we have even more reasons to trust in Jehovah completely. (Ps. 40:4, 5) We can also imitate the Gibeonites by being willing to do humble tasks in Jehovah's service. (Josh. 9:23, 27) A young brother named Luke will never forget the time when he saw an older brother of the Bethel family do just that. Although that Bethelite cared for a weighty and somewhat prominent assignment, he quietly volunteered for a night shift to watch the local Kingdom Hall site while it was under construction. Luke says: "I learned that humility is not simply a feeling. It is expressed by what we choose to do or not do." May we express our faith in Jehovah daily by relying on him when we face difficult situations and by humbly caring for any theocratic assignment.
+        </div>
+        <figure class="article-image">
+          <img src="https://assetsnffrgf-a.akamaihd.net/img/p/2026482/univ/art/2026482_univ_cnt_2_xs.jpg" alt="Collage: Examples of doing humble tasks willingly. 1. A Gibeonite man carries a water jug. 2. An older brother gardens at a Kingdom Hall.">
+          <figcaption>Imitate the Gibeonites by being willing to do humble work (paragraph 7)</figcaption>
+          <div class="application-note">Notice the parallel the collage draws — ancient water-carrying and modern-day yard work at a Kingdom Hall are the same spirit of willing, unglamorous service.</div>
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="card">
+    <div class="section-heading">Wait on Jehovah to Correct Injustice</div>
+    <div class="section-body">
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">8.</span> What crime did King Saul commit against the Gibeonites?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Centuries later, King Saul turned against the Gibeonites living in Israel. "In his zeal for the people of Israel and Judah," he attempted to wipe them out, and a number of them were murdered (<span class="scripture-chip" onclick="openSidebar('2 Sam. 21:2')">2 Sam. 21:2</span>, <span class="scripture-chip" onclick="openSidebar('2 Sam. 21:5, 6')">5, 6</span>). Saul broke the long-standing covenant of peace between Israel and the Gibeonites.</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            I found it sobering that misplaced "zeal" — Saul apparently thought he was doing something patriotic — led him to break a centuries-old promise and commit murder.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">8</span> The Gibeonites are mentioned again in the Bible record centuries later. King Saul turned against the Gibeonites living in Israel. "In his zeal for the people of Israel and Judah," he attempted to wipe the Gibeonites out. As a result, a number of them were murdered. (2 Sam. 21:2, 5, 6) What an injustice! Saul broke the long-standing covenant of peace that existed between Israel and the Gibeonites.
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">9.</span> When was the injustice against the Gibeonites finally addressed?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Not immediately. It wasn't until the reign of Saul's successor, King David, that Jehovah brought the matter to national attention by means of a three-year famine. When David inquired, Jehovah revealed that Saul's house was bloodguilty for the way they had mistreated the Gibeonites years earlier (<span class="scripture-chip" onclick="openSidebar('2 Sam. 21:1')">2 Sam. 21:1</span>).</p>
+          <div class="prep-box">
+            <span class="prep-label">🙏 Getting to know Jehovah:</span>
+            Jehovah's timing here — years passing before the injustice was addressed — shows he doesn't forget wrongs done to those he cares about, even when it seems the matter has gone unnoticed for a long time.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">9</span> This terrible injustice against the Gibeonites was not immediately addressed. In fact, it was not until the reign of Saul's successor, King David, that Jehovah brought the matter to the attention of the nation by means of a three-year famine. When David asked about the reason for the famine, Jehovah told him that Saul and his household were bloodguilty because of the way they had mistreated the Gibeonites years earlier.—2 Sam. 21:1.
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">10.</span> As recorded at 2 Samuel 21:3-6, how did the Gibeonites show respect for God's Law in what they said to David?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p><span class="scripture-chip" onclick="openSidebar('2 Sam. 21:3-6')">Read 2 Samuel 21:3-6</span> — David asked the Gibeonites what could atone for Saul's crime. Rather than demanding money, they rightly answered it was "not a matter of silver or gold," since the Law didn't permit a ransom for a murderer (<span class="scripture-chip" onclick="openSidebar('Num. 35:30, 31')">Num. 35:30, 31</span>). They also recognized they had no authority to execute anyone themselves. Ultimately David authorized the execution of seven of Saul's descendants, and the rains that followed signaled the matter was resolved to Jehovah's satisfaction (<span class="scripture-chip" onclick="openSidebar('2 Sam. 21:9, 10, 14')">2 Sam. 21:9, 10, 14</span>).</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            What struck me was that the Gibeonites, even as the wronged party, stayed within the boundaries of the Law rather than taking justice fully into their own hands — that's a level of restraint worth noting.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">10</span> Read 2 Samuel 21:3-6. David spoke to the Gibeonites to try to determine what could be done to atone for Saul's crime against them. Would they try to get rich by making David pay for not acting earlier in their behalf? The Gibeonites rightly answered that it was "not a matter of silver or gold" because, according to the Law, no ransom could be accepted for a murderer. (Num. 35:30, 31) They also recognized that they could not put a man to death without legal authorization. In the end, David authorized the execution of seven of Saul's male descendants who may have had some share in Saul's attempted genocide. Sometime later, the rains came, ending the famine and signaling that the injustice had been avenged to Jehovah's satisfaction.—2 Sam. 21:9, 10, 14.
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">11.</span> What can we learn about Jehovah from this account?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Jehovah is a just God who wants all people treated fairly — including those discriminated against, as is often the case with foreigners and minorities (<span class="scripture-chip" onclick="openSidebar('Ps. 37:28')">Ps. 37:28</span>). In his due time he corrects injustices his worshippers experience, and he expects us to keep our promises just as he expected Israel to keep theirs (compare <span class="scripture-chip" onclick="openSidebar('Amos 1:9')">Amos 1:9</span>).</p>
+          <div class="prep-box">
+            <span class="prep-label">🙏 Getting to know Jehovah:</span>
+            The fact that Jehovah cared this much about the treatment of a non-Israelite minority group tells us something significant about how he views fairness across ethnic and national lines.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">11</span> <em>What does this account teach us about Jehovah?</em> We see clear evidence that Jehovah is a just God. (Ps. 37:28) He wants all people to be treated fairly. That includes even those who may be discriminated against, as is often the case with foreigners and minorities. In his due time, Jehovah will correct any injustices that his worshippers may have experienced. We also learn that Jehovah expects us to keep our promises, just as he expected the Israelites to keep their promise of peace with the Gibeonites.—Compare Amos 1:9.
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">12.</span> How can we imitate the Gibeonites when dealing with an injustice?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Even when mistreated by fellow believers, we can wait patiently on Jehovah, trusting he'll correct matters in his due time (<span class="scripture-chip" onclick="openSidebar('Isa. 26:3, 4')">Isa. 26:3, 4</span>). Sister Laura French's example illustrates this: after being wrongly dismissed from Bethel over a false accusation, she never complained, spent four years pioneering zealously, and was eventually invited back — serving faithfully for roughly 50 more years.</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            Sister French's response really stood out to me — she didn't put her service on hold while waiting to be vindicated; she just kept serving faithfully in whatever way was open to her.
+          </div>
+          <div class="prep-box">
+            <span class="prep-label">📌 Ministry connection:</span>
+            When people we're teaching face unfair treatment, her example is a practical, real-life illustration of patient trust in Jehovah rather than bitterness.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">12</span> <em>How can we imitate the Gibeonites?</em> Even when mistreated by our brothers and sisters, we can wait patiently on Jehovah. By doing so, we show that we trust that Jehovah will correct matters in his due time. Consider the example of Sister Laura French. She began serving at Canada Bethel in 1926. About ten years later, she became the victim of a terrible injustice. She was wrongly accused of being involved with a group of apostates, and she was dismissed from Bethel. What would she do? Although she felt hurt, she never complained. She spent the next four years zealously serving as a pioneer. To her surprise and delight, in 1940 she was invited to return to Bethel, where she continued to serve faithfully until she finished her earthly course some 50 years later. Like Sister French, we can overcome an injustice by persevering in doing what is right and by waiting on Jehovah to correct matters in his due time.—Isa. 26:3, 4.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="card">
+    <div class="section-heading">Loyally Support True Worship</div>
+    <div class="section-body">
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">13.</span> Who were "the Nethinim," and what did they do after the Babylonian exile?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>About 500 years after David, the 70-year Babylonian exile ended. In 537 B.C.E. exiles returned with Governor Zerubbabel (<span class="scripture-chip" onclick="openSidebar('Ezra 2:1, 2')">Ezra 2:1, 2</span>, <span class="scripture-chip" onclick="openSidebar('Ezra 2:58')">58</span>), and in 468 B.C.E. another group returned with Ezra (<span class="scripture-chip" onclick="openSidebar('Ezra 7:1-7')">Ezra 7:1-7</span>). Both groups included families of "the Nethinim" — non-Israelite temple servants, many likely descendants of the Gibeonites.</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            It's remarkable that descendants of the Gibeonites were still faithfully serving at the temple roughly a thousand years after the original covenant with Joshua — that's incredible continuity.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">13</span> About 500 years after the time of King David, the Gibeonites appear again in the Bible record. The 70-year Babylonian exile had come to an end, and in 537 B.C.E., the first group of Jewish exiles returned to Jerusalem with Governor Zerubbabel. (Ezra 2:1, 2, 58) In 468 B.C.E., another group returned but with Ezra the copyist. (Ezra 7:1-7) Both of those relatively small groups of returning exiles included families of "the Nethinim." Who were the Nethinim? They were "non-Israelite temple servants, or ministers," and many of them were likely descendants of the Gibeonites.—See Glossary, "Nethinim."
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">14.</span> How did the Gibeonites show loyalty to Jehovah? (1 Chronicles 9:2 and footnote)</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p><span class="scripture-chip" onclick="openSidebar('1 Chron. 9:2')">Read 1 Chronicles 9:2</span> and footnote — "The temple servants" were among the very first exiles to return, even though many other Jews found prosperity in Babylon and were unwilling to make the sacrifices needed to rebuild. Faithful exiles, including likely descendants of the Gibeonites, longed to see true worship reestablished and made every effort to return — even though, unlike the Jews, they had no land inheritance in Israel to reclaim.</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            What struck me is that the Gibeonites' descendants had nothing material to gain from returning — no land inheritance waiting for them — yet they went anyway, purely to support true worship.
+          </div>
+          <div class="prep-box">
+            <span class="prep-label">📌 Ministry connection:</span>
+            This is a strong illustration for discussing what motivates genuine devotion — not personal gain, but love for true worship itself.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">14</span> Read 1 Chronicles 9:2 and footnote. "The temple servants" were among the first exiles to return to Israel. That is significant because not all of the Jews in exile returned. Many Jews no doubt had found a measure of prosperity in Babylon, and they were unwilling to make the sacrifices required to return and help rebuild their devastated homeland. But faithful exiles, including some who were likely descendants of the Gibeonites, longed to see true worship reestablished at the temple in Jerusalem, and they made every effort to return. Unlike the Jews, the descendants of the Gibeonites did not have an inheritance of land in Israel. Yet, they returned to care for their temple duties and even to help repair Jerusalem's walls.—Neh. 3:26.
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">15.</span> What does the account of the Gibeonites teach us about Jehovah?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Jehovah greatly appreciates his loyal worshippers and always cares for them. By the time the exile ended, almost 1,000 years had passed since Jehovah saved the Gibeonites during the conquest — yet he continued blessing them. Their descendants survived Jerusalem's destruction and continued ministering with the Levites at the temple, some living near it (<span class="scripture-chip" onclick="openSidebar('Ezra 2:70')">Ezra 2:70</span>; <span class="scripture-chip" onclick="openSidebar('Neh. 11:21')">Neh. 11:21</span>), and received an exemption from tax, tribute, and toll for their temple work (<span class="scripture-chip" onclick="openSidebar('Ezra 7:24')">Ezra 7:24</span>).</p>
+          <div class="prep-box">
+            <span class="prep-label">🙏 Getting to know Jehovah:</span>
+            Jehovah's care for the Gibeonites across roughly a millennium shows his loyalty isn't short-term — it spans generations for those who remain devoted to him.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">15</span> <em>What does this account teach us about Jehovah?</em> We learn that our God greatly appreciates his loyal worshippers and always takes care of them. By the time the Babylonian exile ended, almost 1,000 years had passed since Jehovah saved the Gibeonites during Israel's conquest of the Promised Land. Yet, he continued to bless them. Descendants of the Gibeonites survived the destruction of Judah and Jerusalem in 607 B.C.E. After the exile, they continued to be closely involved with true worship, ministering with the Levites at the temple. Some apparently lived near the temple. (Ezra 2:70; Neh. 11:21) And they received an exemption from paying tax, tribute, and toll on account of their temple work.—Ezra 7:24.
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">16.</span> How can we imitate the Gibeonites when it comes to our worship?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>We want to make sacrifices to serve Jehovah because we love him — like Alwin, a brother in the Philippines with a high-paying oil-company job who kept taking time off to support circuit overseer visits. Eventually he quit his job to become a regular pioneer, and with his wife has helped 21 people learn the truth (<span class="scripture-chip" onclick="openSidebar('Matt. 6:33')">Matt. 6:33</span>).</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            What I appreciated about Alwin's account is that the decision wasn't sudden — he tested the waters first by taking time off for the circuit overseer's visits before making the bigger leap into pioneering.
+          </div>
+          <div class="prep-box">
+            <span class="prep-label">📌 Ministry connection:</span>
+            Alwin and his wife's fruitage — 21 people helped to learn the truth — is a concrete, encouraging example to share when discussing the rewards of prioritizing Kingdom interests.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">16</span> <em>How can we imitate the Gibeonites?</em> We too want to do all we can to support true worship. We willingly make sacrifices to serve Jehovah because we love him and want to please him. That was true of Alwin, a brother in the Philippines. He had a high-paying job working for an oil company. But he wanted to do more in his service to Jehovah. Whenever the circuit overseer visited his congregation, Alwin took time off from work to support the visit and enjoyed having a greater share in the ministry. After some time and many prayers, Alwin decided to quit his job and find one that would allow him to serve as a regular pioneer. Doing so would involve making financial sacrifices. Still, he reached his goal. His wife joined him in the pioneer ministry, and as a couple they have been able to help 21 people learn the truth. No doubt, Jehovah values this couple's efforts. We too can be confident that Jehovah appreciates any sacrifices we make in his service, and as a result, he will always care for our needs.—Matt. 6:33.
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">17.</span> What have we learned by reviewing Bible accounts about the Gibeonites?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>The Bible accounts about the Gibeonites shed light on Jehovah's endearing personality — humble, merciful, just, and loyal, and he always rewards his faithful worshippers. Like the Gibeonites, we want strong faith in Jehovah, humility to care for any theocratic assignment, patience to wait on Jehovah regarding injustices, and zeal and loyalty in supporting true worship.</p>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">17</span> The Bible accounts about the Gibeonites shed light on Jehovah's endearing personality. He is humble, merciful, just, and loyal. He always rewards his faithful worshippers. These Bible accounts also contain a number of practical lessons. Like the Gibeonites, we want to have strong faith in Jehovah, relying on him when faced with frightening events. Such faith will also move us to care humbly for any theocratic assignment we may receive. We want to wait patiently on Jehovah, confident that he will ultimately correct all injustices. And we support true worship with zeal and loyalty. As we do, we will show that we have learned valuable lessons from the Gibeonites.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REVIEW -->
+  <div class="review-section">
+    <div class="section-heading">How Would You Answer?</div>
+
+    <div class="qa-unit">
+      <div class="question-card">What can we learn from the Gibeonites about showing faith and humility?</div>
+      <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p>The Gibeonites trusted Jehovah's power enough to seek peace with his people and to call for rescue when threatened, and they willingly accepted humble, unglamorous service. We imitate them by trusting Jehovah fully — we know even more about him than they did — and by being willing to do humble tasks in his service.</p>
+        <div class="prep-box">
+          <span class="prep-label">💬 Personal comment:</span>
+          I want to look for opportunities to volunteer for tasks that aren't glamorous, the way that Bethelite quietly did with the night watch.
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-unit">
+      <div class="question-card">What can we learn from the Gibeonites about dealing with an injustice?</div>
+      <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p>The Gibeonites stayed within the bounds of God's Law even as the wronged party, and Jehovah eventually corrected the injustice done to them in his own time. We imitate this by waiting patiently on Jehovah rather than taking matters into our own hands when we're mistreated.</p>
+        <div class="prep-box">
+          <span class="prep-label">💬 Personal comment:</span>
+          Sister French's example encourages me that continuing to serve faithfully, even while waiting for a situation to be corrected, is itself an expression of trust in Jehovah.
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-unit">
+      <div class="question-card">What can we learn from the Gibeonites about loyally supporting true worship?</div>
+      <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p>Descendants of the Gibeonites returned from exile to serve at the temple even though they had no land inheritance to gain. We imitate their loyalty by making sacrifices to put Kingdom interests first, trusting that Jehovah will always care for our needs.</p>
+        <div class="prep-box">
+          <span class="prep-label">💬 Personal comment:</span>
+          Alwin's willingness to adjust his career for more time in the ministry is something I'd like to reflect on in my own schedule.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="closing-song-banner">
+    <strong>Closing Song:</strong> Song 148 — <a href="https://www.jw.org/en/library/music-songs/sing-out-joyfully/148-jehovah-provides-escape/" target="_blank" rel="noopener">Jehovah Provides Escape</a>
+  </div>
+
+  <div class="source-link">
+    Source: <a href="https://www.jw.org/en/library/magazines/watchtower-study-july-2026/Learn-From-the-Gibeonites/" target="_blank" rel="noopener">jw.org — "Learn From the Gibeonites," w26 July pp. 2-7</a>
+  </div>
+
+</div>
+
+<!-- Sidebar -->
+<div id="sidebarOverlay" onclick="closeSidebar()"></div>
+<div id="sidebar">
+  <button class="sb-close" onclick="closeSidebar()">&times;</button>
+  <h3 id="sbRef"></h3>
+  <div class="sb-text" id="sbText"></div>
+  <a class="sb-open-full" id="sbLink" href="#" target="_blank" rel="noopener">Open full chapter →</a>
+</div>
+
+<script>
+var scriptureData = {
+  "Josh. 10:1": { text: "As soon as King A·doʹni-zeʹdek of Jerusalem heard that Joshua had captured Aʹi and devoted it to destruction, doing to Aʹi and its king just as he had done to Jerʹi·cho and its king, and how the inhabitants of Gibʹe·on had made peace with Israel and remained among them,", url: "https://www.jw.org/en/library/bible/study-bible/books/joshua/10/" },
+  "Deut. 7:1": { text: "“When Jehovah your God brings you into the land you are about to enter and take possession of, he will also clear away populous nations from before you: the Hitʹtites, the Girʹga·shites, the Amʹor·ites, the Caʹnaan·ites, the Perʹiz·zites, the Hiʹvites, and the Jebʹu·sites, seven nations more populous and mightier than you are.", url: "https://www.jw.org/en/library/bible/study-bible/books/deuteronomy/7/" },
+  "Josh. 10:2": { text: "he was greatly alarmed, because Gibʹe·on was a great city, like one of the royal cities. It was greater than Aʹi, and all its men were warriors.", url: "https://www.jw.org/en/library/bible/study-bible/books/joshua/10/" },
+  "Ex. 34:11": { text: "“Pay attention to what I am commanding you today. Here I am driving out from before you the Amʹor·ites, the Caʹnaan·ites, the Hitʹtites, the Perʹiz·zites, the Hiʹvites, and the Jebʹu·sites.", url: "https://www.jw.org/en/library/bible/study-bible/books/exodus/34/" },
+  "Josh. 9:24": { text: "They answered Joshua: “It was because your servants were plainly told that Jehovah your God had commanded Moses his servant to give you all the land and to annihilate all its inhabitants from before you. So we were afraid for our lives because of you, and that is why we did this.", url: "https://www.jw.org/en/library/bible/study-bible/books/joshua/9/" },
+  "Josh. 9:8-13": { text: "They replied to Joshua: “We are your servants.” Then Joshua said to them: “Who are you, and where do you come from?” At this they said to him: “Your servants have come from a very distant land out of regard for the name of Jehovah your God, because we have heard about his fame and about all he did in Egypt and about all he did to the two kings of the Amʹor·ites who were on the other side of the Jordan, King Siʹhon of Heshʹbon and King Og of Baʹshan, who was in Ashʹta·roth. So our elders and all the inhabitants of our land told us, ‘Take provisions with you for the journey and go to meet them. Tell them: “We will be your servants; now make a covenant with us.”’ This bread that we took as our provisions was still hot on the day we left our houses to come here to you. Now you can see it is dry and crumbly. And these wineskins were new when we filled them, but now they have burst. And our garments and sandals have worn out because of the great length of the journey.”", url: "https://www.jw.org/en/library/bible/study-bible/books/joshua/9/" },
+  "Josh. 9:14, 15": { text: "At that the men took some of their provisions, but they did not inquire of Jehovah. So Joshua made peace with them and made a covenant with them to let them live, and that is what the chieftains of the assembly swore to them in an oath.", url: "https://www.jw.org/en/library/bible/study-bible/books/joshua/9/" },
+  "Josh. 9:16-19": { text: "At the end of three days, after they made a covenant with them, they heard that they lived nearby, in their vicinity. Then the Israelites set out and came to their cities on the third day; their cities were Gibʹe·on, Che·phiʹrah, Be·erʹoth, and Kirʹi·ath-jeʹa·rim. But the Israelites did not attack them, because the chieftains of the assembly had sworn an oath to them by Jehovah the God of Israel. So all the assembly began to murmur against the chieftains. At this all the chieftains said to the entire assembly: “Since we swore an oath to them by Jehovah the God of Israel, we are not allowed to hurt them.", url: "https://www.jw.org/en/library/bible/study-bible/books/joshua/9/" },
+  "Josh. 9:27": { text: "But that day Joshua made them gatherers of wood and drawers of water for the assembly and for Jehovah’s altar at the place that He should choose, and they remain so to this day.", url: "https://www.jw.org/en/library/bible/study-bible/books/joshua/9/" },
+  "Josh. 10:3-7": { text: "So A·doʹni-zeʹdek king of Jerusalem sent this message to Hoʹham king of Hebʹron, Piʹram king of Jarʹmuth, Ja·phiʹa king of Laʹchish, and Deʹbir king of Egʹlon: “Come to my aid, and let us attack Gibʹe·on, because it has made peace with Joshua and the Israelites.” At this the five kings of the Amʹor·ites—the king of Jerusalem, the king of Hebʹron, the king of Jarʹmuth, the king of Laʹchish, and the king of Egʹlon—gathered together along with their armies, and they marched on and encamped against Gibʹe·on to fight against it. Then the men of Gibʹe·on sent word to Joshua at the camp at Gilʹgal: “Do not forsake your slaves. Come quickly! Rescue us and help us! All the kings of the Amʹor·ites from the mountainous region have gathered against us.”", url: "https://www.jw.org/en/library/bible/study-bible/books/joshua/10/" },
+  "Josh. 10:9-14": { text: "Joshua came against them by surprise after marching all night long from Gilʹgal. Jehovah threw them into confusion before Israel, and they inflicted a great slaughter on them at Gibʹe·on, pursuing them by way of the ascent of Beth-hoʹron and striking them down as far as A·zeʹkah and Mak·keʹdah. While they were fleeing from Israel and were on the descent of Beth-hoʹron, Jehovah hurled great hailstones from the sky on them as far as A·zeʹkah, and they perished. In fact, more died from the hail than from the sword of the Israelites. It was then, on the day that Jehovah routed the Amʹor·ites before the eyes of the Israelites, that Joshua said to Jehovah before Israel: “Sun, stand still over Gibʹe·on, And moon, over the Valley of Aiʹja·lon!” So the sun stood still and the moon did not move until the nation could take vengeance on its enemies. Is it not written in the book of Jaʹshar? The sun stood still in the middle of the sky and did not hasten to set for about a whole day. There has never been a day like that one, either before it or after it, when Jehovah listened to the voice of a man, for Jehovah was fighting for Israel.", url: "https://www.jw.org/en/library/bible/study-bible/books/joshua/10/" },
+  "Num. 33:51, 52": { text: "“Speak to the Israelites and tell them, ‘You are crossing the Jordan into the land of Caʹnaan. You must drive away all the inhabitants of the land from before you and destroy all their carvings of stone and all their metal statues, and you should demolish all their sacred high places.", url: "https://www.jw.org/en/library/bible/study-bible/books/numbers/33/" },
+  "Josh. 9:26": { text: "And that is what he did with them; he saved them from the hands of the Israelites, and they did not kill them.", url: "https://www.jw.org/en/library/bible/study-bible/books/joshua/9/" },
+  "Josh. 11:19": { text: "There was no city that made peace with the Israelites except the Hiʹvites inhabiting Gibʹe·on. They conquered all the others by war.", url: "https://www.jw.org/en/library/bible/study-bible/books/joshua/11/" },
+  "Ps. 40:4, 5": { text: "Happy is the man who trusts in Jehovah And who does not look to the defiant or to those who are false. How many things you have done, O Jehovah my God, Your wonderful works and your thoughts toward us. None can compare to you; If I were to try to tell and speak of them, They would be too numerous to recount!", url: "https://www.jw.org/en/library/bible/study-bible/books/psalms/40/" },
+  "Josh. 9:23, 27": { text: "“From now on you are cursed, and you will always occupy a slave’s position as gatherers of wood and drawers of water for the house of my God.” ... But that day Joshua made them gatherers of wood and drawers of water for the assembly and for Jehovah’s altar at the place that He should choose, and they remain so to this day.", url: "https://www.jw.org/en/library/bible/study-bible/books/joshua/9/" },
+  "2 Sam. 21:2": { text: "So the king called the Gibʹe·on·ites and spoke to them. (Incidentally, the Gibʹe·on·ites were not Israelites but Amʹor·ites who remained, and the Israelites had sworn to spare them, but Saul sought to strike them down in his zeal for the people of Israel and Judah.)", url: "https://www.jw.org/en/library/bible/study-bible/books/2-samuel/21/" },
+  "2 Sam. 21:5, 6": { text: "They said to the king: “The man who exterminated us and schemed to annihilate us from living anywhere in the territory of Israel— let seven of his sons be given to us. We will hang their dead bodies before Jehovah in Gibʹe·ah of Saul, the chosen one of Jehovah.” The king then said: “I will hand them over.”", url: "https://www.jw.org/en/library/bible/study-bible/books/2-samuel/21/" },
+  "2 Sam. 21:1": { text: "Now there was a famine in the days of David for three consecutive years, so David consulted Jehovah, and Jehovah said: “There is bloodguilt on Saul and on his house, because he put the Gibʹe·on·ites to death.”", url: "https://www.jw.org/en/library/bible/study-bible/books/2-samuel/21/" },
+  "2 Sam. 21:3-6": { text: "David said to the Gibʹe·on·ites: “What should I do for you, and how can I make atonement, so that you will bless the inheritance of Jehovah?” The Gibʹe·on·ites said to him: “It is not a matter of silver or gold for us in connection with Saul and his household; nor can we put any man to death in Israel.” At that he said: “Whatever you say, I will do for you.” They said to the king: “The man who exterminated us and schemed to annihilate us from living anywhere in the territory of Israel— let seven of his sons be given to us. We will hang their dead bodies before Jehovah in Gibʹe·ah of Saul, the chosen one of Jehovah.” The king then said: “I will hand them over.”", url: "https://www.jw.org/en/library/bible/study-bible/books/2-samuel/21/" },
+  "Num. 35:30, 31": { text: "“‘Whoever kills a person should be put to death as a murderer on the testimony of witnesses; but no one will be put to death on the testimony of just one witness. You must take no ransom for the life of a murderer who is deserving to die, for he should be put to death without fail.", url: "https://www.jw.org/en/library/bible/study-bible/books/numbers/35/" },
+  "2 Sam. 21:9, 10, 14": { text: "Then he handed them over to the Gibʹe·on·ites, and they hung their dead bodies on the mountain before Jehovah. All seven of them died together; they were put to death in the first days of harvest, at the start of the barley harvest. Then Rizʹpah the daughter of Aʹiah took sackcloth and spread it out on the rock from the start of harvest until rain poured down from the heavens on the bodies; she did not allow the birds of the heavens to land on them by day nor the wild beasts of the field to come near by night. ... Then they buried the bones of Saul and of Jonʹa·than his son in the land of Benjamin in Zeʹla in the tomb of Kish his father. After they did everything that the king had commanded, God listened to their entreaties for the land.", url: "https://www.jw.org/en/library/bible/study-bible/books/2-samuel/21/" },
+  "Ps. 37:28": { text: "For Jehovah loves justice, And he will not abandon his loyal ones. They will always be guarded; But the descendants of the wicked will be done away with.", url: "https://www.jw.org/en/library/bible/study-bible/books/psalms/37/" },
+  "Amos 1:9": { text: "This is what Jehovah says, ‘For three revolts of Tyre, and for four, I will not reverse it, Because they handed over a whole group of exiles to Eʹdom, And because they did not remember the covenant of brothers.", url: "https://www.jw.org/en/library/bible/study-bible/books/amos/1/" },
+  "Isa. 26:3, 4": { text: "You will safeguard those who fully lean on you; You will give them continuous peace, Because it is in you that they trust. Trust in Jehovah forever, For Jah Jehovah is the eternal Rock.", url: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/26/" },
+  "Ezra 2:1, 2": { text: "And these were the people of the province who came up from the captives of the exile, those whom King Neb·u·chad·nezʹzar of Babylon had exiled to Babylon and who later returned to Jerusalem and Judah, each to his own city, those who came with Ze·rubʹba·bel, Jeshʹu·a, Ne·he·miʹah, Se·raiʹah, Re·el·aiʹah, Morʹde·cai, Bilʹshan, Misʹpar, Bigʹvai, Reʹhum, and Baʹa·nah. The number of the Israelite men included:", url: "https://www.jw.org/en/library/bible/study-bible/books/ezra/2/" },
+  "Ezra 2:58": { text: "All the temple servants and the sons of the servants of Solʹo·mon were 392.", url: "https://www.jw.org/en/library/bible/study-bible/books/ezra/2/" },
+  "Ezra 7:1-7": { text: "After these things, during the reign of King Ar·ta·xerxʹes of Persia, Ezʹra returned... This Ezʹra came up from Babylon. He was a copyist who was well-versed in the Law of Moses, which Jehovah the God of Israel had given. The king granted everything he requested, for the hand of Jehovah his God was upon him. Some of the Israelites, the priests, the Levites, the singers, the gatekeepers, and the temple servants, went up to Jerusalem in the seventh year of King Ar·ta·xerxʹes.", url: "https://www.jw.org/en/library/bible/study-bible/books/ezra/7/" },
+  "1 Chron. 9:2": { text: "The first inhabitants to return to their possession in their cities were some Israelites, the priests, the Levites, and the temple servants.", url: "https://www.jw.org/en/library/bible/study-bible/books/1-chronicles/9/" },
+  "Ezra 2:70": { text: "And the priests, the Levites, some of the people, the singers, the gatekeepers, and the temple servants settled in their cities, and all the rest of Israel settled in their cities.", url: "https://www.jw.org/en/library/bible/study-bible/books/ezra/2/" },
+  "Neh. 11:21": { text: "The temple servants were living in Oʹphel, and Ziʹha and Gishʹpa were in charge of the temple servants.", url: "https://www.jw.org/en/library/bible/study-bible/books/nehemiah/11/" },
+  "Ezra 7:24": { text: "And you are further advised that it is not permitted to impose any tax, tribute, or toll on any of the priests and Levites, musicians, doorkeepers, temple servants, and workers of this house of God.", url: "https://www.jw.org/en/library/bible/study-bible/books/ezra/7/" },
+  "Matt. 6:33": { text: "“Keep on, then, seeking first the Kingdom and his righteousness, and all these other things will be added to you.", url: "https://www.jw.org/en/library/bible/study-bible/books/matthew/6/" }
+};
+
+function openSidebar(ref) {
+  var data = scriptureData[ref];
+  var sb = document.getElementById('sidebar');
+  var ov = document.getElementById('sidebarOverlay');
+  document.getElementById('sbRef').textContent = ref;
+  if (data) {
+    document.getElementById('sbText').textContent = '“' + data.text + '”';
+    document.getElementById('sbLink').href = data.url;
+  } else {
+    document.getElementById('sbText').textContent = '(Full verse text not loaded — open the full chapter to read it.)';
+    document.getElementById('sbLink').href = 'https://www.jw.org/en/library/bible/study-bible/books/';
+  }
+  sb.classList.add('open');
+  ov.classList.add('open');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebarOverlay').classList.remove('open');
+}
+function toggleAnswer(btn) {
+  var box = btn.nextElementSibling;
+  box.classList.toggle('open');
+  btn.textContent = box.classList.contains('open') ? '▾ Hide comment' : '▸ Show comment';
+}
+var allExpanded = false;
+function toggleAll() {
+  var boxes = document.querySelectorAll('.answer-box');
+  var btns = document.querySelectorAll('.toggle-answer');
+  allExpanded = !allExpanded;
+  boxes.forEach(function(b){ b.classList.toggle('open', allExpanded); });
+  btns.forEach(function(b){ b.textContent = allExpanded ? '▾ Hide comment' : '▸ Show comment'; });
+  document.getElementById('expandAllBtn').textContent = allExpanded ? 'Collapse All' : 'Expand All';
+}
+</script>
+
+</body>
+</html>
