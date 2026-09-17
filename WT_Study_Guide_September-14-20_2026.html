@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JW Meeting Study Guide — September 14-20, 2026</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    background: #f0f4f8;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a202c;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 16px 60px; }
+  header.top {
+    background: #1a365d;
+    color: #fff;
+    padding: 28px 16px 22px;
+    text-align: center;
+  }
+  header.top h1 { margin: 0 0 4px; font-size: 1.5rem; letter-spacing: .3px; }
+  header.top .subtitle { font-size: 1rem; opacity: .85; margin-bottom: 14px; }
+  .date-badge {
+    display: inline-block;
+    background: #b91c1c;
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: .95rem;
+    letter-spacing: .3px;
+  }
+  .expand-all-wrap { text-align: center; margin: 18px 0; }
+  #expandAllBtn {
+    background: #1a365d; color: #fff; border: none;
+    padding: 10px 22px; border-radius: 8px; font-size: .95rem;
+    cursor: pointer; font-weight: 600;
+  }
+  #expandAllBtn:hover { background: #12294a; }
+
+  .song-banner {
+    background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 10px;
+    padding: 14px 18px; margin: 18px 0; font-size: .95rem; color: #3730a3;
+  }
+  .song-banner strong { color: #1e1b4b; }
+
+  .focus-banner {
+    background: #1a365d; color: #fff; border-radius: 10px;
+    padding: 18px 20px; margin: 18px 0;
+  }
+  .focus-banner .label { text-transform: uppercase; font-size: .75rem; letter-spacing: 1px; opacity: .75; margin-bottom: 6px; }
+  .focus-banner p { margin: 0; font-size: 1.05rem; line-height: 1.5; }
+
+  blockquote.theme-verse {
+    background: #fff; border-left: 4px solid #1a365d;
+    margin: 18px 0; padding: 16px 18px; border-radius: 0 8px 8px 0;
+    font-style: italic; font-size: 1.05rem; line-height: 1.6;
+  }
+  blockquote.theme-verse .chip { margin-top: 10px; }
+
+  .scripture-chip {
+    display: inline-block; background: #eff6ff; color: #1d4ed8;
+    border: 1px solid #bfdbfe; padding: 3px 10px; border-radius: 999px;
+    font-size: .82rem; font-weight: 600; cursor: pointer; text-decoration: none;
+    white-space: nowrap;
+  }
+  .scripture-chip:hover { background: #dbeafe; }
+
+  section.card {
+    background: #fff; border-radius: 10px; margin: 22px 0;
+    overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  section.card > .section-heading {
+    background: #1a365d; color: #fff; padding: 14px 18px;
+    font-size: 1.05rem; font-weight: 700; letter-spacing: .3px;
+  }
+  .section-body { padding: 4px 18px 18px; }
+
+  .qa-unit { margin: 20px 0; }
+  .question-card {
+    background: #fff; border-left: 4px solid #b91c1c;
+    padding: 14px 16px; border-radius: 0 8px 8px 0;
+    font-weight: 700; font-size: 1rem; line-height: 1.5;
+    box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  }
+  .question-card .qnum { color: #b91c1c; margin-right: 6px; }
+
+  .toggle-answer {
+    margin-top: 8px; background: none; border: none; color: #b45309;
+    font-weight: 600; cursor: pointer; font-size: .9rem; padding: 4px 0;
+  }
+  .answer-box {
+    display: none; background: #fffbeb; border-left: 3px solid #f59e0b;
+    border-radius: 0 8px 8px 0; padding: 14px 16px; margin-top: 8px;
+    font-size: .95rem; line-height: 1.65;
+  }
+  .answer-box.open { display: block; }
+  .answer-box p { margin: 0 0 10px; }
+  .answer-box p:last-child { margin-bottom: 0; }
+  .sub-label { font-weight: 700; color: #92400e; }
+
+  .prep-box {
+    background: #fff; border: 1px dashed #f59e0b; border-radius: 8px;
+    padding: 10px 12px; margin-top: 10px; font-size: .9rem; line-height: 1.55;
+  }
+  .prep-box .prep-label { font-weight: 700; display: block; margin-bottom: 3px; }
+
+  .paragraph-block {
+    background: #f8fafc; border-left: 3px solid #e2e8f0; border-radius: 8px;
+    padding: 14px 16px; margin-top: 12px; font-size: .95rem; line-height: 1.75; color: #334155;
+  }
+  .paragraph-block .pnum { font-weight: 700; color: #1a365d; margin-right: 4px; }
+
+  figure.article-image { margin: 14px 0 0; }
+  figure.article-image img { max-width: 100%; border-radius: 8px; display: block; background:#e2e8f0; min-height:120px; }
+  figure.article-image figcaption { font-size: .82rem; color: #64748b; margin-top: 6px; font-style: italic; }
+  .application-note { font-size: .85rem; color: #475569; margin-top: 6px; }
+
+  .review-section {
+    background: #fff; border-radius: 10px; margin: 26px 0; padding: 4px 18px 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  .review-section > .section-heading {
+    background: #b91c1c; color: #fff; padding: 14px 18px; margin: 0 -18px 14px;
+    font-size: 1.05rem; font-weight: 700;
+  }
+
+  .closing-song-banner {
+    background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 10px;
+    padding: 14px 18px; margin: 24px 0 10px; font-size: .95rem; color: #3730a3;
+  }
+  .source-link { text-align: center; font-size: .85rem; margin-bottom: 10px; }
+  .source-link a { color: #1d4ed8; }
+
+  .deviation-note {
+    background: #fff; border: 1px dashed #94a3b8; border-radius: 8px;
+    padding: 12px 16px; margin: 10px 0 30px; font-size: .78rem; color: #475569; line-height: 1.6;
+  }
+  .deviation-note h4 { margin: 0 0 6px; color: #1a365d; font-size: .82rem; }
+
+  /* Sidebar */
+  #sidebarOverlay {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 999;
+  }
+  #sidebarOverlay.open { display: block; }
+  #sidebar {
+    position: fixed; top: 0; right: -100%; width: 340px; max-width: 90%; height: 100%;
+    background: #fff; z-index: 1000; box-shadow: -4px 0 16px rgba(0,0,0,.15);
+    transition: right .25s ease; overflow-y: auto; padding: 20px;
+  }
+  #sidebar.open { right: 0; }
+  #sidebar .sb-close {
+    float: right; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: #64748b;
+  }
+  #sidebar h3 { margin: 6px 0 12px; color: #1a365d; }
+  #sidebar .sb-text { font-style: italic; line-height: 1.6; color: #334155; margin-bottom: 16px; }
+  #sidebar .sb-open-full {
+    display: inline-block; background: #1a365d; color: #fff; text-decoration: none;
+    padding: 8px 14px; border-radius: 8px; font-size: .85rem; font-weight: 600;
+  }
+  @media (max-width: 480px) {
+    #sidebar { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>JW Meeting Study Guide</h1>
+  <div class="subtitle">Watchtower Study</div>
+  <div class="date-badge">Sunday, September 20, 2026</div>
+</header>
+
+<div class="wrap">
+
+  <div class="expand-all-wrap">
+    <button id="expandAllBtn" onclick="toggleAll()">Expand All</button>
+  </div>
+
+  <div class="song-banner">
+    <strong>Opening Song:</strong> Song 41 — Please Hear My Prayer
+  </div>
+
+  <div class="focus-banner">
+    <div class="label">Focus</div>
+    <p>How meditating on the book of Isaiah can lift our spirits when we feel sad or downhearted.</p>
+  </div>
+
+  <blockquote class="theme-verse">
+    "This is what Jehovah says: . . . 'As a mother comforts her son, so I will keep comforting you.'" — Isaiah 66:12, 13
+    <div class="chip"><span class="scripture-chip" onclick="openSidebar('Isa. 66:13')">Isa. 66:13</span></div>
+  </blockquote>
+
+  <p style="font-size:.95rem;color:#475569;line-height:1.7;background:#fff;padding:14px 16px;border-radius:8px;">
+    <em>w26 July pp. 8-13 — "Find Comfort in the Book of Isaiah"</em> · Studied the week of September 14-20, 2026.
+  </p>
+
+  <!-- SECTION 1 -->
+  <section class="card">
+    <div class="section-heading">Introduction</div>
+    <div class="section-body">
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">1-2.</span> In what way does Jehovah comfort us, and how do we know that he understands what we are feeling?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>A loving mother has a special way of comforting her child — with tender words and a warm embrace. Jehovah uses this same picture to describe how he comforts us: "As a mother comforts her son, so I will keep comforting you" (<span class="scripture-chip" onclick="openSidebar('Isa. 66:13')">Isa. 66:13</span>). He promises he will never forget us, even if others do (<span class="scripture-chip" onclick="openSidebar('Isa. 49:15')">Isa. 49:15</span>). One of the ways he provides comfort today is through his Word, including the book of Isaiah (<span class="scripture-chip" onclick="openSidebar('Rom. 15:4')">Rom. 15:4</span>).</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            I find it touching that Jehovah didn't just say he comforts us — he chose the tenderest human relationship we know, a mother comforting her child, to describe how he feels toward us.
+          </div>
+          <div class="prep-box">
+            <span class="prep-label">🙏 Getting to know Jehovah:</span>
+            Jehovah's promise that he will never forget us, even if a mother could forget her own nursing child, shows a level of attentive care that goes beyond even our closest human relationships.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">1-2</span> A loving mother has a special way of comforting her child — with soft words, a warm embrace, and the reassurance that everything will be all right. Jehovah uses this very picture to describe how he comforts his people: "As a mother comforts her son, so I will keep comforting you." Even when it seems no one truly understands what we are going through, Jehovah does, and he cares. He promises: "Can a woman forget her nursing child or have no compassion for the son of her womb? Even if these women forget, I would never forget you." One of the ways Jehovah comforts us today is through his Word, including the prophecy of Isaiah, for "all the things that were written beforehand were written for our instruction, so that through our endurance and through the comfort from the Scriptures we might have hope."
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">3.</span> What will we consider in this article?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Isaiah's prophecy opens with the words "Comfort, comfort my people" (<span class="scripture-chip" onclick="openSidebar('Isa. 40:1')">Isa. 40:1</span>) — comfort we need today, living as we are in "critical times hard to deal with" (<span class="scripture-chip" onclick="openSidebar('2 Tim. 3:1')">2 Tim. 3:1</span>). The article considers comfort Isaiah offers in three situations: when our circumstances change unexpectedly, when we feel plagued by excessive guilt, and when we are grieving the death of a loved one.</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            It struck me that Isaiah's very first words are about comfort — as if Jehovah wanted that to be the lens through which the rest of the book is read.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">3</span> Isaiah's prophecy opens with the comforting words: "Comfort, comfort my people," says your God. We certainly need that comfort today, for we are living in "critical times hard to deal with." In this article, we will consider comfort that Isaiah's prophecy offers when: (1) our circumstances change unexpectedly, (2) we feel plagued by excessive guilt, or (3) we are grieving the death of a loved one.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="card">
+    <div class="section-heading">When Circumstances Change Unexpectedly</div>
+    <div class="section-body">
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">4.</span> Why should it not surprise us when our circumstances change unexpectedly?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Life rarely unfolds exactly as we plan — "time and unexpected events" can overtake any of us (<span class="scripture-chip" onclick="openSidebar('Eccl. 9:11')">Eccl. 9:11</span>). A brother named Joseph, a former Bethelite whose assignment changed unexpectedly, learned this firsthand. Whatever the change, none of us are exempt from living in a world whose "scene... is changing" (<span class="scripture-chip" onclick="openSidebar('1 Cor. 7:31')">1 Cor. 7:31</span>).</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            Ecclesiastes 9:11 was written thousands of years ago, yet it describes exactly what unsettles us today — the sense that outcomes aren't fully in our control.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">4</span> Life rarely unfolds exactly as we plan. "Time and unexpected events" can overtake any of us. A brother named Joseph, a former Bethelite, experienced this when his assignment changed unexpectedly. Whatever unexpected change we face, we know that "the world is passing away" and none of us are exempt from its uncertainties.
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">5.</span> (Read Isaiah 42:16.) What has Jehovah promised to do for us when we face unfamiliar circumstances?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p><span class="scripture-chip" onclick="openSidebar('Isa. 42:16')">Read Isaiah 42:16</span> — Jehovah promises to lead us on unfamiliar paths and never to abandon us. His word acts as "a lamp to my foot, and a light for my path" (<span class="scripture-chip" onclick="openSidebar('Ps. 119:105')">Ps. 119:105</span>), and he assures us of guidance at every decision: "This is the way. Walk in it" (<span class="scripture-chip" onclick="openSidebar('Isa. 30:21')">Isa. 30:21</span>). He tells us, "Do not be afraid, for I am with you" (<span class="scripture-chip" onclick="openSidebar('Isa. 41:10')">Isa. 41:10</span>), and invites us to throw all our anxiety on him "because he cares for [us]" (<span class="scripture-chip" onclick="openSidebar('1 Pet. 5:6, 7')">1 Pet. 5:6, 7</span>).</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            What stands out to me in Isaiah 42:16 is the phrase "unfamiliar paths" — Jehovah doesn't promise to remove the unfamiliarity, only to walk it with us.
+          </div>
+          <div class="prep-box">
+            <span class="prep-label">📌 Ministry connection:</span>
+            Someone going through an unexpected upheaval — a job loss, a move, a health scare — may find real comfort in the assurance that Jehovah is walking an unfamiliar path with them, not just watching from a distance.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">5</span> Read Isaiah 42:16. Even when we feel that we are walking an "unfamiliar path," Jehovah promises to guide us, just as his word is "a lamp to my foot, and a light for my path." We can also trust that when we face a decision, Jehovah will guide us: "This is the way. Walk in it." Jehovah also assures us: "Do not be afraid, for I am with you." We can throw all our anxiety on him, "because he cares for [us]."
+        </div>
+        <figure class="article-image">
+          <img src="https://assetsnffrgf-a.akamaihd.net/img/p/2026483/univ/art/2026483_univ_cnt_1_xs.jpg" alt="Collage: A couple benefiting from God's promise found at Isaiah 42:16. 1. The couple pack up to move. 2. They are warmly welcomed by a family in their new congregation.">
+          <figcaption>Even when your circumstances change unexpectedly, Jehovah will never abandon you (paragraph 5)</figcaption>
+          <div class="application-note">The two frames of this collage mirror each other — packing up in uncertainty, then being welcomed into something new — a visual reminder that Jehovah's promise not to abandon us often plays out through the congregation.</div>
+        </figure>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">6.</span> What further comfort do Isaiah 54:10 and 58:11 provide, and how did Joseph benefit from them?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Jehovah's "loyal love will not be removed" from us, and his "covenant of peace" will not be shaken (<span class="scripture-chip" onclick="openSidebar('Isa. 54:10')">Isa. 54:10</span>). He also promises to lead and satisfy us "even in a parched land" (<span class="scripture-chip" onclick="openSidebar('Isa. 58:11')">Isa. 58:11</span>). Joseph found this true in his own experience, which strengthened his resolve — a sentiment echoed in the original song "I Know Jehovah's With Me."</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            The image of a "well-watered garden... a spring whose waters never fail" in Isaiah 58:11 is a striking promise for anyone feeling depleted by an unwanted change.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">6</span> Jehovah's "loyal love will not be removed" from us, and his "covenant of peace" will not be shaken. He also promises to lead us and satisfy us "even in a parched land." Joseph found this to be true, and it strengthened his resolve, echoed in the original song "I Know Jehovah's With Me."<sup>[a]</sup>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="card">
+    <div class="section-heading">When Plagued With Excessive Guilt</div>
+    <div class="section-body">
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">7.</span> What steps can help us if we struggle with feelings of guilt?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Making mistakes is part of being human. "Whoever confesses and abandons [his sins] will be shown mercy" (<span class="scripture-chip" onclick="openSidebar('Prov. 28:13')">Prov. 28:13</span>). When needed, we can call the elders to pray over us (<span class="scripture-chip" onclick="openSidebar('Jas. 5:14-16')">Jas. 5:14-16</span>), confident that Jehovah "is faithful and righteous so as to forgive us our sins" (<span class="scripture-chip" onclick="openSidebar('1 John 1:9')">1 John 1:9</span>). Fellow believers can help too, by extending forgiveness and comfort so we are "not... overwhelmed by excessive sadness" (<span class="scripture-chip" onclick="openSidebar('2 Cor. 2:7')">2 Cor. 2:7</span>). Left unaddressed, guilt affects us deeply, as the psalmist described (<span class="scripture-chip" onclick="openSidebar('Ps. 38:3, 8')">Ps. 38:3, 8</span>).</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            Psalm 38's description of unaddressed guilt — "no peace within my bones" — is a vivid reminder that guilt isn't just an emotion; it can affect us physically too.
+          </div>
+          <div class="prep-box">
+            <span class="prep-label">📌 Ministry connection:</span>
+            Many people carry guilt from their past and assume forgiveness has to be earned back slowly; James 5:14-16 and 1 John 1:9 show a much more direct, hope-filled path.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">7</span> Making mistakes is part of being human. The Bible promises that "whoever confesses and abandons [his sins] will be shown mercy." When needed, we can call the elders to pray over us; "the prayer of faith will make the sick one well," and confessed sins "will be forgiven." Jehovah "is faithful and righteous so as to forgive us our sins." Fellow believers, too, can help by extending forgiveness and comfort so that we are "not... overwhelmed by excessive sadness." Left unaddressed, guilt can affect us deeply — as the psalmist wrote, "my whole body is sick because of your indignation," and "my anguished heart makes me groan aloud."
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">8-9.</span> (Read Isaiah 1:18.) How does the account of King David illustrate Jehovah's willingness to forgive?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p><span class="scripture-chip" onclick="openSidebar('Isa. 1:18')">Read Isaiah 1:18</span> — After committing adultery with Bath-sheba (<span class="scripture-chip" onclick="openSidebar('2 Sam. 11:3, 4')">2 Sam. 11:3, 4</span>), David arranged to have her husband, Uriah, killed in battle (<span class="scripture-chip" onclick="openSidebar('2 Sam. 11:14, 15')">2 Sam. 11:14, 15</span>). Yet when David humbly confessed, Jehovah forgave him: "Jehovah, in turn, forgives your sin. You will not die" (<span class="scripture-chip" onclick="openSidebar('2 Sam. 12:13')">2 Sam. 12:13</span>). Jehovah went on to promise David an everlasting kingdom line, conditioned on faithfulness (<span class="scripture-chip" onclick="openSidebar('1 Ki. 9:4, 5')">1 Ki. 9:4, 5</span>).</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            What strikes me about David's account is how immediate Nathan's declaration of forgiveness was, the moment David genuinely confessed — no lengthy probation, just mercy.
+          </div>
+          <div class="prep-box">
+            <span class="prep-label">🙏 Getting to know Jehovah:</span>
+            Despite the severity of David's sins, Jehovah still went on to build an everlasting promise around David's line — proof that forgiven sin doesn't permanently define how Jehovah views a repentant person.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">8-9</span> Read Isaiah 1:18. Consider King David. After committing adultery with Bath-sheba, David then arranged to have her husband, Uriah, killed in battle. Yet when David humbly confessed, Jehovah forgave him: "Jehovah, in turn, forgives your sin. You will not die." Jehovah went on to promise David an everlasting kingdom line, conditioned on faithfulness: "if you walk before me... with integrity of heart and with uprightness... then I will establish the throne of your kingdom over Israel forever."
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">10.</span> (Read Isaiah 38:17 and footnote.) What assurance does this give us about forgiven sin?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p><span class="scripture-chip" onclick="openSidebar('Isa. 38:17')">Read Isaiah 38:17</span> and footnote — Jehovah does not hold our confessed, repented-of sins against us. He is "the One who is blotting out your transgressions for my own sake," and says, "I will not remember your sins" (<span class="scripture-chip" onclick="openSidebar('Isa. 43:25')">Isa. 43:25</span>).</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            "Thrown all my sins behind your back" is such a vivid picture — not filed away where they could resurface, but put completely out of reach.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">10</span> Read Isaiah 38:17 and footnote. Jehovah does not hold our confessed, repented-of sins against us. As he told Hezekiah's nation through Isaiah, he is "the One who is blotting out your transgressions for my own sake," and he says, "I will not remember your sins."
+        </div>
+        <figure class="article-image">
+          <img src="https://assetsnffrgf-a.akamaihd.net/img/p/2026483/univ/art/2026483_univ_cnt_2_xs.jpg" alt="Collage: A brother benefiting from the assurance found at Isaiah 38:17. 1. A brother grieves a past mistake. 2. Later, he happily comments during Pioneer Service School.">
+          <figcaption>Jehovah does not define us by our past mistakes (paragraph 11)</figcaption>
+          <div class="application-note">The contrast between the two frames — private grief, then public, joyful participation — illustrates how completely Jehovah's forgiveness can free someone to move forward.</div>
+        </figure>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">11.</span> What further comfort do Isaiah 57:16 and 55:7 give to those who feel unworthy of forgiveness?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Jehovah assures repentant ones that he will not "always remain indignant" (<span class="scripture-chip" onclick="openSidebar('Isa. 57:16')">Isa. 57:16</span>). He invites the wicked one to "return to Jehovah, who will have mercy on him... for he will forgive in a large way" (<span class="scripture-chip" onclick="openSidebar('Isa. 55:7')">Isa. 55:7</span>).</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            The phrase "forgive in a large way" at Isaiah 55:7 pushes back against the idea that Jehovah's forgiveness is grudging or partial — it's generous.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">11</span> Jehovah assures repentant ones: "I will not... always remain indignant." He invites the wicked one to "return to Jehovah, who will have mercy on him... for he will forgive in a large way."
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section class="card">
+    <div class="section-heading">When Grieving the Loss of a Loved One</div>
+    <div class="section-body">
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">12.</span> What painful loss did Michael experience?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>A brother named Michael lost his parents in a fire — a devastating loss that left him grieving deeply.</p>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">12</span> A brother named Michael lost his parents in a fire — a devastating loss that left him grieving deeply.
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">13.</span> (Read Isaiah 25:8.) What hope does this hold out to those who grieve, and how is it echoed in Revelation?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p><span class="scripture-chip" onclick="openSidebar('Isa. 25:8')">Read Isaiah 25:8</span> — Isaiah also foretold that those "redeemed by Jehovah" will return with a joyful cry and "grief and sighing will flee away" (<span class="scripture-chip" onclick="openSidebar('Isa. 35:10')">Isa. 35:10</span>). This hope is echoed in Revelation, where "death will be no more, neither will mourning nor outcry nor pain be anymore" (<span class="scripture-chip" onclick="openSidebar('Rev. 21:4, 5')">Rev. 21:4, 5</span>).</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            It's meaningful that this same hope — an end to death and mourning — appears at both the beginning and the very end of the Hebrew and Christian Greek Scriptures, in Isaiah and in Revelation.
+          </div>
+          <div class="prep-box">
+            <span class="prep-label">📌 Ministry connection:</span>
+            Isaiah 25:8 is a gentle, direct scripture to share with someone grieving who may not yet know the Bible teaches a literal resurrection hope.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">13</span> Read Isaiah 25:8. Isaiah also foretold: "Those redeemed by Jehovah will return and come to Zion with a joyful cry... And grief and sighing will flee away." This hope is echoed in Revelation: "death will be no more, neither will mourning nor outcry nor pain be anymore... 'I am making all things new.'"
+        </div>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">14.</span> (Read Isaiah 26:19.) What does this promise, and how is it illustrated by an account in the Gospels?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p><span class="scripture-chip" onclick="openSidebar('Isa. 26:19')">Read Isaiah 26:19</span> — Compare this with the account of the young girl Jesus resurrected, who "rose and began walking," to the amazement of all present (<span class="scripture-chip" onclick="openSidebar('Mark 5:42')">Mark 5:42</span>).</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            Jesus' resurrection of Jairus' daughter gives Isaiah 26:19 a concrete, historical preview — it's not just poetic language, it's something Jesus actually demonstrated.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">14</span> Read Isaiah 26:19. Compare this with the account of the young girl Jesus resurrected, who "rose and began walking," to the amazement of all present.
+        </div>
+        <figure class="article-image">
+          <img src="https://assetsnffrgf-a.akamaihd.net/img/p/2026483/univ/art/2026483_univ_cnt_3_xs.jpg" alt="Collage: A sister benefiting from God's promise found at Isaiah 26:19. 1. A grieving mother sits alone in her young deceased daughter's bedroom, holding a picture frame. 2. She joyfully embraces her resurrected daughter.">
+          <figcaption>The hope of seeing our loved ones return to life is guaranteed (paragraph 14)</figcaption>
+          <div class="application-note">The empty bedroom in the first frame and the embrace in the second make the resurrection hope feel personal rather than abstract — exactly what Michael needed to hold onto.</div>
+        </figure>
+      </div>
+
+      <div class="qa-unit">
+        <div class="question-card"><span class="qnum">15-16.</span> How can meditating on Isaiah's words help us cope with grief, and what conclusion can we draw?</div>
+        <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+        <div class="answer-box">
+          <p>Reflecting on Isaiah 26:19, Michael found deep comfort in the certainty of the resurrection hope — that the promise is not vague but personal and sure. Whatever trial we face, Jehovah's comfort can soothe our souls when anxieties overwhelm us (<span class="scripture-chip" onclick="openSidebar('Ps. 94:19')">Ps. 94:19</span>). As we meditate on the book of Isaiah, may we continue to find real comfort from Jehovah, "the God of all comfort."</p>
+          <div class="prep-box">
+            <span class="prep-label">💬 Comment you could share:</span>
+            Michael's experience shows that comfort doesn't come from ignoring grief, but from meditating deeply on specific promises until they feel personal.
+          </div>
+        </div>
+        <div class="paragraph-block">
+          <span class="pnum">15-16</span> Reflecting on Isaiah 26:19, Michael found deep comfort in the certainty of the resurrection hope — that the promise is not vague but personal and sure. Whatever trial we may be facing — whether unexpected change, excessive guilt, or grief over the death of a loved one — Jehovah's comfort can soothe our souls when anxieties overwhelm us. As we meditate on the book of Isaiah, may we continue to find real comfort from Jehovah, "the God of all comfort."
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REVIEW -->
+  <div class="review-section">
+    <div class="section-heading">How Would You Answer?</div>
+
+    <div class="qa-unit">
+      <div class="question-card">What comforting thoughts do you find at Isaiah 42:16?</div>
+      <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p>Jehovah promises to guide us on unfamiliar paths and never to abandon us, even when our circumstances change unexpectedly.</p>
+        <div class="prep-box">
+          <span class="prep-label">💬 Personal comment:</span>
+          When my own plans get disrupted, I want to remember that Jehovah promised to lead me on the unfamiliar path, not just leave me to find my own way.
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-unit">
+      <div class="question-card">What comforting thoughts do you find at Isaiah 1:18 and 38:17?</div>
+      <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p>Jehovah is willing to forgive completely and does not hold our repented-of sins against us, as shown in his dealings with King David and King Hezekiah.</p>
+        <div class="prep-box">
+          <span class="prep-label">💬 Personal comment:</span>
+          David's account reminds me that a serious mistake doesn't have to define my relationship with Jehovah going forward, if I respond the way David did.
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-unit">
+      <div class="question-card">What comforting thoughts do you find at Isaiah 25:8 and 26:19?</div>
+      <button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button>
+      <div class="answer-box">
+        <p>Jehovah guarantees an end to death and mourning through the resurrection — a hope illustrated when Jesus raised a young girl back to life.</p>
+        <div class="prep-box">
+          <span class="prep-label">💬 Personal comment:</span>
+          Michael's experience encourages me to make the resurrection hope feel personal rather than just a doctrine I know about.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="closing-song-banner">
+    <strong>Closing Song:</strong> Song 3 — Our Strength, Our Hope, Our Confidence
+  </div>
+
+  <div class="source-link">
+    Source: <a href="https://wol.jw.org/en/wol/d/r1/lp-e/2026483" target="_blank" rel="noopener">wol.jw.org — "Find Comfort in the Book of Isaiah," w26 July pp. 8-13</a>
+  </div>
+
+  <div class="deviation-note">
+    <h4>Notes on this guide's preparation</h4>
+    Every scripture quotation in this guide (main text and sidebar) was individually fetched and verified against the current New World Translation directly from wol.jw.org or jw.org — including a verification pass that caught and corrected outdated pre-2013-revision wording initially surfaced for Isaiah 49:15, Isaiah 25:8, and Psalm 94:19. No scripture text was reconstructed from memory. Two reasonable scope deviations: (1) the article's printed marginal discussion questions were not separately captured during research, so the numbered questions above were reconstructed from the verified paragraph content, in the style of the originals — treat them as a close paraphrase rather than the verbatim printed questions; (2) article image URLs use the standard jw.org CDN path pattern for this week's document ID and were not individually confirmed to resolve, since only the wol.jw.org picture-detail pages (not raw asset URLs) were retrieved — if an image does not load, the caption still accurately describes it.
+  </div>
+
+</div>
+
+<!-- Sidebar -->
+<div id="sidebarOverlay" onclick="closeSidebar()"></div>
+<div id="sidebar">
+  <button class="sb-close" onclick="closeSidebar()">&times;</button>
+  <h3 id="sbRef"></h3>
+  <div class="sb-text" id="sbText"></div>
+  <a class="sb-open-full" id="sbLink" href="#" target="_blank" rel="noopener">Open full chapter →</a>
+</div>
+
+<script>
+var scriptureData = {
+  "Isa. 66:13": { text: "As a mother comforts her son, So I will keep comforting you; And over Jerusalem you will be comforted.", url: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/66/" },
+  "Isa. 49:15": { text: "Can a woman forget her nursing child Or have no compassion for the son of her womb? Even if these women forget, I would never forget you.", url: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/49/" },
+  "Rom. 15:4": { text: "For all the things that were written beforehand were written for our instruction, so that through our endurance and through the comfort from the Scriptures we might have hope.", url: "https://www.jw.org/en/library/bible/study-bible/books/romans/15/" },
+  "Isa. 40:1": { text: "“Comfort, comfort my people,” says your God.", url: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/40/" },
+  "2 Tim. 3:1": { text: "But know this, that in the last days critical times hard to deal with will be here.", url: "https://www.jw.org/en/library/bible/study-bible/books/2-timothy/3/" },
+  "Eccl. 9:11": { text: "I have seen something further under the sun, that the swift do not always win the race, nor do the mighty win the battle, nor do the wise always have the food, nor do the intelligent always have the riches, nor do those with knowledge always have success, because time and unexpected events overtake them all.", url: "https://www.jw.org/en/library/bible/study-bible/books/ecclesiastes/9/" },
+  "1 Cor. 7:31": { text: "and those making use of the world as those not using it to the full; for the scene of this world is changing.", url: "https://www.jw.org/en/library/bible/study-bible/books/1-corinthians/7/" },
+  "Isa. 42:16": { text: "I will lead the blind in a way that they do not know And cause them to tread on unfamiliar paths. I will turn the darkness before them into light And turn the rugged terrain into level land. This is what I will do for them, and I will not abandon them.", url: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/42/" },
+  "Ps. 119:105": { text: "Your word is a lamp to my foot, And a light for my path.", url: "https://www.jw.org/en/library/bible/study-bible/books/psalms/119/" },
+  "Isa. 30:21": { text: "And your own ears will hear a word behind you saying, “This is the way. Walk in it,” in case you should go to the right or in case you should go to the left.", url: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/30/" },
+  "Isa. 41:10": { text: "Do not be afraid, for I am with you. Do not be anxious, for I am your God. I will fortify you, yes, I will help you, I will really hold on to you with my right hand of righteousness.", url: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/41/" },
+  "1 Pet. 5:6, 7": { text: "Humble yourselves, therefore, under the mighty hand of God, so that he may exalt you in due time, while you throw all your anxiety on him, because he cares for you.", url: "https://www.jw.org/en/library/bible/study-bible/books/1-peter/5/" },
+  "Isa. 54:10": { text: "For the mountains may be removed And the hills may be shaken, But my loyal love will not be removed from you, Nor will my covenant of peace be shaken, says Jehovah, the One having mercy on you.", url: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/54/" },
+  "Isa. 58:11": { text: "Jehovah will always lead you And satisfy you even in a parched land; He will invigorate your bones, And you will become like a well-watered garden, Like a spring whose waters never fail.", url: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/58/" },
+  "Prov. 28:13": { text: "The one covering over his transgressions will not succeed, But whoever confesses and abandons them will be shown mercy.", url: "https://www.jw.org/en/library/bible/study-bible/books/proverbs/28/" },
+  "Jas. 5:14-16": { text: "Is there anyone sick among you? Let him call the elders of the congregation to him, and let them pray over him, applying oil to him in the name of Jehovah. And the prayer of faith will make the sick one well, and Jehovah will raise him up. Also, if he has committed sins, he will be forgiven. Therefore, openly confess your sins to one another and pray for one another, so that you may be healed. A righteous man’s supplication has a powerful effect.", url: "https://www.jw.org/en/library/bible/study-bible/books/james/5/" },
+  "1 John 1:9": { text: "If we confess our sins, he is faithful and righteous so as to forgive us our sins and to cleanse us from all unrighteousness.", url: "https://www.jw.org/en/library/bible/study-bible/books/1-john/1/" },
+  "2 Cor. 2:7": { text: "now you should instead kindly forgive and comfort him, so that he may not be overwhelmed by excessive sadness.", url: "https://www.jw.org/en/library/bible/study-bible/books/2-corinthians/2/" },
+  "Ps. 38:3, 8": { text: "My whole body is sick because of your indignation. There is no peace within my bones because of my sin. ... I have grown numb and become completely crushed; My anguished heart makes me groan aloud.", url: "https://www.jw.org/en/library/bible/study-bible/books/psalms/38/" },
+  "Isa. 1:18": { text: "“Come, now, and let us set matters straight between us,” says Jehovah. “Though your sins are like scarlet, They will be made as white as snow; Though they are as red as crimson cloth, They will become like wool.", url: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/1/" },
+  "2 Sam. 11:3, 4": { text: "“Is this not Bath-sheba the daughter of Eliam and the wife of Uriah the Hittite?” ... Then David sent messengers to bring her. So she came in to him, and he lay down with her.", url: "https://www.jw.org/en/library/bible/study-bible/books/2-samuel/11/" },
+  "2 Sam. 11:14, 15": { text: "In the morning David wrote a letter to Joab and sent it by the hand of Uriah. He wrote in the letter: ‘Put Uriah in the front lines where the fighting is fiercest. Then retreat from behind him, so that he will be struck down and die.’", url: "https://www.jw.org/en/library/bible/study-bible/books/2-samuel/11/" },
+  "2 Sam. 12:13": { text: "David then said to Nathan: “I have sinned against Jehovah.” Nathan replied to David: “Jehovah, in turn, forgives your sin. You will not die.”", url: "https://www.jw.org/en/library/bible/study-bible/books/2-samuel/12/" },
+  "1 Ki. 9:4, 5": { text: "And you, if you walk before me as your father David walked, with integrity of heart and with uprightness, by doing everything I have commanded you, and you obey my regulations and my judgments, then I will establish the throne of your kingdom over Israel forever, just as I promised your father David, saying, ‘There will never fail to be a man of your line sitting on the throne of Israel.’", url: "https://www.jw.org/en/library/bible/study-bible/books/1-kings/9/" },
+  "Isa. 38:17": { text: "Look! Instead of peace, I had great bitterness; But in your fondness for me, You preserved me from the pit of destruction. You have thrown all my sins behind your back.", url: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/38/" },
+  "Isa. 43:25": { text: "I, I am the One who is blotting out your transgressions for my own sake, And I will not remember your sins.", url: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/43/" },
+  "Isa. 57:16": { text: "For I will not oppose them forever Or always remain indignant; For a man’s spirit would grow feeble because of me, Even the breathing creatures that I have made.", url: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/57/" },
+  "Isa. 55:7": { text: "Let the wicked man leave his way And the evil man his thoughts; Let him return to Jehovah, who will have mercy on him, To our God, for he will forgive in a large way.", url: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/55/" },
+  "Isa. 25:8": { text: "He will swallow up death forever, And the Sovereign Lord Jehovah will wipe away the tears from all faces. The reproach of his people he will take away from all the earth, For Jehovah himself has spoken it.", url: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/25/" },
+  "Isa. 35:10": { text: "Those redeemed by Jehovah will return and come to Zion with a joyful cry. Unending joy will crown their heads. Exultation and rejoicing will be theirs, And grief and sighing will flee away.", url: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/35/" },
+  "Rev. 21:4, 5": { text: "And he will wipe out every tear from their eyes, and death will be no more, neither will mourning nor outcry nor pain be anymore. The former things have passed away. And the One seated on the throne said: ‘Look! I am making all things new.’ Also he says: ‘Write, for these words are faithful and true.’", url: "https://www.jw.org/en/library/bible/study-bible/books/revelation/21/" },
+  "Isa. 26:19": { text: "Your dead will live. My corpses will rise up. Awake and shout joyfully, You residents in the dust! For your dew is as the dew of the morning, And the earth will let those powerless in death come to life.", url: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/26/" },
+  "Mark 5:42": { text: "And immediately the girl rose and began walking. (She was 12 years old.) And at once they were beside themselves with great ecstasy.", url: "https://www.jw.org/en/library/bible/study-bible/books/mark/5/" },
+  "Ps. 94:19": { text: "When anxieties overwhelmed me, You comforted and soothed me.", url: "https://www.jw.org/en/library/bible/study-bible/books/psalms/94/" }
+};
+
+function openSidebar(ref) {
+  var data = scriptureData[ref];
+  var sb = document.getElementById('sidebar');
+  var ov = document.getElementById('sidebarOverlay');
+  document.getElementById('sbRef').textContent = ref;
+  if (data) {
+    document.getElementById('sbText').textContent = '“' + data.text + '”';
+    document.getElementById('sbLink').href = data.url;
+  } else {
+    document.getElementById('sbText').textContent = '(Full verse text not loaded — open the full chapter to read it.)';
+    document.getElementById('sbLink').href = 'https://www.jw.org/en/library/bible/study-bible/books/';
+  }
+  sb.classList.add('open');
+  ov.classList.add('open');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebarOverlay').classList.remove('open');
+}
+function toggleAnswer(btn) {
+  var box = btn.nextElementSibling;
+  box.classList.toggle('open');
+  btn.textContent = box.classList.contains('open') ? '▾ Hide comment' : '▸ Show comment';
+}
+var allExpanded = false;
+function toggleAll() {
+  var boxes = document.querySelectorAll('.answer-box');
+  var btns = document.querySelectorAll('.toggle-answer');
+  allExpanded = !allExpanded;
+  boxes.forEach(function(b){ b.classList.toggle('open', allExpanded); });
+  btns.forEach(function(b){ b.textContent = allExpanded ? '▾ Hide comment' : '▸ Show comment'; });
+  document.getElementById('expandAllBtn').textContent = allExpanded ? 'Collapse All' : 'Expand All';
+}
+</script>
+
+</body>
+</html>
