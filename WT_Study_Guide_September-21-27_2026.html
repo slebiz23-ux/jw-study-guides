@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JW Meeting Study Guide — September 21-27, 2026</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    background: #f0f4f8;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a202c;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 16px 60px; }
+  header.top {
+    background: #1a365d;
+    color: #fff;
+    padding: 28px 16px 22px;
+    text-align: center;
+  }
+  header.top h1 { margin: 0 0 4px; font-size: 1.5rem; letter-spacing: .3px; }
+  header.top .subtitle { font-size: 1rem; opacity: .85; margin-bottom: 14px; }
+  .date-badge {
+    display: inline-block;
+    background: #b91c1c;
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: .95rem;
+    letter-spacing: .3px;
+  }
+  .expand-all-wrap { text-align: center; margin: 18px 0; }
+  #expandAllBtn {
+    background: #1a365d; color: #fff; border: none;
+    padding: 10px 22px; border-radius: 8px; font-size: .95rem;
+    cursor: pointer; font-weight: 600;
+  }
+  #expandAllBtn:hover { background: #12294a; }
+
+  .song-banner {
+    background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 10px;
+    padding: 14px 18px; margin: 18px 0; font-size: .95rem; color: #3730a3;
+  }
+  .song-banner strong { color: #1e1b4b; }
+
+  .focus-banner {
+    background: #1a365d; color: #fff; border-radius: 10px;
+    padding: 18px 20px; margin: 18px 0;
+  }
+  .focus-banner .label { text-transform: uppercase; font-size: .75rem; letter-spacing: 1px; opacity: .75; margin-bottom: 6px; }
+  .focus-banner p { margin: 0; font-size: 1.05rem; line-height: 1.5; }
+
+  blockquote.theme-verse {
+    background: #fff; border-left: 4px solid #1a365d;
+    margin: 18px 0; padding: 16px 18px; border-radius: 0 8px 8px 0;
+    font-style: italic; font-size: 1.05rem; line-height: 1.6;
+  }
+  blockquote.theme-verse .chip { margin-top: 10px; }
+
+  .scripture-chip {
+    display: inline-block; background: #eff6ff; color: #1d4ed8;
+    border: 1px solid #bfdbfe; padding: 3px 10px; border-radius: 999px;
+    font-size: .82rem; font-weight: 600; cursor: pointer; text-decoration: none;
+    white-space: nowrap;
+  }
+  .scripture-chip:hover { background: #dbeafe; }
+
+  section.card {
+    background: #fff; border-radius: 10px; margin: 22px 0;
+    overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  section.card > .section-heading {
+    background: #1a365d; color: #fff; padding: 14px 18px;
+    font-size: 1.05rem; font-weight: 700; letter-spacing: .3px;
+  }
+  .section-body { padding: 4px 18px 18px; }
+
+  .qa-unit { margin: 20px 0; }
+  .question-card {
+    background: #fff; border-left: 4px solid #b91c1c;
+    padding: 14px 16px; border-radius: 0 8px 8px 0;
+    font-weight: 700; font-size: 1rem; line-height: 1.5;
+    box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  }
+  .question-card .qnum { color: #b91c1c; margin-right: 6px; }
+
+  .toggle-answer {
+    margin-top: 8px; background: none; border: none; color: #b45309;
+    font-weight: 600; cursor: pointer; font-size: .9rem; padding: 4px 0;
+  }
+  .answer-box {
+    display: none; background: #fffbeb; border-left: 3px solid #f59e0b;
+    border-radius: 0 8px 8px 0; padding: 14px 16px; margin-top: 8px;
+    font-size: .95rem; line-height: 1.65;
+  }
+  .answer-box.open { display: block; }
+  .answer-box p { margin: 0 0 10px; }
+  .answer-box p:last-child { margin-bottom: 0; }
+  .sub-label { font-weight: 700; color: #92400e; }
+
+  .prep-box {
+    background: #fff; border: 1px dashed #f59e0b; border-radius: 8px;
+    padding: 10px 12px; margin-top: 10px; font-size: .9rem; line-height: 1.55;
+  }
+  .prep-box .prep-label { font-weight: 700; display: block; margin-bottom: 3px; }
+
+  .paragraph-block {
+    background: #f8fafc; border-left: 3px solid #e2e8f0; border-radius: 8px;
+    padding: 14px 16px; margin-top: 12px; font-size: .95rem; line-height: 1.75; color: #334155;
+  }
+  .paragraph-block .pnum { font-weight: 700; color: #1a365d; margin-right: 4px; }
+
+  figure.article-image { margin: 14px 0 0; }
+  figure.article-image img { max-width: 100%; border-radius: 8px; display: block; background:#e2e8f0; min-height:120px; }
+  figure.article-image figcaption { font-size: .82rem; color: #64748b; margin-top: 6px; font-style: italic; }
+  .application-note { font-size: .85rem; color: #475569; margin-top: 6px; }
+
+  .review-section {
+    background: #fff; border-radius: 10px; margin: 26px 0; padding: 4px 18px 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  .review-section > .section-heading {
+    background: #b91c1c; color: #fff; padding: 14px 18px; margin: 0 -18px 14px;
+    font-size: 1.05rem; font-weight: 700;
+  }
+
+  .closing-song-banner {
+    background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 10px;
+    padding: 14px 18px; margin: 24px 0 10px; font-size: .95rem; color: #3730a3;
+  }
+  .source-link { text-align: center; font-size: .85rem; margin-bottom: 10px; }
+  .source-link a { color: #1d4ed8; }
+
+  .deviation-note {
+    background: #fff; border: 1px dashed #94a3b8; border-radius: 8px;
+    padding: 12px 16px; margin: 10px 0 30px; font-size: .78rem; color: #475569; line-height: 1.6;
+  }
+  .deviation-note h4 { margin: 0 0 6px; color: #1a365d; font-size: .82rem; }
+
+  /* Sidebar */
+  #sidebarOverlay {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 999;
+  }
+  #sidebarOverlay.open { display: block; }
+  #sidebar {
+    position: fixed; top: 0; right: -100%; width: 340px; max-width: 90%; height: 100%;
+    background: #fff; z-index: 1000; box-shadow: -4px 0 16px rgba(0,0,0,.15);
+    transition: right .25s ease; overflow-y: auto; padding: 20px;
+  }
+  #sidebar.open { right: 0; }
+  #sidebar .sb-close {
+    float: right; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: #64748b;
+  }
+  #sidebar h3 { margin: 6px 0 12px; color: #1a365d; }
+  #sidebar .sb-text { font-style: italic; line-height: 1.6; color: #334155; margin-bottom: 16px; }
+  #sidebar .sb-open-full {
+    display: inline-block; background: #1a365d; color: #fff; text-decoration: none;
+    padding: 8px 14px; border-radius: 8px; font-size: .85rem; font-weight: 600;
+  }
+  @media (max-width: 480px) {
+    #sidebar { width: 100%; }
+  }
+
+  .sq { font-style: italic; }
+  .rg-link { display:inline-block; font-size:.8rem; color:#1d4ed8; background:#f1f5f9; border:1px solid #cbd5e1; border-radius:6px; padding:2px 8px; cursor:pointer; margin-top:6px; }
+  #sidebar .sb-src { font-size:.8rem; color:#64748b; margin-bottom:10px; }
+</style>
+</head><body>
+<header class="top"><h1>JW Meeting Study Guide</h1><div class="subtitle">Watchtower Study</div><div class="date-badge">Sunday, September 27, 2026</div></header>
+<div class="wrap">
+<div class="expand-all-wrap"><button id="expandAllBtn" onclick="toggleAll()">Expand All</button></div>
+<div class="song-banner"><strong>Opening Song:</strong> Song 12 — Great God, Jehovah</div>
+<div class="focus-banner"><div class="label">Focus</div><p>What it means to know Jehovah, why we should want to know him better, and how we can do so.</p></div>
+<blockquote class="theme-verse">“Know the God of your father and serve him with a complete heart.”​—1 Chron. 28:9 (article theme)
+<div style="font-style:normal;font-size:.9rem;margin-top:10px;color:#334155;"><strong>Full verse (NWT Study Edition):</strong> <span class="sq">“And you, Solʹo·mon my son, know the God of your father and serve him with a complete heart and with a delightful soul, for Jehovah searches through all hearts, and he discerns every inclination of the thoughts. If you search for him, he will let himself be found by you, but if you leave him, he will reject you forever.</span></div>
+<div class="chip"><span class="scripture-chip" onclick="openSidebar("1 Chron. 28:9")">1 Chron. 28:9</span> <span class="rg-link" onclick="openSidebar("RG: cl ch. 24")">📚 cl ch. 24</span></div></blockquote>
+<p style="font-size:.95rem;color:#475569;line-height:1.7;background:#fff;padding:14px 16px;border-radius:8px;"><em>w26 July — “Are You Getting to Know Jehovah Better?”</em> · Studied the week of September 21-27, 2026.</p>
+<section class="card"><div class="section-heading">Introduction</div><div class="section-body"><div class="qa-unit"><div class="question-card"><span class="qnum">1.</span> How do we feel when we contemplate Jehovah’s knowledge, wisdom, and accomplishments?</div>
+<button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button><div class="answer-box"><p>When we think about the depth of Jehovah’s knowledge, the vastness of his wisdom, and the scope of his accomplishments, we feel humbled. Like the apostle Paul, we are moved to exclaim: <span class="sq">“O the depth of God’s riches and wisdom and knowledge! How unsearchable his judgments are and beyond tracing out his ways are!”</span> (<span class="scripture-chip" onclick="openSidebar("Rom. 11:33, 34")">Rom. 11:33, 34</span>)</p><div class="prep-box"><span class="prep-label">💬 Comment you could share:</span>What strikes me is that Paul wrote those words after years of studying and serving Jehovah — the more he knew, the more amazed he was. Learning about Jehovah doesn’t make him seem smaller; it makes him seem greater.</div><div class="prep-box"><span class="prep-label">🙏 Getting to know Jehovah:</span>Jehovah is so far above us that his ways are “beyond tracing out,” yet he still invites us to know him. That combination of greatness and approachability is one of the most appealing things about him.</div></div><div class="paragraph-block"><span class="pnum">1</span> HAVE you ever thought about the depth of Jehovah’s knowledge, the vastness of his wisdom, or the scope of his accomplishments? We are humbled when we think about our Creator. You may feel as did the apostle Paul, who wrote: “O the depth of God’s riches and wisdom and knowledge! How unsearchable his judgments are and beyond tracing out his ways are!”​—<span class="scripture-chip" onclick="openSidebar("Rom. 11:33, 34")">Rom. 11:33, 34</span>.</div></div><div class="qa-unit"><div class="question-card"><span class="qnum">2.</span> What proves that we can get to know Jehovah?</div>
+<button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button><div class="answer-box"><p>Although we will never know everything about Jehovah, we can come to know what he is like. David told Solomon: <span class="sq">“If you search for him, he will let himself be found by you”</span> (<span class="scripture-chip" onclick="openSidebar("1 Chron. 28:9")">1 Chron. 28:9</span>). The apostle John said that Jesus has given us <span class="sq">“insight so that we may gain the knowledge of the one who is true”</span> (<span class="scripture-chip" onclick="openSidebar("1 John 5:20")">1 John 5:20</span>). And Jesus said knowledge of the Father is available to <span class="sq">“anyone to whom the Son is willing to reveal him”</span> (<span class="scripture-chip" onclick="openSidebar("Matt. 11:27")">Matt. 11:27</span>).</p><p>The Research Guide adds that a “complete heart” is not a perfect heart but one that loves God, wants to obey him, and is willing to be corrected. <span class="rg-link" onclick="openSidebar("RG: w15 7/1 p. 14")">📚 w15 7/1 p. 14</span></p><div class="prep-box"><span class="prep-label">💬 Comment you could share:</span>I find it encouraging that 1 Chronicles 28:9 says Jehovah “will let himself be found.” He isn’t hiding from us — he wants to be found by those who search sincerely.</div><div class="prep-box"><span class="prep-label">📌 Ministry connection:</span>When someone says “no one can really know God,” I can show them 1 Chronicles 28:9 and John 17:3 — Jehovah promises to be found, and Jesus said knowing God leads to everlasting life.</div></div><div class="paragraph-block"><span class="pnum">2</span> Although we will never know everything there is to know about Jehovah, it is possible, to a certain extent, to get to know what he is like. King David told his son Solomon: “Know the God of your father and serve him with a complete heart . . . If you search for him, he will let himself be found by you.” (<span class="scripture-chip" onclick="openSidebar("1 Chron. 28:9")">1 Chron. 28:9</span>) As the apostle John reminded his fellow Christians centuries later, we have “insight so that we may gain the knowledge of the one who is true.” (<span class="scripture-chip" onclick="openSidebar("1 John 5:20")">1 John 5:20</span>) And Jesus himself said that knowledge of Jehovah is available to “anyone to whom the Son is willing to reveal him.”​—<span class="scripture-chip" onclick="openSidebar("Matt. 11:27")">Matt. 11:27</span>.</div></div><div class="qa-unit"><div class="question-card"><span class="qnum">3.</span> What will we discuss in this article?</div>
+<button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button><div class="answer-box"><p>All who have dedicated themselves to Jehovah have already learned a lot about him, yet we never stop “coming to know” him (<span class="sq">“their coming to know you, the only true God”</span> (<span class="scripture-chip" onclick="openSidebar("John 17:3")">John 17:3</span>)). The expression points to an ongoing process. We can always learn more about what makes him happy and how to deepen our trust in him. The article considers three questions: What does it mean to come to know Jehovah? Why should we continue to get to know him better? How do we get to know him better?</p><div class="prep-box"><span class="prep-label">💬 Comment you could share:</span>I like that John 17:3 speaks of “coming to know” Jehovah — it’s a continuing action. No matter how long we’ve been in the truth, there’s always more to discover about him.</div></div><div class="paragraph-block"><span class="pnum">3</span> All who dedicated themselves to Jehovah have already learned many things about him. Yet, we never stop “coming to know” Jehovah. (<span class="scripture-chip" onclick="openSidebar("John 17:3")">John 17:3</span>; see study note.) We can always learn more about what makes him happy and how to deepen our trust in him. Let us discuss three questions that all of us should consider no matter how long we have served Jehovah: What does it mean to come to know Jehovah? Why should we continue to get to know him better? And how do we get to know him better?</div></div></div></section>
+<section class="card"><div class="section-heading">What Does It Mean to Come to Know Jehovah?</div><div class="section-body"><div class="qa-unit"><div class="question-card"><span class="qnum">4.</span> What is involved in coming to know Jehovah?</div>
+<button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button><div class="answer-box"><p>Jehovah promised the Jews returning from exile: <span class="sq">“I will give them a heart to know me, that I am Jehovah”</span> (<span class="scripture-chip" onclick="openSidebar("Jer. 24:7")">Jer. 24:7</span>). They already knew basic facts about him, but coming to know him would involve their heart — their feelings and motives. As one reference work puts it, there is a difference between knowing <em>about</em> God and knowing God, like the difference between reading about love and falling in love. We want to know more than Jehovah’s name and that he is God; we want to know the Person behind the name.</p><div class="prep-box"><span class="prep-label">💬 Comment you could share:</span>The illustration of reading about love versus falling in love really stayed with me. I can know a lot of Bible facts, but the real question is whether those facts are making me love Jehovah more.</div><div class="prep-box"><span class="prep-label">🙏 Getting to know Jehovah:</span>Jehovah said he would “give them a heart to know” him. He doesn’t just expect us to know him — he helps us develop the heart to do so.</div></div><div class="paragraph-block"><span class="pnum">4</span> We learn what is involved in coming to know Jehovah by considering what he said about the Jews who would return from exile. Jehovah promised: “I will give them a heart to know me, that I am Jehovah.” (<span class="scripture-chip" onclick="openSidebar("Jer. 24:7")">Jer. 24:7</span>) Surely those who returned from Babylon already knew basic facts about Jehovah. But their efforts to come to know Jehovah would need to involve their heart, including their feelings and motives. One reference work puts it this way: “There is a marked difference between knowing about God and knowing God. It is comparable to the difference between reading about love and falling in love.” We need to know more than the fact that Jehovah has a name and that he is God. We want to come to know the Person behind the name.</div></div><div class="qa-unit"><div class="question-card"><span class="qnum">5.</span> What can we learn from King Josiah regarding what it means to come to know Jehovah?</div>
+<button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button><div class="answer-box"><p>Coming to know Jehovah includes learning what makes him happy and what displeases him. While still a boy, Josiah <span class="sq">“started to search for the God of David his forefather”</span> (<span class="scripture-chip" onclick="openSidebar("2 Chron. 34:3")">2 Chron. 34:3</span>). But he did more than study — he acted on what he learned. Jehovah said that Josiah <span class="sq">“upheld justice and righteousness”</span> (<span class="scripture-chip" onclick="openSidebar("Jer. 22:15, 16")">Jer. 22:15, 16</span>) and <span class="sq">“defended the legal claim of the afflicted one and the poor one”</span> (<span class="scripture-chip" onclick="openSidebar("Jer. 22:15, 16")">Jer. 22:15, 16</span>), and then asked: <span class="sq">“‘Is that not what it means to know me?’”</span> (<span class="scripture-chip" onclick="openSidebar("Jer. 22:15, 16")">Jer. 22:15, 16</span>)</p><p>The Research Guide’s reference in the Jeremiah book makes the same point: knowing Jehovah shows up in how we treat others. <span class="rg-link" onclick="openSidebar("RG: jr pp. 140-141")">📚 jr pp. 140-141</span></p><div class="prep-box"><span class="prep-label">💬 Comment you could share:</span>What stood out to me is that Jehovah defined knowing him by what Josiah <em>did</em> — upholding justice and caring for the poor. Knowing Jehovah shows up in how we treat people.</div><div class="prep-box"><span class="prep-label">🙏 Getting to know Jehovah:</span>Jehovah cares deeply about the afflicted and the poor. When he describes what it means to know him, he points to caring for those people.</div></div><div class="paragraph-block"><span class="pnum">5</span> As we come to know Jehovah, we learn what makes him happy and what displeases him. To illustrate, consider the example of King Josiah. The Bible says: “In the 8th year of his reign, while he was still a boy, he started to search for the God of David his forefather.” (<span class="scripture-chip" onclick="openSidebar("2 Chron. 34:3")">2 Chron. 34:3</span>) But Josiah did more than study. He acted on what he was learning. Through the prophet Jeremiah, Jehovah said that Josiah “upheld justice and righteousness” and that he defended the afflicted and the poor. Then Jehovah added: “Is that not what it means to know me?”​—<span class="scripture-chip" onclick="openSidebar("Jer. 22:15, 16")">Jer. 22:15, 16</span>.</div></div><div class="qa-unit"><div class="question-card"><span class="qnum">6.</span> As indicated at Psalm 9:10, how will coming to know Jehovah affect us?</div>
+<button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button><div class="answer-box"><p><span class="sq">“Those knowing your name will trust in you; You will never abandon those seeking you, O Jehovah.”</span> (<span class="scripture-chip" onclick="openSidebar("Ps. 9:10")">Ps. 9:10</span>) The more we come to know Jehovah, the more we trust him. Paul proved this true. During his final imprisonment, shortly before his death, he wrote: <span class="sq">“I am not ashamed. For I know the One whom I have believed”</span> (<span class="scripture-chip" onclick="openSidebar("2 Tim. 1:12")">2 Tim. 1:12</span>). His lifetime of learning and experience moved him to trust Jehovah implicitly. The study note explains that Paul was confident Jehovah would remember his faithful life course until “that day” when He would resurrect him.</p><div class="prep-box"><span class="prep-label">💬 Comment you could share:</span>I find it powerful that Paul wrote “I know the One whom I have believed” while facing death. Knowing Jehovah gave him confidence even in the worst circumstances.</div><div class="prep-box"><span class="prep-label">📌 Ministry connection:</span>For someone struggling to trust God, Psalm 9:10 shows that trust grows from knowing him. That’s a good reason to invite them to study the Bible — to get to know the One they can trust.</div></div><div class="paragraph-block"><span class="pnum">6</span> Read <span class="scripture-chip" onclick="openSidebar("Ps. 9:10")">Ps. 9:10</span>. The more we come to know Jehovah, the more we come to trust in him. That principle proved true for the apostle Paul. During his final imprisonment and not long before his death, he wrote: “I am not ashamed. For I know the One whom I have believed.” (<span class="scripture-chip" onclick="openSidebar("2 Tim. 1:12")">2 Tim. 1:12</span>) What Paul had learned and experienced during his life moved him to trust in his God implicitly. As a study note on that verse explains: “Paul . . . was confident that Jehovah would remember his faithful life course until ‘that day’ when He would resurrect him.”</div></div></div></section>
+<section class="card"><div class="section-heading">Why Continue to Get to Know Jehovah?</div><div class="section-body"><div class="qa-unit"><div class="question-card"><span class="qnum">7.</span> After we have been serving Jehovah for many years, what could happen?</div>
+<button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button><div class="answer-box"><p>Over time, we may not put as much effort into getting to know Jehovah as when we first learned about him. When reading the Bible, we might focus mainly on practical benefits for ourselves or on how to use it to help others. The Scriptures encourage that — they are <span class="sq">“beneficial for teaching, for reproving, for setting things straight, for disciplining in righteousness”</span> (<span class="scripture-chip" onclick="openSidebar("2 Tim. 3:16, 17")">2 Tim. 3:16, 17</span>). But the Bible also reveals much about its Author (<span class="sq">“Good and upright is Jehovah”</span> (<span class="scripture-chip" onclick="openSidebar("Ps. 25:8-10")">Ps. 25:8-10</span>)). We should never be so absorbed in the benefits that we fail to ask, ‘What does this tell me about Jehovah God?’</p><div class="prep-box"><span class="prep-label">💬 Comment you could share:</span>This was a helpful reminder for me. I often read the Bible looking for practical advice or ministry points. Now I want to add one more question each time: ‘What does this account teach me about Jehovah himself?’</div></div><div class="paragraph-block"><span class="pnum">7</span> Over time, we may not put as much effort into getting to know Jehovah as we did when we first learned about him. Why not? When reading the Bible on our own or along with others at congregation meetings, we may tend to focus on how the information can help us personally in practical ways or how we can use it to help others. The Scriptures encourage us to do that. (<span class="scripture-chip" onclick="openSidebar("2 Tim. 3:16, 17")">2 Tim. 3:16, 17</span>) But the Bible also reveals much about its Author. (<span class="scripture-chip" onclick="openSidebar("Ps. 25:8-10")">Ps. 25:8-10</span>) We should never be so absorbed in how the Bible’s message benefits us or others that we fail to ask ourselves, ‘What does this tell me about Jehovah God?’ <em>(Footnote: See the front section in the New World Translation entitled “An Introduction to God’s Word,” question 20.)</em></div></div><div class="qa-unit"><div class="question-card"><span class="qnum">8.</span> What impact will getting to know Jehovah better have on our friendship with him? (<span class="scripture-chip" onclick="openSidebar("Ps. 73:24-28")">Ps. 73:24-28</span>)</div>
+<button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button><div class="answer-box"><p>As we get to know Jehovah better, our friendship with him grows stronger. After daily Bible reading, a monthly broadcast, or an assembly or convention, we often feel closer to our heavenly Father because we have learned more about him — and we are moved to praise and thank him. Like the psalmist, we can say: <span class="sq">“God is the rock of my heart and my portion forever”</span> (<span class="scripture-chip" onclick="openSidebar("Ps. 73:24-28")">Ps. 73:24-28</span>) and <span class="sq">“drawing near to God is good for me”</span> (<span class="scripture-chip" onclick="openSidebar("Ps. 73:24-28")">Ps. 73:24-28</span>). Every effort we make to know Jehovah deepens our gratitude for our friendship with him.</p><div class="prep-box"><span class="prep-label">💬 Comment you could share:</span>I’ve noticed that after a convention I feel much closer to Jehovah. This paragraph helped me see why — it’s because I’ve learned something new about him. The psalmist said “drawing near to God is good for me,” and I’ve found that to be true.</div><div class="prep-box"><span class="prep-label">🙏 Getting to know Jehovah:</span>Jehovah is willing to be our “portion” — the most valuable thing we have. He wants a real, growing friendship with each of us.</div></div><div class="paragraph-block"><span class="pnum">8</span> As we get to know Jehovah better, our friendship with him will grow stronger. For example, how do you feel about Jehovah after you do your daily Bible reading, watch a monthly broadcast, or attend an assembly or a convention? We often feel closer to our heavenly Father. Why? Because we have learned more about him. As a result, we are moved to praise and thank him. We feel like the psalmist who meditated on Jehovah’s care for him and who said: “God is the rock of my heart and my portion forever.” (Read <span class="scripture-chip" onclick="openSidebar("Ps. 73:24-28")">Ps. 73:24-28</span>.) Every effort we make to get to know Jehovah deepens our gratitude for our priceless friendship with him.</div></div><div class="qa-unit"><div class="question-card"><span class="qnum">9.</span> When we “take notice of” Jehovah, how will this affect our decisions? Illustrate.</div>
+<button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button><div class="answer-box"><p><span class="sq">“In all your ways take notice of him, And he will make your paths straight.”</span> (<span class="scripture-chip" onclick="openSidebar("Prov. 3:5, 6")">Prov. 3:5, 6</span>) When we recall what we’ve learned about Jehovah and think about how our actions affect him, we make better decisions. Many keep a photograph of their mate on their desk, wallet, or phone; it helps them think fondly of their mate, make choices that please that one, and avoid hurting them. Similarly, the more often we think about Jehovah, the more likely we are to make choices that please him — like the psalmist who prayed that <span class="sq">“the meditation of my heart Be pleasing to you, O Jehovah”</span> (<span class="scripture-chip" onclick="openSidebar("Ps. 19:13, 14")">Ps. 19:13, 14</span>).</p><p>The Research Guide reference on Proverbs 3:5, 6 encourages letting Jehovah’s thinking, not our own reasoning, guide our decisions. <span class="rg-link" onclick="openSidebar("RG: w13 9/15 p. 24")">📚 w13 9/15 p. 24</span></p><div class="prep-box"><span class="prep-label">💬 Comment you could share:</span>I liked the illustration of a photo of a mate. If I keep Jehovah “in view” throughout the day — through prayer and thinking about what I’ve read — it’s much easier to make choices that please him.</div><div class="prep-box"><span class="prep-label">📌 Ministry connection:</span>The photo illustration is one people easily relate to. It can help explain to a Bible student why regular personal study matters: it keeps Jehovah in mind when decisions come up.</div></div><div class="paragraph-block"><span class="pnum">9</span> When we “take notice of” Jehovah​—recalling what we have learned about him and thinking about how our actions affect him—​we will make better decisions. (<span class="scripture-chip" onclick="openSidebar("Prov. 3:5, 6")">Prov. 3:5, 6</span>) To illustrate: Many brothers and sisters keep a photograph of their mate on their desk, in their wallet, or on their phone. This helps them to think fondly and often about their mate, to make decisions that they know will please their mate, and to avoid doing anything that would hurt that person. Similarly, the more often we think about Jehovah, the more likely we will be to make choices that please him.​—<span class="scripture-chip" onclick="openSidebar("Ps. 19:13, 14")">Ps. 19:13, 14</span>.</div></div><div class="qa-unit"><div class="question-card"><span class="qnum">10.</span> As we learn about Jehovah, what will we be able to do?</div>
+<button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button><div class="answer-box"><p>We are made in God’s image (<span class="sq">“Let us make man in our image, according to our likeness”</span> (<span class="scripture-chip" onclick="openSidebar("Gen. 1:26")">Gen. 1:26</span>)), so we can reflect his qualities. The more we learn about those qualities, the better we understand how to imitate him. Jesus condemned the scribes and Pharisees because they <span class="sq">“disregarded the weightier matters of the Law, namely, justice and mercy and faithfulness”</span> (<span class="scripture-chip" onclick="openSidebar("Matt. 23:23")">Matt. 23:23</span>). Unlike them, we want to understand how Jehovah’s qualities are reflected in his laws and principles, which helps us display those very qualities — especially love, since <span class="sq">“God is love”</span> (<span class="scripture-chip" onclick="openSidebar("1 John 4:8, 11")">1 John 4:8, 11</span>).</p><div class="prep-box"><span class="prep-label">💬 Comment you could share:</span>The Pharisees knew the details of the Law but missed the qualities behind it. It reminded me that the point of studying Jehovah’s laws is to see his justice, mercy, and faithfulness — and then show those qualities myself.</div><div class="prep-box"><span class="prep-label">🙏 Getting to know Jehovah:</span>Every law Jehovah gives reflects something about his personality. When I look at a principle and ask what quality it reveals, I get to know him better.</div></div><div class="paragraph-block"><span class="pnum">10</span> We are made in Jehovah’s image, which gives us the ability to reflect his qualities. (<span class="scripture-chip" onclick="openSidebar("Gen. 1:26")">Gen. 1:26</span>) And the more we learn about Jehovah’s qualities, the better we will understand how to imitate him. Jesus condemned the scribes and Pharisees for their failure to show godly qualities. Although they paid close attention to the minor details of the Law, they “disregarded the weightier matters of the Law, namely, justice and mercy and faithfulness.” (<span class="scripture-chip" onclick="openSidebar("Matt. 23:23")">Matt. 23:23</span>) Unlike those religious leaders, let us do our best to understand how Jehovah’s qualities are reflected in his laws and principles. Doing so will help us to demonstrate those very qualities.​—<span class="scripture-chip" onclick="openSidebar("1 John 4:8, 11")">1 John 4:8, 11</span>.</div></div></div></section>
+<section class="card"><div class="section-heading">How Do We Get to Know Jehovah Better?</div><div class="section-body"><div class="qa-unit"><div class="question-card"><span class="qnum">11.</span> How did you first come to know Jehovah?</div>
+<button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button><div class="answer-box"><p>Some of us were raised by Christian parents who related Bible accounts revealing God’s qualities and taught us how creation reflects his personality. Others accepted a Bible study, and a teacher using a study aid such as the <em>Enjoy Life Forever!</em> book helped us analyze Scriptural accounts and learn about Jehovah’s appealing qualities from the natural world (lesson 07 points 5-7). This follows the pattern of Ezra’s day, when they read God’s Law, <span class="sq">“clearly explaining it and putting meaning into it”</span> (<span class="scripture-chip" onclick="openSidebar("Neh. 8:8")">Neh. 8:8</span>). Jehovah has also always left evidence of himself, <span class="sq">“giving you rains from heaven and fruitful seasons”</span> (<span class="scripture-chip" onclick="openSidebar("Acts 14:17")">Acts 14:17</span>).</p><div class="prep-box"><span class="prep-label">💬 Comment you could share:</span>This is a good place for a brief personal experience: who first taught you about Jehovah, and what quality of his first touched your heart? Keep it to about 30 seconds and focus on what you learned about Jehovah.</div><div class="prep-box"><span class="prep-label">📌 Ministry connection:</span>Remembering how someone patiently helped me get to know Jehovah motivates me to do the same for others — just as my teacher did, I want to help my Bible students see Jehovah’s qualities, not just learn facts.</div></div><div class="paragraph-block"><span class="pnum">11</span> Who introduced you to Jehovah? Perhaps you were raised by Christian parents. They likely related Bible accounts that reveal God’s qualities and taught you how the things he created reflect his personality. Or you may have accepted a Bible study from one of Jehovah’s Witnesses. Using a study aid, such as the <em>Enjoy Life Forever!</em> book, your Bible teacher helped you to analyze Scriptural accounts and to learn about Jehovah’s appealing qualities by studying the natural world. <em>(Footnote: See lesson 07 points 5-7 in the Enjoy Life Forever! book.)</em> (<span class="scripture-chip" onclick="openSidebar("Neh. 8:8")">Neh. 8:8</span>; <span class="scripture-chip" onclick="openSidebar("Acts 14:17")">Acts 14:17</span>) Let us consider how we can continue learning about Jehovah.</div></div><div class="qa-unit"><div class="question-card"><span class="qnum">12-13.</span> What can we learn about Jehovah from reading the Bible? Give an example. (<span class="scripture-chip" onclick="openSidebar("Jer. 39:15-18")">Jer. 39:15-18</span>) (See also picture.)</div>
+<button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button><div class="answer-box"><p><span class="sub-label">Reading the Bible:</span> Sometimes the Bible directly identifies Jehovah’s qualities, as when he declared himself <span class="sq">“a God merciful and compassionate, slow to anger and abundant in loyal love and truth”</span> (<span class="scripture-chip" onclick="openSidebar("Ex. 34:6, 7")">Ex. 34:6, 7</span>). More often, it relates events involving people and their decisions. When we read such accounts, we should think about what they teach us about Jehovah.</p><p><span class="sub-label">Example — Ebed-melech:</span> In <span class="scripture-chip" onclick="openSidebar("Jer. 38:6-13")">Jer. 38:6-13</span>, the Ethiopian Ebed-melech rescued Jeremiah from a muddy cistern. We easily see his self-sacrifice, courage, and love for fellow worshippers. But Jeremiah 39:15-18 also reveals Jehovah’s qualities. He is <strong>appreciative</strong> — he sent a personal message to Ebed-melech: <span class="sq">“‘But I will rescue you in that day,’ declares Jehovah”</span> (<span class="scripture-chip" onclick="openSidebar("Jer. 39:15-18")">Jer. 39:15-18</span>). He is <strong>fair</strong> — he rewarded Ebed-melech <span class="sq">“because you trusted in me”</span> (<span class="scripture-chip" onclick="openSidebar("Jer. 39:15-18")">Jer. 39:15-18</span>). And he is <strong>impartial</strong> — this foreigner and eunuch received the same loving attention as anyone in Israel. Whenever we read a passage, we can identify Jehovah’s qualities and then thank and praise him for them.</p><div class="prep-box"><span class="prep-label">💬 Comment you could share:</span>What touched me is that Jehovah didn’t forget Ebed-melech. The whole city was falling, yet Jehovah sent a personal message to this one man, saying, “I will rescue you.” It shows Jehovah notices and appreciates what each of us does for his people.</div><div class="prep-box"><span class="prep-label">🙏 Getting to know Jehovah:</span>Ebed-melech was a foreigner and a eunuch, yet Jehovah personally assured him of rescue. Jehovah is impartial — he values anyone who trusts in him, regardless of background.</div></div><div class="paragraph-block"><span class="pnum">12</span> First, we can learn more about Jehovah by reading and studying his Word. Sometimes, the Bible specifically identifies God’s qualities. (<span class="scripture-chip" onclick="openSidebar("Ex. 34:6, 7")">Ex. 34:6, 7</span>) More often, though, it relates events involving humans and the decisions they made. When you read such accounts, think about what they can teach you about Jehovah.</div><div class="paragraph-block"><span class="pnum">13</span> Consider an example. While reading <span class="scripture-chip" onclick="openSidebar("Jer. 38:6-13")">Jer. 38:6-13</span>, you learn about the Ethiopian Ebed-melech, who rescued the prophet Jeremiah. Doubtless, you quickly identify ways that you can imitate Ebed-melech’s self-sacrifice, courage, and love for his fellow worshippers. Do you also see what qualities of Jehovah are revealed in this account? (Read <span class="scripture-chip" onclick="openSidebar("Jer. 39:15-18")">Jer. 39:15-18</span>.) For instance, what verse indicates that Jehovah is appreciative? Fair? Impartial? What other aspects of Jehovah’s personality do you discern in this account? Whenever you read a passage in God’s Word, identify Jehovah’s qualities that are reflected, and then thank and praise him for those qualities.</div><figure class="article-image"><img src="https://cms-imgp.jw-cdn.org/img/p/2026484/univ/art/2026484_univ_cnt_1_lg.jpg" alt="Ebed-melech and several men pulling Jeremiah out of a cistern with a rope. Other armed men stand alert." loading="lazy"><figcaption>Ebed-melech courageously rescues Jeremiah, who was thrown into a cistern (See paragraphs 12-13)</figcaption><div class="application-note">The picture shows Ebed-melech using ropes and rags to lift Jeremiah gently from the mud. As we look at it, we can ask not only ‘How can I be courageous like Ebed-melech?’ but also ‘What does Jehovah’s later message to him (<span class="scripture-chip" onclick="openSidebar("Jer. 39:15-18")">Jer. 39:15-18</span>) teach me about how Jehovah values those who stand up for his people?’</div></figure></div><div class="qa-unit"><div class="question-card"><span class="qnum">14.</span> What can we do to benefit fully from what we observe in creation?</div>
+<button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button><div class="answer-box"><p>We can learn more about Jehovah by meditating on his creative works — <span class="sq">“All your works will glorify you, O Jehovah”</span> (<span class="scripture-chip" onclick="openSidebar("Ps. 145:9, 10")">Ps. 145:9, 10</span>). But simply observing nature is not enough; some spend their lives studying it yet fail to acknowledge God. Paul wrote that <span class="sq">“his invisible qualities are clearly seen from the world’s creation onward, because they are perceived by the things made”</span> (<span class="scripture-chip" onclick="openSidebar("Rom. 1:20")">Rom. 1:20</span>). One translation says these qualities are “visible . . . to the eye of reason.” So we must think about and reason on what we see to discern our Creator’s qualities.</p><div class="prep-box"><span class="prep-label">💬 Comment you could share:</span>I liked the phrase “the eye of reason.” Just seeing a sunset or a flower isn’t enough — I need to stop and ask what it says about Jehovah’s power, wisdom, or love.</div><div class="prep-box"><span class="prep-label">📌 Ministry connection:</span>When people are impressed by nature, I can ask, “What do you think this tells us about whoever designed it?” Romans 1:20 helps them move from admiring creation to thinking about the Creator.</div></div><div class="paragraph-block"><span class="pnum">14</span> Second, we can learn more about Jehovah by meditating on his creative works. (<span class="scripture-chip" onclick="openSidebar("Ps. 145:9, 10")">Ps. 145:9, 10</span>) Of course, simply observing the natural world is not enough. Some spend their entire lives studying nature but fail to acknowledge God’s qualities or even his existence! The apostle Paul wrote that God’s “invisible qualities are clearly seen from the world’s creation onward, because they are perceived by the things made.” (<span class="scripture-chip" onclick="openSidebar("Rom. 1:20")">Rom. 1:20</span>) One translation of this verse says that we can perceive God’s qualities because they are “visible . . . to the eye of reason.” So we must think about and reason on what we see in order to discern the qualities of our Creator.</div></div><div class="qa-unit"><div class="question-card"><span class="qnum">15.</span> What has Patrick done to get to know Jehovah better, and how can you do something similar? (See also picture.)</div>
+<button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button><div class="answer-box"><p>Patrick lives in Brazzaville, a large city in the Republic of the Congo. He observes creation from his balcony — tiny insects and small birds looking for food or a place to live. Once he watched birds building a nest from neighborhood materials perfectly suited for their chicks. He then thought deeply about the Creator and concluded that Jehovah cares about the well-being of even seemingly insignificant creatures, which assured him that Jehovah also cares about him and will provide what he needs. Even in a city, we can do the same: notice small things in creation and reflect on what they reveal about Jehovah.</p><div class="prep-box"><span class="prep-label">💬 Comment you could share:</span>Patrick’s example shows that you don’t need to live in the countryside to learn from creation. A balcony, a park, or even a few birds outside the window can teach us about Jehovah’s care.</div><div class="prep-box"><span class="prep-label">🙏 Getting to know Jehovah:</span>If Jehovah provides for tiny birds building a nest, he certainly cares about my needs too. Patrick’s conclusion is one I can apply in my own life.</div></div><div class="paragraph-block"><span class="pnum">15</span> Many of us live in urban areas that seem distant from the natural world. If this is your situation, can you still learn lessons from creation? Consider Patrick, who lives in Brazzaville, a large city in the Republic of the Congo. He relates: “I strive to observe creation from my balcony. I often see tiny insects or small birds busily looking for food or for a place to live. Once, I observed some birds making their nest. They found and used materials in our neighborhood that were perfectly suited for welcoming small chicks.” But Patrick did not stop there; he thought deeply about the Creator. He says: “I learned that Jehovah cares about the well-being of his creatures, even those that seem insignificant. This assures me that he also cares about me and will not fail to provide me with what I need.”</div><figure class="article-image"><img src="https://cms-imgp.jw-cdn.org/img/p/2026484/univ/art/2026484_univ_cnt_2_lg.jpg" alt="A sister at her home in a large city, watering her plants on her balcony and admiring a hummingbird as it feeds on the flowers." loading="lazy"><figcaption>Get to know Jehovah better by meditating on what you see in creation (See paragraph 15)</figcaption><div class="application-note">A sister in a busy city pauses on her balcony to watch a hummingbird. The scene reminds us that a few moments of attention to small creatures can open our eyes to Jehovah’s wisdom and care. We might set a goal to notice one thing in creation each day and ask, ‘What does this teach me about Jehovah?’</div></figure></div><div class="qa-unit"><div class="question-card"><span class="qnum">16.</span> What helped Mary, Jesus’ mother, come to know Jehovah better, and how can we imitate her? (See also picture.)</div>
+<button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button><div class="answer-box"><p>A third way to know Jehovah better is by meditating on our own experiences. Mary already knew Jehovah well — the angel told her <span class="sq">“you have found favor with God”</span> (<span class="scripture-chip" onclick="openSidebar("Luke 1:30")">Luke 1:30</span>). Then she received a weighty assignment: to be the mother of God’s Son. Jehovah strengthened and reassured her through Gabriel and her relative Elizabeth. Mary later meditated on what her experience revealed about Jehovah — his power, mercy, impartiality, and interest in lowly ones. She said that <span class="sq">“he has looked upon the low position of his slave girl”</span> (<span class="scripture-chip" onclick="openSidebar("Luke 1:46-55")">Luke 1:46-55</span>) and that <span class="sq">“has exalted lowly ones”</span> (<span class="scripture-chip" onclick="openSidebar("Luke 1:46-55")">Luke 1:46-55</span>).</p><p>Like Mary, we are grateful when Jehovah gives us help <span class="sq">“at the right time”</span> (<span class="scripture-chip" onclick="openSidebar("Heb. 4:16")">Heb. 4:16</span>). When we receive such help, we can ask: ‘What has this taught me about Jehovah? Which of his qualities has this experience revealed?’</p><div class="prep-box"><span class="prep-label">💬 Comment you could share:</span>Mary’s words in Luke 1 show she had really thought about what Jehovah had done for her. It encourages me to stop after Jehovah helps me and ask what that experience teaches me about him, rather than just moving on.</div><div class="prep-box"><span class="prep-label">🙏 Getting to know Jehovah:</span>Jehovah “looked upon the low position” of Mary. He notices humble people and supports them when they receive assignments that feel too big for them.</div></div><div class="paragraph-block"><span class="pnum">16</span> A third way we can get to know Jehovah better is by meditating on our own experiences. That is what Jesus’ mother, Mary, did. She already knew Jehovah well, and she had “found favor with [him].” (<span class="scripture-chip" onclick="openSidebar("Luke 1:30")">Luke 1:30</span>) But then she was given a weighty assignment​—to be the mother of God’s Son. Through the angel Gabriel and Mary’s relative Elizabeth, Jehovah strengthened Mary and reassured her. She later meditated on what her experience had revealed about Jehovah​—including his power, mercy, impartiality, and interest in even the lowly ones. (<span class="scripture-chip" onclick="openSidebar("Luke 1:46-55")">Luke 1:46-55</span>) Just as Mary was appreciative of God’s support, we are grateful when Jehovah gives us help “at the right time.” (<span class="scripture-chip" onclick="openSidebar("Heb. 4:16")">Heb. 4:16</span>) When you receive this help, ask yourself: ‘What has this taught me about Jehovah? Which qualities of Jehovah has this experience revealed?’</div><figure class="article-image"><img src="https://cms-imgp.jw-cdn.org/img/p/2026484/univ/art/2026484_univ_cnt_3_lg.jpg" alt="Collage: A brother reflecting on a time when he received Jehovah’s support. 1. He anxiously prayed about a congregation assignment. 2. He successfully delivered his part from the platform." loading="lazy"><figcaption>Get to know Jehovah better by meditating on what he has done for you (See paragraph 16). Picture description: A brother who suffers from anxiety meditates on how Jehovah helped him to fulfill his assignment at the midweek meeting.</figcaption><div class="application-note">The brother first prays anxiously about his part, then delivers it from the platform. Afterward he reflects on how Jehovah helped him. When we get through a difficult assignment, taking time to recognize Jehovah’s help strengthens our trust for the next challenge.</div></figure></div></div></section>
+<section class="card"><div class="section-heading">We Will Never Stop Learning</div><div class="section-body"><div class="qa-unit"><div class="question-card"><span class="qnum">17-18.</span> Why can we say that we will never stop learning about Jehovah?</div>
+<button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button><div class="answer-box"><p><span class="sub-label">In the new world (¶17):</span> We will learn much more about Jehovah, for new scrolls will reveal his requirements — John saw that <span class="sq">“scrolls were opened”</span> (<span class="scripture-chip" onclick="openSidebar("Rev. 20:12")">Rev. 20:12</span>). We will be able to interact more closely with the natural world, when <span class="sq">“the earth will certainly be filled with the knowledge of Jehovah As the waters cover the sea”</span> (<span class="scripture-chip" onclick="openSidebar("Isa. 11:6-9")">Isa. 11:6-9</span>). We will also understand our Father better as we see our loved ones resurrected and grow closer to perfection every day.</p><p><span class="sub-label">Forever (¶18):</span> Jehovah has lived for an eternity — <span class="sq">“From everlasting to everlasting, you are God”</span> (<span class="scripture-chip" onclick="openSidebar("Ps. 90:2")">Ps. 90:2</span>) — and <span class="sq">“His understanding is beyond measure”</span> (<span class="scripture-chip" onclick="openSidebar("Ps. 147:5")">Ps. 147:5</span>). Mankind <span class="sq">“will never find out the work that the true God has made from start to finish”</span> (<span class="scripture-chip" onclick="openSidebar("Eccl. 3:11")">Eccl. 3:11</span>). So regardless of how long we have been in the truth, we should seize every opportunity to learn more about our loving Father.</p><div class="prep-box"><span class="prep-label">💬 Comment you could share:</span>It thrills me to think that I will never run out of things to learn about Jehovah. Even after thousands of years in the new world, there will still be something new to discover about him.</div><div class="prep-box"><span class="prep-label">🙏 Getting to know Jehovah:</span>Because Jehovah’s understanding is “beyond measure,” our friendship with him can keep growing forever. He is a Friend we will never fully exhaust.</div></div><div class="paragraph-block"><span class="pnum">17</span> Think of how much more we will learn about Jehovah in the new world. We will receive new scrolls that reveal his requirements for us. (<span class="scripture-chip" onclick="openSidebar("Rev. 20:12")">Rev. 20:12</span>) We will be able to interact more closely with the natural world. (<span class="scripture-chip" onclick="openSidebar("Isa. 11:6-9")">Isa. 11:6-9</span>) And we will deepen our understanding of our Father as we experience new things, including our loved ones being resurrected and our getting closer to perfection every day.</div><div class="paragraph-block"><span class="pnum">18</span> We will never stop getting to know Jehovah. He has already lived for an eternity, so “his understanding is beyond measure.” (<span class="scripture-chip" onclick="openSidebar("Ps. 90:2")">Ps. 90:2</span>; <span class="scripture-chip" onclick="openSidebar("Ps. 147:5")">Ps. 147:5</span>) We “will never find out the work that the true God has made from start to finish.” (<span class="scripture-chip" onclick="openSidebar("Eccl. 3:11")">Eccl. 3:11</span>) Therefore, regardless of how long we have been in the truth, may we seize every opportunity to learn more about our loving Father.</div></div></div></section>
+<div class="review-section"><div class="section-heading">How Would You Answer?</div><div class="qa-unit"><div class="question-card"><span class="qnum">•</span> What does it mean to come to know Jehovah?</div>
+<button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button><div class="answer-box"><p>It means more than knowing facts about him — it involves our heart. We come to know the Person behind the name: what makes him happy and what displeases him. Like Josiah, we act on what we learn (<span class="sq">“‘Is that not what it means to know me?’”</span> (<span class="scripture-chip" onclick="openSidebar("Jer. 22:15, 16")">Jer. 22:15, 16</span>)), and as we know him better, our trust in him grows (<span class="sq">“Those knowing your name will trust in you”</span> (<span class="scripture-chip" onclick="openSidebar("Ps. 9:10")">Ps. 9:10</span>)).</p><div class="prep-box"><span class="prep-label">💬 Comment you could share:</span>For me, knowing Jehovah means my knowledge is changing my heart and actions — not just adding information.</div></div></div><div class="qa-unit"><div class="question-card"><span class="qnum">•</span> Why should we keep getting to know Jehovah?</div>
+<button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button><div class="answer-box"><p>It strengthens our friendship with him and our gratitude (<span class="scripture-chip" onclick="openSidebar("Ps. 73:24-28")">Ps. 73:24-28</span>); it helps us make decisions that please him when we <span class="sq">“take notice of him”</span> (<span class="scripture-chip" onclick="openSidebar("Prov. 3:5, 6")">Prov. 3:5, 6</span>); and it helps us imitate his qualities — the “weightier matters” of justice, mercy, and faithfulness (<span class="scripture-chip" onclick="openSidebar("Matt. 23:23")">Matt. 23:23</span>).</p><div class="prep-box"><span class="prep-label">💬 Comment you could share:</span>The photo-of-a-mate illustration stuck with me: the more I think about Jehovah, the easier it is to choose what pleases him.</div></div></div><div class="qa-unit"><div class="question-card"><span class="qnum">•</span> How do we get to know Jehovah better?</div>
+<button class="toggle-answer" onclick="toggleAnswer(this)">▸ Show comment</button><div class="answer-box"><p>By reading and studying his Word and asking what each account reveals about him (as with Ebed-melech, <span class="scripture-chip" onclick="openSidebar("Jer. 39:15-18")">Jer. 39:15-18</span>); by meditating on creation, since <span class="sq">“his invisible qualities are clearly seen”</span> (<span class="scripture-chip" onclick="openSidebar("Rom. 1:20")">Rom. 1:20</span>); and by meditating on our own experiences, as Mary did (<span class="scripture-chip" onclick="openSidebar("Luke 1:46-55")">Luke 1:46-55</span>).</p><div class="prep-box"><span class="prep-label">💬 Comment you could share:</span>I want to add a simple question to my personal study: ‘What does this teach me about Jehovah?’ — whether I’m reading the Bible, looking at creation, or remembering how he helped me.</div></div></div></div>
+<div class="closing-song-banner"><strong>Closing Song:</strong> Song 28 — Gaining Jehovah’s Friendship</div>
+<div class="source-link">Source: <a href="https://www.jw.org/en/library/magazines/watchtower-study-july-2026/Are-You-Getting-to-Know-Jehovah-Better/" target="_blank">The Watchtower—Study Edition, July 2026 · jw.org</a></div>
+<div class="deviation-note"><h4>Notes on this guide</h4>All scripture text was extracted programmatically from the NWT Study Edition chapter pages on wol.jw.org (verse elements, footnote and cross-reference markers removed) and every quoted phrase was machine-checked against that stored text. Paragraph text and questions are from the jw.org article. Research Guide notes in the sidebar are summarized in my own words (the source publications quote older Bible wording, so their scripture quotes were not reproduced). No video is referenced in this article.</div>
+</div>
+<div id="sidebarOverlay" onclick="closeSidebar()"></div>
+<aside id="sidebar"><button class="sb-close" onclick="closeSidebar()">×</button><h3 id="sbRef"></h3><div class="sb-src" id="sbSrc"></div><div class="sb-text" id="sbText"></div>
+<a id="sbLink" class="sb-open-full" href="#" target="_blank">Open full article →</a> <a id="sbRg" class="sb-open-full" style="background:#475569;margin-top:8px;" href="#" target="_blank">Research Guide →</a></aside>
+<script>
+var scriptureData = {
+"1 Chron. 28:9": {
+"text": "“And you, Solʹo·mon my son, know the God of your father and serve him with a complete heart and with a delightful soul, for Jehovah searches through all hearts, and he discerns every inclination of the thoughts. If you search for him, he will let himself be found by you, but if you leave him, he will reject you forever.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/1-chronicles/28/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070117/11152",
+"kind": "scripture"
+},
+"Rom. 11:33, 34": {
+"text": "O the depth of God’s riches and wisdom and knowledge! How unsearchable his judgments are and beyond tracing out his ways are! For “who has come to know Jehovah’s mind, or who has become his adviser?”",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/romans/11/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070149/28334",
+"kind": "scripture"
+},
+"Matt. 11:27": {
+"text": "All things have been handed over to me by my Father, and no one fully knows the Son except the Father; neither does anyone fully know the Father except the Son and anyone to whom the Son is willing to reveal him.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/matthew/11/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070144/23602",
+"kind": "scripture"
+},
+"1 John 5:20": {
+"text": "But we know that the Son of God has come, and he has given us insight so that we may gain the knowledge of the one who is true. And we are in union with the one who is true, by means of his Son Jesus Christ. This is the true God and life everlasting.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/1-john/5/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070166/30736",
+"kind": "scripture"
+},
+"John 17:3": {
+"text": "This means everlasting life, their coming to know you, the only true God, and the one whom you sent, Jesus Christ.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/john/17/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070147/26854",
+"kind": "scripture"
+},
+"Jer. 24:7": {
+"text": "And I will give them a heart to know me, that I am Jehovah. They will become my people, and I will become their God, for they will return to me with all their heart.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/jeremiah/24/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070128/19647",
+"kind": "scripture"
+},
+"2 Chron. 34:3": {
+"text": "In the 8th year of his reign, while he was still a boy, he started to search for the God of David his forefather; and in the 12th year, he started to cleanse Judah and Jerusalem of the high places and the sacred poles, the graven images, and the metal statues.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/2-chronicles/34/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070118/11936",
+"kind": "scripture"
+},
+"Jer. 22:15, 16": {
+"text": "Will you continue reigning because you outdo others in your use of cedar? Your father also ate and drank, But he upheld justice and righteousness, And it went well with him. He defended the legal claim of the afflicted one and the poor one, So that it went well. ‘Is that not what it means to know me?’ declares Jehovah.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/jeremiah/22/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070128/19585",
+"kind": "scripture"
+},
+"Ps. 9:10": {
+"text": "Those knowing your name will trust in you; You will never abandon those seeking you, O Jehovah.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/psalms/9/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070123/14038",
+"kind": "scripture"
+},
+"2 Tim. 1:12": {
+"text": "This is why I am also suffering these things, but I am not ashamed. For I know the One whom I have believed, and I am confident that he is able to guard what I have laid up in trust with him until that day.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/2-timothy/1/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070159/29913",
+"kind": "scripture"
+},
+"2 Tim. 3:16, 17": {
+"text": "All Scripture is inspired of God and beneficial for teaching, for reproving, for setting things straight, for disciplining in righteousness, so that the man of God may be fully competent, completely equipped for every good work.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/2-timothy/3/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070159/29961",
+"kind": "scripture"
+},
+"Ps. 25:8-10": {
+"text": "Good and upright is Jehovah. That is why he instructs sinners in the way to live. He will guide the meek in what is right, And he will teach the meek ones his way. All the paths of Jehovah are loyal love and faithfulness For those observing his covenant and his reminders.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/psalms/25/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070123/14281",
+"kind": "scripture"
+},
+"Ps. 73:24-28": {
+"text": "You guide me with your advice, And afterward you will lead me to glory. Whom do I have in the heavens? And besides you I desire nothing on earth. My body and my heart may fail, But God is the rock of my heart and my portion forever. Truly, those keeping far from you will perish. You will put an end to everyone who immorally leaves you. But as for me, drawing near to God is good for me. I have made the Sovereign Lord Jehovah my refuge, To declare all your works.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/psalms/73/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070123/15111",
+"kind": "scripture"
+},
+"Prov. 3:5, 6": {
+"text": "Trust in Jehovah with all your heart, And do not rely on your own understanding. In all your ways take notice of him, And he will make your paths straight.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/proverbs/3/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070124/16576",
+"kind": "scripture"
+},
+"Ps. 19:13, 14": {
+"text": "And hold your servant back from presumptuous acts; Do not let them dominate me. Then I will be complete, And innocent of blatant sins. May the words of my mouth and the meditation of my heart Be pleasing to you, O Jehovah, my Rock and my Redeemer.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/psalms/19/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070123/14197",
+"kind": "scripture"
+},
+"Gen. 1:26": {
+"text": "Then God said: “Let us make man in our image, according to our likeness, and let them have in subjection the fish of the sea and the flying creatures of the heavens and the domestic animals and all the earth and every creeping animal that is moving on the earth.”",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/genesis/1/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070105/25",
+"kind": "scripture"
+},
+"Matt. 23:23": {
+"text": "“Woe to you, scribes and Pharisees, hypocrites! because you give the tenth of the mint and the dill and the cumin, but you have disregarded the weightier matters of the Law, namely, justice and mercy and faithfulness. These things it was necessary to do, yet not to disregard the other things.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/matthew/23/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070144/24057",
+"kind": "scripture"
+},
+"1 John 4:8, 11": {
+"text": "Whoever does not love has not come to know God, because God is love. Beloved ones, if this is how God loved us, then we are also under obligation to love one another.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/1-john/4/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070166/30703",
+"kind": "scripture"
+},
+"Neh. 8:8": {
+"text": "And they continued reading aloud from the book, from the Law of the true God, clearly explaining it and putting meaning into it; so they helped the people to understand what was being read.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/nehemiah/8/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070120/12501",
+"kind": "scripture"
+},
+"Acts 14:17": {
+"text": "although he did not leave himself without witness in that he did good, giving you rains from heaven and fruitful seasons, satisfying you with food and filling your hearts with gladness.”",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/acts/14/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070148/27523",
+"kind": "scripture"
+},
+"Ex. 34:6, 7": {
+"text": "Jehovah was passing before him and declaring: “Jehovah, Jehovah, a God merciful and compassionate, slow to anger and abundant in loyal love and truth, showing loyal love to thousands, pardoning error and transgression and sin, but he will by no means leave the guilty unpunished, bringing punishment for the error of fathers upon sons and upon grandsons, upon the third generation and upon the fourth generation.”",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/exodus/34/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070106/2502",
+"kind": "scripture"
+},
+"Jer. 38:6-13": {
+"text": "So they took Jeremiah and threw him into the cistern of Mal·chiʹjah the son of the king, which was in the Courtyard of the Guard. They let Jeremiah down by ropes. Now there was no water in the cistern, only mud, and Jeremiah began to sink down into the mud. Eʹbed-melʹech the E·thi·oʹpi·an, a eunuch in the king’s house, heard that they had put Jeremiah into the cistern. Now the king was sitting in the Gate of Benjamin, so Eʹbed-melʹech went out of the king’s house and spoke to the king, saying: “O my lord the king, what these men have done to Jeremiah the prophet is evil! They have thrown him into the cistern, and he will die there because of the famine, for there is no bread left in the city.” Then the king commanded Eʹbed-melʹech the E·thi·oʹpi·an: “Take 30 men with you from here, and pull Jeremiah the prophet up out of the cistern before he dies.” So Eʹbed-melʹech took the men with him and went into the king’s house to a place beneath the treasury, and they took from there some worn-out rags and worn-out pieces of cloth and let them down by ropes to Jeremiah in the cistern. Then Eʹbed-melʹech the E·thi·oʹpi·an said to Jeremiah: “Please put the rags and the pieces of cloth between your armpits and the ropes.” Jeremiah did so, and they drew Jeremiah out with the ropes and pulled him up out of the cistern. And Jeremiah remained in the Courtyard of the Guard.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/jeremiah/38/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070128/20017",
+"kind": "scripture"
+},
+"Jer. 39:15-18": {
+"text": "While Jeremiah was confined in the Courtyard of the Guard, the word of Jehovah came to him, saying: “Go and tell Eʹbed-melʹech the E·thi·oʹpi·an, ‘This is what Jehovah of armies, the God of Israel, says: “Here I am fulfilling my words on this city for calamity and not for good, and in that day you will see it happen.”’ “‘But I will rescue you in that day,’ declares Jehovah, ‘and you will not be handed over to the men you fear.’ “‘For I will surely provide you with escape, and you will not fall by the sword. You will have your life as a spoil, because you trusted in me,’ declares Jehovah.”",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/jeremiah/39/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070128/20054",
+"kind": "scripture"
+},
+"Ps. 145:9, 10": {
+"text": "Jehovah is good to all, And his mercy is evident in all his works. All your works will glorify you, O Jehovah, And your loyal ones will praise you.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/psalms/145/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070123/16445",
+"kind": "scripture"
+},
+"Rom. 1:20": {
+"text": "For his invisible qualities are clearly seen from the world’s creation onward, because they are perceived by the things made, even his eternal power and Godship, so that they are inexcusable.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/romans/1/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070149/28042",
+"kind": "scripture"
+},
+"Luke 1:30": {
+"text": "So the angel said to her: “Do not be afraid, Mary, for you have found favor with God.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/luke/1/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070146/25027",
+"kind": "scripture"
+},
+"Luke 1:46-55": {
+"text": "And Mary said: “My soul magnifies Jehovah, and my spirit cannot keep from being overjoyed at God my Savior, because he has looked upon the low position of his slave girl. For look! from now on all generations will declare me happy, because the powerful One has done great deeds for me, and holy is his name, and for generation after generation his mercy is upon those who fear him. He has acted mightily with his arm; he has scattered those who are haughty in the intention of their hearts. He has brought down powerful men from thrones and has exalted lowly ones; he has fully satisfied hungry ones with good things and has sent away empty-handed those who had wealth. He has come to the aid of Israel his servant, remembering his mercy, just as he spoke to our forefathers, to Abraham and to his offspring, forever.”",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/luke/1/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070146/25043",
+"kind": "scripture"
+},
+"Heb. 4:16": {
+"text": "Let us, then, approach the throne of undeserved kindness with freeness of speech, so that we may receive mercy and find undeserved kindness to help us at the right time.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/hebrews/4/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070162/30122",
+"kind": "scripture"
+},
+"Rev. 20:12": {
+"text": "And I saw the dead, the great and the small, standing before the throne, and scrolls were opened. But another scroll was opened; it is the scroll of life. The dead were judged out of those things written in the scrolls according to their deeds.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/revelation/20/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070170/31142",
+"kind": "scripture"
+},
+"Isa. 11:6-9": {
+"text": "The wolf will reside for a while with the lamb, And with the young goat the leopard will lie down, And the calf and the lion and the fattened animal will all be together; And a little boy will lead them. The cow and the bear will feed together, And their young will lie down together. The lion will eat straw like the bull. The nursing child will play over the lair of a cobra, And a weaned child will put his hand over the den of a poisonous snake. They will not cause any harm Or any ruin in all my holy mountain, Because the earth will certainly be filled with the knowledge of Jehovah As the waters cover the sea.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/isaiah/11/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070127/18006",
+"kind": "scripture"
+},
+"Ps. 90:2": {
+"text": "Before the mountains were born Or you brought forth the earth and the productive land, From everlasting to everlasting, you are God.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/psalms/90/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070123/15464",
+"kind": "scripture"
+},
+"Ps. 147:5": {
+"text": "Our Lord is great and is mighty in power; His understanding is beyond measure.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/psalms/147/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070123/16472",
+"kind": "scripture"
+},
+"Eccl. 3:11": {
+"text": "He has made everything beautiful in its time. He has even put eternity in their heart; yet mankind will never find out the work that the true God has made from start to finish.",
+"url": "https://www.jw.org/en/library/bible/study-bible/books/ecclesiastes/3/",
+"rg": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070125/17486",
+"kind": "scripture"
+},
+"RG: cl ch. 24": {
+"kind": "article",
+"title": "Draw Close to Jehovah, chap. 24 — Nothing Can “Separate Us From God’s Love”",
+"text": "Research Guide reference for 1 Chron. 28:9. The chapter explains that as Jehovah searches through billions of human hearts in a violent world, he is delighted when he finds a heart that loves peace, truth, and righteousness — one that seeks to learn about him and share that knowledge with others. He takes note of such ones and keeps “a book of remembrance” for those meditating on his name (Mal. 3:16).",
+"url": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070117/11152"
+},
+"RG: w15 7/1 p. 14": {
+"kind": "article",
+"title": "The Watchtower, July 1, 2015 — “Can We Really Please God?”",
+"text": "Research Guide reference for 1 Chron. 28:9. A “complete heart” is not a perfect heart. It is a heart that loves God, is resolved to be sensitive to his will and requirements, yearns to serve him obediently, and is willing to be corrected. Job, Lot, and David made mistakes, yet their love and desire to obey allowed them to please God.",
+"url": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070117/11152"
+},
+"RG: jr pp. 140-141": {
+"kind": "article",
+"title": "God’s Word for Us Through Jeremiah, pp. 140-141",
+"text": "Research Guide reference for Jer. 22:15, 16. In the chapter “Shepherds in Agreement With My Heart,” Josiah’s example is used to show that knowing Jehovah is proved by conduct — upholding justice and caring for the afflicted and the poor — not merely by holding information about him.",
+"url": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070128/19585"
+},
+"RG: w13 9/15 p. 24": {
+"kind": "article",
+"title": "The Watchtower, September 15, 2013 — “Have You Been Transformed?”",
+"text": "Research Guide reference for Prov. 3:5, 6. The article encourages us to let Bible principles, rather than our own reasoning, shape our decisions — taking Jehovah into account in all our ways so that our choices reflect his thinking.",
+"url": "https://wol.jw.org/en/wol/dx/r1/lp-e/1001070124/16576"
+}
+};
+function openSidebar(ref) {
+  var d = scriptureData[ref];
+  document.getElementById('sbRef').textContent = d && d.kind==='article' ? d.title : ref;
+  document.getElementById('sbSrc').textContent = d && d.kind==='article' ? 'Research Guide note' : 'New World Translation (Study Edition)';
+  document.getElementById('sbText').textContent = d ? (d.kind==='article' ? d.text : '“' + d.text + '”') : '(Text not loaded.)';
+  document.getElementById('sbLink').href = d ? d.url : '#';
+  var rg = document.getElementById('sbRg');
+  if (d && d.rg) { rg.style.display='inline-block'; rg.href=d.rg; } else { rg.style.display='none'; }
+  document.getElementById('sidebar').classList.add('open');
+  document.getElementById('sidebarOverlay').classList.add('open');
+}
+function closeSidebar() { document.getElementById('sidebar').classList.remove('open'); document.getElementById('sidebarOverlay').classList.remove('open'); }
+function toggleAnswer(btn) { var b = btn.nextElementSibling; b.classList.toggle('open'); btn.textContent = b.classList.contains('open') ? '▾ Hide comment' : '▸ Show comment'; }
+var allExpanded = false;
+function toggleAll() { allExpanded = !allExpanded;
+  document.querySelectorAll('.answer-box').forEach(function(b){ b.classList.toggle('open', allExpanded); });
+  document.querySelectorAll('.toggle-answer').forEach(function(b){ b.textContent = allExpanded ? '▾ Hide comment' : '▸ Show comment'; });
+  document.getElementById('expandAllBtn').textContent = allExpanded ? 'Collapse All' : 'Expand All'; }
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeSidebar(); });
+</script>
+</body></html>
