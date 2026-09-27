@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLAM Study Guide — September 28–October 4, 2026</title>
+<style>
+  :root{
+    --treasures:#1d4ed8; --apply:#15803d; --living:#7e22ce; --cbs:#c2410c;
+    --bg:#f0f4f8; --card:#ffffff; --ink:#1f2937; --sub:#6b7280;
+    --amber:#f59e0b; --amberbg:#fffbeb; --green:#22c55e; --greenbg:#f0fdf4;
+    --orange:#d97706; --orangebg:#fff7ed; --coach:#6366f1; --chip:#eff6ff;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;}
+  .wrap{max-width:820px;margin:0 auto;padding:16px 14px 60px;}
+  header.top{background:linear-gradient(135deg,#1d4ed8,#7e22ce);color:#fff;border-radius:14px;padding:22px 20px;margin-bottom:16px;}
+  .badge{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.02em;}
+  header.top h1{margin:10px 0 2px;font-size:22px;}
+  header.top p{margin:0;opacity:.9;font-size:14px;}
+  .toolbar{display:flex;gap:10px;margin:14px 0;}
+  .btn{background:var(--card);border:1px solid #d1d5db;border-radius:10px;padding:10px 14px;font-size:14px;font-weight:600;cursor:pointer;color:var(--ink);}
+  .btn:hover{background:#f3f4f6;}
+  .songband{background:#fff;border-left:6px solid #9333ea;border-radius:10px;padding:12px 16px;margin-bottom:18px;font-size:14px;}
+  .songband a{color:#7e22ce;font-weight:600;text-decoration:none;}
+  .section-divider{display:flex;align-items:center;gap:10px;margin:26px 0 12px;font-weight:800;font-size:17px;}
+  .section-divider .line{flex:1;height:2px;border-radius:2px;}
+  .sd-treasures{color:var(--treasures);} .sd-treasures .line{background:var(--treasures);}
+  .sd-apply{color:var(--apply);} .sd-apply .line{background:var(--apply);}
+  .sd-living{color:var(--living);} .sd-living .line{background:var(--living);}
+  .sd-cbs{color:var(--cbs);} .sd-cbs .line{background:var(--cbs);}
+  .card{background:var(--card);border-radius:14px;padding:18px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.06);}
+  .card h3{margin:0 0 4px;font-size:16.5px;}
+  .meta{color:var(--sub);font-size:12.5px;margin-bottom:10px;}
+  .point{margin:8px 0;padding-left:14px;border-left:3px solid #e5e7eb;}
+  .toggle{cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;font-weight:700;color:var(--ink);padding:6px 0;}
+  .toggle .arrow{transition:transform .2s;color:var(--sub);}
+  .toggle.open .arrow{transform:rotate(90deg);}
+  .collapsible{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .collapsible.open{max-height:4000px;}
+  .scripture-chip{display:inline-block;background:var(--chip);color:#1d4ed8;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:600;margin:3px 4px 3px 0;cursor:pointer;border:1px solid #c7d7fe;}
+  .scripture-chip:hover{background:#dbeafe;}
+  blockquote.verse{background:#f8fafc;border-left:4px solid #1d4ed8;margin:10px 0;padding:10px 14px;font-style:italic;border-radius:0 8px 8px 0;font-size:14.5px;}
+  .box{border-left:5px solid var(--amber);background:var(--amberbg);border-radius:0 10px 10px 0;padding:12px 14px;margin:10px 0;font-size:14.5px;}
+  .box.green{border-left-color:var(--green);background:var(--greenbg);}
+  .box.video{border-left-color:var(--orange);background:var(--orangebg);}
+  .box b{display:block;margin-bottom:3px;}
+  .dialogue{background:#f8f8f8;border-radius:10px;padding:14px;margin:10px 0;font-size:14.5px;}
+  .dialogue p{margin:6px 0;}
+  .coach{color:var(--coach);font-style:italic;font-size:13px;}
+  img.artimg{max-width:100%;border-radius:8px;margin:10px 0;display:block;}
+  .credit{color:var(--sub);font-size:11.5px;margin-top:-6px;margin-bottom:8px;}
+  .ask{background:#eef2ff;border-radius:10px;padding:12px 14px;margin:10px 0;font-size:14.5px;font-weight:600;}
+  .gemgroup{border:1px solid #e5e7eb;border-radius:10px;padding:12px;margin:10px 0;}
+  .gemgroup h4{margin:0 0 8px;font-size:14.5px;color:var(--treasures);}
+  .gem{border-top:1px dashed #e5e7eb;padding-top:8px;margin-top:8px;}
+  .gem:first-of-type{border-top:none;margin-top:0;padding-top:0;}
+  footer{text-align:center;color:var(--sub);font-size:12.5px;margin-top:30px;}
+  footer a{color:var(--treasures);}
+  #sidebar{position:fixed;top:0;right:-100%;width:340px;max-width:100%;height:100%;background:#fff;box-shadow:-4px 0 24px rgba(0,0,0,.15);transition:right .25s ease;z-index:50;overflow-y:auto;padding:20px;}
+  #sidebar.open{right:0;}
+  #sb-close{float:right;background:none;border:none;font-size:22px;cursor:pointer;color:var(--sub);}
+  #sb-title{font-weight:800;font-size:16px;margin:6px 0 10px;}
+  #sb-body{font-size:14.5px;}
+  #overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);display:none;z-index:40;}
+  #overlay.open{display:block;}
+  .sb-link{display:inline-block;margin-top:12px;background:var(--treasures);color:#fff;text-decoration:none;padding:8px 14px;border-radius:8px;font-size:13.5px;font-weight:600;}
+  @media(max-width:480px){#sidebar{width:100%;right:-100%;}}
+  .art-chip{display:inline-block;background:#faf5ff;color:#7e22ce;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:600;margin:3px 4px 3px 0;cursor:pointer;border:1px solid #e9d5ff;}
+  .art-chip:hover{background:#f3e8ff;}
+  blockquote.verse .ref{display:block;font-style:normal;font-weight:700;color:#1d4ed8;font-size:12.5px;margin-top:4px;}
+  .collapsible.open{max-height:12000px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span class="badge">SEPTEMBER 28–OCTOBER 4, 2026</span>
+    <h1>CLAM Study Guide</h1>
+    <p>Our Christian Life &amp; Ministry — personal comment prep · Bible reading: <b>Jeremiah 38–39</b></p>
+  </header>
+
+  <div class="toolbar">
+    <button class="btn" id="expandAllBtn" onclick="toggleAll()">Expand All</button>
+  </div>
+
+  <div class="songband">🎵 Opening: <a href="https://www.jw.org/en/library/music-songs/sing-out-joyfully/102-assist-those-who-are-weak/" target="_blank" rel="noopener">Song 102 — “Assist Those Who Are Weak”</a> and Prayer &nbsp;|&nbsp; Opening Comments (1 min.)</div>
+
+  <!-- ================= TREASURES ================= -->
+  <div class="section-divider sd-treasures"><span>⛏️ TREASURES FROM GOD’S WORD</span><span class="line"></span></div>
+
+  <div class="card">
+    <h3>1. Continue Supporting One Another</h3>
+    <div class="meta">10 min. — Talk · Jeremiah 38–39</div>
+    <p>Jerusalem is under Babylonian siege. The princes have thrown Jeremiah into a muddy cistern to die, and weak King Zedekiah has let them. Into that moment steps Ebed-melech, a court official who risks his own safety to speak up. The talk draws three ways we can support one another from the account: <b>speak up</b> for others, <b>comfort</b> others, and <b>encourage</b> others to obey Jehovah.</p>
+
+    <img class="artimg" src="https://cms-imgp.jw-cdn.org/img/p/202026255/univ/art/202026255_univ_cnt_1_lg.jpg" alt="Ebed-melech kneeling before King Zedekiah">
+    <div class="credit">Ebed-melech kneeling before King Zedekiah and pleading for Jeremiah’s life as royal guards watch.</div>
+    <div class="box green"><b>🖼️ What the picture teaches</b>Notice the setting: armed guards, a king who had just said he “cannot do anything to stop” the princes, and Ebed-melech on his knees in public. Speaking up was not safe or convenient. Yet he did it respectfully (“O my lord the king”) and plainly (“what these men have done … is evil!”). Supporting a brother or sister sometimes means being the one person willing to say something — tactfully, but clearly.</div>
+
+    <div class="point">
+      <b>Speak up for others as Ebed-melech did</b><br>
+      <span class="scripture-chip" onclick="openVerse('Jer. 38:7-9')">Jer. 38:7-9</span> <span class="art-chip" onclick="openArt('w13')">w13 1/15 9 ¶12</span> <span class="art-chip" onclick="openArt('w12')">w12 5/1 31</span> <span class="art-chip" onclick="openArt('itEunuch')">it “Eunuch”</span>
+      <blockquote class="verse"><sup>7</sup>Eʹbed-melʹech the E·thi·oʹpi·an, a eunuch in the king’s house, heard that they had put Jeremiah into the cistern. Now the king was sitting in the Gate of Benjamin, <sup>8</sup>so Eʹbed-melʹech went out of the king’s house and spoke to the king, saying: <sup>9</sup>“O my lord the king, what these men have done to Jeremiah the prophet is evil! They have thrown him into the cistern, and he will die there because of the famine, for there is no bread left in the city.”<span class="ref">— Jer. 38:7-9 (NWTsty)</span></blockquote>
+      <p>The 2013 <i>Watchtower</i> notes that the princes hated Jeremiah and had falsely charged him with sedition, so appealing on his behalf put Ebed-melech in real danger — yet he went to the king anyway. <i>Insight</i> adds that “eunuch” here likely means a court officer; he evidently had authority, since the king put 30 men under his command. And the 2012 article highlights his <b>kindness</b> too: the rags and cloths (Jer 38:11, 12) were so the ropes would not tear into Jeremiah’s armpits.</p>
+    </div>
+    <div class="point">
+      <b>Comfort others as Jeremiah did</b><br>
+      <span class="scripture-chip" onclick="openVerse('Jer. 39:15-18')">Jer. 39:15-18</span> <span class="art-chip" onclick="openArt('w19')">w19.11 6 ¶17</span>
+      <blockquote class="verse"><sup>15</sup>While Jeremiah was confined in the Courtyard of the Guard, the word of Jehovah came to him, saying: <sup>16</sup>“Go and tell Eʹbed-melʹech the E·thi·oʹpi·an, ‘This is what Jehovah of armies, the God of Israel, says: “Here I am fulfilling my words on this city for calamity and not for good, and in that day you will see it happen.”’ <sup>17</sup>“‘But I will rescue you in that day,’ declares Jehovah, ‘and you will not be handed over to the men you fear.’ <sup>18</sup>“‘For I will surely provide you with escape, and you will not fall by the sword. You will have your life as a spoil, because you trusted in me,’ declares Jehovah.”<span class="ref">— Jer. 39:15-18 (NWTsty)</span></blockquote>
+      <p>Jeremiah was still a prisoner in the Courtyard of the Guard, yet when he learned Ebed-melech was afraid of the princes he didn’t stay silent, hoping his friend would cope alone. He passed on Jehovah’s comforting promise. A true friend in distress uses whatever he has — even if that is only words from Jehovah.</p>
+    </div>
+    <div class="point">
+      <b>Encourage others to obey Jehovah as Jeremiah did</b><br>
+      <span class="scripture-chip" onclick="openVerse('Jer. 38:20')">Jer. 38:20</span>
+      <blockquote class="verse">But Jeremiah said: “You will not be handed over to them. Obey, please, the voice of Jehovah in what I am telling you, and it will go well with you, and you will continue to live.<span class="ref">— Jer. 38:20 (NWTsty)</span></blockquote>
+      <p>Even to the king who had allowed him to be thrown into a pit, Jeremiah said “please.” He didn’t lecture or retaliate; he kindly urged obedience and pointed to the outcome — “it will go well with you.”</p>
+    </div>
+
+    <img class="artimg" src="https://cms-imgp.jw-cdn.org/img/p/202026255/univ/art/202026255_univ_cnt_2_lg.jpg" alt="A sister comforting a grieving sister">
+    <div class="credit">A sister provides comfort to a friend who recently lost her mother in death.</div>
+    <div class="box green"><b>🖼️ What the picture teaches</b>The grieving sister is holding a framed photo of herself with her mother, and her friend is simply sitting close and listening. Comfort doesn’t require a speech — presence, attention, and a Bible thought at the right moment are often what a hurting friend needs most (Rom 12:15). Like Jeremiah, we give what we can.</div>
+
+    <div class="ask">🤔 ASK YOURSELF: “Whom in my congregation might I need to speak up for?” <span class="art-chip" onclick="openArt('w20')">w20.09 24 ¶15-17</span><br><span style="font-weight:400">The 2020 article gives examples: a widow or divorced sister who needs an advocate, an elderly sister speaking to medical staff, a pioneer sister unfairly criticized, or a sister in a religiously divided home who arrives late and leaves early. Commending her and mentioning what she does well can stop negative talk. <span class="scripture-chip" onclick="openVerse('Isa. 1:17')">Isa. 1:17</span></span></div>
+
+    <div class="box"><b>💬 Comment you could share:</b>“What impressed me is that Ebed-melech didn’t just feel sorry for Jeremiah — he went straight to the king, in public, while the princes were still powerful. And then he thought about something as small as rags so the ropes wouldn’t hurt. Courage and kindness went together.”</div>
+    <div class="box"><b>📌 Personal application:</b>If I hear someone in the congregation being criticized unfairly — maybe a sister in a divided household — I can be the one who mentions the good she’s doing. That’s a modern way to “speak up” like Ebed-melech.</div>
+    <div class="box"><b>🙏 Getting to know Jehovah:</b>Jehovah noticed what Ebed-melech did and even knew about the fear he felt — “you will not be handed over to the men you fear.” He gave him a personal promise “because you trusted in me.” Jehovah sees and rewards the quiet courage we show for one another (Heb 11:6).</div>
+  </div>
+
+  <div class="card">
+    <h3>2. Spiritual Gems</h3>
+    <div class="meta">10 min.</div>
+
+    <div class="toggle" onclick="toggleSec(this)">Jer 39:6, 7 — What bad choice did King Zedekiah make, and what can family heads learn from his example? (jr 92 ¶1) <span class="arrow">▶</span></div>
+    <div class="collapsible">
+      <span class="scripture-chip" onclick="openVerse('Jer. 39:6, 7')">Jer. 39:6, 7</span> <span class="scripture-chip" onclick="openVerse('Jer. 38:17')">Jer. 38:17</span> <span class="art-chip" onclick="openArt('jr')">jr 92 ¶1</span> <span class="art-chip" onclick="openArt('itZed')">it-2 1228</span>
+      <blockquote class="verse"><sup>6</sup>The king of Babylon had the sons of Zed·e·kiʹah slaughtered before his eyes there at Ribʹlah, and the king of Babylon had all the nobles of Judah slaughtered. <sup>7</sup>Then he blinded the eyes of Zed·e·kiʹah, after which he bound him with copper fetters to bring him to Babylon.<span class="ref">— Jer. 39:6, 7 (NWTsty)</span></blockquote>
+      <p><b>Answer:</b> Zedekiah refused Jehovah’s clear direction to surrender to the Babylonians. Jehovah had promised through Jeremiah that if he surrendered, he and his household would be spared (Jer 38:17). His bad choice didn’t affect only him — his wives and sons suffered too. He watched his sons be killed, then was blinded and taken captive to Babylon. The <i>Jeremiah</i> book contrasts this with Joshua, who resolved: “As for me and my household, we will serve Jehovah.” <i>Insight</i> notes Zedekiah was only about 32, so his sons were likely still young.</p>
+      <blockquote class="verse">Jeremiah then said to Zed·e·kiʹah: “This is what Jehovah, the God of armies, the God of Israel, says, ‘If you surrender to the princes of the king of Babylon, your life will be spared, and this city will not be burned with fire, and you and your household will be spared.<span class="ref">— Jer. 38:17 (NWTsty)</span></blockquote>
+      <p><b>Lesson for family heads:</b> A family head’s decisions — especially whether or not to obey Jehovah — ripple through the whole household. Fear of what people might do (Jer 38:19) must never outweigh obedience to Jehovah.</p>
+      <blockquote class="verse">Now if it seems bad to you to serve Jehovah, choose for yourselves today whom you will serve, whether the gods that your forefathers served on the other side of the River or the gods of the Amʹor·ites in whose land you are dwelling. But as for me and my household, we will serve Jehovah.”<span class="ref">— Josh. 24:15 (NWTsty)</span></blockquote>
+      <div class="box"><b>💬 Comment you could share:</b>“It struck me that Zedekiah was told exactly what to do and exactly what would happen to his family either way (Jer 38:17, 18, 23). He wasn’t short on information — he was short on courage and faith. That reminds me that as a family head, what my family needs most from me isn’t more knowledge, it’s the courage to act on what Jehovah says.”</div>
+      <div class="box"><b>🙏 Getting to know Jehovah:</b>Compare Ezekiel 12:13 — Jehovah had foretold that Zedekiah would be brought to Babylon “but he will not see it.” Being blinded at Riblah is exactly how that came true. Jehovah’s word never fails, even in the smallest detail. <span class="scripture-chip" onclick="openVerse('Ezek. 12:13')">Ezek. 12:13</span> <span class="scripture-chip" onclick="openVerse('2 Ki. 25:7')">2 Ki. 25:7</span></div>
+      <blockquote class="verse">I will cast my net over him, and he will be caught in my hunting net. Then I will bring him to Babylon, to the land of the Chal·deʹans, but he will not see it; and there he will die.<span class="ref">— Ezek. 12:13 (NWTsty)</span></blockquote>
+    </div>
+
+    <div class="toggle" onclick="toggleSec(this)">What spiritual gems from this week’s Bible reading would you like to share? — pick one from your chapter <span class="arrow">▶</span></div>
+    <div class="collapsible">
+      <p class="meta">This week’s reading covers <b>two chapters</b> (Jeremiah 38 and 39). Choose a gem from whichever chapter you read or were assigned.</p>
+
+      <div class="gemgroup">
+        <h4>📖 Chapter 38 — pick one</h4>
+        <div class="gem">
+          <span class="scripture-chip" onclick="openVerse('Jer. 38:5')">Jer. 38:5</span>
+          <blockquote class="verse">King Zed·e·kiʹah replied: “Look! He is in your hands, for the king cannot do anything to stop you.”<span class="ref">— Jer. 38:5 (NWTsty)</span></blockquote>
+          <p>💎 “I found it telling that the king said he couldn’t stop his own princes. Zedekiah had the authority, but not the backbone. It shows that fearing people can paralyze even someone with power — and it makes Ebed-melech’s courage two verses later stand out even more.”</p>
+        </div>
+        <div class="gem">
+          <span class="scripture-chip" onclick="openVerse('Jer. 38:11, 12')">Jer. 38:11, 12</span>
+          <blockquote class="verse"><sup>11</sup>So Eʹbed-melʹech took the men with him and went into the king’s house to a place beneath the treasury, and they took from there some worn-out rags and worn-out pieces of cloth and let them down by ropes to Jeremiah in the cistern. <sup>12</sup>Then Eʹbed-melʹech the E·thi·oʹpi·an said to Jeremiah: “Please put the rags and the pieces of cloth between your armpits and the ropes.” Jeremiah did so,<span class="ref">— Jer. 38:11, 12 (NWTsty)</span></blockquote>
+          <p>💎 “I love that the Bible records the worn-out rags. Ebed-melech was rescuing a man from death, and he still thought about his comfort. It reminds me that when I help someone, how I help matters too.”</p>
+        </div>
+        <div class="gem">
+          <span class="scripture-chip" onclick="openVerse('Jer. 38:19')">Jer. 38:19</span> <span class="scripture-chip" onclick="openVerse('Pr. 29:25')">Pr. 29:25</span>
+          <blockquote class="verse">Then King Zed·e·kiʹah said to Jeremiah: “I am afraid of the Jews who have deserted to the Chal·deʹans, for if I am handed over to them, they may deal cruelly with me.”<span class="ref">— Jer. 38:19 (NWTsty)</span></blockquote>
+          <p>💎 “Zedekiah finally admitted the real reason he wouldn’t obey: ‘I am afraid of the Jews.’ Proverbs 29:25 says ‘trembling at men is a snare’ — and that fear literally cost him his family and his sight. When I’m tempted to hold back because of what others think, I want to remember where that fear led him.”</p>
+          <blockquote class="verse">Trembling at men is a snare, But the one trusting in Jehovah will be protected.<span class="ref">— Pr. 29:25 (NWTsty)</span></blockquote>
+        </div>
+        <div class="gem">
+          <span class="scripture-chip" onclick="openVerse('Jer. 38:16')">Jer. 38:16</span>
+          <blockquote class="verse">So King Zed·e·kiʹah secretly swore to Jeremiah, saying: “As surely as Jehovah is alive, who has given us this life, I will not put you to death, and I will not hand you over to these men who are seeking to take your life.”<span class="ref">— Jer. 38:16 (NWTsty)</span></blockquote>
+          <p>💎 “Zedekiah swore by Jehovah as the One ‘who has given us this life’ — yet he wouldn’t follow the advice that would have saved his life. It’s a warning that acknowledging Jehovah with our lips isn’t the same as obeying him.”</p>
+        </div>
+      </div>
+
+      <div class="gemgroup">
+        <h4>📖 Chapter 39 — pick one</h4>
+        <div class="gem">
+          <span class="scripture-chip" onclick="openVerse('Jer. 39:11, 12')">Jer. 39:11, 12</span>
+          <blockquote class="verse"><sup>11</sup>Now King Neb·u·chad·nezʹzar of Babylon gave Neb·uʹzar·adʹan the chief of the guard these orders concerning Jeremiah: <sup>12</sup>“Take him and look after him; do him no harm, and grant whatever he asks of you.”<span class="ref">— Jer. 39:11, 12 (NWTsty)</span></blockquote>
+          <p>💎 “The king of Babylon himself ordered that Jeremiah be looked after. Jeremiah’s own king had let him be thrown in a pit, but Jehovah moved a pagan ruler to protect him. Jehovah can use anyone to care for his loyal servants.”</p>
+        </div>
+        <div class="gem">
+          <span class="scripture-chip" onclick="openVerse('Jer. 39:10')">Jer. 39:10</span>
+          <blockquote class="verse">But Neb·uʹzar·adʹan the chief of the guard left in the land of Judah some of the poorest people, those who had nothing at all. On that day he also gave them vineyards and fields to work.<span class="ref">— Jer. 39:10 (NWTsty)</span></blockquote>
+          <p>💎 “The rich and powerful were taken captive, but ‘the poorest people, those who had nothing at all’ were left behind and even given vineyards and fields. It’s a quiet reminder that Jehovah’s judgments aren’t about status — the lowly are not forgotten.”</p>
+        </div>
+        <div class="gem">
+          <span class="scripture-chip" onclick="openVerse('Jer. 39:17')">Jer. 39:17</span>
+          <blockquote class="verse">“‘But I will rescue you in that day,’ declares Jehovah, ‘and you will not be handed over to the men you fear.’<span class="ref">— Jer. 39:17 (NWTsty)</span></blockquote>
+          <p>💎 “Jehovah told Ebed-melech, ‘you will not be handed over to the men you fear.’ Ebed-melech had acted bravely, but Jehovah knew he was still afraid inside — and he addressed that fear personally. Courage doesn’t mean we feel no fear, and Jehovah understands that.”</p>
+        </div>
+        <div class="gem">
+          <span class="scripture-chip" onclick="openVerse('Jer. 39:2')">Jer. 39:2</span>
+          <blockquote class="verse">In the 11th year of Zed·e·kiʹah, in the fourth month, on the ninth day of the month, they broke through the city wall.<span class="ref">— Jer. 39:2 (NWTsty)</span></blockquote>
+          <p>💎 “The Bible gives an exact date — the 11th year of Zedekiah, 4th month, 9th day — for when the wall was breached. This is the destruction of 607 B.C.E. that Jeremiah had warned about for decades. Jehovah’s warnings come true, down to the day.”</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>3. Bible Reading</h3>
+    <div class="meta">4 min. — Jer 38:1-13 · <a href="https://www.jw.org/en/library/brochures/reading-and-teaching/12-warmth-and-empathy/" target="_blank" rel="noopener">th study 12 — Warmth and Empathy</a></div>
+    <span class="scripture-chip" onclick="openVerse('Jer. 38:1-13')">Jer. 38:1-13</span>
+    <div class="toggle" onclick="toggleSec(this)">Passage summary &amp; reading tips <span class="arrow">▶</span></div>
+    <div class="collapsible">
+      <p><b>Summary:</b> Four princes hear Jeremiah’s message urging surrender (vv. 1-3) and demand his death, calling him a demoralizer (v. 4). Zedekiah hands him over (v. 5), and Jeremiah is lowered into a muddy cistern (v. 6). Ebed-melech hears, confronts the king at the Gate of Benjamin (vv. 7-9), and is sent with 30 men (v. 10). He gently lowers rags so Jeremiah can be pulled out safely (vv. 11-13).</p>
+      <p><b>Applying “Warmth and Empathy” (th 12):</b></p>
+      <ul>
+        <li><b>Think about your listeners</b> — many in the audience have been unjustly treated or felt abandoned; read verse 6 knowing that.</li>
+        <li><b>Express the feelings in the passage</b> without overacting: the princes’ hostility in verse 4, Zedekiah’s weak resignation in verse 5, and the urgency and warmth of Ebed-melech’s plea in verse 9.</li>
+        <li><b>Warm the tone</b> by drawing out vowels rather than clipping consonants — especially in verse 12, where Ebed-melech speaks kindly to Jeremiah.</li>
+        <li>Practice names in advance: Sheph·a·tiʹah, Ged·a·liʹah, Juʹcal, Shel·e·miʹah, Pashʹhur, Mal·chiʹjah, Eʹbed-melʹech, E·thi·oʹpi·an.</li>
+      </ul>
+      <blockquote class="verse">Then Eʹbed-melʹech the E·thi·oʹpi·an said to Jeremiah: “Please put the rags and the pieces of cloth between your armpits and the ropes.” Jeremiah did so,<span class="ref">— Jer. 38:12 (NWTsty)</span></blockquote>
+      <div class="box"><b>💬 Key-verse comment:</b>“Verse 12 is one of my favorites: ‘Please put the rags and the pieces of cloth between your armpits and the ropes.’ Ebed-melech said ‘please’ to a man in a pit. That’s warmth and empathy in one sentence.”</div>
+    </div>
+  </div>
+
+  <!-- ================= APPLY ================= -->
+  <div class="section-divider sd-apply"><span>🌱 APPLY YOURSELF TO THE FIELD MINISTRY</span><span class="line"></span></div>
+
+  <div class="card">
+    <h3>4. Starting a Conversation</h3>
+    <div class="meta">3 min. — INFORMAL WITNESSING · Offer a Bible study to a person who is concerned about extreme weather · <a href="https://www.jw.org/en/library/brochures/love-people-make-disciples/lesson-9/" target="_blank" rel="noopener">lmd lesson 9 point 3</a></div>
+    <div class="box"><b>📘 Counsel point — lmd 9 pt. 3 “Listen carefully”:</b> Let the person express himself. Don’t interrupt or quickly dismiss his feelings, concerns, or objections. Paying attention shows you care about what he thinks. <span class="scripture-chip" onclick="openVerse('Rom. 12:15')">Rom. 12:15</span></div>
+    <div class="toggle" onclick="toggleSec(this)">Sample dialogue (waiting room / bus stop after a storm) <span class="arrow">▶</span></div>
+    <div class="collapsible">
+      <div class="dialogue">
+        <p><b>Publisher:</b> “That storm last night was something. Did your neighborhood lose power too?” <span class="coach">(← start with what’s on the person’s mind today)</span></p>
+        <p><b>Householder:</b> “For about ten hours. And a tree came down across our street. Honestly, it feels like every year the weather gets worse — floods, heat waves, fires. I worry about what my kids are going to deal with.”</p>
+        <p><b>Publisher:</b> “Ten hours — that must have been stressful. When you say you worry about your kids, what concerns you most?” <span class="coach">(← lmd 9 pt. 3: don’t rush to a scripture; invite him to say more)</span></p>
+        <p><b>Householder:</b> “Just that nobody seems able to fix it. Governments argue, but nothing changes.”</p>
+        <p><b>Publisher:</b> “That’s a very reasonable concern. A lot of people feel that way. Can I share a thought that has helped me? The Bible says Jesus once calmed a violent storm with just a word. His disciples said: ‘Even the wind and the sea obey him.’ It showed that God has given him power over nature.” <span class="coach">(← acknowledge feelings before offering hope; keep the scripture short)</span></p>
+        <blockquote class="verse">But they felt an unusual fear, and they said to one another: “Who really is this? Even the wind and the sea obey him.”<span class="ref">— Mark 4:41 (NWTsty)</span></blockquote>
+        <p><b>Householder:</b> “Interesting. But that was a long time ago.”</p>
+        <p><b>Publisher:</b> “True. But the Bible also promises that God will use that power again for the whole earth — a time when ‘death will be no more, neither will mourning nor outcry nor pain.’” <span class="coach">(← Rev 21:4 — connect the account to his future)</span></p>
+        <blockquote class="verse">And he will wipe out every tear from their eyes, and death will be no more, neither will mourning nor outcry nor pain be anymore. The former things have passed away.”<span class="ref">— Rev. 21:4 (NWTsty)</span></blockquote>
+        <p><b>Householder:</b> “I’d like to believe that.”</p>
+        <p><b>Publisher:</b> “Many people find it helps to see the reasons for that hope for themselves. We offer a free Bible study — it’s a conversation like this one, using the Bible, at a time that works for you. Would you like to try the first lesson? I can show you on my phone right now.” <span class="coach">(← make the offer simple and specific; demonstrate briefly if time allows)</span></p>
+      </div>
+      <div class="box"><b>📌 Personal application:</b>When weather is in the news, I can open conversations by asking how people were affected — and then actually listen before I say anything about the Bible.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>5. Following Up</h3>
+    <div class="meta">4 min. — INFORMAL WITNESSING · Offer a Bible study to a parent · <a href="https://www.jw.org/en/library/brochures/love-people-make-disciples/lesson-9/" target="_blank" rel="noopener">lmd lesson 9 point 5</a></div>
+    <div class="box"><b>📘 Counsel point — lmd 9 pt. 5 “Share information that addresses his needs”:</b> As soon as possible, demonstrate how a Bible study can answer his questions and help him in practical ways.</div>
+    <div class="toggle" onclick="toggleSec(this)">Sample dialogue (coworker who is a parent) <span class="arrow">▶</span></div>
+    <div class="collapsible">
+      <div class="dialogue">
+        <p><b>Publisher:</b> “Hi, Maria! Last week you mentioned your son was having a hard time at school. How is he doing?” <span class="coach">(← follow up on what she shared; shows you remembered and care — lmd 9 pt. 2)</span></p>
+        <p><b>Householder:</b> “A little better, thanks. But he’s 12 now and he doesn’t talk to me like he used to. I don’t always know what to say to him.”</p>
+        <p><b>Publisher:</b> “That age can be challenging. I’ve found the Bible has very practical guidance for parents. For example, it encourages parents to talk about good values in everyday moments — ‘when you sit in your house and when you walk on the road.’” <span class="coach">(← pt. 5: choose a scripture aimed at her specific need)</span></p>
+        <blockquote class="verse"><sup>6</sup>These words that I am commanding you today must be on your heart, <sup>7</sup>and you must inculcate them in your sons and speak of them when you sit in your house and when you walk on the road and when you lie down and when you get up.<span class="ref">— Deut. 6:6, 7 (NWTsty)</span></blockquote>
+        <p><b>Householder:</b> “That’s nice. So, like in the car?”</p>
+        <p><b>Publisher:</b> “Exactly — relaxed moments when kids open up more. That’s just one thought. A Bible study could help you find more ideas like that — about communication, discipline, and giving your son something solid to hold on to. It’s free, and we could even do it during lunch break. Would you like me to show you what a lesson looks like?” <span class="coach">(← pt. 5: show how a study meets her need right away, and offer a concrete time)</span></p>
+        <p><b>Householder:</b> “Sure, let’s look at it Thursday.”</p>
+        <p><b>Publisher:</b> “Great! I’ll bring it Thursday.” <span class="coach">(← set the next step clearly)</span></p>
+      </div>
+      <div class="box"><b>📌 Personal application:</b>Before a follow-up, I can ask myself: “Why does this person need the truth? How would studying the Bible make her daily life better?” (lmd 9 pt. 4). Then I choose one scripture that fits.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>6. What Would You Say?</h3>
+    <div class="meta">6 min. — Discussion · HOUSE TO HOUSE · Review <a href="https://www.jw.org/en/library/brochures/love-people-make-disciples/lesson-1/" target="_blank" rel="noopener">lmd lesson 1 point 4 — “Be observant”</a></div>
+    <img class="artimg" src="https://cms-imgp.jw-cdn.org/img/p/202026255/univ/art/202026255_univ_cnt_3_lg.jpg" alt="A woman and her young son standing in the doorway of their home">
+    <div class="credit">A woman and her young son standing in the doorway of their home.</div>
+    <div class="box green"><b>🖼️ What the picture teaches</b>lmd 1 pt. 4 asks: What is the person doing? What might she be thinking about? What does her home or appearance tell me? Is this a good time to talk? A mother answering the door with her young son beside her is almost certainly thinking about her child — his safety, his upbringing, his future. That’s a natural starting point.</div>
+    <div class="toggle" onclick="toggleSec(this)">Based on what you observe, what question could you ask to start a conversation? <span class="arrow">▶</span></div>
+    <div class="collapsible">
+      <ul>
+        <li>“I see you have a little helper! As a parent, what do you think children today need most to grow up happy?”</li>
+        <li>“Many parents we talk to worry about the kind of world their children will grow up in. Do you ever think about that?”</li>
+        <li>If the boy seems shy or restless: keep it brief — “Looks like you two are busy — may I leave a quick thought for later?” (lmd 1 pt. 4: <i>Is this a good time to talk?</i>)</li>
+      </ul>
+      <div class="box"><b>💬 Comment you could share:</b>“I noticed the little boy is standing right beside her, so I’d probably ask her what she thinks children need most to be happy. Parents love to talk about their kids, and it shows we’re interested in what matters to her.”</div>
+    </div>
+    <div class="toggle" onclick="toggleSec(this)">Which Bible truth might you share? <span class="arrow">▶</span></div>
+    <div class="collapsible">
+      <p><b>Option 1 — Practical guidance for parents:</b> <span class="scripture-chip" onclick="openVerse('Pr. 22:6')">Pr. 22:6</span></p>
+      <blockquote class="verse">Train a boy in the way he should go; Even when he grows old he will not depart from it.<span class="ref">— Pr. 22:6 (NWTsty)</span></blockquote>
+      <p><b>Option 2 — A secure future for her child:</b> <span class="scripture-chip" onclick="openVerse('Ps. 37:29')">Ps. 37:29</span></p>
+      <blockquote class="verse">The righteous will possess the earth, And they will live forever on it.<span class="ref">— Ps. 37:29 (NWTsty)</span></blockquote>
+      <div class="box"><b>💬 Comment you could share:</b>“With a young mother, I think Proverbs 22:6 would fit — it shows that the Bible gives practical training for children, and that effort now pays off later. If she seems worried about the world, Psalm 37:29 gives hope for her son’s future.”</div>
+    </div>
+  </div>
+
+  <!-- ================= LIVING ================= -->
+  <div class="section-divider sd-living"><span>✝️ LIVING AS CHRISTIANS</span><span class="line"></span></div>
+  <div class="songband">🎵 <a href="https://www.jw.org/en/library/music-songs/sing-out-joyfully/90-encourage-one-another/" target="_blank" rel="noopener">Song 90 — “Encourage One Another”</a></div>
+
+  <div class="card">
+    <h3>7. “Who Touched Me?”</h3>
+    <div class="meta">15 min. — Discussion · Video: <a href="https://www.jw.org/finder?lank=pub-jwb-125_4_VIDEO&amp;wtlocale=E" target="_blank" rel="noopener">Anthony Griffin: “Who Touched Me?”</a> (≈11 min.)</div>
+
+    <img class="artimg" src="https://cms-imgp.jw-cdn.org/img/p/202026255/univ/art/202026255_univ_cnt_4_lg.jpg" alt="Jesus speaking to the woman who suffered from a flow of blood">
+    <div class="credit">Jesus crouching in the middle of a crowd and kindly speaking to the woman who suffers from a flow of blood.</div>
+    <div class="box green"><b>🖼️ What the picture teaches</b>Jesus is surrounded by a pressing crowd and on an urgent errand for Jairus’ dying daughter — yet he gets down to the woman’s level and gives her his full attention. Busy as we are, the people in front of us deserve that kind of unhurried attention.</div>
+
+    <div class="box video"><b>🎬 Video synopsis</b>This is a talk given by Brother Anthony Griffin to Gilead class 157. He opens by asking whether, at the end of a day, we reflect on who left an impression on us — who reminded us of kindness, faith, or love. He then walks through Mark 5, where Jesus, on his way to help Jairus, is touched by a woman who had suffered a flow of blood for 12 years. Jesus stops and asks “Who touched me?” — not just to find out who touched him physically, but because Jehovah had healed her and Jesus wanted to know her story; he listened to “the whole truth,” and it moved him to love her. Brother Griffin then relates how, years earlier, he had misjudged a quiet, disengaged-looking brother in a school class who turned out to be terminally ill and deeply grateful just to be there. He urges us to see each brother and sister as a book with a beautiful story — ask questions, “thumb through the pages,” and be content with whatever they are willing to share. Finally, he points out that Jesus touched the woman in return with tender words (“Daughter …”), restoring her dignity, and asks: whose life will <i>you</i> take time to touch? <br><a href="https://www.jw.org/finder?lank=pub-jwb-125_4_VIDEO&amp;wtlocale=E" target="_blank" rel="noopener">▶ Watch on jw.org</a></div>
+
+    <span class="scripture-chip" onclick="openVerse('Mark 5:25-34')">Mark 5:25-34</span>
+    <blockquote class="verse"><sup>30</sup>Immediately Jesus realized in himself that power had gone out of him, and he turned around in the crowd and asked: “Who touched my outer garments?” <sup>31</sup>But his disciples said to him: “You see the crowd pressing in on you, and you ask, ‘Who touched me?’” <sup>32</sup>However, he was looking around to see who had done this. <sup>33</sup>The woman, frightened and trembling, knowing what had happened to her, came and fell down before him and told him the whole truth. <sup>34</sup>He said to her: “Daughter, your faith has made you well. Go in peace, and be healed from your grievous sickness.”<span class="ref">— Mark 5:30-34 (NWTsty)</span></blockquote>
+
+    <div class="toggle" onclick="toggleSec(this)">How can we allow others to have a positive impact on us? <span class="arrow">▶</span></div>
+    <div class="collapsible">
+      <ul>
+        <li><b>Take time for people</b> instead of letting hallway conversations, messages, and casual remarks pass unnoticed — each one holds potential.</li>
+        <li><b>Ask questions and listen to “the whole truth”</b> (Mark 5:33). Like opening a book, getting to know someone’s story helps us see why Jehovah loves them.</li>
+        <li><b>Avoid quick judgments.</b> The brother who seemed disengaged was actually showing remarkable faith; once the speaker knew the story, that brother touched him deeply.</li>
+        <li><b>Respect differences.</b> Some share a lot, others very little; take the initiative and be satisfied with what they’re willing to give.</li>
+        <li><b>Reflect at day’s end:</b> “Who touched me today?” — whose faith, kindness, or love reminded me of something important?</li>
+      </ul>
+      <div class="box"><b>💬 Comment you could share:</b>“I liked the idea that every brother and sister is like a book with a beautiful story. If I only read the cover, I might misjudge someone — like the brother in the class who seemed uninterested but was actually fighting to stay alive. Asking a few kind questions lets their faith strengthen mine.”</div>
+    </div>
+    <div class="toggle" onclick="toggleSec(this)">How can we touch the lives of others? <span class="arrow">▶</span></div>
+    <div class="collapsible">
+      <ul>
+        <li><b>Imitate Jesus’ tender words.</b> He called the woman “Daughter,” commended her faith, and sent her away in peace — healing her heart and dignity, not just her body (Mark 5:34).</li>
+        <li><b>Help people feel valued and appreciated</b>, so that their presence at the meetings and in the ministry really means something.</li>
+        <li><b>Let their stories deepen our empathy</b> — the realization that “we’re all in this together.” <span class="scripture-chip" onclick="openVerse('Rom. 12:15')">Rom. 12:15</span></li>
+        <li><b>Speak up and comfort</b>, like Ebed-melech and Jeremiah in this week’s reading.</li>
+      </ul>
+      <div class="box"><b>📌 Personal application:</b>This week I want to pick one person at the Kingdom Hall I don’t know well — maybe someone older or quieter — and ask about how they came into the truth. Then I’ll look for one sincere thing to commend.</div>
+      <div class="box"><b>🙏 Getting to know Jehovah:</b>The talk pointed out that Jehovah himself healed the woman, and Jesus wanted to know who it was that his Father cared about so much. Jehovah knows each person’s whole story — and he invites us to learn it too.</div>
+    </div>
+    <div class="box" style="border-left-color:#7e22ce;background:#faf5ff"><b>🔔 Remember</b>Everyone’s “touch” is different. Don’t pry — take the initiative, show interest, and be content with whatever someone is willing to share.</div>
+  </div>
+
+  <!-- ================= CBS ================= -->
+  <div class="section-divider sd-cbs"><span>📕 CONGREGATION BIBLE STUDY</span><span class="line"></span></div>
+
+  <div class="card">
+    <h3>8. wcg chap. 10 — Moses: “He Made His Choice”</h3>
+    <div class="meta">30 min. — <a href="https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/moses-made-his-choice/" target="_blank" rel="noopener"><i>Walk Courageously With God</i>, chapter 10</a></div>
+
+    <div class="toggle" onclick="toggleSec(this)">① Narrative summary &amp; Bible account <span class="arrow">▶</span></div>
+    <div class="collapsible">
+      <p>Named by the Egyptian princess who saved him from the water, Moses was raised in Pharaoh’s household and “instructed in all the wisdom of the Egyptians” — “powerful in his words and deeds.” He could have had wealth, prominence, and pleasure. But at 40 he made his choice clear: he refused to be called the son of Pharaoh’s daughter and chose to suffer with God’s people.</p>
+      <p>His choice was right, but his way of acting on it was not. Seeing an Egyptian beating a Hebrew, he “looked this way and that,” killed the Egyptian, and hid the body. The next day a Hebrew in the wrong threw it back at him: “Who appointed you as a prince and a judge over us?” Moses thought his brothers would understand that God was using him to save them — they didn’t. He had misread Jehovah’s timing and his own people, and he still lacked a quality Jehovah values highly: <b>meekness</b>.</p>
+      <p>Pharaoh sought to kill him, so Moses fled — leaving wealth and comfort behind — to Midian, where he would spend decades as “a foreign resident in a foreign land.” Would he have the courage to grow and change?</p>
+      <p><b>Read the Bible account:</b> <span class="scripture-chip" onclick="openVerse('Ex. 2:11-22')">Ex. 2:11-22</span> <span class="scripture-chip" onclick="openVerse('Acts 7:22-29')">Acts 7:22-29</span> <span class="scripture-chip" onclick="openVerse('Heb. 11:24-26')">Heb. 11:24-26</span></p>
+      <blockquote class="verse"><sup>24</sup>By faith Moses, when grown up, refused to be called the son of Pharʹaoh’s daughter, <sup>25</sup>choosing to be mistreated with the people of God rather than to have the temporary enjoyment of sin, <sup>26</sup>because he considered the reproach of the Christ to be riches greater than the treasures of Egypt, for he looked intently toward the payment of the reward.<span class="ref">— Heb. 11:24-26 (NWTsty)</span></blockquote>
+      <div class="ask">For discussion: In what ways did Moses show courage during this time of his life?</div>
+      <div class="box"><b>💬 Comment you could share:</b>“Moses showed courage first by giving up his royal status to side with slaves — Hebrews says he chose ‘to be mistreated with the people of God.’ He also showed courage by stepping in to defend a mistreated Hebrew and later the daughters of the priest of Midian at the well (Ex 2:17). And it took courage to flee into the unknown and start over in a foreign land.”</div>
+    </div>
+
+    <div class="toggle" onclick="toggleSec(this)">② Examine the artwork <span class="arrow">▶</span></div>
+    <div class="collapsible">
+      <img class="artimg" src="https://cms-imgp.jw-cdn.org/img/p/1102025910/univ/art/1102025910_univ_cnt_1_lg.jpg" alt="Moses observing an Egyptian taskmaster beating a Hebrew slave">
+      <div class="credit">Moses observing an Egyptian taskmaster viciously beating a Hebrew slave.</div>
+      <div class="box green"><b>🖼️ Application</b>Moses’ concern for his oppressed brothers was right — but zeal without meekness and without waiting on Jehovah led to violence. When we see injustice, we can have strong feelings and still let Jehovah’s way and timing guide what we do.</div>
+      <img class="artimg" src="https://cms-imgp.jw-cdn.org/img/p/1102025910/univ/art/1102025910_univ_cnt_2_lg.jpg" alt="Moses fleeing Egypt">
+      <div class="credit">Moses, now afraid, running away from Egypt, looking over his shoulder as he flees.</div>
+      <div class="box green"><b>🖼️ Application</b>Everything Moses had hoped for seemed to collapse in a day. Yet this flight was the start of 40 years of training that made him “by far the meekest” of men (Num 12:3). Setbacks, even ones we cause ourselves, can become the place where Jehovah refines us. <span class="scripture-chip" onclick="openVerse('Num. 12:3')">Num. 12:3</span></div>
+    </div>
+
+    <div class="toggle" onclick="toggleSec(this)">③ Dig Deeper (Q&amp;A) <span class="arrow">▶</span></div>
+    <div class="collapsible">
+      <p><b>1. What historical evidence is consistent with the Bible’s account that the Israelites were slaves in Egypt?</b> <span class="art-chip" onclick="openArt('w2003')">w20.03 30</span></p>
+      <img class="artimg" src="https://cms-imgp.jw-cdn.org/img/p/1102025910/univ/art/1102025910_univ_cnt_3_lg.jpg" alt="Fragments of a papyrus scroll">
+      <div class="credit">Picture A: Part of an ancient Egyptian list of slaves that features more than 40 Semitic names. — Courtesy Brooklyn Museum, gift of Theodora Wilbour</div>
+      <p><b>Answer:</b> Archaeologists have found evidence of 20 or more Semitic settlements in northern Egypt from the period that fits the patriarchs. From southern Egypt, a papyrus from the Middle Kingdom lists slaves of a single household, and more than 40 of the names are Semitic — some resembling Bible names such as Issachar, Asher, and Shiphrah (Ex 1:3, 4, 15). Scholars conclude that the Bible’s account of bondage in Egypt has a firm historical basis.</p>
+      <div class="box green"><b>🖼️ Application</b>A household slave list with Hebrew-sounding names reminds me that Exodus is real history, not legend. Details like these build my confidence to defend the Bible in the ministry.</div>
+
+      <p><b>2. How might Moses have been taught by his parents and then “instructed in all the wisdom of the Egyptians”?</b> <span class="scripture-chip" onclick="openVerse('Acts 7:22')">Acts 7:22</span> <span class="art-chip" onclick="openArt('w02')">w02 6/15 10 ¶2-5</span></p>
+      <blockquote class="verse">So Moses was instructed in all the wisdom of the Egyptians. In fact, he was powerful in his words and deeds.<span class="ref">— Acts 7:22 (NWTsty)</span></blockquote>
+      <p><b>Answer:</b> Moses “grew up” with Amram and Jochebed — at least until weaned and possibly longer — and they no doubt used that time to teach him his Hebrew origin and about Jehovah. Back with Pharaoh’s daughter, he received training fit for government office: mathematics, geometry, architecture, construction, other sciences, and likely Egyptian religion. He may have been schooled alongside royal children and foreign princes in palace “nurseries.” Court life tested him with wealth, luxury, power, and moral danger — the question was where his loyalty would lie.</p>
+      <div class="box"><b>📌 Personal application:</b>Moses’ parents had limited time, but what they taught him held. Parents today can make the most of every early year — and trust that faith planted in a child’s heart can outlast years of worldly influence.</div>
+
+      <p><b>3. How did the Egyptians usually bury their dead? How might they have felt when Moses not only killed an Egyptian but also hid the body instead of embalming and burying it?</b> <span class="art-chip" onclick="openArt('itEgypt')">it “Egypt, Egyptian” ¶28</span></p>
+      <img class="artimg" src="https://cms-imgp.jw-cdn.org/img/p/1102025910/univ/art/1102025910_univ_cnt_4_lg.jpg" alt="An Egyptian mummy">
+      <div class="credit">Picture B: An Egyptian mummy on display at a museum.</div>
+      <p><b>Answer:</b> Egyptians believed the soul was immortal but needed the body preserved so it could return and use it, so they embalmed their dead and placed them in tombs — the deceased’s “home” — stocked with jewelry, clothing, furniture, food, and spells. Hiding a murdered Egyptian in the sand, unembalmed, would have been seen not only as murder but as robbing him of his afterlife — an outrage that helps explain why Pharaoh wanted Moses dead.</p>
+      <div class="box green"><b>🖼️ Application</b>The mummy shows how deeply false beliefs about death shaped Egyptian life. Knowing the truth about the dead (Eccl 9:5) frees us from such fears — a truth worth sharing.</div>
+
+      <p><b>4. Moses fled to Midian. What did the Midianites and the Israelites have in common?</b> <span class="art-chip" onclick="openArt('itMidian')">it “Midian” No. 2 ¶1-2</span></p>
+      <p><b>Answer:</b> The Midianites descended from Midian, Abraham’s son by Keturah — so they were relatives of the Israelites through Abraham. They likely spoke a language closely resembling Hebrew (Gideon apparently understood them without difficulty). Moses fled, not to a completely foreign culture, but to distant relatives of his own people.</p>
+      <div class="box"><b>🙏 Getting to know Jehovah:</b>Even in exile, Jehovah led Moses to a place and family where he could adapt — and to a priest who welcomed him into his home (Ex 2:20, 21). Jehovah prepares a place for us even when we have to start over.</div>
+    </div>
+
+    <div class="toggle" onclick="toggleSec(this)">④ Reflect on the Lessons <span class="arrow">▶</span></div>
+    <div class="collapsible">
+      <p><b>What can Moses’ example teach you about controlling your temper?</b></p>
+      <blockquote class="verse">So he looked this way and that, and seeing no one, he killed the Egyptian and hid him in the sand.<span class="ref">— Ex. 2:12 (NWTsty)</span></blockquote>
+      <div class="box"><b>💬 Comment you could share:</b>“The chapter says we don’t know if Moses meant to kill the man or if anger made him strike harder than he intended. Either way, one moment of uncontrolled anger cost him 40 years in exile. That reminds me that good motives don’t excuse a bad temper — I need meekness, not just zeal.”</div>
+      <p><b>What can youths learn from Moses about courageously choosing the right goals?</b></p>
+      <img class="artimg" src="https://cms-imgp.jw-cdn.org/img/p/1102025910/univ/art/1102025910_univ_cnt_5_lg.jpg" alt="A brother in high school considering his future">
+      <div class="credit">Picture C: A brother in high school carefully considering his future — a prestigious job designing airplanes, or using the “Enjoy Life Forever!” brochure to study the Bible with a man.</div>
+      <div class="box green"><b>🖼️ Application</b>Like Moses, this young brother has real ability and attractive options. Moses “considered the reproach of the Christ to be riches greater than the treasures of Egypt” because “he looked intently toward the payment of the reward” (Heb 11:26). Youths can use their talents without letting a career become the treasure they chase.</div>
+      <div class="box"><b>💬 Comment you could share:</b>“Moses had the best education and prospects in the world, and he gave them up. What helped him was looking ahead to the reward. A young person today can ask, ‘Twenty years from now, which choice will I be glad I made?’”</div>
+      <p><b>How else might you imitate the courage shown by Moses in this account?</b></p>
+      <blockquote class="verse">But as usual, the shepherds came and drove them away. At this Moses got up and helped the women and watered their flock.<span class="ref">— Ex. 2:17 (NWTsty)</span></blockquote>
+      <div class="box"><b>📌 Personal application:</b>Even as a fugitive, tired and alone, Moses stood up for the women being bullied at the well. I can show that kind of courage by helping someone who’s being treated unfairly, even when I’m dealing with my own problems.</div>
+    </div>
+
+    <div class="toggle" onclick="toggleSec(this)">⑤ Meditate on the Bigger Picture — wrap-up questions <span class="arrow">▶</span></div>
+    <div class="collapsible">
+      <p><b>What does this teach us about Jehovah?</b></p>
+      <div class="box"><b>🙏 Getting to know Jehovah:</b>Jehovah had a purpose for Moses, but he works on his own timetable — not ours. He didn’t discard Moses after a serious mistake; he patiently trained him for 40 years until he became the meekest man on earth (Num 12:3). And Jehovah is “the rewarder of those earnestly seeking him” (Heb 11:6), which is exactly what Moses was looking toward (Heb 11:26).</div>
+      <blockquote class="verse">Moreover, without faith it is impossible to please God well, for whoever approaches God must believe that he is and that he becomes the rewarder of those earnestly seeking him.<span class="ref">— Heb. 11:6 (NWTsty)</span></blockquote>
+      <p><b>How does the account tie in with Jehovah’s purposes?</b> Moses would become the one Jehovah used to deliver Israel, give the Law, and foreshadow the Christ. Hebrews even calls Moses’ sacrifice “the reproach of the Christ.” His early choices and training were part of preparing the nation from which the Messiah would come.</p>
+      <p><b>Are there any points from this lesson we can use in the ministry or our daily life?</b></p>
+      <div class="box"><b>📌 Personal application:</b>(1) The evidence from Egyptian records is a good point for someone who doubts the Bible’s history. (2) In daily life, when I’m eager to “fix” something in the congregation or family, I can ask whether I’m acting with meekness and waiting on Jehovah — or rushing ahead like Moses did at 40.</div>
+      <p class="meta">Also in the book: “In the resurrection, what would I like to ask Moses about his early life?”</p>
+    </div>
+
+    <div class="toggle" onclick="toggleSec(this)">⑥ Learn More <span class="arrow">▶</span></div>
+    <div class="collapsible">
+      <ul>
+        <li><a href="https://www.jw.org/finder?lank=pub-jwbcov21_11_VIDEO&amp;wtlocale=E" target="_blank" rel="noopener">Imitate the Faithful, Not the Faithless—Moses, Not Pharaoh</a> (2:27) — how we can imitate Moses’ self-sacrificing course.</li>
+        <li><a href="https://www.jw.org/finder?lank=pub-jwbai_201507_1_VIDEO&amp;wtlocale=E" target="_blank" rel="noopener">Choose a Career With an Eternal Future</a> (4:58) — Moses gave up a lucrative future to serve Jehovah; is that realistic today?</li>
+      </ul>
+      <p class="meta">Research references used: <span class="art-chip" onclick="openArt('w2003')">w20.03 30</span> <span class="art-chip" onclick="openArt('w02')">w02 6/15 10</span> <span class="art-chip" onclick="openArt('itEgypt')">it “Egypt”</span> <span class="art-chip" onclick="openArt('itMidian')">it “Midian”</span></p>
+    </div>
+  </div>
+
+  <div class="songband" style="margin-top:20px;">Concluding Comments (3 min.) &nbsp;|&nbsp; 🎵 Closing: <a href="https://www.jw.org/en/library/music-songs/sing-out-joyfully/56-make-the-truth-your-own/" target="_blank" rel="noopener">Song 56 — “Make the Truth Your Own”</a> and Prayer</div>
+
+  <footer>
+    Source: <a href="https://www.jw.org/en/library/jw-meeting-workbook/september-october-2026-mwb/Life-and-Ministry-Meeting-Schedule-for-September-28-October-4-2026/" target="_blank" rel="noopener">jw.org — Life and Ministry Meeting Schedule, September 28–October 4, 2026</a><br>
+    All scripture quotations are from the New World Translation Study Edition (NWTsty), fetched verbatim from wol.jw.org.<br>
+    Personal study guide — prepared for comment preparation, not official congregation material.
+  </footer>
+
+</div>
+
+<div id="overlay" onclick="closeSidebar()"></div>
+<div id="sidebar">
+  <button id="sb-close" onclick="closeSidebar()">×</button>
+  <div id="sb-title"></div>
+  <div id="sb-body"></div>
+  <a id="sb-link" class="sb-link" href="#" target="_blank" rel="noopener">Open →</a>
+</div>
+<script>
+const verses = {
+"2 Ki. 25:7": "They slaughtered Zed·e·kiʹah’s sons before his eyes; then Neb·u·chad·nezʹzar blinded Zed·e·kiʹah’s eyes, bound him with copper fetters, and brought him to Babylon.",
+"Acts 7:22": "So Moses was instructed in all the wisdom of the Egyptians. In fact, he was powerful in his words and deeds.",
+"Acts 7:23": "“Now when he reached the age of 40, it came into his heart to make a visit on his brothers, the sons of Israel.",
+"Acts 7:24": "When he caught sight of one of them being unjustly treated, he defended him and avenged the one being abused by striking down the Egyptian.",
+"Acts 7:25": "He thought that his brothers would grasp that God was giving them salvation by his hand, but they did not grasp it.",
+"Acts 7:26": "The next day he appeared to them as they were fighting, and he tried to reconcile them in peace, saying: ‘Men, you are brothers. Why do you mistreat each other?’",
+"Acts 7:27": "But the one who was mistreating his neighbor pushed him away, saying: ‘Who appointed you ruler and judge over us?",
+"Acts 7:28": "You do not want to do away with me the way you did away with the Egyptian yesterday, do you?’",
+"Acts 7:29": "On hearing this, Moses fled and lived as a foreigner in the land of Midʹi·an, where he became the father of two sons.",
+"Deut. 6:6": "These words that I am commanding you today must be on your heart,",
+"Deut. 6:7": "and you must inculcate them in your sons and speak of them when you sit in your house and when you walk on the road and when you lie down and when you get up.",
+"Ex. 2:11": "Now in those days, after Moses had become an adult, he went out to his brothers to look at the burdens they were bearing, and he caught sight of an Egyptian beating a Hebrew, one of his brothers.",
+"Ex. 2:12": "So he looked this way and that, and seeing no one, he killed the Egyptian and hid him in the sand.",
+"Ex. 2:13": "But he went out on the following day, and there were two Hebrew men fighting with each other. So he said to the one in the wrong: “Why do you strike your companion?”",
+"Ex. 2:14": "At this he said: “Who appointed you as a prince and a judge over us? Are you planning to kill me just as you killed the Egyptian?” Moses now was afraid and said: “Surely the matter has become known!”",
+"Ex. 2:15": "Then Pharʹaoh heard about it, and he attempted to kill Moses; but Moses ran away from Pharʹaoh and went to dwell in the land of Midʹi·an, and he sat down by a well.",
+"Ex. 2:16": "Now the priest of Midʹi·an had seven daughters, and these came to draw water and to fill the troughs to water their father’s flock.",
+"Ex. 2:17": "But as usual, the shepherds came and drove them away. At this Moses got up and helped the women and watered their flock.",
+"Ex. 2:18": "When they came home to their father Reuʹel, he exclaimed: “How is it that you have come home so quickly today?”",
+"Ex. 2:19": "They replied: “A certain Egyptian rescued us from the shepherds, and he even drew water for us and watered the flock.”",
+"Ex. 2:20": "He said to his daughters: “But where is he? Why did you leave the man behind? Call him, so that he may eat with us.”",
+"Ex. 2:21": "After that Moses consented to stay with the man, and he gave his daughter Zip·poʹrah to Moses in marriage.",
+"Ex. 2:22": "Later she bore a son, and he named him Gerʹshom, for he said, “I have become a foreign resident in a foreign land.”",
+"Ezek. 12:13": "I will cast my net over him, and he will be caught in my hunting net. Then I will bring him to Babylon, to the land of the Chal·deʹans, but he will not see it; and there he will die.",
+"Heb. 11:24": "By faith Moses, when grown up, refused to be called the son of Pharʹaoh’s daughter,",
+"Heb. 11:25": "choosing to be mistreated with the people of God rather than to have the temporary enjoyment of sin,",
+"Heb. 11:26": "because he considered the reproach of the Christ to be riches greater than the treasures of Egypt, for he looked intently toward the payment of the reward.",
+"Heb. 11:6": "Moreover, without faith it is impossible to please God well, for whoever approaches God must believe that he is and that he becomes the rewarder of those earnestly seeking him.",
+"Isa. 1:17": "Learn to do good, seek justice, Correct the oppressor, Defend the rights of the fatherless child, And plead the cause of the widow.”",
+"Jer. 38:1": "Now Sheph·a·tiʹah the son of Matʹtan, Ged·a·liʹah the son of Pashʹhur, Juʹcal the son of Shel·e·miʹah, and Pashʹhur the son of Mal·chiʹjah heard the words that Jeremiah was speaking to all the people, saying:",
+"Jer. 38:10": "Then the king commanded Eʹbed-melʹech the E·thi·oʹpi·an: “Take 30 men with you from here, and pull Jeremiah the prophet up out of the cistern before he dies.”",
+"Jer. 38:11": "So Eʹbed-melʹech took the men with him and went into the king’s house to a place beneath the treasury, and they took from there some worn-out rags and worn-out pieces of cloth and let them down by ropes to Jeremiah in the cistern.",
+"Jer. 38:12": "Then Eʹbed-melʹech the E·thi·oʹpi·an said to Jeremiah: “Please put the rags and the pieces of cloth between your armpits and the ropes.” Jeremiah did so,",
+"Jer. 38:13": "and they drew Jeremiah out with the ropes and pulled him up out of the cistern. And Jeremiah remained in the Courtyard of the Guard.",
+"Jer. 38:14": "King Zed·e·kiʹah sent for Jeremiah the prophet to come to him at the third entrance, which is in the house of Jehovah, and the king said to Jeremiah: “I have something to ask of you. Do not hide anything from me.”",
+"Jer. 38:15": "Jeremiah then said to Zed·e·kiʹah: “If I tell you, you will certainly put me to death. And if I give you advice, you will not listen to me.”",
+"Jer. 38:16": "So King Zed·e·kiʹah secretly swore to Jeremiah, saying: “As surely as Jehovah is alive, who has given us this life, I will not put you to death, and I will not hand you over to these men who are seeking to take your life.”",
+"Jer. 38:17": "Jeremiah then said to Zed·e·kiʹah: “This is what Jehovah, the God of armies, the God of Israel, says, ‘If you surrender to the princes of the king of Babylon, your life will be spared, and this city will not be burned with fire, and you and your household will be spared.",
+"Jer. 38:18": "But if you will not surrender to the princes of the king of Babylon, this city will be handed over to the Chal·deʹans, and they will burn it with fire, and you will not escape out of their hand.’”",
+"Jer. 38:19": "Then King Zed·e·kiʹah said to Jeremiah: “I am afraid of the Jews who have deserted to the Chal·deʹans, for if I am handed over to them, they may deal cruelly with me.”",
+"Jer. 38:2": "“This is what Jehovah says, ‘The one who remains in this city will die by the sword, by famine, and by pestilence. But the one who surrenders to the Chal·deʹans will keep living and will have his life as a spoil and live.’",
+"Jer. 38:20": "But Jeremiah said: “You will not be handed over to them. Obey, please, the voice of Jehovah in what I am telling you, and it will go well with you, and you will continue to live.",
+"Jer. 38:21": "But if you refuse to surrender, this is what Jehovah has revealed to me:",
+"Jer. 38:22": "Look! All the women remaining in the house of the king of Judah are being brought out to the princes of the king of Babylon, and they are saying, ‘The men whom you trusted have deceived you and overcome you. They have caused your foot to sink into the mud. Now they have turned away in retreat.’",
+"Jer. 38:23": "And all your wives and your sons they are bringing out to the Chal·deʹans, and you will not escape out of their hand, but you will be seized by the king of Babylon, and because of you this city will be burned with fire.”",
+"Jer. 38:24": "Zed·e·kiʹah then said to Jeremiah: “Do not let anyone know about these things, so that you do not die.",
+"Jer. 38:25": "And if the princes hear that I have spoken with you and they come and say to you, ‘Tell us, please, what you said to the king. Do not hide anything from us, and we will not put you to death. What did the king say to you?’",
+"Jer. 38:26": "you must answer them, ‘I was making a request of the king, that he not send me back to the house of Je·honʹa·than to die there.’”",
+"Jer. 38:27": "In time all the princes came in to Jeremiah and questioned him. He told them everything that the king had commanded him to say. So they said no more to him, for no one had heard the conversation.",
+"Jer. 38:28": "Until the day that Jerusalem was captured, Jeremiah remained in the Courtyard of the Guard; he was still there when Jerusalem was captured.",
+"Jer. 38:3": "This is what Jehovah says, ‘This city will surely be handed over to the army of the king of Babylon, and he will capture it.’”",
+"Jer. 38:4": "The princes said to the king: “Please have this man put to death, for this is how he is weakening the morale of the soldiers who are left in this city, as well as that of all the people, by speaking such words to them. For this man seeks, not the peace of this people, but their calamity.”",
+"Jer. 38:5": "King Zed·e·kiʹah replied: “Look! He is in your hands, for the king cannot do anything to stop you.”",
+"Jer. 38:6": "So they took Jeremiah and threw him into the cistern of Mal·chiʹjah the son of the king, which was in the Courtyard of the Guard. They let Jeremiah down by ropes. Now there was no water in the cistern, only mud, and Jeremiah began to sink down into the mud.",
+"Jer. 38:7": "Eʹbed-melʹech the E·thi·oʹpi·an, a eunuch in the king’s house, heard that they had put Jeremiah into the cistern. Now the king was sitting in the Gate of Benjamin,",
+"Jer. 38:8": "so Eʹbed-melʹech went out of the king’s house and spoke to the king, saying:",
+"Jer. 38:9": "“O my lord the king, what these men have done to Jeremiah the prophet is evil! They have thrown him into the cistern, and he will die there because of the famine, for there is no bread left in the city.”",
+"Jer. 39:1": "In the ninth year of King Zed·e·kiʹah of Judah, in the tenth month, King Neb·u·chad·nezʹzar of Babylon and all his army came to Jerusalem, and they besieged it.",
+"Jer. 39:10": "But Neb·uʹzar·adʹan the chief of the guard left in the land of Judah some of the poorest people, those who had nothing at all. On that day he also gave them vineyards and fields to work.",
+"Jer. 39:11": "Now King Neb·u·chad·nezʹzar of Babylon gave Neb·uʹzar·adʹan the chief of the guard these orders concerning Jeremiah:",
+"Jer. 39:12": "“Take him and look after him; do him no harm, and grant whatever he asks of you.”",
+"Jer. 39:13": "So Neb·uʹzar·adʹan the chief of the guard, Neb·u·shazʹban the Rabʹsa·ris, Nerʹgal-shar·eʹzer the Rabʹmag, and all the principal men of the king of Babylon sent",
+"Jer. 39:14": "and had Jeremiah taken out of the Courtyard of the Guard and handed him over to Ged·a·liʹah the son of A·hiʹkam the son of Shaʹphan to be brought to his house. So he lived among the people.",
+"Jer. 39:15": "While Jeremiah was confined in the Courtyard of the Guard, the word of Jehovah came to him, saying:",
+"Jer. 39:16": "“Go and tell Eʹbed-melʹech the E·thi·oʹpi·an, ‘This is what Jehovah of armies, the God of Israel, says: “Here I am fulfilling my words on this city for calamity and not for good, and in that day you will see it happen.”’",
+"Jer. 39:17": "“‘But I will rescue you in that day,’ declares Jehovah, ‘and you will not be handed over to the men you fear.’",
+"Jer. 39:18": "“‘For I will surely provide you with escape, and you will not fall by the sword. You will have your life as a spoil, because you trusted in me,’ declares Jehovah.”",
+"Jer. 39:2": "In the 11th year of Zed·e·kiʹah, in the fourth month, on the ninth day of the month, they broke through the city wall.",
+"Jer. 39:3": "And all the princes of the king of Babylon went in and sat down in the Middle Gate, namely, Nerʹgal-shar·eʹzer the Samʹgar, Neʹbo-sarʹse·chim the Rabʹsa·ris, Nerʹgal-shar·eʹzer the Rabʹmag, and all the rest of the princes of the king of Babylon.",
+"Jer. 39:4": "When King Zed·e·kiʹah of Judah and all the soldiers saw them, they fled, going out of the city by night by way of the king’s garden, through the gate between the double wall, and they continued by the way of the Arʹa·bah.",
+"Jer. 39:5": "But the Chal·deʹan army chased after them, and they overtook Zed·e·kiʹah in the desert plains of Jerʹi·cho. They captured him and brought him up to King Neb·u·chad·nezʹzar of Babylon at Ribʹlah in the land of Haʹmath, where he passed sentence on him.",
+"Jer. 39:6": "The king of Babylon had the sons of Zed·e·kiʹah slaughtered before his eyes there at Ribʹlah, and the king of Babylon had all the nobles of Judah slaughtered.",
+"Jer. 39:7": "Then he blinded the eyes of Zed·e·kiʹah, after which he bound him with copper fetters to bring him to Babylon.",
+"Jer. 39:8": "The Chal·deʹans then burned down the king’s house and the houses of the people, and they tore down the walls of Jerusalem.",
+"Jer. 39:9": "Neb·uʹzar·adʹan the chief of the guard took into exile to Babylon the rest of the people who were left in the city, the deserters who had defected to him, and anyone who remained.",
+"Josh. 24:15": "Now if it seems bad to you to serve Jehovah, choose for yourselves today whom you will serve, whether the gods that your forefathers served on the other side of the River or the gods of the Amʹor·ites in whose land you are dwelling. But as for me and my household, we will serve Jehovah.”",
+"Mark 4:41": "But they felt an unusual fear, and they said to one another: “Who really is this? Even the wind and the sea obey him.”",
+"Mark 5:25": "Now there was a woman who had had a flow of blood for 12 years.",
+"Mark 5:26": "She had suffered much at the hands of many physicians and had spent all her resources, and she was no better but, rather, had become worse.",
+"Mark 5:27": "When she heard the reports about Jesus, she came up behind him in the crowd and touched his outer garment,",
+"Mark 5:28": "for she kept saying: “If I touch just his outer garments, I will get well.”",
+"Mark 5:29": "And immediately her flow of blood dried up, and she sensed in her body that she had been healed of the grievous sickness.",
+"Mark 5:30": "Immediately Jesus realized in himself that power had gone out of him, and he turned around in the crowd and asked: “Who touched my outer garments?”",
+"Mark 5:31": "But his disciples said to him: “You see the crowd pressing in on you, and you ask, ‘Who touched me?’”",
+"Mark 5:32": "However, he was looking around to see who had done this.",
+"Mark 5:33": "The woman, frightened and trembling, knowing what had happened to her, came and fell down before him and told him the whole truth.",
+"Mark 5:34": "He said to her: “Daughter, your faith has made you well. Go in peace, and be healed from your grievous sickness.”",
+"Num. 12:3": "Now the man Moses was by far the meekest of all the men on the face of the earth.",
+"Pr. 22:6": "Train a boy in the way he should go; Even when he grows old he will not depart from it.",
+"Pr. 29:25": "Trembling at men is a snare, But the one trusting in Jehovah will be protected.",
+"Ps. 37:29": "The righteous will possess the earth, And they will live forever on it.",
+"Rev. 21:4": "And he will wipe out every tear from their eyes, and death will be no more, neither will mourning nor outcry nor pain be anymore. The former things have passed away.”",
+"Rom. 12:15": "Rejoice with those who rejoice; weep with those who weep."
+};
+const groups = {"Jer. 39:10": ["Jer. 39:10"], "Ex. 2:17": ["Ex. 2:17"], "Jer. 38:1-13": ["Jer. 38:1", "Jer. 38:2", "Jer. 38:3", "Jer. 38:4", "Jer. 38:5", "Jer. 38:6", "Jer. 38:7", "Jer. 38:8", "Jer. 38:9", "Jer. 38:10", "Jer. 38:11", "Jer. 38:12", "Jer. 38:13"], "2 Ki. 25:7": ["2 Ki. 25:7"], "Heb. 11:24-26": ["Heb. 11:24", "Heb. 11:25", "Heb. 11:26"], "Jer. 38:16": ["Jer. 38:16"], "Jer. 38:19": ["Jer. 38:19"], "Num. 12:3": ["Num. 12:3"], "Pr. 22:6": ["Pr. 22:6"], "Ezek. 12:13": ["Ezek. 12:13"], "Mark 5:25-34": ["Mark 5:25", "Mark 5:26", "Mark 5:27", "Mark 5:28", "Mark 5:29", "Mark 5:30", "Mark 5:31", "Mark 5:32", "Mark 5:33", "Mark 5:34"], "Mark 4:41": ["Mark 4:41"], "Ex. 2:11-22": ["Ex. 2:11", "Ex. 2:12", "Ex. 2:13", "Ex. 2:14", "Ex. 2:15", "Ex. 2:16", "Ex. 2:17", "Ex. 2:18", "Ex. 2:19", "Ex. 2:20", "Ex. 2:21", "Ex. 2:22"], "Jer. 39:11, 12": ["Jer. 39:11", "Jer. 39:12"], "Rev. 21:4": ["Rev. 21:4"], "Jer. 38:17": ["Jer. 38:17"], "Heb. 11:6": ["Heb. 11:6"], "Ps. 37:29": ["Ps. 37:29"], "Acts 7:22-29": ["Acts 7:22", "Acts 7:23", "Acts 7:24", "Acts 7:25", "Acts 7:26", "Acts 7:27", "Acts 7:28", "Acts 7:29"], "Mark 5:30-34": ["Mark 5:30", "Mark 5:31", "Mark 5:32", "Mark 5:33", "Mark 5:34"], "Ex. 2:12": ["Ex. 2:12"], "Jer. 39:15-18": ["Jer. 39:15", "Jer. 39:16", "Jer. 39:17", "Jer. 39:18"], "Jer. 38:7-9": ["Jer. 38:7", "Jer. 38:8", "Jer. 38:9"], "Jer. 38:11, 12": ["Jer. 38:11", "Jer. 38:12"], "Acts 7:22": ["Acts 7:22"], "Josh. 24:15": ["Josh. 24:15"], "Isa. 1:17": ["Isa. 1:17"], "Jer. 39:17": ["Jer. 39:17"], "Jer. 38:20": ["Jer. 38:20"], "Jer. 39:6, 7": ["Jer. 39:6", "Jer. 39:7"], "Rom. 12:15": ["Rom. 12:15"], "Jer. 39:2": ["Jer. 39:2"], "Deut. 6:6, 7": ["Deut. 6:6", "Deut. 6:7"], "Jer. 38:5": ["Jer. 38:5"], "Pr. 29:25": ["Pr. 29:25"], "Jer. 38:12": ["Jer. 38:12"]};
+const wolLinks = {"Jer. 39:10": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/24/39", "Ex. 2:17": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/2/2", "Jer. 38:1-13": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/24/38", "2 Ki. 25:7": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/12/25", "Heb. 11:24-26": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/58/11", "Jer. 38:16": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/24/38", "Jer. 38:19": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/24/38", "Num. 12:3": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/4/12", "Pr. 22:6": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/22", "Ezek. 12:13": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/26/12", "Mark 5:25-34": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/41/5", "Mark 4:41": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/41/4", "Ex. 2:11-22": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/2/2", "Jer. 39:11, 12": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/24/39", "Rev. 21:4": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/66/21", "Jer. 38:17": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/24/38", "Heb. 11:6": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/58/11", "Ps. 37:29": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/19/37", "Acts 7:22-29": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/44/7", "Mark 5:30-34": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/41/5", "Ex. 2:12": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/2/2", "Jer. 39:15-18": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/24/39", "Jer. 38:7-9": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/24/38", "Jer. 38:11, 12": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/24/38", "Acts 7:22": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/44/7", "Josh. 24:15": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/6/24", "Isa. 1:17": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/23/1", "Jer. 39:17": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/24/39", "Jer. 38:20": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/24/38", "Jer. 39:6, 7": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/24/39", "Rom. 12:15": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/45/12", "Jer. 39:2": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/24/39", "Deut. 6:6, 7": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/5/6", "Jer. 38:5": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/24/38", "Pr. 29:25": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/20/29", "Jer. 38:12": "https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/24/38"};
+const articles = {"w13": ["w13 1/15 p. 9 ¶12 — “Be Courageous and Strong”", "https://www.jw.org/en/library/magazines/w20130115/be-courageous-and-strong/", "Ebed-melech, a court official in Zedekiah’s house, risked his life for Jeremiah. The princes had falsely charged the prophet with sedition and left him in a miry cistern to die. Despite the hatred for Jeremiah, Ebed-melech appealed to the king, was given 30 men, and rescued him. Through Jeremiah, God assured Ebed-melech he would not perish in the siege (Jer 39:15-18). The point: godly courage is rewarded."], "w12": ["w12 5/1 p. 31 — “The Rewarder of All Who Serve Him”", "https://wol.jw.org/en/wol/d/r1/lp-e/2012334", "Ebed-melech was a God-fearing officer surrounded by godless princes. He acted bravely and decisively, publicly protesting Jeremiah’s treatment to the king. He also showed kindness: the worn-out rags cushioned Jeremiah’s armpits from the ropes. Jehovah gave him what one scholar called a “quintuple guarantee of salvation” because he trusted in God. Lesson: Jehovah remembers even small acts of worship motivated by faith (Mark 12:41-44; Heb 11:6). Footnote: “eunuch” can mean any court official."], "itEunuch": ["Insight — “Eunuch”", "https://wol.jw.org/en/wol/d/r1/lp-e/1200001444", "Ebed-melech, the Ethiopian who rescued Jeremiah, was a “eunuch” in Zedekiah’s court — likely in the common sense of “officer.” He seems to have been a man of authority: he appealed directly to the king and was given command over 30 men for the rescue."], "w19": ["w19.11 p. 6 ¶17 — “Build Strong Friendships Before the End Comes”", "https://www.jw.org/en/library/magazines/watchtower-study-november-2019/build-strong-friendships/", "Jeremiah proved to be a true friend in distress. After Ebed-melech rescued him, Ebed-melech feared the princes would harm him. Though imprisoned, Jeremiah did not stay silent hoping his friend would cope alone — he did what he could by sharing Jehovah’s comforting promise with him (Jer 38:7-13; 39:15-18)."], "w20": ["w20.09 p. 24 ¶15-17 — “Give Christian Women Your Support”", "https://www.jw.org/en/library/magazines/watchtower-study-september-2020/Give-Christian-Women-Your-Support/", "Sisters may need someone to speak up for them: a widow or divorced sister needing an advocate, an elderly sister speaking to medical professionals, a pioneer sister criticized unfairly (Isa 1:17). Jesus defended Mary twice when she was misunderstood (Luke 10:38-42; Mark 14:3-9). Example: a sister in a divided home who arrives late and leaves early may be doing her best; commending her and mentioning what she does well can stop negative talk."], "jr": ["jr p. 92 ¶1 — God’s Word for Us Through Jeremiah, chap. 8", "https://wol.jw.org/en/wol/d/r1/lp-e/1102010147", "Joshua resolved that he and his household would serve Jehovah (Josh 24:15). By contrast, Jeremiah told Zedekiah that if he surrendered, he and his household would keep living (Jer 38:17). The king’s bad choice affected him, his wives, and his sons: he watched his sons be killed, then was blinded and taken captive to Babylon (Jer 38:18-23; 39:6, 7)."], "itZed": ["Insight, Vol. 2, p. 1228 — “Zedekiah”", "https://wol.jw.org/en/wol/d/r1/lp-e/1200004685", "In 607 B.C.E. Jerusalem’s wall was breached. Zedekiah fled by night, was overtaken in the desert plains of Jericho, and brought to Nebuchadnezzar at Riblah. His sons were slaughtered before his eyes; since Zedekiah was only about 32, the boys could not have been very old. He was blinded, bound, and taken to Babylon, where he died in custody (2 Ki 25:2-7; Jer 39:2-7; 52:6-11; Eze 12:11-16)."], "w2003": ["w20.03 p. 30 — “Did You Know?” (Israelite slaves in Egypt)", "https://www.jw.org/en/library/magazines/watchtower-study-march-2020/were-israelites-slaves-in-egypt/", "Critics call the bondage account a myth, but evidence shows Semites lived as slaves in ancient Egypt. There is evidence of 20 or more Semitic settlements in northern Egypt from about 1800–1540 B.C., fitting the patriarchal period. A Middle Kingdom papyrus from southern Egypt lists more than 40 Semitic slave names on one estate — some similar to Issachar, Asher, and Shiphrah. Scholars conclude the bondage and Exodus traditions have a firm historical basis."], "w02": ["w02 6/15 p. 10 ¶2-5 — “Something Greater Than the Treasures of Egypt”", "https://www.jw.org/en/library/magazines/w20020615/Something-Greater-Than-the-Treasures-of-Egypt/", "Moses “grew up” with Amram and Jochebed (at least until weaned, perhaps longer), who doubtless taught him his Hebrew origin and about Jehovah. With Pharaoh’s daughter he was trained for government office — mathematics, geometry, architecture, construction, other sciences, and likely Egyptian religion — possibly alongside royal and foreign princes in palace “nurseries.” Court life offered wealth, luxury, and power, and tested where his loyalty lay."], "itEgypt": ["Insight — “Egypt, Egyptian” (Beliefs about the dead)", "https://www.jw.org/en/library/books/Insight-on-the-Scriptures/Egypt-Egyptian/", "Egyptian religion was preoccupied with the dead. The soul was believed immortal, but the body had to be preserved so the soul could return to it — so the dead were embalmed. The tomb was the deceased’s “home,” stocked with jewelry, clothing, furniture, food, and protective spells such as the “Book of the Dead.”"], "itMidian": ["Insight — “Midian” No. 2", "https://www.jw.org/en/library/books/Insight-on-the-Scriptures/Midian/", "The Midianites descended from Midian, Abraham’s son by his concubine Keturah. They were at times closely associated with the Ishmaelites. As descendants of Abraham, they likely spoke a language closely resembling Hebrew — Gideon apparently understood them without difficulty (Jg 7:13-15)."]};
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function openPanel(title, html, link, label){
+  document.getElementById('sb-title').textContent = title;
+  document.getElementById('sb-body').innerHTML = html;
+  const a = document.getElementById('sb-link');
+  if(link){a.href = link; a.textContent = label; a.style.display='inline-block';} else a.style.display='none';
+  document.getElementById('sidebar').classList.add('open');
+  document.getElementById('overlay').classList.add('open');
+}
+function openVerse(ref){
+  const list = groups[ref] || [ref];
+  let html;
+  if(list.every(v=>verses[v])){
+    html = '<blockquote class="verse">' + list.map(v=>(list.length>1?'<sup>'+v.split(':')[1]+'</sup>':'')+esc(verses[v])).join(' ') + '</blockquote><div class="meta">New World Translation of the Holy Scriptures (Study Edition)</div>';
+  } else {
+    html = '<p class="meta">Verbatim text not pre-fetched for this reference — open it on WOL.</p>';
+  }
+  openPanel(ref, html, wolLinks[ref], 'Open full chapter on WOL →');
+}
+function openArt(id){
+  const a = articles[id];
+  openPanel(a[0], '<p>' + esc(a[2]) + '</p><div class="meta">Summary of the cited material (Research Guide / workbook reference).</div>', a[1], 'Open full article →');
+}
+function closeSidebar(){
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+}
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeSidebar(); });
+function toggleSec(el){ el.classList.toggle('open'); el.nextElementSibling.classList.toggle('open'); }
+let allOpen = false;
+function toggleAll(){
+  allOpen = !allOpen;
+  document.querySelectorAll('.toggle').forEach(t=>t.classList.toggle('open', allOpen));
+  document.querySelectorAll('.collapsible').forEach(c=>c.classList.toggle('open', allOpen));
+  document.getElementById('expandAllBtn').textContent = allOpen ? 'Collapse All' : 'Expand All';
+}
+</script>
+</body>
+</html>
