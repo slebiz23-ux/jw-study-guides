@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CLAM Study Guide – October 26–November 1, 2026</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f0f4f8;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1f2937;line-height:1.55}
+.wrap{max-width:820px;margin:0 auto;padding:14px}
+header{background:linear-gradient(135deg,#1e293b,#334155);color:#fff;border-radius:14px;padding:22px 18px;text-align:center;margin-bottom:12px}
+header .badge{display:inline-block;background:#f59e0b;color:#1f2937;font-weight:700;border-radius:20px;padding:4px 14px;font-size:.9rem}
+header h1{margin:10px 0 2px;font-size:1.5rem}
+header p{margin:0;opacity:.85}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+button.ctl{background:#1e293b;color:#fff;border:0;border-radius:8px;padding:9px 14px;font-size:.9rem;cursor:pointer}
+.song{background:#fff;border-radius:10px;padding:10px 14px;margin:10px 0;border:1px solid #e2e8f0}
+.song a{color:#1d4ed8;font-weight:600;text-decoration:none}
+.divider{color:#fff;border-radius:10px;padding:10px 14px;margin:20px 0 8px;font-weight:700;letter-spacing:.03em}
+.d-t{background:#1d4ed8}.d-a{background:#15803d}.d-l{background:#7e22ce}.d-c{background:#c2410c}
+.card{background:#fff;border-radius:12px;margin:8px 0;box-shadow:0 1px 3px rgba(0,0,0,.08);overflow:hidden}
+.card>.hd{width:100%;text-align:left;background:#fff;border:0;padding:14px 16px;font-size:1rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;gap:8px;color:#111827}
+.card>.hd .tm{font-weight:400;color:#6b7280;font-size:.85rem;white-space:nowrap}
+.card>.hd:after{content:"＋";color:#6b7280;margin-left:6px}
+.card.open>.hd:after{content:"－"}
+.bd{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 16px}
+.card.open>.bd{padding-bottom:14px}
+.bd h4{margin:14px 0 4px;font-size:.95rem}
+.chip{display:inline-block;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;border-radius:14px;padding:1px 10px;font-size:.85rem;cursor:pointer;margin:1px 2px}
+blockquote{margin:8px 0;padding:8px 12px;background:#f8fafc;border-left:3px solid #94a3b8;border-radius:4px;font-size:.93rem}
+blockquote cite{display:block;font-size:.8rem;color:#64748b;margin-top:3px;font-style:normal}
+.prep{border-left:4px solid #f59e0b;background:#fffbeb;padding:9px 12px;border-radius:6px;margin:10px 0;font-size:.93rem}
+.prep b{display:block;margin-top:5px}
+.prep b:first-child{margin-top:0}
+.img{border-left:4px solid #22c55e;background:#f0fdf4;padding:9px 12px;border-radius:6px;margin:10px 0;font-size:.92rem}
+.img img{max-width:100%;border-radius:8px;margin:10px 0;display:block}
+.img .cap{font-size:.82rem;color:#475569}
+.dlg{background:#f8f8f8;border-radius:8px;padding:10px 12px;margin:8px 0;font-size:.93rem}
+.dlg p{margin:7px 0}
+.dlg em{color:#6366f1}
+.warn{border-left:4px solid #dc2626;background:#fef2f2;padding:9px 12px;border-radius:6px;margin:10px 0;font-size:.9rem}
+.note{border-left:4px solid #0ea5e9;background:#f0f9ff;padding:9px 12px;border-radius:6px;margin:10px 0;font-size:.88rem}
+.q{border:1px solid #e2e8f0;border-radius:8px;margin:8px 0}
+.q>.qh{width:100%;text-align:left;background:#f1f5f9;border:0;padding:10px 12px;font-weight:600;cursor:pointer;font-size:.93rem;border-radius:8px}
+.q>.qb{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 12px}
+.q.open>.qb{padding-bottom:10px}
+.opts{margin:6px 0 10px;padding:8px 10px;background:#faf5ff;border-radius:8px;border:1px solid #e9d5ff}
+.opts h5{margin:0 0 4px;color:#7e22ce}
+#ov{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .25s;z-index:90}
+#ov.on{opacity:1;pointer-events:auto}
+#sb{position:fixed;top:0;right:0;height:100%;width:340px;max-width:100%;background:#fff;box-shadow:-4px 0 18px rgba(0,0,0,.2);transform:translateX(105%);transition:transform .3s ease;z-index:100;display:flex;flex-direction:column}
+#sb.on{transform:none}
+#sb .sh{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:#1e293b;color:#fff;font-weight:600}
+#sb .sh button{background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer;line-height:1}
+#sbc{padding:14px;overflow:auto;flex:1;font-size:.93rem}
+#sbf{padding:12px 14px;border-top:1px solid #e2e8f0}
+#sbf a{display:block;text-align:center;background:#1d4ed8;color:#fff;border-radius:8px;padding:10px;text-decoration:none;font-weight:600}
+footer{text-align:center;color:#64748b;font-size:.82rem;margin:24px 0 40px}
+footer a{color:#1d4ed8}
+.sm{font-size:.82rem;color:#64748b}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="badge">October 26–November 1, 2026</span>
+  <h1>JEREMIAH 47-48</h1>
+  <p>Our Christian Life &amp; Ministry</p>
+</header>
+
+<div class="note"><b>How this guide was built:</b> Every scripture quote below was copied word-for-word from the <i>New World Translation of the Holy Scriptures (Study Edition)</i> on wol.jw.org. Where a verse was not retrieved, only the reference chip appears. Publication references marked “not fetched” (for example <i>it</i> “Moab,” <i>w24.05</i>, <i>lmd</i>, <i>th</i>) were not opened when this guide was generated, so comments tied to them rest on the verses and the workbook outline — open the source before you finalize your comment. Tap any scripture chip to read the verse in a side panel.</div>
+
+<div class="bar"><button class="ctl" id="expAll">Expand All</button></div>
+
+<div class="song">🎵 Opening: <a href="https://www.jw.org/en/library/songs/jw-songbook/song-125/" target="_blank" rel="noopener">Song 125</a> and Prayer | Opening Comments (1 min.)</div>
+
+<!-- ============ TREASURES ============ -->
+<div class="divider d-t">⛏️ TREASURES FROM GOD’S WORD</div>
+
+<div class="card">
+<button class="hd"><span>1. Jehovah Is a Righteous and Merciful Judge</span><span class="tm">10 min.</span></button>
+<div class="bd">
+<p><b>Theme:</b> Jeremiah foretold judgment on Moab for its treatment of Judah — yet Jehovah took no pleasure in the destruction and promised mercy to some Moabites.</p>
+
+<h4>Jeremiah foretold that Jehovah would punish Moab for its treatment of Judah</h4>
+<p><span class="chip" data-ref="Jer. 48:27">Jer. 48:27</span><span class="chip" data-ref="Jer. 48:29">48:29</span><span class="chip" data-ref="Jer. 48:42">48:42</span> <span class="sm">(<i>it</i> “Moab” No. 2 ¶22 — not fetched)</span></p>
+<blockquote>“Was Israel not an object of ridicule to you? Was he found among thieves, So that you should shake your head and speak against him?”<cite>Jeremiah 48:27 (NWTsty)</cite></blockquote>
+<blockquote>“We have heard about the pride of Moʹab—he is very haughty— About his arrogance, his pride, his haughtiness, and the loftiness of his heart.”<cite>Jeremiah 48:29 (NWTsty)</cite></blockquote>
+<blockquote>“‘And Moʹab will be annihilated from being a people, For it is against Jehovah that he has exalted himself.”<cite>Jeremiah 48:42 (NWTsty)</cite></blockquote>
+<div class="prep">
+<b>💬 Comment you could share:</b>“I noticed that Jehovah’s judgment on Moab wasn’t random. Verse 27 says Moab mocked Israel, and verse 42 says Moab ‘exalted himself’ against Jehovah. His judgments are based on clear reasons.”
+<b>📌 Personal application:</b>“Pride and mocking God’s people are what led to Moab’s downfall. That reminds me to stay humble and treat my brothers and sisters with respect.”
+<b>🙏 Getting to know Jehovah:</b>“Jehovah sees how his people are treated, and he doesn’t overlook it.”
+</div>
+
+<h4>Jehovah would not take pleasure in destroying Moab</h4>
+<p><span class="chip" data-ref="Jer. 48:31">Jer. 48:31</span><span class="chip" data-ref="Jer. 48:36">48:36</span></p>
+<blockquote>“That is why I will wail over Moʹab, For all Moʹab I will cry out And moan for the men of Kir-heʹres.”<cite>Jeremiah 48:31 (NWTsty)</cite></blockquote>
+<blockquote>“That is why my heart will moan for Moʹab like a flute, And my heart will moan for the men of Kir-heʹres like a flute. For the wealth he has produced will perish.”<cite>Jeremiah 48:36 (NWTsty)</cite></blockquote>
+<div class="prep">
+<b>💬 Comment you could share:</b>“What touches me is that Jehovah says he will ‘wail’ and his heart will ‘moan … like a flute’ over Moab. Even when he must execute judgment, he feels it.”
+<b>🙏 Getting to know Jehovah:</b>“He is righteous, but not cold. His justice and his compassion work together.”
+</div>
+
+<h4>He would show mercy to some Moabites</h4>
+<p><span class="chip" data-ref="Jer. 48:47">Jer. 48:47</span> <span class="sm">(<i>it</i> “Moab” No. 2 ¶24 — not fetched)</span></p>
+<blockquote>But I will gather the captives of Moʹab in the final part of the days,’ declares Jehovah. ‘Down to this point is the judgment on Moʹab.’”<cite>Jeremiah 48:47 (NWTsty)</cite></blockquote>
+
+<h4>FOR MEDITATION: What does Jehovah’s mercy motivate us to do right now? <span class="sm">(w24.05 p. 17 ¶10 — not fetched)</span></h4>
+<div class="prep">
+<b>📌 Personal application:</b>“Since even after the great tribulation starts some may have a change of heart, I don’t want to write anyone off. I can keep preaching with hope, knowing Jehovah wants people to turn to him.”
+<b>💬 Comment you could share:</b>“If Jehovah is merciful, I want to be too — by being patient with householders and quick to forgive in the congregation.”
+</div>
+</div>
+</div>
+
+<div class="card">
+<button class="hd"><span>2. Spiritual Gems</span><span class="tm">10 min.</span></button>
+<div class="bd">
+<div class="q"><button class="qh">Jer. 48:6 — In what sense were the Moabites to “become like a juniper tree in the wilderness”? (<i>it</i> “Juniper” No. 2)</button>
+<div class="qb">
+<p><span class="chip" data-ref="Jer. 48:6">Jer. 48:6</span></p>
+<blockquote>“Flee, escape for your lives! You must become like a juniper tree in the wilderness.”<cite>Jeremiah 48:6 (NWTsty)</cite></blockquote>
+<p><i>Insight on the Scriptures</i>, Vol. 2, “Juniper” No. 2 (fetched) explains that the Hebrew word (ʽaroh·ʽerʹ / ʽar·ʽarʹ) points to a shrublike juniper (probably <i>Juniperus phoenicia</i>) found in the Sinai region and Edom’s desert. The root idea is “nakedness” or being “stripped,” and the dwarf juniper is described as rather gloomy in appearance, growing in rocky parts of the desert and on crags. It is used at Jeremiah 17:5, 6 for a man whose heart turns from Jehovah and at Jeremiah 48:6 in warning the Moabites to take flight.</p>
+<div class="prep">
+<b>💬 Comment you could share:</b>“The Moabites were told to flee like a lone, stripped juniper in the wilderness — living in a barren place with little security. It pictures how everything they had trusted in would be taken away, and only those who fled would survive.”
+<b>📌 Personal application:</b>“It reminds me that when Jehovah gives a warning, listening and acting quickly matters.”
+</div>
+</div></div>
+
+<h4>What spiritual gems from this week’s Bible reading would you like to share?</h4>
+<p class="sm">The reading is two chapters. Pick whichever chapter you were assigned — each chapter below offers alternatives, so choose one gem, not all of them.</p>
+
+<div class="opts"><h5>Jeremiah 47 — pick one</h5>
+<p><span class="chip" data-ref="Jer. 47:4">Jer. 47:4</span></p>
+<blockquote>“Because the day that is coming will destroy all the Phi·lisʹtines; It will cut off from Tyre and Siʹdon every remaining ally. For Jehovah will destroy the Phi·lisʹtines, Who are the remaining ones from the island of Caphʹtor.”<cite>Jeremiah 47:4 (NWTsty) — see side panel for exact wording</cite></blockquote>
+<div class="prep"><b>💬 Comment:</b>“The Philistines’ allies Tyre and Sidon would be cut off too. No human alliance can protect anyone from Jehovah’s judgment, so my security has to rest on him.”</div>
+
+<p><span class="chip" data-ref="Jer. 47:3">Jer. 47:3</span></p>
+<blockquote>“At the sound of the pounding hooves of his stallions, At the rattling of his war chariots And the rumbling of his wheels, Fathers will not even turn around for their sons, For their hands fall limp,”<cite>Jeremiah 47:3 (NWTsty)</cite></blockquote>
+<div class="prep"><b>💬 Comment:</b>“The terror is so great that fathers won’t even turn back for their sons. It shows how overwhelming the day of judgment would be — and why I want to be close to Jehovah before that day, not after.”</div>
+
+<p><span class="chip" data-ref="Jer. 47:6">Jer. 47:6</span><span class="chip" data-ref="Jer. 47:7">47:7</span></p>
+<blockquote>“Ah! The sword of Jehovah! How long will you not be quiet? Go back into your sheath. Take your rest and be silent.”<cite>Jeremiah 47:6 (NWTsty)</cite></blockquote>
+<blockquote>“How can it be quiet When Jehovah has given it a command? Against Ashʹke·lon and the seacoast, There is where he has assigned it.”<cite>Jeremiah 47:7 (NWTsty)</cite></blockquote>
+<div class="prep"><b>💬 Comment:</b>“Jeremiah’s own words show he longed for the sword to rest, but the answer is that it acts only when and where Jehovah commands. Jehovah decides the timing and the target of judgment, not humans.”</div>
+</div>
+
+<div class="opts"><h5>Jeremiah 48 — pick one</h5>
+<p><span class="chip" data-ref="Jer. 48:7">Jer. 48:7</span></p>
+<blockquote>“Because you trust in your works and in your treasures, You will also be captured. And Cheʹmosh will go into exile, Together with his priests and his princes.”<cite>Jeremiah 48:7 (NWTsty)</cite></blockquote>
+<div class="prep"><b>📌 Personal application:</b>“Moab trusted in its works and treasures. Neither could save it. That helps me weigh how much trust I place in my job, savings, or abilities compared to Jehovah.”</div>
+
+<p><span class="chip" data-ref="Jer. 48:10">Jer. 48:10</span></p>
+<blockquote>“Cursed is the one who carries out the mission of Jehovah neglectfully! Cursed is the one who holds back his sword from bloodshed!”<cite>Jeremiah 48:10 (NWTsty)</cite></blockquote>
+<div class="prep"><b>💬 Comment:</b>“Verse 10 shows how seriously Jehovah views an assignment from him. It makes me want to do my own assignment — the ministry — wholeheartedly and not carelessly.”</div>
+
+<p><span class="chip" data-ref="Jer. 48:11">Jer. 48:11</span></p>
+<blockquote>“The Moʹab·ites have been undisturbed since their youth, Like wine that has settled on the dregs. They have not been poured from one vessel into another, And they have never gone into exile. That is why their taste has remained the same, And their aroma has not changed.”<cite>Jeremiah 48:11 (NWTsty)</cite></blockquote>
+<div class="prep"><b>📌 Personal application:</b>“Moab’s comfort led to complacency — they never changed. It reminds me that trials, though not enjoyable, can help me grow, while an easy life can leave me unchanged and self-satisfied.”</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<button class="hd"><span>3. Bible Reading — Jer. 48:1-13</span><span class="tm">4 min. · th study 11</span></button>
+<div class="bd">
+<p><b>Passage summary:</b> Jehovah announces woe on Moab’s cities (v. 1-5). The people are told to flee (v. 6), warned that trust in their works and treasures will not save them (v. 7), that the destroyer will come on every city (v. 8), and that those who carry out Jehovah’s mission neglectfully are cursed (v. 10). Moab’s long ease is pictured as wine left undisturbed on its dregs (v. 11), and Jehovah promises to send men to overturn them (v. 12), after which Moab will be ashamed of its god Chemosh (v. 13).</p>
+<p><span class="chip" data-ref="Jer. 48:1-13">Jer. 48:1-13</span></p>
+<h4>Key verse comment suggestion</h4>
+<blockquote>“Because you trust in your works and in your treasures, You will also be captured. And Cheʹmosh will go into exile, Together with his priests and his princes.”<cite>Jeremiah 48:7 (NWTsty)</cite></blockquote>
+<div class="prep">
+<b>💬 Comment you could share:</b>“Moab’s trust was in what it had built and gathered. Verse 7 shows that even its god Chemosh would go into exile, so trusting in anything other than Jehovah leaves a person with nothing.”
+<b>🙏 Getting to know Jehovah:</b>“Jehovah warns before he acts; verse 6 gives them a way to escape.”
+</div>
+<div class="note"><b>Reading tips (<i>th</i> study 11 — not fetched):</b> This passage has many place names; practice them ahead of time, e.g. Ne·bo, Kir·i·a·thaʹim, Hesh·bon, Mad·men, Hor·o·naʹim, Lu·hith. Pronounce each smoothly and keep the poetic rhythm of the repeated “woe” and “cry” phrases.</div>
+</div>
+</div>
+
+<!-- ============ APPLY YOURSELF ============ -->
+<div class="divider d-a">🌱 APPLY YOURSELF TO THE FIELD MINISTRY</div>
+
+<div class="warn"><b>Heads-up:</b> The <i>lmd</i> and <i>th</i> lesson texts were not fetched for this guide. The scripts below are samples built around the workbook’s stated assignment; the coaching notes name the lesson but check the point wording in your own <i>lmd</i> / <i>th</i> before you practice. Scripture used is verbatim NWT.</div>
+
+<div class="card">
+<button class="hd"><span>4. Starting a Conversation — House to House</span><span class="tm">3 min. · lmd lesson 5 pt. 4</span></button>
+<div class="bd">
+<div class="dlg">
+<p><b>Publisher:</b> “Good morning! My name is Sonny. I’m visiting neighbors today about something many of us are thinking about — whether the world’s problems will ever really get better. Do you mind if I ask what you think?” <em>(← lmd lesson 5 pt. 4: begin with a friendly, natural opening that invites the householder to talk)</em></p>
+<p><b>Householder:</b> “I don’t know. Things seem to be getting worse.”</p>
+<p><b>Publisher:</b> “A lot of people feel that way. May I share one thought that has encouraged me?” <em>(← ask permission; keep it short and respectful of the person’s time)</em></p>
+<p><b>Householder:</b> “Sure, go ahead.”</p>
+<p><b>Publisher:</b> “This verse caught my attention.” <span class="chip" data-ref="Eph. 4:25">Eph. 4:25</span> <em>(← choose a scripture that fits the conversation; here the point is honesty and care for neighbors)</em></p>
+<p><b>Householder:</b> “That’s a good principle.”</p>
+<p><b>Publisher:</b> “I think so too. The Bible gives practical advice like that, and it also explains why we can have real hope for the future. Would it be all right if I stop by again to share more about that?” <em>(← end with a reason to return)</em></p>
+</div>
+<div class="prep"><b>📌 Personal application:</b>“A good opening is about the other person, not about me. I’ll practice one friendly question and a single verse.”</div>
+</div>
+</div>
+
+<div class="card">
+<button class="hd"><span>5. Following Up — Informal Witnessing</span><span class="tm">4 min. · lmd lesson 9 pt. 5</span></button>
+<div class="bd">
+<p>Assignment: share a truth from appendix A of the <i>Love People</i> brochure (appendix not fetched — substitute the point you were assigned).</p>
+<div class="dlg">
+<p><b>Publisher:</b> “Hi Maria, good to see you again. Last time we were chatting at the park, you mentioned you’d wondered whether God really cares about us. I’ve been thinking about that.” <em>(← lmd lesson 9 pt. 5: refer back to the earlier conversation to show genuine interest)</em></p>
+<p><b>Householder:</b> “Oh yes, I remember.”</p>
+<p><b>Publisher:</b> “I found something that I thought you’d like. It shows how Jehovah feels about people, even when he must judge.” <span class="chip" data-ref="Jer. 48:31">Jer. 48:31</span> <em>(← connect the truth to the person’s question)</em></p>
+<p><b>Householder:</b> “So God is sad when people suffer?”</p>
+<p><b>Publisher:</b> “That’s what this verse shows. Jehovah isn’t distant. Would you like to see another scripture on this next time we meet?” <em>(← invite continuing the conversation)</em></p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<button class="hd"><span>6. Making Disciples</span><span class="tm">5 min. · th study 8</span></button>
+<div class="bd">
+<p>Assignment: encourage your Bible student to pray more frequently.</p>
+<div class="dlg">
+<p><b>Publisher:</b> “Hi Tom. How have you been? How’s the week going?” <em>(← th study 8: warm, genuine interest first)</em></p>
+<p><b>Student:</b> “Busy. Honestly I forget to pray sometimes.”</p>
+<p><b>Publisher:</b> “That’s understandable. What’s one moment in your day when you have a quiet minute?” <em>(← ask a question so the student reasons on his own)</em></p>
+<p><b>Student:</b> “Probably in the morning before work.”</p>
+<p><b>Publisher:</b> “That could be a great time to talk to Jehovah, even for a minute. In the Bible, Jehovah showed he cares about people’s feelings. Remember this one?” <span class="chip" data-ref="Jer. 48:36">Jer. 48:36</span> <em>(← use scripture to show Jehovah is a Person who cares and can be approached)</em></p>
+<p><b>Student:</b> “So He really cares?”</p>
+<p><b>Publisher:</b> “Yes — and praying often helps us feel closer to him. Why don’t we try a short prayer right now together?” <em>(← practical encouragement and a simple step)</em></p>
+</div>
+</div>
+</div>
+
+<!-- ============ LIVING AS CHRISTIANS ============ -->
+<div class="divider d-l">✝️ LIVING AS CHRISTIANS</div>
+<div class="song">🎵 <a href="https://www.jw.org/en/library/songs/jw-songbook/song-158/" target="_blank" rel="noopener">Song 158</a></div>
+
+<div class="card">
+<button class="hd"><span>7. Local Needs</span><span class="tm">15 min.</span></button>
+<div class="bd">
+<p>No published outline — this part is arranged locally. Your elders will provide the details; there is nothing to prepare in advance unless you have been assigned.</p>
+</div>
+</div>
+
+<!-- ============ CBS ============ -->
+<div class="divider d-c">📕 CONGREGATION BIBLE STUDY — wcg chap. 14</div>
+
+<div class="card">
+<button class="hd"><span>8. “She Chose Jehovah Over Her Own People” (Rahab)</span><span class="tm">30 min.</span></button>
+<div class="bd">
+
+<div class="img">
+<img src="https://cms-imgp.jw-cdn.org/img/p/1102025914/univ/art/1102025914_univ_cnt_1_lg.jpg" alt="Rahab tying a scarlet cord in the window of her house.">
+<div class="cap">Rahab tying a scarlet cord in the window of her house.</div>
+<b>Application:</b> The window cord was a small, visible act of obedience. Rahab trusted the spies’ promise and did exactly what they said. Ask yourself where Jehovah may be asking you for a simple but obedient step.
+</div>
+
+<h4>Narrative summary</h4>
+<p>Rahab lived in Jericho and heard of how Jehovah had defeated Pharaoh and the Amorite kings. Rather than fear, she felt hope and was drawn to Jehovah. When the king demanded the Israelite spies, she hid them on her roof and misdirected the king’s men. She asked for protection for her family, tied the scarlet cord in her window, stayed in the house with her family, and was spared when the walls fell. She joined Israel, married, and became an ancestor of Jesus.</p>
+
+<h4>Read the Bible account</h4>
+<p><span class="chip" data-ref="Josh. 2:1-24">Josh. 2:1-24</span><span class="chip" data-ref="Josh. 5:1">Josh. 5:1</span><span class="chip" data-ref="Josh. 6:14-25">Josh. 6:14-25</span><span class="chip" data-ref="Heb. 11:30-31">Heb. 11:30, 31</span><span class="chip" data-ref="Jas. 2:24-25">Jas. 2:24, 25</span></p>
+
+<div class="img">
+<img src="https://cms-imgp.jw-cdn.org/img/p/1102025914/univ/art/1102025914_univ_cnt_3_lg.jpg" alt="Rahab giving directions to two of the king’s men.">
+<div class="cap">Rahab giving directions to two of the king’s men.</div>
+<b>Application:</b> This scene shows the moment of decision. Rahab chose to side with Jehovah even though it put her in danger. Courage can mean speaking and acting for Jehovah when others expect something different.
+</div>
+
+<h4>For discussion: In what ways did Rahab show courage?</h4>
+<div class="prep">
+<b>💬 Comment you could share:</b>“Rahab showed courage in several ways: she hid the spies at risk to her life (Josh. 2:4-6), she spoke up about her faith — ‘I do know that Jehovah will give you the land’ (v. 9) — and she kept the secret and did exactly what the spies told her.”
+<b>📌 Personal application:</b>“Her courage was not a single moment; it lasted through the waiting. That encourages me to be steady, not just bold once.”
+<b>🙏 Getting to know Jehovah:</b>“Jehovah noticed her faith even though she lived in a wicked city.”
+</div>
+<p><span class="chip" data-ref="Josh. 2:4">Josh. 2:4</span><span class="chip" data-ref="Josh. 2:6">2:6</span><span class="chip" data-ref="Josh. 2:9">2:9</span></p>
+
+<h4>Dig Deeper</h4>
+
+<div class="q"><button class="qh">1. Describe what life was like for Rahab in Jericho. (w13 11/1 p. 12 ¶4–p. 13 ¶1 — not fetched)</button>
+<div class="qb">
+<p>Rahab was a prostitute (<span class="chip" data-ref="Josh. 2:1">Josh. 2:1</span>), living in a house built on the city wall (<span class="chip" data-ref="Josh. 2:15">Josh. 2:15</span>). According to the chapter narrative, she saw gloom and fear on every face, and she may have yearned for something better than her degrading life.</p>
+<div class="prep"><b>💬 Comment:</b>“Rahab’s life was harsh and degrading, yet what she heard about Jehovah gave her hope instead of dread.”</div>
+</div></div>
+
+<div class="q"><button class="qh">2. How do we know that the spies did not stay at Rahab’s house for immoral purposes? (<i>it</i> “Prostitute” ¶16 — not fetched)</button>
+<div class="qb">
+<p>Joshua sent the men to “inspect the land” (<span class="chip" data-ref="Josh. 2:1">Josh. 2:1</span>), and a prostitute’s house was a place where strangers would not draw attention. The account shows they were on a mission, not seeking immorality: Rahab hid them (<span class="chip" data-ref="Josh. 2:4">2:4</span>), they spoke with her only about the mission and her request for protection (<span class="chip" data-ref="Josh. 2:12">2:12</span><span class="chip" data-ref="Josh. 2:14">2:14</span>), and the Bible later praises her faith, saying she “received the spies in a peaceable way” (<span class="chip" data-ref="Heb. 11:31">Heb. 11:31</span>).</p>
+<div class="warn">The specific reasoning in <i>it</i> “Prostitute” ¶16 was not retrieved. Check that paragraph before commenting.</div>
+</div></div>
+
+<div class="q"><button class="qh">3. Why were rows of flax laid on Rahab’s roof, and what was flax used for? (<i>it</i> “Flax” ¶2-4 — not fetched)</button>
+<div class="qb">
+<p>The Bible says she had hidden the men “among stalks of flax laid in rows on the roof” (<span class="chip" data-ref="Josh. 2:6">Josh. 2:6</span>). Flax stalks were laid out to dry; flax was the source of linen fibers. Check <i>it</i> “Flax” ¶2-4 for the publication’s exact explanation.</p>
+<div class="img">
+<img src="https://cms-imgp.jw-cdn.org/img/p/1102025914/univ/art/1102025914_univ_cnt_2_lg.jpg" alt="A flax field (picture A)">
+<div class="cap">A flax field. Photo: Thanks for your interest in my photos / Moment Open via Getty Images</div>
+<b>Application:</b> The flax gave Rahab a practical hiding place right on her own roof. Ordinary things in our lives — our homes, our skills — can be used to help Jehovah’s people.
+</div>
+</div></div>
+
+<div class="q"><button class="qh">4. Why was it not wrong for Rahab to mislead the king’s men? (w04 12/1 p. 9 ¶1 — not fetched)</button>
+<div class="qb">
+<p>The king’s men had no right to the information they wanted — they intended to harm Jehovah’s servants. Rahab said: <span class="chip" data-ref="Josh. 2:4">Josh. 2:4</span><span class="chip" data-ref="Josh. 2:5">2:5</span>. Compare how <span class="chip" data-ref="Jas. 2:24-25">James 2:24, 25</span> says she was “declared righteous by works” when she received the messengers hospitably and sent them out by another way.</p>
+<div class="prep"><b>💬 Comment:</b>“Rahab had come to side with Jehovah and his people. Protecting God’s servants from those who meant them harm was an act of faith, which is why Hebrews 11:31 and James 2:25 praise her.”</div>
+<div class="warn">The article’s wording for this answer was not retrieved; confirm with <i>w04</i> 12/1 p. 9 ¶1.</div>
+</div></div>
+
+<h4>Reflect on the Lessons</h4>
+<div class="img">
+<img src="https://cms-imgp.jw-cdn.org/img/p/1102025914/univ/art/1102025914_univ_cnt_5_lg.jpg" alt="A sister in handcuffs remaining silent as a prison officer stands over her and interrogates her. He points at documents on a table while an armed soldier stands guard.">
+<div class="cap">A sister in handcuffs remaining silent as a prison officer interrogates her. He points at documents on a table while an armed soldier stands guard.</div>
+<b>Application:</b> Today’s brothers and sisters in some lands face pressure like this. Like Rahab, they protect others by holding confidential information. This picture shows the courage that can be required of us.
+</div>
+<div class="q"><button class="qh">Why did Rahab need courage to abandon her immoral life and worship Jehovah with the Israelites? What can Bible students learn from her example?</button>
+<div class="qb">
+<div class="prep">
+<b>💬 Comment you could share:</b>“She had to turn away from her people, her livelihood, and the only way of life she knew. Bible students can see that Jehovah welcomes anyone who makes changes, no matter their past — and she was ‘declared righteous’ and is in Jesus’ family line.”
+<b>📌 Personal application:</b>“If I study with someone who is afraid of what others will say, I can share Rahab’s example.”
+</div>
+<p><span class="chip" data-ref="Matt. 1:5">Matt. 1:5</span><span class="chip" data-ref="Matt. 1:16">1:16</span><span class="chip" data-ref="Heb. 11:31">Heb. 11:31</span></p>
+</div></div>
+
+<div class="q"><button class="qh">While the Bible condemns lying, how might Christians learn from Rahab if enemies of God’s people were to pressure us to reveal confidential information about our brothers? (Prov. 11:13; Eccl. 3:7; Eph. 4:25)</button>
+<div class="qb">
+<blockquote>“A slanderer goes about revealing confidential talk, But the trustworthy person keeps a confidence.”<cite>Proverbs 11:13 (NWTsty)</cite></blockquote>
+<blockquote>“A time to rip apart and a time to sew together; A time to be silent and a time to speak;”<cite>Ecclesiastes 3:7 (NWTsty)</cite></blockquote>
+<blockquote>“Therefore, now that you have put away deceit, each one of you speak truth with his neighbor, because we are members belonging to one another.”<cite>Ephesians 4:25 (NWTsty)</cite></blockquote>
+<div class="prep">
+<b>💬 Comment you could share:</b>“Proverbs 11:13 tells us the trustworthy person keeps a confidence, and Ecclesiastes 3:7 says there is ‘a time to be silent.’ I can be truthful with my neighbor, but I’m not obligated to hand over information that would endanger my brothers.”
+<b>🙏 Getting to know Jehovah:</b>“Jehovah values loyalty to his people and trustworthiness.”
+</div>
+<p><span class="chip" data-ref="Prov. 11:13">Prov. 11:13</span><span class="chip" data-ref="Eccl. 3:7">Eccl. 3:7</span><span class="chip" data-ref="Eph. 4:25">Eph. 4:25</span></p>
+</div></div>
+
+<div class="q"><button class="qh">In what other ways might you imitate Rahab’s courage?</button>
+<div class="qb">
+<div class="prep">
+<b>📌 Personal application:</b>“I can imitate her by making a decision quickly when I know what’s right, by following Jehovah’s direction exactly — like staying inside and keeping the cord in the window — and by being loyal to Jehovah even if people around me think differently.”
+<b>💬 Comment you could share:</b>“Rahab didn’t just believe — she acted. I can look for small ways each day to act on what I believe.”
+</div>
+</div></div>
+
+<h4>Meditate on the Bigger Picture — the two wrap-up questions</h4>
+
+<div class="q"><button class="qh">1. What does this teach us about Jehovah?</button>
+<div class="qb">
+<div class="prep">
+<b>🙏 Getting to know Jehovah:</b>“Jehovah looks at the heart and welcomes anyone who sincerely turns to him. Rahab’s past did not stop him from rewarding her faith — she is listed alongside faithful men at Hebrews 11:31, and she is in Jesus’ ancestry.”
+<b>💬 Comment you could share:</b>“It ties in with this week’s Jeremiah reading too. Jehovah is righteous when he judges Jericho or Moab, yet merciful to individuals who respond — he saved Rahab’s whole household.”
+</div>
+<p><span class="chip" data-ref="Josh. 6:23">Josh. 6:23</span><span class="chip" data-ref="Josh. 6:25">6:25</span></p>
+<p class="sm">Research Guide enrichment: not retrieved this week.</p>
+</div></div>
+
+<div class="q"><button class="qh">2. Are there any points from this lesson we can use in the ministry or our daily life?</button>
+<div class="qb">
+<div class="prep">
+<b>📌 Personal application:</b>“In the ministry, I shouldn’t decide ahead of time who will or won’t respond. Rahab lived in a wicked city and was drawn to Jehovah. And in daily life, I can show my faith through works, as James 2:25 says about Rahab.”
+</div>
+<p><span class="chip" data-ref="Jas. 2:24-25">Jas. 2:24, 25</span></p>
+</div></div>
+
+<div class="q"><button class="qh">Other Meditate questions (personal study)</button>
+<div class="qb">
+<p><b>How does this account tie in with Jehovah’s purposes?</b> — Rahab’s inclusion in the line leading to Jesus (<span class="chip" data-ref="Matt. 1:5">Matt. 1:5</span><span class="chip" data-ref="Matt. 1:16">1:16</span>) shows Jehovah using a former prostitute from a condemned city in his purpose.</p>
+<p><b>What would I like to ask Rahab in the resurrection?</b> — Personal question; for example, “What was it like to see the wall fall around your house?”</p>
+</div></div>
+
+<h4>Learn More</h4>
+<ul>
+<li>“Where Should You Be When the End Comes?” (<i>w09</i> 5/15 pp. 6-8) — what Rahab’s account teaches about surviving the coming day of Jehovah.</li>
+<li>“Rahab Follows Instructions” (<i>ijwis</i> article 11) — illustrated Bible story for children.</li>
+</ul>
+<p><a href="https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/rahab-chose-jehovah-over-her-own-people/" target="_blank" rel="noopener">Open chapter 14 on jw.org →</a></p>
+</div>
+</div>
+
+<div class="song">🎵 Closing: Concluding Comments (3 min.) | <a href="https://www.jw.org/en/library/songs/jw-songbook/song-54/" target="_blank" rel="noopener">Song 54</a> and Prayer</div>
+
+<footer>
+Source: <a href="https://www.jw.org/en/library/jw-meeting-workbook/september-october-2026-mwb/Life-and-Ministry-Meeting-Schedule-for-October-26-November-1-2026/" target="_blank" rel="noopener">Life and Ministry Meeting Schedule — October 26–November 1, 2026</a><br>
+Personal study aid. Scripture text: New World Translation (Study Edition), wol.jw.org.
+</footer>
+</div>
+
+<div id="ov"></div>
+<aside id="sb" aria-hidden="true">
+  <div class="sh"><span id="sbt">Scripture</span><button id="sbx" aria-label="Close">×</button></div>
+  <div id="sbc"></div>
+  <div id="sbf"><a id="sbl" href="#" target="_blank" rel="noopener">Open full article →</a></div>
+</aside>
+
+<script>
+const V={
+"Jer. 47:1":"This is the word of Jehovah to Jeremiah the prophet concerning the Phi·lisʹtines, before Pharʹaoh struck down Gazʹa.",
+"Jer. 47:2":"This is what Jehovah says: “Look! Waters are coming from the north. They will become a flooding torrent. And they will flood the land and everything in it, The city and those inhabiting it. The men will cry out, And everyone dwelling in the land will wail.",
+"Jer. 47:3":"At the sound of the pounding hooves of his stallions, At the rattling of his war chariots And the rumbling of his wheels, Fathers will not even turn around for their sons, For their hands fall limp,",
+"Jer. 47:4":"Because the day that is coming will destroy all the Phi·lisʹtines; It will cut off from Tyre and Siʹdon every remaining ally. For Jehovah will destroy the Phi·lisʹtines, Who are the remaining ones from the island of Caphʹtor.",
+"Jer. 47:5":"Baldness will come to Gazʹa. Ashʹke·lon has been silenced. O remnant of their valley plain, How long will you keep making cuts on yourself?",
+"Jer. 47:6":"Ah! The sword of Jehovah! How long will you not be quiet? Go back into your sheath. Take your rest and be silent.",
+"Jer. 47:7":"How can it be quiet When Jehovah has given it a command? Against Ashʹke·lon and the seacoast, There is where he has assigned it.”",
+"Jer. 48:1":"For Moʹab, this is what Jehovah of armies, the God of Israel, says: “Woe to Neʹbo, for she has been destroyed! Kir·i·a·thaʹim has been put to shame and captured. The secure refuge has been put to shame and shattered.",
+"Jer. 48:2":"They no longer praise Moʹab. In Heshʹbon they have plotted her downfall: ‘Come, let us put an end to her as a nation.’ You too, O Madʹmen, should keep silent, For the sword is following you.",
+"Jer. 48:3":"There is the sound of an outcry from Hor·o·naʹim, Of destruction and great collapse.",
+"Jer. 48:4":"Moʹab has been broken down. Her little ones cry out.",
+"Jer. 48:5":"On the ascent of Luʹhith they weep continually as they climb. And on the way down from Hor·o·naʹim they hear cries of distress over the catastrophe.",
+"Jer. 48:6":"Flee, escape for your lives! You must become like a juniper tree in the wilderness.",
+"Jer. 48:7":"Because you trust in your works and in your treasures, You will also be captured. And Cheʹmosh will go into exile, Together with his priests and his princes.",
+"Jer. 48:8":"The destroyer will come in on every city, And no city will escape. The valley will perish, And the level land will be annihilated, just as Jehovah has said.",
+"Jer. 48:9":"Set up a marker for Moʹab, For as she falls into ruins she will flee, And her cities will become an object of horror, Without an inhabitant.",
+"Jer. 48:10":"Cursed is the one who carries out the mission of Jehovah neglectfully! Cursed is the one who holds back his sword from bloodshed!",
+"Jer. 48:11":"The Moʹab·ites have been undisturbed since their youth, Like wine that has settled on the dregs. They have not been poured from one vessel into another, And they have never gone into exile. That is why their taste has remained the same, And their aroma has not changed.",
+"Jer. 48:12":"“‘Therefore look! the days are coming,’ declares Jehovah, ‘when I will send men to overturn them. They will turn them over and empty out their vessels, and they will smash their large jars to pieces.",
+"Jer. 48:13":"And the Moʹab·ites will be ashamed of Cheʹmosh, just as the house of Israel is ashamed of Bethʹel, which was their confidence.",
+"Jer. 48:27":"Was Israel not an object of ridicule to you? Was he found among thieves, So that you should shake your head and speak against him?",
+"Jer. 48:29":"“We have heard about the pride of Moʹab—he is very haughty— About his arrogance, his pride, his haughtiness, and the loftiness of his heart.”",
+"Jer. 48:31":"That is why I will wail over Moʹab, For all Moʹab I will cry out And moan for the men of Kir-heʹres.",
+"Jer. 48:36":"That is why my heart will moan for Moʹab like a flute, And my heart will moan for the men of Kir-heʹres like a flute. For the wealth he has produced will perish.",
+"Jer. 48:42":"“‘And Moʹab will be annihilated from being a people, For it is against Jehovah that he has exalted himself.",
+"Jer. 48:47":"But I will gather the captives of Moʹab in the final part of the days,’ declares Jehovah. ‘Down to this point is the judgment on Moʹab.’”",
+"Josh. 2:1":"Then Joshua the son of Nun secretly sent two men out from Shitʹtim as spies. He told them: “Go and inspect the land, especially Jerʹi·cho.” So they went and came to the house of a prostitute named Raʹhab, and they stayed there.",
+"Josh. 2:4":"But the woman took the two men and hid them. Then she said: “Yes, the men came to me, but I did not know where they were from.",
+"Josh. 2:5":"And at dark when the city gate was about to be closed, the men went out. I do not know where the men went, but if you quickly chase after them, you will catch up with them.”",
+"Josh. 2:6":"(However, she had taken them up to the roof and hidden them among stalks of flax laid in rows on the roof.)",
+"Josh. 2:9":"She said to the men: “I do know that Jehovah will give you the land and that the fear of you has fallen upon us. All the inhabitants of the land are disheartened because of you,",
+"Josh. 2:12":"Now, please, swear to me by Jehovah that, because I showed loyal love to you, you will also show loyal love to my father’s household; and you must give me a sign of good faith.",
+"Josh. 2:14":"At that the men said to her: “We will give our lives for yours! If you do not tell about our mission, then we will show loyal love and faithfulness toward you when Jehovah gives us the land.”",
+"Josh. 2:15":"After that she let them down by a rope through the window, for her house was on a side of the city wall. In fact, she was dwelling on the wall.",
+"Josh. 5:1":"As soon as all the kings of the Amʹor·ites who were on the west side of the Jordan and all the kings of the Caʹnaan·ites who were by the sea heard that Jehovah had dried up the waters of the Jordan before the Israelites until they had crossed over, they lost heart, and they lost all courage because of the Israelites.",
+"Josh. 6:23":"So the young spies went in and brought out Raʹhab, along with her father, her mother, her brothers, and all who belonged to her; yes, they brought out her whole family, and they brought them safely to a place outside the camp of Israel.",
+"Josh. 6:25":"Only Raʹhab the prostitute and her father’s household and all who belonged to her were spared by Joshua; and she lives in Israel to this day, because she hid the messengers whom Joshua sent out to spy on Jerʹi·cho.",
+"Heb. 11:30":"By faith the walls of Jerʹi·cho fell down after the people had marched around them for seven days.",
+"Heb. 11:31":"By faith Raʹhab the prostitute did not perish with those who acted disobediently, because she received the spies in a peaceable way.",
+"Jas. 2:24":"You see that a man is to be declared righteous by works and not by faith alone.",
+"Jas. 2:25":"In the same manner, was not Raʹhab the prostitute also declared righteous by works after she received the messengers hospitably and sent them out by another way?",
+"Prov. 11:13":"A slanderer goes about revealing confidential talk, But the trustworthy person keeps a confidence.",
+"Eccl. 3:7":"A time to rip apart and a time to sew together; A time to be silent and a time to speak;",
+"Eph. 4:25":"Therefore, now that you have put away deceit, each one of you speak truth with his neighbor, because we are members belonging to one another.",
+"Matt. 1:5":"Salʹmon became father to Boʹaz by Raʹhab; Boʹaz became father to Oʹbed by Ruth; Oʹbed became father to Jesʹse;",
+"Matt. 1:16":"Jacob became father to Joseph the husband of Mary, of whom Jesus was born, who is called Christ.",
+"Deut. 34:3":"and the Negʹeb and the District, the valley plain of Jerʹi·cho, the city of the palm trees, as far as Zoʹar."
+};
+const SLUG={"Jer.":"jeremiah","Josh.":"joshua","Heb.":"hebrews","Jas.":"james","Prov.":"proverbs","Eccl.":"ecclesiastes","Eph.":"ephesians","Matt.":"matthew","Deut.":"deuteronomy"};
+function open(ref){
+  const m=ref.match(/^(\S+) (\d+):(\d+)(?:-(\d+))?$/); if(!m)return;
+  const b=m[1],c=m[2],a=+m[3],z=m[4]?+m[4]:a;
+  let h='',got=0;
+  for(let v=a;v<=z;v++){const t=V[b+' '+c+':'+v]; if(t){got++;h+='<p><b>'+(z>a?v+' ':'')+'</b>'+t+'</p>';}}
+  if(!got)h='<p class="sm">Verse text not stored in this guide — use the link below.</p>';
+  else if(got<(z-a+1))h+='<p class="sm">Some verses in this range are not stored here; use the link below for the full passage.</p>';
+  document.getElementById('sbt').textContent=ref;
+  document.getElementById('sbc').innerHTML=h+'<p class="sm">New World Translation (Study Edition)</p>';
+  document.getElementById('sbl').href='https://www.jw.org/en/library/bible/study-bible/books/'+SLUG[b]+'/'+c+'/';
+  document.getElementById('sb').classList.add('on');document.getElementById('ov').classList.add('on');
+}
+function close_(){document.getElementById('sb').classList.remove('on');document.getElementById('ov').classList.remove('on');}
+document.addEventListener('click',e=>{
+  const ch=e.target.closest('.chip'); if(ch){open(ch.dataset.ref);return;}
+  if(e.target.id==='sbx'||e.target.id==='ov'){close_();return;}
+  const hd=e.target.closest('.card>.hd'); if(hd){const c=hd.parentElement;c.classList.toggle('open');const bd=c.querySelector(':scope>.bd');bd.style.maxHeight=c.classList.contains('open')?'none':'0';return;}
+  const qh=e.target.closest('.q>.qh'); if(qh){const q=qh.parentElement;q.classList.toggle('open');q.querySelector(':scope>.qb').style.maxHeight=q.classList.contains('open')?'none':'0';}
+});
+let all=false;
+document.getElementById('expAll').addEventListener('click',function(){
+  all=!all;this.textContent=all?'Collapse All':'Expand All';
+  document.querySelectorAll('.card,.q').forEach(el=>{el.classList.toggle('open',all);const b=el.querySelector(':scope>.bd,:scope>.qb');if(b)b.style.maxHeight=all?'none':'0';});
+});
+</script>
+</body>
+</html>
